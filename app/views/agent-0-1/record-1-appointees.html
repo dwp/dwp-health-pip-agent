@@ -10,7 +10,7 @@
 {% block content %}
 
 
-<!-- {% if data["appointees-lpa"] %}
+{% if data["appointees-lpa"] %}
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code 'V-AB12-CD34-EF56' has been added to the record.</p>
@@ -23,8 +23,8 @@
 
 {% else %}
 
-{% endif %} -->
-
+{% endif %}
+ 
 
 
 
@@ -71,7 +71,7 @@
             text: "Type of helper"
           },
           value: {
-            text: "Lasting Power of Attorney"
+            text: "Appointee"
           },
           actions: {
             items: [

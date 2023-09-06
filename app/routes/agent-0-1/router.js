@@ -123,7 +123,7 @@ router.post(`/application-3-lpa-1-router`, (req, res) => {
   const lpaChangeMade = req.session.data['application-3-lpa-1']
 
   if (lpaChangeMade == 'Yes') {
-    res.redirect(`record-1-overview`)
+    res.redirect(`record-1-appointees`)
   }
   else if (lpaChangeMade == 'No') {
     res.redirect(`inbound-1-end-call-process`)
