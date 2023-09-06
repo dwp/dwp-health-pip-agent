@@ -1,0 +1,39 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="/prototype-admin/clear-data" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Based on your postcode, you can claim PIP online
+      </h1>
+      <p class="govuk-body govuk-!-margin-bottom-4">Register and complete the first stage of the claim as soon as you can. This usually takes around 15 minutes.</p>
+      <p class="govuk-body govuk-!-margin-bottom-4">The date you submit this first stage will be the date of claim. The sooner you do this, the earlier your payments could begin if you're awarded PIP.</p>
+
+      <div class="govuk-inset-text">This is a new online service. It is being tested with a limited number of people before being made available to everyone.</div>
+
+
+      <p class="govuk-body govuk-!-margin-bottom-8">In the next steps we will ask you to create a password so that you can save your answers and return later.</p>
+
+
+</div>
+</div>
+
+
+
+{{ govukButton({
+text: "Finish",
+classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+</form>
+{% endblock %}

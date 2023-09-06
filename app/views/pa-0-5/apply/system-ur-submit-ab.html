@@ -1,0 +1,104 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form action="system-ur-submit-ab-router" method="post" class="form">
+
+        <!-- <p class="govuk-heading-xl govuk-!-margin-bottom-6">We need some help from you</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This is an extract of the full service so some questions are missing</p> -->
+
+{{ govukRadios({
+  idPrefix: "system-ur-submit-ab",
+  name: "system-ur-submit-ab",
+  fieldset: {
+    legend: {
+      text: "Select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "submit-a",
+    text: "Gov.uk (A)",
+    checked: (data["system-ur-submit-ab"] == "submit-a")
+  },
+  {
+    value: "submit-b",
+    text: "Gov.uk (B)",
+    checked: (data["system-ur-submit-ab"] == "submit-b")
+  },
+  {
+    value: "submit-c",
+    text: "Descriptors",
+    checked: (data["system-ur-submit-ab"] == "submit-c")
+  }
+  ]
+}) }}
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="descriptors-outcome-bad" class="govuk-link" rel="noreferrer noopener">Descriptors: Outcome 1</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="descriptors-outcome-good" class="govuk-link" rel="noreferrer noopener">Descriptors: Outcome 2</a></p>
+
+
+        <!-- Scenario 1<br>
+        — Add one HCP within the primary journey<br>
+        — From CYA, make a change to a single HCP<br>
+        — From CYA, Add a second HCP<br>
+        <br><br>
+
+        Scenario 2<br>
+        — Add x3 HCP within the primary journey<br>
+        — From CYA, Make one change<br>
+        — From CYA, Remove one HCP<br>
+        <br><br>
+
+        Scenario 3<br>
+        — Add x2 HCP within the primary journey<br>
+        — From CYA, Remove one HCP<br>
+        — From CYA, Ask user to remove remaining HCP, but this functionality is not available (Get expectations) Which might end up being a change to the remaining HCP<br>
+        <br><br>
+
+        Scenario 4 (Out of scope)<br>
+        — No HCP added within primary journey (There is no way to skip adding a HCP in primary Journey)
+        <br><br>
+
+
+        Scenario 5 (Out of scope)<br>
+        — From CYA, remove all HCPs
+
+<br><br><br> -->
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

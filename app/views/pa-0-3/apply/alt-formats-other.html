@@ -1,0 +1,92 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="alt-formats-other-router" method="post" class="form">
+
+
+
+        {{ govukRadios({
+          idPrefix: "alt-formats-other",
+          name: "alt-formats-other",
+          fieldset: {
+            legend: {
+              html: "Which other format do you need?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {  
+            text: "Select one option"
+          },
+          items: [
+          {
+            value: "Coloured paper",
+            text: "Coloured paper",
+            checked: (data["alt-formats-other"] == "ColouredPaper")
+          },
+          {
+            value: "Large print – 16 point font",
+            text: "Large print – 16 point font",
+            checked: (data["alt-formats-other"] == "LargeFormat16")
+          },
+          {
+            value: "Large print with a custom font",
+            text: "Large print with a custom font",
+            checked: (data["alt-formats-other"] == "LargeFormatCustom")
+          },
+            {
+              value: "Accessible PDF",
+              text: "Accessible PDF",
+              checked: (data["alt-formats-other"] == "PDF")
+          },
+            {
+              value: "Email",
+              text: "Email",
+              checked: (data["alt-formats-other"] == "Email")
+          },
+            {
+              value: "Other",
+              text: "Other",
+              checked: (data["alt-formats-other"] == "Other")
+            }
+          ]
+        }) }}
+
+
+
+        <p class="govuk-!-margin-bottom-6">The Department for Work and Pensions may contact you to discuss your communication needs.</p>
+
+
+
+        <!------------ ––– ------------>
+
+
+
+    </div>
+  </div>
+
+
+
+  {{ govukButton({
+    text: "Save and continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

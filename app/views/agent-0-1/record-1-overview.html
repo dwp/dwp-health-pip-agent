@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-1/record-id.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "agent-0-1/record-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Overview</h3>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Application date:</strong> 21 January 2022
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Details: </strong>Something interesting
+
+    </p>
+  </div>
+
+
+    </form>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="/prototype-admin/clear-data" method="post" class="form">
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">Sorry, the service is unavailable</h1>
+
+          <form action="name" method="post" novalidate="">
+
+            <p>This is a new service. We are testing it with a limited number of people.</p>
+
+    <p>You cannot claim online now, but can still claim by phone or post.</p>
+
+
+            <h2 class="govuk-heading-m">Claim by phone if you’re in England or Wales</h2>
+
+            <p>Telephone: 0800 917 2222<br>
+    Textphone: 0800 917 7777<br>
+    <a href="https://www.relayuk.bt.com/">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 917 2222<br>
+    British Sign Language (BSL) <a href="https://connect.interpreterslive.co.uk/vrs?ilc=DWP">video relay service</a> if you’re on a computer - find out how to <a href="https://www.youtube.com/watch?v=oELNMfAvDxw">use the service on mobile or tablet</a><br>
+    Calling from abroad: +44 191 218 7766<br>
+    Monday to Friday, 8am to 5pm<br>
+    <a href="https://www.gov.uk/call-charges">Find out about call charges</a><br>
+    </p>
+
+
+
+            <h2 class="govuk-heading-m">Claim by post if you’re in England or Wales</h2>
+
+            <p>Send a letter to ‘Personal Independence Payment New Claims’.</p>
+
+            <p>You’ll be sent a form asking for your personal information, such as your address and your age. Complete and return the form.</p>
+
+            <p>You’ll then be sent a form which asks about your disability or condition.</p>
+
+            <p>Personal Independence Payment New Claims<br>
+    Post Handling Site B<br>
+    Wolverhampton<br>
+    WV99 1AH<br>
+    </p>
+
+    <h2 class="govuk-heading-m">If you’re in Northern Ireland</h2>
+
+    <p>Find out <a href="https://www.nidirect.gov.uk/articles/personal-independence-payment">how to claim if you live in Northern Ireland.</a></p>
+
+    <h2 class="govuk-heading-m">If you’re in Scotland</h2>
+
+    <p>You need to <a href="https://www.mygov.scot/adult-disability-payment">apply for Adult Disability Payment (ADP) instead.</a></p>
+
+
+
+<br>
+
+{{ govukButton({
+text: "Finish",
+classes: "govuk-!-margin-bottom-8"
+}) }}
+
+</div></div>
+</form>
+{% endblock %}

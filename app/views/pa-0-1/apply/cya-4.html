@@ -1,0 +1,550 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="section-submit" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl ">Check your answers [4]</h1>
+
+
+        <!-- Section 5 -->
+        <div class="govuk-!-padding-bottom-4">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Conditions or disabilities</h2>
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: "Condition or disability"
+                },
+                value: {
+                  html: "[XXX]"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "cya-change-example",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+        </div>
+
+<!-- Section 6 -->
+<div class="govuk-!-padding-bottom-4">
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Health and care professionals</h2>
+
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          html: "We can contact your health and care professionals"
+        },
+        value: {
+          html: "[XXX]"
+        },
+        actions: {
+          items: [
+            {
+              href: "cya-change-example",
+              text: "Change",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "⬤ Health and care professionals can share information to support your claim"
+        },
+        value: {
+          html: "[Yes] / [No]"
+        },
+        actions: {
+          items: [
+            {
+              href: "section-4-add-1",
+              text: "Change",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+      }
+    ]
+  }) }}
+
+
+<!-- HPC 1 -->
+<div>
+  <!-- <a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-add-1">First</a> <br><br> -->
+
+  {% if data["section-4-add-1"] == "Yes" %}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: "⬤ " + data['section-4-hcp-1-1']
+      },
+      actions: {
+        items: [
+          {
+            href: "section-4-hcp-1",
+            text: "Change",
+            visuallyHiddenText: "of University of Bristol"
+          },
+          {
+            href: "section-4-hcp-1-remove",
+            text: "Remove",
+            visuallyHiddenText: "from University of Bristol"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Name"
+        },
+        value: {
+          html: data['section-4-hcp-1-1']
+        }
+      },
+      {
+        key: {
+          text: "Profession"
+        },
+        value: {
+          html: data['section-4-hcp-1-2']
+        }
+      },
+      {
+        key: {
+          text: "Phone number"
+        },
+        value: {
+          html: data['section-4-hcp-1-3']
+        }
+      },
+      {
+        key: {
+          text: "Address"
+        },
+        value: {
+          html: data['section-4-hcp-1-4']
+        }
+      },
+      {
+        key: {
+          text: "When you last spoke to them"
+        },
+        value: {
+          html: data['section-4-hcp-1-5']
+        }
+      }
+    ]
+  }) }}
+
+    {% else %}
+  Hidden
+    {% endif %}
+</div>
+
+<!-- HPC 2 -->
+<div>
+
+  {% if data["section-4-add-2"] == "Yes" %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      html: "⬤ " + data['section-4-hcp-2-1']
+    },
+    actions: {
+      items: [
+        {
+          href: "section-4-hcp-2",
+          text: "Change",
+          visuallyHiddenText: "of University of Bristol"
+        },
+        {
+          href: "section-4-hcp-2-remove",
+          text: "Remove",
+          visuallyHiddenText: "from University of Bristol"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: data['section-4-hcp-2-1']
+      }
+    },
+    {
+      key: {
+        text: "Profession"
+      },
+      value: {
+        html: data['section-4-hcp-2-2']
+      }
+    },
+    {
+      key: {
+        text: "Phone number"
+      },
+      value: {
+        html: data['section-4-hcp-2-3']
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: data['section-4-hcp-2-4']
+      }
+    },
+    {
+      key: {
+        text: "When you last spoke to them"
+      },
+      value: {
+        html: data['section-4-hcp-2-5']
+      }
+    }
+  ]
+}) }}
+
+{% else %}
+Hidden
+{% endif %}
+
+</div>
+
+<!-- HPC 3 -->
+<div>
+{% if data["section-4-add-3"] == "Yes" %}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: "⬤ " + data['section-4-hcp-3-1']
+        },
+        actions: {
+          items: [
+            {
+              href: "section-4-hcp-3",
+              text: "Change",
+              visuallyHiddenText: "of University of Bristol"
+            },
+            {
+              href: "section-4-hcp-3-remove",
+              text: "Remove",
+              visuallyHiddenText: "from University of Bristol"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: data['section-4-hcp-3-1']
+          }
+        },
+        {
+          key: {
+            text: "Profession"
+          },
+          value: {
+            html: data['section-4-hcp-3-2']
+          }
+        },
+        {
+          key: {
+            text: "Phone number"
+          },
+          value: {
+            html: data['section-4-hcp-3-3']
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: data['section-4-hcp-3-4']
+          }
+        },
+        {
+          key: {
+            text: "When you last spoke to them"
+          },
+          value: {
+            html: data['section-4-hcp-3-5']
+          }
+        }
+      ]
+    }) }}
+
+    {% else %}
+  Hidden
+    {% endif %}
+</div>
+
+
+{% if data["section-4-add-3"] == "No" and data["section-4-add-2"] == "No" and data["section-4-add-1"] == "No"%}
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-1">Add a health and care professional</a>
+
+{% elif data["section-4-add-3"] == "No" %}
+Add third
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-3">Add another health and care professional</a>
+
+{% elif data["section-4-add-2"] == "No"%}
+If if one is added
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+    {% elif data["section-4-add-1"] == "No" %}
+If none is added = Blank
+    {% else %}
+    <a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+    {% endif %}
+
+
+  </div>
+
+
+<br><br>
+  <!-- Section 6 -->
+  <div class="govuk-!-padding-bottom-4">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Health and care accommodation</h2>
+
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "Staying in hospital, hospice, care or nursing home, or other accommodation"
+                    },
+                    value: {
+                      text: "[XXX]"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "cya-change-example",
+                          text: "Change",
+                          visuallyHiddenText: "name"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+    <p style="color:blue;">⬤ Conditional = Hospital </p>
+
+
+                    {{ govukSummaryList({
+                      rows: [
+                        {
+                          key: {
+                            html: "⬤ When you went into hospital"
+                          },
+                          value: {
+                            text: "[XXX]"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "cya-change-example",
+                                text: "Change",
+                                visuallyHiddenText: "date of birth"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          key: {
+                            text: "⬤ Hospital address	"
+                          },
+                          value: {
+                            text: "[XXX]"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "cya-change-example",
+                                text: "Change",
+                                visuallyHiddenText: "address"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }) }}
+
+
+  <p style="color:red;">⬤ Conditional = Hospice </p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          text: "⬤ When you went into the hospice"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Hospice address	"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "address"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+  <p style="color:magenta;">⬤ Conditional = Care or nursing home </p>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "⬤ When you went into care or nursing home"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Care or nursing home address"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+                  <p style="color:green;">⬤ Conditional = Other </p>
+
+                                  {{ govukSummaryList({
+                                    rows: [
+                                      {
+                                        key: {
+                                          text: "⬤ When you went into this accommodation"
+                                        },
+                                        value: {
+                                          text: "[XXX]"
+                                        },
+                                        actions: {
+                                          items: [
+                                            {
+                                              href: "cya-change-example",
+                                              text: "Change",
+                                              visuallyHiddenText: "XXX"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        key: {
+                                          text: "⬤ Accommodation address"
+                                        },
+                                        value: {
+                                          text: "[XXX]"
+                                        },
+                                        actions: {
+                                          items: [
+                                            {
+                                              href: "cya-change-example",
+                                              text: "Change",
+                                              visuallyHiddenText: "address"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ]
+                                  }) }}
+
+
+</div>
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

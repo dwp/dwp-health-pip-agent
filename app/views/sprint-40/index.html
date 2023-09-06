@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+          Sprint 40
+        <span class="govuk-caption-xl">Created new prototype to validate new concepts with case managers within PIP.</span>
+
+{{ govukDetails({
+          summaryText: "Notes on this sprint",
+          html: '
+          <p>This sprint we:</p>
+
+          <ul class="govuk-list  govuk-list--bullet">
+              <li></li>
+              <li></li>
+          </ul>'
+
+                  }) }}
+
+
+
+                  <h3 class="govuk-heading-m">Minimum viable product prototype</h3>
+                  <p>This is the start of the 'MVP' prototype<br><br>
+
+                  {{ govukButton({
+                    text: "Start MVP prototype",
+                    href: "/sprint-40/minimum-viable-product/contact-details"
+                  }) }}
+                </p>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-2" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl ">Check your answers (1)</h1>
+
+
+<!-- Section 1 -->
+<div class="govuk-!-padding-bottom-4">
+  <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Section 1</h2> -->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Do you need help from someone else to communicate with us?"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Do you usually need help from someone else to fill in forms or understand letters?	"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "⬤ Is someone helping you with this claim?"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Name of the person helping you"
+              },
+              value: {
+                html: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+
+</div>
+
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

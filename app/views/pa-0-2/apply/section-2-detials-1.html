@@ -1,0 +1,105 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-2" method="post" class="form">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Enter your details</h1>
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-4">What is your full name?</h2>
+
+          {{ govukInput({
+            label: {
+              html: ''
+            },
+            id: "section-2-detials-1",
+            name: "section-2-detials-1",
+            classes: "govuk-!-margin-bottom-6"
+
+            }) }}
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH2Q3 %}
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Your National Insurance number</h2>
+              {% endset %}
+            <!------------Legend--------------->
+
+            {{ govukInput({
+              label: {
+                html: dynamicH2Q3
+              },
+              hint: {
+                html: "It's on your National Insurance card, benefit letter payslip or P60.<br>For example QQ 12 34 56 Q"
+              },
+              id: "section-2-detials-2",
+              name: "section-2-detials-2",
+              classes: "govuk-!-margin-bottom-6 govuk-input--width-10"
+              }) }}
+
+
+              {{ govukDateInput({
+                id: "section-2-detials-3",
+                namePrefix: "section-2-detials-3",
+                fieldset: {
+                  legend: {
+                    text: "What is your date of birth?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m govuk-!-padding-bottom-0"
+                  }
+              },
+              hint: {
+                text: "For example, 31 5 2020"
+              },
+              items: [
+                {
+                  name: "day",
+                  classes: "govuk-input--width-2",
+                  value: data["section-2-detials-3-day"]
+                },
+                {
+                  name: "month",
+                  classes: "govuk-input--width-2",
+                  value: data["section-2-detials-3-month"]
+                },
+                {
+                  name: "year",
+                  classes: "govuk-input--width-4",
+                  value: data["section-2-detials-3-year"]
+                }
+              ]
+            }) }}
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

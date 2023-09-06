@@ -1,0 +1,78 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/prototype-admin/clear-data" method="post" class="form">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Motability Scheme</h1>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Motability Scheme lets disabled people lease a car, scooter or powered wheelchair using all or some of their PIP mobility payments.</p>
+
+<p>The scheme is operated by a not for profit organisation and is regulated by the Motability Charity.</p>
+
+<p>If you would like more information we will share your name and address with the scheme operators.</p>
+
+<p>If you're eligible and do not apply for the scheme, they will send you information about it in the post in around 12 months.</p>
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  idPrefix: "section-mobility",
+  name: "section-mobility",
+  fieldset: {
+    legend: {
+      text: "If eligible, would you like the Motability Scheme to send you information about it?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["section-mobility"] == "Yes")
+  },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["section-mobility"] == "No")
+    }
+  ]
+}) }}
+
+<p>If you change your mind about receiving Motability Scheme information contact the Department for Work and Pensions (DWP). We will send you an email when you submit your claim which will include these contact details.</p>
+
+<h2 class="govuk-heading-m govuk-!-padding-top-6 govuk-!-margin-bottom-2">Submit the first stage of your claim</h2>
+<p>You are now ready to submit the first stage of your claim.</p>
+
+
+{{ govukButton({
+  text: "Submit",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

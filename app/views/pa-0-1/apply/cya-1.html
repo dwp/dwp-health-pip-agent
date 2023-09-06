@@ -1,0 +1,126 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="section-2-detials-1" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl ">Check your answers [1]</h1>
+
+
+<!-- Section 1 -->
+<div class="govuk-!-padding-bottom-4">
+  <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> Section 1</h2> -->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Need help to communicate with us"
+              },
+              value: {
+                html: data['section-1-detials-1']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-1-detials",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Need help with forms or letters"
+              },
+              value: {
+                html: data['section-1-detials-2']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-1-detials",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "⬤ Someone helping you with this claim"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Helper's name"
+              },
+              value: {
+                html: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+
+</div>
+
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

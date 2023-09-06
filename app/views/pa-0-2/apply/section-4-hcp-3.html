@@ -1,0 +1,135 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-4" method="post" class="form">
+        <input type="hidden" name="section-4-add-3" value="Yes">
+
+        <h1 class="govuk-heading-xl ">Add a health and care professional</h1>
+
+        <!------------H1 LEGEND------------>
+          {% set dynamicH2Q1 %}
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Name of health and care professional</h2>
+          {% endset %}
+        <!------------Legend--------------->
+
+        {{ govukInput({
+          label: {
+            html: dynamicH2Q1
+          },
+          hint: {
+            html: ""
+          },
+          id: "section-4-hcp-3-1",
+          name: "section-4-hcp-3-1",
+          classes: "govuk-!-margin-bottom-6 govuk-input--width-10",
+          value: data["section-4-hcp-3-1"]
+          }) }}
+
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicH2Q2 %}
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Profession</h2>
+            {% endset %}
+          <!------------Legend--------------->
+
+          {{ govukInput({
+            label: {
+              html: dynamicH2Q2
+            },
+            hint: {
+              html: "For example, GP, hospital doctor, specialist nurse, community psychiatric nurse, occupational therapist, physiotherapist, social worker, counsellor or support worker."
+            },
+            id: "section-4-hcp-3-2",
+            name: "section-4-hcp-3-2",
+            classes: "govuk-!-margin-bottom-6 govuk-input--width-10",
+            value: data["section-4-hcp-3-2"]
+            }) }}
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH2Q3 %}
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Contact number</h2>
+              {% endset %}
+            <!------------Legend--------------->
+
+            {{ govukInput({
+              label: {
+                html: dynamicH2Q3
+              },
+              hint: {
+                html: ""
+              },
+              id: "section-4-hcp-3-3",
+              name: "section-4-hcp-3-3",
+              classes: "govuk-!-margin-bottom-6 govuk-input--width-10",
+              value: data["section-4-hcp-3-3"]
+              }) }}
+
+              <!------------H1 LEGEND------------>
+                {% set dynamicH2Q4 %}
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Postcode</h2>
+                {% endset %}
+              <!------------Legend--------------->
+
+              {{ govukInput({
+                label: {
+                  html: dynamicH2Q4
+                },
+                hint: {
+                  html: "This is where you see them such as a health centre, GP surgery or hospital address."
+                },
+                id: "section-4-hcp-3-4",
+                name: "section-4-hcp-3-4",
+                classes: "govuk-!-margin-bottom-6 govuk-input--width-10",
+                value: data["section-4-hcp-3-4"]
+                }) }}
+
+                <!------------H1 LEGEND------------>
+                  {% set dynamicH2Q5 %}
+                  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">When did you last speak to them?</h2>
+                  {% endset %}
+                <!------------Legend--------------->
+
+                <!-- {{ govukInput({
+                  label: {
+                    html: dynamicH2Q5
+                  },
+                  hint: {
+                    html: "This can be approximate – for example, March 2021 or 18 months ago."
+                  },
+                  id: "section-4-hcp-3-5",
+                  name: "section-4-hcp-3-5",
+                  classes: "govuk-!-margin-bottom-6 govuk-input--width-10",
+                  value: data["section-4-hcp-3-5"]
+                  }) }} -->
+
+        {{ govukButton({
+          text: "Save and continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+      </form>
+    </div>
+  </div>
+<!-- [3] -->
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+
+{% endblock %}

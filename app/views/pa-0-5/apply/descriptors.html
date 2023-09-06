@@ -1,0 +1,230 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="descriptors-outcome" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Personal Independence Payment (PIP)</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Answer the questions related to each activity to assess yourself. This will help you understand if you may be entitled to PIP.</p>
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number-pip"></span>Daily living
+      </h2>
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+        <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="descriptors-1" aria-describedby="task-1">
+              <!-- [1-1]  --> Preparing food
+            </a>
+            {% if data["descriptors-1"] %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+            {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-2" aria-describedby="task-2">
+            <!-- [1-2]  --> Taking nutrition
+          </a>
+          {% if data["descriptors-2"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-3" aria-describedby="task-3">
+            <!-- [1-3]  --> Managing therapy
+          </a>
+          {% if data["descriptors-3"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-4" aria-describedby="task-4">
+            <!-- [1-4]  --> Washing and bathing
+          </a>
+          {% if data["descriptors-4"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-5" aria-describedby="task-5">
+            <!-- [1-5]  --> Managing toilet needs
+          </a>
+          {% if data["descriptors-5"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-6" aria-describedby="task-6">
+            <!-- [1-6]  --> Dressing and undressing
+          </a>
+          {% if data["descriptors-6"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-7" aria-describedby="task-7">
+            <!-- [1-7]  --> Communicating verbally
+          </a>
+          {% if data["descriptors-7"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-8" aria-describedby="task-8">
+            <!-- [1-8]  --> Reading and understanding signs, symbols and words
+          </a>
+          {% if data["descriptors-8"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-9" aria-describedby="task-9">
+            <!-- [1-9]  --> Engaging face to face
+          </a>
+          {% if data["descriptors-9"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="descriptors-10" aria-describedby="task-10">
+            <!-- [1-10]  --> Budgeting
+          </a>
+          {% if data["descriptors-10"] %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+          {% else %}
+          <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+      </ul>
+
+      </li>
+    </ol>
+
+      <ol class="app-task-list">
+        <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number-pip"></span>Mobility
+        </h2>
+        <ul class="app-task-list__items app-task-list__items-pip">
+
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="descriptors-11" aria-describedby="task-11">
+              <!-- [1-11]  --> Planning and following journeys
+            </a>
+            {% if data["descriptors-11"] %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+            {% endif %}
+          </li>
+
+          <li class="app-task-list__item">
+            <a class="app-task-list__task-name" href="descriptors-12" aria-describedby="task-12">
+              <!-- [1-12]  --> Moving around
+            </a>
+            {% if data["descriptors-12"] %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag--green" id="X">Done</strong>
+            {% else %}
+            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+            {% endif %}
+          </li>
+
+
+        </ul>
+
+        </li>
+      </ol>
+
+
+
+          <!------------ ––– ------------>
+
+      </div>
+    </div>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data["descriptors-12"] %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Submit your answers</h1>
+    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We will tell you if you may be entitled to PIP based on your answers.</p>
+
+    {{ govukButton({
+    name: "process-c-nil-task-list",
+    value: "X",
+    checked: (data["X"] == "X"),
+    text: "Continue",
+    classes: "govuk-!-margin-right-2"
+    }) }}
+<!-- href:"application-1-forms" -->
+
+    {% else %}
+
+
+
+    {% endif %}
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

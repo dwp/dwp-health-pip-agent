@@ -1,0 +1,528 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="section-3-detials-1" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl ">Check your answers [2]</h1>
+
+
+<!-- Section 2 -->
+<div class="govuk-!-padding-bottom-4">
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> Personal details</h2>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: data["section-2-detials-1"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-2-detials",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "National Insurance number"
+              },
+              value: {
+                text: data["section-2-detials-2"]
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-2-detials",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: data['section-2-detials-3-day'] + ' ' + (data['section-2-detials-3-month'] | getMonth) + ' ' + data['section-2-detials-3-year']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-2-detials",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      </div>
+
+      <div class="govuk-!-padding-bottom-4">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> Contact details</h2>
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Address"
+                },
+                value: {
+                  text: "[XXX]"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "cya-change-example",
+text: "Change",
+                      text: "Change",
+                      visuallyHiddenText: "contact details"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Can write to this address"
+                },
+                value: {
+                  text: "[YES] / [NO]"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "cya-change-example",
+text: "Change",
+                      text: "Change",
+                      visuallyHiddenText: "contact details"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "⬤ Alternative address"
+                },
+                value: {
+                  text: "[XXX]"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "cya-change-example",
+                      text: "Change",
+                      visuallyHiddenText: "contact details"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Mobile number"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "◼ Alternative number (optional)"
+              },
+              value: {
+                html: "[XXX / Not give]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "◼ Textphone (optional)"
+              },
+              value: {
+                html: "[XXX / Not give]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Want text updates about claim"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      </div>
+
+      <div class="govuk-!-padding-bottom-4">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> Payment details</h2>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Can provide bank, building society or credit union account details"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Name on the account"
+              },
+              value: {
+                html: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Sort code"
+              },
+              value: {
+                html: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Account number"
+              },
+              value: {
+                html: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ ◼ Building society roll number"
+              },
+              value: {
+                html: "[XXX / Not give]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+      </div>
+
+      <div class="govuk-!-padding-bottom-4">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2"> Alternative formats</h2>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Need communications in another format"
+              },
+              value: {
+                html: "[Yes] / [No]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+<p style="color:red;">⬤ Conditional = Braille </p>
+
+                {{ govukSummaryList({
+                  rows: [
+                    {
+                      key: {
+                        html: "⬤ Braille format needed"
+                      },
+                      value: {
+                        html: "[XXX]"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "cya-change-example",
+                            text: "Change",
+                            visuallyHiddenText: "name"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+  <p style="color:blue;">⬤ Conditional = Sign language </p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ Type of sign language needed"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+  <p style="color:green;">⬤ Conditional = Audio </p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ Audio format needed"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+    <p style="color:orange;">⬤ Conditional = Paper and other formats</p>
+
+                    {{ govukSummaryList({
+                      rows: [
+                        {
+                          key: {
+                            html: "⬤ Which other format do you need?"
+                          },
+                          value: {
+                            html: "[XXX]"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "cya-change-example",
+                                text: "Change",
+                                visuallyHiddenText: "name"
+                              }
+                            ]
+                          }
+                        },
+                    {
+                          key: {
+                            html: "⬤ Colour paper needed"
+                          },
+                          value: {
+                            html: "[XXX]"
+                          },
+                          actions: {
+                            items: [
+                              {
+                                href: "cya-change-example",
+                                text: "Change",
+                                visuallyHiddenText: "name"
+                              }
+                            ]
+                          }
+                        },
+                    {
+                  key: {
+                    html: "⬤ Custom font needed"
+                  },
+                  value: {
+                    html: "[XXX]"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "cya-change-example",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                    {
+                      key: {
+                        html: "⬤ Email address"
+                      },
+                      value: {
+                        html: "[XXX]"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "cya-change-example",
+                            text: "Change",
+                            visuallyHiddenText: "name"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        html: "⬤ Other format needed"
+                      },
+                      value: {
+                        html: "[XXX]"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "cya-change-example",
+                            text: "Change",
+                            visuallyHiddenText: "name"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+
+</div>
+
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

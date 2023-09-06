@@ -1,0 +1,69 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <form action="section-1-detials" method="post" class="form">
+
+        <!-- <p class="govuk-heading-xl govuk-!-margin-bottom-6">We need some help from you</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This is an extract of the full service so some questions are missing</p> -->
+
+{{ govukRadios({
+  idPrefix: "scenario-selections",
+  name: "scenario-selections",
+  fieldset: {
+    legend: {
+      text: "Select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "A",
+    text: "Scenario 1",
+    checked: (data["scenario-selections"] == "A")
+  },
+  {
+    value: "A",
+    text: "Scenario 2",
+    checked: (data["scenario-selections"] == "A")
+  }
+  ]
+}) }}
+
+
+
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="alt-formats-comms-format" class="govuk-link" rel="">New alt formats</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="accessibility-statement" class="govuk-link" rel="">Accessibility statement</a></p>
+<br>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+</form>
+
+{% endblock %}

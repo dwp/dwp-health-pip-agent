@@ -1,0 +1,247 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-4" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl ">Check your answers (3)</h1>
+
+
+<!-- Section 4 -->
+<div class="govuk-!-padding-bottom-4">
+  <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Section 4</h2> -->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "What is your nationality?"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+        <p style="color:red;">⬤ Conditional = British / Irish</p>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "⬤ Have you been in the UK for at least 2 of the last 3 years?"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "⬤ Do any of the following apply to you or a family member?"
+              },
+              value: {
+                text: "[XXX]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "cya-change-example",
+text: "Change",
+                    text: "Change",
+                    visuallyHiddenText: "address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+  <p style="color:cyan;">⬤ Conditional = EEA</p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ What is your nationality?"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          html: "⬤ Did you start living in the UK before 1 January 2021?"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Have you been in the UK for at least 2 of the last 3 years?"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Do any of the following apply to you or a family member?"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "address"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+  <p style="color:yellow;">⬤ Conditional = Other nationality</p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ What is your nationality? (Asked twice, dropdown)"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Have you been in the UK for at least 2 of the last 3 years?"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Do any of the following apply to you or a family member?"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+
+</div>
+
+
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

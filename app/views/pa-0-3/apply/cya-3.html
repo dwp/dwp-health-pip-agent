@@ -1,0 +1,213 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="section-4-add-concent" method="post" class="form">
+
+        <h1 class="govuk-heading-xl ">Check your answers</h1>
+
+
+<!-- Section 4 -->
+<div class="govuk-!-padding-bottom-4">
+  <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Section 4</h2> -->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                html: data['section-3-detials-1-1']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-3-detials-1",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+              },
+              {
+              key: {
+                text: "Been in UK for at least 2 of last 3 years"
+              },
+              value: {
+                text: data['section-3-detials-2-1']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "section-3-detials-2",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+  <!-- <p style="color:cyan;">⬤ Conditional = EEA</p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ Selected nationality"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          html: "⬤ Started living in UK before 1 January 2021"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Been in UK for at least 2 of last 3 years"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Pension, benefit, work or insurance in an EEA country or Switzerland"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "address"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }}
+
+  <p style="color:yellow;">⬤ Conditional = Other nationality</p>
+
+                  {{ govukSummaryList({
+                    rows: [
+                      {
+                        key: {
+                          html: "⬤ Selected nationality"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Been in UK for at least 2 of last 3 years"
+                        },
+                        value: {
+                          html: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "name"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        key: {
+                          text: "⬤ Pension, benefit, work or insurance in an EEA country or Switzerland"
+                        },
+                        value: {
+                          text: "[XXX]"
+                        },
+                        actions: {
+                          items: [
+                            {
+                              href: "cya-change-example",
+                              text: "Change",
+                              visuallyHiddenText: "date of birth"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }) }} -->
+
+
+</div>
+
+
+
+
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+</form>
+</div>
+</div>
+
+{% endblock %}

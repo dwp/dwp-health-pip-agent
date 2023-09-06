@@ -1,0 +1,71 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-3" method="post" class="form">
+
+        {{ govukRadios({
+          idPrefix: "section-3-detials-2-1",
+          name: "section-3-detials-2-1",
+          fieldset: {
+            legend: {
+              text: "Have you been in the UK for at least 2 of the last 3 years?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "The UK is England, Scotland, Wales and Northern Ireland."
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-3-detials-2-1"] == "1")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-3-detials-2-1"] == "2")
+            },
+              {
+                value: "I'm not sure",
+                text: "I'm not sure",
+                checked: (data["section-3-detials-2-1"] == "3")
+              }
+          ]
+        }) }}
+
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

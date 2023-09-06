@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-1/call-status.html" %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-1/record-id.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "agent-0-1/record-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The agent will see a history of the person's applications for benefits, and the status of each one.</p>
+
+
+
+    <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-25-percent">Submission date</td>
+        <td class="govuk-table__cell govuk-50-percent">Benefit</td>
+        <td class="govuk-table__cell govuk-25-percent">Status</td>
+      </tr>
+      </thead>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">18 Aug 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Back from AP awaiting decision</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">TO DO</strong>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">01 Aug 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Personal Independence Payment</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">In progress</strong>
+        </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">...</td>
+
+            <td class="govuk-table__cell table-spacer">...</td>
+
+            <td class="govuk-table__cell table-spacer">...</tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">02 Jan 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Personal Independence Payment</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-bad" id="eligibility-completed">Rejected</strong>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">06 Aug 2018</td>
+
+        <td class="govuk-table__cell table-spacer">Personal Independence Payment</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">25 July 2017</td>
+
+        <td class="govuk-table__cell table-spacer">Personal Independence Payment</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong>
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">20 July 2016</td>
+
+        <td class="govuk-table__cell table-spacer">Personal Independence Payment</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong>
+        </tr>
+
+      </table>
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

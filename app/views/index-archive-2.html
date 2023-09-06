@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+PIP / Index
+{% endblock %}
+
+{% set serviceName = "PIP case review" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+      <h1 class="govuk-heading-xl">
+        PIP Case Review
+        <span class="govuk-caption-xl">Running on {{releaseVersion}} of the GOV.UK prototype kit</span>
+      </h1>
+
+      <h1 class="govuk-heading-l">Latest versions of prototype</h1>
+
+      <p><a href="/v12/case-review/">Left hand navigation idea</a> &nbsp; <strong class="govuk-tag">EXPERIMENTAL</strong>
+      <br> </p>
+      <hr><br>
+  <h2 class="govuk-heading-m">Case review - MVP</h2>
+      <p><b>Version 11: Last updated November 2022</b><br>
+        - Added supporting documents page with external link<br>
+        - Added country to all addresses within claimant's personal details<br>
+        - Removed questions and answers functionality from conditions and activities<br>
+        - Removed 'In review' status label from the top right of key details bar<br>
+        - Removed crown logo from footer as this is an internal service.<br>
+        - Added NINO to contact details page and aproximate start dates to conditions list page <br>
+      </p>
+
+      {{ govukButton({
+        text: "Start case review MVP",
+        classes: "govuk-button--primary",
+        href: "/v11/case-review/personal-details"
+      }) }}
+      <p><b>Version 11a:</b> <a href="/v11/case-review/personal-details2">Alternative personal details page</a> with external link to Magpies supporting documents.<br><br></p>
+      <hr>
+      <h2 class="govuk-heading-m">Case review - Add questions</h2>
+      <p><b>Version 10: June 2022</b><br>Removed questions section and replicated the functionality onto the summary page (now called questions and answers).<br>
+      Added answer column on each of the questions on the bottom of each condition and activity pages.<br> </p>
+
+      {{ govukButton({
+        text: "Start case review",
+        classes: "govuk-button--primary",
+        href: "/v10/case-review/personal-details"
+      }) }}
+
+      <hr>
+        <h2 class="govuk-heading-m">Case review - Answer questions</h2>
+      <p><b>Version 10: June 2022</b><br> Second prototype to answer pre-entered questions.<br>
+      Important this button sets the questions to an unanswered state first. <br>The test will start for the user from the subsequent summary page. (<a href="http://localhost:3000/v10/case-review/summary2">Summary2</a>)</p>
+
+      {{ govukButton({
+        text: "Reset questions and complete case review",
+        classes: "govuk-button--primary",
+        href: "/v10/case-review/answer0"
+      }) }}
+      <hr>
+
+
+
+<h2 class="govuk-heading-m">Case selector (descoped)</h2>
+<p><b>Version 10: May 2022</b><br>This Case selector is parked until the Chaffinch version is reviewed and compared.</p>
+
+      {{ govukButton({
+          text: "Case selector",
+          href: "/v10/case-selector/cases-for-triage"
+      }) }}
+
+<hr>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

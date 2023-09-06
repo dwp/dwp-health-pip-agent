@@ -1,0 +1,218 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="/prototype-admin/clear-data" method="post" class="form">
+
+
+
+
+{% if   (data["descriptors-10"] == "descriptors-10-a" or data["descriptors-10"] == "descriptors-10-b") and (data["descriptors-12"] == "descriptors-12-a" or data["descriptors-12"] == "descriptors-12-b" or data["descriptors-12"] == "descriptors-12-c") %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+            Based on your answers, you may not be entitled to PIP
+          </h1>
+          <p class="govuk-body govuk-!-margin-bottom-4">You have assessed yourself as not being entitled to PIP.</p>
+          <p class="govuk-body govuk-!-margin-bottom-8">This does not mean you will definitely not receive PIP. The Department for Work and Pensions (DWP) may assess you differently and reach a different outcome.</p>
+
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-4">What happens next</h1>
+
+          <p class="govuk-body govuk-!-margin-bottom-4"><a href="https://www.gov.uk/check-benefits-financial-support">Find out what other benefits and financial support you may be able to get</a> to help with your living costs.</p>
+
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Apply for PIP</h1>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">You can still apply for PIP online.</p>
+
+          <p class="govuk-body">To start your claim online you’ll need your:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>National Insurance number</li>
+            <li>email address</li>
+            <li>mobile phone</li>
+          </ul>
+
+          {{ govukButton({
+            text: "Apply online",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+          <p class="govuk-body govuk-!-margin-bottom-4"><a href="https://www.gov.uk/pip/how-to-claim">Find out how to apply by phone or post</a>.</p>
+
+
+</div>
+</div>
+
+{% elif (data["descriptors-10"] == "descriptors-10-c" or data["descriptors-10"] == "descriptors-10-d") and (data["descriptors-12"] == "descriptors-12-d" or data["descriptors-12"] == "descriptors-12-e" or data["descriptors-12"] == "descriptors-12-f") %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      Based on your answers, you may be entitled to PIP
+
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-4">You have assessed yourself as being entitled to PIP.</p>
+    <p class="govuk-body govuk-!-margin-bottom-8">This does not mean you will definitely receive PIP. The Department for Work and Pensions (DWP) may assess you differently and reach a different outcome.</p>
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">What happens next</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-4">You can apply for PIP online.</p>
+
+    <p class="govuk-body">To start your claim online you’ll need your:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>National Insurance number</li>
+      <li>email address</li>
+      <li>mobile phone</li>
+    </ul>
+
+    {{ govukButton({
+      text: "Apply online",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+    <p class="govuk-body govuk-!-margin-bottom-4"><a href="https://www.gov.uk/pip/how-to-claim">Find out how to apply by phone or post</a>.</p>
+
+</div>
+</div>
+
+{% elif (data["descriptors-10"] == "descriptors-10-a" or data["descriptors-10"] == "descriptors-10-b") and (data["descriptors-12"] == "descriptors-12-d" or data["descriptors-12"] == "descriptors-12-e" or data["descriptors-12"] == "descriptors-12-f") %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+            Based on your answers, you may be entitled to PIP
+
+          </h1>
+          <p class="govuk-body govuk-!-margin-bottom-4">You have assessed yourself as being entitled to PIP.</p>
+          <p class="govuk-body govuk-!-margin-bottom-8">This does not mean you will definitely receive PIP. The Department for Work and Pensions (DWP) may assess you differently and reach a different outcome.</p>
+
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-4">What happens next</h1>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">You can apply for PIP online.</p>
+
+          <p class="govuk-body">To start your claim online you’ll need your:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>National Insurance number</li>
+            <li>email address</li>
+            <li>mobile phone</li>
+          </ul>
+
+          {{ govukButton({
+            text: "Apply online",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+<p class="govuk-body govuk-!-margin-bottom-4"><a href="https://www.gov.uk/pip/how-to-claim">Find out how to apply by phone or post</a>.</p>
+
+
+</div>
+</div>
+
+{% elif (data["descriptors-10"] == "descriptors-10-c" or data["descriptors-10"] == "descriptors-10-d") and (data["descriptors-12"] == "descriptors-12-a" or data["descriptors-12"] == "descriptors-12-b" or data["descriptors-12"] == "descriptors-12-c") %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">
+      Based on your answers, you may be entitled to PIP
+
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-4">You have assessed yourself as being entitled to PIP.</p>
+    <p class="govuk-body govuk-!-margin-bottom-8">This does not mean you will definitely receive PIP. The Department for Work and Pensions (DWP) may assess you differently and reach a different outcome.</p>
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-4">What happens next</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-4">You can apply for PIP online.</p>
+
+    <p class="govuk-body">To start your claim online you’ll need your:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>National Insurance number</li>
+      <li>email address</li>
+      <li>mobile phone</li>
+    </ul>
+
+    {{ govukButton({
+      text: "Apply online",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+    <p class="govuk-body govuk-!-margin-bottom-4"><a href="https://www.gov.uk/pip/how-to-claim">Find out how to apply by phone or post</a>.</p>
+
+</div>
+</div>
+
+
+{% else %}
+Nothing selected
+
+{% endif %}
+
+<!-- If you say A-b on 10 is less than eight
+data["descriptors-1"] == "descriptors-1-a"
+
+C and D is standard
+
+If you say a-c on 12 its less than eight
+data["descriptors-1"] == "descriptors-12-a
+
+d e f its standard -->
+
+<!-- <div>
+Workings for values
+{% if data["descriptors-10"] == "descriptors-10-a" or data["descriptors-10"] == "descriptors-10-b"%}
+I am under 8 pts
+
+{% elif data["descriptors-10"] == "descriptors-10-c" or data["descriptors-10"] == "descriptors-10-d"%}
+I am an award for Daily
+
+{% else %}
+Nothing selected
+
+{% endif %}
+<br><br><br><br><br><br>
+</div> -->
+
+
+<!-- <div>
+  Workings for values
+
+{% if data["descriptors-12"] == "descriptors-12-a" or data["descriptors-12"] == "descriptors-12-b" or data["descriptors-12"] == "descriptors-12-c" %}
+I am under 8 pts
+
+{% elif data["descriptors-12"] == "descriptors-12-d" or data["descriptors-12"] == "descriptors-12-e" or data["descriptors-12"] == "descriptors-12-f" %}
+I am an award for mobility
+
+{% else %}
+Nothing selected
+
+{% endif %}
+</div> -->
+
+
+
+
+  {{ govukButton({
+    text: "Finish test",
+    classes: "govuk-button--secondary govuk-!-margin-top-8 govuk-!-margin-bottom-8"
+  }) }}
+
+
+</form>
+{% endblock %}

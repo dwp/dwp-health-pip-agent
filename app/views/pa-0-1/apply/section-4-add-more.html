@@ -1,0 +1,149 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl ">Section 4 of 4 </h1>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This is an extract of the full service,<br>some questions are missing</p>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        {% if data["section-4-add-1"] == "No" %}
+
+        <form action="section-4-add-1-router" method="post" class="form">
+          <input type="hidden" name="section-4-add-1" value="Yes">
+
+        {{ govukRadios({
+          idPrefix: "section-4-add-1",
+          name: "section-4-add-1",
+          fieldset: {
+            legend: {
+              text: "Do you agree that your health and care professionals can share relevant information about your health conditions to support your claim?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-4-add-1"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-4-add-1"] == "No")
+            }
+          ]
+        }) }}
+
+        {% else %}
+      Hidden
+        {% endif %}
+
+        {% if data["section-4-add-1"] == "Yes"%}
+
+        <form action="section-4-add-2-router" method="post" class="form">
+          <input type="hidden" name="section-4-add-2" value="Yes">
+
+        {{ govukRadios({
+          idPrefix: "section-4-add-2",
+          name: "section-4-add-2",
+          fieldset: {
+            legend: {
+              text: "Would you like to add another health care professional(2)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "XXX"
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-4-add-2"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-4-add-2"] == "No")
+            }
+          ]
+        }) }}
+
+        {% else %}
+      Hidden
+        {% endif %}
+
+        {% if data["section-4-add-3"] == "No" %}
+
+        <form action="section-4-add-3-router" method="post" class="form">
+          <input type="hidden" name="section-4-add-3" value="Yes">
+
+        {{ govukRadios({
+          idPrefix: "section-4-add-3",
+          name: "section-4-add-3",
+          fieldset: {
+            legend: {
+              text: "Would you like to add another health care professional(3)?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "The UK is England, Scotland, Wales and Northern Ireland."
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-3-detials-3"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-3-detials-3"] == "No")
+            }
+          ]
+        }) }}
+
+        {% else %}
+      Hidden
+        {% endif %}
+
+        {{ govukButton({
+          text: "Save and continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+      </form>
+
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+
+{% endblock %}

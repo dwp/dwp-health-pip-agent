@@ -1,0 +1,97 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="cya-1" method="post" class="form">
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Help with applying</h1>
+
+
+        {{ govukRadios({
+          idPrefix: "section-1-detials-1",
+          name: "section-1-detials-1",
+          fieldset: {
+            legend: {
+              text: "Do you need help from someone else to communicate with us?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "This could include help with talking, listening, writing or understanding information that we might send to you"
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-1-detials-1"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-1-detials-1"] == "No")
+            }
+          ]
+        }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "section-1-detials-2",
+          name: "section-1-detials-2",
+          fieldset: {
+            legend: {
+              text: "Do you need help to fill in forms or understand letters?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["section-1-detials-2"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["section-1-detials-2"] == "No")
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Save and continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

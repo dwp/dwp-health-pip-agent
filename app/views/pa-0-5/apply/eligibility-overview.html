@@ -1,0 +1,42 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="eligibility-method" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-heading-xl govuk-!-margin-bottom-6">Check if you're eligible<br>for PIP</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Answer a few questions to find out if you may be eligible for PIP.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can also check if you can claim online. This is a new online service which we are testing with a limited number of people.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">If you're helping someone else, answer the questions as if you're them.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="eligibility-sign-in" class="govuk-link" rel="noreferrer noopener">Sign in</a> if you've already started an online claim or had an email inviting you to.</p>
+
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">If you might have 12 months<br>or less to live</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">If you might have 12 months or less to live there is a different way to claim. This is so you can get PIP more quickly.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="#" class="govuk-link" rel="noreferrer noopener">How to claim if you have 12 months or less to live</a></p>
+
+    </div>
+  </div>
+
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
+</form>
+{% endblock %}

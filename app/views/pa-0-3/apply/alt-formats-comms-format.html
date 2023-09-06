@@ -1,0 +1,69 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="alt-formats-comms-format-router" method="post" class="form">
+
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "alt-formats-comms-format",
+          name: "alt-formats-comms-format",
+          fieldset: {
+            legend: {
+              html: "Do you need communications in another format?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "This means things we might send you, like letters and leaflets. Other formats could be braille, sign language, audio, paper and other formats."
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["alt-formats-comms-format"] == "Yes")
+          },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["alt-formats-comms-format"] == "No")
+            }
+          ]
+        }) }}
+
+
+
+        <!------------ ––– ------------>
+
+        <!-- <p class="govuk-heading-m govuk-!-margin-bottom-2">Statement</p>
+        <p class="govuk-hint govuk-!-margin-bottom-6">Probs not needed</p> -->
+
+    </div>
+  </div>
+
+
+
+  {{ govukButton({
+    text: "Save and continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
+  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
+
+</form>
+
+{% endblock %}

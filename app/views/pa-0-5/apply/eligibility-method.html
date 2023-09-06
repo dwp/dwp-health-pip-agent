@@ -1,0 +1,56 @@
+{% extends "layout-apply-ur.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="eligibility-method-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        idPrefix: "eligibility-method",
+        name: "eligibility-method",
+        fieldset: {
+          legend: {
+            text: "What do you want to do?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+
+        
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "eligibility",
+          text: "Check if I'm eligible for PIP and if I can claim online",
+          checked: (data["eligibility-method"] == "eligibility")
+        },
+        {
+          value: "postcode",
+          text: "Just check if I can claim PIP online",
+          checked: (data["eligibility-method"] == "postcode")
+        }
+        ]
+      }) }}
+
+
+  </div>
+</div>
+
+
+
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
+</form>
+{% endblock %}

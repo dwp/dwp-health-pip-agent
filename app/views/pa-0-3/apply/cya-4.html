@@ -1,0 +1,533 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  PIP: Name Name
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/js-back-link.html" %}
+
+
+<!-- DYANMIC STYLES -->
+{% if data["scenario-selections"] == "A" and data["section-4-add-2"] == "No"%}
+        <style>
+
+          .govuk-summary-card__action  {
+            border-right: 0;
+            padding-right: 0;
+          }
+
+        </style>
+        {% elif data["section-4-add-1"] == "Yes" or data["section-4-add-2"] == "Yes" or data["section-4-add-2"] == "Yes" %}
+
+{% elif data["scenario-selections"] == "B"%}
+
+{% endif %}
+<!-- DYANMIC STYLES -->
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="section-mobility-submit" method="post" class="form">
+
+
+        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+        <!-- Section 5 -->
+        <!-- <div class="govuk-!-padding-bottom-4">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">(H2) Conditions or disabilities</h2>
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: "Condition or disability"
+                },
+                value: {
+                  html: "[XXX]"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "cya-change-example",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+        </div> -->
+
+<!-- Section 6 -->
+<div class="govuk-!-padding-bottom-4">
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Consent</h2>
+
+  {% if data["scenario-selections"] == "A"%}
+
+  {{ govukSummaryList({
+    rows: [
+      {
+        key: {
+          html: "We can contact your health and care professionals"
+        },
+        value: {
+          html: data['section-4-add-concent']
+        },
+        actions: {
+          items: [
+            {
+              href: "section-4-add-concent",
+              text: "Change",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+        }
+    ]
+  }) }}
+
+  {% elif data["scenario-selections"] == "B"%}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "Can contact your health and care professionals"
+            },
+            value: {
+              html: data['section-4-add-concent']
+            },
+            actions: {
+              items: [
+                {
+                  href: "section-4-add-concent",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+            }
+        ]
+      }) }}
+
+      {% if data["section-4-add-1"]%}
+      {{ govukSummaryList({
+        rows: [
+        {
+            key: {
+              text: "Want to provide health and care professional details"
+            },
+            value: {
+              html: data['section-4-add-1']
+            },
+            actions: {
+              items: [
+                {
+                  href: "section-4-add-1",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      {% else %}
+      {% endif %}
+
+  {% endif %}
+
+
+<!-- HPC 1 -->
+<div>
+  <!-- <a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-add-1">First</a> <br><br> -->
+
+  {% if data["section-4-add-1"] == "Yes"%}
+
+
+  {% if data["scenario-selections"] == "A" %}
+
+      <div> <!-- DYNAMIC REMOVE -->
+        {% if data["section-4-add-2"] == "No"%}
+        <!-- A is active this should be none remove -->
+
+        {% set DynamicRemove %}
+        {% endset %}
+
+        {% elif data["section-4-add-2"] == "Yes" or data["section-4-add-3"] == "Yes"%}
+
+          {% set DynamicRemove %}
+          Remove
+          {% endset %}
+
+        {% endif %}
+
+        </div>
+
+{% else %}
+        <!-- XXX -->
+
+{% endif %}
+
+
+        <!------------Legend--------------->
+        <h1 class="govuk-heading-m">Health and care professionals</h1>
+
+{% if data["scenario-selections"] == "A" %}
+<!-- A -->
+
+
+<div> <!-- A HCP 1-->
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: data['section-4-hcp-1-1']
+          },
+          actions: {
+            items: [
+              {
+                href: "section-4-hcp-1",
+                text: "Change",
+                visuallyHiddenText: "Change David Davidson"
+              },
+              {
+                href: "section-4-hcp-1-remove",
+                html: DynamicRemove,
+                visuallyHiddenText: "Remove David Davidson"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              html: data['section-4-hcp-1-1']
+            }
+          },
+          {
+            key: {
+              text: "Profession"
+            },
+            value: {
+              html: data['section-4-hcp-1-2']
+            }
+          },
+          {
+            key: {
+              text: "Phone number"
+            },
+            value: {
+              html: data['section-4-hcp-1-3']
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: data['section-4-hcp-1-4']
+            }
+          }
+        ]
+      }) }}
+</div> <!-- A HCP 1-->
+
+{% elif data["scenario-selections"] == "B" %}
+<!-- B -->
+<div> <!-- B HCP 1-->
+      {{ govukSummaryList({
+        card: {
+          title: {
+            html: data['section-4-hcp-1-1']
+          },
+          actions: {
+            items: [
+              {
+                href: "section-4-hcp-1",
+                text: "Change",
+                visuallyHiddenText: "Change David Davidson"
+              },
+              {
+                href: "section-4-hcp-1-remove",
+                html: "Remove",
+                visuallyHiddenText: "Remove David Davidson"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              html: data['section-4-hcp-1-1']
+            }
+          },
+          {
+            key: {
+              text: "Profession"
+            },
+            value: {
+              html: data['section-4-hcp-1-2']
+            }
+          },
+          {
+            key: {
+              text: "Phone number"
+            },
+            value: {
+              html: data['section-4-hcp-1-3']
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: data['section-4-hcp-1-4']
+            }
+          }
+        ]
+      }) }}
+      {% endif %}
+</div> <!-- B HCP 1-->
+{% else %}
+  <!-- Hidden [1] -->
+{% endif %}
+
+
+<!-- HPC 2 -->
+<div>
+
+  {% if data["section-4-add-2"] == "Yes" %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      html: data['section-4-hcp-2-1']
+    },
+    actions: {
+      items: [
+        {
+          href: "section-4-hcp-2",
+          text: "Change",
+          visuallyHiddenText: "Change Joe Blogs"
+        },
+        {
+          href: "section-4-hcp-2-remove",
+          text: "Remove",
+                visuallyHiddenText: "Remove Joe Blogs"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        html: data['section-4-hcp-2-1']
+      }
+    },
+    {
+      key: {
+        text: "Profession"
+      },
+      value: {
+        html: data['section-4-hcp-2-2']
+      }
+    },
+    {
+      key: {
+        text: "Phone number"
+      },
+      value: {
+        html: data['section-4-hcp-2-3']
+      }
+    },
+    {
+      key: {
+        text: "Address"
+      },
+      value: {
+        html: data['section-4-hcp-2-4']
+      }
+    }
+  ]
+}) }}
+
+{% else %}
+<!-- Hidden [2] -->
+{% endif %}
+
+</div>
+
+<!-- HPC 3 -->
+<div>
+{% if data["section-4-add-3"] == "Yes" %}
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: data['section-4-hcp-3-1']
+        },
+        actions: {
+          items: [
+            {
+              href: "section-4-hcp-3",
+              text: "Change",
+              visuallyHiddenText: "of University of Bristol"
+            },
+            {
+              href: "section-4-hcp-3-remove",
+              text: "Remove",
+              visuallyHiddenText: "from University of Bristol"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: data['section-4-hcp-3-1']
+          }
+        },
+        {
+          key: {
+            text: "Profession"
+          },
+          value: {
+            html: data['section-4-hcp-3-2']
+          }
+        },
+        {
+          key: {
+            text: "Phone number"
+          },
+          value: {
+            html: data['section-4-hcp-3-3']
+          }
+        },
+        {
+          key: {
+            text: "Address"
+          },
+          value: {
+            html: data['section-4-hcp-3-4']
+          }
+        }
+      ]
+    }) }}
+
+    {% else %}
+  <!-- Hidden [3] -->
+    {% endif %}
+</div>
+
+
+{% if data["scenario-selections"] == "A"%}
+
+<!-- If scenarios 1-3 -->
+<!-- Scenario [A]<br> -->
+
+{% if data["section-4-add-3"] == "No" and data["section-4-add-2"] == "No" and data["section-4-add-1"] == "No"%}
+<!-- Add HCP -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-1">Add a health and care professional</a>
+
+{% elif data["section-4-add-3"] == "No" or data["section-4-add-2"] == "No" and data["section-4-add-1"] == "Yes"%}
+<!-- One  added, no more form Primary -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+{% elif data["section-4-add-3"] == "Yes" and data["section-4-add-2"] == "Yes" and data["section-4-add-1"] == "Yes"%}
+<!-- Three added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-3">Add another health and care professional</a>
+
+{% elif data["section-4-add-3"] == "No" or data["section-4-add-2"] == "Yes" and data["section-4-add-3"] == "Yes"%}
+<!-- Two added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-3">Add another health and care professional</a>
+
+{% elif data["section-4-add-2"] == "No"%}
+<!-- One added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+{% elif data["section-4-add-1"] == "No" %}
+<!-- None added -->
+{% elif data["section-4-add-concent"] == "No" %}
+<!-- None added -->
+{% else %}
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+<!-- Last -->
+{% endif %}
+
+<!-- If scenarios 4-5 -->
+{% elif data["scenario-selections"] == "B"%}
+<!-- Scenario [B]<br> -->
+
+{% if data["section-4-add-3"] == "No" and data["section-4-add-2"] == "No" and data["section-4-add-1"] == "No"%}
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-1">Add a health and care professional</a>
+
+{% elif data["section-4-add-3"] == "No" or data["section-4-add-2"] == "No" and data["section-4-add-1"] == "Yes"%}
+<!-- One  added, no more form Primary -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+{% elif data["section-4-add-3"] == "Yes" and data["section-4-add-2"] == "Yes" and data["section-4-add-1"] == "Yes"%}
+<!-- Three added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-3">Add another health and care professional</a>
+
+{% elif data["section-4-add-3"] == "No" or data["section-4-add-2"] == "Yes" and data["section-4-add-3"] == "Yes"%}
+<!-- Two added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-3">Add another health and care professional</a>
+
+{% elif data["section-4-add-2"] == "No"%}
+<!-- One added -->
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+
+{% elif data["section-4-add-1"] == "No" %}
+<!-- None added -->
+{% elif data["section-4-add-concent"] == "No" %}
+<!-- None added -->
+{% else %}
+<a class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0" href="section-4-hcp-2">Add another health and care professional</a>
+<!-- Last -->
+{% endif %}
+
+{% endif %}
+
+
+ 
+  </div>
+
+  {{ govukButton({
+    text: "Confirm and save",
+    classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-6"
+  }) }}
+
+
+</form>
+</div>
+</div>
+
+<!-- {% if data["scenario-selections"] == "A"%}
+[A]
+{% elif data["scenario-selections"] == "B"%}
+[B]
+{% endif %} -->
+
+{% endblock %}
