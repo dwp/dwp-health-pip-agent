@@ -23,14 +23,14 @@
       {% include "agent-0-1/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I've found your record. I just have a few more questions</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">I've found the record. I just have a few more questions</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
 
 
 
       {{ govukRadios({
-        idPrefix: "application-1-outcome-letter-check",
-        name: "application-1-outcome-letter-check",
+        idPrefix: "inbound-1-security-0",
+        name: "inbound-1-security-0",
         fieldset: {
           legend: {
             html: "What is your favourite film?",
@@ -46,17 +46,17 @@
         {
           value: "Yes",
           text: "Point Break",
-          checked: (data["application-1-outcome-letter-check"] == "Yes")
+          checked: (data["inbound-1-security-0"] == "Yes")
         },
         {
           value: "No",
-          text: "Not Point Break",
-          checked: (data["application-1-outcome-letter-check"] == "No")
+          text: "Not not Point Break",
+          checked: (data["inbound-1-security-0"] == "No")
         },
         {
           value: "Dont know",
           text: "Don't know",
-          checked: (data["application-1-outcome-letter-check"] == "Dont know")
+          checked: (data["inbound-1-security-0"] == "Dont know")
         }
         ]
       }) }}
@@ -65,11 +65,11 @@
 
 
       {{ govukRadios({
-        idPrefix: "application-1-outcome-letter-check",
-        name: "application-1-outcome-letter-check",
+        idPrefix: "inbound-1-security-1",
+        name: "inbound-1-security-1",
         fieldset: {
           legend: {
-            html: "What is your favourite film?",
+            html: "What year was Point Break released?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -81,18 +81,18 @@
         items: [
         {
           value: "Yes",
-          text: "Point Break",
-          checked: (data["application-1-outcome-letter-check"] == "Yes")
+          text: "1991",
+          checked: (data["inbound-1-security-1"] == "Yes")
         },
         {
           value: "No",
-          text: "Not Point Break",
-          checked: (data["application-1-outcome-letter-check"] == "No")
+          text: "1981",
+          checked: (data["inbound-1-security-1"] == "No")
         },
         {
           value: "Dont know",
           text: "Don't know",
-          checked: (data["application-1-outcome-letter-check"] == "Dont know")
+          checked: (data["inbound-1-security-1"] == "Dont know")
         }
         ]
       }) }}
