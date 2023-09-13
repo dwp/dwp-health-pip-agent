@@ -27,7 +27,12 @@
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Contact telephone number: <strong>07700 900457</strong></p>
 
 
-      <div class="govuk-button-group ">
+      {{ govukButton({
+        text: "Start call",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      <!-- <div class="govuk-button-group ">
         {{ govukButton({
           text: "Start call",
           classes: "govuk-!-margin-bottom-8"
@@ -39,6 +44,9 @@
         classes: "govuk-button--secondary",
         href: "record-1-overview"
         }) }}
+
+        </div>
+      </div> -->
 
         </div>
       </div>
