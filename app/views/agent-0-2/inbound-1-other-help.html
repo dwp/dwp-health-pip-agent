@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+<!-- S1 -->
+{% if data["inbound-1-greeting"] %}
+
+          <!-- S1 L2 -->
+          {% if data["inbound-1-greeting"]%}
+            {% include "explore-header-global-nav-multi-call.html" %}
+          {% else %}
+            {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+
+<!-- S2 -->
+{% elif data["application-selector"] == "2"%}
+
+          <!-- S2 L2 -->
+          {% if data["application-selector"] == "2"%}
+            {% include "explore-header-global-nav-multi-call-outbound.html" %}
+          {% else %}
+            {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+  <!-- PreCall -->
+{% elif data["outbound-precall"] == "Yes"%}
+
+          <!-- PreCall L2 -->
+          {% if data["outbound-precall"] == "Yes"%}
+              {% include "explore-header-global-nav-multi-call-outbound.html" %}
+          {% else %}
+              {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+{% else %}
+<!-- Clear -->
+
+
+{% endif %}
+
+{% endblock %}
+{% block content %}
+
+<form action="inbound-1-end-call-exit" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Other help</h1>
+      <p class="govuk-body govuk-!-font-size-24  govuk-!-margin-bottom-8">There might be something else we can help the you with</p>
+
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+              text: "Help with the cost of living"
+            },
+            content: {
+              html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "Help with heating your home"
+            },
+            content: {
+              html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "Help with the Blue Badge"
+            },
+            content: {
+              html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "General help with benefits"
+            },
+            content: {
+              html: "<p class='govuk-body'>This is the content for How people read.</p>"
+            }
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukRadios({
+        idPrefix: "inbound-1-other-help",
+        name: "inbound-1-other-help",
+        fieldset: {
+          legend: {
+            html: "Any other help needed?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Something in here if more context is needed"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["inbound-1-other-help"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["inbound-1-other-help"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
