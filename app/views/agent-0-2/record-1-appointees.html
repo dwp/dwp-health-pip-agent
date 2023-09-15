@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block header %}
-  {% include "agent-0-1/call-status.html" %}
+  {% include "agent-0-2/call-status.html" %}
 {% endblock %}
 {% block content %}
 
 
-<!-- {% if data["appointees-lpa"] %}
+{% if data["appointees-lpa"] %}
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code 'V-AB12-CD34-EF56' has been added to the record.</p>
@@ -23,7 +23,7 @@
 
 {% else %}
 
-{% endif %} -->
+{% endif %}
 
 
 
@@ -33,14 +33,14 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="login-router" method="post" class="form">
 
-      {% include "agent-0-1/record-id.html" %}
+      {% include "agent-0-2/record-id.html" %}
 
 
     </div>
   </div>
 
 
-    {% include "agent-0-1/record-navigation.html" %}
+    {% include "agent-0-2/record-navigation.html" %}
 
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Appointees and helpers</h3>
