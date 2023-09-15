@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+<!-- {% if data["appointees-lpa"] %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code 'V-AB12-CD34-EF56' has been added to the record.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+
+{% endif %} -->
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-1/record-id.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "agent-0-1/record-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Appointees and helpers</h3>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This will be here if the person has an appointee or helper. The agent will see and can edit their information.</p>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            text: "Sarah Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Type of helper"
+          },
+          value: {
+            text: "Lasting Power of Attorney"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "LPA code"
+          },
+          value: {
+            text: data["appointees-lpa"]
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-appointees-update",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Contact details"
+          },
+          value: {
+            html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

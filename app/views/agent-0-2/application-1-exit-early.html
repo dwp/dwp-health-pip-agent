@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+<form action="entry-home" method="post" class="form">
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You've paused a task and your work is saved</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You can return to an application you've started<br> using <a class="" href="my-open-tasks">My Open Tasks</a></p>
+
+
+
+
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Return to My home pge",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        <!-- {{ govukButton({
+        name: "process-c-nil-task-list",
+        value: "UF",
+        checked: (data["process-c-nil-task-list"] == "UF"),
+        text: "My Open Tasks",
+        classes: "govuk-button--secondary",
+        href: "my-open-tasks"
+        }) }} -->
+      </div>
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
