@@ -5,7 +5,11 @@
 {% endblock %}
 
 {% block header %}
- {% include "explore-header-global-nav-multi.html" %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -43,6 +47,17 @@
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="application-1-task-t4" aria-describedby="task-1">
+            <!-- [1-1]  --> Bank details
+          </a>
+          {% if data["application-1-task-t4"] == "Done" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["application-1-task-t4"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["application-1-task-t4"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="application-1-task-t4" aria-describedby="task-1">
             <!-- [1-1]  --> Appointees and Powers of Attorney
           </a>
           {% if data["application-1-task-t4"]%}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
@@ -65,16 +80,7 @@
           {% else %}                                 <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="application-1-task-t4" aria-describedby="task-1">
-            <!-- [1-1]  --> Bank details
-          </a>
-          {% if data["application-1-task-t4"] == "Done" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["application-1-task-t4"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["application-1-task-t4"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
-          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
-          {% endif %}
-        </li>
+
 
       </ul>
 
