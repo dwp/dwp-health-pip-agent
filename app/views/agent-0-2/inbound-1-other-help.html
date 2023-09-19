@@ -53,18 +53,26 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Other help</h1>
-      <p class="govuk-body govuk-!-font-size-24  govuk-!-margin-bottom-8">There might be something else we can help the you with</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">How can I help you?</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24  govuk-!-margin-bottom-8">How can I help you?</p> -->
 
       {{ govukAccordion({
         id: "accordion-default",
         items: [
+        {
+          heading: {
+            text: "PIP eligibility"
+          },
+          content: {
+            html: "<p class='govuk-body'>You can get PIP at the same time as all other benefits, except Armed Forces Independence Payment.</p>"
+          }
+        },
           {
             heading: {
               text: "Help with the cost of living"
             },
             content: {
-              html: "<p class='govuk-body'>This is the content for Writing well for the web.</p>"
+              html: "<p class='govuk-body'>Go to www.gov.uk/cost-of-living for more information.</p>"
             }
           },
           {
@@ -72,7 +80,7 @@
               text: "Help with heating your home"
             },
             content: {
-              html: "<p class='govuk-body'>This is the content for Writing well for specialists.</p>"
+              html: "<p class='govuk-body'>You could get £150 off your electricity bill for winter 2022 to 2023 under the Warm Home Discount Scheme.</p>"
             }
           },
           {
@@ -80,7 +88,7 @@
               text: "Help with the Blue Badge"
             },
             content: {
-              html: "<p class='govuk-body'>This is the content for Know your audience.</p>"
+              html: "<p class='govuk-body'>Contact your local council for questions about the Blue Badge scheme.</p>"
             }
           },
           {
@@ -88,7 +96,7 @@
               text: "General help with benefits"
             },
             content: {
-              html: "<p class='govuk-body'>This is the content for How people read.</p>"
+              html: "<p class='govuk-body'>Go to www.gov.uk/check-benefits-financial-support to find out what support you might be able to get.</p>"
             }
           }
         ]
@@ -101,13 +109,13 @@
         name: "inbound-1-other-help",
         fieldset: {
           legend: {
-            html: "Any other help needed?",
+            html: "Can I help you with anything else?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
         hint: {
-          text: "Something in here if more context is needed"
+          text: ""
         },
         classes: "govuk-radios",
         items: [
