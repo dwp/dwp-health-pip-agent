@@ -18,7 +18,12 @@
                   </div>
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
                     <p class="govuk-body govuk-!-font-weight-bold">Queries and disputes</p>
-                    <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="inbound-1-greeting">Take an inbound call</a><a class="govuk-body govuk-!-font-size-19" href="application-1-exit-bail-call"> .</a></p>
+
+                    {% if data["application-selector"] == "1" %} <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="application-1-exit-bail-call">Take an inbound call BAIL</a>
+                    {% else %}                                   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="inbound-1-greeting">Take an inbound call</a>
+
+                    {% endif %}
+
                     <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="outbound-precall">Make an outbound call</a></p>
                     <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="find-someone-1-offline-gather">Find someone</a></p>
 

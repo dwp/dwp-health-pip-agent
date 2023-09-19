@@ -4,8 +4,12 @@
 {% if data["application-selector"] == "1"%}
 
           <!-- S1 L2 -->
-          {% if data["application-selector"] == "1"%}
-            {% include "explore-header-global-nav-multi-call-outbound.html" %}
+
+          {% if data["find-someone-1-return"] == "Yes" and data["application-selector"] == "3"%}
+          {% include "explore-header-global-nav-multi-call.html" %}
+
+          {% elif data["application-selector"] == "1"%}
+            {% include "explore-header-global-nav-multi-call.html" %}
           {% else %}
             {% include "explore-header-global-nav-multi.html" %}
           {% endif %}
