@@ -66,13 +66,6 @@
         <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">In progress</strong>
         </tr>
 
-        {% elif data["appointees-lpa-check"] == "Yes" %}
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell table-spacer">Today</td>
-          <td class="govuk-table__cell table-spacer">Lasting power of attorney (LPA) access code was added</td>
-          <td class="govuk-table__cell table-spacer">None
-          </tr>
-
 
       {% else %}
       <tr class="govuk-table__row">
@@ -81,6 +74,15 @@
         <td class="govuk-table__cell table-spacer">None</td>
         </tr>
       {% endif %}
+
+      {% if data["appointees-lpa-check"] == "Yes" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Lasting power of attorney (LPA) access code was added</td>
+        <td class="govuk-table__cell table-spacer">None
+        </tr>
+        {% else %}
+        {% endif %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">18 Aug 2023</td>
