@@ -12,14 +12,27 @@
 
 {% if data["appointees-lpa"] %}
 
-{% set html %}
-<p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code 'V-AB12-CD34-EF56' has been added to the record.</p>
-{% endset %}
+  {% set html %}
+  <p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code '{{data["appointees-lpa"]}}' has been added to the record.</p>
+  {% endset %}
 
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
+
+{% elif data["appointees-telephone"] %}
+
+  {% set html %}
+  <p class="govuk-body govuk-!-font-size-19">A new number has been added '{{data["appointees-telephone"]}}' has been added to the record.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
 
 {% else %}
 
@@ -47,6 +60,18 @@
 
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This will be here if the person has an appointee or helper. The agent will see and can edit their information.</p>
 
+
+    {% set SetTelephone %}
+      {% if data["appointees-telephone"] %}
+        {{data["appointees-telephone"]}}
+      {% else %}
+        <p class="govuk-body">07700 900457</p>
+      {% endif %}
+    {% endset -%}
+
+
+
+
     {{ govukSummaryList({
       rows: [
         {
@@ -54,7 +79,7 @@
             text: "Name"
           },
           value: {
-            text: "Sarah Philips"
+            text: "Julianne Moore"
           },
           actions: {
             items: [
@@ -102,10 +127,27 @@
         },
         {
           key: {
-            text: "Contact details"
+            text: "Telephone"
           },
           value: {
-            html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+            html: SetTelephone
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-appointees-telephone",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            html: '<p class="govuk-body">julianne.moore@example.com</p>'
           },
           actions: {
             items: [
@@ -119,6 +161,8 @@
         }
       ]
     }) }}
+
+
 
 
 
