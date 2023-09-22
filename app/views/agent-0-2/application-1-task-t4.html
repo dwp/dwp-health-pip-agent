@@ -5,7 +5,11 @@
 {% endblock %}
 
 {% block header %}
- {% include "explore-header-global-nav-multi.html" %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
 {% endblock %}
 
 {% block content %}
