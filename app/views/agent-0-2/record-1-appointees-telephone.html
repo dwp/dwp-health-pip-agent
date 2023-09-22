@@ -20,7 +20,7 @@
       {% include "agent-0-2/record-id.html" %}
 
       {% set LegendH1 %}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is your new telephone number?</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is your telephone number?</h1>
       {% endset -%}
 
       {{ govukInput({
@@ -28,7 +28,7 @@
           html: LegendH1
         },
           hint: {
-            text: "For example, XXX"
+            text: ""
           },
         id: "appointees-telephone",
         name: "appointees-telephone",
