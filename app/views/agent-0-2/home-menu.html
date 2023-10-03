@@ -5,17 +5,14 @@
 
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                    <p class="govuk-body govuk-!-font-weight-bold">Managing workload</p>
+                    <p class="govuk-body govuk-!-font-weight-bold">                      {{govukTag({
+                                              text: "New",
+                                              classes: "govuk-tag--green"
+                                            })}} &hairsp;Managing workload</p>
 
-                    {% if data["request-access"] == "6" %}
-                    <p class="govuk-!-margin-bottom-1">
-                      {{govukTag({
-                          text: "New",
-                          classes: "govuk-tag--green"
-                        })}} &hairsp;
-                         <a class="govuk-body govuk-!-font-size-19" href="team-lead-team-overview">My team</a></p>
-                      {% else %}
-                    {% endif %}
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="team-lead-team-overview">My team</a></p>
+                    <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="#">Approvals</a></p>
+
 
                   </div>
 
@@ -51,7 +48,7 @@
                           text: "New",
                           classes: "govuk-tag--green"
                         })}} &hairsp;
-                         <a class="govuk-body govuk-!-font-size-19" href="#">Disputes 1</a></p>
+                         <a class="govuk-body govuk-!-font-size-19" href="#">Disputes</a></p>
                       {% else %}
                     {% endif %}
                   </div>
