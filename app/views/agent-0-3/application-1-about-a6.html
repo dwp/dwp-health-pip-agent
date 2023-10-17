@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-1-about" method="post" class="form">
+<form action="application-1-about-a6-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -80,7 +80,7 @@
 
       {% set scoreOverwite %}
           {{ govukInput({
-            id: "score-overwrite-6",
+            id: "score-overwrite-a6",
             label: {
                 text: "What score do you want to give?",
                 classes: "govuk-fieldset__legend--m"
@@ -88,9 +88,9 @@
             hint: {
               text: "2, 4, 6 or 8"
             },
-                name: "score-overwrite-6",
+                name: "score-overwrite-a6",
                 classes: "govuk-input--width-4",
-                value: data["score-overwrite-6"]
+                value: data["score-overwrite-a6"]
             }) }}
 
       {% endset -%}

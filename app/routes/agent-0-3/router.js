@@ -170,6 +170,35 @@ router.post(`/outbound-precall-router`, (req, res) => {
   }
 })
 
+router.post(`/application-1-about-a6-router`, (req, res) => {
+  const aboutA6 = req.session.data['application-1-about-a6']
+
+  if (aboutA6 == 'No-change') {
+    res.redirect(`application-1-about`)
+  }
+  else if (aboutA6 == 'Amended') {
+    res.redirect(`application-1-about-a6-reason`)
+  }
+   else {
+    res.redirect(`application-1-about`)
+  }
+})
+
+
+router.post(`/application-1-about-a12-router`, (req, res) => {
+  const aboutA12 = req.session.data['application-1-about-a12']
+
+  if (aboutA12 == 'Agree') {
+    res.redirect(`application-1-about`)
+  }
+  else if (aboutA12 == 'Amended') {
+    res.redirect(`application-1-about-a12-reason`)
+  }
+   else {
+    res.redirect(`application-1-about`)
+  }
+})
+
 
 
 
