@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-1-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-1-about-a6"] == "No-change" %} Why did you given Making budgeting decisions a score of 6
+            {% elif data["application-1-about-a6"] == "Amended" %}You have amended the score of Dressing and undressing to {{ data["score-overwrite-a6"]}}
+            {% else %}
+            {% endif %}</h1>
+
+      {{ govukTextarea({
+        name: "application-1-about-a6-reason",
+        id: "application-1-about-a6-reason",
+        label: {
+          text: "Can you provide more detail?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
