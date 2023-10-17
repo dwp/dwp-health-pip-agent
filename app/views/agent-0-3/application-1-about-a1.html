@@ -2,87 +2,98 @@
 
 {% block pageTitle %}
   Process a PIP application
-
 {% endblock %}
 
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
 
 {% block content %}
 
+<form action="application-1-about-a-autofill" method="post" class="form">
+
   <div class="govuk-grid-row">
-    <form action="application-1-about" method="post" class="form">
 
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-3/record-id.html" %}
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Understand applicants ability when Preparing food</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Claimed for this activity.</p>
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Understand applicants ability when Preparing food</h1>
 
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">As asked in application</p>
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Asked</p>
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Does your condition affect you preparing food,<br> or prevent you from doing so?</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX</p>
         </div>
 
-        <div class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19govuk-!-margin-bottom-2">Answer from the citizen</p>
-
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
-          Yes
-        </p>
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">As asked in application</p>
-
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Tell us about the difficulties you have with <br>preparing food and how you manage them</p>
-        </div>
-
-        <div class="govuk-grid-column-one-half govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Answer from the citizen</p>
-
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
-            About twice a year, for about 3 weeks at a time I have difficulty remembering to turn the hob off because I get too distracted to complete tasks like this. My partner supervises me in the kitchen to make sure I stay safe.
-            <br><br>Every day, I have difficulty standing while preparing food because my leg is too stiff and painful. I need to use a perching stool so I can rest my leg while preparing food.
-
-        </p>
-        </div>
-      </div>
-
-<BR><BR><BR><BR><BR><BR><BR>
-
-      <div class="govuk-grid-row">
-        <div class="govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">As asked in application</p>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Does your condition affect you preparing food,<br> or prevent you from doing so?</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Answer from the citizen</p>
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Yes</p>
-
-        </div>
-
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">As asked in application</p>
-
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Tell us about the difficulties you have with <br>preparing food and how you manage them</p>
-
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Answer from the citizen</p>
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Response in application</p>
 
           <p class="govuk-body govuk-!-margin-bottom-2">
-            About twice a year, for about 3 weeks at a time I have difficulty remembering to turn the hob off because I get too distracted to complete tasks like this. My partner supervises me in the kitchen to make sure I stay safe.
-            <br><br>Every day, I have difficulty standing while preparing food because my leg is too stiff and painful. I need to use a perching stool so I can rest my leg while preparing food.
-        </p>
-
+XXX        </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+XXX        </p>
         </div>
       </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h1 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-4">Assessment report finding</h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+XXX        </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+XXX          </p>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">
+XXX        </p>
+
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1>
+
+
+        <!------------H1 LEGEND------------>
+          {% set legenDetails %}
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+
+            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+          </p>
+
+          {% endset %}
+        <!------------Legend--------------->
+
+        {{ govukDetails({
+          summaryText: "Contacting the assessment report provider",
+          classes: "govuk-!-margin-bottom-0",
+          html: legenDetails
+        }) }}
+
+<br><br>
+
+      {% set scoreOverwite %}
+          {{ govukInput({
+            id: "score-overwrite",
+            label: {
+                text: "What score would you give?",
+                classes: "govuk-fieldset__legend--m"
+            },
+            hint: {
+              text: "0, 2, 4 or 6"
+            },
+                name: "score-overwrite",
+                classes: "govuk-input--width-4",
+                value: data["score-overwrite"]
+            }) }}
+
+      {% endset -%}
+
 
 
       {{ govukRadios({
@@ -90,33 +101,38 @@
         name: "application-1-about-a1",
         fieldset: {
           legend: {
-            text: "Does this all make sense?",
+            text: "The assessment report has scored 6 points for this activity. Do you agree?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Are you worried about anything?"
+          text: ""
         },
         classes: "govuk-radios",
         items: [
         {
-          value: "Good",
-          text: "All looks good to me",
-          checked: (data["application-1-about-a1"] == "Good")
+          value: "Agree",
+          text: "Yes",
+          checked: (data["application-1-about-a1"] == "Agree")
         },
         {
-          value: "Bad",
-          text: "Something isnt right",
-          checked: (data["application-1-about-a1"] == "Bad")
-        },
-        {
+          value: "Amended",
+          text: "No",
+          checked: (data["application-1-about-a1"] == "Amended"),
+                conditional: {
+                  html: scoreOverwite
+                }
+                  },
+          {
           value: "Pause",
-          text: "Come back to this later",
+          text: "I need to come back to this later",
           checked: (data["application-1-about-a1"] == "Pause")
         }
         ]
       }) }}
+
+
 
       {{ govukButton({
         text: "Continue",
