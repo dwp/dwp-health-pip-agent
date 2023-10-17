@@ -43,7 +43,17 @@
       </tr>
       </thead>
 
-      {% if data["application-1-outcome-letter-check"] %}
+      {% if data["application-4-care-plan"]  == "Yes"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Outbound call</td>
+        <td class="govuk-table__cell table-spacer">Care plan requested, a new task  will be created once its received</td>
+        <td class="govuk-table__cell table-spacer">None</td>
+
+        </tr>
+
+      {% elif data["application-1-outcome-letter-check"] %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>

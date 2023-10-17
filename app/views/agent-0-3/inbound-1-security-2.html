@@ -10,9 +10,12 @@
 
 {% block content %}
 
-
   {% if data["application-selector"] == "3" %}
   <form action="application-3-lpa" method="post" class="form">
+
+    {% elif data["application-selector"] == "4" %}
+    <form action="application-4-care-plan" method="post" class="form">
+
   {% else %}
     <form action="record-1-overview" method="post" class="form">
   {% endif %}

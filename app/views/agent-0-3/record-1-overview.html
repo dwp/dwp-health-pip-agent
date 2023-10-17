@@ -9,7 +9,17 @@
 {% endblock %}
 {% block content %}
 
+{% if data["application-4-care-plan"]  == "Yes"%}
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">The Care plan has been requested, a note has been added to event history and a new task will be created when the Care Plan is recivied</p>
+{% endset %}
 
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+  {% endif %}
 
 
 <div class="govuk-grid-row">
@@ -31,11 +41,16 @@
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Overview</h3>
 
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong></strong> Application is ready for a decision.
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Application status: <strong>In progress</strong>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong> Application submitted:</strong> 1 August 2023
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Additional support:<strong> No</strong>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Accessablity support:<strong> No</strong>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Unacceptable customer behaviour:<strong> No</strong>
 
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>Assessment provider report received:</strong> 2 October 2023
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong> Application submitted:</strong> 1 August 2023 -->
+
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>Assessment provider report received:</strong> 2 October 2023 -->
 
   <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">View <a class="govuk-body govuk-!-font-size-24" href="record-1-applications">more details about application.</a> -->
 
