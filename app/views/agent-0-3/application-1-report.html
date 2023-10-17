@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+<form action="application-1-outcome" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds  ">
+
+      {% include "agent-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Review recommendations from the Assessment provider</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Claim submitted: 12 June 2023</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">X: XXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">X: X</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">X: X</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">X: X</p> -->
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-8 govuk-!-margin-bottom-2">Daily living</p>
+
+      <p class="govuk-!-margin-bottom-1">1 <a class="govuk-body govuk-!-font-size-19" href="XXX">Preparing food</a></p>
+      <p class="govuk-!-margin-bottom-1">2 <a class="govuk-body govuk-!-font-size-19" href="XXX">Taking nutrition</a></p>
+      <p class="govuk-!-margin-bottom-1">3 <a class="govuk-body govuk-!-font-size-19" href="XXX">Managing therapy</a></p>
+      <p class="govuk-!-margin-bottom-1">4 <a class="govuk-body govuk-!-font-size-19" href="XXX">Washing and bathing</a></p>
+      <p class="govuk-!-margin-bottom-1">5 <a class="govuk-body govuk-!-font-size-19" href="XXX">Managing toilet needs</a></p>
+      <p class="govuk-!-margin-bottom-1">6 <a class="govuk-body govuk-!-font-size-19" href="XXX">Dressing and undressing</a></p>
+      <p class="govuk-!-margin-bottom-1">7 <a class="govuk-body govuk-!-font-size-19" href="XXX">Communicating verbally</a></p>
+      <p class="govuk-!-margin-bottom-1">8 <a class="govuk-body govuk-!-font-size-19" href="XXX">Reading and understanding signs, symbols and words</a></p>
+      <p class="govuk-!-margin-bottom-1">9 <a class="govuk-body govuk-!-font-size-19" href="XXX">Engaging face to face</a></p>
+      <p class="govuk-!-margin-bottom-1">10 <a class="govuk-body govuk-!-font-size-19" href="XXX">Budgeting</a></p>
+      <p class="govuk-!-margin-bottom-1">11 <a class="govuk-body govuk-!-font-size-19" href="XXX">Daily living qualifying period and prospective test</a></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-8 govuk-!-margin-bottom-2">Mobility</p>
+
+      <p class="govuk-!-margin-bottom-1">12 <a class="govuk-body govuk-!-font-size-19" href="XXX">Planning and following journeys</a></p>
+      <p class="govuk-!-margin-bottom-1">13 <a class="govuk-body govuk-!-font-size-19" href="XXX">Moving around</a></p>
+      <p class="govuk-!-margin-bottom-1">14 <a class="govuk-body govuk-!-font-size-19" href="XXX">Mobility qualifying period and prospective test</a></p>
+
+    </div>
+  </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Preparing food</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Assessment provider<BR>score: <strong>6</strong></p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Recommendation</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet consequat diam, sed volutpat risus aliquam id. Donec congue gravida quam, in ornare velit tincidunt eu. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer maximus metus nec sapien feugiat, sit amet euismod leo rhoncus. Pellentesque a pulvinar odio. Maecenas lobortis sed ligula ut laoreet.
+          <br><br>
+          Nulla sit amet varius enim. Aliquam tellus sem, fringilla convallis imperdiet nec, elementum non velit. Quisque suscipit sem a commodo tincidunt. In ut metus vel metus placerat dapibus. <br><br>Donec convallis velit non turpis suscipit dignissim. Mauris eget ante at nunc molestie auctor et sed magna. Praesent urna leo, finibus egestas elit lacinia, vehicula rhoncus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum placerat purus tempus tempor elementum.
+        </p>
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Taking nutrition</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Assessment provider<BR> score: <strong>6</strong></p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Recommendation</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet consequat diam, sed volutpat risus aliquam id. Donec congue gravida quam, in ornare velit tincidunt eu. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer maximus metus nec sapien feugiat, sit amet euismod leo rhoncus. Pellentesque a pulvinar odio. Maecenas lobortis sed ligula ut laoreet.
+          <br><br>
+          Nulla sit amet varius enim. Aliquam tellus sem, fringilla convallis imperdiet nec, elementum non velit. Quisque suscipit sem a commodo tincidunt. In ut metus vel metus placerat dapibus. <br><br>Donec convallis velit non turpis suscipit dignissim. Mauris eget ante at nunc molestie auctor et sed magna. Praesent urna leo, finibus egestas elit lacinia, vehicula rhoncus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum placerat purus tempus tempor elementum.
+        </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Managing therapy</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Assessment provider<BR> score: <strong>6</strong></p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Recommendation</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet consequat diam, sed volutpat risus aliquam id. Donec congue gravida quam, in ornare velit tincidunt eu. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer maximus metus nec sapien feugiat, sit amet euismod leo rhoncus. Pellentesque a pulvinar odio. Maecenas lobortis sed ligula ut laoreet.
+          <br><br>
+          Nulla sit amet varius enim. Aliquam tellus sem, fringilla convallis imperdiet nec, elementum non velit. Quisque suscipit sem a commodo tincidunt. In ut metus vel metus placerat dapibus. <br><br>Donec convallis velit non turpis suscipit dignissim. Mauris eget ante at nunc molestie auctor et sed magna. Praesent urna leo, finibus egestas elit lacinia, vehicula rhoncus eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum placerat purus tempus tempor elementum.
+        </p>
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+    </div>
+
+
+
+
+
+
+
+
+  </form>
+
+{% endblock %}

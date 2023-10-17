@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="outbound-precall-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Making an outbound call</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Before you make an outbound call you need to do X, Y and Z.</p>
+
+      {{ govukRadios({
+        idPrefix: "outbound-precall",
+        name: "outbound-precall",
+        fieldset: {
+          legend: {
+            html: "Do you need do need to find a record before you make the call?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["outbound-precall"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["outbound-precall"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

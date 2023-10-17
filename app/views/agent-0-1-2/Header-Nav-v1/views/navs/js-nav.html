@@ -1,0 +1,93 @@
+{# {{ dwpHeader({
+  serviceHref: "/",
+  name: "Internal service name",
+  serviceUrl: "/",
+  action: "Sign out",
+  actionHref: "/",
+  container: true,
+  attributes: { 
+    "data-header-id": "some-id-name"
+  }
+}) }} #}
+
+<header id="header" class="govuk-header dwp-header" data-header-id="some-id-name" data-module="govuk-header">
+  <div class=" govuk-width-container ">
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <a href="/" class="govuk-header__link govuk-header__link--service-name">
+            Internal service name
+          </a>
+        </div>
+        <div class="govuk-grid-column-one-third dwp-header__container--action">
+           <a href="./#header-navigation" class="govuk-header__link action dwp-header-navigation__action dwp-header-navigation__nojs-mobile-nav-link ">
+            Menu
+          </a>  
+          <a href="/" class="govuk-header__link action">
+            Signout
+          </a> 
+        </div>
+      </div>
+    
+  </div>
+</header>
+
+
+{# Mobile navigation prototype
+  for any nav using tablet and mobile js nav requires:
+  1. data-module  - data attribute used to collect any navigation on the page (there should only ever be one header nav per page)
+  2. data-header - uniquly indentifies the internal services header where the menu button will be placed (there should only ever be one header per page)
+  3. dwp-header-navigation--js-nav - required css class for tablet and mobile styles - by default css not have apply mobile styling #}
+<nav id="header-navigation" class="dwp-header-navigation-v3 dwp-header-navigation--js-nav dwp-flex-item " data-module="dwp-header-nav" data-header="some-id-name" aria-label="Primary">
+  <ul>
+    <li>
+      <a href="#" class="current" aria-current="page">Tatooine</a>
+    </li>
+    <li>
+      <a href="#">Naboo</a>
+    </li>
+    <li>
+      <a href="#">Alderaan</a>
+    </li>
+    <li>
+      <a href="#">Bespin</a>
+    </li>
+    <li>
+      <a href="#">Cantonica</a>
+    </li>
+    <li>
+      <a href="#">Coruscant</a>
+    </li>
+    <li>
+      <a href="#">Endor</a>
+    </li>
+    <li>
+      <a href="#">Geonosis</a>
+    </li>
+    <li>
+      <a href="#">Jakku</a>
+    </li>
+    <li>
+      <a href="#">Kamino</a>
+    </li>
+    <li>
+      <a href="#">Mandalore</a>
+    </li>
+    <li>
+      <a href="#">Mustafar</a>
+    </li>
+  </ul>
+
+  <a class="govuk-link govuk-link--no-visited-state app-back-to-top" href="#header">
+    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>Back to top
+  </a>
+</nav>
+
+{% block pageScripts %}
+  <script src="/public/javascripts/components/internal-service-header-navigation/v3.js"></script>
+{% endblock %}
+
+
+
