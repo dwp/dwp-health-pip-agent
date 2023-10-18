@@ -44,16 +44,16 @@
         {% set dynamicList1 %}
 
         <ol class="govuk-list govuk-list--number">
-          <li>Preparing food: <br><strong>Score of 6 out of 8</strong></li>
-          <li>Taking nutrition: <br><strong>Score of 0 out of X</strong></li>
-          <li>Managing therapy or monitoring a health condition: <br><strong>Score of 2 out of X</strong></li>
-          <li>Washing and bathing: <br><strong>Score of 2 out of X</strong></li>
-          <li>Managing toilet needs or incontinence: <br><strong>Score of 2 out of X</strong></li>
-          <li>Dressing and undressing: <br><strong>Score of 2 out of X</strong></li>
-          <li>Communicating verbally: <br><strong>Score of 2 out of X</strong></li>
-          <li>Reading and understanding signs, symbols and words: <br><strong>Score of 0 out of X</strong></li>
-          <li>Engaging with other people face to face: <br><strong>Score of 2 out of X</strong></li>
-          <li>Making budgeting decisions: <br><strong>Score of 4 out of X</strong></li>
+          <li class="govuk-!-margin-bottom-2">Preparing food: <br><strong> 6 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Taking nutrition: <br><strong> 0 out of 10</strong></li>
+          <li class="govuk-!-margin-bottom-2">Managing therapy or monitoring a health condition: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Washing and bathing: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Managing toilet needs or incontinence: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Communicating verbally: <br><strong> 2 out of 12</strong></li>
+          <li class="govuk-!-margin-bottom-2">Reading and understanding signs, symbols and words: <br><strong> 0 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Engaging with other people face to face: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong> 4 out of 6</strong></li>
 
         </ol>
 
@@ -64,8 +64,8 @@
         {% set dynamicList2 %}
 
         <ol class="govuk-list govuk-list--number">
-          <li>Planning and following journeys: <br><strong>Score of 4 out of X</strong></li>
-          <li>Moving around: <br><strong>Score of 8 out of X</strong></li>
+          <li class="govuk-!-margin-bottom-2">Planning and following journeys: <br><strong> 4 out of 12</strong></li>
+          <li class="govuk-!-margin-bottom-2">Moving around: <br><strong> 8 out of 12</strong></li>
         </ol>
         {% endset %}
       <!------------Legend--------------->
@@ -94,7 +94,7 @@
               text: "Outcome"
             },
             value: {
-              html: "This is the highest award rate."
+              html: "Enhanced for Daily Living and enhanced for Mobility. <br><br>This is the highest award rate."
             }
           },
           {
@@ -124,7 +124,7 @@
           },
           {
             key: {
-              text: "Daily Living"
+              html: "Score breakdown<br>for Daily Living"
             },
             value: {
               html: dynamicList1
@@ -132,7 +132,7 @@
           },
           {
             key: {
-              text: "Mobility"
+              html: "Score breakdown<br>for Mobility"
             },
             value: {
               html: dynamicList2
