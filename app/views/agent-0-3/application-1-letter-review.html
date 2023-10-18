@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+<form action="entry-home" method="post" class="form">
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is content of the letter that will be sent, check before you send</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Do a thing</p>
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}</strong></p> -->
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Sarah Philips"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "XXXX"
+            }
+          },
+          {
+            key: {
+              text: "Outcome"
+            },
+            value: {
+              html: "Personal Independence Payment of Enhanced enhanced /   I’ve looked at your claim and decided to award you Personal
+Independence Payment"
+            }
+          },
+          {
+            key: {
+              text: "Standard content"
+            },
+            value: {
+              html: "We will pay £XX.XX into your usual account on DD Month YYYY.
+This is money that we owe you from DD Month YYYY to DD Month YYYY"
+            }
+          },
+          {
+            key: {
+              text: "Note from the processing agent"
+            },
+            value: {
+              html: data["application-1-letter-edit"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Daily Living"
+            },
+            value: {
+              html: "1. Preparing food 8/8<br>2. Taking nutrition X/X<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10 Preparing food	8	AGREE
+Taking nutrition		NOT CLAIMED
+Managing therapy or monitoring a health condition	8	AGREE
+Washing and bathing	2	AGREE
+Managing toilet needs or incontinence	6	AGREE
+Dressing and undressing		AMENDED
+Communicating verbally	8	AGREE
+Reading and understanding signs, symbols and words	4	AGREE
+Engaging with other people face to face	8	AGREE
+Making budgeting decisions	2	AMENDED"
+            }
+          },
+          {
+            key: {
+              text: "Mobility"
+            },
+            value: {
+              html: "1<br>2<br>
+Score	Status
+Planning and following journeys	8	AGREE
+Moving around"
+            }
+          }
+        ]
+      }) }}
+
+
+
+<br>
+
+      <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+            {{ govukRadios({
+              idPrefix: "application-1-about-a12",
+              name: "application-1-about-a12",
+              fieldset: {
+                legend: {
+                  text: "Are you happy with the letter?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Agree",
+                text: "Yes",
+                checked: (data["application-1-about-a12"] == "Agree")
+              },
+              {
+                value: "Amended",
+                text: "No",
+                checked: (data["application-1-about-a12"] == "Amended"),
+                      conditional: {
+                        html: scoreOverwite
+                  }
+                }
+              ]
+            }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
