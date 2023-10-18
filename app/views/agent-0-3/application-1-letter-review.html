@@ -13,11 +13,63 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This is content of the letter that will be sent, check before you send</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">This is content of the letter that will be sent, check before you send @dave</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Do a thing</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This letter shows some but not all of the content, just the stuff relevant to the decision</p>
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}</strong></p> -->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicOutcome %}
+
+                <ul class="govuk-list">
+                  <li>
+                    We can award you this until 29 August 2033.
+                  </li>
+                  <li>
+                    We will pay £2073 into your bank account on 29 August 2023.
+                  </li>
+                  <li>
+                    This is money that we owe you from 6 June 2023 to 29 August 2023.
+                  </li>
+                  <li>
+                  You will then get £691 every 4 weeks from 26 September 2023.
+                  </li>
+                </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicList1 %}
+
+        <ol class="govuk-list govuk-list--number">
+          <li>Preparing food: <br><strong>Score of 6 out of 8</strong></li>
+          <li>Taking nutrition: <br><strong>Score of 0 out of X</strong></li>
+          <li>Managing therapy or monitoring a health condition: <br><strong>Score of 2 out of X</strong></li>
+          <li>Washing and bathing: <br><strong>Score of 2 out of X</strong></li>
+          <li>Managing toilet needs or incontinence: <br><strong>Score of 2 out of X</strong></li>
+          <li>Dressing and undressing: <br><strong>Score of 2 out of X</strong></li>
+          <li>Communicating verbally: <br><strong>Score of 2 out of X</strong></li>
+          <li>Reading and understanding signs, symbols and words: <br><strong>Score of 0 out of X</strong></li>
+          <li>Engaging with other people face to face: <br><strong>Score of 2 out of X</strong></li>
+          <li>Making budgeting decisions: <br><strong>Score of 4 out of X</strong></li>
+
+        </ol>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicList2 %}
+
+        <ol class="govuk-list govuk-list--number">
+          <li>Planning and following journeys: <br><strong>Score of 4 out of X</strong></li>
+          <li>Moving around: <br><strong>Score of 8 out of X</strong></li>
+        </ol>
+        {% endset %}
+      <!------------Legend--------------->
+
 
       {{ govukSummaryList({
         rows: [
@@ -26,7 +78,7 @@
               text: "Name"
             },
             value: {
-              text: "Sarah Philips"
+              text: "Jeff Bridges"
             }
           },
           {
@@ -34,7 +86,7 @@
               text: "Address"
             },
             value: {
-              html: "XXXX"
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
             }
           },
           {
@@ -42,17 +94,15 @@
               text: "Outcome"
             },
             value: {
-              html: "Personal Independence Payment of Enhanced enhanced /   I’ve looked at your claim and decided to award you Personal
-Independence Payment"
+              html: "This is the highest award rate."
             }
           },
           {
             key: {
-              text: "Standard content"
+              text: "Payments"
             },
             value: {
-              html: "We will pay £XX.XX into your usual account on DD Month YYYY.
-This is money that we owe you from DD Month YYYY to DD Month YYYY"
+              html: dynamicOutcome
             }
           },
           {
@@ -65,7 +115,7 @@ This is money that we owe you from DD Month YYYY to DD Month YYYY"
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "application-1-letter-edit",
                   text: "Change",
                   visuallyHiddenText: "date of birth"
                 }
@@ -77,16 +127,7 @@ This is money that we owe you from DD Month YYYY to DD Month YYYY"
               text: "Daily Living"
             },
             value: {
-              html: "1. Preparing food 8/8<br>2. Taking nutrition X/X<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10 Preparing food	8	AGREE
-Taking nutrition		NOT CLAIMED
-Managing therapy or monitoring a health condition	8	AGREE
-Washing and bathing	2	AGREE
-Managing toilet needs or incontinence	6	AGREE
-Dressing and undressing		AMENDED
-Communicating verbally	8	AGREE
-Reading and understanding signs, symbols and words	4	AGREE
-Engaging with other people face to face	8	AGREE
-Making budgeting decisions	2	AMENDED"
+              html: dynamicList1
             }
           },
           {
@@ -94,10 +135,7 @@ Making budgeting decisions	2	AMENDED"
               text: "Mobility"
             },
             value: {
-              html: "1<br>2<br>
-Score	Status
-Planning and following journeys	8	AGREE
-Moving around"
+              html: dynamicList2
             }
           }
         ]
@@ -112,11 +150,11 @@ Moving around"
 
 
             {{ govukRadios({
-              idPrefix: "application-1-about-a12",
-              name: "application-1-about-a12",
+              idPrefix: "application-1-letter-review",
+              name: "application-1-letter-review",
               fieldset: {
                 legend: {
-                  text: "Are you happy with the letter?",
+                  text: "Are you happy with the letter? @dave",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -129,15 +167,12 @@ Moving around"
               {
                 value: "Agree",
                 text: "Yes",
-                checked: (data["application-1-about-a12"] == "Agree")
+                checked: (data["application-1-letter-review"] == "Yes")
               },
               {
                 value: "Amended",
                 text: "No",
-                checked: (data["application-1-about-a12"] == "Amended"),
-                      conditional: {
-                        html: scoreOverwite
-                  }
+                checked: (data["application-1-letter-review"] == "No")
                 }
               ]
             }) }}
