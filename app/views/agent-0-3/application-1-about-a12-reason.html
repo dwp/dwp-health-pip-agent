@@ -19,7 +19,7 @@
       {% include "agent-0-3/record-id.html" %}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-1-about-a12"] == "Agree" %} Why did you given Making budgeting decisions a score of 6
-            {% elif data["application-1-about-a12"] == "Amended" %}You have amended the score of Making budgeting decisions to {{ data["score-overwrite"]}}
+            {% elif data["application-1-about-a12"] == "Amended" %}You have changed the score of making budgeting decisions from 4 to {{ data["score-overwrite"]}}
             {% else %}
             {% endif %}</h1>
 
@@ -27,12 +27,12 @@
         name: "application-1-about-a12-reason",
         id: "application-1-about-a12-reason",
         label: {
-          text: "Can you provide more detail?",
+          text: "Why did you change the score?",
           classes: "govuk-label--m",
           isPageHeading: true
         },
         hint: {
-          text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+          text: ""
         }
       }) }}
 
