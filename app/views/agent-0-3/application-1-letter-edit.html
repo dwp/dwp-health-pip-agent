@@ -2,9 +2,11 @@
 
 {% block pageTitle %}
   Process a PIP application
-
 {% endblock %}
 
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
 
 {% block content %}
 <form action="application-1-letter-review" method="post" class="form">
