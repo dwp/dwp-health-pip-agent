@@ -83,7 +83,7 @@ router.post(`/application-1-outcome-letter-check-router`, (req, res) => {
     res.redirect(`application-1-letter-edit`)
   }
   else if (letterEdit == 'No') {
-    res.redirect(`entry-home`)
+    res.redirect(`application-1-letter-review`)
   }
    else {
     res.redirect(`XXX`)

@@ -70,6 +70,17 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-1-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
 
       {{ govukSummaryList({
         rows: [
@@ -107,7 +118,7 @@
           },
           {
             key: {
-              text: "Note from the processing agent"
+              text: "Addional notes by agent"
             },
             value: {
               html: data["application-1-letter-edit"]
@@ -116,7 +127,7 @@
               items: [
                 {
                   href: "application-1-letter-edit",
-                  text: "Change",
+                  html: dynamicAgentNotes,
                   visuallyHiddenText: "date of birth"
                 }
               ]
