@@ -199,6 +199,20 @@ router.post(`/application-1-about-a12-router`, (req, res) => {
   }
 })
 
+router.post(`/application-1-about-a1-router`, (req, res) => {
+  const aboutA1 = req.session.data['application-1-about-a1']
+
+  if (aboutA1 == 'Agree') {
+    res.redirect(`application-1-about`)
+  }
+  else if (aboutA1 == 'Amended') {
+    res.redirect(`application-1-about-a1-reason`)
+  }
+   else {
+    res.redirect(`application-1-about`)
+  }
+})
+
 
 
 
