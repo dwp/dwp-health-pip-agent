@@ -51,12 +51,13 @@
           <li class="govuk-!-margin-bottom-2">Managing therapy or monitoring a health condition: <br><strong> 2 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Washing and bathing: <br><strong> 2 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Managing toilet needs or incontinence: <br><strong> 2 out of 8</strong></li>
-          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong> {% if data["score-overwrite"] %} {{ data["score-overwrite"]}} {% else %} 0 {% endif %}
+                      {{ data["score-overwrite"]}} out of 8</strong></li>
+
           <li class="govuk-!-margin-bottom-2">Communicating verbally: <br><strong> 2 out of 12</strong></li>
           <li class="govuk-!-margin-bottom-2">Reading and understanding signs, symbols and words: <br><strong> 0 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Engaging with other people face to face: <br><strong> 2 out of 8</strong></li>
-          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong> 4 out of 6</strong></li>
-
+          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong> {% if data["score-overwrite"] %} {{ data["score-overwrite"]}} {% else %} 4 {% endif %} {{ data["score-overwrite"]}} out of 6</strong></li>
         </ol>
 
         {% endset %}
