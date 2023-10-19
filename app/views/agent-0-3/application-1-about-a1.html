@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-1-about-a-autofill" method="post" class="form">
+<form action="application-1-about-a1-reason" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -79,7 +79,7 @@ Jeff obtains most of his full meals from the drop-in centre and his support work
 
       {% set scoreOverwite %}
           {{ govukInput({
-            id: "score-overwrite",
+            id: "score-overwrite-a1",
             label: {
                 text: "What score would you give?",
                 classes: "govuk-fieldset__legend--m"
@@ -87,9 +87,9 @@ Jeff obtains most of his full meals from the drop-in centre and his support work
             hint: {
               text: "0, 2, 4 or 6"
             },
-                name: "score-overwrite",
+                name: "score-overwrite-a1",
                 classes: "govuk-input--width-4",
-                value: data["score-overwrite"]
+                value: data["score-overwrite-a1"]
             }) }}
 
       {% endset -%}
