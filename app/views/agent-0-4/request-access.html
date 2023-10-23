@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="request-access-done" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Request access to services</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Once you have access, your home page will have a link to the requested service.</p>
+
+  {{ govukCheckboxes({
+    classes: "govuk-!-margin-bottom-4",
+    idPrefix: "request-access",
+    name: "request-access",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "What services do you need access to?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6 "
+      }
+    },
+    hint: {
+      text: "Select all that apply:"
+    },
+    items: [
+
+    {
+      value: "1",
+      text: "Disputes",
+      checked: (data["request-access"] == "1")
+    },
+    {
+      value: "2",
+      text: "Inbound calls",
+      checked: (data["request-access"] == "2")
+    },
+    {
+      value: "3",
+      text: "Outbound calls",
+      checked: (data["request-access"] == "3")
+    },
+      {
+        value: "4",
+        text: "Processing applications",
+        checked: (data["request-access"] == "4")
+      },
+
+      {
+        value: "5",
+        text: "Service statistics",
+        checked: (data["request-access"] == "5")
+      },
+      {
+        value: "6",
+        text: "Team leader",
+        checked: (data["request-access"] == "6")
+      },
+      {
+        value: "7",
+        text: "Something else",
+        checked: (data["request-access"] == "7")
+      }
+    ]
+  }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% if data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] and data["inbound-1-end-call-dispute"] == "Yes" %}
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>The following actions have taken place for: {% if data["search"] %} {{ data ["search"]}} {% else %} Jeff Bridges {% endif %}</strong></p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>The care plan has been requested. A note has been added to event history. A new task will be created when the care plan is received.</li>
+  <li>A new number has been added '{{data["appointees-telephone"]}}' has been added to the record.</li>
+  <li>Someone will call the person back. A record of the call was added to the person's account.</li>
+
+</ul>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'information'
+}) }}
+
+
+{% elif data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] %}
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>The following actions have taken place:</strong></p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The care plan has been requested. A note has been added to event history. A new task will be created when the care plan is received.</li>
+      <li>A new number has been added '{{data["record-1-contact-landline-telephone"]}}' has been added to the record.</li>
+    </ul>
+
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+    {% elif data["application-4-care-plan"]  == "Yes"%}
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">The care plan has been requested. A note has been added to event history. A new task will be created when the care plan is received.</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+{% elif data["appointees-lpa"] %}
+
+  {% set html %}
+  <p class="govuk-body govuk-!-font-size-19">The lasting power of attorney (LPA) access code '{{data["appointees-lpa"]}}' has been added to the record.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
+
+{% elif data["appointees-telephone"] %}
+
+  {% set html %}
+  <p class="govuk-body govuk-!-font-size-19">A new number has been added '{{data["appointees-telephone"]}}' has been added to the record.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
+  {% elif data["record-1-contact-landline-telephone"] %}
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">A new number has been added '{{data["record-1-contact-landline-telephone"]}}' has been added to the record.</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+
+
+{% else %}
+
+{% endif %}
