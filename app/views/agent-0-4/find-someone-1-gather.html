@@ -17,6 +17,44 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if data["application-selector"]  == "4" %}
+
+
+      {{ govukDateInput({
+        id: "claim-date-of-claim",
+        namePrefix: "claim-date-of-claim",
+        fieldset: {
+          legend: {
+            html: "Could you confirm your date of birth, please?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: claimdate
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-of-claim-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["claim-date-of-claim-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["claim-date-of-claim-year"]
+          }
+        ]
+      }) }}
+
+
+
+  {% else %}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I need some information so that I can confirm I'm talking to the right person</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
@@ -39,6 +77,8 @@
         classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
         value: data["search"]
       }) }}
+
+
 
       <!------------H1 LEGEND------------>
         {% set legendDOB %}
@@ -78,6 +118,7 @@
         ]
       }) }}
 
+  {% endif %}
 
       {{ govukButton({
         text: "Continue",
