@@ -1,15 +1,15 @@
-{% if data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] and data["inbound-1-end-call-dispute"] == "Yes" %}
 
+{% if data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] and data["inbound-1-end-call-dispute"] == "Yes" %}
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>The following actions have taken place for: {% if data["search"] %} {{ data ["search"]}} {% else %} Jeff Bridges {% endif %}</strong></p>
 
 <ul class="govuk-list govuk-list--bullet">
   <li>The care plan has been requested. A note has been added to event history. A new task will be created when the care plan is received.</li>
-  <li>A new number has been added '{{data["appointees-telephone"]}}' has been added to the record.</li>
+  <li>A new number has been added '{{data["record-1-contact-landline-telephone"]}}' has been added to the record.</li>
   <li>Someone will call the person back. A record of the call was added to the person's account.</li>
-
 </ul>
+
 
 {% endset %}
 
@@ -37,8 +37,6 @@
   type: 'information'
 }) }}
 
-
-{% elif data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] %}
 
 
 {% elif data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] %}
