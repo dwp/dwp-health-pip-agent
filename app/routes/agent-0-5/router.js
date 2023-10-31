@@ -150,6 +150,9 @@ router.post(`/application-selector-router`, (req, res) => {
   else if (applicationSelector == '4') {
     res.redirect(`application-4-overview`)
   }
+  else if (applicationSelector == '5') {
+    res.redirect(`application-5-overview`)
+  }
    else {
     res.redirect(`XXX`)
   }
