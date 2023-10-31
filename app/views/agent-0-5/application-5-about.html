@@ -22,14 +22,6 @@
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Claim submitted: 1 October 2023</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Date of assessment: 15 October 2023</p>
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Primary condition: Blind</p> -->
-
-
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-3">There are 3 supporting documents related to this claim</h1>
-      <p class="govuk-!-margin-bottom-2"><a class="" href="pip-doc1.pdf" target="_blank">View GP letter</a></p>
-      <p class="govuk-!-margin-bottom-2"><a class="" href="pip-doc2.pdf" target="_blank">View care plan</a></p>
-      <p class="govuk-!-margin-bottom-6"><a class="" href="pip-doc3.pdf" target="_blank">View Certificate of Vision Impairment (CVI)</a></p>
-
 
     </div>
   </div>
@@ -159,6 +151,14 @@
 
                                         </td>
 
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+                                          <td class="govuk-table__cell table-spacer"></td>
+                                          <td class="govuk-table__cell table-spacer"></td>
+                                          </tr>
+
+
+
                             </table>
 
                             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
@@ -194,8 +194,42 @@
                       </td>
                       </tr>
 
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+                        <td class="govuk-table__cell table-spacer"></td>
+                        <td class="govuk-table__cell table-spacer"></td>
+                        </tr>
+
                   </table>
 
+
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+
+                    <table class="govuk-table">
+
+                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Grading evidence</h1>
+
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-50-percent"></td>
+                          <td class="govuk-table__cell govuk-20-percent">Documents</td>
+                          <td class="govuk-table__cell govuk-30-percent">Status</td>
+                        </tr>
+                        </thead>
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell table-spacer"><a href="application-5-view-evidence">View and grade all evidence</a></td>
+                        <td class="govuk-table__cell table-spacer">3</td>
+                        <td class="govuk-table__cell table-spacer">
+
+                          {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                          {% endif %}
+
+                        </td>
+                        </tr>
+
+        </table>
 
 
 
