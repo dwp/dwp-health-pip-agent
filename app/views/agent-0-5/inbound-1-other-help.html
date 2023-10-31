@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+<!-- S1 -->
+{% if data["inbound-1-greeting"] %}
+
+          <!-- S1 L2 -->
+          {% if data["inbound-1-greeting"]%}
+            {% include "explore-header-global-nav-multi-call.html" %}
+          {% else %}
+            {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+
+<!-- S2 -->
+{% elif data["application-selector"] == "2"%}
+
+          <!-- S2 L2 -->
+          {% if data["application-selector"] == "2"%}
+            {% include "explore-header-global-nav-multi-call-outbound.html" %}
+          {% else %}
+            {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+  <!-- PreCall -->
+{% elif data["outbound-precall"] == "Yes"%}
+
+          <!-- PreCall L2 -->
+          {% if data["outbound-precall"] == "Yes"%}
+              {% include "explore-header-global-nav-multi-call-outbound.html" %}
+          {% else %}
+              {% include "explore-header-global-nav-multi.html" %}
+          {% endif %}
+
+{% else %}
+<!-- Clear -->
+
+
+{% endif %}
+
+{% endblock %}
+{% block content %}
+
+<form action="inbound-1-end-call-exit" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">How can I help you?</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24  govuk-!-margin-bottom-8">How can I help you?</p> -->
+
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+        {
+          heading: {
+            text: "PIP eligibility"
+          },
+          content: {
+            html: "<p class='govuk-body'>You can get PIP at the same time as all other benefits, except Armed Forces Independence Payment.</p>"
+          }
+        },
+          {
+            heading: {
+              text: "Help with the cost of living"
+            },
+            content: {
+              html: "<p class='govuk-body'>Go to www.gov.uk/cost-of-living for more information.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "Help with heating your home"
+            },
+            content: {
+              html: "<p class='govuk-body'>You could get £150 off your electricity bill for winter 2022 to 2023 under the Warm Home Discount Scheme.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "Help with the Blue Badge"
+            },
+            content: {
+              html: "<p class='govuk-body'>Contact your local council for questions about the Blue Badge scheme.</p>"
+            }
+          },
+          {
+            heading: {
+              text: "General help with benefits"
+            },
+            content: {
+              html: "<p class='govuk-body'>Go to www.gov.uk/check-benefits-financial-support to find out what support you might be able to get.</p>"
+            }
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukRadios({
+        idPrefix: "inbound-1-other-help",
+        name: "inbound-1-other-help",
+        fieldset: {
+          legend: {
+            html: "Can I help you with anything else?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["inbound-1-other-help"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["inbound-1-other-help"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
