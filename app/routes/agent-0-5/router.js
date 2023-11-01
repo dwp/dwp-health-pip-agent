@@ -173,6 +173,23 @@ router.post(`/outbound-precall-router`, (req, res) => {
   }
 })
 
+// Scenario 1 routers
+
+
+router.post(`/application-1-about-a1-router`, (req, res) => {
+  const aboutA1 = req.session.data['application-1-about-a1']
+
+  if (aboutA1 == 'Agree') {
+    res.redirect(`application-1-about`)
+  }
+  else if (aboutA1 == 'Amended') {
+    res.redirect(`application-1-about-a1-reason`)
+  }
+   else {
+    res.redirect(`application-1-about`)
+  }
+})
+
 router.post(`/application-1-about-a6-router`, (req, res) => {
   const aboutA6 = req.session.data['application-1-about-a6']
 
@@ -202,17 +219,48 @@ router.post(`/application-1-about-a12-router`, (req, res) => {
   }
 })
 
-router.post(`/application-1-about-a1-router`, (req, res) => {
-  const aboutA1 = req.session.data['application-1-about-a1']
+// Scenario 5 routers
 
-  if (aboutA1 == 'Agree') {
-    res.redirect(`application-1-about`)
+router.post(`/application-5-about-a1-router`, (req, res) => {
+  const about5_A1 = req.session.data['application-5-about-a1']
+
+  if (about5_A1 == 'Agree') {
+    res.redirect(`application-5-about`)
   }
-  else if (aboutA1 == 'Amended') {
-    res.redirect(`application-1-about-a1-reason`)
+  else if (about5_A1 == 'Amended') {
+    res.redirect(`application-5-about-a1-reason`)
   }
    else {
-    res.redirect(`application-1-about`)
+    res.redirect(`application-5-about`)
+  }
+})
+
+router.post(`/application-5-about-a6-router`, (req, res) => {
+  const about5_A6 = req.session.data['application-5-about-a6']
+
+  if (about5_A6 == 'No-change') {
+    res.redirect(`application-5-about`)
+  }
+  else if (about5_A6 == 'Amended') {
+    res.redirect(`application-5-about-a6-reason`)
+  }
+   else {
+    res.redirect(`application-5-about`)
+  }
+})
+
+
+router.post(`/application-5-about-a12-router`, (req, res) => {
+  const about5_A12 = req.session.data['application-5-about-a12']
+
+  if (about5_A12 == 'Agree') {
+    res.redirect(`application-5-about`)
+  }
+  else if (about5_A12 == 'Amended') {
+    res.redirect(`application-5-about-a12-reason`)
+  }
+   else {
+    res.redirect(`application-5-about`)
   }
 })
 
