@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-1-about-a12-router" method="post" class="form">
+<form action="application-5-about-a12-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -102,8 +102,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "application-1-about-a12",
-        name: "application-1-about-a12",
+        idPrefix: "application-5-about-a12",
+        name: "application-5-about-a12",
         fieldset: {
           legend: {
             text: "The assessment report has scored 4 points for this activity. Do you agree?",
@@ -119,12 +119,12 @@
         {
           value: "Agree",
           text: "Yes",
-          checked: (data["application-1-about-a12"] == "Agree")
+          checked: (data["application-5-about-a12"] == "Agree")
         },
         {
           value: "Amended",
           text: "No",
-          checked: (data["application-1-about-a12"] == "Amended"),
+          checked: (data["application-5-about-a12"] == "Amended"),
                 conditional: {
                   html: scoreOverwite
                 }
@@ -132,7 +132,7 @@
           {
           value: "Pause",
           text: "I need to come back to this later",
-          checked: (data["application-1-about-a12"] == "Pause")
+          checked: (data["application-5-about-a12"] == "Pause")
         }
         ]
       }) }}
