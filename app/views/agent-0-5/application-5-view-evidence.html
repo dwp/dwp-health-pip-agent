@@ -67,7 +67,7 @@
 
   <!---------------- GOOD AREA START ------------------>
 
-  {% if data["evidence-1-grade"] %}
+  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-3-grade"] == "Good"%}
 
   <table class="govuk-table">
 
@@ -110,7 +110,7 @@
 
   <!---------------- BAD AREA START ------------------>
 
-          {% if data["evidence-1-grade"] %}
+          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-3-grade"] == "Bad"%}
 
         <table class="govuk-table">
 
