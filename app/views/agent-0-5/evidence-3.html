@@ -33,11 +33,11 @@
     {{ govukInput({
       id: "evidence-3-name-overwrite",
       label: {
-          text: "How would you better discribe this document?",
+          text: "What do you want to name this document?",
           classes: "govuk-fieldset__legend--m"
       },
       hint: {
-        text: "Something about naming crimes"
+        text: ""
       },
           name: "evidence-3-name-overwrite",
           classes: "govuk-input--width-20",
@@ -86,7 +86,7 @@
   name: "evidence-3-grade",
   fieldset: {
     legend: {
-      text: "What grade is this document?",
+      text: "Does this document help you make a decision?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -98,12 +98,12 @@
   items: [
   {
     value: "Good",
-    text: "Good",
+    text: "Yes",
     checked: (data["evidence-3-grade"] == "Good")
   },
   {
     value: "Bad",
-    text: "Bad",
+    text: "No",
     checked: (data["evidence-3-grade"] == "Bad")
     }
   ]
