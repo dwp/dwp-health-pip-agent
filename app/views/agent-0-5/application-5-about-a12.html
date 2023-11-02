@@ -60,27 +60,29 @@
           He requires prompting and supervision from his support worker to manage bills. Without this, he gets into debt or fails to make regular payments and has been threatened with legal action in the past.
         </p>
 
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1>
 
 
         <!------------H1 LEGEND------------>
           {% set legenDetails %}
+
+          <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1>
+
+
           <p class="govuk-body govuk-!-margin-bottom-2">
             <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
 
             <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
           </p>
 
+          {{ govukDetails({
+            summaryText: "Contacting the assessment report provider",
+            classes: "govuk-!-margin-bottom-0",
+            html: legenDetails
+          }) }}
+
           {% endset %}
         <!------------Legend--------------->
 
-        {{ govukDetails({
-          summaryText: "Contacting the assessment report provider",
-          classes: "govuk-!-margin-bottom-0",
-          html: legenDetails
-        }) }}
-
-<br><br>
 
       {% set scoreOverwite %}
           {{ govukInput({

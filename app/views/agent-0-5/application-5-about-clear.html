@@ -57,7 +57,11 @@
                             <td class="govuk-table__cell table-spacer"></td>
                             <td class="govuk-table__cell table-spacer">
 
-                              <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                              {% if data["application-5-about-a1"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                              {% elif data["application-5-about-a1"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Amended</strong>
+                              {% elif data["application-5-about-a1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                              {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                              {% endif %}
 
                             </td>
                             </tr>
@@ -73,7 +77,7 @@
                               </tr>
 
                               <tr class="govuk-table__row">
-                                <td class="govuk-table__cell table-spacer"><a href="#">Managing therapy or monitoring a health condition</a></td>
+                                <td class="govuk-table__cell table-spacer"><a href="#">Managing therapy or monitoring<br>a health condition</a></td>
                                 <td class="govuk-table__cell table-spacer"></td>
                                 <td class="govuk-table__cell table-spacer">
 
