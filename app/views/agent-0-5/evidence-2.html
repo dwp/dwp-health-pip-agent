@@ -18,9 +18,9 @@
       {% include "agent-0-5/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check and grade this document</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check this document</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Claim submitted: <strong>1 October 2023</strong></p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Document supplied date: <strong>1 September 2022</strong> (One year ago)</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Document supplied <strong>1 September 2022</strong> (One year ago)</p>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Age: <strong>One year ago</strong></p> -->
       <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc2.pdf" target="_blank">You can also view this document in a new tab or window</a></p>
 
@@ -33,7 +33,7 @@
     {{ govukInput({
       id: "evidence-2-name-overwrite",
       label: {
-          text: "How would you better describe this document?",
+          text: "What do you want to name this document?",
           classes: "govuk-fieldset__legend--m"
       },
       hint: {
@@ -53,13 +53,13 @@
   name: "evidence-2-name",
   fieldset: {
     legend: {
-      text: "Do you need to change the name 'Document 2'? " ,
+      text: "Do you want to rename 'Document 2'? " ,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
   hint: {
-    text: "The current document title might not make sense"
+    text: ""
   },
   classes: "govuk-radios",
   items: [
