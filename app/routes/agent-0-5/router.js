@@ -11,10 +11,10 @@ function makeAStay(data) {
 }
 
 // PDF DOWNLOADER
-router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-1/pip-letter.pdf')))
-router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-1/pip-doc1.pdf')))
-router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-1/pip-doc2.pdf')))
-router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-1/pip-doc3.pdf')))
+router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-letter.pdf')))
+router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc1.pdf')))
+router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc2.pdf')))
+router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc3.pdf')))
 
 // —————————————————————————————————
 
