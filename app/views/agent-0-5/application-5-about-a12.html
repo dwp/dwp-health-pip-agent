@@ -56,7 +56,7 @@
             He can manage his money in shops when he attends them but finds it difficult to manage his bills and card payments.
           </p>
 
-        <p class="govuk-body govuk-!-margin-bottom-6">
+        <p class="govuk-body govuk-!-margin-bottom-8">
           He requires prompting and supervision from his support worker to manage bills. Without this, he gets into debt or fails to make regular payments and has been threatened with legal action in the past.
         </p>
 
@@ -101,10 +101,41 @@
 
       {% endset -%}
 
-This is twhat the nubers translate too
-A,B C = 6 points
-D = 29 pouts
+      <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
 
+<!------------H1 LEGEND------------>
+  {% set legendNumbersDetails %}
+
+  <p class="govuk-body govuk-!-margin-bottom-2">For Making budgeting decisions the scores can be:</p>
+
+  <ul class="govuk-list govuk-list">
+    <li>A = 1</li>
+    <li>B = 2</li>
+    <li>C = 3</li>
+  </ul>
+
+
+  {% endset %}
+
+  {% set legendNumbers %}
+
+  {{ govukDetails({
+    summaryText: "Help with understadning the scores",
+    classes: "govuk-!-margin-bottom-0",
+    html: legendNumbersDetails
+  }) }}
+<br><br>
+Or if you dont want to have it in the deatils reveal, then you can have it at higher level, but it wold be here all the time<br><br>
+  <p class="govuk-body govuk-!-margin-bottom-2">For Making budgeting decisions the scores can be:</p>
+
+  <ul class="govuk-list govuk-list">
+    <li>A = 1</li>
+    <li>B = 2</li>
+    <li>C = 3</li>
+  </ul>
+
+  {% endset %}
+<!------------Legend--------------->
 
       {{ govukRadios({
         idPrefix: "application-5-about-a12",
@@ -117,9 +148,7 @@ D = 29 pouts
           }
         },
         hint: {
-          text: "What do these numbers mean This is twhat the nubers translate too
-          A,B C = 6 points
-          D = 29 pouts"
+          html: legendNumbers
         },
         classes: "govuk-radios",
         items: [
