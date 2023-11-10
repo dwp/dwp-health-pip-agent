@@ -293,7 +293,22 @@
         <div class="govuk-grid-row govuk-!-margin-top-2">
         <div class="govuk-grid-column-three-quarters">
 
-          {% if data["application-5-about-a12"] == "Agree" and data["evidence-3-grade"] %}
+          {% if data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application will need to go to a SAM, as more than two of the recomendations have been changed</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applcaiton will be pushed to a SAM and maybe be sent to an AP, you will be notified if the applcaiton will be returned to you</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2"
+          }) }}
+
+      {% elif data["application-5-about-a12"] == "Agree" and data["evidence-3-grade"] %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have confirmed your scores and agree with the assessment report</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -310,7 +325,7 @@
 
       {% elif data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have confirmed your scores and changed one or more of the scores in the assessment report</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have confirmed your scores and changed one scores in the assessment report</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can continue processing this application.</p>
 
@@ -330,20 +345,11 @@
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to verify all details before you can continue. We have saved the work you have done so far.</p>
 
-
-      {{ govukButton({
-      name: "process-c-nil-task-list",
-      value: "UF",
-      checked: (data["process-c-nil-task-list"] == "UF"),
-      text: "Exit and continue later",
-      classes: "govuk-button--secondary",
-      href: "application-5-exit-early"
-      }) }}
-
+XXX
 
       {% else %}
 
-
+Else
       {% endif %}
 
   </form>
