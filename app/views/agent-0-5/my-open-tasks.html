@@ -10,7 +10,7 @@
 
 {% block content %}
 
-{% if data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"]  === "bail" %}
+{% if data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -84,6 +84,28 @@
                                     {% endif %}
 
 
+          {% elif data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+
+                        <table class="govuk-table">
+
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-20-percent">Date</td>
+                            <td class="govuk-table__cell govuk-40-percent">Name</td>
+                            <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
+                            <td class="govuk-table__cell govuk-15-percent">Status</td>
+                          </tr>
+                          </thead>
+
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell table-spacer"> 25 August 2023</td>
+                              <td class="govuk-table__cell table-spacer"><a href="application-5-overview-sam-return">Jeff Bridges</a></td>
+                              <td class="govuk-table__cell table-spacer"><a href=""></a>Back from SAM check</td>
+                              <td class="govuk-table__cell table-spacer">
+                                  <strong class="govuk-tag app-task-list__apl-task-not-done">To do</strong>
+                              </td>
+                              </tr>
+                            </table>
 
                     {% elif data["application-1-exit-bail-call"]  === "bail" %}
 
@@ -92,18 +114,17 @@
                     <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell govuk-20-percent">Date</td>
-                        <td class="govuk-table__cell govuk-20-percent">Claim ID</td>
                         <td class="govuk-table__cell govuk-40-percent">Name</td>
-                        <td class="govuk-table__cell govuk-30-percent">Status</td>
+                        <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
+                        <td class="govuk-table__cell govuk-15-percent">Status</td>
                       </tr>
                       </thead>
 
                                       <tr class="govuk-table__row">
                                         <td class="govuk-table__cell table-spacer"> 25 August 2023</td>
-                                        <td class="govuk-table__cell table-spacer"><a href=""></a>1147</td>
-                                        <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Jeff Bridges</a>
-                                          <!-- {{data["api-claim-outcome-details"]}} -->
-                                        </td>
+                                        <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Jeff Bridges</a></td>
+                                        <td class="govuk-table__cell table-spacer"><a href=""></a>Verify details</td>
+                                        <td class="govuk-table__cell table-spacer">
                                         <td class="govuk-table__cell table-spacer">
                                             <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                                         </td>
