@@ -18,10 +18,10 @@
 
       {% include "agent-0-5/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-5-about-a6"] == "No-change" %} Why did you given Making budgeting decisions a score of 6
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-5-about-a6"] == "No-change" %} Why did you given Making budgeting decisions a score of 6
             {% elif data["application-5-about-a6"] == "Amended" %}You have added a score of {{ data["score-overwrite-a6"]}} to dressing and undressing
             {% else %}
-            {% endif %}</h1>
+            {% endif %}</h2>
 
       {{ govukTextarea({
         name: "application-5-about-a6-reason",
