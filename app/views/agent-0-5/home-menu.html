@@ -6,11 +6,11 @@
 
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                    <p class="govuk-body govuk-!-font-weight-bold">
+                    <h2 class="govuk-body govuk-!-font-weight-bold">
                                             {{govukTag({
                                               text: "New",
                                               classes: "govuk-tag--green"
-                                            })}} &hairsp;Managing workload</p>
+                                            })}} &hairsp;Managing workload</h2>
 
                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="team-lead-team-overview">My team</a></p>
                     <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="#">Approvals</a></p>
@@ -21,11 +21,11 @@
                   {% elif data["request-access"] == "7" %}
                           <div class="govuk-grid-row">
                             <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                              <p class="govuk-body govuk-!-font-weight-bold">
+                              <h2 class="govuk-body govuk-!-font-weight-bold">
                                                       {{govukTag({
                                                         text: "New",
                                                         classes: "govuk-tag--green"
-                                                      })}} &hairsp;Support and assurance</p>
+                                                      })}} &hairsp;Support and assurance</h2>
 
                               <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">Review applications in progress</a></p>
                               <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open task</a></p>
@@ -38,9 +38,9 @@
 
                 <div class="govuk-grid-row">
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                    <p class="govuk-body govuk-!-font-weight-bold">Processing</p>
+                    <h2 class="govuk-body govuk-!-font-weight-bold">Processing</h2>
 
-                    {% if data["application-1-task-t4"] == "Pause" %}   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="application-1-tasklist">Process an application*</a></p>
+                    {% if data["application-1-task-t4"] == "Pause" %}   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="application-1-tasklist">Process an application.</a></p>
                     {% else %}                                          <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="application-selector">Process an application</a></p>
                     {% endif %}
 
@@ -52,7 +52,7 @@
 
 
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                    <p class="govuk-body govuk-!-font-weight-bold">Queries and disputes</p>
+                    <h2 class="govuk-body govuk-!-font-weight-bold">Queries and disputes</h2>
 
                     {% if data["application-selector"] == "1" %} <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="application-1-exit-bail-call">Take an inbound call</a>
                     {% else %}                                   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="inbound-1-greeting">Take an inbound call</a>
@@ -76,7 +76,7 @@
                   {% endif %}
 
                   <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-                    <p class="govuk-body govuk-!-font-weight-bold">Services</p>
+                    <h2 class="govuk-body govuk-!-font-weight-bold">Services</h2>
                     <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="service-stats">View service statistics</a></p>
                     <p class="govuk-!-margin-bottom-6"><a class="govuk-body govuk-!-font-size-19" href="request-access">Request access</a></p>
 
