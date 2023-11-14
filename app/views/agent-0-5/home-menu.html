@@ -47,7 +47,20 @@
 
 
                   <!-- <p class="govuk-!-margin-bottom-3"><a class="govuk-body govuk-!-font-size-19" href="cya-1">Process an application (NC)</a></p> -->
-                  <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a></p>
+                  <p class="govuk-!-margin-bottom-1">
+
+
+                    {% if data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"]  %}
+                    <p class="govuk-!-margin-bottom-1">
+                      {{govukTag({
+                          text: "New",
+                          classes: "govuk-tag--green"
+                        })}} &hairsp;
+                         <a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a></p>
+                      {% else %}
+                    {% endif %}
+
+
                   </div>
 
 
