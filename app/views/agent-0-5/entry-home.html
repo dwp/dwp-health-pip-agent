@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="test-radio-router" method="post" class="form">
+      <form action="XXX" method="post" class="form">
 
         {% include "agent-0-5/record-notifications.html" %}
 
@@ -56,6 +56,17 @@
 
         {% set html %}
         <p class="govuk-body govuk-!-font-size-19">Your requested service has been added to the home page.</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+        {% elif data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+
+        {% set html %}
+        <p class="govuk-body govuk-!-font-size-19">@dave This application will need to go to a SAM, as more than two of the recomendations have been changed. This applcaiton will be pushed to a SAM and maybe be sent to an AP, you will be notified if the applcaiton will be returned to you</p>
         {% endset %}
 
         {{ govukNotificationBanner({
