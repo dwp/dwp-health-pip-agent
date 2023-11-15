@@ -13,13 +13,12 @@
 {% if data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
 <form action="application-5-about" method="post" class="form">
 
-  {% elif data["application-5-about-a1"] == "Agree" and data["evidence-3-grade"] %}
-  <form action="application-5-about" method="post" class="form">
-
+{% elif data["application-5-about-a1"] == "Agree" and data["evidence-3-grade"] %}
+<form action="application-5-about" method="post" class="form">
 
 {% else %}
 <form action="application-5-about-clear" method="post" class="form">
-  {% endif %}
+{% endif %}
 
 
 
@@ -40,7 +39,7 @@
 {% else %}
 
 
-<table class="govuk-table">
+<table class="govuk-table govuk-!-margin-bottom-8">
   <h3 class="govuk-heading-m govuk-!-margin-bottom-0">Still to check</h3>
 
 
