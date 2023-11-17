@@ -38,13 +38,13 @@
             <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">It is now
 
             {% if data["application-5-about-a12-score-overwrite"] == "1" %}
-              <strong>descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+              descriptor A (0 points): Can manage complex budgeting decisions unaided
             {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
-              <strong>descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+              descriptor B (2 points):Needs prompting or assistance to be able to make complex budgeting decisions
             {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
-              <strong>descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+              descriptor C (4 points):Needs prompting or assistance to be able to make simple budgeting decisions
             {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
-              <strong>descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+              descriptor D (6 points): Cannot make any budgeting decisions at all
             {% endif %}
 
             </p>
