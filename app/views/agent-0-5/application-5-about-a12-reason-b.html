@@ -20,6 +20,7 @@
 
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
+<<<<<<< HEAD
         {% if data["application-5-about-a12"] == "Agree" %} Why did you given Making budgeting decisions a score of 6
         {% elif data["application-5-about-a12"] == "Amended" %}You have changed the descriptor of making budgeting decisions from descriptor C (4 points) 
 
@@ -33,16 +34,35 @@
         {% else %}
         {% endif %}
           </h2>
+=======
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
 
+            {% if data["application-5-about-a12-score-overwrite"] == "1" %}
+              0
+            {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
+              2
+            {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
+              4
+            {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
+              6
+            {% endif %}
+>>>>>>> 812de9c09da01436497fdd0482ffff4c97ec5eae
+
+          </h2>
 
 
             <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The grade will now be:
-            {% if data["application-5-about-a12-score-overwrite"] == "1" %} <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
-              {% elif data["application-5-about-a12-score-overwrite"] == "2" %} <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
-              {% elif data["application-5-about-a12-score-overwrite"] == "3" %} <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
-            {% else %}
-                    data["application-5-about-a12-score-overwrite"] == "4" %} <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+
+            {% if data["application-5-about-a12-score-overwrite"] == "1" %}
+              <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+            {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
+              <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+            {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
+              <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+            {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
+              <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
             {% endif %}
+
             </p>
 
       {{ govukTextarea({
