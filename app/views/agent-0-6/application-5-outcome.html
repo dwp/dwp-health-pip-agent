@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-1-outcome-letter-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">This person will get an enhanced/enhanced award</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="pip-letter.pdf" target="_blank">View the letter</a> that they will be sent. This is the standard letter for this award rate.</p> -->
+
+      {{ govukRadios({
+        idPrefix: "application-1-outcome-letter-check",
+        name: "application-1-outcome-letter-check",
+        fieldset: {
+          legend: {
+            html: "Do you want to add anything to the standard version of the letter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["application-1-outcome-letter-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["application-1-outcome-letter-check"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

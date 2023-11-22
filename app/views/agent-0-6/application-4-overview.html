@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+<form action="outbound-1-greeting" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Task overview</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Call the applicant to ask them to sent their care plane to us.<br>A text was sent to tell them to expect a call</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Sam Elliott{% endif %}</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">National Insurance: <strong>NA 11 22 33 c</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Date of birth: <strong>4 December 1949</strong></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Additional support: <strong>No</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Accessibility support: <strong>No</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Unacceptable customer behaviour: <strong>No</strong></p>
+
+      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Pre call actions that have taken place</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Text message sent to let the applicant know a call is due</p> -->
+
+
+
+      {{ govukButton({
+        text: "Start call",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      <!-- <div class="govuk-button-group ">
+        {{ govukButton({
+          text: "Start call",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        {{ govukButton({
+        name: "process-c-nil-task-list",
+        text: "View record before calling",
+        classes: "govuk-button--secondary",
+        href: "record-1-overview"
+        }) }}
+
+        </div>
+      </div> -->
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
