@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-1-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Task overview</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Call the appointee for their lasting power of attorney (LPA) code, as our records show the appointee is now a power of attorney.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">National Insurance: <strong>NA 11 22 33 c</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Date of birth: <strong>14 December 1949</strong></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Appointee name: <strong>Julianne Moore</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Contact telephone number: <strong>07700 900457</strong></p>
+
+
+      {{ govukButton({
+        text: "Contine",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
