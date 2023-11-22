@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-5/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+
+
+          </h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
+
+            {% if data["application-5-about-a12-score-overwrite"] == "1" %}
+              0
+            {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
+              2
+            {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
+              4
+            {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
+              6
+            {% endif %}
+
+          </h2>
+
+
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The grade will now be:
+
+            {% if data["application-5-about-a12-score-overwrite"] == "1" %}
+              <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+            {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
+              <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+            {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
+              <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+            {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
+              <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+            {% endif %}
+
+            </p>
+
+      {{ govukTextarea({
+        name: "application-5-about-a12-reason",
+        id: "application-5-about-a12-reason",
+        label: {
+          text: "Why did you change the score?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: ""
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
