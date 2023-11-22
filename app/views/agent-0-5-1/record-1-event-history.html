@@ -1,0 +1,220 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-5-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "agent-0-5-1/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-5-1/record-id.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "agent-0-5-1/record-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The agent will see a history of communication with the person. It shows the date of the event, the notes that an agent added relating to that event, and any actions as a result.</p> -->
+
+
+
+
+
+    <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-20-percent">Date</td>
+        <td class="govuk-table__cell govuk-20-percent">Event</td>
+        <td class="govuk-table__cell govuk-40-percent">Details</td>
+        <td class="govuk-table__cell govuk-20-percent">Actions</td>
+      </tr>
+      </thead>
+
+
+
+      <!-- SHOW AND TELL START -->
+
+      {% if data["search"] %}
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">Today</td>
+            <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
+            <td class="govuk-table__cell table-spacer">Complaint assigned to SAM, process started</td>
+            <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View progress</a></td>
+
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
+              <td class="govuk-table__cell table-spacer">A new number has been added '0191 100 2000' has been added to the record</td>
+              <td class="govuk-table__cell table-spacer"></td>
+
+              </tr>
+
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
+              <td class="govuk-table__cell table-spacer">Care plan requested. A new task  will be created once it's received.</td>
+              <td class="govuk-table__cell table-spacer"></td>
+
+              </tr>
+
+            {% else %}
+            {% endif %}
+
+            <!-- SHOW AND TELL END -->
+
+      {% if data["application-4-care-plan"]  == "Yes"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Outbound call</td>
+        <td class="govuk-table__cell table-spacer">Dispute implement</td>
+        <td class="govuk-table__cell table-spacer">Assigned to SAM</td>
+
+        </tr>
+
+        {% else %}
+        {% endif %}
+
+      {% if data["application-4-care-plan"]  == "Yes"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Outbound call</td>
+        <td class="govuk-table__cell table-spacer">A new number has been added '0458475893' has been added to the record</td>
+        <td class="govuk-table__cell table-spacer"></td>
+
+        </tr>
+
+        {% else %}
+        {% endif %}
+
+      {% if data["application-4-care-plan"]  == "Yes"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Outbound call</td>
+        <td class="govuk-table__cell table-spacer">Care plan requested. A new task  will be created once it's received.</td>
+        <td class="govuk-table__cell table-spacer"></td>
+
+        </tr>
+
+      {% elif data["application-1-outcome-letter-check"] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Update</td>
+        <td class="govuk-table__cell table-spacer">Application processed and notification sent <a class="" href="pip-letter.pdf" target="_blank">View letter</a></td>
+          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
+        </tr>
+        {% elif data["inbound-1-end-call-washup"] == "2"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Inbound call</td>
+        <td class="govuk-table__cell table-spacer">Call was made, no actions taken, help with XY or Z, no addional action</td>
+        <td class="govuk-table__cell table-spacer">None
+
+      </tr>
+
+      {% elif data["inbound-1-end-call-dispute"] == "Yes"%}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Inbound call</td>
+        <td class="govuk-table__cell table-spacer">Requested a call back to dispute level of award</td>
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">In progress</strong>
+        </tr>
+
+
+      {% else %}
+      <!-- <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">N/A</td>
+        <td class="govuk-table__cell table-spacer">No events</td>
+        <td class="govuk-table__cell table-spacer">N/A</td>
+        </tr> -->
+      {% endif %}
+
+      {% if data["application-1-outcome-letter-check"] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Update</td>
+        <td class="govuk-table__cell table-spacer">Application processed and<br>notification sent<br><a class="" href="pip-letter.pdf" target="_blank">View letter</a> </td>
+          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
+        </tr>
+
+      {% else %}
+      <!-- <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">18 Sep 2023</td>
+        <td class="govuk-table__cell table-spacer">Update</td>
+        <td class="govuk-table__cell table-spacer">Application processed and<br>notification sent - <a class="" href="pip-letter.pdf" target="_blank">view letter</a></td>
+          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
+        </tr> -->
+      {% endif %}
+
+      {% if data["appointees-lpa-check"] == "Yes" %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Outbound call</td>
+        <td class="govuk-table__cell table-spacer">Lasting power of attorney (LPA) access code added</td>
+        <td class="govuk-table__cell table-spacer">
+        </tr>
+        {% else %}
+        {% endif %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
+        <td class="govuk-table__cell table-spacer">Inbound call</td>
+        <td class="govuk-table__cell table-spacer">Wanted an update on progress of application</td>
+        <td class="govuk-table__cell table-spacer"></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">16 Oct 2023</td>
+          <td class="govuk-table__cell table-spacer">Letter sent</td>
+          <td class="govuk-table__cell table-spacer">Reissued PIP2 form</td>
+          <td class="govuk-table__cell table-spacer"></td>
+          </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">1 Oct 2023</td>
+        <td class="govuk-table__cell table-spacer">Inbound call</td>
+
+        <td class="govuk-table__cell table-spacer">General enquiry</td>
+        <td class="govuk-table__cell table-spacer"></td>
+        </tr>
+
+
+
+
+
+      </table>
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

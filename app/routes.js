@@ -19,6 +19,7 @@ router.use('/agent-0-2', require('./routes/agent-0-2/router.js'));
 router.use('/agent-0-3', require('./routes/agent-0-3/router.js'));
 router.use('/agent-0-4', require('./routes/agent-0-4/router.js'));
 router.use('/agent-0-5', require('./routes/agent-0-5/router.js'));
+router.use('/agent-0-5-1', require('./routes/agent-0-5-1/router.js'));
 router.use('/agent-0-6', require('./routes/agent-0-6/router.js'));
 
 
