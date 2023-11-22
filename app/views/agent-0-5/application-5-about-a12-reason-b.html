@@ -20,11 +20,9 @@
 
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You have changed the descriptor
 
-          </h2>
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
-
-            {% if data["application-5-about-a12-score-overwrite"] == "1" %}
+            <!-- {% if data["application-5-about-a12-score-overwrite"] == "1" %}
               0
             {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
               2
@@ -32,21 +30,21 @@
               4
             {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
               6
-            {% endif %}
+            {% endif %} -->
 
           </h2>
 
 
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The grade will now be:
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">It is now
 
             {% if data["application-5-about-a12-score-overwrite"] == "1" %}
-              <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+              descriptor A (0 points): Can manage complex budgeting decisions unaided
             {% elif data["application-5-about-a12-score-overwrite"] == "2" %}
-              <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+              descriptor B (2 points):Needs prompting or assistance to be able to make complex budgeting decisions
             {% elif data["application-5-about-a12-score-overwrite"] == "3" %}
-              <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+              descriptor C (4 points):Needs prompting or assistance to be able to make simple budgeting decisions
             {% elseif data["application-5-about-a12-score-overwrite"] == "4" %}
-              <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+              descriptor D (6 points): Cannot make any budgeting decisions at all
             {% endif %}
 
             </p>
@@ -55,7 +53,7 @@
         name: "application-5-about-a12-reason",
         id: "application-5-about-a12-reason",
         label: {
-          text: "Why did you change the score?",
+          text: "Why did you change the descriptor?",
           classes: "govuk-label--m",
           isPageHeading: true
         },
