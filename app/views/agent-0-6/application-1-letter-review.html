@@ -46,17 +46,37 @@
         {% set dynamicList1 %}
 
         <ol class="govuk-list govuk-list--number">
-          <li class="govuk-!-margin-bottom-2">Preparing food: <br><strong> 6 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Preparing food: <br><strong>
+
+          {% if data["application-5-about-a1"] == "Agree" %}     6
+          {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-6/application-5-about-a1-scoreoverwrite.html" %}
+          {% else %}
+          {% endif %}
+          out of 8</strong></li>
+
           <li class="govuk-!-margin-bottom-2">Taking nutrition: <br><strong> 0 out of 10</strong></li>
           <li class="govuk-!-margin-bottom-2">Managing therapy or monitoring a health condition: <br><strong> 2 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Washing and bathing: <br><strong> 2 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Managing toilet needs or incontinence: <br><strong> 2 out of 8</strong></li>
-          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong> {% if data["score-overwrite-a6"] %} {{ data["score-overwrite-a6"]}} {% else %} 0 {% endif %} out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong>
+
+          {% if data["application-5-about-a6"] == "Agree" %}  0
+          {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-6/application-5-about-a6-scoreoverwrite.html" %}
+          {% else %}
+          {% endif %}
+          out of 8</strong></li>
 
           <li class="govuk-!-margin-bottom-2">Communicating verbally: <br><strong> 2 out of 12</strong></li>
           <li class="govuk-!-margin-bottom-2">Reading and understanding signs, symbols and words: <br><strong> 0 out of 8</strong></li>
           <li class="govuk-!-margin-bottom-2">Engaging with other people face to face: <br><strong> 2 out of 8</strong></li>
-          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong> {% if data["score-overwrite"] %} {{ data["score-overwrite"]}} {% else %} 4 {% endif %} out of 6</strong></li>
+          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong>
+
+            {% if data["application-5-about-a12"] == "Agree" %}     6
+            {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-6/application-5-about-a1-scoreoverwrite.html" %}
+            {% else %}
+            {% endif %}
+            out of 8</strong></li>
+
         </ol>
 
         {% endset %}

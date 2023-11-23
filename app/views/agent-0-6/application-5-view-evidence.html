@@ -28,13 +28,13 @@
       {% include "agent-0-6/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">View and check 3<br>supporting documents</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">View and check 4<br>supporting documents</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Claim submitted: 1 October 2023</p> -->
 
 <br>
 
 
-{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-3-grade"] %}
+{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-4-grade"] and data["evidence-3-grade"] %}
 
 {% else %}
 
@@ -64,6 +64,12 @@
     {% include "agent-0-6/evidence-2-status.html" %}
 {% endif %}
 
+{% if data["evidence-4-grade"] == "Good" %}
+{% elif data["evidence-4-grade"] == "Bad" %}
+{% else %}
+    {% include "agent-0-6/evidence-4-status.html" %}
+{% endif %}
+
 {% if data["evidence-3-grade"] == "Good" %}
 {% elif data["evidence-3-grade"] == "Bad" %}
 {% else %}
@@ -76,9 +82,9 @@
 
   <!---------------- GOOD AREA START ------------------>
 
-  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-3-grade"] == "Good"%}
+  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-4-grade"] == "Good" or data["evidence-3-grade"] == "Good"%}
 
-  <table class="govuk-table">
+  <table class="govuk-table govuk-!-margin-bottom-8">
 
     <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Helps with making a decision</h1>
 
@@ -103,6 +109,12 @@
             {% else %}
             {% endif %}
 
+            {% if data["evidence-4-grade"] == "Good" %}
+                {% include "agent-0-6/evidence-4-status.html" %}
+            {% elif data["evidence-4-grade"] == "Bad" %}
+            {% else %}
+            {% endif %}
+
             {% if data["evidence-3-grade"] == "Good" %}
                 {% include "agent-0-6/evidence-3-status.html" %}
             {% elif data["evidence-3-grade"] == "Bad" %}
@@ -118,7 +130,7 @@
 
   <!---------------- BAD AREA START ------------------>
 
-          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-3-grade"] == "Bad"%}
+          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-4-grade"] == "Bad" or data["evidence-3-grade"] == "Bad"%}
 
         <table class="govuk-table">
 
@@ -141,6 +153,12 @@
         {% if data["evidence-2-grade"] == "Good" %}
         {% elif data["evidence-2-grade"] == "Bad" %}
           {% include "agent-0-6/evidence-2-status.html" %}
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-4-grade"] == "Good" %}
+        {% elif data["evidence-4-grade"] == "Bad" %}
+          {% include "agent-0-6/evidence-4-status.html" %}
         {% else %}
         {% endif %}
 
