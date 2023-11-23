@@ -11,10 +11,11 @@ function makeAStay(data) {
 }
 
 // PDF DOWNLOADER
-router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-letter.pdf')))
-router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc1.pdf')))
-router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc2.pdf')))
-router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-5/pip-doc3.pdf')))
+router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-letter.pdf')))
+router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc1.pdf')))
+router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc2.pdf')))
+router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc3.pdf')))
+router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc4.pdf')))
 
 // —————————————————————————————————
 
@@ -228,7 +229,7 @@ router.post(`/application-5-about-a1-router`, (req, res) => {
     res.redirect(`application-5-about-a-autofill`)
   }
   else if (about5_A1 == 'Amended') {
-    res.redirect(`application-5-about-a1-reason`)
+    res.redirect(`application-5-about-a1-score`)
   }
    else {
     res.redirect(`application-5-about-clear`)
@@ -242,7 +243,7 @@ router.post(`/application-5-about-a6-router`, (req, res) => {
     res.redirect(`application-5-about`)
   }
   else if (about5_A6 == 'Amended') {
-    res.redirect(`application-5-about-a6-reason`)
+    res.redirect(`application-5-about-a6-score`)
   }
    else {
     res.redirect(`application-5-about`)
@@ -257,7 +258,7 @@ router.post(`/application-5-about-a12-router`, (req, res) => {
     res.redirect(`application-5-about`)
   }
   else if (about5_A12 == 'Amended') {
-    res.redirect(`application-5-about-a12-reason`)
+    res.redirect(`application-5-about-a12-score`)
   }
    else {
     res.redirect(`application-5-about`)

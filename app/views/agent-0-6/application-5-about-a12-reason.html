@@ -18,10 +18,38 @@
 
       {% include "agent-0-6/record-id.html" %}
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-5-about-a12"] == "Agree" %} Why did you given Making budgeting decisions a score of 6
-            {% elif data["application-5-about-a12"] == "Amended" %}You have changed the score of making budgeting decisions from 4 to {{ data["score-overwrite"]}}
-            {% else %}
-            {% endif %}</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+
+
+          </h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
+
+            {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
+              0
+            {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
+              2
+            {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
+              4
+            {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
+              6
+            {% endif %}
+
+          </h2>
+
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The grade will now be:
+
+            {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
+              <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+            {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
+              <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+            {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
+              <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+            {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
+              <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+            {% endif %}
+
+            </p>
 
       {{ govukTextarea({
         name: "application-5-about-a12-reason",
