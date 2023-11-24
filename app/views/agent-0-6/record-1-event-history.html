@@ -14,9 +14,15 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="login-router" method="post" class="form">
+    <form action="record-1-event-history-router" method="post" class="form">
 
       {% include "agent-0-6/record-id.html" %}
+
+      <style>
+      #accordion-default > div.govuk-accordion__controls > button {display: none}
+      /* #accordion-default-heading-1 > span {display: none} */
+      </style>
+
 
 
     </div>
@@ -28,13 +34,77 @@
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The agent will see a history of communication with the person. It shows the date of the event, the notes that an agent added relating to that event, and any actions as a result.</p> -->
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Filter by event type: &nbsp;&nbsp;<a class="govuk-body govuk-!-font-size-19" href="#"><strong>Clear</strong></a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Inbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Outbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Letters</a> </p> -->
+
+
+<div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Filter by event type
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half govuk-!-margin-bottom-0">
+
+      {{ govukCheckboxes({
+      idPrefix: "organisation",
+      name: "organisation",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+      legend: {
+      text: "Select filter type",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s "
+      }
+      },
+      items: [
+      {
+      value: "Inbound calls",
+      text: "Inbound calls"
+      },
+      {
+      value: "Outbound calls",
+      text: "Outbound calls"
+      },
+      {
+      value: "Letters sent",
+      text: "Letters sent"
+      },
+      {
+      value: "Letters recivied",
+      text: "Letters recivied"
+      },
+      {
+      value: "Outbound calls",
+      text: "Outbound calls"
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Apply",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+      }) }}
+
+    </div>
+  </div>
+
+
+    </div>
+  </div>
 
 
 
+</div>
 
 
-    <table class="govuk-table">
+
+    <table class="govuk-table govuk-!-margin-top-0">
 
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
