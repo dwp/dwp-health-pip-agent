@@ -23,17 +23,7 @@
 
           </h2>
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
-
-            {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
-              0
-            {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
-              2
-            {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
-              4
-            {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
-              6
-            {% endif %}
-
+            {% include "agent-0-6/application-5-about-a12-scoreoverwrite.html" %}
           </h2>
 
 
