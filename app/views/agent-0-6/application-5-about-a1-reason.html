@@ -19,21 +19,7 @@
       {% include "agent-0-6/record-id.html" %}
 
     <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
-
-      {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
-        0
-      {% elif data["application-5-about-a1-score-overwrite"] == "b2" %}
-        2
-      {% elif data["application-5-about-a1-score-overwrite"] == "c3" %}
-        2
-      {% elseif data["application-5-about-a1-score-overwrite"] == "d4" %}
-        2
-      {% elseif data["application-5-about-a1-score-overwrite"] == "e5" %}
-        4
-      {% elseif data["application-5-about-a1-score-overwrite"] == "f6" %}
-        8
-      {% endif %}
-
+{% include "agent-0-6/application-5-about-a1-scoreoverwrite.html" %}
     </h2>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The grade will now be:
