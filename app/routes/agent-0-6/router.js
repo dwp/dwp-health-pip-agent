@@ -91,6 +91,22 @@ router.post(`/application-1-outcome-letter-check-router`, (req, res) => {
   }
 })
 
+router.post(`/application-5-outcome-letter-check-router`, (req, res) => {
+  const letter5Edit = req.session.data['application-5-outcome-letter-check']
+
+  if (letter5Edit== 'Yes') {
+    res.redirect(`application-5-letter-edit`)
+  }
+  else if (letter5Edit == 'No') {
+    res.redirect(`application-5-letter-review`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
 
 router.post(`/inbound-1-greeting-router`, (req, res) => {
   const inboundGreeting = req.session.data['inbound-1-greeting']
@@ -264,6 +280,18 @@ router.post(`/application-5-about-a12-router`, (req, res) => {
     res.redirect(`application-5-about`)
   }
 })
+
+router.post(`/application-5-award-review-check-router`, (req, res) => {
+  const awardReview = req.session.data['application-5-award-review-check']
+
+  if (awardReview == 'Yes') {
+    res.redirect(`application-5-award-review-date`)
+  }
+   else {
+    res.redirect(`application-5-outcome-letter-check`)
+  }
+})
+
 
 
 
