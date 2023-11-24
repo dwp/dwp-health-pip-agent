@@ -14,7 +14,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
-    <form action="record-1-event-history-router" method="post" class="form">
+    <form action="record-1-event-history" method="post" class="form">
 
       {% include "agent-0-6/record-id.html" %}
 
@@ -52,8 +52,8 @@
       <div class="govuk-grid-column-one-half govuk-!-margin-bottom-0">
 
       {{ govukCheckboxes({
-      idPrefix: "organisation",
-      name: "organisation",
+      idPrefix: "record-1-event-history-filter",
+      name: "record-1-event-history-filter",
       classes: "govuk-checkboxes--small",
       fieldset: {
       legend: {
@@ -64,24 +64,29 @@
       },
       items: [
       {
-      value: "Inbound calls",
-      text: "Inbound calls"
+      value: "1",
+      text: "Inbound calls",
+      checked: (data["record-1-event-history-filter"] == "1")
       },
       {
-      value: "Outbound calls",
-      text: "Outbound calls"
+      value: "2",
+      text: "Outbound calls",
+      checked: (data["record-1-event-history-filter"] == "2")
       },
       {
-      value: "Letters sent",
-      text: "Letters sent"
+      value: "3",
+      text: "Letters sent",
+      checked: (data["record-1-event-history-filter"] == "3")
       },
       {
-      value: "Letters recivied",
-      text: "Letters recivied"
+      value: "4",
+      text: "Letters recivied",
+      checked: (data["record-1-event-history-filter"] == "4")
       },
       {
-      value: "Outbound calls",
-      text: "Outbound calls"
+      value: "5",
+      text: "Outbound calls",
+      checked: (data["record-1-event-history-filter"] == "5")
       }
       ]
       }) }}
@@ -102,6 +107,17 @@
 
 </div>
 
+
+
+    {% if data["record-1-event-history-filter" == "1"] %}
+
+    1 was selected
+
+    {% else %}
+
+    Nothing was selected
+
+    {% endif %}
 
 
     <table class="govuk-table govuk-!-margin-top-0">
