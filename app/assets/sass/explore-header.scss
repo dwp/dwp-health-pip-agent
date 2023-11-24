@@ -321,7 +321,7 @@ $search-icon-size: 20px;
 
 .gem-c-layout-super-navigation-header__navigation-items {
   .js-enabled & {
-    padding: 0 0 govuk-spacing(9) 0;
+    padding: 0 0 govuk-spacing(2) 0;
 
     @include govuk-media-query($from: desktop) {
       padding: 0;
@@ -666,10 +666,9 @@ $search-icon-size: 20px;
 
 // Dropdown menu.
 .gem-c-layout-super-navigation-header__navigation-dropdown-menu {
-  background: govuk-colour("white");
+  background: govuk-colour("light-grey");
 
   @include govuk-media-query($from: desktop) {
-    background: govuk-colour("light-grey");
     left: 0;
     position: absolute;
     right: 0;
