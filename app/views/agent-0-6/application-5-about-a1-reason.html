@@ -18,11 +18,23 @@
 
       {% include "agent-0-6/record-id.html" %}
 
-    <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why did you change Making budgeting decisions from 4 to
-{% include "agent-0-6/application-5-about-a1-scoreoverwrite.html" %}
+    <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You have changed the descriptor of preparing food to
+      {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
+        <strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided
+      {% elif data["application-5-about-a1-score-overwrite"] == "b2" %}
+        <strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+      {% elif data["application-5-about-a1-score-overwrite"] == "c3" %}
+        <strong>Descriptor C (2 points):</strong> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+      {% elseif data["application-5-about-a1-score-overwrite"] == "d4" %}
+        <strong>Descriptor D (2 points):</strong> Needs prompting to be able to either prepare or cook a simple meal
+      {% elseif data["application-5-about-a1-score-overwrite"] == "e5" %}
+        <strong>Descriptor E (4 points):</strong> Needs supervision or assistance to either prepare or cook a simple meal
+      {% elseif data["application-5-about-a1-score-overwrite"] == "f6" %}
+        <strong>Descriptor F (8 points):</strong> Cannot prepare and cook food
+      {% endif %}
     </h2>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The grade will now be:
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The grade will now be:
 
       {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
         <strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided
@@ -38,13 +50,13 @@
         <strong>Descriptor F (8 points):</strong> Cannot prepare and cook food
       {% endif %}
 
-      </p>
+      </p> -->
 
       {{ govukTextarea({
         name: "application-5-about-a1-reason",
         id: "application-5-about-a1-reason",
         label: {
-          text: "Why did you change the score?",
+          text: "Why did you change the descriptor?",
           classes: "govuk-label--m",
           isPageHeading: true
         },
