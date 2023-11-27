@@ -18,12 +18,12 @@
       {% include "agent-0-3/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Given that you have agreed to the finding, The award review of 1 year (5 December 2024) has been set by the AP</h1>
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Given that you have agreed to the finding, The award review of 1 year (5 December 2024) has been set by the AP</h1> -->
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Given that you have chnaged one or more of the activites, The award review of 1 year (5 December 2024) has been set by the AP</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What award review period do you want to select?</h1>
 
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXXX</p>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXXX</p> -->
 
 
 
@@ -32,12 +32,12 @@
 
     {% set newDates %}
 
-    <p class="govuk-body">Based their circumstances, What date blah</p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXXX:</p>
+    <!-- <p class="govuk-body">Based their circumstances, What date blah</p> -->
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXXX:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>XXX</li>
       <li>XXX</li>
-        </ul>
+        </ul> -->
 
     {% endset %}
 
@@ -46,7 +46,7 @@
     namePrefix: "application-5-award-review-date-other",
     fieldset: {
       legend: {
-        html: "What date?",
+        html: "Enter an award review date",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-6"
       }
@@ -83,7 +83,7 @@
       name: "application-5-award-review-date",
       fieldset: {
         legend: {
-          text: "The assessment report has scored 4 points for this activity. Do you agree?",
+          text: "",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
