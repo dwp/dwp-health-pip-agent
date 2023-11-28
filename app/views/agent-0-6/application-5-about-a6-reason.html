@@ -21,28 +21,17 @@
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You have added
             {% if data["application-5-about-a6-score-overwrite"] == "a1" %}
-              <strong>Descriptor A (0 points):</strong> Can dress and undress unaided
+              <strong>Descriptor A (0 points)</strong>
             {% elif data["application-5-about-a6-score-overwrite"] == "b2" %}
-            <strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to dress or undress
+            <strong>Descriptor B (2 points)</strong>
             {% elif data["application-5-about-a6-score-overwrite"] == "c3" %}
-
-            <strong>Descriptor C (2 points):</strong> Needs either:
-
-            <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
-              <li>
-                prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed
-              </li>
-              <li>
-                prompting or assistance to be able to select appropriate clothing
-              </li>
-            </ul>
-
+            <strong>Descriptor C (2 points)</strong>
             {% elseif data["application-5-about-a6-score-overwrite"] == "d4" %}
-            <strong>Descriptor D (2 points):</strong> Needs assistance to be able to dress or undress their lower body
+            <strong>Descriptor D (2 points)</strong>
             {% elseif data["application-5-about-a6-score-overwrite"] == "e5" %}
-            <strong>Descriptor E (4 points):</strong> Needs assistance to be able to dress or undress their upper body
+            <strong>Descriptor E (4 points)</strong>
             {% elseif data["application-5-about-a6-score-overwrite"] == "f6" %}
-            <strong>Descriptor F (8 points):</strong> Cannot dress or undress at all
+            <strong>Descriptor F (8 points)</strong>
             {% endif %}
 
 
@@ -87,7 +76,7 @@
           isPageHeading: true
         },
         hint: {
-          text: ""
+          text: "This will be added to the decision letter."
         }
       }) }}
 
