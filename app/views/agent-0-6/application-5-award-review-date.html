@@ -20,7 +20,7 @@
 
       <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Given that you have agreed to the finding, The award review of 1 year (5 December 2024) has been set by the AP</h1> -->
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What award review period do you want to set?</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What award period do you want to set?</h1>
 
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXXX</p> -->
@@ -46,7 +46,7 @@
     namePrefix: "application-5-award-review-date-other",
     fieldset: {
       legend: {
-        html: "Enter an award review date",
+        html: "Enter the end date of the award",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-0"
       }
@@ -104,9 +104,9 @@
         checked: (data["application-5-award-review-date"] == "2y")
       },
       {
-        value: "6m",
-        text: "6 months",
-        checked: (data["application-5-award-review-date"] == "6m")
+        value: "9m",
+        text: "9 months",
+        checked: (data["application-5-award-review-date"] == "9m")
       },
       {
         value: "Other",
