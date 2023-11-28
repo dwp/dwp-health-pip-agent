@@ -175,7 +175,7 @@
             2. Taking nutrition
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>0 out of 10</strong>
+            <strong>0 out of 10 (Not claimed)</strong>
           </dd>
         </div>
 
@@ -285,7 +285,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a6"] == "No-change" %}     Not claimed
+              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10 (Not claimed)
               {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-6/application-5-about-a6-scoreoverwrite.html" %} out of 8
               {% else %}
               {% endif %}
