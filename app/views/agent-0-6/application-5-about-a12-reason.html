@@ -25,13 +25,13 @@
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You have changed the descriptor of making budgeting decisions to
 
             {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
-              <strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided
+              <strong>Descriptor A (0 points)</strong>
             {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
-              <strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions
+              <strong>Descriptor B (2 points)</strong>
             {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
-              <strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions
+              <strong>Descriptor C (4 points)</strong>
             {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
-              <strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all
+              <strong>Descriptor D (6 points)</strong>
             {% endif %}
 
             <!-- {% include "agent-0-6/application-5-about-a12-scoreoverwrite.html" %} -->
@@ -61,7 +61,7 @@
           isPageHeading: true
         },
         hint: {
-          text: ""
+          text: "This will be added to the decision letter."
         }
       }) }}
 
