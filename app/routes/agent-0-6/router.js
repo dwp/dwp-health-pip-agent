@@ -284,7 +284,7 @@ router.post(`/application-5-about-a12-router`, (req, res) => {
 router.post(`/application-5-award-review-check-router`, (req, res) => {
   const awardReview = req.session.data['application-5-award-review-check']
 
-  if (awardReview == 'Yes') {
+  if (awardReview == 'No') {
     res.redirect(`application-5-award-review-date`)
   }
    else {
