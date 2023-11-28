@@ -19,7 +19,7 @@
       {% if data["application-5-letter-edit"] == "Yes" %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the edited version<br>of the letter</h1>
       {% else %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">@dave (If notthing has been edited, eg addioanl content then this is dynamic) Review the letter</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the letter</h1>
       {% endif %}
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is the content of the letter related to your decision.</p>
@@ -33,20 +33,20 @@
                   <li>
 
 {% if data["application-5-award-review-date"] == "5y"%}
-<strong>We can award you this for 5 years until  X XX 2023+5.</strong>
+<strong>We can award you this for 5 years until 29 November 2028</strong>
 
 {% elif data["application-5-award-review-date"] == "2y"%}
-<strong>We can award you this for 2 years until  X XX 2023+2.</strong>
+<strong>We can award you this for 2 years until 29 November 2025</strong>
 
 {% elif data["application-5-award-review-date"] == "6m"%}
-<strong>We can award you this for 6 months until  X XX 2023+6m.</strong>
+<strong>We can award you this for 6 months until 29 May 2024</strong>
 
 {% elif data["application-5-award-review-date"] == "other"%}
-<strong>We can award you this for X years until  X XX 2023+5.</strong>
+<strong>We can award you this for 10 years until 29 November 2033.</strong>
 
 
 {% else %}
-<strong>@dave, had to change this to aline with radios We can award you this for 1 year until 1 October 2033.</strong>
+<strong>We can award you this for 10 years until 29 November 2033.</strong>
 
       {% endif %}
 
