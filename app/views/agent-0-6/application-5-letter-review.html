@@ -32,23 +32,26 @@
                 <ul class="govuk-list">
                   <li>
 
-{% if data["application-5-award-review-date"] == "5y"%}
-<strong>We can award you this for 5 years until 29 November 2028</strong>
+    {% if data["application-5-award-review-check"] == "No"%}
 
-{% elif data["application-5-award-review-date"] == "2y"%}
-<strong>We can award you this for 2 years until 29 November 2025</strong>
+      {% if data["application-5-award-review-date"] == "5y"%}
+      <strong>We can award you this for 5 years until 29 November 2028</strong>
 
-{% elif data["application-5-award-review-date"] == "6m"%}
-<strong>We can award you this for 6 months until 29 May 2024</strong>
+      {% elif data["application-5-award-review-date"] == "2y"%}
+      <strong>We can award you this for 2 years until 29 November 2025</strong>
 
-{% elif data["application-5-award-review-date"] == "other"%}
-<strong>We can award you this for 10 years until 29 November 2033.</strong>
+      {% elif data["application-5-award-review-date"] == "6m"%}
+      <strong>We can award you this for 6 months until 29 May 2024</strong>
 
-
-{% else %}
-<strong>We can award you this for 10 years until 29 November 2033.</strong>
-
+      {% elif data["application-5-award-review-date"] == "Other"%}
+      <strong>We can award you this for 10 years until 29 November 2033.</strong>
+      {% else %}
       {% endif %}
+
+    {% else %}
+    <strong>We can award you this for 1 year until 29 November 2024.</strong>
+    {% endif %}
+
 
       </li>
       <li>
