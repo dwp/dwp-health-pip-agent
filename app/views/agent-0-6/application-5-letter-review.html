@@ -159,7 +159,7 @@
             {{ data["application-5-about-a1-reason"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="application-5-about-a12-reason">
+            <a class="govuk-link" href="application-5-about-a1-reason">
               Change<span class="govuk-visually-hidden"> XXX justification</span>
             </a>
           </dd>
@@ -175,7 +175,7 @@
             2. Taking nutrition
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>0 out of 10</strong>
+            <strong>0 out of 10 (Not claimed)</strong>
           </dd>
         </div>
 
@@ -285,11 +285,11 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a1"] == "Agree" %}     0
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-6/application-5-about-a6-scoreoverwrite.html" %}
+              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10 (Not claimed)
+              {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-6/application-5-about-a6-scoreoverwrite.html" %} out of 8
               {% else %}
               {% endif %}
-              out of 8
+
             </strong>          </dd>
         </div>
 
@@ -302,7 +302,7 @@
             {{ data["application-5-about-a6-reason"]}}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="application-5-about-a12-reason">
+            <a class="govuk-link" href="application-5-about-a6-reason">
               Change<span class="govuk-visually-hidden"> XXX justification</span>
             </a>
           </dd>
