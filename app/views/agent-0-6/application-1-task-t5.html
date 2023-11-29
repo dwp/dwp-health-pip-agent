@@ -15,7 +15,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="application-1-tasklist" method="post" class="form">
+    <form action="application-5-tasklist" method="post" class="form">
 
       <div class="govuk-grid-column-two-thirds">
         {% include "agent-0-6/record-id.html" %}
@@ -39,10 +39,12 @@
           <!------------H1 LEGEND------------>
             {% set legendContactDetails %}
 
-            <p class="govuk-body govuk-!-margin-bottom-2"></p>
+            <p class="govuk-body govuk-!-margin-bottom-2">Try and call Veterans Agency first</p>
 
             <ul class="govuk-list govuk-list">
-              <li><b>Email</b>: afip.team@dwp.gov.uk</li>
+              <li>Call: <b>0191 488 3188</b></li>
+
+              <li>Email: <b>afip.team@dwp.gov.uk</b></li>
   </ul>
 
 
@@ -61,8 +63,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "application-1-task-t4",
-        name: "application-1-task-t4",
+        idPrefix: "application-1-task-t5",
+        name: "application-1-task-t5",
         fieldset: {
           legend: {
             html: dynamicH2,
@@ -78,17 +80,17 @@
         {
           value: "Done",
           text: "Yes",
-          checked: (data["application-1-task-t4"] == "Done")
+          checked: (data["application-1-task-t5"] == "Done")
         },
         {
           value: "Bad",
           text: "No",
-          checked: (data["application-1-task-t4"] == "Bad")
+          checked: (data["application-1-task-t5"] == "Bad")
         },
         {
           value: "Pause",
           text: "I cannot check this now or want to come back to it later",
-          checked: (data["application-1-task-t4"] == "Pause")
+          checked: (data["application-1-task-t5"] == "Pause")
         }
         ]
       }) }}
