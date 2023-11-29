@@ -74,7 +74,7 @@
 
         {% endset %}
 
-        {% set legendNumbers %}
+        {% set legendHint %}
 
         {{ govukDetails({
           summaryText: "Help with descriptors",
@@ -97,7 +97,7 @@
           }
         },
         hint: {
-          html: legendNumbers
+          html: legendHint
         },
         classes: "govuk-radios",
         items: [
