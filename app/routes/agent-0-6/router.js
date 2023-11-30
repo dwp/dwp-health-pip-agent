@@ -292,6 +292,19 @@ router.post(`/application-5-award-review-check-router`, (req, res) => {
   }
 })
 
+router.post(`/record-1-event-history-filter-router`, (req, res) => {
+  const eventFilter = req.session.data['record-1-event-history-filter']
+
+  if (eventFilter == '1') {
+    res.redirect(`record-1-event-history-inbound-calls`)
+  }
+   else {
+    res.redirect(`record-1-event-history`)
+  }
+})
+
+
+
 
 
 
