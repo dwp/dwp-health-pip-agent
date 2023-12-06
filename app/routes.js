@@ -21,6 +21,7 @@ router.use('/agent-0-4', require('./routes/agent-0-4/router.js'));
 router.use('/agent-0-5', require('./routes/agent-0-5/router.js'));
 router.use('/agent-0-5-1', require('./routes/agent-0-5-1/router.js'));
 router.use('/agent-0-6', require('./routes/agent-0-6/router.js'));
+router.use('/agent-0-7', require('./routes/agent-0-7/router.js'));
 
 
 module.exports = router
