@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-1-about-a12-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-7/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Making budgeting decisions</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Claimed for this activity</p> -->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Asked</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Tell us about the difficulties you have with managing your money</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Response in application</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            Most days I have difficulty making decisions about bills and household budgets because I become very anxious and panicked. My partner helps me make financial decisions.
+        </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+              Always have difficulty paying for things in shops because I find it difficult to calculate how much things cost. My carer, who helps me to get dressed and undressed, helps me understand how much I need to pay.
+        </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h1 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-4">Assessment report findings</h1>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            Jeff's ability to manage money fluctuates.
+        </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            He can manage his money in shops when he attends them but finds it difficult to manage his bills and card payments.
+          </p>
+
+        <p class="govuk-body govuk-!-margin-bottom-6">
+          He requires prompting and supervision from his support worker to manage bills. Without this, he gets into debt or fails to make regular payments and has been threatened with legal action in the past.
+        </p>
+
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1>
+
+
+        <!------------H1 LEGEND------------>
+          {% set legenDetails %}
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+
+            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+          </p>
+
+          {% endset %}
+        <!------------Legend--------------->
+
+        {{ govukDetails({
+          summaryText: "Contacting the assessment report provider",
+          classes: "govuk-!-margin-bottom-0",
+          html: legenDetails
+        }) }}
+
+<br><br>
+
+      {% set scoreOverwite %}
+          {{ govukInput({
+            id: "score-overwrite",
+            label: {
+                text: "What score would you give?",
+                classes: "govuk-fieldset__legend--m"
+            },
+            hint: {
+              text: "0, 2, 4 or 6"
+            },
+                name: "score-overwrite",
+                classes: "govuk-input--width-4",
+                value: data["score-overwrite"]
+            }) }}
+
+      {% endset -%}
+
+
+
+      {{ govukRadios({
+        idPrefix: "application-1-about-a12",
+        name: "application-1-about-a12",
+        fieldset: {
+          legend: {
+            text: "The assessment report has scored 4 points for this activity. Do you agree?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Agree",
+          text: "Yes",
+          checked: (data["application-1-about-a12"] == "Agree")
+        },
+        {
+          value: "Amended",
+          text: "No",
+          checked: (data["application-1-about-a12"] == "Amended"),
+                conditional: {
+                  html: scoreOverwite
+                }
+                  },
+          {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["application-1-about-a12"] == "Pause")
+        }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
