@@ -242,7 +242,7 @@ router.post(`/application-5-about-a1-router`, (req, res) => {
   const about5_A1 = req.session.data['application-5-about-a1']
 
   if (about5_A1 == 'Agree') {
-    res.redirect(`application-5-about-a-autofill`)
+    res.redirect(`application-5-about-a1-ap-justification`)
   }
   else if (about5_A1 == 'Amended') {
     res.redirect(`application-5-about-a1-score`)
