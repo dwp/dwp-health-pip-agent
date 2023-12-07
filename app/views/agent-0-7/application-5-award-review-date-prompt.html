@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-outcome-letter-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The award period will be set for
+
+          {% if data["application-5-award-review-date"] == "5y"%} 5 years
+          {% elif data["application-5-award-review-date"] == "2y"%} 2 years
+          {% elif data["application-5-award-review-date"] == "18m"%} 18 months
+          {% elif data["application-5-award-review-date"] == "SPA"%} 14 months (State Pension Age)
+          {% elif data["application-5-award-review-date"] == "9m"%} 9 months
+          {% elif data["application-5-award-review-date"] == "Other"%} 29 November 2033
+          {% else %}
+          {% endif %}
+
+        and they will be contacted prior to inditiate the award review</h1>
+
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXXX</p> -->
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

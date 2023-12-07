@@ -10,20 +10,19 @@
 
 {% block content %}
 
-<form action="application-5-outcome-letter-check" method="post" class="form">
+<form action="application-5-award-review-date-prompt" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-3/record-id.html" %}
 
-
-      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Given that you have agreed to the finding, The award review of 1 year (5 December 2024) has been set by the AP</h1> -->
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What award period do you want to set?</h1>
-
-
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXXX</p> -->
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">What award period do you want to set?
+            </h2>
+            {% endset %}
+      <!------------Legend--------------->
 
 
 
@@ -48,11 +47,11 @@
       legend: {
         html: "Enter the end date of the award",
         isPageHeading: true,
-        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-0"
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
       }
     },
     hint: {
-      html: newDates
+      html: "Date of assessment: 15 November 2023"
     },
     items: [
       {
@@ -83,9 +82,9 @@
       name: "application-5-award-review-date",
       fieldset: {
         legend: {
-          text: "",
+          html: dynamicH1,
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
+          classes: "govuk-fieldset__legend--s"
         }
       },
       hint: {
@@ -102,6 +101,16 @@
         value: "2y",
         text: "2 years",
         checked: (data["application-5-award-review-date"] == "2y")
+      },
+      {
+        value: "18m",
+        text: "18 months",
+        checked: (data["application-5-award-review-date"] == "18m")
+      },
+      {
+        value: "SPA",
+        text: "14 months (Align to State Pension Age)",
+        checked: (data["application-5-award-review-date"] == "SPA")
       },
       {
         value: "9m",
