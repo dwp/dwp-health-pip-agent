@@ -40,6 +40,12 @@
       {% elif data["application-5-award-review-date"] == "2y"%}
       <strong>We can award you this for 2 years until 29 November 2025</strong>
 
+      {% elif data["application-5-award-review-date"] == "18m"%}
+      @dave <strong>We can award you this for 18 months until XX XX XX</strong>
+
+      {% elif data["application-5-award-review-date"] == "SPA"%}
+      @dave <strong>We can award you this for 14 months until XX XX XX. This is your State pension Age date </strong>
+
       {% elif data["application-5-award-review-date"] == "9m"%}
       <strong>We can award you this for 9 months until 29 August 2024</strong>
 
@@ -52,8 +58,12 @@
     <strong>We can award you this for 1 year until 29 November 2024.</strong>
     {% endif %}
 
-
       </li>
+
+      <li>
+    @dave We will contact you prior to this end priod to see if anything has changed
+      </li>
+
       <li>
       We will pay £350 into your bank account on 20 November 2023.
       </li>
