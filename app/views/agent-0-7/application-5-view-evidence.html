@@ -34,7 +34,7 @@
 <br>
 
 
-{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-4-grade"] and data["evidence-3-grade"] %}
+{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-3-grade"] and data["evidence-4-grade"] and data["evidence-5-grade"]%}
 
 {% else %}
 
@@ -72,8 +72,17 @@
 
 {% if data["evidence-4-grade"] == "Good" %}
 {% elif data["evidence-4-grade"] == "Bad" %}
+{% elif data["evidence-4-grade"] == "Remove" %}
+
 {% else %}
     {% include "agent-0-7/evidence-4-status.html" %}
+{% endif %}
+
+{% if data["evidence-5-grade"] == "Good" %}
+{% elif data["evidence-5-grade"] == "Bad" %}
+{% elif data["evidence-5-grade"] == "Remove" %}
+{% else %}
+    {% include "agent-0-7/evidence-5-status.html" %}
 {% endif %}
 
 </table>
@@ -82,7 +91,7 @@
 
   <!---------------- GOOD AREA START ------------------>
 
-  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-4-grade"] == "Good" or data["evidence-3-grade"] == "Good"%}
+  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-3-grade"] == "Good" or data["evidence-4-grade"] == "Good" or data["evidence-5-grade"] == "Bad"%}
 
   <table class="govuk-table govuk-!-margin-bottom-8">
 
@@ -118,6 +127,14 @@
           {% if data["evidence-4-grade"] == "Good" %}
               {% include "agent-0-7/evidence-4-status.html" %}
           {% elif data["evidence-4-grade"] == "Bad" %}
+          {% elif data["evidence-4-grade"] == "Remove" %}
+          {% else %}
+          {% endif %}
+
+          {% if data["evidence-5-grade"] == "Good" %}
+              {% include "agent-0-7/evidence-5-status.html" %}
+          {% elif data["evidence-5-grade"] == "Bad" %}
+          {% elif data["evidence-5-grade"] == "Remove" %}
           {% else %}
           {% endif %}
 
@@ -128,7 +145,7 @@
 
   <!---------------- BAD AREA START ------------------>
 
-          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-4-grade"] == "Bad" or data["evidence-3-grade"] == "Bad"%}
+          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-3-grade"] == "Bad" or data["evidence-4-grade"] == "Bad" or data["evidence-5-grade"] == "Bad"%}
 
         <table class="govuk-table">
 
@@ -163,6 +180,56 @@
         {% if data["evidence-4-grade"] == "Good" %}
         {% elif data["evidence-4-grade"] == "Bad" %}
           {% include "agent-0-7/evidence-4-status.html" %}
+        {% elif data["evidence-4-grade"] == "Remove" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-5-grade"] == "Good" %}
+        {% elif data["evidence-5-grade"] == "Bad" %}
+          {% include "agent-0-7/evidence-5-status.html" %}
+        {% elif data["evidence-5-grade"] == "Remove" %}
+
+        {% else %}
+        {% endif %}
+
+
+        </table>
+
+
+  {% else %}
+  {% endif %}
+  <!---------------- BAD AREA END ------------------>
+
+  <!---------------- REMOVE AREA START ------------------>
+
+          {% if data["evidence-4-grade"] == "Remove" or data["evidence-5-grade"] == "Remove" %}
+
+        <table class="govuk-table">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Flagged to be removed</h1>
+
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-50-percent">Document name</td>
+          <td class="govuk-table__cell govuk-40-percent">Date received</td>
+          <td class="govuk-table__cell govuk-10-percent">Status</td>
+        </tr>
+        </thead>
+
+        {% if data["evidence-4-grade"] == "Good" %}
+        {% elif data["evidence-4-grade"] == "Bad" %}
+          {% elif data["evidence-4-grade"] == "Remove" %}
+            {% include "agent-0-7/evidence-5-status.html" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-5-grade"] == "Good" %}
+        {% elif data["evidence-5-grade"] == "Bad" %}
+        {% elif data["evidence-5-grade"] == "Remove" %}
+          {% include "agent-0-7/evidence-5-status.html" %}
+
         {% else %}
         {% endif %}
 

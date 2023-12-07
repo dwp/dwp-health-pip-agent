@@ -11,11 +11,12 @@ function makeAStay(data) {
 }
 
 // PDF DOWNLOADER
-router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-letter.pdf')))
-router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc1.pdf')))
-router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc2.pdf')))
-router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc3.pdf')))
-router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-6/pip-doc4.pdf')))
+router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-letter.pdf')))
+router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc1.pdf')))
+router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc2.pdf')))
+router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc3.pdf')))
+router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc4.pdf')))
+router.use(`/pip-doc5.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc5.pdf')))
 
 // —————————————————————————————————
 
