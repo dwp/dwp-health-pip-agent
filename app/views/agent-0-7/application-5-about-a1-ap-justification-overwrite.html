@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-about-a-autofill" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-7/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Make your changes to Preparing food, this will be shown in the letter under justification for the score</h2>
+
+
+      <!------------LIST LEGEND------------>
+        {% set dynamicHint %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+          Do not use</p>
+
+          <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-4 govuk-list--bullet">
+            <li>
+              The content might not be great for citizens</li>
+            <li>
+              Internal doubleSpeak
+            </li>
+            <li>
+              Acronyms
+            </li>
+            <li>
+              Jargon
+            </li>
+          </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukTextarea({
+        name: "application-5-about-a1-ap-justification-overwrite",
+        id: "application-5-about-a1-ap-justification-overwrite",
+        label: {
+          text: "XXX",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: dynamicHint
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -304,6 +304,19 @@ router.post(`/record-1-event-history-filter-router`, (req, res) => {
 })
 
 
+router.post(`/application-5-about-a1-ap-justification-routers`, (req, res) => {
+  const apJustification = req.session.data['application-5-about-a1-ap-justification']
+
+  if (apJustification == 'Yes') {
+    res.redirect(`application-5-about-a1-ap-justification-overwrite`)
+  }
+   else {
+    res.redirect(`application-5-about-a-autofill`)
+  }
+})
+
+
+
 
 
 
