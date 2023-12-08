@@ -66,9 +66,17 @@
           checked: (data["application-1-task-t3"] == "Bad")
         },
         {
+          divider: "or"
+        },
+        {
           value: "Pause",
-          text: "I cannot check this now or want to come back to it later",
+          text: "I want to come back to it later",
           checked: (data["application-1-task-t4"] == "Pause")
+        },
+        {
+          value: "Request",
+          text: "Other action needed",
+          checked: (data["application-1-task-t4"] == "Request")
         }
         ]
       }) }}
