@@ -52,6 +52,7 @@
           {% if data["application-1-task-t3"] == "Done" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["application-1-task-t3"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["application-1-task-t3"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% elif data["application-1-task-t3"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
@@ -63,6 +64,7 @@
           {% if data["application-1-task-t4"] == "Done" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["application-1-task-t4"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
           {% elif data["application-1-task-t4"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% elif data["application-1-task-t3"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">Can't do</strong>
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
@@ -74,6 +76,8 @@
           {% if data["application-1-task-t5"] == "Done" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["application-1-task-t5"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
           {% elif data["application-1-task-t5"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% elif data["application-1-task-t3"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">Can't do</strong>
+
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
@@ -83,6 +87,7 @@
             <!-- [1-1]  --> Appointees and powers of attorney
           </a>
           {% if data["application-1-task-t5"]%}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["application-1-task-t3"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">Can't do</strong>
           {% else %}                                 <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
@@ -95,6 +100,7 @@
             <!-- [1-3]  --> EU Settlement Scheme status
           </a>
           {% if data["application-1-task-t5"]%}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["application-1-task-t3"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">Can't do</strong>
           {% else %}                                 <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
@@ -114,23 +120,23 @@
   <div class="govuk-grid-row govuk-!-margin-top-0">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["application-1-task-t5"] == "Done"%}
+    {% if data["application-1-task-t3"] == "Request" %}
 
-<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have verified all details</h1>
-<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can continue processing this application.</p>
-
-
-{{ govukButton({
-name: "process-c-nil-task-list",
-value: "X",
-checked: (data["X"] == "X"),
-text: "Continue",
-classes: "govuk-!-margin-right-2"
-}) }}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You can't process this application yet</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something needs to happen with sending a letter</p>
 
 
-    {% elif data["application-1-task-t5"] == "Bad" %}
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "entry-home"
+      }) }}
+
+    {% elif data["application-1-task-t4"] == "Done" %}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->

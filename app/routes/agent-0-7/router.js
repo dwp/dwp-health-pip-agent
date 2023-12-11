@@ -316,6 +316,16 @@ router.post(`/application-5-about-a1-ap-justification-routers`, (req, res) => {
   }
 })
 
+router.post(`/application-1-task-t3-routers`, (req, res) => {
+  const t3check = req.session.data['application-1-task-t3']
+
+  if (t3check == 'Request') {
+    res.redirect(`application-1-task-t3-action`)
+  }
+   else {
+    res.redirect(`application-5-tasklist`)
+  }
+})
 
 
 
