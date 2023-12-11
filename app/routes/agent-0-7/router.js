@@ -289,7 +289,7 @@ router.post(`/application-5-award-review-check-router`, (req, res) => {
     res.redirect(`application-5-award-review-date`)
   }
    else {
-    res.redirect(`application-5-outcome-letter-check`)
+    res.redirect(`application-5-letter-review`)
   }
 })
 
