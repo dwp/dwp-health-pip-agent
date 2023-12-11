@@ -31,43 +31,43 @@
     {% if data["application-5-award-review-check"] == "No"%}
 
       {% if data["application-5-award-review-date"] == "5y"%}
-      <strong>We can award you this until 29 November 2029</strong>
+      <strong>We can award you this for 5 years until 29 November 2028</strong>
 
       {% elif data["application-5-award-review-date"] == "2y"%}
-      <strong>We can award you this until 29 November 2026</strong>
+      <strong>We can award you this for 2 years until 29 November 2025</strong>
 
       {% elif data["application-5-award-review-date"] == "18m"%}
-      @dave <strong>We can award you this until 29 June 2026</strong>
+      @dave <strong>We can award you this for 18 months until XX XX XX</strong>
 
       {% elif data["application-5-award-review-date"] == "SPA"%}
-      @dave <strong>We can award you this until 29 April 2025. This is when your reach State Pension age.</strong>
+      @dave <strong>We can award you this for 14 months until XX XX XX. This is your State pension Age date </strong>
 
       {% elif data["application-5-award-review-date"] == "9m"%}
-      <strong>We can award you this until 29 August 2024</strong>
+      <strong>We can award you this for 9 months until 29 August 2024</strong>
 
       {% elif data["application-5-award-review-date"] == "Other"%}
-      <strong>We can award you this until 29 November 2034.</strong>
+      <strong>We can award you this for 10 years until 29 November 2033.</strong>
       {% else %}
       {% endif %}
 
     {% else %}
-    <strong>We can award you this until 29 November 2025.</strong>
+    <strong>We can award you this for 1 year until 29 November 2024.</strong>
     {% endif %}
 
       </li>
 
       <li>
-    We will contact you 1 year before your award ends to review your claim.
+    @dave We will contact you prior to this end priod to see if anything has changed
       </li>
 
       <li>
-      We will pay £350 into your bank account on 1 December 2023.
+      We will pay £350 into your bank account on 20 November 2023.
       </li>
       <li>
-      This is money that we owe you from 1 November 2023 to 29 November 2023.
+      This is money that we owe you from 1 November 2023 to 19 November 2023.
       </li>
       <li>
-      You will then get £691 every 4 weeks from 28 December 2023.
+      You will then get £691 every 4 weeks from 20 December 2023.
       </li>
       </ul>
 
@@ -159,12 +159,8 @@
 
             <br>
 
-            {% if data["application-5-about-a1"] == "Agree" %}
-              Descriptor E (4 points): Needs supervision or assistance to either prepare or cook a simple meal
-            {% elif data["application-5-about-a1-score-overwrite"] %}
-              {{ data["application-5-about-a1-score-overwrite"]}}
-            {% else %}
-            {% endif %}
+            {% include "agent-0-7/application-5-about-a1-descriptoroverwrite.html" %}
+
 
           </dd>
         </div>
@@ -258,7 +254,7 @@
 
             <br>
 
-            Descriptor C (2 points): Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+            Descriptor C: Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
 
 
           </dd>
@@ -292,7 +288,7 @@
             <strong>2 out of 8</strong>
 
             <br>
-            Descriptor D (2 points): Needs assistance to be able to wash either their hair, or body below the waist
+            Descriptor D: Needs assistance to be able to wash either their hair, or body below the waist
 
           </dd>
         </div>
@@ -323,7 +319,7 @@
             <strong>2 out of 8</strong>
 
             <br>
-            Descriptor C (2 points): Needs supervision or prompting to be able to manage toilet needs
+            Descriptor C: Needs supervision or prompting to be able to manage toilet needs
 
           </dd>
         </div>
@@ -361,14 +357,8 @@
 
             <br>
 
-            {% if data["application-5-about-a6"] == "No-change" %}
-              0 out of 10 (Not claimed)
-            {% elif data["application-5-about-a6"] == "Amended" %}
-            {% include "agent-0-7/application-5-about-a6-scoreoverwrite.html" %} out of @daveXX
-            {% else %}
-            4 out of 10 (Not claimed)
+            {% include "agent-0-7/application-5-about-a6-descriptoroverwrite.html" %} XXX
 
-            {% endif %}
 
           </dd>
         </div>
@@ -402,7 +392,7 @@
             <strong>2 out of 12</strong>
 
             <br>
-            Descriptor B (2 points): Needs to use an aid or appliance to be able to speak or hear
+            Descriptor B: Needs to use an aid or appliance to be able to speak or hear
 
           </dd>
         </div>
@@ -462,7 +452,7 @@
             <strong>2 out of 8</strong>
 
             <br>
-            Descriptor B (2 points): Needs prompting to be able to engage with other people
+            Descriptor B: Needs prompting to be able to engage with other people
 
           </dd>
         </div>
@@ -500,14 +490,8 @@
 
             <br>
 
-            {% if data["application-5-about-a12"] == "Agree" %}
-              0 out of 10 (Not claimed)
-            {% elif data["application-5-about-a12"] == "Amended" %}
-            {% include "agent-0-7/application-5-about-a12-scoreoverwrite.html" %} out of @daveXX
-            {% else %}
-            4 out of 10 (Not claimed)
+            {% include "agent-0-7/application-5-about-a12-descriptoroverwrite.html" %}
 
-            {% endif %}
 
           </dd>
         </div>
@@ -546,7 +530,7 @@
                   <strong>4 out of 12</strong>
 
                   <br>
-                  Descriptor B (4 points): Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+                  Descriptor B: Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
 
                 </dd>
               </div>
@@ -576,7 +560,7 @@
                   <strong>8 out of 12</strong>
 
                   <br>
-                  Descriptor C (8 points): Can stand and then move unaided more than 20 metres but no more than 50 metres
+                  Descriptor C: Can stand and then move unaided more than 20 metres but no more than 50 metres
 
                 </dd>
               </div>
