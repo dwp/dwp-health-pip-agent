@@ -111,7 +111,26 @@
   <div class="govuk-grid-row govuk-!-margin-top-0">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["application-1-task-t4"] == "Done" %}
+    {% if data["application-1-task-t3"] == "Request" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You can't process this application yet</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something needs to happen with sending a letter</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "entry-home"
+      }) }}
+
+
+
+
+    {% elif data["application-1-task-t4"] == "Done" %}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have verified all details</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
