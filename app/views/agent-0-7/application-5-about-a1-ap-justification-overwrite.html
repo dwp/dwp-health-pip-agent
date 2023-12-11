@@ -18,13 +18,13 @@
 
       {% include "agent-0-7/record-id.html" %}
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Make your changes to Preparing food, this will be shown in the letter under justification for the score</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Edit the reason for selecting Descriptor E (4 points)</h2>
 
 
       <!------------LIST LEGEND------------>
         {% set dynamicHint %}
 
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
           Do not use</p>
 
           <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-4 govuk-list--bullet">
@@ -42,7 +42,7 @@
             <li>
               Jargon
             </li>
-          </ul>
+          </ul> -->
 
         {% endset %}
       <!------------Legend--------------->
@@ -51,17 +51,18 @@
         name: "application-5-about-a1-ap-justification-overwrite",
         id: "application-5-about-a1-ap-justification-overwrite",
         label: {
-          text: "XXX",
+          text: "",
           classes: "govuk-label--m",
           isPageHeading: true
         },
         hint: {
           html: dynamicHint
         },
-        value: "Jeff's care plan outlines the difficulty he has with preparing food and I agree with its findings.
-Jeff has difficulty preparing meals for himself. He can make himself drinks and sandwiches but needs to be supervised to make a meal.
-Jeff lacks the drive to prepare a meal regularly and tends to break off from cooking and this has resulted in him burning food and leaving pans to boil over.
-Jeff obtains most of his full meals from the drop-in centre and his support worker supervises him to put ready-made meals in the oven twice a week. During periods of low mood, he does not respond readily to prompting and will not make himself meals."
+        value: "Your care plan ('Care plan 2022' on DRS) outlines the difficlty you have with preparing food and I agree with its findings.
+You have difficulty preparing meals. You can make yourself drinks and sandwiches but need to be supervised to make a meal.
+You lack the drive to prepare a meal regularly and tend to break off from cooking and this has resulted in you burning food and leaving pans to boil over.
+You get most of your full meals from the drop-in centre and your support worker supervises you to put ready-made meals in the oven twice a week. During periods of low mood, Jeff does not respond readily to prompting and will not make yourself meals.
+This is why I have selected 1E."
       }) }}
 
       {{ govukButton({

@@ -87,7 +87,7 @@
   name: "evidence-5-next-action",
   fieldset: {
     legend: {
-      text: "What is the other action?" ,
+      text: "What is the issue?" ,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -99,7 +99,7 @@
   items: [
   {
     value: "Yes",
-    text: "Its a duplicate",
+    text: "It's a duplicate of another document",
     checked: (data["evidence-5-next-action"] == "Yes")
   },
   {
@@ -176,7 +176,7 @@
   },
   {
     value: "Remove",
-    text: "Other action needed",
+    text: "There is an issue with this document",
     checked: (data["evidence-5-grade"] == "Remove"),
           conditional: {
             html: nextAction
