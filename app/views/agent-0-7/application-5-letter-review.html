@@ -22,10 +22,6 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the letter</h1>
       {% endif %}
 
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is the content of the letter related to your decision.</p> -->
-
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}</strong></p> -->
-
       <!------------H1 LEGEND------------>
         {% set dynamicOutcome %}
 
@@ -160,6 +156,16 @@
               {% endif %}
               out of 8
             </strong>
+
+            <br>
+
+            {% if data["application-5-about-a1"] == "Agree" %}
+              Descriptor E (4 points): Needs supervision or assistance to either prepare or cook a simple meal
+            {% elif data["application-5-about-a1-score-overwrite"] %}
+              {{ data["application-5-about-a1-score-overwrite"]}}
+            {% else %}
+            {% endif %}
+
           </dd>
         </div>
 
@@ -177,8 +183,53 @@
             </a>
           </dd>
         </div>
+
+        {% elif data["application-5-about-a1-ap-justification"] == "Yes" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-5-about-a1-ap-justification-overwrite"]}}
+
+            <br><br>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-a1-ap-justification">
+              Change<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+
+{% elif data["application-5-about-a1-ap-justification"] == "No" %}
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <p>Your care plan ('Care plan 2022' on DRS) outlines the difficlty you have with preparing food and I agree with its findings.</p>
+            <p>You have difficulty preparing meals. You can make yourself drinks and sandwiches but need to be supervised to make a meal.</p>
+            <p>You lack the drive to prepare a meal regularly and tend to break off from cooking and this has resulted in you burning food and leaving pans to boil over.</p>
+            <p>You get most of your full meals from the drop-in centre and your support worker supervises you to put ready-made meals in the oven twice a week. During periods of low mood, Jeff does not respond readily to prompting and will not make yourself meals.</p>
+            <p>This is why I have selected 1E.
+
+            <br><br>
+
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-a1-ap-justification">
+              Change<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+
         {% else %}
         {% endif %}
+
       </dl>
 
       <!-- 2 -->
@@ -189,22 +240,11 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 10 (Not claimed)</strong>
+
           </dd>
         </div>
 
-        <!-- <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            Justification
-          </dt>
-          <dd class="govuk-summary-list__value">
-            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"> XXX justification</span>
-            </a>
-          </dd>
-        </div> -->
+
       </dl>
 
       <!-- 3 -->
@@ -215,6 +255,12 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>2 out of 8</strong>
+
+            <br>
+
+            XXX
+
+
           </dd>
         </div>
 
@@ -244,6 +290,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>2 out of 8</strong>
+
+            <br>
+            XXX
+
           </dd>
         </div>
 
@@ -271,6 +321,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>2 out of 8</strong>
+
+            <br>
+            XXX
+
           </dd>
         </div>
 
@@ -301,9 +355,22 @@
               {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10 (Not claimed)
               {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-7/application-5-about-a6-scoreoverwrite.html" %} out of 8
               {% else %}
+                0 out of 10 (Not claimed)
               {% endif %}
+            </strong>
 
-            </strong>          </dd>
+            <br>
+
+            {% if data["application-5-about-a6"] == "No-change" %}
+              0 out of 10 (Not claimed)
+            {% elif data["application-5-about-a6"] == "Amended" %}
+            {% include "agent-0-7/application-5-about-a6-scoreoverwrite.html" %} out of XX
+            {% else %}
+            4 out of 10 (Not claimed)
+
+            {% endif %}
+
+          </dd>
         </div>
 
         {% if data["application-5-about-a6"] == "Amended" %}
@@ -333,6 +400,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>2 out of 12</strong>
+
+            <br>
+            XXX
+
           </dd>
         </div>
 
@@ -360,6 +431,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
+
+            <br>
+            XXX
+
           </dd>
         </div>
 
@@ -387,6 +462,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>2 out of 8</strong>
+
+            <br>
+            XXX
+
           </dd>
         </div>
 
@@ -414,12 +493,24 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a1"] == "Agree" %}     6
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-7/application-5-about-a1-scoreoverwrite.html" %}
+              {% if data["application-5-about-a12"] == "Agree" %}     6
+              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-7/application-5-about-a12-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 8
             </strong>
+
+            <br>
+
+            {% if data["application-5-about-a12"] == "Agree" %}
+              0 out of 10 (Not claimed)
+            {% elif data["application-5-about-a12"] == "Amended" %}
+            {% include "agent-0-7/application-5-about-a12-scoreoverwrite.html" %} out of XX
+            {% else %}
+            4 out of 10 (Not claimed)
+
+            {% endif %}
+
           </dd>
         </div>
 
@@ -455,6 +546,10 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <strong>4 out of 12</strong>
+
+                  <br>
+                  XXX
+
                 </dd>
               </div>
 
@@ -481,6 +576,10 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <strong>8 out of 12</strong>
+
+                  <br>
+                  XXX
+
                 </dd>
               </div>
 
