@@ -16,8 +16,6 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-0-7/record-id.html" %}
-
 
 
 <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">The illusion of choice </h2>
@@ -142,10 +140,75 @@
 
 
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Reality
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+
+
+
+
+            <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">Given all evidence (PIP2, AP report and supporting documents), plus the assessment itself which only the AP was at</p>
+
+
+          {{ govukRadios({
+            idPrefix: "application-5-about-a6-score-overwrite",
+            name: "application-5-about-a6-score-overwrite",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: legendNumbers
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "a1",
+              html: "Disagree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "1")
+            },
+            {
+              value: "b2",
+              html: "Disagree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "2")
+            },
+            {
+              value: "c3",
+              html: "Agree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "6")
+            },
+            {
+              value: "d4",
+              html: "Disagree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "6")
+            },
+            {
+              value: "e5",
+              html: "Disagree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "6")
+            },
+            {
+              value: "f6",
+              html: "Disagree",
+              checked: (data["application-5-about-a6-score-overwrite"] == "6")
+            }
+            ]
+          }) }}
+
+
+
+          </div>
+        </details>
 
         </div>
       </div>
