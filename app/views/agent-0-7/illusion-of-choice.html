@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-7/record-id.html" %}
+
+
+
+<h2 class="govuk-heading-xl govuk-!-margin-bottom-0">The illusion of choice </h2>
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Given that the eviddence the AP has seen, and stuff you have not</p>
+
+
+{{ govukRadios({
+  idPrefix: "application-5-about-a12",
+  name: "application-5-about-a12",
+  fieldset: {
+    legend: {
+      text: "The assessment report selected Descriptor C (4 points) for this activity. Do you agree?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    html: legendHint
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Agree",
+    text: "Yes",
+    checked: (data["application-5-about-a12"] == "Agree")
+  },
+  {
+    value: "Amended",
+    text: "No",
+    checked: (data["application-5-about-a12"] == "Amended")
+  }
+  ]
+}) }}
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH1 %}
+              <h2 class="govuk-heading-l govuk-!-margin-bottom-0">Given that the eviddence the AP has seen, and stuff you have not, they recommended D C (2 points)Which descriptor do you want to add?
+
+                  </h2>
+                  {% endset %}
+            <!------------Legend--------------->
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicQ3 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+                <strong>Descriptor C (2 points):</strong> Needs either:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed
+                  </li>
+                  <li>
+                    prompting or assistance to be able to select appropriate clothing
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
+            {{ govukRadios({
+              idPrefix: "application-5-about-a6-score-overwrite",
+              name: "application-5-about-a6-score-overwrite",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                html: legendNumbers
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "a1",
+                html: "<strong>Descriptor A (0 points):</strong> Can dress and undress unaided",
+                checked: (data["application-5-about-a6-score-overwrite"] == "1")
+              },
+              {
+                value: "b2",
+                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to dress or undress",
+                checked: (data["application-5-about-a6-score-overwrite"] == "2")
+              },
+              {
+                value: "c3",
+                html: dynamicQ3,
+                checked: (data["application-5-about-a6-score-overwrite"] == "6")
+              },
+              {
+                value: "d4",
+                html: "<strong>Descriptor D (2 points):</strong> Needs assistance to be able to dress or undress their lower body",
+                checked: (data["application-5-about-a6-score-overwrite"] == "6")
+              },
+              {
+                value: "e5",
+                html: "<strong>Descriptor E (4 points):</strong> Needs assistance to be able to dress or undress their upper body",
+                checked: (data["application-5-about-a6-score-overwrite"] == "6")
+              },
+              {
+                value: "f6",
+                html: "<strong>Descriptor F (8 points):</strong> Cannot dress or undress at all",
+                checked: (data["application-5-about-a6-score-overwrite"] == "6")
+              }
+              ]
+            }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
