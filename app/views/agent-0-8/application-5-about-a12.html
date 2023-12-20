@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-about-a12-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-0-8/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Making budgeting decisions</h2>
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Health information gather</h3>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Asked in application</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Tell us about the difficulties you have with managing your money</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Response in application</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">Most days I have difficulty making decisions about bills and household budgets because I become very anxious and panicked. My partner helps me make financial decisions.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">Always have difficulty paying for things in shops because I find it difficult to calculate how much things cost. My carer, who helps me to get dressed and undressed, helps me understand how much I need to pay.</p>
+
+<!--  --> <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          <h2 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">Assessment report findings</h2>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-2">Jeff's ability to manage money fluctuates.</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">He can manage his money in shops when he attends them but finds it difficult to manage his bills and card payments.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-8">He requires prompting and supervision from his support worker to manage bills. Without this, he gets into debt or fails to make regular payments and has been threatened with legal action in the past.</p>
+
+<!--  --> <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+        <!------------HELP DETIALS ------------>
+          {% set legenDetails %}
+
+          <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+
+            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+          </p>
+
+          {{ govukDetails({
+            summaryText: "Contacting the assessment report provider",
+            classes: "govuk-!-margin-bottom-0",
+            html: legenDetails
+          }) }}
+
+          {% endset %}
+
+
+      <!------------H1 LEGEND------------>
+        {% set legendNumbersDetails %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2"></p>
+
+        <ul class="govuk-list govuk-list">
+          <li><b>Descriptor A (0 points)</b>: Can manage complex budgeting decisions unaided</li>
+          <li><b>Descriptor B (2 points)</b>: Needs prompting or assistance to be able to make complex budgeting decisions</li>
+          <li><b>Descriptor C (4 points)</b>: Needs prompting or assistance to be able to make simple budgeting decisions</li>
+          <li><b>Descriptor D (6 points)</b>: Cannot make any budgeting decisions at all</li>
+        </ul>
+
+
+        {% endset %}
+
+        {% set legendHint %}
+
+        {{ govukDetails({
+          summaryText: "Help with descriptors",
+          classes: "govuk-!-margin-bottom-0",
+          html: legendNumbersDetails
+        }) }}
+
+          {% endset %}
+        <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "application-5-about-a12",
+        name: "application-5-about-a12",
+        fieldset: {
+          legend: {
+            text: "The assessment report selected Descriptor C (4 points) for this activity. Do you agree?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Agree",
+          text: "Yes",
+          checked: (data["application-5-about-a12"] == "Agree")
+        },
+        {
+          value: "Amended",
+          text: "No",
+          checked: (data["application-5-about-a12"] == "Amended")
+        },
+        {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["application-5-about-a12"] == "Pause")
+        }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
