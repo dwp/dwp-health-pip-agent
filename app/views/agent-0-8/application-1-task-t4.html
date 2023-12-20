@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="application-5-tasklist" method="post" class="form">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% include "agent-0-8/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check bank details</h1>
+
+        <div class="govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Details given in application:</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-! govuk-!-margin-bottom-6"><strong>Bank or building society:</strong> Barclays<br><strong>Sort code: </strong>11-22-33<br><strong>Account number: </strong>00123456
+
+          </p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicH2 %}
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Do the bank details given in the application<br>match those in CPS?</h1>
+            {% endset %}
+          <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "application-1-task-t4",
+        name: "application-1-task-t4",
+        fieldset: {
+          legend: {
+            html: dynamicH2,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Done",
+          text: "Yes",
+          checked: (data["application-1-task-t4"] == "Done")
+        },
+        {
+          value: "Bad",
+          text: "No",
+          checked: (data["application-1-task-t4"] == "Bad")
+        },
+        {
+          value: "Pause",
+          text: "I cannot check this now or want to come back to it later",
+          checked: (data["application-1-task-t4"] == "Pause")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}
