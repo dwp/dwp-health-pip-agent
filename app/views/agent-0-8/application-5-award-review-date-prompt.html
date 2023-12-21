@@ -21,6 +21,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">PIP will be awarded for
 
           {% if data["application-5-award-review-date"] == "5y"%} 5 years
+          {% elif data["application-5-award-review-date"] == "10y"%} 10 years
           {% elif data["application-5-award-review-date"] == "2y"%} 2 years
           {% elif data["application-5-award-review-date"] == "18m"%} 18 months
           {% elif data["application-5-award-review-date"] == "SPA"%} 14 months (aligned to State Pension age)
