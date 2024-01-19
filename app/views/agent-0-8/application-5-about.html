@@ -56,7 +56,7 @@
                     <td class="govuk-table__cell table-spacer"><a href="application-5-about-a1">Preparing food</a></td>
                     <td class="govuk-table__cell table-spacer">
 
-                    {% if data["application-5-about-a1"] == "Agree" %}     6
+                    {% if data["application-5-about-a1"] == "Agree" %}     0
                     {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
                     {% else %}
                     {% endif %}
@@ -77,7 +77,7 @@
 
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="#">Taking nutrition</a></td>
-                      <td class="govuk-table__cell table-spacer"></td>
+                      <td class="govuk-table__cell table-spacer">0</td>
                       <td class="govuk-table__cell table-spacer">
 
                         <strong class="govuk-tag app-task-list__apl-task-notclaimed">Not claimed</strong>
@@ -87,7 +87,7 @@
 
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell table-spacer"><a href="#">Managing therapy or monitoring<br>a health condition</a></td>
-                        <td class="govuk-table__cell table-spacer">2 </td>
+                        <td class="govuk-table__cell table-spacer">0 </td>
                         <td class="govuk-table__cell table-spacer">
 
                           <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -97,7 +97,7 @@
 
                         <tr class="govuk-table__row">
                           <td class="govuk-table__cell table-spacer"><a href="#">Washing and bathing</a></td>
-                          <td class="govuk-table__cell table-spacer">2</td>
+                          <td class="govuk-table__cell table-spacer">0</td>
                           <td class="govuk-table__cell table-spacer">
 
                             <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -107,7 +107,7 @@
 
                           <tr class="govuk-table__row">
                             <td class="govuk-table__cell table-spacer"><a href="#">Managing toilet needs or incontinence</a></td>
-                            <td class="govuk-table__cell table-spacer">2 </td>
+                            <td class="govuk-table__cell table-spacer">0</td>
                             <td class="govuk-table__cell table-spacer">
 
                               <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -119,9 +119,9 @@
                               <td class="govuk-table__cell table-spacer"><a href="application-5-about-a6">Dressing and undressing</a></td>
                               <td class="govuk-table__cell table-spacer">
 
-                              {% if data["application-5-about-a6"] == "Agree" %}
-                              {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
-                              {% else %}
+                              {% if data["application-5-about-a6"] == "Agree" %} 0
+                              {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %} 2
+                              {% else %} 0
                               {% endif %}
 
                               </td>
@@ -140,7 +140,7 @@
 
                               <tr class="govuk-table__row">
                                 <td class="govuk-table__cell table-spacer"><a href="#">Communicating verbally</a></td>
-                                <td class="govuk-table__cell table-spacer">2</td>
+                                <td class="govuk-table__cell table-spacer">0</td>
                                 <td class="govuk-table__cell table-spacer">
 
                                   <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -160,7 +160,7 @@
 
                             <tr class="govuk-table__row">
                               <td class="govuk-table__cell table-spacer"><a href="#">Engaging with other people face to face</a></td>
-                              <td class="govuk-table__cell table-spacer">2</td>
+                              <td class="govuk-table__cell table-spacer">0</td>
                               <td class="govuk-table__cell table-spacer">
 
                                 <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -173,7 +173,7 @@
                                 <td class="govuk-table__cell table-spacer"><a href="application-5-about-a12">Making budgeting decisions</a></td>
                                 <td class="govuk-table__cell table-spacer">
 
-                                {% if data["application-5-about-a12"] == "Agree" %}     4
+                                {% if data["application-5-about-a12"] == "Agree" %}     0
                                 {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-8/application-5-about-a12-scoreoverwrite.html" %}
                                 {% else %}
                                 {% endif %}
@@ -200,9 +200,9 @@
                                           <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
                                           <td class="govuk-table__cell table-spacer"><strong>
 
-                                            {% if data["application-5-about-a1"] == "Agree" and data["application-5-about-a12"] == "Agree"%}  20
-                                            {% elif data["application-5-about-a1"] == "Agree" and data["application-5-about-a12"] == "Amended"  %}  16
-                                            {% elif data["application-5-about-a1"] == "Agree" %}  16
+                                            {% if data["application-5-about-a1"] == "Agree" and data["application-5-about-a12"] == "Agree"%}  0
+                                            {% elif data["application-5-about-a1"] == "Agree" and data["application-5-about-a12"] == "Amended"  %}  4
+                                            {% elif data["application-5-about-a1"] == "Agree" %}  0
                                             {% else %}
                                             {% endif %}
 
@@ -230,7 +230,7 @@
 
                               <tr class="govuk-table__row">
                                 <td class="govuk-table__cell table-spacer"><a href="#">Planning and following journeys</a></td>
-                                <td class="govuk-table__cell table-spacer">4</td>
+                                <td class="govuk-table__cell table-spacer">0</td>
                                   <td class="govuk-table__cell table-spacer">
 
                                     <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -240,7 +240,7 @@
 
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="#">Moving around</a></td>
-                      <td class="govuk-table__cell table-spacer">8</td>
+                      <td class="govuk-table__cell table-spacer">0</td>
                       <td class="govuk-table__cell table-spacer">
 
                         <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
@@ -250,7 +250,7 @@
 
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
-                        <td class="govuk-table__cell table-spacer"><strong>12</strong></td>
+                        <td class="govuk-table__cell table-spacer"><strong>0</strong></td>
                         <td class="govuk-table__cell table-spacer"></td>
                         </tr>
 
