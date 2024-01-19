@@ -9,7 +9,6 @@
 {% endblock %}
 
 {% block content %}
-{% include "includes/js-back-link.html" %}
 
 <form action="application-5-about-a1-reason" method="post" class="form">
 
@@ -24,7 +23,7 @@
 
             <!------------H1 LEGEND------------>
               {% set dynamicH1 %}
-              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor E (4 points)?
+              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor A (0 points)?
                   </h2>
                   {% endset %}
             <!------------Legend--------------->
@@ -45,11 +44,7 @@
               },
               classes: "govuk-radios",
               items: [
-              {
-                value: "a1",
-                html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
-                checked: (data["application-5-about-a1-score-overwrite"] == "0")
-              },
+
               {
                 value: "b2",
                 html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
@@ -66,6 +61,11 @@
                 checked: (data["application-5-about-a1-score-overwrite"] == "2")
               },
               {
+                value: "e5",
+                html: "<strong>Descriptor E (4 points):</strong>Needs supervision or assistance to either prepare or cook a simple meal",
+                checked: (data["application-5-about-a1-score-overwrite"] == "4")
+              },
+              {
                 value: "f6",
                 html: "<strong>Descriptor F (8 points):</strong> Cannot prepare and cook food",
                 checked: (data["application-5-about-a1-score-overwrite"] == "8")
@@ -75,15 +75,21 @@
 
 
 <!--
-Descriptor E (4 points): Needs supervision or assistance to either prepare or cook a simple meal
+{
+  value: "a1",
+  html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
+  checked: (data["application-5-about-a1-score-overwrite"] == "0")
+},
 
 -->
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
 
+  <a class="govuk-link" href="application-5-about-a1">Cancel change</a>
+</div>
         </div>
       </div>
 
