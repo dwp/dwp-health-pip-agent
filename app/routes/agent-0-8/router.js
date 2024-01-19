@@ -272,7 +272,7 @@ router.post(`/application-5-about-a12-router`, (req, res) => {
   const about5_A12 = req.session.data['application-5-about-a12']
 
   if (about5_A12 == 'Agree') {
-    res.redirect(`application-5-about`)
+    res.redirect(`application-5-about-a12-reason`)
   }
   else if (about5_A12 == 'Amended') {
     res.redirect(`application-5-about-a12-score`)
