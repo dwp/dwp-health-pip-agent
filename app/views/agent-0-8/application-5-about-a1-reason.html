@@ -25,24 +25,39 @@
 
           {% include "agent-0-8/record-id.html" %}
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You are selecting Descriptor A (0 points) for
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
+            {% if data["application-5-about-a1"] == "Agree" %}
 
-            If no to change then headline shoiuld match action
+              You are selecting Descriptor A (0 points) for Preparing food
 
-            {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
-              <strong>Descriptor A (0 points)</strong>
-            {% elif data["application-5-about-a1-score-overwrite"] == "b2" %}
-              <strong>Descriptor B (2 points)</strong>
-            {% elif data["application-5-about-a1-score-overwrite"] == "c3" %}
-              <strong>Descriptor C (2 points)</strong>
-            {% elseif data["application-5-about-a1-score-overwrite"] == "d4" %}
-              <strong>Descriptor D (2 points)</strong>
-            {% elseif data["application-5-about-a1-score-overwrite"] == "e5" %}
-              <strong>Descriptor E (4 points)</strong>
-            {% elseif data["application-5-about-a1-score-overwrite"] == "f6" %}
-              <strong>Descriptor F (8 points)</strong>
+            {% elif data["application-5-about-a1"] == "Amended" %}
+
+              You are selecting
+
+              {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
+                <strong>Descriptor A (0 points)</strong>
+              {% elif data["application-5-about-a1-score-overwrite"] == "b2" %}
+                <strong>Descriptor B (2 points)</strong>
+              {% elif data["application-5-about-a1-score-overwrite"] == "c3" %}
+                <strong>Descriptor C (2 points)</strong>
+              {% elseif data["application-5-about-a1-score-overwrite"] == "d4" %}
+                <strong>Descriptor D (2 points)</strong>
+              {% elseif data["application-5-about-a1-score-overwrite"] == "e5" %}
+                <strong>Descriptor E (4 points)</strong>
+              {% elseif data["application-5-about-a1-score-overwrite"] == "f6" %}
+                <strong>Descriptor F (8 points)</strong>
+              {% endif %}
+
+              for Preparing food
+
+            {% else %}
+            Nowt
             {% endif %}
+
+
+
+
           </h2>
 
 
