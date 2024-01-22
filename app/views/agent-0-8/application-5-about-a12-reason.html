@@ -19,19 +19,33 @@
 
                   {% include "agent-0-8/record-id.html" %}
 
-                  <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You are selecting Descriptor A (0 points) for
+                  <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
-If no to change then headline shoiuld match action
 
-                    {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
-                      <strong>Descriptor A (0 points)</strong>
-                    {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
-                      <strong>Descriptor B (2 points)</strong>
-                    {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
-                      <strong>Descriptor C (4 points)</strong>
-                    {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
-                      <strong>Descriptor D (6 points)</strong>
+                    {% if data["application-5-about-a12"] == "Agree" %}
+
+                      You are selecting Descriptor A (0 points) for Making budgeting decisions
+
+                    {% elif data["application-5-about-a12"] == "Amended" %}
+
+                      You are selecting
+
+                      {% if data["application-5-about-a12-score-overwrite"] == "a1" %}
+                        <strong>Descriptor A (0 points)</strong>
+                      {% elif data["application-5-about-a12-score-overwrite"] == "b2" %}
+                        <strong>Descriptor B (2 points)</strong>
+                      {% elif data["application-5-about-a12-score-overwrite"] == "c4" %}
+                        <strong>Descriptor C (4 points)</strong>
+                      {% elseif data["application-5-about-a12-score-overwrite"] == "d6" %}
+                        <strong>Descriptor D (6 points)</strong>
+                      {% endif %}
+
+                      for Making budgeting decisions
+
+                    {% else %}
+                    Nowt
                     {% endif %}
+
 
                     </h2>
 
