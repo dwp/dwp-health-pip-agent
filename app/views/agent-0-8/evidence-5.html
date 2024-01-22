@@ -114,38 +114,6 @@
 {% endset -%}
 
 
-<!-- {{ govukRadios({
-  idPrefix: "evidence-5-grade",
-  name: "evidence-5-grade",
-  fieldset: {
-    legend: {
-      text: "Does this document support the application?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: ""
-  },
-  classes: "govuk-radios",
-  items: [
-  {
-    value: "Good",
-    text: "Yes",
-    checked: (data["evidence-5-grade"] == "Good")
-  },
-  {
-    value: "Bad",
-    text: "No",
-    checked: (data["evidence-5-grade"] == "Bad"),
-          conditional: {
-            html: nextAction
-          }
-      }
-  ]
-}) }} -->
-
-
 {{ govukRadios({
   idPrefix: "evidence-5-grade",
   name: "evidence-5-grade",

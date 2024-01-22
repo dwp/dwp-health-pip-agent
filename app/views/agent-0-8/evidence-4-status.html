@@ -12,6 +12,8 @@
 
   {% if data["evidence-4-grade"] == "Good" %}        <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
   {% elif data["evidence-4-grade"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+  {% elif data["evidence-4-grade"] == "Remove" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+
   {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="X">To do</strong>
   {% endif %}
 
