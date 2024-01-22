@@ -144,7 +144,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a1"] == "Agree" %}     6
+              {% if data["application-5-about-a1"] == "Agree" %}     0
               {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
@@ -159,7 +159,6 @@
           </dd>
         </div>
 
-        {% if data["application-5-about-a1"] == "Amended" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__value">
             Justification
@@ -174,51 +173,6 @@
           </dd>
         </div>
 
-        {% elif data["application-5-about-a1-ap-justification"] == "Yes" %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            Justification
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["application-5-about-a1-ap-justification-overwrite"]}}
-
-            <br><br>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="application-5-about-a1-ap-justification">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
-        </div>
-
-{% elif data["application-5-about-a1-ap-justification"] == "No" %}
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            Justification
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-            <p>Your care plan ('Care plan 2022' on DRS) outlines the difficlty you have with preparing food and I agree with its findings.</p>
-            <p>You have difficulty preparing meals. You can make yourself drinks and sandwiches but need to be supervised to make a meal.</p>
-            <p>You lack the drive to prepare a meal regularly and tend to break off from cooking and this has resulted in you burning food and leaving pans to boil over.</p>
-            <p>You get most of your full meals from the drop-in centre and your support worker supervises you to put ready-made meals in the oven twice a week. During periods of low mood, Jeff does not respond readily to prompting and will not make yourself meals.</p>
-            <p>This is why I have selected 1E.
-
-            <br><br>
-
-
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="application-5-about-a1-ap-justification">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
-        </div>
-
-        {% else %}
-        {% endif %}
 
       </dl>
 
@@ -230,7 +184,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 10 (Not claimed)</strong>
-
+            <br>Descriptor A: Can take nutrition unaided
           </dd>
         </div>
 
@@ -244,12 +198,14 @@
             3. Managing therapy or monitoring a health condition
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>2 out of 8</strong>
+            <strong>0 out of 8</strong>
 
             <br>
 
-            Descriptor C: Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+            Descriptor A:
 
+            <br> &#149; does not receive medication or therapy or need to monitor a health condition;
+            <br> &#149; can manage medication or therapy or monitor a health condition unaided.
 
           </dd>
         </div>
@@ -279,10 +235,10 @@
 
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>2 out of 8</strong>
+            <strong>0 out of 8</strong>
 
             <br>
-            Descriptor D: Needs assistance to be able to wash either their hair, or body below the waist
+            Descriptor A: Can wash and bathe unaided
 
           </dd>
         </div>
@@ -310,10 +266,10 @@
             5. Managing toilet needs or incontinence
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>2 out of 8</strong>
+            <strong>0 out of 8</strong>
 
             <br>
-            Descriptor C: Needs supervision or prompting to be able to manage toilet needs
+            Descriptor A: Can manage toilet needs or incontinence unaided
 
           </dd>
         </div>
@@ -343,7 +299,7 @@
           <dd class="govuk-summary-list__value">
             <strong>
               {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10 (Not claimed)
-              {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %} out of 8
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
               {% else %}
                 0 out of 10 (Not claimed)
               {% endif %}
@@ -351,13 +307,16 @@
 
             <br>
 
+            {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
             {% include "agent-0-8/application-5-about-a6-descriptoroverwrite.html" %}
+            {% else %}
+              Descriptor A: Can dress and undress unaided
+            {% endif %}
 
 
           </dd>
         </div>
 
-        {% if data["application-5-about-a6"] == "Amended" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__value">
             Justification
@@ -371,8 +330,7 @@
             </a>
           </dd>
         </div>
-        {% else %}
-        {% endif %}
+
       </dl>
 
 
@@ -383,10 +341,10 @@
             7. Communicating verbally
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>2 out of 12</strong>
+            <strong>0 out of 12</strong>
 
             <br>
-            Descriptor B: Needs to use an aid or appliance to be able to speak or hear
+            Descriptor A: Can express and understand verbal information unaided
 
           </dd>
         </div>
@@ -415,7 +373,8 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
-
+            <br>
+            Descriptor A: Can read and understand basic and complex written information either unaided or using spectacles or contact lenses.
 
           </dd>
         </div>
@@ -443,10 +402,10 @@
             9. Engaging with other people face to face
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>2 out of 8</strong>
+            <strong>0 out of 8</strong>
 
             <br>
-            Descriptor B: Needs prompting to be able to engage with other people
+            Descriptor A: Can engage with other people unaided
 
           </dd>
         </div>
@@ -475,7 +434,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a12"] == "Agree" %}     6
+              {% if data["application-5-about-a12"] == "Agree" %}     0
               {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-8/application-5-about-a12-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
@@ -490,7 +449,6 @@
           </dd>
         </div>
 
-        {% if data["application-5-about-a12"] == "Amended" %}
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__value">
             Justification
@@ -504,8 +462,7 @@
             </a>
           </dd>
         </div>
-        {% else %}
-        {% endif %}
+
       </dl>
 
 
@@ -521,7 +478,7 @@
                   11. Planning and following journeys
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <strong>4 out of 12</strong>
+                  <strong>0 out of 12</strong>
 
                   <br>
                   Descriptor B: Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
@@ -551,7 +508,7 @@
                   12. Moving around
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  <strong>8 out of 12</strong>
+                  <strong>0 out of 12</strong>
 
                   <br>
                   Descriptor C: Can stand and then move unaided more than 20 metres but no more than 50 metres
