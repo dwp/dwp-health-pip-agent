@@ -219,8 +219,8 @@
 
         {% if data["evidence-4-grade"] == "Good" %}
         {% elif data["evidence-4-grade"] == "Bad" %}
-          {% elif data["evidence-4-grade"] == "Remove" %}
-            {% include "agent-0-8/evidence-5-status.html" %}
+        {% elif data["evidence-4-grade"] == "Remove" %}
+          {% include "agent-0-8/evidence-4-status.html" %}
 
         {% else %}
         {% endif %}
@@ -232,7 +232,6 @@
 
         {% else %}
         {% endif %}
-
 
         </table>
 
