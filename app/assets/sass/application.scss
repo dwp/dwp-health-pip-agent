@@ -19,7 +19,11 @@ $govuk-assets-path: '/govuk/assets/';
 @import "explore-header";
 @import "explore-govuk-overrides";
 
+import CopyCodeButton from 'app/assets/javascripts/copy-code-button';
 
+document.querySelectorAll('.app-example__copy-code-button').forEach((button) => {
+  new CopyCodeButton(button).init();
+});
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
