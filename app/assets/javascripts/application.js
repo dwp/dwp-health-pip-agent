@@ -8,3 +8,9 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+import CopyCodeButton from './copy-code-button.js';
+
+document.querySelectorAll('.app-example__copy-code-button').forEach((button) => {
+  new CopyCodeButton(button).init();
+});
