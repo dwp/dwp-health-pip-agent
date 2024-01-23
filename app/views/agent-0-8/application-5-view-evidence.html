@@ -85,6 +85,13 @@
     {% include "agent-0-8/evidence-5-status.html" %}
 {% endif %}
 
+{% if data["evidence-6-grade"] == "Good" %}
+{% elif data["evidence-6-grade"] == "Bad" %}
+{% elif data["evidence-6-grade"] == "Remove" %}
+{% else %}
+    {% include "agent-0-8/evidence-6-status.html" %}
+{% endif %}
+
 </table>
 
 {% endif %}
@@ -136,6 +143,13 @@
               {% include "agent-0-8/evidence-5-status.html" %}
           {% elif data["evidence-5-grade"] == "Bad" %}
           {% elif data["evidence-5-grade"] == "Remove" %}
+          {% else %}
+          {% endif %}
+
+          {% if data["evidence-6-grade"] == "Good" %}
+              {% include "agent-0-8/evidence-6-status.html" %}
+          {% elif data["evidence-6-grade"] == "Bad" %}
+          {% elif data["evidence-6-grade"] == "Remove" %}
           {% else %}
           {% endif %}
 
@@ -191,6 +205,14 @@
         {% elif data["evidence-5-grade"] == "Bad" %}
           {% include "agent-0-8/evidence-5-status.html" %}
         {% elif data["evidence-5-grade"] == "Remove" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-6-grade"] == "Good" %}
+        {% elif data["evidence-6-grade"] == "Bad" %}
+          {% include "agent-0-8/evidence-6-status.html" %}
+        {% elif data["evidence-6-grade"] == "Remove" %}
 
         {% else %}
         {% endif %}

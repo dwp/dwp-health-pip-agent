@@ -1,0 +1,356 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-view-evidence" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent-0-8/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The Health assessment report document</h1>
+
+      <br><br><br>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Assessment details</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent">Application submitted:</td>
+                <td class="govuk-table__cell govuk-40-percent"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Reviewed by assessment provider:</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Report completion date:</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Assessment type:</td>
+                <td class="govuk-table__cell"><b>In person</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Provider name:</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Provider contact details:</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Details</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Medication</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-30-percent">Type</th>
+                <th scope="col" class="govuk-table__header govuk-70-percent">Details</th>
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Type A</td>
+                <td class="govuk-table__cell ">
+
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+                  </p>
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Type B</td>
+                <td class="govuk-table__cell">
+
+                  <p class="govuk-body govuk-!-margin-bottom-2 govuk-table--no-bottom-border">
+                    This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+                  </p>
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Type C</td>
+                <td class="govuk-table__cell">
+
+                  <p class="govuk-body govuk-!-margin-bottom-2 govuk-table--no-bottom-border">
+                    This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+                  </p>
+
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Type E</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+                  </p>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Supporting documents</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Document type</th>
+                <th scope="col" class="govuk-table__header">Details</th>
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Care Plan 2022e</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">GP letter</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Document 3</td>
+                <td class="govuk-table__cell"><b>Details</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Prescription receipt</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Details</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">History of conditions</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+            X
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+          </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Daily living: Justification for choices</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+            X
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+          </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Mobility Justification for choices</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+            X
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+          </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Award review recommendation</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+            X
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </p>
+        </div>
+      </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+
+      <br><br><br>
+
+
+
+
+{% set nextAction%}
+
+{{ govukRadios({
+  idPrefix: "evidence-5-next-action",
+  name: "evidence-5-next-action",
+  fieldset: {
+    legend: {
+      text: "What is the issue?" ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "It's a duplicate of another document",
+    checked: (data["evidence-5-next-action"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "It needs to be removed",
+    checked: (data["evidence-5-next-action"] == "No")
+  }
+  ]
+}) }}
+
+
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "evidence-5-grade",
+  name: "evidence-5-grade",
+  fieldset: {
+    legend: {
+      text: "Does this document support the application?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Good",
+    text: "Yes",
+    checked: (data["evidence-5-grade"] == "Good")
+  },
+  {
+    value: "Bad",
+    text: "No",
+    checked: (data["evidence-5-grade"] == "Bad")
+  },
+  {
+    divider: "or"
+  },
+  {
+    value: "Remove",
+    text: "There is an issue with this document",
+    checked: (data["evidence-5-grade"] == "Remove"),
+          conditional: {
+            html: nextAction
+          }
+      }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
