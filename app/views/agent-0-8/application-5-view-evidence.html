@@ -33,7 +33,7 @@
 
 <br>
 
-{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-3-grade"] and data["evidence-4-grade"] and data["evidence-5-grade"]%}
+{% if data["evidence-1-grade"] and data["evidence-2-grade"] and data["evidence-3-grade"] and data["evidence-4-grade"] and data["evidence-5-grade"] and data["evidence-6-grade"] %}
 
 {% else %}
 
@@ -98,7 +98,7 @@
 
   <!---------------- GOOD AREA START ------------------>
 
-  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-3-grade"] == "Good" or data["evidence-4-grade"] == "Good" or data["evidence-5-grade"] == "Bad"%}
+  {% if data["evidence-1-grade"] == "Good" or data["evidence-2-grade"] == "Good" or data["evidence-3-grade"] == "Good" or data["evidence-4-grade"] == "Good" or data["evidence-5-grade"] == "Good" or data["evidence-6-grade"] == "Good"%}
 
   <table class="govuk-table govuk-!-margin-bottom-8">
 
@@ -160,7 +160,7 @@
 
   <!---------------- BAD AREA START ------------------>
 
-          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-3-grade"] == "Bad" or data["evidence-4-grade"] == "Bad" or data["evidence-5-grade"] == "Bad"%}
+          {% if data["evidence-1-grade"] == "Bad" or data["evidence-2-grade"] == "Bad" or data["evidence-3-grade"] == "Bad" or data["evidence-4-grade"] == "Bad" or data["evidence-5-grade"] == "Bad" or data["evidence-6-grade"] == "Bad" %}
 
         <table class="govuk-table govuk-!-margin-bottom-8">
 
