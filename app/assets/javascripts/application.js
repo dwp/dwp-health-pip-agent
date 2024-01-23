@@ -18,20 +18,14 @@ CopyCodeButton.prototype.init = function () {
     return;
   }
 
-  this.$module.addEventListener('click', () => {
+  this.$module.addEventListener('click', (event) => {
+    event.preventDefault();
     let code;
     this.$module.textContent = 'Code copied';
     setTimeout(() => {
       this.$module.textContent = 'Copy code';
     }, 2000);
-    const openPanels = Array.from(document.getElementsByClassName('app-js-visible'));
-    openPanels.forEach((el) => {
-      const panelCopyBtn = this.$module.dataset.module;
-      if (el.id === panelCopyBtn) {
-        code = el.querySelector('pre').textContent;
-        navigator.clipboard.writeText(code);
-      }
-    });
+    navigator.clipboard.writeText(this.$module.dataset.copyText);
   });
 };
 
