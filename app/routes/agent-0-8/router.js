@@ -256,11 +256,11 @@ router.post(`/application-5-about-a1-router`, (req, res) => {
 router.post(`/application-5-about-a6-router`, (req, res) => {
   const about5_A6 = req.session.data['application-5-about-a6']
 
-  if (about5_A6 == 'No-change') {
+  if (about5_A6 == 'Agree') {
     res.redirect(`application-5-about-a6-reason`)
   }
   else if (about5_A6 == 'Amended') {
-    res.redirect(`application-5-about-a6-score`)
+    res.redirect(`application-5-about-a6-reason`)
   }
    else {
     res.redirect(`application-5-about`)

@@ -131,7 +131,7 @@
             2. Taking nutrition
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>0 out of 10 (Not claimed)</strong>
+            <strong>0 out of 10</strong>
             <br>Descriptor A: Can take nutrition unaided
           </dd>
         </div>
@@ -246,10 +246,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10 (Not claimed)
+              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
               {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
               {% else %}
-                0 out of 10 (Not claimed)
+                0 out of 10
               {% endif %}
             </strong>
 
