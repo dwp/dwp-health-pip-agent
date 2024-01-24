@@ -227,7 +227,7 @@
 
   <!---------------- REMOVE AREA START ------------------>
 
-          {% if data["evidence-4-grade"] == "Remove" or data["evidence-5-grade"] == "Remove" %}
+          {% if data["evidence-4-grade"] == "Remove" or data["evidence-5-grade"] == "Remove" or data["evidence-6-grade"] == "Remove" %}
 
         <table class="govuk-table">
 
@@ -254,6 +254,14 @@
         {% elif data["evidence-5-grade"] == "Bad" %}
         {% elif data["evidence-5-grade"] == "Remove" %}
           {% include "agent-0-8/evidence-5-status.html" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-6-grade"] == "Good" %}
+        {% elif data["evidence-6-grade"] == "Bad" %}
+        {% elif data["evidence-6-grade"] == "Remove" %}
+          {% include "agent-0-8/evidence-6-status.html" %}
 
         {% else %}
         {% endif %}
