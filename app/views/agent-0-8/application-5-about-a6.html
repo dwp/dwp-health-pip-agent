@@ -34,74 +34,65 @@
 <!--  --><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-        <!------------H1 LEGEND------------>
-          {% set legenDetails %}
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+<!------------H1 LEGEND------------>
+  {% set legendNumbersDetails %}
 
-            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+  <p class="govuk-body govuk-!-margin-bottom-2"></p>
 
-          </p>
+  <ul class="govuk-list govuk-list">
+    <li><b>Descriptor A (0 points):</b> XXX
+    <li><b>Descriptor B (2 points):</b> XXX
+    <li><b>Descriptor C (2 points):</b> XXX
+    <li><b>Descriptor D (2 points):</b> XXX
+    <li><b>Descriptor E (4 points):</b> XXX
+    <li><b>Descriptor F (8 points):</b> XXX
+  </ul>
 
-          {% endset %}
-        <!------------Legend--------------->
+  {% endset %}
 
+  {% set legendHint %}
 
+  {{ govukDetails({
+    summaryText: "Help with descriptors",
+    classes: "govuk-!-margin-bottom-0",
+    html: legendNumbersDetails
+  }) }}
 
-      {% set scoreOverwite %}
-          {{ govukInput({
-            id: "score-overwrite-a6",
-            label: {
-                text: "What score do you want to give?",
-                classes: "govuk-fieldset__legend--m"
-            },
-            hint: {
-              text: "2, 4, 6 or 8"
-            },
-                name: "score-overwrite-a6",
-                classes: "govuk-input--width-4",
-                value: data["score-overwrite-a6"]
-            }) }}
+    {% endset %}
+  <!------------Legend--------------->
 
-      {% endset -%}
-
-
-
-
-
-
-      {{ govukRadios({
-        idPrefix: "application-5-about-a6",
-        name: "application-5-about-a6",
-        fieldset: {
-          legend: {
-            text: "This has not been claimed for. Do you want to add a descriptor?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        classes: "govuk-radios",
-        items: [
-        {
-          value: "Amended",
-          text: "Yes",
-          checked: (data["application-5-about-a6"] == "Amended")
-                  },
-          {
-          value: "No-change",
-          text: "No",
-          checked: (data["application-5-about-a6"] == "No-change")
-                  },
-          {
-          value: "Pause",
-          text: "I need to come back to this later",
-          checked: (data["application-5-about-a6"] == "Pause")
-        }
-        ]
-      }) }}
+{{ govukRadios({
+idPrefix: "application-5-about-a6",
+name: "application-5-about-a6",
+fieldset: {
+  legend: {
+    text: "The assessment report recommends Descriptor A (0 points) for this activity. Do you agree?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  html: legendHint
+},
+classes: "govuk-radios",
+items: [
+{
+  value: "Agree",
+  text: "Yes",
+  checked: (data["application-5-about-a6"] == "Agree")
+},
+{
+  value: "Amended",
+  text: "No",
+  checked: (data["application-5-about-a6"] == "Amended")
+  },
+  {
+  value: "Pause",
+  text: "I need to come back to this later",
+  checked: (data["application-5-about-a6"] == "Pause")
+}
+]
+}) }}
 
 
 
