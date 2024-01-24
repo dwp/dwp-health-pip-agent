@@ -29,11 +29,11 @@
 
             {% if data["application-5-about-a1"] == "Agree" %}
 
-              You are selecting Descriptor A (0 points) for Preparing food
+              Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
 
             {% elif data["application-5-about-a1"] == "Amended" %}
 
-              You are selecting
+              Add your reason for selecting
 
               {% if data["application-5-about-a1-score-overwrite"] == "a1" %}
                 <strong>Descriptor A (0 points)</strong>
@@ -49,18 +49,20 @@
                 <strong>Descriptor F (8 points)</strong>
               {% endif %}
 
-              for Preparing food
+              for preparing food to the decision letter
 
             {% else %}
             Nowt
             {% endif %}
 
+            <br>
 
 
 
-          </h2>
 
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for changing the descriptor to the decision letter</p>
+          <!-- </h2>
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
           <!------------CANNED PHRASES LEGEND------------>
             {% set legendCannedDetails %}
@@ -197,7 +199,7 @@
             hint: {
               html: legendCanned
             },
-            value: "Blank"
+            value: ""
           }) }}
 
           {{ govukButton({
