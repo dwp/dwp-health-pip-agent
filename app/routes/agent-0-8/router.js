@@ -260,7 +260,7 @@ router.post(`/application-5-about-a6-router`, (req, res) => {
     res.redirect(`application-5-about-a6-reason`)
   }
   else if (about5_A6 == 'Amended') {
-    res.redirect(`application-5-about-a6-reason`)
+    res.redirect(`application-5-about-a6-score`)
   }
    else {
     res.redirect(`application-5-about`)
