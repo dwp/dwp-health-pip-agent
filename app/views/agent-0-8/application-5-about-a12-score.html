@@ -69,10 +69,13 @@
   checked: (data["application-5-about-a12-score-overwrite"] == "3")
 }, -->
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="application-5-about-a12">Cancel change</a>
+</div>
 
         </div>
       </div>
