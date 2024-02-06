@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+​
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+​
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+​
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+​
+{% block content %}
+
+<form action="reference-1" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {% include "agent-0-8/record-id.html" %} -->
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">View the outcome of your Personal Indipendence applcaiton</h1>
+
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">You will need the following stuff ready </p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: XXXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something else in here</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you get stuck, etc call XXX </p>
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
