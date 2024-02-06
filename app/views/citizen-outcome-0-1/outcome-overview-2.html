@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+​
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+​
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+​
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+​
+{% block content %}
+
+<form action="outcome-overview-2" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {% include "agent-0-8/record-id.html" %} -->
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">How do you need this notification to be sent to you?</h1>
+
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXXX</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">XXXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you get stuck, etc call XXX </p> -->
+
+
+      {{ govukRadios({
+        idPrefix: "evidence-6-grade",
+        name: "evidence-6-grade",
+        fieldset: {
+          legend: {
+            text: "What format do you need this in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+
+        {
+          value: "1",
+          text: "Method A",
+          checked: (data["evidence-6-grade"] == "1")
+            },
+
+        {
+          value: "2",
+          text: "Method B",
+          checked: (data["evidence-6-grade"] == "2")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "3",
+          text: "A digital copy is fine brah",
+          checked: (data["evidence-6-grade"] == "3")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
