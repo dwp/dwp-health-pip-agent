@@ -39,4 +39,30 @@ router.post(`/outcome-overview-1-router`, (req, res) => {
   }
 })
 
+router.post(`/outcome-overview-3-router`, (req, res) => {
+  const outcomeOverview3 = req.session.data['outcome-overview-3']
+
+  if (outcomeOverview3 == '1') {
+    res.redirect(`application-data-1`)
+  }
+  else if (outcomeOverview3 == '2') {
+    res.redirect(`application-data-2`)
+  }
+  else if (outcomeOverview3 == '3') {
+    res.redirect(`application-data-3`)
+  }
+  else if (outcomeOverview3 == '4') {
+    res.redirect(`outcome-overview-2`)
+  }
+  else if (outcomeOverview3 == '5') {
+    res.redirect(`actions-for-application`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+
 module.exports = router
