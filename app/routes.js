@@ -26,6 +26,8 @@ router.use('/agent-0-8', require('./routes/agent-0-8/router.js'));
 
 router.use('/citizen-outcome-0-1', require('./routes/citizen-outcome-0-1/router.js'));
 
+router.use('/agent-day-0-1', require('./routes/agent-day-0-1/router.js'));
+
 
 module.exports = router
 

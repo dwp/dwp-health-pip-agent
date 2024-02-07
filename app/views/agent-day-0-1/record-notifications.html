@@ -1,0 +1,17 @@
+{% if data["application-about-a12-score-overwrite"] %}
+
+
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application (It was a nil) (it was not a nil)</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{% else %}
+
+{% endif %}
