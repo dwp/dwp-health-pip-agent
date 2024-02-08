@@ -1,37 +1,24 @@
 {% if data["application-5-about-a6-score-overwrite"] == "a1" %}
-  Descriptor A: Can dress and undress unaided
+  Descriptor A (0 points): Can dress and undress unaided
+
 {% elif data["application-5-about-a6-score-overwrite"] == "b2" %}
-  Descriptor B: Needs to use an aid or appliance to be able to dress or undress
+  Descriptor B (2 points): Needs to use an aid or appliance to be able to dress or undress
+
 {% elif data["application-5-about-a6-score-overwrite"] == "c3" %}
-Descriptor C: Needs either:
-i. prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed; or
-ii. prompting or assistance to be able to select appropriate clothing
+  Descriptor C (2 points): Needs either:
+  i. prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed; or
+  ii. prompting or assistance to be able to select appropriate clothing
+
 {% elseif data["application-5-about-a6-score-overwrite"] == "d4" %}
-  Descriptor D: Needs assistance to be able to dress or undress their lower body
+  Descriptor D (2 points): Needs assistance to be able to dress or undress their lower body
+
 {% elseif data["application-5-about-a6-score-overwrite"] == "e5" %}
-  Descriptor E: Needs assistance to be able to dress or undress their upper body
+  Descriptor E (4 points): Needs assistance to be able to dress or undress their upper body
+
 {% elseif data["application-5-about-a6-score-overwrite"] == "f6" %}
-  Descriptor F: Cannot dress or undress at all (edited)
-  {% else %}
-Blank
+  Descriptor F (8 points): Cannot dress or undress at all
+
+{% else %}
+  Blank
+
 {% endif %}
-
-
-
-
-
-Descriptor A (0 points): Can dress and undress unaided
-
-Descriptor B (2 points): Needs to use an aid or appliance to be able to dress or undress
-
-Descriptor C (2 points): Needs either:
-
-i. prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed; or
-
-ii. prompting or assistance to be able to select appropriate clothing
-
-Descriptor D (2 points): Needs assistance to be able to dress or undress their lower body
-
-Descriptor E (4 points): Needs assistance to be able to dress or undress their upper body
-
-Descriptor F (8 points): Cannot dress or undress at all
