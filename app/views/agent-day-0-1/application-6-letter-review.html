@@ -17,7 +17,7 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you will need for the letter</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you need for the decision letter</h1>
 
       <!------------H1 LEGEND------------>
 
@@ -37,7 +37,7 @@
         {% set dynamicOutcome %}
 
         {% if data["system-application-selector"]  == "1" %}
-        I am Nill award
+        We cannot award you PIP
 
           {% else %}
         I am not nil award
@@ -78,7 +78,7 @@
 
               {% if data["system-application-selector"]  == "1" %}
 
-              I am Nill award
+              <!-- I am Nill award -->
 
                 {% else %}
 
