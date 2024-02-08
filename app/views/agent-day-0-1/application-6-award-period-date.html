@@ -17,12 +17,11 @@
 
       {% include "agent-0-3/record-id.html" %}
 
-      <!------------H1 LEGEND------------>
-        {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">What award period do you want to set?
-            </h2>
-            {% endset %}
-      <!------------Legend--------------->
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter the start and end date for the award</h2>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will need to concider the dates in hospital, prision etc if any appear within the applxaiton</p>
+
 
 
       {{ govukDateInput({
@@ -36,7 +35,7 @@
           }
         },
         hint: {
-          html: "Date of assessment: 1 February 2024"
+          html: "XXXX"
         },
         items: [
           {
@@ -57,6 +56,8 @@
         ]
       }) }}
 
+<br>
+
 
       {{ govukDateInput({
         id: "application-5-award-review-date-other",
@@ -69,7 +70,7 @@
           }
         },
         hint: {
-          html: "Date of assessment: 1 February 2024"
+          html: "XXX"
         },
         items: [
           {
