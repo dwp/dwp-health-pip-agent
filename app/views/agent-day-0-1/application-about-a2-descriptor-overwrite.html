@@ -1,10 +1,10 @@
 {% if data["application-about-a2-score-overwrite"] == "a1" %}
-  Descriptor A (0 points): Can take nutrition unaided
+  Descriptor A: Can take nutrition unaided
 
 {% elif data["application-about-a2-score-overwrite"] == "b2" %}
 
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
-    Descriptor B (2 points): Needs:
+    Descriptor B: Needs:
 
     <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
       <li>
@@ -19,18 +19,17 @@
     </ul>
 
 
-
 {% elif data["application-about-a2-score-overwrite"] == "c3" %}
-  Descriptor C (2 points): Needs a therapeutic source to be able to take nutrition
+  Descriptor C: Needs a therapeutic source to be able to take nutrition
 
 {% elseif data["application-about-a2-score-overwrite"] == "d4" %}
-  Descriptor D (4 points): Needs prompting to be able to take nutrition
+  Descriptor D: Needs prompting to be able to take nutrition
 
 {% elseif data["application-about-a2-score-overwrite"] == "e5" %}
-  Descriptor E (6 points): Needs assistance to be able to manage a therapeutic source to take nutrition
+  Descriptor E: Needs assistance to be able to manage a therapeutic source to take nutrition
 
 {% elseif data["application-about-a2-score-overwrite"] == "f6" %}
-  Descriptor F (10 points): Cannot convey food and drink to their mouth and needs another person to do so
+  Descriptor F: Cannot convey food and drink to their mouth and needs another person to do so
 
 {% else %}
   Blank
