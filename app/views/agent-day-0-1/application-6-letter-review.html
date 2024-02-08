@@ -67,10 +67,10 @@
           },
           {
             key: {
-              text: "Outcome"
+              text: "Address"
             },
             value: {
-              html: dynamicOutcome
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
             }
           }
         ]
@@ -97,6 +97,14 @@
 
                 {{ govukSummaryList({
                   rows: [
+                  {
+                    key: {
+                      text: "Outcome"
+                    },
+                    value: {
+                      html: dynamicOutcome
+                    }
+                  },
                     {
                       key: {
                         text: "Award date"
