@@ -67,10 +67,10 @@
           },
           {
             key: {
-              text: "Outcome"
+              text: "Address"
             },
             value: {
-              html: dynamicOutcome
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
             }
           }
         ]
@@ -82,14 +82,35 @@
 
                 {% else %}
 
+
+
+              <!------------Q2 LEGEND------------>
+                {% set dynamicDateRange %}
+
+
+                {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
+                to
+                {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
+
+                {% endset %}
+              <!------------Legend--------------->
+
                 {{ govukSummaryList({
                   rows: [
+                  {
+                    key: {
+                      text: "Outcome"
+                    },
+                    value: {
+                      html: dynamicOutcome
+                    }
+                  },
                     {
                       key: {
                         text: "Award date"
                       },
                       value: {
-                        html: "00 MM YYYY to 00 MM YYYY"
+                        html: dynamicDateRange
                       }
                     },
                     {
@@ -97,7 +118,7 @@
                         text: "Award period end"
                       },
                       value: {
-                        html: "00 MM YYYY"
+                        text: data['application-6-award-review-date-day'] + ' ' + (data['application-6-award-review-date-month'] | getMonth) + ' ' + data['application-6-award-review-date-year']
                       }
                     }
                   ]
