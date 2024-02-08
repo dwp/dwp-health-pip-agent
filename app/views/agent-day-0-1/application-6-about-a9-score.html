@@ -29,6 +29,25 @@
             <!------------Legend--------------->
 
 
+            <!------------Q2 LEGEND------------>
+              {% set dynamicQ4 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                <strong>Descriptor D (8 points):</strong> Cannot engage with other people due to such engagement causing either:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    overwhelming psychological distress to the claimant; or
+                  </li>
+                  <li>
+                    the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
             {{ govukRadios({
               idPrefix: "application-about-a9-score-overwrite",
               name: "application-about-a9-score-overwrite",
@@ -46,48 +65,27 @@
               items: [
               {
                 value: "a1",
-                html: "<strong>Descriptor A (1 points):</strong> XXX",
+                html: "<strong>Descriptor A (0 points):</strong> Can engage with other people unaided",
                 checked: (data["application-about-a9-score-overwrite"] == "0")
               },
               {
                 value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> XXX",
-                checked: (data["application-about-a9-score-overwrite"] == "1")
+                html: "<strong>Descriptor B (2 points):</strong> Needs prompting to be able to engage with other people",
+                checked: (data["application-about-a9-score-overwrite"] == "2")
               },
               {
                 value: "c3",
-                html: "<strong>Descriptor C (3 points):</strong> XXX",
-                checked: (data["application-about-a9-score-overwrite"] == "3")
-              },
-              {
-                value: "d4",
-                html: "<strong>Descriptor D (4 points):</strong> XXX",
+                html: "<strong>Descriptor C (4 points):</strong>  Needs social support to be able to engage with other people",
                 checked: (data["application-about-a9-score-overwrite"] == "4")
               },
               {
-                value: "e5",
-                html: "<strong>Descriptor E (5 points):</strong> XXX",
-                checked: (data["application-about-a9-score-overwrite"] == "5")
-              },
-              {
-                value: "f6",
-                html: "<strong>Descriptor F (6 points):</strong> XXX",
-                checked: (data["application-about-a9-score-overwrite"] == "6")
+                value: "d4",
+                html: dynamicQ4,
+                checked: (data["application-about-a9-score-overwrite"] == "8")
               }
               ]
             }) }}
 
-            Descriptor A (0 points): Can engage with other people unaided
-
-            Descriptor B (2 points): Needs prompting to be able to engage with other people
-
-            Descriptor C (4 points): Needs social support to be able to engage with other people
-
-            Descriptor D (8 points): Cannot engage with other people due to such engagement causing either:
-
-            i. overwhelming psychological distress to the claimant; or
-
-            ii. the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
 
             <br>
 

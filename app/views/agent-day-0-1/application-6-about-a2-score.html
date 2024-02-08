@@ -31,7 +31,7 @@
             <!------------Q2 LEGEND------------>
               {% set dynamicQ2 %}
 
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
                 <strong>Descriptor B (2 points):</strong> Needs:
 
                 <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
@@ -72,12 +72,12 @@
               {
                 value: "b2",
                 html: dynamicQ2,
-                checked: (data["application-about-a2-score-overwrite"] == "1")
+                checked: (data["application-about-a2-score-overwrite"] == "2")
               },
               {
                 value: "c3",
                 html: "<strong>Descriptor C (2 points):</strong> Needs a therapeutic source to be able to take nutrition",
-                checked: (data["application-about-a2-score-overwrite"] == "3")
+                checked: (data["application-about-a2-score-overwrite"] == "2")
               },
               {
                 value: "d4",
@@ -87,12 +87,12 @@
               {
                 value: "e5",
                 html: "<strong>Descriptor E (6 points):</strong> Needs assistance to be able to manage a therapeutic source to take nutrition",
-                checked: (data["application-about-a2-score-overwrite"] == "5")
+                checked: (data["application-about-a2-score-overwrite"] == "6")
               },
               {
                 value: "f6",
                 html: "<strong>Descriptor F (10 points):</strong> Cannot convey food and drink to their mouth and needs another person to do so",
-                checked: (data["application-about-a2-score-overwrite"] == "6")
+                checked: (data["application-about-a2-score-overwrite"] == "10")
               }
               ]
             }) }}

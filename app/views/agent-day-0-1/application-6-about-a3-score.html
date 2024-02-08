@@ -28,6 +28,45 @@
                   {% endset %}
             <!------------Legend--------------->
 
+            <!------------Q1 LEGEND------------>
+              {% set dynamicQ1 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                <strong>Descriptor A (0 points):</strong> Either:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    does not receive medication or therapy or need to monitor a health condition; or
+                  </li>
+                  <li>
+                    can manage medication or therapy or monitor a health condition unaided
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
+            <!------------Q2 LEGEND------------>
+              {% set dynamicQ2 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                <strong>Descriptor B (1 point):</strong> Needs any one or more of the following:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    to use an aid or appliance to be able to managed medication;
+                  </li>
+                  <li>
+                    supervision, prompting or assistance to be able to manage medication
+                  </li>
+                  <li>
+                    supervision, prompting or assistance to be able to monitor a health condition
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
 
             {{ govukRadios({
               idPrefix: "application-about-a3-score-overwrite",
@@ -46,58 +85,37 @@
               items: [
               {
                 value: "a1",
-                html: "<strong>Descriptor A (1 points):</strong> XXX",
+                html: dynamicQ1,
                 checked: (data["application-about-a3-score-overwrite"] == "0")
               },
               {
                 value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> XXX",
+                html: dynamicQ2,
                 checked: (data["application-about-a3-score-overwrite"] == "1")
               },
               {
                 value: "c3",
-                html: "<strong>Descriptor C (3 points):</strong> XXX",
-                checked: (data["application-about-a3-score-overwrite"] == "3")
+                html: "<strong>Descriptor C (2 points):</strong> Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week",
+                checked: (data["application-about-a3-score-overwrite"] == "2")
               },
               {
                 value: "d4",
-                html: "<strong>Descriptor D (4 points):</strong> XXX",
+                html: "<strong>Descriptor D (4 points):</strong>  Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week",
                 checked: (data["application-about-a3-score-overwrite"] == "4")
               },
               {
                 value: "e5",
-                html: "<strong>Descriptor E (5 points):</strong> XXX",
-                checked: (data["application-about-a3-score-overwrite"] == "5")
+                html: "<strong>Descriptor E (6 points):</strong> Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week",
+                checked: (data["application-about-a3-score-overwrite"] == "6")
               },
               {
                 value: "f6",
-                html: "<strong>Descriptor F (6 points):</strong> XXX",
-                checked: (data["application-about-a3-score-overwrite"] == "6")
+                html: "<strong>Descriptor F (8 points):</strong> Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week",
+                checked: (data["application-about-a3-score-overwrite"] == "8")
               }
               ]
             }) }}
 
-            Descriptor A (0 points): Either:
-
-i. does not receive medication or therapy or need to monitor a health condition; or
-
-ii. can manage medication or therapy or monitor a health condition unaided
-
-Descriptor B (1 point): Needs any one or more of the following:
-
-i. to use an aid or appliance to be able to managed medication;
-
-ii. supervision, prompting or assistance to be able to manage medication
-
-iii. supervision, prompting or assistance to be able to monitor a health condition
-
-Descriptor C (2 points): Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
-
-Descriptor D (4 points): Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week
-
-Descriptor E (6 points): Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week
-
-Descriptor F (8 points): Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week
 
             <br>
 
