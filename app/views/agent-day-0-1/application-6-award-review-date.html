@@ -26,8 +26,8 @@
 
 
       {{ govukDateInput({
-        id: "application-5-award-review-date-other",
-        namePrefix: "application-5-award-review-date-other",
+        id: "application-6-award-review-date",
+        namePrefix: "application-6-award-review-date",
         fieldset: {
           legend: {
             html: dynamicH1,
@@ -42,17 +42,17 @@
           {
             name: "day",
             classes: "govuk-input--width-2",
-            value: data["application-5-award-review-date-other-day"]
+            value: data["application-6-award-review-date-day"]
           },
           {
             name: "month",
             classes: "govuk-input--width-2",
-            value: data["application-5-award-review-date-other-month"]
+            value: data["application-6-award-review-date-month"]
           },
           {
             name: "year",
             classes: "govuk-input--width-4",
-            value: data["application-5-award-review-date-other-year"]
+            value: data["application-6-award-review-date-year"]
           }
         ]
       }) }}
