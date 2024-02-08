@@ -32,6 +32,20 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------OUTCOME LEGEND------------>
+
+        {% set dynamicOutcome %}
+
+        {% if data["system-application-selector"]  == "1" %}
+        I am Nill award
+
+          {% else %}
+        I am not nil award
+
+          {% endif %}
+
+        {% endset %}
+
 
       {{ govukSummaryList({
         rows: [
@@ -56,29 +70,41 @@
               text: "Outcome"
             },
             value: {
-              html: "<strong>Bad = We cannot award you PIP</strong>
-                      <br><br>
-                    <strong>Good = ou will get PIP</strong>"
-            }
-          },
-          {
-            key: {
-              text: "Award date"
-            },
-            value: {
-              html: "00 MM YYYY to 00 MM YYYY"
-            }
-          },
-          {
-            key: {
-              text: "Award period end"
-            },
-            value: {
-              html: "00 MM YYYY"
+              html: dynamicOutcome
             }
           }
         ]
       }) }}
+
+              {% if data["system-application-selector"]  == "1" %}
+
+              I am Nill award
+
+                {% else %}
+
+                {{ govukSummaryList({
+                  rows: [
+                    {
+                      key: {
+                        text: "Award date"
+                      },
+                      value: {
+                        html: "00 MM YYYY to 00 MM YYYY"
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Award period end"
+                      },
+                      value: {
+                        html: "00 MM YYYY"
+                      }
+                    }
+                  ]
+                }) }}
+
+                {% endif %}
+
 
       <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
 

@@ -9,16 +9,15 @@
 {% endblock %}
 
 {% block content %}
-<form action="application-selector-router" method="post" class="form">
-
+<form action="application-6-overview" method="post" class="form">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "application-selector",
-  name: "application-selector",
+  idPrefix: "system-application-selector",
+  name: "system-application-selector",
   fieldset: {
     legend: {
       text: "Select a scenario",
@@ -33,27 +32,12 @@
   {
     value: "1",
     text: "1",
-    checked: (data["application-selector"] == "1")
+    checked: (data["system-application-selector"] == "1")
   },
   {
     value: "2",
     text: "2",
-    checked: (data["application-selector"] == "2")
-  },
-  {
-    value: "3",
-    text: "3 (2B)",
-    checked: (data["application-selector"] == "3")
-  },
-  {
-    value: "4",
-    text: "4",
-    checked: (data["application-selector"] == "4")
-  },
-  {
-    value: "5",
-    text: "5",
-    checked: (data["application-selector"] == "5")
+    checked: (data["system-application-selector"] == "2")
   }
   ]
 }) }}
