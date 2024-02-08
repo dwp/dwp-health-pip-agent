@@ -2,7 +2,7 @@
 {% if data["system-application-selector"]  == "1" %}
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application (It was a nil</p>
+    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The person has not been awarded PIP.</p>
     {% endset %}
 
     {{ govukNotificationBanner({
@@ -14,7 +14,7 @@
 {% else %}
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application it was not a nil)</p>
+    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The person has been awarded PIP.</p>
     {% endset %}
 
     {{ govukNotificationBanner({
