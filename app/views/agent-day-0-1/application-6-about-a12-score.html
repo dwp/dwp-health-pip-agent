@@ -28,6 +28,24 @@
                   {% endset %}
             <!------------Legend--------------->
 
+            <!------------Q2 LEGEND------------>
+              {% set dynamicQ2 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                <strong>Descriptor F (12 points): </strong> Cannot, either aided or unaided:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    i. stand; or
+                  </li>
+                  <li>
+                    ii. move more than 1 metre
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
+
 
             {{ govukRadios({
               idPrefix: "application-about-a12-score-overwrite",
@@ -46,52 +64,37 @@
               items: [
               {
                 value: "a1",
-                html: "<strong>Descriptor A (1 points):</strong> XXX",
+                html: "<strong>Descriptor A (1 points):</strong> Descriptor A (0 points): Can stand and then move more than 200 metres, either aided or unaided",
                 checked: (data["application-about-a12-score-overwrite"] == "0")
               },
               {
                 value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> XXX",
+                html: "<strong>Descriptor B (2 points):</strong> Descriptor B (4 points): Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided",
                 checked: (data["application-about-a12-score-overwrite"] == "1")
               },
               {
                 value: "c3",
-                html: "<strong>Descriptor C (3 points):</strong> XXX",
+                html: "<strong>Descriptor C (3 points):</strong> Descriptor C (8 points): Can stand and then move unaided more than 20 metres but no more than 50 metres",
                 checked: (data["application-about-a12-score-overwrite"] == "3")
               },
               {
                 value: "d4",
-                html: "<strong>Descriptor D (4 points):</strong> XXX",
+                html: "<strong>Descriptor D (4 points):</strong> Descriptor D (10 points): Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres",
                 checked: (data["application-about-a12-score-overwrite"] == "4")
               },
               {
                 value: "e5",
-                html: "<strong>Descriptor E (5 points):</strong> XXX",
+                html: "<strong>Descriptor E (5 points):</strong> Descriptor E (12 points): Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided",
                 checked: (data["application-about-a12-score-overwrite"] == "5")
               },
               {
                 value: "f6",
-                html: "<strong>Descriptor F (6 points):</strong> XXX",
+                html: dynamicQ6,
                 checked: (data["application-about-a12-score-overwrite"] == "6")
               }
               ]
             }) }}
 
-            Descriptor A (0 points): Can stand and then move more than 200 metres, either aided or unaided
-
-            Descriptor B (4 points): Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
-
-            Descriptor C (8 points): Can stand and then move unaided more than 20 metres but no more than 50 metres
-
-            Descriptor D (10 points): Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
-
-            Descriptor E (12 points): Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
-
-            Descriptor F (12 points): Cannot, either aided or unaided:
-
-            i. stand; or
-
-            ii. move more than 1 metre
 
             <br>
 
