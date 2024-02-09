@@ -39,13 +39,14 @@
         {% if data["system-application-selector"]  == "1" %}
         We cannot award you PIP
 
-          {% else %}
-          Awarded enhanced for daily living and enhanced for mobility.
+        {% else %}
+        Awarded enhanced for daily living and enhanced for mobility. sdsd
 
-
-          {% endif %}
+        {% endif %}
 
         {% endset %}
+
+        <!------------OUTCOME LEGEND------------>
 
 
       {{ govukSummaryList({
@@ -73,7 +74,16 @@
             value: {
               html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
             }
+          },
+          {
+            key: {
+              text: "Outcome"
+            },
+            value: {
+              html: dynamicOutcome
+            }
           }
+
         ]
       }) }}
 
@@ -99,14 +109,6 @@
                 {{ govukSummaryList({
                   rows: [
                   {
-                    key: {
-                      text: "Outcome"
-                    },
-                    value: {
-                      html: dynamicOutcome
-                    }
-                  },
-                    {
                       key: {
                         text: "Award date"
                       },

@@ -224,27 +224,24 @@
 
                   </table>
 
-
+                </div>
+                </div>
 
 
 
         <!------------ ––– ------------>
 
-    </div>
-  </div>
 
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
   {% if data["application-about-a12-score-overwrite"] %}
 
-{% if data["system-application-selector"]  == "1" %}
-  <!-- I am Nill award -->
+  {% if data["system-application-selector"]  == "1" %}
+        <!-- I am Nill award -->
 
-  <div class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    <div class="govuk-grid-column-full">
-
-
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have selected and justified your descriptors</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This person will not be awarded PIP.</p>
 
 
@@ -256,6 +253,8 @@
           classes: "govuk-!-margin-right-2",
           href: "application-6-letter-review"
           }) }}
+
+
 
           {% else %}
 
@@ -274,20 +273,15 @@
         href: "application-6-award-period-date"
         }) }}
 
-      </div>
-    </div>
+
 
     {% endif %}
-
-
-
   {% else %}
 
   {% endif %}
 
-
-
-
+</div>
+</div>
 
 
 
