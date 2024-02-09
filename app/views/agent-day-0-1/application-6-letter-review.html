@@ -40,7 +40,7 @@
         We cannot award you PIP
 
         {% else %}
-        Awarded enhanced for daily living and enhanced for mobility. sdsd
+        Awarded enhanced for daily living and enhanced for mobility.
 
         {% endif %}
 
@@ -99,13 +99,13 @@
                 {% set dynamicDateRange %}
 
 
-                {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
+                From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
 
 
                 {% if data["application-6-award-period-end-check"]  == "Yes" %}
                 to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
                 {% else %}
-                (There is no end date)
+                (there is no end date)
                 {% endif %}
 
 
