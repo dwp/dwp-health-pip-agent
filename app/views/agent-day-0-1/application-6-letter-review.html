@@ -100,8 +100,16 @@
 
 
                 {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
-                to
-                {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
+
+
+                {% if data["application-6-award-period-end-check"]  == "Yes" %}
+                to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
+                {% else %}
+                (There is no end date)
+                {% endif %}
+
+
+
 
                 {% endset %}
               <!------------Legend--------------->

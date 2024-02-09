@@ -17,48 +17,6 @@
 
       {% include "agent-0-3/record-id.html" %}
 
-
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Award date details</h2>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Consider dates in hospital, prison and other accommodation if mentioned in the application.</p>
-
-
-
-      {{ govukDateInput({
-        id: "application-6-award-period-date-start",
-        namePrefix: "application-6-award-period-date-start",
-        fieldset: {
-          legend: {
-            html: "Enter the start date of the award",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
-          }
-        },
-        hint: {
-          html: ""
-        },
-        items: [
-          {
-            name: "day",
-            classes: "govuk-input--width-2",
-            value: data["application-6-award-period-date-start-day"]
-          },
-          {
-            name: "month",
-            classes: "govuk-input--width-2",
-            value: data["application-6-award-period-date-start-month"]
-          },
-          {
-            name: "year",
-            classes: "govuk-input--width-4",
-            value: data["application-6-award-period-date-start-year"]
-          }
-        ]
-      }) }}
-
-<br>
-
-
       {{ govukDateInput({
         id: "application-6-award-period-date-end",
         namePrefix: "application-6-award-period-date-end",
@@ -66,11 +24,11 @@
           legend: {
             html: "Enter the end date of the award",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }
         },
         hint: {
-          html: ""
+          html: "XXXX"
         },
         items: [
           {

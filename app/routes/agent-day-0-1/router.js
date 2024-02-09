@@ -328,4 +328,21 @@ router.post(`/application-1-task-t3-routers`, (req, res) => {
 })
 
 
+router.post(`/application-6-award-period-end-check-router`, (req, res) => {
+  const awardPeriodCheck = req.session.data['application-6-award-period-end-check']
+
+  if (awardPeriodCheck == 'Yes') {
+    res.redirect(`application-6-award-period-end`)
+  }
+   else {
+    res.redirect(`application-6-award-review-date`)
+  }
+})
+
+
+
+
+
+
+
 module.exports = router
