@@ -135,7 +135,7 @@
 {% elif data["application-1-letter-review"]  == "Yes"%}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application and payments have been set up. The person has been sent the <strong>standard letter</strong> letting them know they are entitled to Personal Independence Payment.</p>
+<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The person has been sent a letter letting them know they are not entitled to Personal Independence Payment.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -146,7 +146,7 @@
 {% elif data["application-5-outcome-letter-check"]  == "Yes"%}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application and payments have been set up. The person has been sent an <strong>edited version of the standard letter</strong> letting them know they are entitled to Personal Independence Payment.</p>
+<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The person has been sent a letter letting them know they are not entitled to Personal Independence Payment.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -158,7 +158,7 @@
 {% elif data["application-5-outcome-letter-check"]  == "No"%}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application and payments have been set up. The person has been sent the <strong>standard letter</strong> letting them know they are entitled to Personal Independence Payment.</p>
+<p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The person has been sent a letter letting them know they are not entitled to Personal Independence Payment.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
