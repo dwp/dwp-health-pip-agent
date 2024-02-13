@@ -53,32 +53,6 @@
 </thead>
 
 
-      {% if data["evidence-1-grade"] == "Good" %}
-      {% elif data["evidence-1-grade"] == "Bad" %}
-      {% else %}
-          {% include "agent-0-9/evidence-1-status.html" %}
-      {% endif %}
-
-<!-- {% if data["evidence-2-grade"] == "Good" %}
-{% elif data["evidence-2-grade"] == "Bad" %}
-{% else %}
-    {% include "agent-0-9/evidence-2-status.html" %}
-{% endif %} -->
-
-{% if data["evidence-3-grade"] == "Good" %}
-{% elif data["evidence-3-grade"] == "Bad" %}
-{% else %}
-    {% include "agent-0-9/evidence-3-status.html" %}
-{% endif %}
-
-<!-- {% if data["evidence-4-grade"] == "Good" %}
-{% elif data["evidence-4-grade"] == "Bad" %}
-{% elif data["evidence-4-grade"] == "Remove" %}
-
-{% else %}
-    {% include "agent-0-9/evidence-4-status.html" %}
-{% endif %} -->
-
 {% if data["evidence-5-grade"] == "Good" %}
 {% elif data["evidence-5-grade"] == "Bad" %}
 {% elif data["evidence-5-grade"] == "Remove" %}
@@ -86,12 +60,42 @@
     {% include "agent-0-9/evidence-5-status.html" %}
 {% endif %}
 
-{% if data["evidence-6-grade"] == "Good" %}
-{% elif data["evidence-6-grade"] == "Bad" %}
-{% elif data["evidence-6-grade"] == "Remove" %}
-{% else %}
-    {% include "agent-0-9/evidence-6-status.html" %}
-{% endif %}
+
+      {% if data["evidence-6-grade"] == "Good" %}
+      {% elif data["evidence-6-grade"] == "Bad" %}
+      {% elif data["evidence-6-grade"] == "Remove" %}
+      {% else %}
+          {% include "agent-0-9/evidence-6-status.html" %}
+      {% endif %}
+
+      <!-- {% if data["evidence-1-grade"] == "Good" %}
+      {% elif data["evidence-1-grade"] == "Bad" %}
+      {% else %}
+          {% include "agent-0-9/evidence-1-status.html" %}
+      {% endif %} -->
+
+      <!-- {% if data["evidence-2-grade"] == "Good" %}
+      {% elif data["evidence-2-grade"] == "Bad" %}
+      {% else %}
+          {% include "agent-0-9/evidence-2-status.html" %}
+      {% endif %} -->
+
+      {% if data["evidence-3-grade"] == "Good" %}
+      {% elif data["evidence-3-grade"] == "Bad" %}
+      {% else %}
+          {% include "agent-0-9/evidence-3-status.html" %}
+      {% endif %}
+
+      <!-- {% if data["evidence-4-grade"] == "Good" %}
+      {% elif data["evidence-4-grade"] == "Bad" %}
+      {% elif data["evidence-4-grade"] == "Remove" %}
+
+      {% else %}
+          {% include "agent-0-9/evidence-4-status.html" %}
+      {% endif %} -->
+
+
+
 
 </table>
 
@@ -114,6 +118,20 @@
       <td class="govuk-table__cell govuk-10-percent">Status</td>
     </tr>
     </thead>
+
+    {% if data["evidence-5-grade"] == "Good" %}
+        {% include "agent-0-9/evidence-5-status.html" %}
+    {% elif data["evidence-5-grade"] == "Bad" %}
+    {% elif data["evidence-5-grade"] == "Remove" %}
+    {% else %}
+    {% endif %}
+
+    {% if data["evidence-6-grade"] == "Good" %}
+        {% include "agent-0-9/evidence-6-status.html" %}
+    {% elif data["evidence-6-grade"] == "Bad" %}
+    {% elif data["evidence-6-grade"] == "Remove" %}
+    {% else %}
+    {% endif %}
 
           {% if data["evidence-1-grade"] == "Good" %}
               {% include "agent-0-9/evidence-1-status.html" %}
@@ -141,19 +159,6 @@
           {% else %}
           {% endif %}
 
-          {% if data["evidence-5-grade"] == "Good" %}
-              {% include "agent-0-9/evidence-5-status.html" %}
-          {% elif data["evidence-5-grade"] == "Bad" %}
-          {% elif data["evidence-5-grade"] == "Remove" %}
-          {% else %}
-          {% endif %}
-
-          {% if data["evidence-6-grade"] == "Good" %}
-              {% include "agent-0-9/evidence-6-status.html" %}
-          {% elif data["evidence-6-grade"] == "Bad" %}
-          {% elif data["evidence-6-grade"] == "Remove" %}
-          {% else %}
-          {% endif %}
 
           </table>
 
@@ -177,6 +182,22 @@
           <td class="govuk-table__cell govuk-10-percent">Status</td>
         </tr>
         </thead>
+
+        {% if data["evidence-5-grade"] == "Good" %}
+        {% elif data["evidence-5-grade"] == "Bad" %}
+          {% include "agent-0-9/evidence-5-status.html" %}
+        {% elif data["evidence-5-grade"] == "Remove" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-6-grade"] == "Good" %}
+        {% elif data["evidence-6-grade"] == "Bad" %}
+          {% include "agent-0-9/evidence-6-status.html" %}
+        {% elif data["evidence-6-grade"] == "Remove" %}
+
+        {% else %}
+        {% endif %}
 
         {% if data["evidence-1-grade"] == "Good" %}
         {% elif data["evidence-1-grade"] == "Bad" %}
@@ -204,21 +225,7 @@
         {% else %}
         {% endif %}
 
-        {% if data["evidence-5-grade"] == "Good" %}
-        {% elif data["evidence-5-grade"] == "Bad" %}
-          {% include "agent-0-9/evidence-5-status.html" %}
-        {% elif data["evidence-5-grade"] == "Remove" %}
 
-        {% else %}
-        {% endif %}
-
-        {% if data["evidence-6-grade"] == "Good" %}
-        {% elif data["evidence-6-grade"] == "Bad" %}
-          {% include "agent-0-9/evidence-6-status.html" %}
-        {% elif data["evidence-6-grade"] == "Remove" %}
-
-        {% else %}
-        {% endif %}
 
 
         </table>
@@ -246,14 +253,6 @@
         </tr>
         </thead>
 
-        {% if data["evidence-4-grade"] == "Good" %}
-        {% elif data["evidence-4-grade"] == "Bad" %}
-        {% elif data["evidence-4-grade"] == "Remove" %}
-          {% include "agent-0-9/evidence-4-status.html" %}
-
-        {% else %}
-        {% endif %}
-
         {% if data["evidence-5-grade"] == "Good" %}
         {% elif data["evidence-5-grade"] == "Bad" %}
         {% elif data["evidence-5-grade"] == "Remove" %}
@@ -266,6 +265,14 @@
         {% elif data["evidence-6-grade"] == "Bad" %}
         {% elif data["evidence-6-grade"] == "Remove" %}
           {% include "agent-0-9/evidence-6-status.html" %}
+
+        {% else %}
+        {% endif %}
+
+        {% if data["evidence-4-grade"] == "Good" %}
+        {% elif data["evidence-4-grade"] == "Bad" %}
+        {% elif data["evidence-4-grade"] == "Remove" %}
+          {% include "agent-0-9/evidence-4-status.html" %}
 
         {% else %}
         {% endif %}
