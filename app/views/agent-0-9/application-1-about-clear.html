@@ -1,0 +1,267 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="application-1-outcome" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-9/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Review supplied information</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 25 January 2024</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Date of assessment: 1 February 2024</p>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Primary condition: Blind</p> -->
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-3">There are 3 supporting documents related to this claim</h1>
+      <p class="govuk-!-margin-bottom-2"><a class="" href="pip-doc1.pdf" target="_blank">View GP letter</a></p>
+      <p class="govuk-!-margin-bottom-2"><a class="" href="pip-doc2.pdf" target="_blank">View care plan</a></p>
+      <p class="govuk-!-margin-bottom-6"><a class="" href="pip-doc3.pdf" target="_blank">View Certificate of Vision Impairment (CVI)</a></p>
+
+
+    </div>
+  </div>
+
+
+      <!------------ ––– ------------>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+
+                            <table class="govuk-table">
+                              <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
+
+
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-50-percent"></td>
+                            <td class="govuk-table__cell govuk-20-percent">Score</td>
+                            <td class="govuk-table__cell govuk-30-percent">Status</td>
+                          </tr>
+                          </thead>
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell table-spacer"><a href="application-1-about-a1">Preparing food</a></td>
+                            <td class="govuk-table__cell table-spacer"></td>
+                            <td class="govuk-table__cell table-spacer">
+
+                              <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                            </td>
+                            </tr>
+
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell table-spacer"><a href="#">Taking nutrition</a></td>
+                              <td class="govuk-table__cell table-spacer"></td>
+                              <td class="govuk-table__cell table-spacer">
+
+                                <strong class="govuk-tag app-task-list__apl-task-notclaimed">Not claimed</strong>
+
+                              </td>
+                              </tr>
+
+                              <tr class="govuk-table__row">
+                                <td class="govuk-table__cell table-spacer"><a href="#">Managing therapy or monitoring a health condition</a></td>
+                                <td class="govuk-table__cell table-spacer"></td>
+                                <td class="govuk-table__cell table-spacer">
+
+                                  <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                </td>
+                                </tr>
+
+                                <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell table-spacer"><a href="#">Washing and bathing</a></td>
+                                  <td class="govuk-table__cell table-spacer"></td>
+                                  <td class="govuk-table__cell table-spacer">
+
+                                    <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                  </td>
+                                  </tr>
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"><a href="#">Managing toilet needs or incontinence</a></td>
+                                    <td class="govuk-table__cell table-spacer"></td>
+                                    <td class="govuk-table__cell table-spacer">
+
+                                      <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                    </td>
+                                    </tr>
+
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell table-spacer"><a href="#">Dressing and undressing</a></td>
+                                      <td class="govuk-table__cell table-spacer"></td>
+                                      <td class="govuk-table__cell table-spacer">
+
+                                        <strong class="govuk-tag app-task-list__apl-task-notclaimed">Not claimed</strong>
+
+                                      </td>
+                                      </tr>
+
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell table-spacer"><a href="#">Communicating verbally</a></td>
+                                        <td class="govuk-table__cell table-spacer"></td>
+                                        <td class="govuk-table__cell table-spacer">
+
+                                          <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                        </td>
+                                        </tr>
+
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"><a href="#">Reading and understanding signs, symbols and words</a></td>
+                                    <td class="govuk-table__cell table-spacer"></td>
+                                    <td class="govuk-table__cell table-spacer">
+
+                                      <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                    </td>
+                                    </tr>
+
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell table-spacer"><a href="#">Engaging with other people face to face</a></td>
+                                      <td class="govuk-table__cell table-spacer"></td>
+                                      <td class="govuk-table__cell table-spacer">
+
+                                        <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                      </td>
+                                      </tr>
+
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell table-spacer"><a href="application-1-about-a12">Making budgeting decisions</a></td>
+                                        <td class="govuk-table__cell table-spacer"></td>
+                                        <td class="govuk-table__cell table-spacer">
+
+                                          <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                        </td>
+
+                            </table>
+
+                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+
+                              <table class="govuk-table">
+
+                                <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Mobility activities</h1>
+
+                                <thead class="govuk-table__head">
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell govuk-50-percent"></td>
+                                    <td class="govuk-table__cell govuk-20-percent">Score</td>
+                                    <td class="govuk-table__cell govuk-30-percent">Status</td>
+                                  </tr>
+                                  </thead>
+
+                              <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell table-spacer"><a href="#">Planning and following journeys</a></td>
+                                  <td class="govuk-table__cell table-spacer"></td>
+                                  <td class="govuk-table__cell table-spacer">
+
+                                    <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+
+                                  </td>
+                                  </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="#">Moving around</a></td>
+                      <td class="govuk-table__cell table-spacer"></td>
+                      <td class="govuk-table__cell table-spacer">
+
+                        <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                      </td>
+                      </tr>
+
+                  </table>
+
+
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+
+
+        <div class="govuk-grid-row govuk-!-margin-top-2">
+        <div class="govuk-grid-column-three-quarters">
+
+          {% if data["application-1-about-a12"] == "Agree" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have confirmed your scores and agree with the assessment report</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can continue processing this application.</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2"
+          }) }}
+
+      {% elif data["application-1-about-a12"] == "Amended" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have confirmed your scores and changed one or more of the scores in the assessment report</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can continue processing this application.</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2"
+      }) }}
+
+
+      {% elif data["application-1-about-a12"]  == "Pause" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have paused processing this application</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to verify all details before you can continue. We have saved the work you have done so far.</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "UF",
+      checked: (data["process-c-nil-task-list"] == "UF"),
+      text: "Exit and continue later",
+      classes: "govuk-button--secondary",
+      href: "application-1-exit-early"
+      }) }}
+
+
+      {% else %}
+
+
+      {% endif %}
+
+  </form>
+
+{% endblock %}

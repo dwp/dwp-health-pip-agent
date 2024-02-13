@@ -1,0 +1,529 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="entry-home" method="post" class="form">
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% if data["application-5-letter-edit"] == "Yes" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the edited version<br>of the letter</h1>
+      {% else %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the letter</h1>
+      {% endif %}
+
+      <!------------H1 LEGEND------------>
+
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-5-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jeff Bridges"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
+            }
+          },
+          {
+            key: {
+              text: "Outcome"
+            },
+            value: {
+              html: "<strong>We cannot award you PIP</strong>"
+            }
+          },
+          {
+            key: {
+              text: "Additional content"
+            },
+            value: {
+              html: data["application-5-letter-edit"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "application-5-letter-edit",
+                  html: dynamicAgentNotes,
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
+
+      <!-- 1 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            1. Preparing food:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>
+              {% if data["application-5-about-a1"] == "Agree" %}     0
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a1-scoreoverwrite.html" %}
+              {% else %}
+              {% endif %}
+              out of 8
+            </strong>
+
+            <br>
+
+            {% include "agent-0-9/application-5-about-a1-descriptoroverwrite.html" %}
+
+
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-5-about-a1-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-a1-reason">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+      <!-- 2 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            2. Taking nutrition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 10</strong>
+            <br>Descriptor A: Can take nutrition unaided
+          </dd>
+        </div>
+
+
+      </dl>
+
+      <!-- 3 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            3. Managing therapy or monitoring a health condition
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 8</strong>
+
+            <br>
+
+            Descriptor A:
+
+            <br> &#149; does not receive medication or therapy or need to monitor a health condition;
+            <br> &#149; can manage medication or therapy or monitor a health condition unaided.
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 4 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            4. Washing and bathing
+
+
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 8</strong>
+
+            <br>
+            Descriptor A: Can wash and bathe unaided
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 5 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            5. Managing toilet needs or incontinence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 8</strong>
+
+            <br>
+            Descriptor A: Can manage toilet needs or incontinence unaided
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 6 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            6. Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>
+              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
+              {% else %}
+                0 out of 10
+              {% endif %}
+            </strong>
+
+            <br>
+
+            {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
+            {% include "agent-0-9/application-5-about-a6-descriptoroverwrite.html" %}
+            {% else %}
+              Descriptor A: Can dress and undress unaided
+            {% endif %}
+
+
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-5-about-a6-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-a6-reason">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <!-- 7 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            7. Communicating verbally
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 12</strong>
+
+            <br>
+            Descriptor A: Can express and understand verbal information unaided
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 8 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            8. Reading and understanding signs, symbols and words
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 8</strong>
+            <br>
+            Descriptor A: Can read and understand basic and complex written information either unaided or using spectacles or contact lenses.
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 9 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            9. Engaging with other people face to face
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 8</strong>
+
+            <br>
+            Descriptor A: Can engage with other people unaided
+
+          </dd>
+        </div>
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div> -->
+      </dl>
+
+
+      <!-- 10 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            10. Making budgeting decisions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>
+              {% if data["application-5-about-a12"] == "Agree" %}     0
+              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-9/application-5-about-a12-scoreoverwrite.html" %}
+              {% else %}
+              {% endif %}
+              out of 8
+            </strong>
+
+            <br>
+
+            {% include "agent-0-9/application-5-about-a12-descriptoroverwrite.html" %}
+
+
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-5-about-a12-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-a12-reason">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Mobility scoring</h3>
+
+
+
+            <!-- 11 -->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+              <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                <dt class="govuk-summary-list__key">
+                  11. Planning and following journeys
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong>0 out of 12</strong>
+
+                  <br>
+                  Descriptor B: Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+
+                </dd>
+              </div>
+
+              <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__value">
+                  Justification
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> XXX justification</span>
+                  </a>
+                </dd>
+              </div> -->
+            </dl>
+
+            <!-- 12 -->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+              <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                <dt class="govuk-summary-list__key">
+                  12. Moving around
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <strong>0 out of 12</strong>
+
+                  <br>
+                  Descriptor C: Can stand and then move unaided more than 20 metres but no more than 50 metres
+
+                </dd>
+              </div>
+
+              <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__value">
+                  Justification
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden"> XXX justification</span>
+                  </a>
+                </dd>
+              </div> -->
+            </dl>
+
+
+<br>
+
+      <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+            {{ govukRadios({
+              idPrefix: "application-1-letter-review",
+              name: "application-1-letter-review",
+              fieldset: {
+                legend: {
+                  text: "Do you want to send the letter now?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["application-1-letter-review"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["application-1-letter-review"] == "No")
+                }
+              ]
+            }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
