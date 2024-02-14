@@ -243,7 +243,7 @@ router.post(`/application-5-about-a1-router`, (req, res) => {
   const about5_A1 = req.session.data['application-5-about-a1']
 
   if (about5_A1 == 'Agree') {
-    res.redirect(`application-5-about-a1-reason`)
+    res.redirect(`application-5-about-a1-group-check`)
   }
   else if (about5_A1 == 'Amended') {
     res.redirect(`application-5-about-a1-score`)
@@ -253,11 +253,27 @@ router.post(`/application-5-about-a1-router`, (req, res) => {
   }
 })
 
+
+router.post(`/application-5-about-a1-group-check-router`, (req, res) => {
+  const about5_A1_groupCheck = req.session.data['application-5-about-a1-group-check']
+
+  if (about5_A1_groupCheck == 'Yes') {
+    res.redirect(`application-5-about-a1-start-group`)
+  }
+  else if (about5_A1_groupCheck == 'No') {
+    res.redirect(`application-5-about-a1-reason`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 router.post(`/application-5-about-a6-router`, (req, res) => {
   const about5_A6 = req.session.data['application-5-about-a6']
 
   if (about5_A6 == 'Agree') {
-    res.redirect(`application-5-about-a6-reason`)
+    res.redirect(`application-5-about-a6-group-check`)
   }
   else if (about5_A6 == 'Amended') {
     res.redirect(`application-5-about-a6-score`)
@@ -266,6 +282,24 @@ router.post(`/application-5-about-a6-router`, (req, res) => {
     res.redirect(`application-5-about`)
   }
 })
+
+
+router.post(`/application-5-about-a6-group-check-router`, (req, res) => {
+  const about5_A6_groupCheck = req.session.data['application-5-about-a6-group-check']
+
+  if (about5_A6_groupCheck == 'Yes') {
+    res.redirect(`application-5-about-ax--group-reason`)
+  }
+  else if (about5_A6_groupCheck == 'No') {
+    res.redirect(`application-5-about`)
+  }
+   else {
+    res.redirect(`application-5-about-a6-reason`)
+  }
+})
+
+
+
 
 
 router.post(`/application-5-about-a12-router`, (req, res) => {
