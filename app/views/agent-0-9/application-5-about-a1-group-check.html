@@ -22,13 +22,13 @@
         name: "application-5-about-a1-group-check",
         fieldset: {
           legend: {
-            text: "Do you need to create a group justifaiction?",
+            text: "Do you want to add the same justification for multiple activities?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "This will mean there is a single justification for several activities"
+          html: ""
         },
         classes: "govuk-radios",
         items: [
@@ -39,7 +39,7 @@
         },
         {
           value: "No",
-          text: "No",
+          text: "No, just for preparing food",
           checked: (data["application-5-about-a1-group-check"] == "No")
           }
         ]
