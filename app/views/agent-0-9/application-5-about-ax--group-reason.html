@@ -184,12 +184,12 @@
           <!------------Legend--------------->
 
 
-
+          {% set valueData %}{{ data["application-5-about-ax--group-reason"]}}{% endset %}
 
 
           {{ govukTextarea({
-            name: "application-5-about-a1-reason",
-            id: "application-5-about-a1-reason",
+            name: "application-5-about-ax--group-reason",
+            id: "application-5-about-ax--group-reason",
             classes: " govukTextarea--overwrite",
             label: {
               text: "",
@@ -199,7 +199,7 @@
             hint: {
               html: legendCanned
             },
-            value: ""
+            value: valueData
           }) }}
 
           {{ govukButton({
