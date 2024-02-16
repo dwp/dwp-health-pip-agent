@@ -27,7 +27,7 @@
 ​
 {% block content %}
 
-<form action="outcome-overview-1" method="post" class="form">
+<form action="outcome-overview-landing" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -35,10 +35,12 @@
       <!-- {% include "agent-0-8/record-id.html" %} -->
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">What is your date of birth</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">A 6 digit code has been texted to mobile number ending 789</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">The code expires after 5 minutes.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Do not close this screen before you enter the code unless<br>you need to request another.</p>
 
 <!--
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">You will need the following stuff ready </p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: XXXX</p> -->
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something else in here</p> -->
@@ -46,20 +48,20 @@
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you get stuck, etc call XXX </p> -->
 
 
-      {{ govukDateInput({
-        id: "passport-issued",
-        namePrefix: "passport-issued",
-        fieldset: {
-          legend: {
-            text: "",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
+      {{ govukInput({
+        label: {
+          text: "Enter your 6 digit code"
         },
-        hint: {
-          text: "For example, 27 3 2007"
-        }
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "addressTown",
+        autocomplete: "",
+        classes: "govuk-input--width-5"
       }) }}
+
+      <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">I need a new code</a></p>
+
+
 
       {{ govukButton({
         text: "Continue",

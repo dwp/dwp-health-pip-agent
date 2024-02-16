@@ -27,7 +27,7 @@
 ​
 {% block content %}
 
-<form action="reference-2" method="post" class="form">
+<form action="understand-next-steps" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -35,35 +35,31 @@
       <!-- {% include "agent-0-8/record-id.html" %} -->
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">To find your application we need To know your email address</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us a little bit about what you dont understand</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Tell us a little bit about what you dont understand</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Tell us when we can call you</p>
 
-<!--
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">You will need the following stuff ready </p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: XXXX</p> -->
-
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something else in here</p> -->
-
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you get stuck, etc call XXX </p> -->
-
-
-      {{ govukInput({
+      {{ govukTextarea({
+        name: "understand-call-back",
+        id: "understand-call-back",
+        classes: " govukTextarea--overwrite",
         label: {
-          text: "Enter your email address used when you made your original application"
+          text: "",
+          classes: "govuk-label--m",
+          isPageHeading: true
         },
-        classes: "govuk-!-width-two-thirds",
-        id: "address-town",
-        name: "addressTown",
-        autocomplete: "address-level2"
+        hint: {
+          html: legendCanned
+        },
+        value: data["understand-call-back"]
       }) }}
-
-      <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">I need help to login</a></p>
-
-
 
       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
+
+
 
         </div>
       </div>

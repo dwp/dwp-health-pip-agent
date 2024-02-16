@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+​
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+​
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+​
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+​
+{% block content %}
+
+<form action="outcome-overview-3-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {% include "agent-0-8/record-id.html" %} -->
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">About the information we used to reach our decision</h1>
+
+
+      <p class="govuk-body">We use all infotmation provided in order to reach an given decision, the four main area are:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        <li>
+          What you provided in your application: constructing, altering, repairing, extending, demolishing or dismantling buildings or structures (whether permanent or not), including offshore installation services
+        </li>
+        <li>
+          What you provided in an Assement: constructing, altering, repairing, extending, demolishing of any works forming, or planned to form, part of the land, including (in particular) walls, roadworks, power lines, electronic communications equipment, aircraft runways, railways, inland waterways, docks and harbours
+        </li>
+        <li>
+          XXXXX\
+        </li>
+      </ul>
+
+
+
+
+
+      {{ govukRadios({
+        idPrefix: "outcome-overview-3",
+        name: "outcome-overview-3",
+        fieldset: {
+          legend: {
+            text: "What would you like to do next??",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+
+        {
+          value: "1",
+          text: "I want to see all the information I provided the department in my application",
+          checked: (data["outcome-overview-3"] == "1")
+            },
+
+        {
+          value: "2",
+          text: "I want to see what the assessment report finding where",
+          checked: (data["outcome-overview-3"] == "2")
+        },
+        {
+          value: "3",
+          text: "I want to see how it was determined by a DWP agent",
+          checked: (data["outcome-overview-3"] == "3")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "4",
+          text: "I understand the decision and continue",
+          checked: (data["next-steps"] == "4")
+        },
+
+        {
+          value: "5",
+          text: "I think somethign is wrong",
+          checked: (data["next-steps"] == "5")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

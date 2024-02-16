@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+​
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+​
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+​
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+​
+{% block content %}
+
+<form action="outcome-notification-method-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {% include "agent-0-8/record-id.html" %} -->
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As standard you will get a paper letter of this decision outcome, however we can other other methods</h1>
+
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXX</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">XXXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you get stuck, etc call XXX </p> -->
+
+
+      {{ govukRadios({
+        idPrefix: "outcome-notification-method",
+        name: "outcome-notification-method",
+        fieldset: {
+          legend: {
+            text: "Do you need any other formats for the decision letter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Standard",
+          text: "Happy with standard letter",
+          checked: (data["outcome-notification-method"] == "Standard")
+        },
+        {
+          value: "Print",
+          text: "Alternative formats",
+          checked: (data["outcome-notification-method"] == "Print")
+        },
+        {
+          value: "Digital",
+          text: "I wouldnt mind a digital copy brah",
+          checked: (data["outcome-notification-method"] == "Digital")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
