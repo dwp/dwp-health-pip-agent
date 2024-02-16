@@ -1,69 +1,26 @@
 {% extends "layout.html" %}
-​
+
 {% block pageTitle %}
-  Mainstream guide example
+  Process a PIP application
 {% endblock %}
-​
+
 {% block header %}
-  <!-- Blank header with no service name for this page -->
-  {{ govukHeader() }}
+ {% include "explore-header-global-nav-multi.html" %}
 {% endblock %}
-​
-{% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Section</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Subsection</a>
-      </li>
-    </ol>
-  </div>
-{% endblock %}
-​
+
 {% block content %}
-
-<form action="outcome-overview-3-router" method="post" class="form">
-
-  <div class="govuk-grid-row govuk-!-margin-bottom-8">
-    <div class="govuk-grid-column-two-thirds">
-
-  <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">About the information we used to reach our decision</h1>
-
-  <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">We use all infotmation provided in order to reach an given decision, the four main area are:</p>
-
-  <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-    <li>
-      This decison is made up from what you gave us in the paplication
-    </li>
-    <li>
-      What you provided in an Assement: constructing, altering, repairing, extending,
-    </li>
-    <li>
-      The documents you supplied
-    </li>
-  </ul>
-
-<br>
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><strong>Keeping this page for you record</strong></p>
-<p class="govuk-body govuk-!-margin-bottom-6">You can <a href="outcome-digital-copy">save a copy (PDF) </a>of this page. You will also be recitiving a copy in the post as a default</p>
-
-</div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
+<form action="entry-home" method="post" class="form">
+  {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">This is the decison in full</h1>
 
+      {% if data["application-5-letter-edit"] == "Yes" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the edited version<br>of the letter</h1>
+      {% else %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the letter</h1>
+      {% endif %}
 
       <!------------H1 LEGEND------------>
 
@@ -593,56 +550,40 @@
 
 
 
-      {{ govukRadios({
-        idPrefix: "outcome-overview-3",
-        name: "outcome-overview-3",
-        fieldset: {
-          legend: {
-            text: "What would you like to do next?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        classes: "govuk-radios",
-        items: [
-
-        {
-          value: "1",
-          text: "I wannt to know what information was used",
-          checked: (data["outcome-overview-3"] == "1")
-        },
-        {
-          value: "2",
-          text: "I dont understand the outcome",
-          checked: (data["next-steps"] == "2")
-        },
-        {
-          divider: "or"
-        },
-
-        {
-          value: "3",
-          text: "The outcome is clear to me",
-          checked: (data["outcome-overview-3"] == "3")
-        },
-
-        {
-          value: "4",
-          text: "I dont agree with the outcome",
-          checked: (data["outcome-overview-3"] == "4")
-        }
-
-        ]
-      }) }}
+            {{ govukRadios({
+              idPrefix: "application-1-letter-review",
+              name: "application-1-letter-review",
+              fieldset: {
+                legend: {
+                  text: "Do you want to send the letter now?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: (data["application-1-letter-review"] == "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["application-1-letter-review"] == "No")
+                }
+              ]
+            }) }}
 
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
 
         </div>
       </div>
