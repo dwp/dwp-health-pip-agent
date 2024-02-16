@@ -81,12 +81,35 @@ router.post(`/outcome-overview-3-router`, (req, res) => {
     res.redirect(`understand-1`)
   }
   else if (outcomeOverview3 == '3') {
-    res.redirect(`application-data-3`)
+    res.redirect(`outcome-notification-method`)
   }
   else if (outcomeOverview3 == '4') {
-    res.redirect(`outcome-overview-4`)
+    res.redirect(`dont-agree`)
   }
   else if (outcomeOverview3 == '5') {
+    res.redirect(`actions-for-application`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/understand-choice-router`, (req, res) => {
+  const understandChoice = req.session.data['understand-choice']
+
+  if (understandChoice == '1') {
+    res.redirect(`application-data-1`)
+  }
+  else if (understandChoice == '2') {
+    res.redirect(`understand-1`)
+  }
+  else if (understandChoice == '3') {
+    res.redirect(`outcome-notification-method`)
+  }
+  else if (understandChoice == '4') {
+    res.redirect(`dont-agree`)
+  }
+  else if (understandChoice == '5') {
     res.redirect(`actions-for-application`)
   }
    else {
