@@ -119,5 +119,16 @@ router.post(`/understand-choice-router`, (req, res) => {
 
 
 
+router.post(`/other-help-router`, (req, res) => {
+  const otherHelp = req.session.data['other-help']
+
+  if (otherHelp == 'Yes') {
+    res.redirect(`other-help-yes`)
+  }
+   else {
+    res.redirect(`exit`)
+  }
+})
+
 
 module.exports = router
