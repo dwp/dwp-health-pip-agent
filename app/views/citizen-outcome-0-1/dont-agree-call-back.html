@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+​
+{% block pageTitle %}
+  Mainstream guide example
+{% endblock %}
+​
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+​
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+​
+{% block content %}
+
+<form action="understand-next-steps" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- {% include "agent-0-8/record-id.html" %} -->
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us a little bit about what you dont agree with</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Tell us a little bit about x</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Did we miss something?</p>
+
+      {{ govukTextarea({
+        name: "understand-call-back",
+        id: "understand-call-back",
+        classes: " govukTextarea--overwrite",
+        label: {
+          text: "Did we miss something",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: legendCanned
+        },
+        value: data["understand-call-back"]
+      }) }}
+
+<br>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3"><strong>Select and upload something</strong></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">We can do XYZ forrmats?</p>
+
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-1"><a class="" href="pip-doc2.pdf" target="_blank">Document 1</a></p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="pip-doc2.pdf" target="_blank">Document 2</a></p>
+
+
+      {{ govukButton({
+        text: "Upload document",
+        classes: "govuk-button--secondary"
+      }) }}
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<br>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">We will do some stuff</p>
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
