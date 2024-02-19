@@ -98,13 +98,13 @@ router.post(`/understand-choice-router`, (req, res) => {
   const understandChoice = req.session.data['understand-choice']
 
   if (understandChoice == '1') {
-    res.redirect(`application-data-1`)
+    res.redirect(`application-data-used`)
   }
   else if (understandChoice == '2') {
-    res.redirect(`understand-1`)
+    res.redirect(`outcome-overview-landing`)
   }
   else if (understandChoice == '3') {
-    res.redirect(`outcome-notification-method`)
+    res.redirect(`exit`)
   }
   else if (understandChoice == '4') {
     res.redirect(`dont-agree`)

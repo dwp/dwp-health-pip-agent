@@ -55,14 +55,17 @@
           checked: (data["understand-choice"] == "1")
         },
         {
-          value: "2",
-          text: "I dont understand the outcome",
-          checked: (data["next-steps"] == "2")
+          divider: "or"
         },
         {
-          value: "4",
-          text: "I dont agree with the outcome",
-          checked: (data["understand-choice"] == "4")
+          value: "2",
+          text: "Wait for a responce and return to the start",
+          checked: (data["understand-choice"] == "2")
+        },
+        {
+          value: "3",
+          text: "Wait for a responce and exit",
+          checked: (data["understand-choice"] == "3")
         }
 
         ]
