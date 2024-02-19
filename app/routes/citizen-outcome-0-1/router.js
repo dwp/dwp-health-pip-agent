@@ -75,7 +75,7 @@ router.post(`/outcome-overview-3-router`, (req, res) => {
   const outcomeOverview3 = req.session.data['outcome-overview-3']
 
   if (outcomeOverview3 == '1') {
-    res.redirect(`application-data-1`)
+    res.redirect(`application-data-used`)
   }
   else if (outcomeOverview3 == '2') {
     res.redirect(`understand-1`)
