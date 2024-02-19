@@ -125,12 +125,8 @@
     {% else %}
     {% endif %}
 
-    {% if data["evidence-6-grade"] == "Good" %}
-    {% elif data["evidence-6-grade"] == "Bad" %}
-    {% elif data["evidence-6-grade"] == "Remove" %}
-    {% else %}
-        {% include "agent-0-9/evidence-6-status.html" %}
-    {% endif %}
+    {% include "agent-0-9/evidence-6-status.html" %}
+
 
           {% if data["evidence-1-grade"] == "Good" %}
               {% include "agent-0-9/evidence-1-status.html" %}
