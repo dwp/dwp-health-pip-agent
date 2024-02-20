@@ -18,7 +18,7 @@
       {% include "agent-0-10/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Health assessment report</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Health informaiton gather (PIP2)</h1>
 
 
       <div class="govuk-grid-row">
@@ -493,8 +493,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "evidence-6-grade",
-  name: "evidence-6-grade",
+  idPrefix: "evidence-7-grade",
+  name: "evidence-7-grade",
   fieldset: {
     legend: {
       text: "@dave Document is read ???",
@@ -510,12 +510,12 @@
   {
     value: "Good",
     text: "Yes",
-    checked: (data["evidence-6-grade"] == "Good")
+    checked: (data["evidence-7-grade"] == "Good")
   },
   {
     value: "Bad",
     text: "No",
-    checked: (data["evidence-6-grade"] == "Bad")
+    checked: (data["evidence-7-grade"] == "Bad")
   },
   {
     divider: "or"
@@ -523,7 +523,7 @@
   {
     value: "Remove",
     text: "There is an issue with this document",
-    checked: (data["evidence-6-grade"] == "Remove"),
+    checked: (data["evidence-7-grade"] == "Remove"),
           conditional: {
             html: nextAction
           }

@@ -37,17 +37,44 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
 
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+
+                <table class="govuk-table">
+
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h1>
+
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-60-percent"></td>
+                      <td class="govuk-table__cell govuk-25-percent"></td>
+                      <td class="govuk-table__cell govuk-15-percent">Status</td>
+                    </tr>
+                    </thead>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><a href="application-5-view-evidence">View and assess supporting documents</a></td>
+                    <td class="govuk-table__cell table-spacer"></td>
+                    <td class="govuk-table__cell table-spacer">
+
+                      {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                      {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                      {% endif %}
+
+                    </td>
+                    </tr>
+
+    </table>
+
+
 
                             <table class="govuk-table">
-                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
+                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Daily living activities</h1>
 
 
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-60-percent"></td>
-                    <td class="govuk-table__cell govuk-20-percent">Score</td>
-                    <td class="govuk-table__cell govuk-20-percent">Status</td>
+                    <td class="govuk-table__cell govuk-25-percent">Score</td>
+                    <td class="govuk-table__cell govuk-15-percent">Status</td>
                   </tr>
                   </thead>
 
@@ -55,8 +82,8 @@
                     <td class="govuk-table__cell table-spacer"><a href="application-5-about-a1">Preparing food</a></td>
                     <td class="govuk-table__cell table-spacer">
 
-                    {% if data["application-5-about-a1"] == "Agree" %}     0
-                    {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
+                    {% if data["application-5-about-a1"] == "Agree" %}     0 (A)
+                    {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a1-scoreoverwrite.html" %}
                     {% else %}
                     {% endif %}
 
@@ -118,8 +145,8 @@
                               <td class="govuk-table__cell table-spacer"><a href="application-5-about-a6">Dressing and undressing</a></td>
                               <td class="govuk-table__cell table-spacer">
 
-                              {% if data["application-5-about-a6"] == "Agree" %} 0
-                              {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
+                              {% if data["application-5-about-a6"] == "Agree" %} 0 (A)
+                              {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
                               {% else %} 0
                               {% endif %}
 
@@ -172,8 +199,8 @@
                                 <td class="govuk-table__cell table-spacer"><a href="application-5-about-a12">Making budgeting decisions</a></td>
                                 <td class="govuk-table__cell table-spacer">
 
-                                {% if data["application-5-about-a12"] == "Agree" %}     0
-                                {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-8/application-5-about-a12-scoreoverwrite.html" %}
+                                {% if data["application-5-about-a12"] == "Agree" %}     0 (A)
+                                {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-9/application-5-about-a12-scoreoverwrite.html" %}
                                 {% else %}
                                 {% endif %}
 
@@ -213,17 +240,16 @@
 
                             </table>
 
-                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
 
                               <table class="govuk-table">
 
-                                <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Mobility activities</h1>
+                                <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Mobility activities</h1>
 
                                 <thead class="govuk-table__head">
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell govuk-60-percent"></td>
-                                    <td class="govuk-table__cell govuk-20-percent">Score</td>
-                                    <td class="govuk-table__cell govuk-20-percent">Status</td>
+                                    <td class="govuk-table__cell govuk-25-percent">Score</td>
+                                    <td class="govuk-table__cell govuk-15-percent">Status</td>
                                   </tr>
                                   </thead>
 
@@ -256,33 +282,7 @@
                   </table>
 
 
-                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
 
-                    <table class="govuk-table">
-
-                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Supporting documents</h1>
-
-                      <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                          <td class="govuk-table__cell govuk-60-percent"></td>
-                          <td class="govuk-table__cell govuk-20-percent"></td>
-                          <td class="govuk-table__cell govuk-20-percent">Status</td>
-                        </tr>
-                        </thead>
-
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell table-spacer"><a href="application-5-view-evidence">View and assess supporting documents</a></td>
-                        <td class="govuk-table__cell table-spacer"></td>
-                        <td class="govuk-table__cell table-spacer">
-
-                          {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                          {% endif %}
-
-                        </td>
-                        </tr>
-
-        </table>
 
 
 
