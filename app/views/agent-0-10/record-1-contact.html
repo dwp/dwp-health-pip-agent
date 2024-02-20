@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-8/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "agent-0-8/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-10/record-id.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "agent-0-8/record-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Phone number and email</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This will be here if the person has an appointee or helper. The agent will see and can edit their information.</p> -->
+
+
+    {% set SetLandlineTelephone %}
+      {% if data["record-1-contact-landline-telephone"] %}
+        {{data["record-1-contact-landline-telephone"]}}
+      {% else %}
+        <p class="govuk-body">0191 488 3188</p>
+      {% endif %}
+    {% endset -%}
+
+
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Mobile telephone"
+          },
+          value: {
+            html: "0796 009 3500"
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-contact-mobile-telephone",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Landline telephone"
+          },
+          value: {
+            html: SetLandlineTelephone
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-contact-landline-telephone",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            html: '<p class="govuk-body">the-dude@example.com</p>'
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

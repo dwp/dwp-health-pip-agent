@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+<form action="application-4-care-plan-1" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-10/record-id.html" %}
+
+      {% set LegendH1 %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Do you have a care plan?</h1>
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "application-4-care-plan",
+        name: "application-4-care-plan",
+        fieldset: {
+          legend: {
+            html: LegendH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          text: "If you’re found to have care and support needs after a care needs assessment, you’ll get a care plan. This sets out the help you can expect to meet your care needs.  "
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["application-4-care-plan"] == "Yes"),
+                  conditional: {
+                    html: appointeelpaYes
+                  }
+            },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["application-4-care-plan"] == "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

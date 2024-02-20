@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="application-5-tasklist" method="post" class="form">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% include "agent-0-6/record-id.html" %}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You need to send the applicant an ID verification letter because of the issue with their name
+        </h1>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">The following has been taken from their application:</p>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Representatives</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>There is no power of attorney, appointee, public acting body or corporate acting body</li>
+
+        </ul>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Contact preferences</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Alternative formats: None</li>
+          <li>Correspondence address: None</li>
+        </ul>
+
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">What you need to include in the letter</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>An explanation of what they need to do and why</li>
+          <li>Their National Insurance number</li>
+          <li>A self addressed envelope</li>
+        </ul>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Their address</h2>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8 ">
+          Jeff Bridges<br>
+          1 Fake Street<br>
+          Fakenham<br>
+          FA4 3ST</p>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}
