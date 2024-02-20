@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="entry-home" method="post" class="form">
+  {% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the edited version<br>of the letter</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is the content of the letter related to your decision.</p>
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Applicant name: <strong>{% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}</strong></p> -->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicOutcome %}
+
+                <ul class="govuk-list">
+                  <li>
+                    We can award you this until 1 October 2033.
+                  </li>
+                  <li>
+                    We will pay £350 into your bank account on 20 October 2023.
+                  </li>
+                  <li>
+                    This is money that we owe you from 25 January 2024 to 19 November 2023.
+                  </li>
+                  <li>
+                  You will then get £691 every 4 weeks from 20 December 2023.
+                  </li>
+                </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicList1 %}
+
+        <ol class="govuk-list govuk-list--number">
+          <li class="govuk-!-margin-bottom-2">Preparing food: <br><strong>
+
+          {% if data["application-5-about-a1"] == "Agree" %}     6
+          {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
+          {% else %}
+          {% endif %}
+          out of 8</strong></li>
+
+          <li class="govuk-!-margin-bottom-2">Taking nutrition: <br><strong> 0 out of 10</strong></li>
+          <li class="govuk-!-margin-bottom-2">Managing therapy or monitoring a health condition: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Washing and bathing: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Managing toilet needs or incontinence: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Dressing and undressing: <br><strong>
+
+          {% if data["application-5-about-a6"] == "Agree" %}  0
+          {% elif data["application-5-about-a6"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
+          {% else %}
+          {% endif %}
+          out of 8</strong></li>
+
+          <li class="govuk-!-margin-bottom-2">Communicating verbally: <br><strong> 2 out of 12</strong></li>
+          <li class="govuk-!-margin-bottom-2">Reading and understanding signs, symbols and words: <br><strong> 0 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Engaging with other people face to face: <br><strong> 2 out of 8</strong></li>
+          <li class="govuk-!-margin-bottom-2">Making budgeting decisions: <br><strong>
+
+            {% if data["application-5-about-a12"] == "Agree" %}     6
+            {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
+            {% else %}
+            {% endif %}
+            out of 8</strong></li>
+
+        </ol>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicList2 %}
+
+        <ol class="govuk-list govuk-list--number">
+          <li class="govuk-!-margin-bottom-2">Planning and following journeys: <br><strong> 4 out of 12</strong></li>
+          <li class="govuk-!-margin-bottom-2">Moving around: <br><strong> 8 out of 12</strong></li>
+        </ol>
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-1-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jeff Bridges"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
+            }
+          },
+          {
+            key: {
+              text: "Outcome"
+            },
+            value: {
+              html: "Awarded enhanced for daily living and enhanced for mobility. <br><br>This is the highest award rate."
+            }
+          },
+          {
+            key: {
+              text: "Payments"
+            },
+            value: {
+              html: dynamicOutcome
+            }
+          },
+          {
+            key: {
+              text: "Additional content"
+            },
+            value: {
+              html: data["application-1-letter-edit"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "application-1-letter-edit",
+                  html: dynamicAgentNotes,
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              html: "Daily living scoring"
+            },
+            value: {
+              html: dynamicList1
+            }
+          },
+          {
+            key: {
+              html: "Mobility scoring"
+            },
+            value: {
+              html: dynamicList2
+            }
+          }
+        ]
+      }) }}
+
+
+
+<br>
+
+      <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+
+
+
+            {{ govukRadios({
+              idPrefix: "application-1-letter-review",
+              name: "application-1-letter-review",
+              fieldset: {
+                legend: {
+                  text: "Do you want to send the letter now?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Agree",
+                text: "Yes",
+                checked: (data["application-1-letter-review"] == "Yes")
+              },
+              {
+                value: "Amended",
+                text: "No",
+                checked: (data["application-1-letter-review"] == "No")
+                }
+              ]
+            }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

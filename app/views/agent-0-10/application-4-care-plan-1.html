@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-1-overview" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-10/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Send your care plan in one of the following ways
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Send by email</h2>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can email it to <strong>care-plan@dwp.gov.uk</strong>. Include your full name and National Insurance number in the email.</p>
+
+
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Send by post</h2>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        Include your full name and National Insurance number with your<br>care plan and send it to:</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8 ">
+        Personal Independence Payments<br>
+        Post Handling Site B<br>
+        Wolverhampton<br>
+        WV99 1AH</p>
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="application-5-tasklist" method="post" class="form">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% include "agent-0-10/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check overlapping benefits</h1>
+
+        <div class="govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Searchlight shows an interest for:</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-! govuk-!-margin-bottom-6"><strong>Armed Forces Independence Payment (AFIP)</strong></p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicH2 %}
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Is AFIP in payment?</h1>
+            {% endset %}
+          <!------------Legend--------------->
+
+
+
+          <!------------H1 LEGEND------------>
+            {% set legendContactDetails %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Try to call Veterans UK first, before emailing.</p>
+
+            <ul class="govuk-list govuk-list">
+              <li>Phone: <b>0191 488 3188</b></li>
+
+              <li>Email: <b>afip.team@dwp.gov.uk</b></li>
+  </ul>
+
+
+            {% endset %}
+
+            {% set legendHint %}
+
+            {{ govukDetails({
+              summaryText: "Help contacting Veterans UK",
+              classes: "govuk-!-margin-bottom-0",
+              html: legendContactDetails
+            }) }}
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "application-1-task-t5",
+        name: "application-1-task-t5",
+        fieldset: {
+          legend: {
+            html: dynamicH2,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Bad",
+          text: "Yes",
+          checked: (data["application-1-task-t5"] == "Bad")
+        },
+        {
+          value: "Done",
+          text: "No",
+          checked: (data["application-1-task-t5"] == "Done")
+        },
+        {
+          value: "Pause",
+          text: "I cannot check this now or want to come back to it later",
+          checked: (data["application-1-task-t5"] == "Pause")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}

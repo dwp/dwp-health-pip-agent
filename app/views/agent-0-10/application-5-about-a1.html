@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-about-a1-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-0-10/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food</h2>
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Health information gather</h3>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Asked in application</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Does your condition affect you preparing food, or prevent you from doing so?</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Response in application</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">I can't really cook so don't bother. I struggle to bend down to use the oven, so that puts me off too. My GP letter outlines the issues I have with my back. I usually just eat sandwiches or something I can put in the microwave.</p>
+
+
+<!--  --><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h3 class="govuk-heading-xm govuk-!-margin-bottom-4">Assessment report findings</h3>
+
+
+      <p class="govuk-body govuk-!-margin-bottom-2">There is no evidence to suggest you have difficulty preparing food.</p>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">You lack the drive to prepare a meal regularly and tend to break off from cooking and this has resulted in you burning food and leaving pans to boil over.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">You get most of your full meals from the drop-in centre and your support worker supervises you to put ready-made meals in the oven twice a week. During periods of low mood, Jeff does not respond readily to prompting and will not make yourself meals.</p>
+      <p class="govuk-body govuk-!-margin-bottom-8">This is why I have selected 1E.</p> -->
+
+
+      <!--  --><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <!------------HELP WITH ASSESSMENT------------>
+
+        <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1> -->
+
+
+          {% set legenDetails %}
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+
+            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+          </p>
+
+          {{ govukDetails({
+            summaryText: "Contacting the assessment report provider",
+            classes: "govuk-!-margin-bottom-0",
+            html: legenDetails
+          }) }}
+
+          {% endset %}
+        <!------------Legend--------------->
+
+        <!------------H1 LEGEND------------>
+          {% set legendNumbersDetails %}
+
+          <p class="govuk-body govuk-!-margin-bottom-2"></p>
+
+          <ul class="govuk-list govuk-list">
+            <li><b>Descriptor A (0 points):</b> Can prepare and cook a simple meal unaided
+            <li><b>Descriptor B (2 points):</b> Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+            <li><b>Descriptor C (2 points):</b> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+            <li><b>Descriptor D (2 points):</b> Needs prompting to be able to either prepare or cook a simple meal
+            <li><b>Descriptor E (4 points):</b> Needs supervision or assistance to either prepare or cook a simple meal
+            <li><b>Descriptor F (8 points):</b> Cannot prepare and cook food
+          </ul>
+
+          {% endset %}
+
+          {% set legendHint %}
+
+          {{ govukDetails({
+            summaryText: "Help with descriptors",
+            classes: "govuk-!-margin-bottom-0",
+            html: legendNumbersDetails
+          }) }}
+
+            {% endset %}
+          <!------------Legend--------------->
+
+      {{ govukRadios({
+        idPrefix: "application-5-about-a1",
+        name: "application-5-about-a1",
+        fieldset: {
+          legend: {
+            text: "The assessment report recommends Descriptor A (0 points) for this activity. Do you agree?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Agree",
+          text: "Yes",
+          checked: (data["application-5-about-a1"] == "Agree")
+        },
+        {
+          value: "Amended",
+          text: "No",
+          checked: (data["application-5-about-a1"] == "Amended")
+          },
+          {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["application-5-about-a1"] == "Pause")
+        }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
