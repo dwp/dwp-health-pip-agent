@@ -328,4 +328,18 @@ router.post(`/application-1-task-t3-routers`, (req, res) => {
 })
 
 
+
+router.post(`/check-outcome-routers`, (req, res) => {
+  const checkOutcome = req.session.data['check-outcome']
+
+  if (checkOutcome == 'Yes') {
+    res.redirect(`application-start-group`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
 module.exports = router
