@@ -48,13 +48,17 @@
 
       {{ govukInput({
         label: {
-          text: "Enter your email address used when you made your original application"
+          html: "Enter your email address used when you made your original application"
         },
-        classes: "govuk-!-width-two-thirds",
-        id: "address-town",
-        name: "addressTown",
-        autocomplete: "address-level2"
+        hint: {
+          text: ""
+        },
+        id: "reference-1",
+        name: "reference-1",
+        classes: "govuk-input--width-15 govuk-!-margin-bottom-0",
+        value: data["reference-1"]
       }) }}
+
 
       <p class="govuk-body govuk-!-margin-bottom-6"><a href="#">I need help to login</a></p>
 
@@ -69,5 +73,8 @@
       </div>
 
   </form>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">'1' = Nil <br>'2' = S/S <br>'3' = E/E</p>
+
 
 {% endblock %}

@@ -27,7 +27,7 @@ router.post(`/outcome-overview-landing-router`, (req, res) => {
     res.redirect(`outcome-notification-method`)
   }
   else if (outcomeLanding == '2') {
-    res.redirect(`outcome-overview-3`)
+    res.redirect(`understand-1`)
   }
   else if (outcomeLanding == '3') {
     res.redirect(`outcome-query-status`)
@@ -117,8 +117,6 @@ router.post(`/understand-choice-router`, (req, res) => {
   }
 })
 
-
-
 router.post(`/other-help-router`, (req, res) => {
   const otherHelp = req.session.data['other-help']
 
@@ -129,6 +127,39 @@ router.post(`/other-help-router`, (req, res) => {
     res.redirect(`exit`)
   }
 })
+
+router.post(`/reference-1-router`, (req, res) => {
+  const reference1 = req.session.data['reference-1']
+
+  if (reference1 == '1') {
+    res.redirect(`11`)
+  }
+  else if (reference1 == '2') {
+    res.redirect(`22`)
+  }
+   else {
+    res.redirect(`11`)
+  }
+})
+
+router.post(`/exit-check-router`, (req, res) => {
+  const exitCheck = req.session.data['exit-check']
+
+  if (exitCheck == 'Yes') {
+    res.redirect(`gov-uk-1-content`)
+  }
+  else if (exitCheck == 'No') {
+    res.redirect(`outcome-overview-landing`)
+  }
+  else if (exitCheck == 'Status') {
+    res.redirect(`outcome-query-status`)
+  }
+   else {
+    res.redirect(`gov-uk-1-content`)
+  }
+})
+
+
 
 
 module.exports = router

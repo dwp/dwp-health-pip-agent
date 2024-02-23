@@ -35,21 +35,47 @@
       <!-- {% include "agent-0-8/record-id.html" %} -->
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You did not meet the criteria for Personal Indipendence payment</h1>
+      {% if data["reference-1"] == "1" %}
 
+      Nil (1)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You did not meet the criteria for Personal Indipendence payment</h1>
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Something todo with points</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
 
-      <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-1">If you have already asked for a call back</h1>
+      <p class="govuk-body govuk-!-margin-bottom-8"><a href="outcome-query-status">View the status of my request</a></p>
 
 
+      {% elif data["reference-1"] == "2" %}
 
-      {% set nextAction%}
+      S/S (2)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You got S/S for PIP</h1>
 
-      {% endset -%}
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Something todo with points</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-1">If you have already asked for a call back</h1>
+      <p class="govuk-body govuk-!-margin-bottom-8"><a href="outcome-query-status">View the status of my request</a></p>
+
+
+      {% elif data["reference-1"] == "2" %}
+
+      E/E (3)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You got E/E for PIP</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Something todo with points</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
+
+      {% else %}
+      {% endif %}
+
 
 
       {{ govukRadios({
@@ -76,16 +102,8 @@
 
         {
           value: "2",
-          text: "View decision in full ",
+          text: "The outcome is not clear",
           checked: (data["outcome-overview-landing"] == "2")
-        },
-        {
-          divider: "or"
-        },
-        {
-          value: "3",
-          text: "I have submitted a query about an application",
-          checked: (data["outcome-overview-landing"] == "3")
         }
         ]
       }) }}

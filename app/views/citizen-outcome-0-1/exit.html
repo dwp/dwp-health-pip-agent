@@ -27,7 +27,7 @@
 ​
 {% block content %}
 
-<form action="gov-uk-1-content" method="post" class="form">
+<form action="exit-check-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -37,8 +37,8 @@
 
 
             {{ govukRadios({
-              idPrefix: "evidence-6-grade",
-              name: "evidence-6-grade",
+              idPrefix: "exit-check",
+              name: "exit-check",
               fieldset: {
                 legend: {
                   text: "Do you want to log out?",
@@ -55,13 +55,22 @@
               {
                 value: "Yes",
                 text: "Yes",
-                checked: (data["evidence-6-grade"] == "Yes")
+                checked: (data["exit-check"] == "Yes")
                   },
 
               {
                 value: "No",
                 text: "No",
-                checked: (data["evidence-6-grade"] == "No")
+                checked: (data["exit-check"] == "No")
+              },
+
+              {
+                divider: "or"
+              },
+              {
+                value: "Status",
+                text: "View application status",
+                checked: (data["exit-check"] == "Status")
               }
               ]
             }) }}

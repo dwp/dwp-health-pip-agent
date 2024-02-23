@@ -35,13 +35,27 @@
       <!-- {% include "agent-0-8/record-id.html" %} -->
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Remember to tell us about changes, bette or worse let us know as you could be missing out on support</h1>
+      {% if data["reference-1"] == "1" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Remember to tell us about changes, even when its a nil award, you might get worse</h1>
-
-
-
+      Nil (1)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Remember to tell us about changes, you should re apply, bette or worse let us know as you could be missing out on support</h1>
       <p class="govuk-body">If you don't tell us you get better then you will fall into overr payments and might owe the department money</p>
+
+      {% elif data["reference-1"] == "2" %}
+
+      S/S (2)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Remember to tell us about changes, even when its a nil award, you might get worse</h1>
+      <p class="govuk-body">If you don't tell us you get better then you will fall into overr payments and might owe the department money</p>
+
+      {% elif data["reference-1"] == "2" %}
+
+      E/E (3)
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Remember to tell us about changes, even when its a nil award, you might get worse</h1>
+      <p class="govuk-body">If you don't tell us you get better then you will fall into overr payments and might owe the department money</p>
+
+      {% else %}
+      {% endif %}
+
 
 
 

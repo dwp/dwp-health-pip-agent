@@ -10,83 +10,229 @@
 
 {% block content %}
 
-<form action="application-5-about-ax--group-reason" method="post" class="form">
+
+{% if data["application-5-about-a12-reason"]  %}
+<form action="application-5-letter-review" method="post" class="form">
+
+{% elif data["application-5-about-a6"]  %}
+<form action="application-5-about" method="post" class="form">
+
+{% else %}
+<form action="application-5-about-a-autofill" method="post" class="form">
+{% endif %}
+
+
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-grid-column-three-quarters">
+
       {% include "agent-0-9/record-id.html" %}
 
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">You are starting a new group justification</h2>
 
-      {{ govukCheckboxes({
-        idPrefix: "application-5-about-a1-start-group",
-        name: "application-5-about-a1-start-group",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Which activities do you want to add the justification for?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
-          }
-        },
-        hint: {
-          text: "",
-                classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
-        },
-        items: [
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">You are writing a single justification for:</p>
 
-          {
-            value: "1",
-            text: "Preparing food",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "2",
-            text: "Taking nutrition",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "3",
-            text: "Managing therapy or monitoring a health condition",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "4",
-            text: "Washing and bathing",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "5",
-            text: "Managing toilet needs or incontinence",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "6",
-            text: "Dressing and undressing",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "7",
-            text: "Communicating verbally",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "8",
-            text: "Reading and understanding signs, symbols and words",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "9",
-            text: "Engaging with other people face to face",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          },
-          {
-            value: "10",
-            text: "Making budgeting decisions",
-            checked: (data["application-5-about-a1-start-group"] == "XXX")
-          }
-          ]
+      <ul class="govuk-list govuk-list--bullet">
+        <li><p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>Preparing food:</strong> Descriptor B (2 points) </p></li>
+        <li><p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><strong>Dressing and undressing:</strong>
+
+            {% if data["application-5-about-a6"] == "Agree" %}
+
+                Descriptor B (2 points)
+
+            {% elif data["application-5-about-a6"] == "Amended" %}
+
+                {% if data["application-5-about-a6-score-overwrite"] == "a1" %}
+                  Descriptor A (0 points)
+                {% elif data["application-5-about-a6-score-overwrite"] == "b2" %}
+                  Descriptor B (2 points)
+                {% elif data["application-5-about-a6-score-overwrite"] == "c3" %}
+                  Descriptor C (2 points)
+                {% elseif data["application-5-about-a6-score-overwrite"] == "d4" %}
+                  Descriptor D (2 points)
+                {% elseif data["application-5-about-a6-score-overwrite"] == "e5" %}
+                  Descriptor E (4 points)
+                {% elseif data["application-5-about-a6-score-overwrite"] == "f6" %}
+                  Descriptor F (8 points)
+                {% endif %}
+
+            {% else %}
+              No descriptor selected yet
+            {% endif %}
+
+        </p></li>
+        </ul>
+
+      <!------------CANNED PHRASES LEGEND------------>
+        {% set legendCannedDetails %}
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body govuk-!-margin-bottom-2">Out of scope</p>
+
+
+          </div>
+          <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-list_prase"><span id="prase1">I cannot consider awarding you PIP for any help you need for anything not covered by the daily living or mobility activities, including</span></p>
+
+
+            <div class="app-example__code">
+                <button class="app-example__copy-code-button" data-copy-text="I cannot consider awarding you PIP for any help you need for anything not covered by the daily living or mobility activities, including" aria-live="assertive" data-module="html">Copy paragraph</button>
+              </div>
+
+          </div>
+        </div>
+
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<!-- Selector -->
+<div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body govuk-!-margin-bottom-2">Bending down to use oven (out of scope)</p>
+
+
+          </div>
+          <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-list_prase"><span id="prase2">bending down to use an oven at below waist height</span></p>
+
+
+            <div class="app-example__code">
+                <button class="app-example__copy-code-button" data-copy-text="bending down to use an oven at below waist height" aria-live="assertive" data-module="html">Copy paragraph</button>
+              </div>
+
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body govuk-!-margin-bottom-2">Agree they can manage</p>
+
+          </div>
+
+
+          <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-list_prase"><span id="prase3">You said you can manage preparing food. I agree you can manage.</span></p>
+
+
+            <div class="app-example__code">
+                <button class="app-example__copy-code-button" data-copy-text="You said you can manage preparing food. I agree you can manage." aria-live="assertive" data-module="html">Copy paragraph</button>
+              </div>
+
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body govuk-!-margin-bottom-2">Agree they have difficulties</p>
+
+          </div>
+
+
+          <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-list_prase"><span id="prase4">You said you have difficulties preparing food. I agree you have difficulties.</span></p>
+
+
+            <div class="app-example__code">
+                <button class="app-example__copy-code-button" data-copy-text="You said you have difficulties preparing food. I agree you have difficulties." aria-live="assertive" data-module="html">Copy paragraph</button>
+              </div>
+
+          </div>
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-body govuk-!-margin-bottom-2">Disagree</p>
+
+          </div>
+
+
+          <div class="govuk-grid-column-three-quarters">
+
+            <p class="govuk-list_prase"><span id="prase5">You said you have difficulties preparing food. There is no evidence to suggest this.</span></p>
+
+
+            <div class="app-example__code">
+                <button class="app-example__copy-code-button" data-copy-text="You said you have difficulties preparing food. There is no evidence to suggest this." aria-live="assertive" data-module="html">Copy paragraph</button>
+              </div>
+
+          </div>
+        </div>
+
+</div>
+
+        {% endset %}
+
+        {% set legendCanned %}
+
+        {{ govukDetails({
+          summaryText: "Standard wording examples",
+          classes: "govuk-!-margin-bottom-0",
+          html: legendCannedDetails
         }) }}
 
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-8">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            12. Moving around
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>0 out of 12</strong>
+
+            <br>
+            Descriptor C: Can stand and then move unaided more than 20 metres but no more than 50 metres
+
+          </dd>
+        </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> XXX justification</span>
+          </a>
+        </dd>
+
+
+
+      {{ govukTextarea({
+        name: "application-5-about-ax--group-reason",
+        id: "application-5-about-ax--group-reason",
+        classes: " govukTextarea--overwrite",
+        label: {
+          text: "",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        },
+        value: data["application-5-about-ax--group-reason"]
+      }) }}
 
       {{ govukButton({
         text: "Continue",
