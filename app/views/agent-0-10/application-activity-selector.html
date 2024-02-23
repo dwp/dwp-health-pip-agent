@@ -20,8 +20,6 @@
 
       {% include "agent-0-10/record-id.html" %}
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">You are starting a new group justification</h2>
-
 
             {{ govukCheckboxes({
               idPrefix: "application-5-about-a1-start-group",
@@ -31,11 +29,11 @@
                 legend: {
                   text: "Which activities do you want to add the justification for?",
                   isPageHeading: true,
-                  classes: "govuk-fieldset__legend--xl govuk-!-padding-top-2"
+                  classes: "govuk-fieldset__legend--xl"
                 }
               },
               hint: {
-                text: "",
+                text: "You can make more groups later",
                       classes: "govuk-fieldset__legend--xl govuk-!-padding-top-4"
               },
               items: [

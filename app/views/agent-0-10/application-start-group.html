@@ -10,16 +10,8 @@
 
 {% block content %}
 
+<form action="application-5-award-review-check" method="post" class="form">
 
-{% if data["application-5-about-a12-reason"]  %}
-<form action="application-5-letter-review" method="post" class="form">
-
-{% elif data["application-5-about-a6"]  %}
-<form action="application-5-about" method="post" class="form">
-
-{% else %}
-<form action="application-5-about-a-autofill" method="post" class="form">
-{% endif %}
 
 
 
@@ -28,11 +20,11 @@
 
       {% include "agent-0-10/record-id.html" %}
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">You are starting a new group justification</h2>
-<!--
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">You are writing a single justification for:</p>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You are starting a new combined justification</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You are writing a single justification, you can combine more later</p>
+
+      <!-- <ul class="govuk-list govuk-list--bullet">
         <li><p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><strong>Preparing food</p></li>
         <li><p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><strong>Dressing and undressing</strong</p></li>
         </ul> -->
