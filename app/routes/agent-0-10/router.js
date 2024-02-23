@@ -333,7 +333,7 @@ router.post(`/check-outcome-routers`, (req, res) => {
   const checkOutcome = req.session.data['check-outcome']
 
   if (checkOutcome == 'Yes') {
-    res.redirect(`application-start-group`)
+    res.redirect(`application-activity-selector`)
   }
    else {
     res.redirect(`XXX`)
