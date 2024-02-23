@@ -88,12 +88,12 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            1. Preparing food:
+            Preparing food:
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
-              {% if data["application-5-about-a1"] == "Agree" %}     0
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
+              {% if data["application-5-about-a1"] == "Agree" %}     2
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a1-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 8
@@ -101,11 +101,13 @@
 
             <br>
 
-            {% include "agent-0-8/application-5-about-a1-descriptoroverwrite.html" %}
+            {% include "agent-0-10/application-5-about-a1-descriptoroverwrite.html" %}
 
 
           </dd>
         </div>
+
+        {% if data["application-5-about-a1-group-check"] == "No" %}
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__value">
@@ -121,14 +123,69 @@
           </dd>
         </div>
 
+        {% else %}
+
+        {% endif %}
 
       </dl>
+
+
+      <!-- GROUP JUSTIFICATION -->
+
+      {% if data["check-outcome"] == "Yes" %}
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+          <dt class="govuk-summary-list__key">
+            Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong>
+              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
+              {% else %}
+                2 out of 10
+              {% endif %}
+            </strong>
+
+            <br>
+
+            {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
+            {% include "agent-0-10/application-5-about-a6-descriptoroverwrite.html" %}
+            {% else %}
+              Descriptor A: Can dress and undress unaided
+            {% endif %}
+
+
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Combined justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-5-about-ax--group-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-5-about-ax--group-reason">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      {% else %}
+
+      {% endif %}
+
 
       <!-- 2 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            2. Taking nutrition
+            Taking nutrition
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 10</strong>
@@ -143,7 +200,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            3. Managing therapy or monitoring a health condition
+            Managing therapy <br>or monitoring a<br> health condition
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
@@ -178,7 +235,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            4. Washing and bathing
+            Washing and bathing
 
 
           </dt>
@@ -211,7 +268,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            5. Managing toilet needs or incontinence
+            Managing toilet needs or incontinence
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
@@ -238,55 +295,62 @@
       </dl>
 
 
+
       <!-- 6 -->
-      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-        <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-          <dt class="govuk-summary-list__key">
-            6. Dressing and undressing
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <strong>
-              {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
-              {% else %}
-                0 out of 10
-              {% endif %}
-            </strong>
 
-            <br>
+{% if data["check-outcome"] == "Yes" %}
+{% else %}
+<dl class="govuk-summary-list govuk-!-margin-bottom-4">
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Dressing and undressing
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <strong>
+        {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
+        {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
+        {% else %}
+          0 out of 10
+        {% endif %}
+      </strong>
 
-            {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
-            {% include "agent-0-8/application-5-about-a6-descriptoroverwrite.html" %}
-            {% else %}
-              Descriptor A: Can dress and undress unaided
-            {% endif %}
+      <br>
+
+      {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
+      {% include "agent-0-9/application-5-about-a6-descriptoroverwrite.html" %}
+      {% else %}
+        Descriptor A: Can dress and undress unaided
+      {% endif %}
 
 
-          </dd>
-        </div>
+    </dd>
+  </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__value">
-            Justification
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data["application-5-about-a6-reason"]}}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="application-5-about-a6-reason">
-              Change<span class="govuk-visually-hidden"> XXX justification</span>
-            </a>
-          </dd>
-        </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__value">
+      Justification
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data["application-5-about-a6-reason"]}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="application-5-about-a6-reason">
+        Change<span class="govuk-visually-hidden"> XXX justification</span>
+      </a>
+    </dd>
+  </div>
 
-      </dl>
+</dl>
+{% endif %}
+
+
 
 
       <!-- 7 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            7. Communicating verbally
+            Communicating verbally
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 12</strong>
@@ -317,7 +381,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            8. Reading and understanding signs, symbols and words
+            Reading and understanding<br>signs, symbols and words
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
@@ -347,7 +411,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            9. Engaging with other people face to face
+            Engaging with other<br>people face to face
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>0 out of 8</strong>
@@ -378,12 +442,12 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
           <dt class="govuk-summary-list__key">
-            10. Making budgeting decisions
+            Making budgeting decisions
           </dt>
           <dd class="govuk-summary-list__value">
             <strong>
               {% if data["application-5-about-a12"] == "Agree" %}     0
-              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-8/application-5-about-a12-scoreoverwrite.html" %}
+              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-9/application-5-about-a12-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 8
@@ -391,7 +455,7 @@
 
             <br>
 
-            {% include "agent-0-8/application-5-about-a12-descriptoroverwrite.html" %}
+            {% include "agent-0-9/application-5-about-a12-descriptoroverwrite.html" %}
 
 
           </dd>
@@ -423,7 +487,7 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-4">
               <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
-                  11. Planning and following journeys
+                  Planning and<br>following journeys
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <strong>0 out of 12</strong>
@@ -453,7 +517,7 @@
             <dl class="govuk-summary-list govuk-!-margin-bottom-8">
               <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
-                  12. Moving around
+                  Moving around
                 </dt>
                 <dd class="govuk-summary-list__value">
                   <strong>0 out of 12</strong>
