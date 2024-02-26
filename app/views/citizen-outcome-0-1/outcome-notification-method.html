@@ -35,10 +35,10 @@
       <!-- {% include "agent-0-8/record-id.html" %} -->
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">As standard you will get a paper letter of this decision outcome, however we can other other methods</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">You will get a standard letter in the post with an explanation of your outcome</h1>
 
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXX</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">XXX</p> -->
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">XXXX</p>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p>
@@ -51,7 +51,7 @@
         name: "outcome-notification-method",
         fieldset: {
           legend: {
-            text: "Do you need any other formats for the decision letter?",
+            text: "Do you need any other formats for the letter?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -63,17 +63,17 @@
         items: [
         {
           value: "Standard",
-          text: "Happy with standard letter",
+          text: "No, I just want the standard letter",
           checked: (data["outcome-notification-method"] == "Standard")
         },
         {
           value: "Print",
-          text: "Alternative formats",
+          text: "I need the letter in an alternative format",
           checked: (data["outcome-notification-method"] == "Print")
         },
         {
           value: "Digital",
-          text: "I wouldnt mind a digital copy brah",
+          text: "I would also like a digital version of the letter",
           checked: (data["outcome-notification-method"] == "Digital")
         }
         ]
