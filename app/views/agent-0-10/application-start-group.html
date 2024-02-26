@@ -99,7 +99,7 @@
           id: "application-5-about-ax--group-reason",
           classes: " govukTextarea--overwrite",
           label: {
-            text: "Combined justification",
+            text: "Combined justification for two activities",
             classes: "govuk-label--m",
             isPageHeading: true
           },
@@ -108,6 +108,36 @@
           },
           value: data["application-5-about-ax--group-reason"]
         }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "application-start-group",
+          name: "application-start-group",
+          fieldset: {
+            legend: {
+              text: "Do you need to combine any more activies?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["application-start-group"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["application-start-group"] == "No")
+          }
+          ]
+        }) }}
+
 
         {{ govukButton({
           text: "Continue",
