@@ -89,7 +89,7 @@
         name: "outcome-overview-landing",
         fieldset: {
           legend: {
-            text: "What would you like to do next?",
+            text: "Do you understand your outcome?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -102,13 +102,13 @@
 
         {
           value: "1",
-          text: "The outcome is clear to me",
+          text: "Yes",
           checked: (data["outcome-overview-landing"] == "1")
             },
 
         {
           value: "2",
-          text: "The outcome is not clear",
+          text: "No",
           checked: (data["outcome-overview-landing"] == "2")
         }
         ]
