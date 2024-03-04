@@ -43,3 +43,13 @@
 {% else %}
     {% include "agent-0-8/evidence-5-status.html" %}
 {% endif %}
+
+{% if data["agent-0-8/evidence-6-grade"] == "Good" %}
+    {% include "agent-0-8/evidence-6-status.html" %}
+{% elif data["agent-0-8/evidence-6-grade"] == "Bad" %}
+    {% include "agent-0-8/evidence-6-status.html" %}
+{% elif data["agent-0-8/evidence-6-grade"] == "Remove" %}
+    {% include "agent-0-8/evidence-6-status.html" %}
+{% else %}
+    {% include "agent-0-8/evidence-6-status.html" %}
+{% endif %}
