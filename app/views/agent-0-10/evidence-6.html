@@ -75,7 +75,7 @@
           <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p> -->
 
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Primary condition: Fibromyalgia<br>
+            <strong>Primary condition: Fibromyalgia</strong>
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
             He was diagnosed with fibromyalgia in 2019 and has had the symptoms for about 3-4 years following a tick bite. He saw the GP at the time and was given antibiotics, but after this it got worse and worse, he revisited the GP with his symptoms several times.
@@ -87,9 +87,12 @@
       <p class="govuk-body govuk-!-margin-bottom-2">
         He experiences tiredness easily but also doesn't sleep well due to pain. He has good and bad days with this, he feels her bad days are about 4 days out of 7 where his pain is worse. He uses pain relief for this. No other treatment such as physiotherapy or acupuncture.
 
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
 <p class="govuk-body govuk-!-margin-bottom-2">
-        Seconday condition: Anxiety<br>
+  <strong>Seconday condition: Anxiety</strong>
+
       </p>
       <p class="govuk-body govuk-!-margin-bottom-2">
         He has some anxiety that just makes him feel hot and on edge at certain times of the day and just feels he misses how he used to be.
@@ -516,18 +519,7 @@
     value: "Bad",
     text: "No",
     checked: (data["evidence-6-grade"] == "Bad")
-  },
-  {
-    divider: "or"
-  },
-  {
-    value: "Remove",
-    text: "There is an issue with this document",
-    checked: (data["evidence-6-grade"] == "Remove"),
-          conditional: {
-            html: nextAction
-          }
-      }
+  }
   ]
 }) }}
 
