@@ -340,6 +340,19 @@ router.post(`/check-outcome-routers`, (req, res) => {
   }
 })
 
+router.post(`/application-5-letter-review-router`, (req, res) => {
+  const letterReview = req.session.data['application-5-letter-review']
+
+  if (letterReview == 'Yes') {
+    res.redirect(`entry-home`)
+  }
+   else {
+    res.redirect(`end`)
+  }
+})
+
+
+
 
 
 module.exports = router
