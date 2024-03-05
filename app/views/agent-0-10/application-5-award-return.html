@@ -19,7 +19,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">How long do you want to set for internal review??
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Be default, you ?
             </h2>
             {% endset %}
       <!------------Legend--------------->
@@ -94,37 +94,14 @@
       items: [
       {
         value: "10y",
-        text: "10 years",
+        text: "Yes",
         checked: (data["application-5-award-review-date"] == "10y")
       },
       {
         value: "5y",
-        text: "5 years",
+        text: "No",
         checked: (data["application-5-award-review-date"] == "5y")
-      },
-      {
-        value: "18m",
-        text: "18 months",
-        checked: (data["application-5-award-review-date"] == "18m")
-      },
-      {
-        value: "2y",
-        text: "2 years",
-        checked: (data["application-5-award-review-date"] == "2y")
-      },
-      {
-        value: "9m",
-        text: "9 months",
-        checked: (data["application-5-award-review-date"] == "9m")
-      },
-      {
-        value: "Other",
-        text: "Other",
-        checked: (data["application-5-award-review-date"] == "Other"),
-              conditional: {
-                html: dateOverwite
-              }
-          }
+      }
       ]
     }) }}
 
