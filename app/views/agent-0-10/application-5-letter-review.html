@@ -10,10 +10,11 @@
 
 {% block content %}
 <form action="entry-home" method="post" class="form">
-  {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      {% include "agent-0-3/record-id.html" %}
 
 
       {% if data["application-5-letter-edit"] == "Yes" %}
