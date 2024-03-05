@@ -336,7 +336,7 @@ router.post(`/check-outcome-routers`, (req, res) => {
     res.redirect(`application-activity-selector`)
   }
    else {
-    res.redirect(`XXX`)
+    res.redirect(`application-5-award-review-check`)
   }
 })
 
