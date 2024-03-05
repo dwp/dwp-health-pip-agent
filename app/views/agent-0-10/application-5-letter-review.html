@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="entry-home" method="post" class="form">
+<form action="application-5-letter-review-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -588,8 +588,8 @@
 
 
             {{ govukRadios({
-              idPrefix: "application-1-letter-review",
-              name: "application-1-letter-review",
+              idPrefix: "application-5-letter-review",
+              name: "application-5-letter-review",
               fieldset: {
                 legend: {
                   text: "Do you want to send the letter now?",
@@ -605,12 +605,12 @@
               {
                 value: "Yes",
                 text: "Yes",
-                checked: (data["application-1-letter-review"] == "Yes")
+                checked: (data["application-5-letter-review"] == "Yes")
               },
               {
                 value: "No",
                 text: "No",
-                checked: (data["application-1-letter-review"] == "No")
+                checked: (data["application-5-letter-review"] == "No")
                 }
               ]
             }) }}
