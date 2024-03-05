@@ -36,6 +36,50 @@
         {% endset %}
       <!------------Legend--------------->
 
+      <!------------OUTCOME DETAILS------------>
+
+        {% set outcomeDetials %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Summary overview @dave Your total score is XYZ blah </p>
+
+
+      {% if data["application-5-award-review-check"] == "Yes"%}
+
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">PIP will be awarded for 1 year</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award</p>
+
+      {% else %}
+
+          {% if data["application-5-award-review-date-manual"] == "None"%}
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">No award date needed</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">@ dave</p>
+
+          {% else %}
+
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Personal Indipendence Payment will be
+              {% if data["application-5-award-review-date-manual"] == "5y"%} awarded for 5 years
+              {% elif data["application-5-award-review-date-manual"] == "3y"%} awarded for 3 years
+              {% elif data["application-5-award-review-date-manual"] == "18m"%} awarded for 18 months
+              {% elif data["application-5-award-review-date-manual"] == "Other"%} awarded till 29 November 2033
+
+
+              {% endif %}
+            </p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award</p>
+
+          {% endif %}
+
+      {% endif %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Summary overview @dave Your total score is XYZ blah </p>
+
+
+
+      {% endset %}
+    <!------------Legend--------------->
+
 
       {{ govukSummaryList({
         rows: [
@@ -60,7 +104,7 @@
               text: "Outcome"
             },
             value: {
-              html: "<strong>We cannot award you PIP</strong>"
+              html: outcomeDetials
             }
           },
           {
