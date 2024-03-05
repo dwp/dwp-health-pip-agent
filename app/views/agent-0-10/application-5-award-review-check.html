@@ -18,12 +18,9 @@
       {% include "agent-0-3/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">This person will get an enhanced/enhanced award</h1>
+      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-0">This person will get an Standard / Nil award</h1>
 
-
-      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-4"></h1> -->
-
-      <h1 class="govuk-body-m govuk-!-margin-bottom-4">They are 64 and will reach State Pension age on 20 February 2025.</h1>
+      <h1 class="govuk-body-m govuk-!-margin-bottom-4">They are 64 and will reach State Pension age on 20 February 2025.</h1> -->
 
       <!-- <h1 class="govuk-body-m govuk-!-margin-bottom-4">Their dOC SPA months before SPA (SPA/SeX50 and 53 date range for Sex)</h1> -->
       <!-- <h1 class="govuk-body-m govuk-!-margin-bottom-4">They are in prision, or in a care come or in or out of holspital  </h1> -->
@@ -31,18 +28,40 @@
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The assessment report recommends an award review period of 1 year (29 November 2024).</p> -->
 
+      {% set legendHint %}
+
+
+
+<p class="govuk-body govuk-!-margin-bottom-2">Things to consider:</p>
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+  <li>
+    Standard award for Daily Living Activites
+  </li>
+  <li>
+    Nil award for Motobility
+  </li>
+  <li>
+    They are 64 and will reach State Pension age on 20 February 2025
+  </li>
+</ul>
+
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
       {{ govukRadios({
         idPrefix: "application-5-award-review-check",
         name: "application-5-award-review-check",
         fieldset: {
           legend: {
-            html: "Do you agree with the recommended 1 year <br> award period (29 November 2024)?",
+            html: "Do you agree with the Assessment Provider recommended claim review of 1 year (29 November 2024)?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
-          text: "The claim will be reviewed before this date."
+          html: legendHint
         },
         classes: "govuk-radios",
         items: [

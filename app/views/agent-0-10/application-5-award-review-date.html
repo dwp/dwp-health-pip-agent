@@ -19,7 +19,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">What award period do you want to set?
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">How long do you want to set for internal review??
             </h2>
             {% endset %}
       <!------------Legend--------------->
@@ -103,19 +103,14 @@
         checked: (data["application-5-award-review-date"] == "5y")
       },
       {
-        value: "2y",
-        text: "2 years",
-        checked: (data["application-5-award-review-date"] == "2y")
-      },
-      {
         value: "18m",
         text: "18 months",
         checked: (data["application-5-award-review-date"] == "18m")
       },
       {
-        value: "SPA",
-        text: "14 months (aligned to State Pension age)",
-        checked: (data["application-5-award-review-date"] == "SPA")
+        value: "2y",
+        text: "2 years",
+        checked: (data["application-5-award-review-date"] == "2y")
       },
       {
         value: "9m",
