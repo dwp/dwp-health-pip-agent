@@ -573,14 +573,14 @@
   classes: "govuk-radios",
   items: [
   {
-    value: "Remove",
+    value: "Good",
     text: "No",
-    checked: (data["evidence-7-grade"] == "Remove")
+    checked: (data["evidence-7-grade"] == "Good")
   },
   {
     value: "Remove",
     text: "Yes",
-    checked: (data["evidence-7-grade"] == "Good"),
+    checked: (data["evidence-7-grade"] == "Remove"),
           conditional: {
             html: nextAction
           }
