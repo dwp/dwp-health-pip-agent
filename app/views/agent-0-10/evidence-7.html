@@ -562,7 +562,7 @@
   name: "evidence-7-grade",
   fieldset: {
     legend: {
-      text: "@dave Document is read ???",
+      text: "@dave Is there an issue with this document?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -573,22 +573,14 @@
   classes: "govuk-radios",
   items: [
   {
-    value: "Good",
-    text: "Yes",
-    checked: (data["evidence-7-grade"] == "Good")
-  },
-  {
-    value: "Bad",
+    value: "Remove",
     text: "No",
-    checked: (data["evidence-7-grade"] == "Bad")
-  },
-  {
-    divider: "or"
+    checked: (data["evidence-7-grade"] == "Remove")
   },
   {
     value: "Remove",
-    text: "There is an issue with this document",
-    checked: (data["evidence-7-grade"] == "Remove"),
+    text: "Yes",
+    checked: (data["evidence-7-grade"] == "Good"),
           conditional: {
             html: nextAction
           }
