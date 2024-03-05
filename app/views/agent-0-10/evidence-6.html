@@ -520,7 +520,18 @@
     value: "Bad",
     text: "No",
     checked: (data["evidence-6-grade"] == "Bad")
-  }
+  },
+  {
+    divider: "or"
+  },
+  {
+    value: "Remove",
+    text: "There is an issue with this document",
+    checked: (data["evidence-6-grade"] == "Remove"),
+          conditional: {
+            html: nextAction
+          }
+      }
   ]
 }) }}
 

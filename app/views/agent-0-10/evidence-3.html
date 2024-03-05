@@ -106,9 +106,20 @@
     value: "Bad",
     text: "No",
     checked: (data["evidence-3-grade"] == "Bad")
-    }
-  ]
-}) }}
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "Remove",
+      text: "There is an issue with this document",
+      checked: (data["evidence-3-grade"] == "Remove"),
+            conditional: {
+              html: nextAction
+            }
+        }
+    ]
+  }) }}
 
 {{ govukButton({
   text: "Continue",
