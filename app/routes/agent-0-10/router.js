@@ -286,10 +286,10 @@ router.post(`/application-5-award-review-check-router`, (req, res) => {
   const awardReview = req.session.data['application-5-award-review-check']
 
   if (awardReview == 'No') {
-    res.redirect(`application-5-award-review-date`)
+    res.redirect(`application-5-award-review-date-manual`)
   }
    else {
-    res.redirect(`application-5-letter-review`)
+    res.redirect(`application-5-award-review-date`)
   }
 })
 

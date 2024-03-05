@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-award-review-date" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+
+    {% set dateOverwite %}
+
+    {% set newDates %}
+
+    <!-- <p class="govuk-body">Based their circumstances, What date blah</p> -->
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXXX:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>XXX</li>
+      <li>XXX</li>
+        </ul> -->
+
+    {% endset %}
+
+    {% set legendHint %}
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Things to consider:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <li>
+        Assessment Provider gave 1 year (29 November 2024)
+      </li>
+      <li>
+        Standard award for Daily Living Activites
+      </li>
+      <li>
+        Nil award for Motobility
+      </li>
+      <li>
+        They are 64 and will reach State Pension age on 20 February 2025
+      </li>
+      </ul>
+
+      {% endset %}
+
+    <!------------Legend--------------->
+
+
+  {{ govukDateInput({
+    id: "application-5-award-review-date-manual-other",
+    namePrefix: "application-5-award-review-date-manual-other",
+    fieldset: {
+      legend: {
+        html: "Enter the XXX date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+      }
+    },
+    hint: {
+      html: "XXX"
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["application-5-award-review-date-manual-other-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["application-5-award-review-date-manual-other-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["application-5-award-review-date-manual-other-year"]
+      }
+    ]
+  }) }}
+
+
+    {% endset -%}
+
+
+
+    {{ govukRadios({
+      idPrefix: "application-5-award-review-date-manual",
+      name: "application-5-award-review-date-manual",
+      fieldset: {
+        legend: {
+          html: "Well what do you want to give then??",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "5y",
+        text: "5 years",
+        checked: (data["application-5-award-review-date-manual"] == "5y")
+      },
+      {
+        value: "3y",
+        text: "3 years",
+        checked: (data["application-5-award-review-date-manual"] == "3y")
+      },
+      {
+        value: "18m",
+        text: "18 months",
+        checked: (data["application-5-award-review-date-manual"] == "18m")
+      },
+      {
+        value: "none",
+        text: "No date needed",
+        checked: (data["application-5-award-review-date-manual"] == "none")
+      },
+      {
+        value: "Other",
+        text: "Other",
+        checked: (data["application-5-award-review-date-manual"] == "Other"),
+              conditional: {
+                html: dateOverwite
+              }
+          }
+      ]
+    }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
