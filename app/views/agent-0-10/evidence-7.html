@@ -572,11 +572,7 @@
   },
   classes: "govuk-radios",
   items: [
-  {
-    value: "Good",
-    text: "No",
-    checked: (data["evidence-7-grade"] == "Good")
-  },
+
   {
     value: "Remove",
     text: "Yes",
@@ -584,7 +580,12 @@
           conditional: {
             html: nextAction
           }
-      }
+      },
+  {
+    value: "Good",
+    text: "No",
+    checked: (data["evidence-7-grade"] == "Good")
+  }
   ]
 }) }}
 
