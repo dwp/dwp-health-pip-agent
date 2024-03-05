@@ -94,7 +94,7 @@
           <dd class="govuk-summary-list__value">
             <strong>
               {% if data["application-5-about-a1"] == "Agree" %}     2
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a1-scoreoverwrite.html" %}
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a1-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 8
@@ -143,7 +143,7 @@
           <dd class="govuk-summary-list__value">
             <strong>
               {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
-              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
+              {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 10
@@ -151,11 +151,8 @@
 
             <br>
 
-            {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
             {% include "agent-0-10/application-5-about-a6-descriptoroverwrite.html" %}
-            {% else %}
-              Descriptor A: Can dress and undress unaided
-            {% endif %}
+
 
 
           </dd>
@@ -309,7 +306,7 @@
     <dd class="govuk-summary-list__value">
       <strong>
         {% if data["application-5-about-a6"] == "No-change" %}    0 out of 10
-        {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-9/application-5-about-a6-scoreoverwrite.html" %}
+        {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-8/application-5-about-a6-scoreoverwrite.html" %}
         {% else %}
         {% endif %}
         out of 10
@@ -317,12 +314,7 @@
 
       <br>
 
-      {% if data["application-5-about-a6-descriptoroverwrite.html"] %}
-      {% include "agent-0-9/application-5-about-a6-descriptoroverwrite.html" %}
-      {% else %}
-        Descriptor A: Can dress and undress unaided
-      {% endif %}
-
+      {% include "agent-0-10/application-5-about-a6-descriptoroverwrite.html" %}
 
     </dd>
   </div>
@@ -448,7 +440,7 @@
           <dd class="govuk-summary-list__value">
             <strong>
               {% if data["application-5-about-a12"] == "Agree" %}     0
-              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-9/application-5-about-a12-scoreoverwrite.html" %}
+              {% elif data["application-5-about-a12"] == "Amended" %} {% include "agent-0-10/application-5-about-a12-scoreoverwrite.html" %}
               {% else %}
               {% endif %}
               out of 8
@@ -456,7 +448,7 @@
 
             <br>
 
-            {% include "agent-0-9/application-5-about-a12-descriptoroverwrite.html" %}
+            {% include "agent-0-10/application-5-about-a12-descriptoroverwrite.html" %}
 
 
           </dd>
