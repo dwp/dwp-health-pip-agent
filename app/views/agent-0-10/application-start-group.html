@@ -23,9 +23,9 @@
 
       {% include "agent-0-10/record-id.html" %}
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">You are starting a new combined justification</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Create a new combined justification</h2>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You are writing a single justification, you can combine more later</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You are writing a single justification, you can combine more later</p> -->
 
       <!-- <ul class="govuk-list govuk-list--bullet">
         <li><p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><strong>Preparing food</p></li>
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Selected activties and justifications</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Selected activities and justifications</h2>
 
 
     <div class="govuk-grid-row">
@@ -46,9 +46,9 @@
           Preparing food
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong>0 out of 12</strong>
+          <strong>4 out of 12</strong>
           <br>
-          Descriptor A: XXXX
+          Descriptor E: Needs supervision or assistance to either prepare or cook a simple meal
         </dd>
       </div>
 
@@ -75,9 +75,9 @@
             Dressing and undressing
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong>0 out of 12</strong>
+            <strong>4 out of 12</strong>
             <br>
-            Descriptor A: XXXX
+            Descriptor E: Needs assistance to be able to dress or undress their upper body
           </dd>
         </div>
 
@@ -102,7 +102,7 @@
           id: "application-5-about-ax--group-reason",
           classes: " govukTextarea--overwrite",
           label: {
-            text: "Combined justification for two activities",
+            text: "Add a combined justification for these 2 activities to the decision letter",
             classes: "govuk-label--m",
             isPageHeading: true
           },
@@ -118,7 +118,7 @@
           name: "application-start-group",
           fieldset: {
             legend: {
-              text: "Do you need to combine any more activies?",
+              text: "Do you want to combine any more activities?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
