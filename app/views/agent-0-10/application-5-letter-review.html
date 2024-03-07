@@ -46,7 +46,7 @@
       {% if data["application-5-award-review-check"] == "Yes"%}
 
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP for 2 years</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP until 6 March 2026</p>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award</p>
 
       {% else %}
@@ -58,15 +58,15 @@
 
           {% else %}
 
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP
-              {% if data["application-5-award-review-date-manual"] == "5y"%} for 6 years
-              {% elif data["application-5-award-review-date-manual"] == "3y"%} for 4 years
-              {% elif data["application-5-award-review-date-manual"] == "18m"%} for 2 years 6 months
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP until
+              {% if data["application-5-award-review-date-manual"] == "5y"%} 6 March 2030
+              {% elif data["application-5-award-review-date-manual"] == "3y"%} 6 March 2028
+              {% elif data["application-5-award-review-date-manual"] == "18m"%} 6 September 2026
               {% elif data["application-5-award-review-date-manual"] == "Other"%} until 29 November 2033
 
 
               {% endif %}
-              
+
             </p>
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award</p>
 
