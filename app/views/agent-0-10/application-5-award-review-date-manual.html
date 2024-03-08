@@ -107,6 +107,11 @@
       classes: "govuk-radios",
       items: [
       {
+        value: "None",
+        text: "No review needed",
+        checked: (data["application-5-award-review-date-manual"] == "None")
+      },
+      {
         value: "5y",
         text: "5 years",
         checked: (data["application-5-award-review-date-manual"] == "5y")
@@ -120,11 +125,6 @@
         value: "18m",
         text: "18 months",
         checked: (data["application-5-award-review-date-manual"] == "18m")
-      },
-      {
-        value: "None",
-        text: "No review needed",
-        checked: (data["application-5-award-review-date-manual"] == "None")
       },
       {
         value: "Other",

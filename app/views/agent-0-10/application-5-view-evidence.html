@@ -28,12 +28,12 @@
       {% include "agent-0-10/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">View and assess 4<br>supporting documents</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">View and assess 3<br>supporting documents</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 25 January 2024</p> -->
 
 <br>
 
-{% if data["evidence-3-grade"] and data["evidence-5-grade"] and data["evidence-5-grade"] %}
+{% if data["evidence-3-grade"]%}
 
 {% else %}
 
@@ -53,12 +53,12 @@
 </thead>
 
 
-{% if data["evidence-5-grade"] == "Good" %}
+<!-- {% if data["evidence-5-grade"] == "Good" %}
 {% elif data["evidence-5-grade"] == "Bad" %}
 {% elif data["evidence-5-grade"] == "Remove" %}
 {% else %}
     {% include "agent-0-10/evidence-5-status.html" %}
-{% endif %}
+{% endif %} -->
 
 
       <!-- {% if data["evidence-6-grade"] == "Good" %}
