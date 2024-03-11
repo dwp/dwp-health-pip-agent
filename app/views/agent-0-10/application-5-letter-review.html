@@ -154,9 +154,11 @@
 
           </dd>
         </div>
-        {{ data["application-5-about-a1-reason"]}}
 
-        {% if data["check-outcome"] == "No" %}
+        {% if data["check-outcome"] == "Yes" %}
+
+        {% else %}
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__value">
             Justification
@@ -170,8 +172,6 @@
             </a>
           </dd>
         </div>
-
-        {% else %}
 
         {% endif %}
 
