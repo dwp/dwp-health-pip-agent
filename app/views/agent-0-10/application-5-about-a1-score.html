@@ -44,11 +44,10 @@
               },
               classes: "govuk-radios",
               items: [
-
               {
-                value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
-                checked: (data["application-5-about-a1-score-overwrite"] == "2")
+                value: "a1",
+                html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
+                checked: (data["application-5-about-a1-score-overwrite"] == "0")
               },
               {
                 value: "c3",
@@ -76,9 +75,9 @@
 
 <!--
 {
-  value: "a1",
-  html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
-  checked: (data["application-5-about-a1-score-overwrite"] == "0")
+  value: "b2",
+  html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
+  checked: (data["application-5-about-a1-score-overwrite"] == "2")
 },
 
 -->
