@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-award-review-date-prompt" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Be default, you ?
+            </h2>
+            {% endset %}
+      <!------------Legend--------------->
+
+
+
+
+    {% set dateOverwite %}
+
+    {% set newDates %}
+
+    <!-- <p class="govuk-body">Based their circumstances, What date blah</p> -->
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXXX:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>XXX</li>
+      <li>XXX</li>
+        </ul> -->
+
+    {% endset %}
+
+  {{ govukDateInput({
+    id: "application-5-award-review-date-other",
+    namePrefix: "application-5-award-review-date-other",
+    fieldset: {
+      legend: {
+        html: "Enter the end date of the award",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+      }
+    },
+    hint: {
+      html: "Date of assessment: 8 March 2024"
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["application-5-award-review-date-other-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["application-5-award-review-date-other-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["application-5-award-review-date-other-year"]
+      }
+    ]
+  }) }}
+
+
+    {% endset -%}
+
+
+
+    {{ govukRadios({
+      idPrefix: "application-5-award-review-date",
+      name: "application-5-award-review-date",
+      fieldset: {
+        legend: {
+          html: dynamicH1,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "10y",
+        text: "Yes",
+        checked: (data["application-5-award-review-date"] == "10y")
+      },
+      {
+        value: "5y",
+        text: "No",
+        checked: (data["application-5-award-review-date"] == "5y")
+      }
+      ]
+    }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
