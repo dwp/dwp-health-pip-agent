@@ -81,6 +81,39 @@
 }) }}
 
 
+{% set nextAction%}
+
+{{ govukRadios({
+  idPrefix: "evidence-3-next-action",
+  name: "evidence-3-next-action",
+  fieldset: {
+    legend: {
+      text: "What is the issue?" ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "It's a duplicate of another document",
+    checked: (data["evidence-3-next-action"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "It needs to be removed",
+    checked: (data["evidence-3-next-action"] == "No")
+  }
+  ]
+}) }}
+
+
+{% endset -%}
+
 
 {{ govukRadios({
   idPrefix: "evidence-3-grade",
