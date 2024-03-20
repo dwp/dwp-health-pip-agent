@@ -232,7 +232,7 @@
 
   <!---------------- REMOVE AREA START ------------------>
 
-          {% if data["evidence-4-grade"] == "Remove" or data["evidence-5-grade"] == "Remove" or data["evidence-6-grade"] == "Remove" %}
+  {% if data["evidence-3-grade"] == "Remove" or data["evidence-4-grade"] == "Remove" or data["evidence-5-grade"] == "Remove" or data["evidence-6-grade"] == "Remove" %}
 
         <table class="govuk-table">
 
@@ -247,6 +247,14 @@
           <td class="govuk-table__cell govuk-10-percent">Status</td>
         </tr>
         </thead>
+
+        {% if data["evidence-3-grade"] == "Good" %}
+        {% elif data["evidence-3-grade"] == "Bad" %}
+        {% elif data["evidence-3-grade"] == "Remove" %}
+          {% include "agent-0-10/evidence-4-status.html" %}
+
+        {% else %}
+        {% endif %}
 
         {% if data["evidence-5-grade"] == "Good" %}
         {% elif data["evidence-5-grade"] == "Bad" %}
