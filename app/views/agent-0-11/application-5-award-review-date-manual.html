@@ -36,7 +36,7 @@
       <p class="govuk-body govuk-!-margin-bottom-2">You may want to consider that:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
       <li>
-        the assessment provider recommended a review date of 6 March 2025 (1 year)
+        the assessment provider recommended a review date of<br>6 March 2025 (1 year)
       </li>
       <li>
         they are 65 and will reach State Pension age on 20 February 2025
@@ -107,14 +107,9 @@
       classes: "govuk-radios",
       items: [
       {
-        value: "None",
-        text: "10 years",
-        checked: (data["application-5-award-review-date-manual"] == "None")
-      },
-      {
-        value: "5y",
-        text: "5 years",
-        checked: (data["application-5-award-review-date-manual"] == "5y")
+        value: "18m",
+        text: "18 months",
+        checked: (data["application-5-award-review-date-manual"] == "18m")
       },
       {
         value: "3y",
@@ -122,9 +117,14 @@
         checked: (data["application-5-award-review-date-manual"] == "3y")
       },
       {
-        value: "18m",
-        text: "18 months",
-        checked: (data["application-5-award-review-date-manual"] == "18m")
+        value: "5y",
+        text: "5 years",
+        checked: (data["application-5-award-review-date-manual"] == "5y")
+      },
+      {
+        value: "None",
+        text: "10 years",
+        checked: (data["application-5-award-review-date-manual"] == "None")
       },
       {
         value: "Other",
