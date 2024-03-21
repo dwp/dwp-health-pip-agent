@@ -17,6 +17,9 @@ router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-11/pi
 router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc3.pdf')))
 router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc4.pdf')))
 router.use(`/pip-doc5.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc5.pdf')))
+router.use(`/pip-doc6.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc6.pdf')))
+
+
 
 // —————————————————————————————————
 
