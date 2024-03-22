@@ -350,7 +350,7 @@ router.post(`/application-5-letter-review-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
    else {
-    res.redirect(`end`)
+    res.redirect(`letter-error`)
   }
 })
 
