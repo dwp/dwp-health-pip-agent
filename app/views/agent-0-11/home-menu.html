@@ -57,11 +57,21 @@
                           classes: "govuk-tag--green"
                         })}} &hairsp;
                          <a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a></p>
+
+                         {% elif data["application-5-letter-review"] == "No" %}
+                         <p class="govuk-!-margin-bottom-1">
+                           {{govukTag({
+                               text: "New",
+                               classes: "govuk-tag--green"
+                             })}} &hairsp;
+                              <a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a></p>
+
                       {% else %}
                       <a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a>
 
-                    {% endif %}
 
+
+                    {% endif %}
 
                   </div>
 
