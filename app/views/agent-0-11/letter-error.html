@@ -19,7 +19,7 @@
 
                   {% include "agent-0-11/record-id.html" %}
 
-                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">@dave What is the issue brah</h1>
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Why do you not want to send the letter now?</h1>
 
 
                   {{ govukTextarea({
@@ -27,12 +27,12 @@
                     id: "letter-error",
                     classes: " govukTextarea--overwrite",
                     label: {
-                      text: "Tell us about the issue and why its a problem",
+                      text: "",
                       classes: "govuk-label--m",
                       isPageHeading: true
                     },
                     hint: {
-                      html: "The more you can tell us about this, the more the serivce team can understand the issue. We know who you are so you dont need to put contact details"
+                      html: "Include as much information as you can so we can understand the issue. You do not need to include your contact details."
                     },
                     value: data["letter-error"]
                   }) }}
