@@ -45,23 +45,23 @@
 
       {% if data["application-5-award-review-check"] == "Yes"%}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP from 19 March 2024 until 6 March 2026.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP from 19 March 2024 until 25 March 2026.</p>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award.</p>
 
       {% else %}
 
           {% if data["application-5-award-review-date-manual"] == "None"%}
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP from 19 March 2024 until 6 March 2034.</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP from 19 March 2024 until 25 March 2034.</p>
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">A review will take place before the end of the award.</p>
 
           {% else %}
 
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You have been awarded PIP from 19 March 2024 until
-              {% if data["application-5-award-review-date-manual"] == "5y"%} 6 March 2030.
-              {% elif data["application-5-award-review-date-manual"] == "3y"%} 6 March 2028.
-              {% elif data["application-5-award-review-date-manual"] == "18m"%} 6 September 2026.
-              {% elif data["application-5-award-review-date-manual"] == "Other"%} 6 March 2034.
+              {% if data["application-5-award-review-date-manual"] == "5y"%} 25 March 2030.
+              {% elif data["application-5-award-review-date-manual"] == "3y"%} 25 March 2028.
+              {% elif data["application-5-award-review-date-manual"] == "18m"%} 25 September 2026.
+              {% elif data["application-5-award-review-date-manual"] == "Other"%} 25 March 2034.
 
 
               {% endif %}
