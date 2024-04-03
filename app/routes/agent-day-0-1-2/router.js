@@ -351,6 +351,15 @@ router.post(`/application-6-award-date-needed-router`, (req, res) => {
   }
 })
 
+router.post(`/application-6-agree-AP-router`, (req, res) => {
+  const agreeAPCheck = req.session.data['application-6-agree-AP']
 
+  if (agreeAPCheck == 'Yes') {
+    res.redirect(`application-6-award-review-period-manual`)
+  }
+   else {
+    res.redirect(`application-6-award-review-period-manual2`)
+  }
+})
 
 module.exports = router

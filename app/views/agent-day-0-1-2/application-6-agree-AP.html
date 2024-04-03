@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-6-award-period-end-check-router" method="post" class="form">
+<form action="application-6-agree-AP-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -23,8 +23,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "application-6-award-date-needed",
-        name: "application-6-award-date-needed",
+        idPrefix: "application-6-agree_AP",
+        name: "application-6-agree-AP",
         fieldset: {
           legend: {
             text: "",
@@ -39,12 +39,12 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["application-6-award-date-needed"] == "Yes")
+          checked: (data["application-6-agree-AP"] == "Yes")
         },
         {
           value: "2",
           text: "No",
-          checked: (data["application-6-award-date-needed"] == "No")
+          checked: (data["application-6-agree-AP"] == "No")
         }
         ]
       }) }}
