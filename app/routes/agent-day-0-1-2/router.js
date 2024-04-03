@@ -332,7 +332,7 @@ router.post(`/application-6-award-period-end-check-router`, (req, res) => {
   const awardPeriodCheck = req.session.data['application-6-award-period-end-check']
 
   if (awardPeriodCheck == 'Yes') {
-    res.redirect(`application-6-award-period-end`)
+    res.redirect(`application-6-assessment-report-completed`)
   }
    else {
     res.redirect(`application-6-award-review-date`)
