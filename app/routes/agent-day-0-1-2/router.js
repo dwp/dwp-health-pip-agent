@@ -344,7 +344,7 @@ router.post(`/application-6-award-date-needed-router`, (req, res) => {
   const awardDateCheck = req.session.data['application-6-award-date-needed']
 
   if (awardDateCheck == 'Yes') {
-    res.redirect(`application-6-assessment-report-completed2`)
+    res.redirect(`application-6-agree-AP`)
   }
    else {
     res.redirect(`application-6-award-period-end`)
