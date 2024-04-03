@@ -335,10 +335,9 @@ router.post(`/application-6-award-period-end-check-router`, (req, res) => {
     res.redirect(`application-6-assessment-report-completed`)
   }
    else {
-    res.redirect(`application-6-award-review-date`)
+    res.redirect(`application-6-award-date-needed`)
   }
 })
-
 
 
 
