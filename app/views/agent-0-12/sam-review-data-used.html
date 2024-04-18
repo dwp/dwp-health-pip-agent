@@ -1,0 +1,455 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% if data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+<form action="application-5-about" method="post" class="form">
+
+{% elif data["application-5-about-a1"] == "Agree" and data["evidence-3-grade"] %}
+<form action="application-5-about" method="post" class="form">
+
+{% else %}
+<form action="application-5-about-clear" method="post" class="form">
+{% endif %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent-0-11/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View actions taken by the agent in application progress</h2>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 19 March 2024</p> -->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+                        <table class="govuk-table">
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Daily living activities</h1>
+
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-45-percent"></td>
+                <td class="govuk-table__cell govuk-15-percent">AP score</td>
+                <td class="govuk-table__cell govuk-15-percent">Agent score</td>
+                <td class="govuk-table__cell govuk-15-percent">QAM score</td>
+
+                <td class="govuk-table__cell govuk-15-percent">QAM status</td>
+              </tr>
+              </thead>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer"><a href="application-5-about-a1">Preparing food</a></td>
+
+                <td class="govuk-table__cell table-spacer">
+                  XXX
+                </td>
+
+                <td class="govuk-table__cell table-spacer">
+                  XXXX
+                </td>
+
+                <td class="govuk-table__cell table-spacer">
+
+                {% if data["application-5-about-a1"] == "Agree" %}     0 (A)
+                {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-11/application-5-about-a1-scoreoverwrite.html" %}
+                {% else %}
+                {% endif %}
+
+                </td>
+
+                <td class="govuk-table__cell table-spacer">
+
+
+                  {% if data["application-5-about-a1"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                  {% elif data["application-5-about-a1"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Amended</strong>
+                  {% elif data["application-5-about-a1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                  {% endif %}
+
+                </td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer"><a href="#">Taking nutrition</a></td>
+
+                  <td class="govuk-table__cell table-spacer">
+                    XXX
+                  </td>
+
+                  <td class="govuk-table__cell table-spacer">
+                    XXXX
+                  </td>
+
+
+                  <td class="govuk-table__cell table-spacer">0 (A)</td>
+                  <td class="govuk-table__cell table-spacer">
+
+                    <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                  </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><a href="#">Managing therapy or monitoring<br>a health condition</a></td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      XXX
+                    </td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      XXXX
+                    </td>
+
+                    <td class="govuk-table__cell table-spacer">0 (A) </td>
+                    <td class="govuk-table__cell table-spacer">
+
+                      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                    </td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="#">Washing and bathing</a></td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        XXX
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        XXXX
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">0 (A)</td>
+                      <td class="govuk-table__cell table-spacer">
+
+                        <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                      </td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell table-spacer"><a href="#">Managing toilet needs or incontinence</a></td>
+
+                        <td class="govuk-table__cell table-spacer">
+                          XXX
+                        </td>
+
+                        <td class="govuk-table__cell table-spacer">
+                          XXXX
+                        </td>
+
+                        <td class="govuk-table__cell table-spacer">0 (A)</td>
+                        <td class="govuk-table__cell table-spacer">
+
+                          <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                        </td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell table-spacer"><a href="application-5-about-a6">Dressing and undressing</a></td>
+
+                          <td class="govuk-table__cell table-spacer">
+                            XXX
+                          </td>
+
+                          <td class="govuk-table__cell table-spacer">
+                            XXXX
+                          </td>
+
+                          <td class="govuk-table__cell table-spacer">
+
+                          {% if data["application-5-about-a6"] == "Agree" %} 0 (A)
+                          {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-11/application-5-about-a6-scoreoverwrite.html" %}
+                          {% else %} 0
+                          {% endif %}
+
+                          </td>
+
+                          <td class="govuk-table__cell table-spacer">
+
+
+                            {% if data["application-5-about-a6"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                            {% elif data["application-5-about-a6"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Amended</strong>
+                            {% elif data["application-5-about-a6"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                            {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                            {% endif %}
+
+                          </td>
+                          </tr>
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell table-spacer"><a href="#">Communicating verbally</a></td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">0 (A)</td>
+                            <td class="govuk-table__cell table-spacer">
+
+                              <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                            </td>
+                            </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell table-spacer"><a href="#">Reading and understanding signs,<br>symbols and words</a></td>
+
+                        <td class="govuk-table__cell table-spacer">
+                          XXX
+                        </td>
+
+                        <td class="govuk-table__cell table-spacer">
+                          XXXX
+                        </td>
+
+                        <td class="govuk-table__cell table-spacer">0 (A)</td>
+                        <td class="govuk-table__cell table-spacer">
+
+                          <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                        </td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell table-spacer"><a href="#">Engaging with other people face to face</a></td>
+
+                          <td class="govuk-table__cell table-spacer">
+                            XXX
+                          </td>
+
+                          <td class="govuk-table__cell table-spacer">
+                            XXXX
+                          </td>
+
+                          <td class="govuk-table__cell table-spacer">0 (A)</td>
+                          <td class="govuk-table__cell table-spacer">
+
+                            <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                          </td>
+                          </tr>
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell table-spacer"><a href="application-5-about-a12">Making budgeting decisions</a></td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+
+                            {% if data["application-5-about-a12"] == "Agree" %}     0 (A)
+                            {% elif data["application-5-about-a12"] == "Amended" %}  {% include "agent-0-11/application-5-about-a12-scoreoverwrite.html" %}
+                            {% else %}
+                            {% endif %}
+
+
+
+
+
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+
+
+                              {% if data["application-5-about-a12"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                              {% elif data["application-5-about-a12"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Amended</strong>
+                              {% elif data["application-5-about-a12"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                              {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                              {% endif %}
+
+                            </td>
+                            </tr>
+
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+                                      <td class="govuk-table__cell table-spacer"><strong>
+
+                                        {% if data["application-5-about-a1"] == "Agree" and data["application-5-about-a12"] == "Agree"%}  0
+                                        {% elif data["application-5-about-a1"] == "Amended" and data["application-5-about-a6"] == "Amended"  %}  8
+                                        {% elif data["application-5-about-a1"] == "Agree" %}  0
+                                        {% else %}
+                                        {% endif %}
+
+                                      </strong></td>
+                                      <td class="govuk-table__cell table-spacer"></td>
+                                      <td class="govuk-table__cell table-spacer"></td>
+                                      <td class="govuk-table__cell table-spacer"></td>
+
+                                      </tr>
+
+
+
+                        </table>
+
+
+                          <table class="govuk-table">
+
+                            <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Mobility activities</h1>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXXX
+                            </td>
+
+                            <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-45-percent"></td>
+                                <td class="govuk-table__cell govuk-15-percent">AP score</td>
+                                <td class="govuk-table__cell govuk-15-percent">Agent score</td>
+                                <td class="govuk-table__cell govuk-15-percent">QAM score</td>
+                              </tr>
+                              </thead>
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell table-spacer"><a href="#">Planning and following journeys</a></td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">
+                              XXXX
+                            </td>
+
+                            <td class="govuk-table__cell table-spacer">0 (A)</td>
+                              <td class="govuk-table__cell table-spacer">
+
+                                <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                              </td>
+                              </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer"><a href="#">Moving around</a></td>
+                  <td class="govuk-table__cell table-spacer">0 (A)</td>
+                  <td class="govuk-table__cell table-spacer">
+
+                    <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+
+                  </td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+                    <td class="govuk-table__cell table-spacer"><strong>0</strong></td>
+                    <td class="govuk-table__cell table-spacer"></td>
+                    <td class="govuk-table__cell table-spacer"></td>
+                    <td class="govuk-table__cell table-spacer"></td>
+
+                    </tr>
+
+              </table>
+
+
+
+
+
+
+    <!------------ ––– ------------>
+
+</div>
+</div>
+
+<br><br><br>
+
+  <!---------------- GOOD AREA START ------------------>
+
+
+  <table class="govuk-table govuk-!-margin-bottom-8">
+
+    <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Documents from XYZ</h1>
+
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-35-percent">Document name</td>
+      <td class="govuk-table__cell govuk-30-percent">Supports application</td>
+      <td class="govuk-table__cell govuk-12-percent">Seen by AP</td>
+      <td class="govuk-table__cell govuk-12-percent">Used by AP</td>
+    </tr>
+    </thead>
+
+
+    <tr class="govuk-table__row">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer"><a href="evidence-7">
+
+          {% if data["evidence-7-name"] == "Yes" %}     {{ data["evidence-7-name-overwrite"]}}
+          {% else %} Health information gather (PIP2)
+          {% endif %}
+        </a></td>
+
+    <td class="govuk-table__cell table-spacer">Yes</td>
+    <td class="govuk-table__cell table-spacer">Yes</td>
+    <td class="govuk-table__cell table-spacer">Yes</td>
+    <td class="govuk-table__cell table-spacer">
+
+    </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer"><a href="evidence-7">
+
+          {% if data["evidence-5-name"] == "Yes" %}     {{ data["evidence-5-name-overwrite"]}}
+          {% else %} Driving Licence
+          {% endif %}
+        </a></td>
+
+    <td class="govuk-table__cell table-spacer">No - Issue with the document</td>
+    <td class="govuk-table__cell table-spacer">No</td>
+    <td class="govuk-table__cell table-spacer">No</td>
+    <td class="govuk-table__cell table-spacer">
+
+    </td>
+    </tr>
+
+
+
+
+          </table>
+
+
+
+
+</div>
+</div>
+<br>
+
+      {{ govukButton({
+        text: "continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+  </form>
+
+{% endblock %}
