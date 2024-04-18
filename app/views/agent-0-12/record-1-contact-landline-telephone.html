@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-11/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+<form action="record-1-contact" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-11/record-id.html" %}
+
+      {% set LegendH1 %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">What is your landline telephone number?</h1>
+      {% endset -%}
+
+      {{ govukInput({
+        label: {
+          html: LegendH1
+        },
+          hint: {
+            text: ""
+          },
+        id: "record-1-contact-landline-telephone",
+        name: "record-1-contact-landline-telephone",
+        classes: "govuk-input--width-10 govuk-!-margin-bottom-4",
+        value: data["record-1-contact-landline-telephone"]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

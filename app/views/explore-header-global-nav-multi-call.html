@@ -68,7 +68,10 @@
   <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-one-half govuk-grid-column-three-quarters-from-desktop">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-2 call-panel-text"><strong>Call with 0796 009 3500: </strong>Calls are recorded for quality purposes. (00.04.02) </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-0 govuk-!-margin-bottom-1 call-panel-text"><strong>Status:</strong> On call with 0796 009 3500 (00.04.02)</p>
+
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0 govuk-!-padding-bottom-0 call-panel-text"><strong>Actions:</strong> <a href="/agent-0-11/record-1-overview-callnotes" class="govuk-link govuk-link_panel">Create call notes</p> -->
+
     </div>
 
     <div class="govuk-grid-column-one-half govuk-grid-column-one-quarter-from-desktop">
@@ -89,4 +92,40 @@
 </div>
 
 </div>
-<!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+<!------------H1 LEGEND------------>
+  {% set legendNumbersDetails %}
+
+  {{ govukTextarea({
+    name: "moreDetail",
+    id: "more-detail",
+    label: {
+      text: "Adding call notes to a record",
+      classes: "govuk-label--m",
+      isPageHeading: true
+    },
+    hint: {
+      text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
+    }
+  }) }}
+
+  {% endset %}
+
+  {{ govukDetails({
+    summaryText: "Create call notes",
+    classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
+    html: legendNumbersDetails
+  }) }}
+
+
+</div>
+</div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
