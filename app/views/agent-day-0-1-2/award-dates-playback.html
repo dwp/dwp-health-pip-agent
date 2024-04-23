@@ -39,6 +39,12 @@
     <td class="govuk-table__cell">{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}</td>
   </tr>
 
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__header">Assessment date</td>
+      <td class="govuk-table__cell">{{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}</td>
+    </tr>
+
   {% if data["award-dates-AP-rec-check"] == "No" %}
 
   <tbody class="govuk-table__body">
