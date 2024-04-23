@@ -35,6 +35,22 @@ router.post(`/test-radio-router`, (req, res) => {
   }
 })
 
+router.post(`/system-application-selector-router`, (req, res) => {
+  const applicationSelector = req.session.data['system-application-selector']
+
+  if (applicationSelector == '1') {
+    res.redirect(`application-6-overview`)
+  }
+  else if (applicationSelector == '2') {
+    res.redirect(`application-6-overview`)
+  }
+  else if (applicationSelector == '3') {
+    res.redirect(`award-dates-data-input`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 router.post(`/section-4-add-1-router`, (req, res) => {
   const add1 = req.session.data['section-4-add-1']
@@ -152,29 +168,6 @@ router.post(`/application-3-lpa-1-router`, (req, res) => {
 })
 
 
-
-router.post(`/application-selector-router`, (req, res) => {
-  const applicationSelector = req.session.data['application-selector']
-
-  if (applicationSelector == '1') {
-    res.redirect(`application-1-overview`)
-  }
-  else if (applicationSelector == '2') {
-    res.redirect(`application-2-overview`)
-  }
-  else if (applicationSelector == '3') {
-    res.redirect(`application-3-overview`)
-  }
-  else if (applicationSelector == '4') {
-    res.redirect(`application-4-overview`)
-  }
-  else if (applicationSelector == '5') {
-    res.redirect(`application-5-overview`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
-})
 
 
 router.post(`/outbound-precall-router`, (req, res) => {
@@ -351,15 +344,18 @@ router.post(`/application-6-award-date-needed-router`, (req, res) => {
   }
 })
 
-router.post(`/application-6-agree-AP-router`, (req, res) => {
-  const agreeAPCheck = req.session.data['application-6-agree-AP']
+
+router.post(`/award-dates-AP-rec-check-router`, (req, res) => {
+  const agreeAPCheck = req.session.data['award-dates-AP-rec-check']
 
   if (agreeAPCheck == 'Yes') {
-    res.redirect(`application-6-award-review-period-manual`)
+    res.redirect(`award-dates-playback`)
   }
    else {
-    res.redirect(`application-6-award-review-period-manual2`)
+    res.redirect(`award-dates-review-manual`)
   }
 })
+
+
 
 module.exports = router

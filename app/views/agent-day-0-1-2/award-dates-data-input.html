@@ -1,0 +1,204 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="award-dates-AP-rec-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Application data</h1>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This information will be from the HIG and AP report</p>
+
+
+      <!-- <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Enter the date the assessment report was completed</h2> -->
+
+      {{ govukDateInput({
+        id: "award-dates-applicaiton-start-date",
+        namePrefix: "award-dates-applicaiton-start-date",
+        fieldset: {
+          legend: {
+            html: "Enter the date the applciation date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: "You will find this here (Use 2 1 2024)"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-applicaiton-start-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-applicaiton-start-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["award-dates-applicaiton-start-date-year"]
+          }
+        ]
+      }) }}
+
+<br>
+
+
+      {{ govukDateInput({
+        id: "award-dates-ap-report-date",
+        namePrefix: "award-dates-ap-report-date",
+        fieldset: {
+          legend: {
+            html: "Enter when the AP report was sent ()",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: "You will find this here XXX"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-ap-report-date-start-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-ap-report-date-start-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["award-dates-ap-report-date-start-year"]
+          }
+        ]
+      }) }}
+
+<br>
+
+{% set preiodOverwite %}
+
+
+  {{ govukDateInput({
+    id: "award-dates-ap-period-other",
+    namePrefix: "award-dates-ap-period-other",
+    fieldset: {
+      legend: {
+        html: "Enter the date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      html: ""
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-ap-period-other-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-ap-period-other-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["award-dates-ap-period-other-year"]
+      }
+    ]
+  }) }}
+
+
+    {% endset -%}
+
+
+
+    {{ govukRadios({
+      idPrefix: "award-dates-ap-period",
+      name: "award-dates-ap-period",
+      fieldset: {
+        legend: {
+          html: "Select the award review period recommended by the assessment provider",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: "You will find this here XX"
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "1 year",
+        text: "1 year",
+        checked: (data["award-dates-ap-period"] == "1y")
+      },
+      {
+        value: "18 months",
+        text: "18 months",
+        checked: (data["award-dates-ap-period"] == "18m")
+      },
+      {
+        value: "3 years",
+        text: "3 years",
+        checked: (data["award-dates-ap-period"] == "3y")
+      },
+      {
+        value: "4 years",
+        text: "4 years",
+        checked: (data["award-dates-ap-period"] == "4y")
+      },
+      {
+        value: "5 years",
+        text: "5 years",
+        checked: (data["award-dates-ap-period"] == "5y")
+      },
+      {
+        value: "10 years",
+        text: "10 years",
+        checked: (data["award-dates-ap-period"] == "10y")
+      },
+      {
+        value: "X frequency",
+        text: "Other",
+        checked: (data["award-dates-ap-period"] == "Other"),
+              conditional: {
+                html: preiodOverwite
+              }
+          }
+      ]
+    }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
