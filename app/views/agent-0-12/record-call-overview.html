@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="outbound-1-greeting" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-12/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Getting ready for a call</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Details about Jeff Bridges you need to know before you start your call, security will be presented in time blah</p>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <!-- <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Application details</caption> -->
+
+            <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-40-percent"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Addional Support Markers (AS)</td>
+            <td class="govuk-table__cell">No flag</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Unacceptable Citizen Behaviour (UCB)</td>
+            <td class="govuk-table__cell">No flag</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Power of Attorney (POA) etc</td>
+            <td class="govuk-table__cell">None</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Accessablity needs</td>
+            <td class="govuk-table__cell">None</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
