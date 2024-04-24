@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-6-award-end-date-playback" method="post" class="form">
+<form action="award-dates-reason" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -18,8 +18,8 @@
       {% include "agent-0-3/record-id.html" %}
 
       {{ govukDateInput({
-        id: "application-6-award-period-date-end",
-        namePrefix: "application-6-award-period-date-end",
+        id: "award-dates-payment-end",
+        namePrefix: "award-dates-payment-end",
         fieldset: {
           legend: {
             html: "Enter the end date of the award",
@@ -34,17 +34,17 @@
           {
             name: "day",
             classes: "govuk-input--width-2",
-            value: data["application-6-award-period-date-end-day"]
+            value: data["award-dates-payment-end-day"]
           },
           {
             name: "month",
             classes: "govuk-input--width-2",
-            value: data["application-6-award-period-date-end-month"]
+            value: data["award-dates-payment-end-month"]
           },
           {
             name: "year",
             classes: "govuk-input--width-4",
-            value: data["application-6-award-period-date-end-year"]
+            value: data["award-dates-payment-end-year"]
           }
         ]
       }) }}

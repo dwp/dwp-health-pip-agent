@@ -356,6 +356,18 @@ router.post(`/award-dates-AP-rec-check-router`, (req, res) => {
   }
 })
 
+router.post(`/award-dates-review-manual-router`, (req, res) => {
+  const reviewDatesManual = req.session.data['award-dates-review-manual']
+
+  if (reviewDatesManual == 'None') {
+    res.redirect(`award-dates-payment-end`)
+  }
+   else {
+    res.redirect(`award-dates-reason`)
+  }
+})
+
+
 
 
 module.exports = router
