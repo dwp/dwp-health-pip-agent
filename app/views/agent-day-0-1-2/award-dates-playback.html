@@ -90,7 +90,7 @@
             <td class="govuk-table__cell">1 January 2034</td>
 
             {% elif data["award-dates-review-manual"] == "None" %}
-            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell">{{ data['award-dates-payment-end-day'] + ' ' + (data['award-dates-payment-end-month'] | getMonth) + ' ' + data['award-dates-payment-end-year']}}</td>
 
             {% elif data["award-dates-review-manual"] == "Indefinite" %}
             <td class="govuk-table__cell">Indefinite</td>
@@ -101,6 +101,7 @@
             {% else %}
             <td class="govuk-table__cell">1 January 2027!</td>
             {% endif %}
+
 
       {% else %}
       <td class="govuk-table__cell">1 January 2027.</td>
