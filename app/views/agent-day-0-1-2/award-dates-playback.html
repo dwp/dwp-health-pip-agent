@@ -13,11 +13,11 @@
 <form action="entry-home" method="post" class="form">
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
       {% include "agent-0-3/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check award dates and review periods</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check award dates<br>and review periods</h1>
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">@dave, what are we asking here? </p> -->
 
@@ -30,6 +30,8 @@
 
     <th scope="col" class="govuk-table__header govuk-40-percent"></th>
     <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+    <th scope="col" class="govuk-table__header govuk-20-percent"></th>
+
   </tr>
 </thead>
 
@@ -37,12 +39,16 @@
   <tr class="govuk-table__row">
     <td class="govuk-table__header">Start date</td>
     <td class="govuk-table__cell">{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}</td>
+    <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
+
   </tr>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__header">Assessment report completed date</td>
       <td class="govuk-table__cell">{{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}</td>
+      <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
+
     </tr>
 
   {% if data["award-dates-AP-rec-check"] == "No" %}
@@ -51,6 +57,8 @@
     <tr class="govuk-table__row">
       <td class="govuk-table__header">Review period</td>
       <td class="govuk-table__cell">{% include "agent-day-0-1-2/award-dates-review-manual-overwrite.html" %}</td>
+      <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-review-manual">Change</a></td>
+
     </tr>
 
     {% else %}
@@ -59,6 +67,8 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__header">Review period</td>
         <td class="govuk-table__cell">{{ data['award-dates-ap-period']}} </td>
+        <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-AP-rec-check">Change</a></td>
+
       </tr>
 
 
@@ -106,6 +116,7 @@
       {% else %}
       <td class="govuk-table__cell">1 January 2027</td>
       {% endif %}
+      <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
 
 
   </tr>
