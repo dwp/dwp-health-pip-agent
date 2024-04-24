@@ -82,22 +82,22 @@
     {% if data["award-dates-AP-rec-check"] == "No" %}
 
           {% if data["award-dates-review-manual"] == "1y" %}
-          <td class="govuk-table__cell">31 December 2024 {{ data["award-dates-review-manual"]}}</td>
+          <td class="govuk-table__cell">31 December 2025 {{ data["award-dates-review-manual"]}}</td>
 
           {% elif data["award-dates-review-manual"] == "18m" %}
-          <td class="govuk-table__cell">1 July 2025</td>
+          <td class="govuk-table__cell">1 July 2026</td>
 
             {% elif data["award-dates-review-manual"] == "3y" %}
-            <td class="govuk-table__cell">1 January 2027</td>
-
-            {% elif data["award-dates-review-manual"] == "4y" %}
             <td class="govuk-table__cell">1 January 2028</td>
 
-            {% elif data["award-dates-review-manual"] == "5y" %}
+            {% elif data["award-dates-review-manual"] == "4y" %}
             <td class="govuk-table__cell">1 January 2029</td>
 
+            {% elif data["award-dates-review-manual"] == "5y" %}
+            <td class="govuk-table__cell">1 January 2030</td>
+
             {% elif data["award-dates-review-manual"] == "10y" %}
-            <td class="govuk-table__cell">1 January 2034</td>
+            <td class="govuk-table__cell">1 January 2035</td>
 
             {% elif data["award-dates-review-manual"] == "None" %}
             <td class="govuk-table__cell">{{ data['award-dates-payment-end-day'] + ' ' + (data['award-dates-payment-end-month'] | getMonth) + ' ' + data['award-dates-payment-end-year']}}</td>
@@ -111,12 +111,12 @@
             <td class="govuk-table__cell">Other</td>
 
             {% else %}
-            <td class="govuk-table__cell">1 January 2027!</td>
+            <td class="govuk-table__cell">1 January 2028!</td>
             {% endif %}
 
 
       {% else %}
-      <td class="govuk-table__cell">1 January 2027</td>
+      <td class="govuk-table__cell">1 January 2028</td>
       {% endif %}
       <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href=""></a></td>
 
