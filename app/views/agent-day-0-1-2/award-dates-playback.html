@@ -17,9 +17,9 @@
 
       {% include "agent-0-3/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check award dates and periods</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check award dates and review periods</h1>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">@dave, what are we asking here? </p>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">@dave, what are we asking here? </p> -->
 
 
 <table class="govuk-table govuk-!-margin-bottom-8">
@@ -35,13 +35,13 @@
 
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <td class="govuk-table__header">Start date (XXX)</td>
+    <td class="govuk-table__header">Start date</td>
     <td class="govuk-table__cell">{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}</td>
   </tr>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__header">Assessment report completion date</td>
+      <td class="govuk-table__header">Assessment report completed date</td>
       <td class="govuk-table__cell">{{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}</td>
     </tr>
 
@@ -104,7 +104,7 @@
 
 
       {% else %}
-      <td class="govuk-table__cell">1 January 2027.</td>
+      <td class="govuk-table__cell">1 January 2027</td>
       {% endif %}
 
 
