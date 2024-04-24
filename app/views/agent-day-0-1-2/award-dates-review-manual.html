@@ -16,6 +16,26 @@
 
       {% include "agent-0-3/record-id.html" %}
 
+
+      {% set legendHint %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2">The applicant:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>
+            is 65 and will reach State Pension age on 20 February 2028
+          </li>
+          <li>
+            will be awarded the standard rate for daily living
+          </li>
+          <li>
+            will not be awarded for mobility
+          </li>
+        </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
       {% set dateOverwite %}
 
 
@@ -115,11 +135,6 @@
         checked: (data["award-dates-review-manual"] == "Indefinite")
       },
       {
-        value: "None",
-        text: "No review period needed",
-        checked: (data["award-dates-review-manual"] == "None")
-      },
-      {
         value: "Other",
         text: "Other",
         checked: (data["award-dates-review-manual"] == "Other"),
@@ -130,6 +145,11 @@
       ]
     }) }}
 
+    <!-- {
+      value: "None",
+      text: "No review period needed",
+      checked: (data["award-dates-review-manual"] == "None")
+    }, -->
 
 
       {{ govukButton({
