@@ -363,7 +363,7 @@ router.post(`/award-dates-review-manual-router`, (req, res) => {
     res.redirect(`award-dates-payment-end`)
   }
    else {
-    res.redirect(`award-dates-reason`)
+    res.redirect(`award-dates-playback`)
   }
 })
 
