@@ -82,7 +82,7 @@
     {% if data["award-dates-AP-rec-check"] == "No" %}
 
           {% if data["award-dates-review-manual"] == "1y" %}
-          <td class="govuk-table__cell">31 December 2025 {{ data["award-dates-review-manual"]}}</td>
+          <td class="govuk-table__cell">31 December 2025</td>
 
           {% elif data["award-dates-review-manual"] == "18m" %}
           <td class="govuk-table__cell">1 July 2026</td>
@@ -103,8 +103,8 @@
             <td class="govuk-table__cell">1 January 2035</td>
 
             {% elif data["award-dates-review-manual"] == "None" %}
-            <td class="govuk-table__cell">{{ data['award-dates-payment-end-day'] + ' ' + (data['award-dates-payment-end-month'] | getMonth) + ' ' + data['award-dates-payment-end-year']}}</td>
-            <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
+            <td class="govuk-table__cell">{{ data['award-dates-payment-date-day'] + ' ' + (data['award-dates-payment-date-month'] | getMonth) + ' ' + data['award-dates-payment-date-year']}}</td>
+            <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-review-manual">Change</a></td>
 
 
             {% elif data["award-dates-review-manual"] == "Indefinite" %}

@@ -44,7 +44,7 @@
     namePrefix: "award-dates-review-manual-other",
     fieldset: {
       legend: {
-        html: "Enter the date",
+        html: "Enter the review date",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
       }
@@ -135,6 +135,11 @@
         checked: (data["award-dates-review-manual"] == "Indefinite")
       },
       {
+        value: "None",
+        text: "No review period needed",
+        checked: (data["award-dates-review-manual"] == "None")
+      },
+      {
         value: "Other",
         text: "Other",
         checked: (data["award-dates-review-manual"] == "Other"),
@@ -144,12 +149,6 @@
           }
       ]
     }) }}
-
-    <!-- {
-      value: "None",
-      text: "No review period needed",
-      checked: (data["award-dates-review-manual"] == "None")
-    }, -->
 
 
       {{ govukButton({
