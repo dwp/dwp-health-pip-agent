@@ -10,19 +10,27 @@
 
 {% block content %}
 
-<form action="award-dates-reason" method="post" class="form">
-
+<form action="award-dates-playback" method="post" class="form">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-3/record-id.html" %}
 
+
+      {% set legendHint %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Selected a review priod:XXX</p>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
       {{ govukDateInput({
-        id: "award-dates-payment-end",
-        namePrefix: "award-dates-payment-end",
+        id: "award-dates-payment-date",
+        namePrefix: "aaward-dates-payment-date",
         fieldset: {
           legend: {
-            html: "Enter the end date of the award",
+            html: "Date you want the payments to be stopped?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
           }
@@ -34,20 +42,21 @@
           {
             name: "day",
             classes: "govuk-input--width-2",
-            value: data["award-dates-payment-end-day"]
+            value: data["award-dates-payment-date-day"]
           },
           {
             name: "month",
             classes: "govuk-input--width-2",
-            value: data["award-dates-payment-end-month"]
+            value: data["award-dates-payment-date-month"]
           },
           {
             name: "year",
             classes: "govuk-input--width-4",
-            value: data["award-dates-payment-end-year"]
+            value: data["award-dates-payment-date-year"]
           }
         ]
       }) }}
+
 
 
       {{ govukButton({

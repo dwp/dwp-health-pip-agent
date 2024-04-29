@@ -360,12 +360,26 @@ router.post(`/award-dates-review-manual-router`, (req, res) => {
   const reviewDatesManual = req.session.data['award-dates-review-manual']
 
   if (reviewDatesManual == 'None') {
-    res.redirect(`award-dates-payment-end`)
+    res.redirect(`award-dates-payment-date`)
   }
    else {
     res.redirect(`award-dates-playback`)
   }
 })
+
+
+
+router.post(`/award-dates-payment-check-router`, (req, res) => {
+  const paymentEndDate = req.session.data['award-dates-payment-check']
+
+  if (paymentEndDate == 'Yes') {
+    res.redirect(`award-dates-payment-date`)
+  }
+   else {
+    res.redirect(`award-dates-playback`)
+  }
+})
+
 
 
 
