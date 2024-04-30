@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="assurance-tasklist" method="post" class="form">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% include "agent-0-12/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Delegated authorities</h1>
+
+        <div class="govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given in the applicaiton:</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-! govuk-!-margin-bottom-6"><strong>No to Appointee, POA etc</p>
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicH2 %}
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Is AFIP in payment?</h1>
+            {% endset %}
+          <!------------Legend--------------->
+
+
+
+          <!------------H1 LEGEND------------>
+            {% set legendContactDetails %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Delegated authorities</p>
+
+            <ul class="govuk-list govuk-list">
+              <li>POA</li>
+              <li>Appointees</li>
+              <li>Appointees</li>
+              <li>Appointees</li>
+
+  </ul>
+
+
+            {% endset %}
+
+            {% set legendHint %}
+
+            {{ govukDetails({
+              summaryText: "What are delegated authorities",
+              classes: "govuk-!-margin-bottom-0",
+              html: legendContactDetails
+            }) }}
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "assurance-task-t7",
+        name: "assurance-task-t7",
+        fieldset: {
+          legend: {
+            html: "Does SearchLight show any delegated authorities",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Bad",
+          text: "Yes",
+          checked: (data["assurance-task-t7"] == "Bad")
+        },
+        {
+          value: "Good",
+          text: "No",
+          checked: (data["assurance-task-t7"] == "Good")
+        },
+        {
+          value: "Pause",
+          text: "I cannot check this now or want to come back to it later",
+          checked: (data["assurance-task-t7"] == "Pause")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}

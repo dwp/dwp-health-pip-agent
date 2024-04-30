@@ -1,4 +1,43 @@
 
+{% if data["assurance-task-t6"]  == "Good" and data["assurance-task-t7"] == "Good" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Will go to the PAP.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["assurance-task-t6"]  == "Bad" and data["assurance-task-t7"] == "Bad" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Will go to the PAP.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'information'
+}) }}
+
+{% elif data["assurance-task-t6"]  == "Bad" and data["assurance-task-t7"] == "Good" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Will go to the PAP.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'information'
+}) }}
+
+{% else %}
+
+{% endif %}
+
+
+
 {% if data["application-4-care-plan"]  == "Yes" and data["record-1-contact-landline-telephone"] and data["inbound-1-end-call-dispute"] == "Yes" %}
 
 {% set html %}

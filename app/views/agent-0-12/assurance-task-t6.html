@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "1" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="assurance-tasklist" method="post" class="form">
+
+      <div class="govuk-grid-column-two-thirds">
+        {% include "agent-0-12/record-id.html" %}
+
+
+          {{ govukRadios({
+            idPrefix: "assurance-task-t6",
+            name: "assurance-task-t6",
+            fieldset: {
+              legend: {
+                text: "Is there a date of death in Seachlight?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: "XXX"
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Bad",
+              text: "Yes",
+              checked: (data["assurance-task-t6"] == "Bad")
+            },
+              {
+                value: "Good",
+                text: "No",
+                checked: (data["assurance-task-t6"] == "Good")
+              }
+            ]
+          }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}
