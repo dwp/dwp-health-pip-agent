@@ -22,11 +22,11 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Delegated authorities</h1>
 
-        <div class="govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given in the applicaiton:</p>
+        <!-- <div class="govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Given in the application:</p>
           <p class="govuk-body govuk-!-font-size-24 govuk-! govuk-!-margin-bottom-6"><strong>No to Appointee, POA etc</p>
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
 
           <!------------H1 LEGEND------------>
             {% set dynamicH2 %}
@@ -39,13 +39,13 @@
           <!------------H1 LEGEND------------>
             {% set legendContactDetails %}
 
-            <p class="govuk-body govuk-!-margin-bottom-2">Delegated authorities</p>
+            <!-- <p class="govuk-body govuk-!-margin-bottom-2">Delegated authorities</p> -->
 
-            <ul class="govuk-list govuk-list">
-              <li>POA</li>
+            <ul class="govuk-list govuk-list--bullet">
               <li>Appointees</li>
-              <li>Appointees</li>
-              <li>Appointees</li>
+              <li>Deputies</li>
+              <li>Powers of Attorney</li>
+
 
   </ul>
 
@@ -55,7 +55,7 @@
             {% set legendHint %}
 
             {{ govukDetails({
-              summaryText: "What are delegated authorities",
+              summaryText: "What delegated authorities are",
               classes: "govuk-!-margin-bottom-0",
               html: legendContactDetails
             }) }}
@@ -69,7 +69,7 @@
         name: "assurance-task-t7",
         fieldset: {
           legend: {
-            html: "Does SearchLight show any delegated authorities",
+            html: "Are there any delegated authorities on Searchlight?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
