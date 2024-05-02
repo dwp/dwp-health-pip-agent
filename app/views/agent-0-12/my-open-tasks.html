@@ -11,7 +11,7 @@
 {% block content %}
 
 
-{% if data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] or data["application-5-letter-review"] == "No" or data["assurance-task-t7"] == "Pause" %}
+{% if data["application-selector"]  === "5" or data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] or data["application-5-letter-review"] == "No" or data["assurance-task-t7"] == "Pause" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -187,7 +187,33 @@
 
                       {% endif %}
 
+          {% if data["application-selector"]  === "5"%}
 
+          <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-20-percent">Date</td>
+              <td class="govuk-table__cell govuk-40-percent">Name</td>
+              <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
+              <td class="govuk-table__cell govuk-15-percent">Status</td>
+            </tr>
+            </thead>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">Today</td>
+            <td class="govuk-table__cell table-spacer"><a href="assurance-tasklist">Jeff Bridges</a></td>
+            <td class="govuk-table__cell table-spacer"><a href=""></a>Finish checking details</td>
+            <td class="govuk-table__cell table-spacer">
+                <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+            </td>
+            </tr>
+          </table>
+
+          {% else %}
+
+
+          {% endif %}
 
                     </div>
                   </div>

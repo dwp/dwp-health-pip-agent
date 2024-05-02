@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Bail - Pension Credit
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-home.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You've left a task early.<br>Your work is saved.</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You can return to any task you've started<br>in <a class="" href="my-open-tasks">my open tasks</a>.</p>
+
+
+
+
+
+
+      <div class="govuk-button-group ">
+        {{ govukButton({
+          text: "View next actions",
+          classes: "govuk-!-margin-bottom-8",
+          href: "outbound-2-call-prep"
+
+        }) }}
+
+        {{ govukButton({
+        name: "application-5-tasklist",
+        attributes: {
+          onclick: "history.back()"
+        },
+        text: "Go back",
+        classes: "govuk-button--secondary",
+        href: "application-5-tasklist"
+        }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

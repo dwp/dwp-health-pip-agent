@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-12/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Refining notess for the event history</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Think hard about you are saying here.</p>
+
+
+      {{ govukTextarea({
+        name: "call-notes",
+        id: "call-notes",
+        label: {
+          text: "Your from the call",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Whats to keep, what is to bin off and what needs actions? "
+        },
+        value: data["call-notes"]
+      }) }}
+
+<br>
+
+            {{ govukRadios({
+              idPrefix: "ecp-washup",
+              name: "ecp-washup",
+              fieldset: {
+                legend: {
+                  text: "Needs to happen next?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: "XXX"
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "1",
+                text: "No further action needed (Add all notes to event history)",
+                checked: (data["ecp-washup"] == "1")
+              },
+                {
+                value: "2",
+                text: "I need to refer something to another team",
+                checked: (data["ecp-washup"] == "2")
+              }
+              ]
+            }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
