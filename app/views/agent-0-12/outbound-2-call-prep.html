@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="outbound-1-greeting" method="post" class="form">
+<form action="outbound-2-greeting-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -33,6 +33,12 @@
         </thead>
 
         <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">One telephone number held</td>
+            <td class="govuk-table__cell">07960 022 111</td>
+          </tr>
+
           <tr class="govuk-table__row">
             <td class="govuk-table__header">Addional Support Markers (AS)</td>
             <td class="govuk-table__cell">No flag</td>
@@ -53,10 +59,39 @@
             <td class="govuk-table__cell">None</td>
           </tr>
 
-
         </tbody>
       </table>
 
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="record-1-overview" target="">I need to see other detials not shown</a></p> -->
+
+
+      {{ govukRadios({
+        idPrefix: "outbound-2-greeting",
+        name: "outbound-2-greeting",
+        fieldset: {
+          legend: {
+            html: "Are you ready to start the call",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m v"
+          }
+        },
+        hint: {
+          text: "XX"
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes - Lets get this party started",
+          checked: (data["outbound-2-greeting"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No - I need to see more detials from the record",
+          checked: (data["outbound-2-greeting"] == "No")
+        }
+        ]
+      }) }}
 
       {{ govukButton({
         text: "Continue",

@@ -78,11 +78,8 @@
 
       <div class="govuk-!-margin-top-4 call-panel-alignment">
 
-      {{ govukButton({
-        text: "End call process",
-        classes: "govuk-button--inverse",
-        href: "ecp-other-help"
-      }) }}
+<br><br><br><br>
+
     </div>
 
     </div>
@@ -98,12 +95,12 @@
   <div class="govuk-grid-column-full">
 
 
-<!------------NOTES LEGEND------------>
+<!------------H1 LEGEND------------>
   {% set legendNumbersDetails %}
 
   {{ govukTextarea({
-    name: "call-notes",
-    id: "call-notes",
+    name: "moreDetail",
+    id: "more-detail",
     label: {
       text: "Adding call notes to a record",
       classes: "govuk-label--m",
@@ -111,17 +108,16 @@
     },
     hint: {
       text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
-    },
-    value: data["pre-call-notes"]
+    }
   }) }}
 
   {% endset %}
 
-  {{ govukDetails({
+  <!-- {{ govukDetails({
     summaryText: "Create call notes",
     classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
     html: legendNumbersDetails
-  }) }}
+  }) }} -->
 
 
 </div>

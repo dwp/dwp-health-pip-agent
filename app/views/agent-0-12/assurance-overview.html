@@ -10,7 +10,18 @@
 
 {% block content %}
 
-<form action="assurance-tasklist" method="post" class="form">
+
+
+      {% if data["application-selector"] == "AM" %}
+        Monolith
+        <form action="assurance-monolith" method="post" class="form">
+
+      {% else %}
+      <form action="assurance-tasklist" method="post" class="form">
+
+        Day2
+      {% endif %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">

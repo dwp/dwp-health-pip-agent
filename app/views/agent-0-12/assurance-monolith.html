@@ -1,0 +1,201 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="assurance-monolith-cya" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-12/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the applicant's details</h2>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">These are the remaining details for you to check. All other eligibility checks have been done already.</p>
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-monolith-Q1",
+  name: "assurance-monolith-Q1",
+  fieldset: {
+    legend: {
+      html: "Check 1: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-monolith-Q1"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-monolith-Q1"] == "Unexpected")
+  }
+  ]
+}) }}
+
+
+          {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-monolith-Q2",
+  name: "assurance-monolith-Q2",
+  fieldset: {
+    legend: {
+      html: "Check 2: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-monolith-Q2"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-monolith-Q2"] == "Unexpected")
+  }
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-monolith-Q3",
+  name: "assurance-monolith-Q3",
+  fieldset: {
+    legend: {
+      html: "Check 3: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-monolith-Q3"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-monolith-Q3"] == "Unexpected")
+  }
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-monolith-Q4",
+  name: "assurance-monolith-Q4",
+  fieldset: {
+    legend: {
+      html: "Check 4: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-monolith-Q4"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-monolith-Q4"] == "Unexpected")
+  }
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-monolith-Q5",
+  name: "assurance-monolith-Q5",
+  fieldset: {
+    legend: {
+      html: "Check 5: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-monolith-Q5"] == "Expected")
+  },
+  {
+    value: "Unexpexted",
+    text: "Unexpexted",
+    checked: (data["assurance-monolith-Q5"] == "Unexpected")
+  }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

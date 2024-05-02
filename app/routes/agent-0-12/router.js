@@ -126,14 +126,14 @@ router.post(`/inbound-1-greeting-router`, (req, res) => {
   }
 })
 
-router.post(`/inbound-1-end-call-process-router`, (req, res) => {
-  const inboundEndCallProcess = req.session.data['inbound-1-end-call-process']
+router.post(`/ecp-other-help-router`, (req, res) => {
+  const inboundEndCallProcess = req.session.data['ecp-other-help']
 
   if (inboundEndCallProcess == 'Yes') {
-    res.redirect(`inbound-1-end-call-dispute`)
+    res.redirect(`record-other-actions`)
   }
   else if (inboundEndCallProcess == 'No') {
-    res.redirect(`inbound-1-end-call-exit`)
+    res.redirect(`ecp-goodbye`)
   }
    else {
     res.redirect(`XXX`)
@@ -175,6 +175,9 @@ router.post(`/application-selector-router`, (req, res) => {
     res.redirect(`application-5-overview`)
   }
   else if (applicationSelector == 'A') {
+    res.redirect(`assurance-overview`)
+  }
+  else if (applicationSelector == 'AM') {
     res.redirect(`assurance-overview`)
   }
    else {
@@ -354,6 +357,28 @@ router.post(`/application-5-letter-review-router`, (req, res) => {
   }
    else {
     res.redirect(`letter-error`)
+  }
+})
+
+router.post(`/outbound-2-finder-router`, (req, res) => {
+  const outboundFinder = req.session.data['outbound-2-finder-name']
+
+  if (outboundFinder == 'No') {
+    res.redirect(`outbound-2-finder-fail`)
+  }
+   else {
+    res.redirect(`outbound-2-security-a`)
+  }
+})
+
+router.post(`/outbound-2-greeting-router`, (req, res) => {
+  const outboundGreeting = req.session.data['outbound-2-greeting']
+
+  if (outboundGreeting == 'Yes') {
+    res.redirect(`outbound-2-greeting`)
+  }
+   else {
+    res.redirect(`record-1-overview`)
   }
 })
 
