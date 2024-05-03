@@ -371,10 +371,10 @@ router.post(`/outbound-2-finder-router`, (req, res) => {
   }
 })
 
-router.post(`/outbound-2-greeting-router`, (req, res) => {
-  const outboundGreeting = req.session.data['outbound-2-greeting']
+router.post(`/outbound-2-call-prep-router`, (req, res) => {
+  const outboundPrep = req.session.data['outbound-2-call-prep']
 
-  if (outboundGreeting == 'Yes') {
+  if (outboundPrep == 'Yes') {
     res.redirect(`outbound-2-greeting`)
   }
    else {

@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="outbound-2-greeting-router" method="post" class="form">
+<form action="outbound-2-call-prep-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -66,8 +66,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "outbound-2-greeting",
-        name: "outbound-2-greeting",
+        idPrefix: "outbound-2-call-prep",
+        name: "outbound-2-call-prep",
         fieldset: {
           legend: {
             html: "Are you ready to start the call",
@@ -83,12 +83,12 @@
         {
           value: "Yes",
           text: "Yes - Lets get this party started",
-          checked: (data["outbound-2-greeting"] == "Yes")
+          checked: (data["outbound-2-call-prep"] == "Yes")
         },
         {
           value: "No",
           text: "No - I need to see more detials from the record",
-          checked: (data["outbound-2-greeting"] == "No")
+          checked: (data["outbound-2-call-prep"] == "No")
         }
         ]
       }) }}
