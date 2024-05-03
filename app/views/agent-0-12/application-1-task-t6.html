@@ -14,86 +14,67 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <form action="application-5-tasklist" method="post" class="form">
+{% if data["record-1-bank-detials-j-1-bank-name"] %}
+<form action="application-5-tasklist" method="post" class="form">
+{% else %}
+<form action="application-1-task-t6-router" method="post" class="form">
+{% endif %}
 
+      <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+
         {% include "agent-0-12/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Bank details are missing</h1>
 
-        <div class="govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Searchlight shows an interest for:</p>
-          <p class="govuk-body govuk-!-font-size-24 govuk-! govuk-!-margin-bottom-6"><strong>Armed Forces Independence Payment (AFIP)</strong></p>
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+{% if data["record-1-bank-detials-j-1-bank-name"] %}
 
-          <!------------H1 LEGEND------------>
-            {% set dynamicH2 %}
-            <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Is AFIP in payment?</h1>
-            {% endset %}
-          <!------------Legend--------------->
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Bank details were added </h1>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is now seen as done, you can crack on brah</p>
+
+
+{% else %}
 
 
 
-          <!------------H1 LEGEND------------>
-            {% set legendContactDetails %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Bank details are missing</h1>
 
-            <p class="govuk-body govuk-!-margin-bottom-2">Try to call Veterans UK first, before emailing.</p>
+          <div class="govuk-!-margin-bottom-6">
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will need to contact the applicant to obtain these details. Once the datails this task will be marked as done</p>
 
-            <ul class="govuk-list govuk-list">
-              <li>Phone: <b>0191 488 3188</b></li>
-
-              <li>Email: <b>afip.team@dwp.gov.uk</b></li>
-  </ul>
-
-
-            {% endset %}
-
-            {% set legendHint %}
-
-            {{ govukDetails({
-              summaryText: "Help contacting Veterans UK",
-              classes: "govuk-!-margin-bottom-0",
-              html: legendContactDetails
-            }) }}
-
-              {% endset %}
-            <!------------Legend--------------->
+          <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
 
 
       {{ govukRadios({
-        idPrefix: "application-1-task-t5",
-        name: "application-1-task-t5",
+        idPrefix: "application-1-task-t6",
+        name: "application-1-task-t6",
         fieldset: {
           legend: {
-            html: dynamicH2,
+            html: "Next steps",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          html: legendHint
+          html: "X"
         },
         classes: "govuk-radios",
         items: [
         {
-          value: "Bad",
-          text: "Yes",
-          checked: (data["application-1-task-t5"] == "Bad")
-        },
-        {
-          value: "Done",
-          text: "No",
-          checked: (data["application-1-task-t5"] == "Done")
+          value: "Call",
+          text: "Begin call process",
+          checked: (data["application-1-task-t6"] == "Call")
         },
         {
           value: "Pause",
           text: "I cannot check this now or want to come back to it later",
-          checked: (data["application-1-task-t5"] == "Pause")
+          checked: (data["application-1-task-t6"] == "Pause")
         }
         ]
       }) }}
+
+{% endif %}
 
       {{ govukButton({
         text: "Continue",

@@ -382,6 +382,17 @@ router.post(`/outbound-2-greeting-router`, (req, res) => {
   }
 })
 
+router.post(`/application-1-task-t6-router`, (req, res) => {
+  const applicationCheckT6 = req.session.data['application-1-task-t6']
+
+  if (applicationCheckT6 == 'Call') {
+    res.redirect(`outbound-2-exit-to-call`)
+  }
+   else {
+    res.redirect(`application-5-tasklist`)
+  }
+})
+
 
 
 
