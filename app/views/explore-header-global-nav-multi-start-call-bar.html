@@ -98,30 +98,50 @@
   <div class="govuk-grid-column-full">
 
 
-<!------------NOTES LEGEND------------>
-  {% set legendNumbersDetails %}
+    <!------------NOTES LEGEND AND FAKE BUTTONS ------------>
 
-  {{ govukTextarea({
-    name: "pre-call-notes",
-    id: "pre-call-notes",
-    label: {
-      text: "Adding call notes to a record",
-      classes: "govuk-label--m",
-      isPageHeading: true
-    },
-    hint: {
-      text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
-    },
-    value: data["pre-call-notes"]
-  }) }}
+    <style>
 
-  {% endset %}
+        .govuk-details__text {
+          border-left:None;
+          padding-left:0;
+        }
+      }
+    </style>
 
-  {{ govukDetails({
-    summaryText: "Create call notes",
-    classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
-    html: legendNumbersDetails
-  }) }}
+      {% set legendNumbersDetails %}
+
+      <form method=post action="#">
+        {{ govukTextarea({
+          name: "call-notes",
+          id: "call-notes",
+          label: {
+            text: "Adding call notes to a record",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          hint: {
+            text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
+          },
+          value: data["call-notes"]
+        }) }}
+
+    <button type="submit" class="govuk-button-fake" data-module="govuk-button" >
+      Auto save (Two mins ago)
+    </button>
+      </form>
+
+      {% endset %}
+
+
+
+      {{ govukDetails({
+        summaryText: "Create call notes",
+        classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
+        html: legendNumbersDetails
+      }) }}
+
+      <!------------NOTES LEGEND AND FAKE BUTTONS ------------>
 
 
 </div>
