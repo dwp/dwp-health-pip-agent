@@ -99,8 +99,8 @@
   {% set legendNumbersDetails %}
 
   {{ govukTextarea({
-    name: "moreDetail",
-    id: "more-detail",
+    name: "call-notes",
+    id: "call-notes",
     label: {
       text: "Adding call notes to a record",
       classes: "govuk-label--m",
@@ -108,7 +108,8 @@
     },
     hint: {
       text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
-    }
+    },
+    value: data["call-notes"]
   }) }}
 
   {% endset %}

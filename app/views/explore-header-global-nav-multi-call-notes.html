@@ -1,3 +1,6 @@
+
+
+
 <header role="banner" class="gem-c-layout-super-navigation-header">
   <div class="gem-c-layout-super-navigation-header__container govuk-width-container govuk-clearfix">
     <div class="gem-c-layout-super-navigation-header__header-logo">
@@ -98,24 +101,42 @@
   <div class="govuk-grid-column-full">
 
 
-<!------------NOTES LEGEND------------>
+<!------------NOTES LEGEND AND FAKE BUTTONS ------------>
+
+<style>
+
+    .govuk-details__text {
+      border-left:None;
+      padding-left:0;
+    }
+  }
+</style>
+
   {% set legendNumbersDetails %}
 
-  {{ govukTextarea({
-    name: "call-notes",
-    id: "call-notes",
-    label: {
-      text: "Adding call notes to a record",
-      classes: "govuk-label--m",
-      isPageHeading: true
-    },
-    hint: {
-      text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
-    },
-    value: data["pre-call-notes"]
-  }) }}
+  <form method=post action="#">
+    {{ govukTextarea({
+      name: "call-notes",
+      id: "call-notes",
+      label: {
+        text: "Adding call notes to a record",
+        classes: "govuk-label--m",
+        isPageHeading: true
+      },
+      hint: {
+        text: "You can categorise these notes at the end of the call, this is so that you can remain in the record throughout the call"
+      },
+      value: data["call-notes"]
+    }) }}
+
+<button type="submit" class="govuk-button-fake" data-module="govuk-button" >
+  Auto save (Two mins ago)
+</button>
+  </form>
 
   {% endset %}
+
+
 
   {{ govukDetails({
     summaryText: "Create call notes",
@@ -123,6 +144,7 @@
     html: legendNumbersDetails
   }) }}
 
+  <!------------NOTES LEGEND AND FAKE BUTTONS ------------>
 
 </div>
 </div>
