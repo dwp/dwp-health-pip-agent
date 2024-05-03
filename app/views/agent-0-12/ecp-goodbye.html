@@ -14,7 +14,7 @@
     <form action="ecp-washup" method="post" class="form">
  there is notes to sort
     {% else %}
-    <form action="entry-home" method="post" class="form">
+    <form action="outbound-2-return-to-processing" method="post" class="form">
       There is no notes to sort
     {% endif %}
 
@@ -30,11 +30,25 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Thank you for taking<br>my call. Goodbye.</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p> -->
 
+      {% if data["call-notes"]%}
+      <form action="ecp-washup" method="post" class="form">
 
-      {{ govukButton({
-        text: "Start after call actions",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+        {{ govukButton({
+          text: "Start after call actions",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+      {% else %}
+      <form action="entry-home" method="post" class="form">
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+      {% endif %}
+
+
 
         </div>
       </div>

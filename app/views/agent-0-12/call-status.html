@@ -12,11 +12,11 @@
       {% if data["outbound-2-finder-name"] == "Yes"%}
         {% include "explore-header-global-nav-multi-call-notes.html" %}
 
-        {% elif data["outbound-2-greeting"] == "No" %}
+        {% elif data["outbound-2-call-prep"] == "No" %}
         {% include "explore-header-global-nav-multi-start-call-bar.html" %}
 
 
-      {% elif data["outbound-2-greeting"] == "No" and data["outbound-2-finder-name"] == "Yes" %}
+      {% elif data["outbound-2-call-prep"] == "No" and data["outbound-2-finder-name"] == "Yes" %}
       {% include "explore-header-global-nav-multi-call-notes.html" %}
 
       {% elif data["ecp-other-help"] == "No"%}
