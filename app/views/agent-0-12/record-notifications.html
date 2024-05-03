@@ -4,6 +4,19 @@
 
 {% else %}
 
+        {% if data["record-1-bank-detials-j-1-bank-name"] %}
+        {% set html %}
+        <p class="govuk-body govuk-!-font-size-19">Bank details add</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'Success'
+        }) }}
+
+        {% else %}
+        {% endif %}
+
         {% if data["record-other-actions"]  == "Yes" %}
         {% set html %}
         <p class="govuk-body govuk-!-font-size-19">Call details and actions have been saved and added to the person's account. Internal teams will be notified and will start this process.</p>

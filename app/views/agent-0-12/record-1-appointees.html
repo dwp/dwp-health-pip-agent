@@ -15,7 +15,7 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="login-router" method="post" class="form">
 
-      {% include "agent-0-12/record-id.html" %}
+      {% include "agent-0-12/record-id-base.html" %}
 
 
     </div>
@@ -25,11 +25,11 @@
     {% include "agent-0-12/record-navigation.html" %}
 
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Appointees and helpers</h3>
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">No appointees and<br>helpers for this guy</h3>
 
-    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This will be here if the person has an appointee or helper. The agent will see and can edit their information.</p> -->
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can start the process to add a <a class="" href="#" target="">Delegated authority</a> <br>we got to have thos deets </p>
 
-
+<!--
     {% set SetTelephone %}
       {% if data["appointees-telephone"] %}
         {{data["appointees-telephone"]}}
@@ -129,7 +129,7 @@
           }
         }
       ]
-    }) }}
+    }) }} -->
 
 
 
