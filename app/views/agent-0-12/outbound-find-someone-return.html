@@ -6,22 +6,13 @@
 
 {% block header %}
 
+{% include "explore-header-global-nav-multi.html" %}
 
-{% include "explore-header-global-nav-multi-call.html" %}
 {% endblock %}
 
 {% block content %}
 
-{% if data["application-selector"] == "2" %}
 <form action="record-1-overview" method="post" class="form">
-
-{% elif data["application-selector"] == "3" %}
-<form action="inbound-1-security" method="post" class="form">
-
-  {% else %}
-  <form action="inbound-1-security" method="post" class="form">
-
-  {% endif %}
 
 
 
@@ -36,8 +27,8 @@
 
 
             {{ govukRadios({
-              idPrefix: "find-someone-1-return",
-              name: "find-someone-1-return",
+              idPrefix: "outbound-find-someone-return",
+              name: "outbound-find-someone-return",
               fieldset: {
                 legend: {
                   html: "Is this the right person?",
@@ -53,12 +44,12 @@
               {
                 value: "Yes",
                 text: "Yes",
-                checked: (data["find-someone-1-return"] == "Yes")
+                checked: (data["outbound-find-someone-return"] == "Yes")
               },
               {
                 value: "No",
                 text: "No",
-                checked: (data["find-someone-1-return"] == "No")
+                checked: (data["outbound-find-someone-return"] == "No")
               }
               ]
             }) }}

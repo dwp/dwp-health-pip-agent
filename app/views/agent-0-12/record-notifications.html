@@ -1,8 +1,7 @@
 
-
 {% if data["find-someone-1-offline-return"]  == "Yes" %}
 
-{% else %}
+  {% else %}
 
         {% if data["record-1-bank-detials-j-1-bank-name"] %}
         {% set html %}
@@ -27,6 +26,9 @@
           type: 'error'
         }) }}
 
+
+        {% elif data["ecp-washup"] and data["application-5-letter-review"]  == "Yes" %}
+
         {% elif data["ecp-washup"]%}
 
         {% set html %}
@@ -37,8 +39,6 @@
           html: html,
           type: 'information'
         }) }}
-
-
 
         {% else %}
         {% endif %}
