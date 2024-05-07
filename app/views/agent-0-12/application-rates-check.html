@@ -40,10 +40,10 @@
 
 
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This person is due to be paid £5,000, which is other threshold A</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This person's first payment is £5,500 - you need to make a courtesy call</h1>
 
           <div class="govuk-!-margin-bottom-6">
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You have given this application: Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions</p>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You also selected 'Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions' in their application.</p>
 
 <!--
             <p class="govuk-body govuk-!-margin-bottom-2">Within the applciation the applicant and AP </p>
@@ -61,29 +61,29 @@
         name: "application-rates-check",
         fieldset: {
           legend: {
-            html: "Next steps",
+            html: "Do you want to start the call process now?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          html: "X"
+          html: ""
         },
         classes: "govuk-radios",
         items: [
         {
           value: "Call",
-          text: "Begin call process",
+          text: "Yes",
           checked: (data["application-rates-check"] == "Call")
         },
         {
           value: "Pause",
-          text: "I cannot check this now or want to come back to it later",
+          text: "No, I want to come back to it later",
           checked: (data["application-rates-check"] == "Pause")
         },
         {
           value: "Action",
-          text: "Other actions",
+          text: "No, I have already made the call and am ready to continue",
           checked: (data["application-rates-check"] == "Actions")
         }
         ]
