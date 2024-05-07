@@ -18,8 +18,8 @@
       {% include "agent-0-12/record-id-base.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Getting ready for a call</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Details about Jeff Bridges you need to know before you start your call, security will be presented in time blah</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare for a call</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Here are some details about Jeff Bridges. You will be guided through security questions once you start the call.</p>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
 
@@ -35,28 +35,28 @@
         <tbody class="govuk-table__body">
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">One telephone number held</td>
+            <td class="govuk-table__header">Phone number</td>
             <td class="govuk-table__cell">07960 022 111</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Addional Support Markers (AS)</td>
-            <td class="govuk-table__cell">No flag</td>
+            <td class="govuk-table__header">Additional support (AS)</td>
+            <td class="govuk-table__cell">No</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Unacceptable Citizen Behaviour (UCB)</td>
-            <td class="govuk-table__cell">No flag</td>
+            <td class="govuk-table__header">Unacceptable customer behaviour (UCB)</td>
+            <td class="govuk-table__cell">No</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Power of Attorney (POA) etc</td>
-            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__header">Delegated authority</td>
+            <td class="govuk-table__cell">No</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Accessablity needs</td>
-            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__header">Accessibility needs</td>
+            <td class="govuk-table__cell">No</td>
           </tr>
 
         </tbody>
@@ -70,24 +70,24 @@
         name: "outbound-2-call-prep",
         fieldset: {
           legend: {
-            html: "Are you ready to start the call",
+            html: "Do you want to start the call?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m v"
           }
         },
         hint: {
-          text: "XX"
+          text: ""
         },
         classes: "govuk-radios govuk-!-margin-bottom-4",
         items: [
         {
           value: "Yes",
-          text: "Yes - Lets get this party started",
+          text: "Yes",
           checked: (data["outbound-2-call-prep"] == "Yes")
         },
         {
           value: "No",
-          text: "No - I need to see more detials from the record",
+          text: "No, I need more details",
           checked: (data["outbound-2-call-prep"] == "No")
         }
         ]
