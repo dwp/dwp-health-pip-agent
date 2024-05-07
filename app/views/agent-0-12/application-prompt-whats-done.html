@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "5a" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+        <form action="application-rates-check" method="post" class="form">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-12/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Imagine you have processed most of this applciaiton, but there is an issue with the money the will get</h2>
+
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The service has just worked out the award for the applciaiton</p>
+
+
+      <p class="govuk-body govuk-!-margin-bottom-2">The following things have been done by you earlier:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>
+          All documents have been seen and used
+        </li>
+        <li>
+          The points for activies have been added and the outcome of the appciation is known
+        </li>
+        <li>
+          Created a letter
+        </li>
+        <li>
+          will be awarded the standard rate for daily living
+        </li>
+        <li>
+          will not be awarded for mobility
+        </li>
+      </ul>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
