@@ -174,6 +174,9 @@ router.post(`/application-selector-router`, (req, res) => {
   else if (applicationSelector == '5') {
     res.redirect(`application-5-overview`)
   }
+  else if (applicationSelector == '5a') {
+    res.redirect(`application-prompt-whats-done`)
+  }
   else if (applicationSelector == 'A') {
     res.redirect(`assurance-overview`)
   }
@@ -390,6 +393,20 @@ router.post(`/application-1-task-t6-router`, (req, res) => {
   }
    else {
     res.redirect(`application-5-tasklist`)
+  }
+})
+
+router.post(`/application-rates-check-router`, (req, res) => {
+  const applicationCheckRates = req.session.data['application-rates-check']
+
+  if (applicationCheckRates == 'Call') {
+    res.redirect(`outbound-2-exit-to-call`)
+  }
+  else if (applicationCheckRates == 'Pause') {
+    res.redirect(`application-1-exit-early`)
+  }
+   else {
+    res.redirect(`application-rates-actions`)
   }
 })
 

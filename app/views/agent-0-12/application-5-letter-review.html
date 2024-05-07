@@ -81,6 +81,36 @@
 
 
       {% endset %}
+
+
+
+
+
+{% set firstPaymentDetails %}
+
+      {% if data["application-rates-actions"] == "1"%}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get your first payment of £5,000 divide equally over all payments</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Watch out for this in your bank account</p>
+
+      {% elif data["application-rates-actions"] == "2"%}
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get your first payment of £5,000 as on lump sum</p>
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Watch out for this in your bank account</p>
+
+
+      {% else %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Some other manual method</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Watch out for this in your bank account</p>
+
+            {% endif %}
+
+
+{% endset %}
+
+
+
     <!------------Legend--------------->
 
 
@@ -108,6 +138,14 @@
             },
             value: {
               html: outcomeDetials
+            }
+          },
+          {
+            key: {
+              text: "First payment"
+            },
+            value: {
+              html: firstPaymentDetails
             }
           },
           {
