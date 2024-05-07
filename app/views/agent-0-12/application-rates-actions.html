@@ -36,29 +36,29 @@
         name: "application-rates-actions",
         fieldset: {
           legend: {
-            html: "How do they want their first payment of £5,000?",
+            html: "How does the applicant want their first payment of £5,500?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "Somethign about this"
+          html: "You can view the notes from the call in the person's record if needed"
         },
         classes: "govuk-radios",
         items: [
         {
           value: "1",
-          text: "Divide equally over all payments",
+          text: "Divided equally",
           checked: (data["application-rates-actions"] == "1")
         },
         {
           value: "2",
-          text: "Pay as one lump sum",
+          text: "Paid in full",
           checked: (data["application-rates-actions"] == "2")
         },
         {
           value: "3",
-          text: "Something else",
+          text: "Another way",
           checked: (data["application-rates-actions"] == "3")
         }
         ]
