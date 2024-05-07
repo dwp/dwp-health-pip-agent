@@ -11,7 +11,7 @@
 {% block content %}
 
 
-{% if data["application-selector"]  === "5" or data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] or data["application-5-letter-review"] == "No" or data["assurance-task-t7"] == "Pause" or data["application-rates-check"] == "Pause" or data["application-rates-check"] == "Call"%}
+{% if data["application-selector"]  === "5" or data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] or data["application-5-letter-review"] == "No" or data["assurance-task-t7"] == "Pause" or data["application-1-task-t6"] == "Pause" or data["application-1-task-t6"] == "Call" or data["application-rates-check"] == "Pause" or data["application-rates-check"] == "Call"%}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -215,7 +215,7 @@
 
           {% endif %}
 
-          {% if data["application-1-task-t6"] == "Pause" %}
+          {% if data["application-1-task-t6"] == "Pause" or data["application-1-task-t6"] == "Call" %}
 
 
           <table class="govuk-table">
