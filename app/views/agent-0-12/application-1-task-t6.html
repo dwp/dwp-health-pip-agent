@@ -41,7 +41,7 @@
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Bank details are missing</h1>
 
           <div class="govuk-!-margin-bottom-6">
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will need to contact the applicant to obtain these details. Once the datails this task will be marked as done</p>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You need to contact the applicant to get their bank details.</p>
 
           <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
 
@@ -51,7 +51,7 @@
         name: "application-1-task-t6",
         fieldset: {
           legend: {
-            html: "Next steps",
+            html: "Do you want to start the call process now?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -63,12 +63,12 @@
         items: [
         {
           value: "Call",
-          text: "Begin call process",
+          text: "Yes",
           checked: (data["application-1-task-t6"] == "Call")
         },
         {
           value: "Pause",
-          text: "I cannot check this now or want to come back to it later",
+          text: "No, I want to come back to this later",
           checked: (data["application-1-task-t6"] == "Pause")
         }
         ]
