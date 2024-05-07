@@ -15,8 +15,15 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="application-5-about-clear" method="post" class="form">
 
+
+    {% if data["application-1-task-t5"] == "Done" and data["record-1-bank-detials-j-1-bank-name"] %}
+Bank done
+      <form action="application-prompt-letter-rates" method="post" class="form">
+        {% else %}
+        Normal
+        <form action="application-5-about-clear" method="post" class="form">
+      {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
 
@@ -106,7 +113,7 @@
       href: "entry-home"
       }) }}
 
-    {% elif data["application-1-task-t5"] == "Done" and data["record-1-bank-detials-j-1-bank-name"]%}
+    {% elif data["application-1-task-t5"] == "Done" and data["record-1-bank-detials-j-1-bank-name"] %}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -139,7 +146,7 @@ href:"application-1-exit-issue"
 }) }}
 
 
-    {% elif data["application-1-task-t5"] == "Pause" %}
+    {% elif data["application-1-task-t5"] == "Pause" or data["application-1-task-t6"] == "Pause" %}
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have paused processing<br>this application</h1>
     <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
