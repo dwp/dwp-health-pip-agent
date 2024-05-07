@@ -215,35 +215,6 @@
 
           {% endif %}
 
-          {% if data["ecp-other-help"] %}
-
-          <table class="govuk-table">
-
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-20-percent">Date</td>
-              <td class="govuk-table__cell govuk-40-percent">Name</td>
-              <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
-              <td class="govuk-table__cell govuk-15-percent">Status</td>
-            </tr>
-            </thead>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell table-spacer">Today</td>
-            <td class="govuk-table__cell table-spacer"><a href="application-5-tasklist">Jeff Bridges</a></td>
-            <td class="govuk-table__cell table-spacer"><a href=""></a>Bank details where added from a call</td>
-            <td class="govuk-table__cell table-spacer">
-                <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
-            </td>
-            </tr>
-          </table>
-
-          {% else %}
-
-
-          {% endif %}
-
-
           {% if data["application-1-task-t6"] == "Pause" %}
 
 
@@ -273,7 +244,7 @@
 
 
 
-                                  {% if data["application-rates-check"] == "Pause" %}
+                                  {% if data["application-rates-check"] == "Pause" or data["application-rates-check"] == "Call" %}
 
 
                                   <table class="govuk-table">
@@ -288,7 +259,7 @@
                                     </thead>
 
                                   <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell table-spacer">5 May 2024</td>
+                                    <td class="govuk-table__cell table-spacer">Today</td>
                                     <td class="govuk-table__cell table-spacer"><a href="application-rates-check">Jeff Bridges</a></td>
                                     <td class="govuk-table__cell table-spacer"><a href=""></a>Confim payment plan</td>
                                     <td class="govuk-table__cell table-spacer">
