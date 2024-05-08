@@ -12,7 +12,7 @@
 
     {% if data["call-notes"] or data["pre-call-notes"] %}
     <form action="ecp-washup" method="post" class="form">
- 
+
     {% else %}
     <form action="outbound-2-return-to-processing" method="post" class="form">
 
@@ -34,7 +34,7 @@
       <form action="ecp-washup" method="post" class="form">
 
         {{ govukButton({
-          text: "Start after call actions",
+          text: "Continue",
           classes: "govuk-!-margin-bottom-8"
         }) }}
 
