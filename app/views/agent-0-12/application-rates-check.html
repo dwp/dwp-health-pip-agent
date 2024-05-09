@@ -40,7 +40,7 @@
 
 
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This applicant's first payment is £5,500 - you need to make a courtesy call to check how they want <br> to be paid</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The applicant's first payment is £5,500 - you need to call them to check how they want this to be paid</h1>
 
           <div class="govuk-!-margin-bottom-6">
             <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You also selected 'Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions' in their application.</p>
@@ -82,8 +82,11 @@
           checked: (data["application-rates-check"] == "Pause")
         },
         {
+        divider: "or"
+        },
+        {
           value: "Action",
-          text: "No, I have already made the call and am ready to continue",
+          text: "I have already called them and am ready to continue processing the application",
           checked: (data["application-rates-check"] == "Actions")
         }
         ]
