@@ -36,7 +36,7 @@
         name: "application-rates-actions",
         fieldset: {
           legend: {
-            html: "How does the applicant want their first payment of £5,500?",
+            html: "How does the applicant want to receive their first payment of £5,500?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -47,14 +47,14 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "1",
-          text: "Divided equally across all their payments",
-          checked: (data["application-rates-actions"] == "1")
-        },
-        {
           value: "2",
           text: "Paid in full",
           checked: (data["application-rates-actions"] == "2")
+        },
+        {
+          value: "1",
+          text: "In instalments",
+          checked: (data["application-rates-actions"] == "1")
         },
         {
           value: "3",
