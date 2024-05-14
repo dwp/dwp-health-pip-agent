@@ -140,6 +140,22 @@ router.post(`/ecp-other-help-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`/record-other-actions-router`, (req, res) => {
+  const endCallProcessReturnToRecord = req.session.data['record-other-actions']
+
+  if (endCallProcessReturnToRecord == 'A') {
+    res.redirect(`record-other-actions-request-callback`)
+  }
+  else if (endCallProcessReturnToRecord == 'B') {
+    res.redirect(`record-1-overview`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
 router.post(`/application-3-lpa-1-router`, (req, res) => {
   const lpaChangeMade = req.session.data['application-3-lpa-1']
 
