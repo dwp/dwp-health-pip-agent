@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="record-other-actions-request-callback" method="post" class="form">
+<form action="record-other-actions-router" method="post" class="form">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% include "agent-0-12/record-id-base.html" %}
@@ -35,19 +35,27 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "Yes",
+          value: "A",
           text: "Disputing something",
-          checked: (data["record-other-actions"] == "Yes")
+          checked: (data["record-other-actions"] == "A")
         },
         {
-          value: "Yes",
+          value: "A",
           text: "Escalating a query or complaint",
-          checked: (data["record-other-actions"] == "Yes")
+          checked: (data["record-other-actions"] == "A")
         },
         {
-          value: "No",
+          value: "A",
           text: "Something else",
-          checked: (data["record-other-actions"] == "No")
+          checked: (data["record-other-actions"] == "A")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "B",
+          text: "Return to Jeff's record",
+          checked: (data["record-other-actions"] == "B")
         }
         ]
       }) }}
