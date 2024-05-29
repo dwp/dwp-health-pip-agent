@@ -2,8 +2,8 @@
   <div class="govuk-grid-column-three-quarters">
     <form action="login-router" method="post" class="form">
 
-      {% if data["search"] %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data ["search"]}}</h1>
-      {% elif data["application-selector"] == "4" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">Sam Elliot</h1>
+      {% if data["system-application-selector"] == "1" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jeff Bridges</h1>
+      {% elif data["system-application-selector"] == "2" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">Sam Elliot</h1>
 
       {% else %} <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jeff Bridges</h1>
       {% endif %}
