@@ -29,11 +29,36 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h1 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">@dave Application documents</h1>
+          <table class="govuk-table">
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="application-6-view-evidence" target="_blank">Health information gather (PIP1 and PIP2)</a></p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-6-view-evidence" target="_blank">Assessment report and supporting documents</a></p>
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h1>
 
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"></td>
+                <td class="govuk-table__cell govuk-25-percent"></td>
+                <td class="govuk-table__cell govuk-15-percent"></td>
+              </tr>
+              </thead>
+
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-6-view-evidence">Accessing citizen detials</a></p>
+
+              </td>
+
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">
+
+                {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed"></strong>
+                {% endif %}
+
+              </td>
+              </tr>
+
+</table>
 
 
           <div class="govuk-grid-row">

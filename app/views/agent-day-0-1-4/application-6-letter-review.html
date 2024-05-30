@@ -40,9 +40,22 @@
         I have looked at your claim and decided I cannot award you Personal Independence Payment
 
         {% else %}
-        Awarded enhanced for daily living and enhanced for mobility.
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your total score is:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>8 points for the daily living part - this means you have been awarded the standard rate of £68.10 a week</li>
+    <li>0 points for the mobility part - this means you have not been awarded for this part</li>
+  </ul>
+
 
         {% endif %}
+
+        {% endset %}
+
+        {% set firstPaymentDetails %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £5,500.</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This will be paid into your bank account within 3 days.</p>
 
         {% endset %}
 
@@ -74,10 +87,18 @@
             value: {
               html: dynamicOutcome
             }
-          }
+          },
+            {
+              key: {
+                text: "First payment"
+              },
+              value: {
+                html: firstPaymentDetails
+              }
+            }
+          ]
+        }) }}
 
-        ]
-      }) }}
 
               {% if data["system-application-selector"]  == "1" %}
 
@@ -100,11 +121,12 @@
                 (there is no end date)
                 {% endif %}
 
-
-
-
                 {% endset %}
+
               <!------------Legend--------------->
+
+
+
 
                 {{ govukSummaryList({
                   rows: [
@@ -127,7 +149,9 @@
                   ]
                 }) }}
 
+
                 {% endif %}
+
 
 
       <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
