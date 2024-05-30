@@ -17,20 +17,15 @@
 
       {% include "agent-day-0-1-4/record-id.html" %}
 
-
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Accessing citizen detials</h2>
 
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">You can view the health information gather (PIP1 and PIP2), assessment report, and any supporting documents for this application on connected services</p>
+
+
+
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You can view the health information gather (PIP1 and PIP2), assessment report, and any supporting documents for this application on connected services</p>
 <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Helth Assessment Service (HAS) Supporting Documents will give you access to documents usually found in DRS</p> -->
 
 
-<h1 class="govuk-heading-m govuk-!-margin-bottom-1">Supporting documents</h1>
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="i am documents">Accessing supporting documents (opens in a new window)</a></p>
-
-
-
-<br>
 
   <table class="govuk-table govuk-!-margin-bottom-8">
 
@@ -39,6 +34,10 @@
     <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell govuk-100-percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
     </tr>
     </thead>
 
@@ -51,11 +50,12 @@
 
 
     {% include "agent-day-0-1-4/evidence-10-status.html" %}
+    {% include "agent-day-0-1-4/evidence-6-status.html" %}
     {% include "agent-day-0-1-4/evidence-11-status.html" %}
 
 
     <!-- {% include "agent-day-0-1-4/evidence-9-status.html" %} -->
-    <!-- {% include "agent-day-0-1-4/evidence-6-status.html" %} -->
+
     <!-- {% include "agent-day-0-1-4/evidence-7-status.html" %} -->
     <!-- {% include "agent-day-0-1-4/evidence-8-status.html" %} -->
 
