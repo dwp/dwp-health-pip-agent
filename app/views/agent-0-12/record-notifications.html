@@ -78,6 +78,17 @@
           type: 'information'
         }) }}
 
+        {% elif data["assurance-task-t6"]  == "Good" and data["assurance-task-t7"] == "Bad" %}
+
+        {% set html %}
+        <p class="govuk-body govuk-!-font-size-19">This application will go back into the BAU process</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'information'
+        }) }}
+
         {% else %}
         {% endif %}
 
