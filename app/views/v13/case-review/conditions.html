@@ -45,6 +45,9 @@
           Conditions
         </h1>
 
+        {% if data["system-application-selector"] == "2" %}
+
+Sam conditions
         <table class="govuk-table" id="tagrow">
             <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -104,6 +107,73 @@
 
           </tbody>
         </table>
+
+<!-- JEFF Conditions -->
+
+        {% else %}
+        Jeff  conditions
+
+        <table class="govuk-table" id="tagrow">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" width="75%">Condition</th>
+              <th scope="col" class="govuk-table__header">Approximate start date</th>
+                      </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+                  <td scope="row" class="govuk-table__cell"><a href="condition-one?source=diabetes">Diabetes  </a></td>
+                    <td scope="row" class="govuk-table__cell">14 weeks ago</td>
+
+        </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-two?source=prostate-cancer">
+                Prostate cancer
+              </a></td>
+               <td scope="row" class="govuk-table__cell">20 July 1990</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-three?source=angina">
+                Angina
+                </a></td>
+                  <td scope="row" class="govuk-table__cell">1 March 1995</td>
+              </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-four?source=copd">
+                COPD
+                </a></td>
+          <td scope="row" class="govuk-table__cell">20 December 1999</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-five?source=blood-pressure">
+                Blood pressure
+                </a></td>
+              <td scope="row" class="govuk-table__cell">20 February 2000</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-six?source=incontinence">
+                Incontinence
+                </a></td>
+               <td scope="row" class="govuk-table__cell">09 April 2001</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-seven?source=irregular-heartbeat">
+                Irregular heartbeat
+                </a></td>
+                <td scope="row" class="govuk-table__cell">27 August 2009</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a id="activities" href="condition-eight?source=hot-flushes">
+                Hot flushes
+                </a></td>
+              <td scope="row" class="govuk-table__cell">20 June 2012</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        {% endif %}
 
     </div>
 
