@@ -45,21 +45,41 @@
     <div class="govuk-grid-column-two-thirds">
       <main class="govuk-main-wrapper " id="main-content" role="main">
 
-      <h1 class="govuk-heading-l">
-          <span class="govuk-caption-l">Condition</span>
-          Diabetes
-     </h1>
 
-  <h2 class="govuk-heading-s">Approximate start date</h2>
-      <p>14 weeks ago</p>
 
-      <h3 class="govuk-heading-s">Tell us about this condition</h3>
+        <!-- SAM ELLIOT -->
+        {% if data["system-application-selector"] == "2" %}
+        Sam
 
-        <p>
-          Short paragraph from the claimant about their medication / tablets and the dosage.
-          Any treatments you have had, you are currently having or have planned for the future (include private as well as NHS funded treatments).<br> <br>
-        </p>
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Condition</span>
+            Migraines
+           </h1>
 
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Approximate start date</h2>
+        <p class="govuk-body govuk-!-margin-bottom-4">21 months ago</p>
+
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about this condition</h2>
+        <p class="govuk-body govuk-!-margin-bottom-4">Topiramate - 50mg in the morning and 25mg in the evening I have tried both zolmitriptan and sumatriptan to no effect </p>
+
+
+        <!-- JEFF BRIDGES -->
+        {% else %}
+        Jeffs
+
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Condition</span>
+            Obstructive Sleep Apnoea
+       </h1>
+
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Approximate start date</h2>
+            <p class="govuk-body govuk-!-margin-bottom-4">October 2007 </p>
+
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about this condition</h2>
+            <p class="govuk-body govuk-!-margin-bottom-4">Dr Cummings diagnosed me with obstructive sleep apnoea ni October 2007 and Iwas referred for asleep study. Due ot administrative mistakes, several misdiagnoses, and the transition from paper-based ot digital records, I struggled ot get asleep study until 2022. The sleep study ni 2022 concluded with a formal diagnosis of obstructive sleep apnoea and I was placed on CPAP therapy.</p>
+            <p class="govuk-body govuk-!-margin-bottom-4">As the OSA has not improved under CPAP therapy, I have been referred to Hospital for polysomnography (an overnight sleep assessment evaluating brainwave and central nervous system activity). Fibromyalgia was diagnosed in 2012 by a doctor at. I started a course of Tramadol 50mg. Hospital diagnosed me with Myofascial pain syndrome in 2023. I have a history of chronic back  pain, first diagnosed by several appointments with physiotherapy.<p>
+
+        {% endif %}
 
 </main>
     </div>
