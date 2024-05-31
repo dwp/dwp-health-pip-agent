@@ -28,11 +28,11 @@
 
 
           {{ govukRadios({
-            idPrefix: "assurance-task-t6",
-            name: "assurance-task-t6",
+            idPrefix: "assurance-task-tx",
+            name: "assurance-task-tx",
             fieldset: {
               legend: {
-                text: "Is there a date of death on Searchlight?",
+                text: "Was this expected or unexpected?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -44,13 +44,13 @@
             items: [
             {
               value: "Bad",
-              text: "Yes",
-              checked: (data["assurance-task-t6"] == "Bad")
+              text: "Unexpected",
+              checked: (data["assurance-task-tx"] == "Bad")
             },
               {
                 value: "Good",
-                text: "No",
-                checked: (data["assurance-task-t6"] == "Good")
+                text: "Expected",
+                checked: (data["assurance-task-tx"] == "Good")
               }
             ]
           }) }}

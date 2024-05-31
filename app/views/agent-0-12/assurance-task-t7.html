@@ -15,7 +15,13 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+
+    {% if data["application-selector"] == "APR" %}
+    <form action="assurance-pr-tasklist" method="post" class="form">
+    {% else %}
     <form action="assurance-tasklist" method="post" class="form">
+    {% endif %}
+
 
       <div class="govuk-grid-column-two-thirds">
         {% include "agent-0-12/record-id.html" %}
