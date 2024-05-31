@@ -1,11 +1,14 @@
 <tr class="govuk-table__row">
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell table-spacer"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list">
+    <td class="govuk-table__cell table-spacer">
 
-      {% if data["evidence-11-name"] == "Yes" %}     {{ data["evidence-11-name-overwrite"]}}
-      {% else %} Supporting documents
+      {% if data["system-application-selector"] == "2" %}
+      <a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list">Supporting documents</a>
+      {% else %}
+      <a href="https://supporting-docs-prototype.herokuapp.com/vStarling-nil/document-list">Supporting documents</a>
       {% endif %}
-    </a></td>
+
+    </td>
 
 <td class="govuk-table__cell table-spacer"></td>
 <td class="govuk-table__cell table-spacer"></td>
