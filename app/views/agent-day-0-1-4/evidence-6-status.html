@@ -1,6 +1,15 @@
 <tr class="govuk-table__row">
   <tr class="govuk-table__row">
+
+    {% if data["system-application-selector"] == "2" %}
+    <td class="govuk-table__cell table-spacer"><a href="evidence-6b">
+
+    {% else %}
     <td class="govuk-table__cell table-spacer"><a href="evidence-6">
+
+    {% endif %}
+
+
 
       {% if data["evidence-6-name"] == "Yes" %}     {{ data["evidence-6-name-overwrite"]}}
       {% else %} Health assessment report
