@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Activities - Reading
+{% endblock %}
+
+{% block main %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">Jane Doe</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">QQ 12 34 56 C</dt>
+        <!--  <strong class="govuk-tag govuk-tag--grey" id="tag">In review</strong> -->
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>4 June 1972</dd>
+      </div>
+    </dl>
+</section>
+
+<div class="govuk-width-container">
+    <div class="column-full">
+      <nav class="navigation-secondary">
+        <ul>
+          <li>
+            <a href="../personal-details">Personal details</a>
+          </li>
+          <li>
+            <a href="../supporting-documents">Supporting documents</a>
+          </li>
+          <li>
+              <a href="../conditions">Conditions</a>
+          </li>
+          <li>
+              <a href="../activities" class="active" aria-current="section">Activities</a>
+          </li>
+          <!--<li>
+            <a href="../summary">Questions and answers</a>
+          </li>-->
+        </ul>
+      </nav>
+
+    </div>
+
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+   <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Activity</span>
+          Reading
+     </h1>
+
+     <h2 class="govuk-heading-s">Does your condition affect your ability to read?</h2>
+     <p class="govuk-body">Yes</p>
+     <br>
+
+        <h3 class="govuk-heading-s">Tell us about the difficulties you have with reading words or symbols and how you manage them
+        </h3>
+      <p class="govuk-body">I am never able to read one sentence after another because I confuse the order of the letters and words. I use a portable scanner to help me understand written words more quickly.<br><br>
+I have dyslexia and need to use a yellow filter to help me to read.<br><br>
+Most days, I am unable to read at all because I experience double vision and am unable to focus. My partner reads for me when I am unable to do it myself.<br>  <br>
+
+
+<!-- removing question and answer functionality --
+          <form action="#" method="post">
+              <input type="hidden" value="{{ data.source }}"/>
+
+
+          <h2 class="govuk-heading-m">Add a question</h2>
+                <div class="govuk-form-group">
+                    <textarea class="govuk-textarea" id="more-detail" name="query-content" value="{{ data['query-content'] }}" rows="5"></textarea>
+                </div>
+
+                {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                {{ govukRadios({
+                  idPrefix: "who-is-question-for",
+                  name: "who-is-question-for-reading",
+                  fieldset: {
+                    legend: {
+                      text: "Who is this question for?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                  {
+                    value: "Unassigned",
+                    text: "Unassigned",
+                    checked: "true"
+                  },
+                  {
+                    value: "Claimant",
+                    text: "Claimant"
+                  },
+                  {
+                    value: "Internal medical support",
+                    text: "Internal medical support"
+                  },
+                  {
+                    value: "Internal non medical support",
+                    text: "Internal non medical support"
+                  },
+                  {
+                    value: "External health professional",
+                    text: "External health professional"
+                  }
+                  ]
+                }) }}
+
+
+
+                {% from "govuk/components/button/macro.njk" import govukButton %}
+
+                {{ govukButton({
+                  text: "Add question"
+                }) }}
+          </form>
+
+
+<h2 class="govuk-heading-m">Questions</h2>
+
+<div id="queryTable">
+  <table class="govuk-table">
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Question</th>
+              <th scope="col" class="govuk-table__header">Answer</th>
+              <th scope="col" class="govuk-table__header">Contact</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+          {% for query in data['queriesReading'] %}
+          {% if query.section == 'reading-and-understanding' %}
+
+          <tr class="govuk-table__row">
+             <td class="govuk-table__cell">{{ query.textBox }}</td>
+             <td class="govuk-table__cell" style="width:35%;">{{ query.answerBox }}</td>
+             <td class="govuk-table__cell">{{ query.action }}</td>
+             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey" id="question-status">unanswered</strong></td>
+         </tr>
+          {% endif %}
+          {% endfor %}
+
+
+        </tbody>
+</table>
+</div>
+
+<script defer type="text/javascript">
+
+  var noQuery = "{{ data['who-is-question-for-reading'] }}";
+
+  if (noQuery) {
+
+      document.write('');
+      }
+    else {
+      document.write('<p class="govuk-body">No questions have been added yet.</p>');
+      window.onload = function(){
+      document.getElementById('queryTable').style.display = 'none';
+    }
+  }
+
+  </script>-->
+
+  </div>
+</main>
+      </div>
+
+
+{% endblock %}
