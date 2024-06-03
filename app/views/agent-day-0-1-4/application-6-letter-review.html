@@ -10,11 +10,11 @@
 
 {% block content %}
 <form action="entry-home" method="post" class="form">
-  {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      {% include "agent-day-0-1-4/record-id.html" %}
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you need for<br> the decision letter</h1>
@@ -43,8 +43,8 @@
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your total score is:</p>
   <ul class="govuk-list govuk-list--bullet">
-    <li>8 points for the daily living part - this means you have been awarded the standard rate of £68.10 a week</li>
-    <li>0 points for the mobility part - this means you have not been awarded for this part</li>
+    <li>[X] points for the daily living part - this means you have been awarded the standard rate of £68.10 a week</li>
+    <li>[X] points for the mobility part - this means you have not been awarded for this part</li>
   </ul>
 
 
@@ -54,7 +54,7 @@
 
         {% set firstPaymentDetails %}
 
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £5,500.</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £2,300.</p>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This will be paid into your bank account within 3 days.</p>
 
         {% endset %}
@@ -112,14 +112,15 @@
                 {% set dynamicDateRange %}
 
 
-                From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
+                [Day] [Month] [Year]
+                <!-- From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
 
 
                 {% if data["application-6-award-period-end-check"]  == "Yes" %}
                 to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
                 {% else %}
                 (there is no end date)
-                {% endif %}
+                {% endif %} -->
 
                 {% endset %}
 
@@ -143,7 +144,7 @@
                         text: "Award review date"
                       },
                       value: {
-                        text: data['application-6-award-review-date-day'] + ' ' + (data['application-6-award-review-date-month'] | getMonth) + ' ' + data['application-6-award-review-date-year']
+                        text: "[Day] [Month] [Year]"
                       }
                     }
                   ]
@@ -168,7 +169,7 @@
               {% if data["application-about-a1-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a1-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -211,7 +212,7 @@
               {% if data["application-about-a2-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a2-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 10
             </strong>
@@ -254,7 +255,7 @@
               {% if data["application-about-a3-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a3-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -297,7 +298,7 @@
               {% if data["application-about-a4-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a4-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -340,7 +341,7 @@
               {% if data["application-about-a5-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a5-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -383,7 +384,7 @@
               {% if data["application-about-a6-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a6-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -427,7 +428,7 @@
               {% if data["application-about-a7-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a7-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 12
             </strong>
@@ -470,7 +471,7 @@
               {% if data["application-about-a8-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a8-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -513,7 +514,7 @@
               {% if data["application-about-a9-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a9-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 8
             </strong>
@@ -556,7 +557,7 @@
               {% if data["application-about-a10-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a10-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 6
             </strong>
@@ -602,7 +603,7 @@
               {% if data["application-about-a11-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a11-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 12
             </strong>
@@ -645,7 +646,7 @@
               {% if data["application-about-a12-score-overwrite"] %}
               {% include "agent-day-0-1-4/application-about-a12-score-overwrite.html" %}
               {% else %}
-              0
+              [X]
               {% endif %}
               out of 12
             </strong>
