@@ -87,7 +87,7 @@
                     <td class="govuk-table__cell table-spacer"><a href="application-5-about-a1">Preparing food</a></td>
                     <td class="govuk-table__cell table-spacer">
 
-                    {% if data["application-5-about-a1"] == "Agree" %}     0 (A)
+                    {% if data["application-5-about-a1"] == "Agree" %}     2 (B)
                     {% elif data["application-5-about-a1"] == "Amended" %} {% include "agent-0-13/application-5-about-a1-scoreoverwrite.html" %}
                     {% else %}
                     {% endif %}
@@ -150,7 +150,7 @@
                               <td class="govuk-table__cell table-spacer"><a href="application-5-about-a6">Dressing and undressing</a></td>
                               <td class="govuk-table__cell table-spacer">
 
-                              {% if data["application-5-about-a6"] == "Agree" %} 0 (A)
+                              {% if data["application-5-about-a6"] == "Agree" %} 2 (B)
                               {% elif data["application-5-about-a6"] == "Amended" %}  {% include "agent-0-13/application-5-about-a6-scoreoverwrite.html" %}
                               {% else %} 0
                               {% endif %}

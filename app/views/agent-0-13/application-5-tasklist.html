@@ -71,19 +71,6 @@
           {% endif %}
         </li>
 
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="application-1-task-t6" aria-describedby="task-5">
-            <!-- [1-5]  -->Bank details
-          </a>
-          {% if data["record-1-bank-detials-j-1-bank-name"] %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["application-1-task-t6"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["application-1-task-t6"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
-          {% elif data["application-1-task-t6"] == "Request" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done"  id="X">Cannot do</strong>
-
-          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
-          {% endif %}
-        </li>
-
     </ol>
 
 
@@ -112,7 +99,7 @@
       href: "entry-home"
       }) }}
 
-    {% elif data["application-1-task-t5"] == "Done" and data["record-1-bank-detials-j-1-bank-name"] %}
+    {% elif data["application-1-task-t5"] == "Done"%}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
