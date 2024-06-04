@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-13/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "agent-0-13/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+
+      {% include "agent-0-13/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+
+    {% include "agent-0-13/record-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Overview</h3>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Application status: <strong>In progress</strong>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Additional support:<strong> No</strong>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Accessibility support:<strong> No</strong>
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Unacceptable customer behaviour:<strong> No</strong>
+
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong> Application submitted:</strong> 1 August 2023 -->
+
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>Assessment provider report received:</strong> 2 October 2023 -->
+
+  <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">View <a class="govuk-body govuk-!-font-size-24" href="record-1-applications">more details about application.</a> -->
+
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Application date:</strong> 01 August 2023 -->
+
+
+    </p>
+  </div>
+
+
+    </form>
+{% endblock %}
