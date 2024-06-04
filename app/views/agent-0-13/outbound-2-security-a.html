@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <form action="outbound-2-security-b" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I've found the record. I just have a few more questions</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
+
+
+
+      {{ govukRadios({
+        idPrefix: "inbound-1-security-0",
+        name: "inbound-1-security-0",
+        fieldset: {
+          legend: {
+            html: "Where were you born?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Newcastle",
+          checked: (data["inbound-1-security-0"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "Sunderland",
+          checked: (data["inbound-1-security-0"] == "No")
+        },
+        {
+          value: "Dont know",
+          text: "Hartlepool",
+          checked: (data["inbound-1-security-0"] == "Dont know")
+        }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

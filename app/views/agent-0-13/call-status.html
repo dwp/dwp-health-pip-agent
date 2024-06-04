@@ -1,0 +1,38 @@
+
+
+
+{% if data["ecp-other-help"] == "No"%}
+  {% include "explore-header-global-nav-multi.html" %}
+
+
+
+  {% else %}
+
+  <!-- Outbound -->
+      {% if data["outbound-2-finder-name"] == "Yes"%}
+        {% include "explore-header-global-nav-multi-call-notes.html" %}
+
+        {% elif data["outbound-2-call-prep"] == "No" %}
+        {% include "explore-header-global-nav-multi-start-call-bar.html" %}
+
+
+      {% elif data["outbound-2-call-prep"] == "No" and data["outbound-2-finder-name"] == "Yes" %}
+      {% include "explore-header-global-nav-multi-call-notes.html" %}
+
+      {% elif data["ecp-other-help"] == "No"%}
+      {% include "explore-header-global-nav-multi-call.html" %}
+
+      {% elif data["outbound-find-someone-return"] == "Yes" %}
+      {% include "explore-header-global-nav-multi-start-call-bar.html" %}
+
+
+
+
+      {% else %}
+      <!-- Clear -->
+      {% include "explore-header-global-nav-multi.html" %}
+
+      {% endif %}
+
+
+{% endif %}
