@@ -54,8 +54,31 @@
 
         {% set firstPaymentDetails %}
 
+        {% if data["system-application-selector"]  == "1" %}
+
+
+
+        {% else %}
+
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £2,300.</p>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This will be paid into your bank account within 3 days.</p>
+
+        {{ govukSummaryList({
+          rows: [
+          {
+                key: {
+                  text: "First payment"
+                },
+                value: {
+                  html: firstPaymentDetails
+                }
+              }
+            ]
+          }) }}
+
+        {% endif %}
+
+
 
         {% endset %}
 
@@ -87,17 +110,10 @@
             value: {
               html: dynamicOutcome
             }
-          },
-            {
-              key: {
-                text: "First payment"
-              },
-              value: {
-                html: firstPaymentDetails
-              }
-            }
+          }
           ]
         }) }}
+
 
 
               {% if data["system-application-selector"]  == "1" %}
