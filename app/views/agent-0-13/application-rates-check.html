@@ -39,12 +39,13 @@
 {% else %}
 
 
-@dave
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The applicant's first payment is £5,500 - you need to call them to check how they want this to be paid</h1>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Consider calling the applicant about their first payment of £2,300</h1>
 
           <div class="govuk-!-margin-bottom-6">
-            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You also selected 'Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions' in their application.</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You may want to check if they feel comfortable receiving this amount of money in a lump sum if you think they may struggle or are vulnerable in any way.</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You also selected 'Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions' in their application.</p>
 
 <!--
             <p class="govuk-body govuk-!-margin-bottom-2">Within the applciation the applicant and AP </p>
@@ -81,6 +82,11 @@
           value: "Pause",
           text: "No, I want to come back to it later",
           checked: (data["application-rates-check"] == "Pause")
+        },
+        {
+          value: "Action",
+          text: "No, I do not need to call the applicant",
+          checked: (data["application-rates-check"] == "Actions")
         },
         {
         divider: "or"
