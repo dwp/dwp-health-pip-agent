@@ -27,14 +27,14 @@ router.use('/agent-0-9', require('./routes/agent-0-9/router.js'));
 router.use('/agent-0-10', require('./routes/agent-0-10/router.js'));
 router.use('/agent-0-11', require('./routes/agent-0-11/router.js'));
 router.use('/agent-0-12', require('./routes/agent-0-12/router.js'));
-router.use('/agent-0-12', require('./routes/agent-0-13/router.js'));
+router.use('/agent-0-13', require('./routes/agent-0-13/router.js'));
 
 router.use('/citizen-outcome-0-1', require('./routes/citizen-outcome-0-1/router.js'));
 
 router.use('/agent-day-0-1', require('./routes/agent-day-0-1/router.js'));
 router.use('/agent-day-0-1-2', require('./routes/agent-day-0-1-2/router.js'));
 router.use('/agent-day-0-1-3', require('./routes/agent-day-0-1-3/router.js'));
-router.use('/agent-day-0-1-4', require('./routes/agent-day-0-1-3/router.js'));
+router.use('/agent-day-0-1-4', require('./routes/agent-day-0-1-4/router.js'));
 
 module.exports = router
 
