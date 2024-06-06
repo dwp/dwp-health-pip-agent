@@ -45,7 +45,7 @@
 
 
 
-        {% if data["assurance-task-t6"]  == "Good" and data["assurance-task-t7"] == "Good" %}
+        {% if data["assurance-task-t6"]  == "Good" and data["assurance-task-t7"] == "Good" or data["assurance-sub-monolith-1-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Expected"%}
 
         {% set html %}
         <p class="govuk-body govuk-!-font-size-19">This application will now go to an assessment provider</p>

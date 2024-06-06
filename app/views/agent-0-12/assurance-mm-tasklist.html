@@ -62,29 +62,40 @@
 <h1 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-1">@dave Actions to be done</h1>
 
         <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="assurance-task-t6" aria-describedby="task-1">
-            <!-- [1-1]  --> Date of death
+          <a class="app-task-list__task-name" href="assurance-sub-monolith-1" aria-describedby="task-1">
+            <!-- [1-1]  --> Monolith A
           </a>
-          {% if data["assurance-task-t6"] == "Good" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-task-t6"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-task-t6"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% if data["assurance-sub-monolith-1-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-sub-monolith-1-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-1-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
 
         <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="assurance-task-t7" aria-describedby="task-5">
-            <!-- [1-5]  -->Delegated authorities
+          <a class="app-task-list__task-name" href="assurance-sub-monolith-2" aria-describedby="task-5">
+            <!-- [1-1]  --> Monolith B
           </a>
-          {% if data["assurance-task-t7"] == "Good" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-task-t7"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-task-t7"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% if data["assurance-sub-monolith-2-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-sub-monolith-2-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-2-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
         </li>
 
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="assurance-sub-monolith-3" aria-describedby="task-5">
+            <!-- [1-1]  --> Monolith C
+          </a>
+          {% if data["assurance-sub-monolith-3-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-sub-monolith-3-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-3-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
     </ol>
 
 
@@ -100,7 +111,7 @@
   <div class="govuk-grid-row govuk-!-margin-top-0">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["assurance-task-t7"] == "Request" %}
+    {% if data["assurance-sub-monolith-2"] == "Request" %}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You cannot process this application yet</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -116,7 +127,7 @@
       href: "entry-home"
       }) }}
 
-    {% elif data["assurance-task-t6"] == "Good" and data["assurance-task-t7"] == "Good"%}
+    {% elif data["assurance-sub-monolith-1-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Expected"%}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -132,7 +143,7 @@ classes: "govuk-!-margin-right-2"
 }) }}
 
 
-    {% elif data["assurance-task-t7"] == "Bad"%}
+    {% elif data["assurance-sub-monolith-3-1"] == "Unexpected"%}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -148,7 +159,7 @@ classes: "govuk-!-margin-right-2",
 href:"application-1-exit-issue"
 }) }}
 
-{% elif data["assurance-task-t6"] == "Bad" and data["assurance-task-t7"] == "Good"%}
+{% elif data["assurance-sub-monolith-1-1"] == "Unexpected" and data["assurance-sub-monolith-2-1"] == "Expected"%}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -165,7 +176,7 @@ href:"assurance-exit-issue"
 }) }}
 
 
-    {% elif data["assurance-task-t7"] == "Pause" %}
+    {% elif data["assurance-sub-monolith-2"] == "Pause" %}
 
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have paused processing<br>this application</h1>
     <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
