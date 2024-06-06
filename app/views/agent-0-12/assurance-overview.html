@@ -12,19 +12,22 @@
 
 
 
-      {% if data["application-selector"] == "AM" %}
-        Monolith
-        <form action="assurance-monolith" method="post" class="form">
+    {% if data["application-selector"] == "AM" %}
+    <!-- Monolith -->
+    <form action="assurance-monolith" method="post" class="form">
 
-          {% elif data["application-selector"] == "APR" %}
-            Progressive
-            <form action="assurance-pr-tasklist" method="post" class="form">
+      {% elif data["application-selector"] == "AMM" %}
+      <!-- Monolith: Multi -->
+      <form action="assurance-mm-tasklist" method="post" class="form">
 
+    {% elif data["application-selector"] == "APR" %}
+    <!-- Progressive -->
+    <form action="assurance-pr-tasklist" method="post" class="form">
 
-      {% else %}
-      <form action="assurance-tasklist" method="post" class="form">
+    {% else %}
+    <form action="assurance-tasklist" method="post" class="form">
 
-      {% endif %}
+    {% endif %}
 
 
   <div class="govuk-grid-row">
