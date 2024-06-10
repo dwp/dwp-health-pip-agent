@@ -1,50 +1,41 @@
-{% extends "layout.html" %}
+{% extends "layout-eject.html" %}
 
 {% block pageTitle %}
   Process a PIP application
 {% endblock %}
 
 {% block header %}
-
-{% include "explore-header-global-nav-multi.html" %}
+ {% include "explore-header-global-nav-multi.html" %}
 {% endblock %}
 
 {% block content %}
 
+<form action="application-5-tasklist" method="post" class="form">
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">Applications and claims</h1>
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Between 9 February 2023 and today. <a href="X" class="govuk-link" rel="X" target="">Change dates</a>.</p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p> -->
-
+      {% include "agent-0-13/record-id.html" %}
 
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Details about this applcition</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">This that you need to see</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 26 March 2024</p> -->
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Primary condition: Back pain</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Secondary condition: Anxiety</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Age: 40 (1 January 1984)</p>
 
 
-    <div class="govuk-grid-row govuk-!-padding-top-2">
-      <div class="govuk-grid-column-one-third ">
-        {% include "agent-0-13/service-app-claim-menu.html" %}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Secondary condition: Anxiety</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Age: 40 (1 January 1984)</p> -->
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+        </div>
       </div>
 
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">About Name name</h2>
-
-        <table class="govuk-table govuk-!-margin-top-0">
-
-
-
-
-              </div>
-
-
-
-
-      </div>
-    </div>
-  </div>
-
-
+  </form>
 
 {% endblock %}
