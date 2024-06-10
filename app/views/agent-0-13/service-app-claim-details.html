@@ -1,4 +1,4 @@
-{% extends "layout-eject.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -10,26 +10,67 @@
 
 {% block content %}
 
-<form action="application-5-tasklist" method="post" class="form">
+<form action="service-app-claims" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-0-13/record-id.html" %}
-
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Details about this applcition</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This that you need to see</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Status details</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is a page that shows some one what actions can be done</p> -->
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 26 March 2024</p> -->
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Submission date: DD Month Year</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Status: Current</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Who is working on it: Agent Smith</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Name: <b>Jeff Bridges</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">National Insurance number: <b>NA 11 22 33 c</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Submission date: <b>DD Month Year</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Status: <b>Current</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Who is working on it: <b>Agent Smith</b></p>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Call to action</p>
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Age: 40 (1 January 1984)</p> -->
+      {{ govukRadios({
+        idPrefix: "service-app-claim-details",
+        name: "service-app-claim-details",
+        fieldset: {
+          legend: {
+            html: "Do a thing?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "1",
+          text: "What is the thing you need to do?",
+          checked: (data["record-other-actions"] == "A")
+        },
+        {
+          value: "2",
+          text: "Change status",
+          checked: (data["record-other-actions"] == "A")
+        },
+        {
+          value: "3",
+          text: "Action 3",
+          checked: (data["record-other-actions"] == "A")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "4",
+          text: "There is an issue with this application",
+          checked: (data["record-other-actions"] == "B")
+        }
+        ]
+      }) }}
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
 
 
         </div>
