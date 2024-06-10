@@ -20,87 +20,153 @@
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p> -->
 
 
+
+
+
     <div class="govuk-grid-row govuk-!-padding-top-2">
       <div class="govuk-grid-column-one-third ">
         {% include "agent-0-13/service-app-claim-menu.html" %}
       </div>
 
       <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-4">All applications and status</h2>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total applications: <b>20</b></p>
 
-        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">All applications in service</h2>
-        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Between 9 February 2023 and 19 September 2023.</p> -->
+        <table class="govuk-table govuk-!-margin-top-0">
 
-
-
-                  <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Online applications</h3>
-
-
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total received</p>
-                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">152,500</p>
-
-                        </div>
-
-                        </div>
-
-                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-25-percent">Submitted</td>
+            <td class="govuk-table__cell govuk-55-percent">Name</td>
+            <td class="govuk-table__cell govuk-20-percent">Status</td>
+          </tr>
+          </thead>
 
 
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-full">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">Today</td>
+            <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+            <td class="govuk-table__cell table-spacer">Submitted</td>
+            </tr>
 
-                    <div class="govuk-grid-row">
-                      <div class="govuk-grid-column-one-half">
-                        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of the 152,500 online applications received</h3>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">Today</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Submitted</td>
+            </tr>
 
-                      </div>
-                      <div class="govuk-grid-column-one-half">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">Yesderday</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Submitted</td>
+            </tr>
 
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Sent directly to operations</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">87,000</p>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">01/01/2024</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Preparing for assessment</td>
+            </tr>
 
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">01/01/2024</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Preparing for assessment</td>
+              </tr>
 
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Identified to be processed<br> in the new system</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">65,500</p>
-                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Ready for a decision</td>
+              </tr>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Ready for a decision</td>
+              </tr>
 
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">With AP</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">With AP</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">With AP</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Creating a decision</td>
+              </tr>
 
 
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                  <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-one-half">
-                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of the 65,500 processed</h3>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">01/01/2024</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Creating a decision [Paused]</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">01/01/2024</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Nil award</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">01/01/2024</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+              <td class="govuk-table__cell table-spacer">Nil award</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Nil award</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">In payment</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Back to BAU</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Back to BAU</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Back to BAU</td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell table-spacer">01/01/2024</td>
+                <td class="govuk-table__cell table-spacer"><a class="" href="service-app-claim-details" target="">Name Second-LongName</a></td>
+                <td class="govuk-table__cell table-spacer">Back to BAU</td>
+              </tr>
+
+          </table>
 
 
-                    </div>
-                    <div class="govuk-grid-column-one-half">
-
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Processed and completed</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">50,000</p>
-
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Waiting to be processed</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">15,500</p>
-                    </div>
-
-                    </div>
-
-                  </div>
-                </div>
               </div>
 
 
@@ -109,8 +175,6 @@
       </div>
     </div>
   </div>
-</div>
-
 
 
 
