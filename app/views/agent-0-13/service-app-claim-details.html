@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="service-app-claims" method="post" class="form">
+<form action="service-app-claim-details-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -30,7 +30,7 @@
         name: "service-app-claim-details",
         fieldset: {
           legend: {
-            html: "Do a thing?",
+            html: "What do you need to do?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -42,18 +42,18 @@
         items: [
         {
           value: "1",
-          text: "What is the thing you need to do?",
-          checked: (data["record-other-actions"] == "A")
+          text: "Change status",
+          checked: (data["service-app-claim-details"] == "1")
         },
         {
           value: "2",
-          text: "Change status",
-          checked: (data["record-other-actions"] == "A")
+          text: "Add an event to their Event History",
+          checked: (data["service-app-claim-details"] == "2")
         },
         {
           value: "3",
-          text: "Action 3",
-          checked: (data["record-other-actions"] == "A")
+          text: "View something from their application/claim",
+          checked: (data["service-app-claim-details"] == "3")
         },
         {
           divider: "or"
@@ -61,7 +61,7 @@
         {
           value: "4",
           text: "There is an issue with this application",
-          checked: (data["record-other-actions"] == "B")
+          checked: (data["service-app-claim-details"] == "4")
         }
         ]
       }) }}

@@ -443,6 +443,23 @@ router.post(`/eject-reason-router`, (req, res) => {
   }
 })
 
+router.post(`/service-app-claim-details-router`, (req, res) => {
+  const serviceAppClaimActions = req.session.data['service-app-claim-details']
+
+  if (serviceAppClaimActions == '1') {
+    res.redirect(`service-app-status-change`)
+  }
+  else if (serviceAppClaimActions == '2') {
+    res.redirect(`../v13/case-review/event-history.html`)
+  }
+  else if (serviceAppClaimActions == '3') {
+    res.redirect(`/agent-day-0-1-4/application-6-view-evidence`)
+  }
+   else {
+    res.redirect(`eject-overview`)
+  }
+})
+
 
 
 
