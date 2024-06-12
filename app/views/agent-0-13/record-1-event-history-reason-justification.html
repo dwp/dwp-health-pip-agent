@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-1-event-history" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Discrible why this applciation needs to go back to BAU</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This information will be added to the event history within a citizen record so that others can see the reason for returning application to BAU</p>
+
+      {% if data["record-1-event-history-reason"] == "record-1-event-history-reason-other" %}
+
+            <!------------H1 LEGEND------------>
+              {% set legendName %}
+              <h1 class="govuk-body govuk-!-margin-bottom-0">Categorise this event</h1>
+              {% endset %}
+            <!------------Legend--------------->
+
+            {{ govukInput({
+              name: "record-1-event-history-reason-category",
+              id: "record-1-event-history-reason-category",
+              classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
+              label: {
+                html: legendName,
+                classes: "govuk-label--s",
+                isPageHeading: true
+              },
+              hint: {
+                html: ""
+              },
+              value: data["record-1-event-history-reason-category"]
+            }) }}
+
+        {% else %}
+
+        {% endif %}
+
+            <!------------H1 LEGEND------------>
+              {% set legendTextFieldHeader %}
+              <h1 class="govuk-body govuk-!-margin-bottom-0">Add more detail for this issue</h1>
+              {% endset %}
+            <!------------Legend--------------->
+
+
+        {{ govukTextarea({
+          name: "record-1-event-history-reason-other-detail",
+          id: "record-1-event-history-reason-other-detail",
+          classes: " govukTextarea--overwrite",
+          label: {
+            html: legendTextFieldHeader,
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          hint: {
+            html: ""
+          },
+          value: data["record-1-event-history-reason-other-detail"]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
