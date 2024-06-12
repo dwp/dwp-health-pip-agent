@@ -52,23 +52,23 @@
   name: "assurance-sub-monolith-1-1",
   fieldset: {
     legend: {
-      html: "Check 1: Action",
+      html: "Is there a potental SREL within the appliction data?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check details"
+    text: "Places to check: PIP1, PIP2, PIPcs"
   },
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-1-1"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-1-1"] == "Unexpected")
   }
   ]
@@ -81,7 +81,7 @@
   name: "assurance-sub-monolith-1-2",
   fieldset: {
     legend: {
-      html: "Check 2: Action",
+      html: "Does the applicants Natonal insurance number match within SearchLight",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -92,12 +92,12 @@
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-1-2"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-1-2"] == "Unexpected")
   }
   ]
@@ -150,6 +150,16 @@
     value: "Expected",
     text: "Expected",
     checked: (data["assurance-sub-monolith-1-4"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-sub-monolith-1-4"] == "Unexpected")
+  },
+  {
+    value: "Unexpected",
+    text: "Unexpected",
+    checked: (data["assurance-sub-monolith-1-4"] == "Unexpected")
   },
   {
     value: "Unexpected",
