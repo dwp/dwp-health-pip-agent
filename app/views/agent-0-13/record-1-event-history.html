@@ -34,7 +34,7 @@
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
 
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Filter by event type: &nbsp;&nbsp;<a class="govuk-body govuk-!-font-size-19" href="#"><strong>Clear</strong></a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Inbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Outbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Letters</a> </p> -->
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can <a class="" href="record-1-event-history-reason" target="">add new event</a> to the event history</p>
 
 
 <div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
@@ -122,6 +122,19 @@
 
       <!-- SHOW AND TELL START -->
 
+      {% if data["record-1-event-history-reason"] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">{{data["record-1-event-history-reason-category"]}}</td>
+        <td class="govuk-table__cell table-spacer">{{data["record-1-event-history-reason-other-detail"]}} <br><a class="" href="record-1-bank-detials" target="">View detials</a></td>
+        <td class="govuk-table__cell table-spacer"><a class="" href="record-1-bank-detials" target="">XXX</a></td>
+
+        </tr>
+
+      {% else %}
+      {% endif %}
+
       {% if data["search"] %}
 
           <tr class="govuk-table__row">
@@ -153,7 +166,6 @@
             {% endif %}
 
             <!-- SHOW AND TELL END -->
-
 
       {% if data["call-notes"] or data["record-1-bank-detials-j-1-bank-name"] %}
 

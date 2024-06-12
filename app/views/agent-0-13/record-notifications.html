@@ -1,3 +1,16 @@
+{% if data["record-1-event-history-reason"] %}
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Yo! and, Entry was added to the time line</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'information'
+}) }}
+
+{% else %}
+{% endif %}
+
 
 {% if data["find-someone-1-offline-return"]  == "Yes" %}
 
@@ -15,6 +28,8 @@
 
         {% else %}
         {% endif %}
+
+
 
         {% if data["record-other-actions"]  == "Yes" %}
         {% set html %}
@@ -361,6 +376,7 @@
 
 
         {% else %}
+
 
         {% endif %}
 
