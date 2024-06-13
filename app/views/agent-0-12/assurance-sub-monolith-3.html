@@ -52,23 +52,23 @@
   name: "assurance-sub-monolith-3-1",
   fieldset: {
     legend: {
-      html: "Check 1: Action",
+      html: "Is there anything that may affect payability?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check details"
+    text: "Check the health information gather (PIP1 and PIP2)."
   },
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-1"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-1"] == "Unexpected")
   }
   ]
@@ -81,7 +81,7 @@
   name: "assurance-sub-monolith-3-2",
   fieldset: {
     legend: {
-      html: "Check 2: Action",
+      html: "Do they meet the required period condtion ???????",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -92,12 +92,12 @@
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-2"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-2"] == "Unexpected")
   }
   ]
@@ -109,23 +109,23 @@
   name: "assurance-sub-monolith-3-3",
   fieldset: {
     legend: {
-      html: "Check 3: Action",
+      html: "Do they get War Pensioners' Mobility Supplement?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check details"
+    text: "Check the health information gather (PIP1 and PIP2). Email the war pensions team if necessary."
   },
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-3"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
   }
   ]
@@ -137,29 +137,29 @@
   name: "assurance-sub-monolith-3-4",
   fieldset: {
     legend: {
-      html: "Check 4: Action",
+      html: "Do they get Constant Attendance Allowance?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check details"
+    text: "Check the health information gather (PIP1 and PIP2)."
   },
   items: [
   {
     value: "Expected",
-    text: "Expected",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-4"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
   }
   ]
 }) }}
 
-        {{ govukRadios({
+        <!-- {{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
   idPrefix: "assurance-sub-monolith-3-5",
   name: "assurance-sub-monolith-3-5",
@@ -185,7 +185,7 @@
     checked: (data["assurance-sub-monolith-3-5"] == "Unexpected")
   }
   ]
-}) }}
+}) }} -->
 
 {{ govukButton({
   text: "Return to tasklist",
