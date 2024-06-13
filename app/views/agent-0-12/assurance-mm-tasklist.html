@@ -67,6 +67,7 @@
           </a>
           {% if data["assurance-sub-monolith-1-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["assurance-sub-monolith-1-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-1-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
           {% elif data["assurance-sub-monolith-1-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -79,6 +80,7 @@
           </a>
           {% if data["assurance-sub-monolith-2-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["assurance-sub-monolith-2-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-2-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
           {% elif data["assurance-sub-monolith-2-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -91,6 +93,7 @@
           </a>
           {% if data["assurance-sub-monolith-3-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["assurance-sub-monolith-3-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-sub-monolith-3-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
           {% elif data["assurance-sub-monolith-3-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -141,6 +144,22 @@ checked: (data["X"] == "X"),
 text: "Continue",
 classes: "govuk-!-margin-right-2"
 }) }}
+
+{% elif data["assurance-sub-monolith-3-1"] == "Blocked" and data["assurance-sub-monolith-2-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Blocked"%}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details but the PIP2 is missing</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
+
+
+{{ govukButton({
+name: "entry-home",
+value: "X",
+checked: (data["X"] == "X"),
+text: "Continue",
+classes: "govuk-!-margin-right-2"
+}) }}
+
 
 
     {% elif data["assurance-sub-monolith-3-1"] == "Unexpected"%}
