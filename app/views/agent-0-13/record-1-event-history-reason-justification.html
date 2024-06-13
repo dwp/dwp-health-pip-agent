@@ -17,8 +17,21 @@
 
       {% include "agent-0-13/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Discrible why this applciation needs to go back to BAU</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This information will be added to the event history within a citizen record so that others can see the reason for returning application to BAU</p>
+
+
+{% if data["record-1-event-history-reason"] == "record-1-event-history-reason-bau" %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Discrible why this applciation needs to go back to BAU</h1>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This information will be added to the event history within a citizen record so that others can see the reason for returning application to BAU</p>
+
+{% else %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Discrible what the event is</h1>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This information will be added to the event history within a citizen record so that others can see the reason whats happened</p>
+
+
+{% endif %}
+
 
       {% if data["record-1-event-history-reason"] == "record-1-event-history-reason-other" %}
 

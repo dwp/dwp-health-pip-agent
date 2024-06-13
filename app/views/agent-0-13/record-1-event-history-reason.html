@@ -33,18 +33,23 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "record-1-event-history-reason-1",
-          text: "The service doesn't allow me to do what I need to process",
-          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-1")
+          value: "record-1-event-history-reason-bau",
+          text: "I need to move the application back to BAU",
+          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-bau")
         },
         {
-          value: "record-1-event-history-reason-2",
-          text: "Something in the application creates risk to the citizen",
-          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-2")
-        },
-        {
-          value: "record-1-event-history-reason-3",
+          value: "Reason type",
           text: "Reason type",
+          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-3")
+        },
+        {
+          value: "Withdraw application",
+          text: "Withdraw application",
+          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-3")
+        },
+        {
+          value: "Applicant death",
+          text: "Applicant death",
           checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-3")
         },
         {
