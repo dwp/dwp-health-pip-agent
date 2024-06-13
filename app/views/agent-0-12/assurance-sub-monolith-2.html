@@ -24,7 +24,7 @@
       {% include "agent-0-12/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">[Theme 2] Check the applicant's details</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check if anything may affect the applicant's eligibility for PIP</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -231,7 +231,7 @@ idPrefix: "assurance-sub-monolith-2-7",
 name: "assurance-sub-monolith-2-7",
 fieldset: {
 legend: {
-html: "Are they working abroad?",
+html: "Do they get any foreign benefits?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
@@ -259,18 +259,23 @@ idPrefix: "assurance-sub-monolith-2-8",
 name: "assurance-sub-monolith-2-8",
 fieldset: {
 legend: {
-html: "Do they get any foreign benefits?",
+html: "Do they get Disability Living Allowance (DLA) – either rising 16 or natural DLA?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-text: "Check the health information gather (PIP2). Call the applicant if necessary. "
+text: "Check Searchlight."
 },
 items: [
 {
 value: "Expected",
-text: "Yes",
+text: "Yes - rising 16",
+checked: (data["assurance-sub-monolith-2-8"] == "Expected")
+},
+{
+value: "Expected",
+text: "Yes - natural DLA",
 checked: (data["assurance-sub-monolith-2-8"] == "Expected")
 },
 {
@@ -287,23 +292,23 @@ idPrefix: "assurance-sub-monolith-2-9",
 name: "assurance-sub-monolith-2-9",
 fieldset: {
 legend: {
-html: "Do they get Disability Living Allowance (DLA) – either rising 16 or natural DLA?",
+html: "Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-text: "Check Searchlight."
+text: "Check Searchlight. "
 },
 items: [
 {
 value: "Expected",
-text: "Yes - rising 16",
+text: "Yes - CDP",
 checked: (data["assurance-sub-monolith-2-9"] == "Expected")
 },
 {
 value: "Expected",
-text: "Yes - natural DLA",
+text: "Yes - ADP",
 checked: (data["assurance-sub-monolith-2-9"] == "Expected")
 },
 {
@@ -320,39 +325,6 @@ idPrefix: "assurance-sub-monolith-2-10",
 name: "assurance-sub-monolith-2-10",
 fieldset: {
 legend: {
-html: "Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight. "
-},
-items: [
-{
-value: "Expected",
-text: "Yes - CDP",
-checked: (data["assurance-sub-monolith-2-10"] == "Expected")
-},
-{
-value: "Expected",
-text: "Yes - ADP",
-checked: (data["assurance-sub-monolith-2-10"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-10"] == "Unexpected")
-}
-]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-11",
-name: "assurance-sub-monolith-2-11",
-fieldset: {
-legend: {
 html: "Do they get  Armed Forces Personal Independence Payment (AFPIP)?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
@@ -365,12 +337,12 @@ items: [
 {
 value: "Expected",
 text: "Yes",
-checked: (data["assurance-sub-monolith-2-11"] == "Expected")
+checked: (data["assurance-sub-monolith-2-10"] == "Expected")
 },
 {
 value: "Unexpected",
 text: "No",
-checked: (data["assurance-sub-monolith-2-11"] == "Unexpected")
+checked: (data["assurance-sub-monolith-2-10"] == "Unexpected")
 }
 ]
 }) }}
