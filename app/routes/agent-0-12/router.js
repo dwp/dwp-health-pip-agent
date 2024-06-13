@@ -203,7 +203,7 @@ router.post(`/application-selector-router`, (req, res) => {
     res.redirect(`assurance-overview`)
   }
   else if (applicationSelector == 'AMM') {
-    res.redirect(`assurance-overview`)
+    res.redirect(`assurance-mm-tasklist`)
   }
    else {
     res.redirect(`XXX`)
