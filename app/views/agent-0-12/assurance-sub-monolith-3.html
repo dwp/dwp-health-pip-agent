@@ -119,7 +119,7 @@
   name: "assurance-sub-monolith-3-3",
   fieldset: {
     legend: {
-      html: "Do they get War Pensioners' Mobility Supplement?",
+      html: "Do they get War Pensioners' Mobility Supplement (WPMS)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -130,12 +130,12 @@
   items: [
   {
     value: "Expected",
-    text: "Yes",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-3"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "No",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
   }
   ]
@@ -147,7 +147,7 @@
   name: "assurance-sub-monolith-3-4",
   fieldset: {
     legend: {
-      html: "Do they get Constant Attendance Allowance?",
+      html: "Do they get Constant Attendance Allowance (CAA)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -158,12 +158,27 @@
   items: [
   {
     value: "Expected",
-    text: "Yes",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-4"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "No",
+    text: "Yes - exceptional rate",
+    checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
+  },
+  {
+    value: "Unexpected",
+    text: "Yes - intermediate rate",
+    checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
+  },
+  {
+    value: "Unexpected",
+    text: "Yes - full day rate",
+    checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
+  },
+  {
+    value: "Unexpected",
+    text: "Yes - part day rate",
     checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
   },
   {
