@@ -412,6 +412,10 @@ a.govuk-skip-link {text-decoration: underline;}
   padding-left:0px;
 }
 
+.app-task-list__items-noborder {
+  border-bottom: 0px !important;
+}
+
 .app-task-list__section-number-pip {
   padding-left:0px;
 }
