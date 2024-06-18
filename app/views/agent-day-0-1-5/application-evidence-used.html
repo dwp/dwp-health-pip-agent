@@ -1,0 +1,393 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-view-evidence-b" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-5/record-id.html" %}
+
+                <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell the service that you used, that was suppporting</h2>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Do not add documents that did not support the applciation</p>
+
+
+                {{ govukCheckboxes({
+                  idPrefix: "application-evidence-used",
+                  name: "application-evidence-used",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "Select all documents that are supporting of the application",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--m"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "111",
+                      text: "the 'How your disability affects you' form (PIP2)",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your care home	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your care plan	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in your Certificate of Vision Impairment	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your community mental health team	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your day centre	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided on your enquiry form	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the eye care professional's report	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your General Practitioner's surgery	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the health care professional assessment for Employment and Support Allowance	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the health care professional assessment for Incapacity Benefit	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the health professional consultation report	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the health professional review report	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the health professional supplementary advice	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Home Office	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the hospital	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Customer Compliance Officer	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Fraud Investigation Service	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the interview under caution	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by Jobcentre Plus	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your local authority	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Pension Service	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Primary Care Trust	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Prison Service	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your school	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your social service advisor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your social worker	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by surveillance logs	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your teacher	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by your visiting officer's report	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the Welfare Rights Advisor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your community psychiatric nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your community psychiatric nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your community psychiatric nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your consultant	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your consultant	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your consultant	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your counsellor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your counsellor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your counsellor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in the letter from your General Practitioner	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in the report from your General Practitioner	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in the telephone advice from your General Practitioner	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your hospital doctor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your hospital doctor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your hospital doctor	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by letter from your occupational therapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your occupational therapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your occupational therapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your physiotherapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your physiotherapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your physiotherapist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your psychiatric social worker	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your psychiatric social worker	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your psychiatric social worker	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your psychiatrist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your psychiatrist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your psychiatrist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your psychologist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your psychologist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your psychologist	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the letter from your specialist nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the report from your specialist nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided by the telephone advice from your specialist nurse	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in your claim for Employment and Support Allowance	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in your claim for Disability Living Allowance	",
+                      checked: (data["application-evidence-used"] == "1")
+                    },
+                    {
+                      value: "111",
+                      text: "	the information provided in your claim for Industrial Injuries Disablement Benefit	",
+                      checked: (data["application-evidence-used"] == "1")
+                    }
+                  ]
+                }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
