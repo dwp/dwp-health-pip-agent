@@ -135,12 +135,42 @@
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
 
 
+{{ govukRadios({
+  idPrefix: "assurance-mm-tasklist-outcome",
+  name: "assurance-mm-tasklist-outcome",
+  fieldset: {
+    legend: {
+      html: "What do you want to do now?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "AP",
+    text: "Send to assessment provider",
+    checked: (data["assurance-mm-tasklist-outcome"] == "AP")
+  },
+  {
+    value: "BAU",
+    text: "Send appliciton back to BAU",
+    checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
+  },
+  {
+    value: "Withdraw",
+    text: "Withdraw",
+    checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
+  }
+  ]
+}) }}
+
 {{ govukButton({
-name: "entry-home",
-value: "X",
-checked: (data["X"] == "X"),
-text: "Continue",
-classes: "govuk-!-margin-right-2"
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
 }) }}
 
 {% elif data["assurance-sub-monolith-3-1"] == "Blocked" and data["assurance-sub-monolith-2-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Blocked"%}
@@ -148,16 +178,6 @@ classes: "govuk-!-margin-right-2"
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details but the PIP2 is missing</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
-
-
-
-{{ govukButton({
-name: "entry-home",
-value: "X",
-checked: (data["X"] == "X"),
-text: "Continue",
-classes: "govuk-!-margin-right-2"
-}) }}
 
 
 
@@ -170,58 +190,49 @@ classes: "govuk-!-margin-right-2"
   {% include "agent-day-0-1-5/assurance-sub-monolith-outcome-list.html" %}
 
 
+  {{ govukRadios({
+    idPrefix: "assurance-mm-tasklist-outcome",
+    name: "assurance-mm-tasklist-outcome",
+    fieldset: {
+      legend: {
+        html: "What do you want to do now?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    classes: "govuk-radios",
+    items: [
+    {
+      value: "AP",
+      text: "Send to assessment provider",
+      checked: (data["assurance-mm-tasklist-outcome"] == "AP")
+    },
+    {
+      value: "BAU",
+      text: "Send appliciton back to BAU",
+      checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
+    },
+    {
+      value: "Withdraw",
+      text: "Withdraw",
+      checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
+    }
+    ]
+  }) }}
 
-{{ govukButton({
-name: "process-c-nil-task-list",
-value: "X",
-checked: (data["X"] == "X"),
-text: "Continue",
-classes: "govuk-!-margin-right-2",
-href:"application-1-exit-issue"
-}) }}
-
-{% elif data["assurance-sub-monolith-1-1"] == "Unexpected" and data["assurance-sub-monolith-2-1"] == "Expected"%}
-
-<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
-<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can tell us more about the issue on the next screen.<br>We will then send the application to someone who can resolve this issue.</p>
-
-
-
-{{ govukButton({
-name: "process-c-nil-task-list",
-value: "X",
-checked: (data["X"] == "X"),
-text: "Continue",
-classes: "govuk-!-margin-right-2",
-href:"assurance-exit-issue"
-}) }}
-
-
-    {% elif data["assurance-sub-monolith-2"] == "Pause" %}
-
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have paused processing<br>this application</h1>
-    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to verify all details before you can continue.<br>We have saved the work you have done so far.</p>
-
-
-    {{ govukButton({
-    name: "process-c-nil-task-list",
-    value: "UF",
-    checked: (data["process-c-nil-task-list"] == "UF"),
-    text: "Exit and continue later",
-    classes: "govuk-button--secondary",
-    href: "assurance-exit-issue"
-    }) }}
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
 
 
     {% else %}
 
 
     {% endif %}
-
-
-
 
 
         </div>
