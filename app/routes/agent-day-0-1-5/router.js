@@ -384,6 +384,17 @@ router.post(`/award-dates-payment-check-router`, (req, res) => {
   }
 })
 
+router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
+  const assuranceOutcomeTaskList = req.session.data['assurance-mm-tasklist-outcome']
+
+  if (assuranceOutcomeTaskList == 'AP') {
+    res.redirect(`entry-home`)
+  }
+   else {
+    res.redirect(`exit-event-history`)
+  }
+})
+
 
 
 

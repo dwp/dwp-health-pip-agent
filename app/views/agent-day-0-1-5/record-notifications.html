@@ -22,6 +22,18 @@
       type: 'success'
     }) }}
 
+    {% elif data["assurance-mm-tasklist-outcome"] == "AP" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">This application will now go to an assessment provider</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
 
 
   {% else %}
