@@ -48,6 +48,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '3') {
     res.redirect(`award-dates-data-input`)
   }
+  else if (applicationSelector == '0') {
+    res.redirect(`assurance-mm-tasklist`)
+  }
    else {
     res.redirect(`XXX`)
   }
