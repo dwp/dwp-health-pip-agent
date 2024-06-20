@@ -281,14 +281,14 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   },
   items: [
     {
-    value: "Expected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-3-6"] == "Expected")
-  },
-  {
     value: "Unexpected",
     text: "Yes",
     checked: (data["assurance-sub-monolith-3-6"] == "Unexpected")
+  },
+  {
+    value: "Expected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-3-6"] == "Expected")
   }
   ]
 }) }}
@@ -309,11 +309,6 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   },
   items: [
   {
-    value: "Expected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-3-7"] == "Expected")
-  },
-  {
     value: "Unexpected",
     text: "Yes - exceptional rate",
     checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
@@ -332,7 +327,12 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
     value: "Unexpected",
     text: "Yes - part day rate",
     checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  }
+  }  ,
+  {
+      value: "Expected",
+      text: "No",
+      checked: (data["assurance-sub-monolith-3-7"] == "Expected")
+    }
   ]
 }) }}
 
