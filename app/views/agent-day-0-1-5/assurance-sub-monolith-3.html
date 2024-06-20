@@ -24,7 +24,7 @@
       {% include "agent-0-12/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check if anything may affect the applicant's entitlement to PIP</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any benefits or if the applicant is working abroad</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -126,7 +126,7 @@ classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-text: "2 Check the registration (PIP1). Call the applicant if necessary. "
+text: "Check registration (PIP1). Call the applicant if necessary. "
 },
 items: [
 {
@@ -148,7 +148,7 @@ idPrefix: "assurance-sub-monolith-3-2",
 name: "assurance-sub-monolith-3-2",
 fieldset: {
 legend: {
-html: "2 Do they get any foreign benefits?",
+html: "Do they get any foreign benefits?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
@@ -176,7 +176,7 @@ idPrefix: "assurance-sub-monolith-3-3",
 name: "assurance-sub-monolith-3-3",
 fieldset: {
 legend: {
-html: "3 Do they get Disability Living Allowance (DLA)?",
+html: "Do they get Disability Living Allowance (DLA)?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
@@ -209,7 +209,7 @@ idPrefix: "assurance-sub-monolith-3-4",
 name: "assurance-sub-monolith-3-4",
 fieldset: {
 legend: {
-html: "3 Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
+html: "Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
@@ -242,23 +242,23 @@ idPrefix: "assurance-sub-monolith-3-5",
 name: "assurance-sub-monolith-3-5",
 fieldset: {
 legend: {
-html: "3 !! Do they get Armed Forces Personal Independence Payment (AFPIP)?",
+html: "Do they get Armed Forces Personal Independence Payment (AFPIP)?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-  text: "Check Searchlight. VET UK Email the war pensions team if necessary."
+  text: "Check Searchlight and contact Veterans UK if necessary."
 },
 items: [
 {
 value: "Unexpected",
-text: "Yes",
+text: "No",
 checked: (data["assurance-sub-monolith-3-5"] == "Unexpected")
 },
 {
 value: "Expected",
-text: "No",
+text: "Yes",
 checked: (data["assurance-sub-monolith-3-5"] == "Expected")
 }
 ]
@@ -271,23 +271,23 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   name: "assurance-sub-monolith-3-6",
   fieldset: {
     legend: {
-      html: "3 !!! Do they get War Pensioners' Mobility Supplement (WPMS)?",
+      html: "Do they get War Pensioners' Mobility Supplement (WPMS)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check Searchlight. Email the war pensions team if necessary."
+    text: "Check Searchlight and email the war pensions team if necessary."
   },
   items: [
     {
     value: "Expected",
-    text: "Yes",
+    text: "No",
     checked: (data["assurance-sub-monolith-3-6"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "No",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-6"] == "Unexpected")
   }
   ]
@@ -299,7 +299,7 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   name: "assurance-sub-monolith-3-7",
   fieldset: {
     legend: {
-      html: "3 !!! Do they get Constant Attendance Allowance (CAA)?",
+      html: "Do they get Constant Attendance Allowance (CAA)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
