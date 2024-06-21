@@ -16,8 +16,15 @@
 {% block content %}
 
   <div class="govuk-grid-row">
+
+    {% if data["system-application-selector"] == "05" %}
+    <!-- Monolith -->
+    <form action="assurance-linear-outcome" method="post" class="form">
+
+    {% else %}
     <form action="assurance-mm-tasklist" method="post" class="form">
 
+    {% endif %}
 
     <div class="govuk-grid-column-two-thirds">
 
@@ -364,10 +371,24 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   ]
 }) }} -->
 
-{{ govukButton({
-  text: "Return to tasklist",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
+{% if data["system-application-selector"] == "05" %}
+<!-- Monolith -->
+<form action="assurance-sub-monolith-2" method="post" class="form">
+
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+{% else %}
+<form action="assurance-mm-tasklist" method="post" class="form">
+
+  {{ govukButton({
+    text: "Return to tasklist",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+{% endif %}
 
 
         </div>
