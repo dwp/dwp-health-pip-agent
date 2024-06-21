@@ -51,6 +51,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '0') {
     res.redirect(`assurance-mm-tasklist`)
   }
+  else if (applicationSelector == '05') {
+    res.redirect(`assurance-linear-overview`)
+  }
    else {
     res.redirect(`XXX`)
   }
@@ -370,6 +373,7 @@ router.post(`/award-dates-review-manual-router`, (req, res) => {
     res.redirect(`award-dates-playback`)
   }
 })
+
 
 
 
