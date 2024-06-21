@@ -394,6 +394,9 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
   if (assuranceOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)
   }
+  else if (assuranceOutcomeTaskList == 'BAU') {
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
    else {
     res.redirect(`exit-event-history`)
   }
