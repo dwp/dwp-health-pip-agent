@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-5/record-id.html" %}
+      {% include "agent-day-0-1-5/record-id-base.html" %}
 
                 <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Review information and select documents you used</h2>
                 <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
@@ -39,7 +39,7 @@
                   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents service</a></p>
 
 
-                  <h1 class="govuk-heading-m govuk-!-padding-top-4 govuk-!-margin-bottom-0 ">Select which documents you used</h1>
+                  <h1 class="govuk-heading-m govuk-!-padding-top-4 govuk-!-margin-bottom-0">Select which documents you used</h1>
 
                       <table class="govuk-table">
                         <thead class="govuk-table__head">
@@ -51,14 +51,14 @@
                       <tr class="govuk-table__row">
                           <td class="govuk-table__cell table-spacer">
                             <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
-                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-evidence-used">Select documents (A)</a>
+                            <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-evidence-used">Select documents (A)</a>
                               {% if data["application-evidence-used"] %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
 
                               {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
                               {% endif %}
                             </p>
 
-<br>
+<br> -->
 
                             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-evidence-used-b">Select documents (B)</a>
                               {% if data["application-evidence-used"] %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
