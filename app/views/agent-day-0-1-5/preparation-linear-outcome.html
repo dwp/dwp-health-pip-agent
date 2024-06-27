@@ -11,7 +11,7 @@
 {% block content %}
 
 
-    <form action="assurance-mm-tasklist-outcome-router" method="post" class="form">
+    <form action="preparation-linear-outcome-router" method="post" class="form">
 
 
 
@@ -37,8 +37,8 @@
 
 
           {{ govukRadios({
-            idPrefix: "assurance-mm-tasklist-outcome",
-            name: "assurance-mm-tasklist-outcome",
+            idPrefix: "preparation-linear-outcome",
+            name: "preparation-linear-outcome",
             fieldset: {
               legend: {
                 html: "What do you want to do now?",
@@ -52,23 +52,26 @@
             classes: "govuk-radios",
             items: [
             {
-              value: "AP",
-              text: "Send application to assessment provider",
-              checked: (data["assurance-mm-tasklist-outcome"] == "AP")
+              value: "Ready",
+              text: "Continue to decision",
+              checked: (data["preparation-linear-outcome"] == "Ready")
+            },
+            {
+              divider: "or"
             },
             {
               value: "BAU",
               text: "Send application back to BAU",
-              checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
+              checked: (data["preparation-linear-outcome"] == "BAU")
             },
             {
               value: "Withdraw",
               text: "Withdraw application",
-              checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
+              checked: (data["preparation-linear-outcome"] == "Withdraw")
             },
             {
               value: "Disallow",
-              text: "Disallow application Why is this not in here?",
+              text: "Disallow application Why is this not in here and in PreCHecks??",
               checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
             }
             ]
