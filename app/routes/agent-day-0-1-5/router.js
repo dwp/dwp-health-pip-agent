@@ -409,7 +409,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']
 
   if (preparationOutcomeTaskList == 'Ready') {
-    res.redirect(`application-6-overview`)
+    res.redirect(`application-6-about`)
   }
   else if (preparationOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)

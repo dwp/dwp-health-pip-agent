@@ -47,7 +47,7 @@
 
 
 
-        {{ govukRadios({
+        <!-- {{ govukRadios({
       classes: "govuk-radios--small govuk-!-margin-bottom-4",
       idPrefix: "assurance-sub-monolith-2-1",
       name: "assurance-sub-monolith-2-1",
@@ -73,7 +73,7 @@
       checked: (data["assurance-sub-monolith-2-1"] == "Expected")
       }
       ]
-      }) }}
+      }) }} -->
 
 
         {{ govukRadios({
@@ -104,6 +104,10 @@
         ]
         }) }}
 
+        {{govukTag({
+          text: "Edit",
+          classes: "govuk-tag--green"
+        })}}
 
         {{ govukRadios({
         classes: "govuk-radios--small govuk-!-margin-bottom-4",
@@ -111,7 +115,7 @@
         name: "assurance-sub-monolith-2-3",
         fieldset: {
         legend: {
-        html: "Is there evidence of fraud present?",
+        html: "Is there evidence of fraud present? (Might need to cover a few other areas @sarah)",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m "
         }
