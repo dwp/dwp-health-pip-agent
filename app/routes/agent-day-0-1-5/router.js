@@ -49,7 +49,7 @@ router.post(`/system-application-selector-router`, (req, res) => {
     res.redirect(`award-dates-data-input`)
   }
   else if (applicationSelector == '4') {
-    res.redirect(`post AP`)
+    res.redirect(`preparation-linear-overview`)
   }
   else if (applicationSelector == '0') {
     res.redirect(`assurance-mm-tasklist`)
@@ -398,6 +398,23 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (assuranceOutcomeTaskList == 'BAU') {
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
+   else {
+    res.redirect(`exit-event-history`)
+  }
+})
+
+router.post(`/preparation-linear-outcome-router`, (req, res) => {
+  const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']
+
+  if (preparationOutcomeTaskList == 'Ready') {
+    res.redirect(`application-6-overview`)
+  }
+  else if (preparationOutcomeTaskList == 'AP') {
+    res.redirect(`entry-home`)
+  }
+  else if (preparationOutcomeTaskList == 'BAU') {
     res.redirect(`/agent-0-13/eject-reason`)
   }
    else {
