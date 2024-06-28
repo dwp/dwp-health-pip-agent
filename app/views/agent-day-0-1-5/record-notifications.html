@@ -22,7 +22,7 @@
       type: 'success'
     }) }}
 
-    {% elif data["assurance-mm-tasklist-outcome"] == "AP" %}
+    {% elif data["assurance-mm-tasklist-outcome"] == "AP" or data["ftc-make-contact"] == "Valid" or data["fta-make-contact"] == "Invalid"  %}
 
 
     {% set html %}
@@ -34,7 +34,41 @@
       type: 'success'
     }) }}
 
+    {% elif data["ftc-make-contact"] == "Invalid" or data["fta-make-contact"] == "Invalid" %}
 
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">Withdraw process</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'information'
+    }) }}
+
+    {% elif data["ftx-contact-issues"] == "1" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">!!! Paused How are we doing this? Agent is blocked</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'information'
+    }) }}
+
+    {% elif data["ftx-contact-issues"] == "2" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">??? Auto letter to contact DWP about FTA / FTC</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
 
   {% else %}
 
