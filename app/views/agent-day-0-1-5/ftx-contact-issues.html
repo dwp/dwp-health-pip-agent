@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="entry-home" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-5/record-id-base.html" %}
+
+
+        {{ govukRadios({
+          idPrefix: "ftx-contact-issues",
+          name: "ftx-contact-issues",
+          fieldset: {
+            legend: {
+              html: "How many times have you tried to call the applicant?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "You can try three times to call, after the third you will need to send a letter"
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "1",
+            text: "This is my first attempt",
+            checked: (data["ftx-contact-issues"] == "1")
+          },
+          {
+            value: "1",
+            text: "I've called them twice",
+            checked: (data["ftx-contact-issues"] == "1")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "2",
+            text: "Tired to call three times - I need to send a letter",
+            checked: (data["ftx-contact-issues"] == "2")
+          }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

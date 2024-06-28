@@ -57,6 +57,12 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '05') {
     res.redirect(`assurance-linear-overview`)
   }
+  else if (applicationSelector == '5') {
+    res.redirect(`ftc-make-contact`)
+  }
+  else if (applicationSelector == '6') {
+    res.redirect(`fta-make-contact`)
+  }
    else {
     res.redirect(`XXX`)
   }
@@ -422,6 +428,36 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   }
 })
 
+
+
+
+router.post(`/fta-make-contact-router`, (req, res) => {
+  const ftaOutcome = req.session.data['fta-make-contact']
+
+  if (ftaOutcome == 'Valid') {
+    res.redirect(`entry-home`)
+  }
+  else if (ftaOutcome == 'Invalid') {
+    res.redirect(`actions-to-withdraw`)
+  }
+   else {
+     res.redirect(`ftx-contact-issues`)
+  }
+})
+
+router.post(`/ftc-make-contact-router`, (req, res) => {
+  const ftcOutcome = req.session.data['ftc-make-contact']
+
+  if (ftcOutcome == 'Valid') {
+    res.redirect(`entry-home`)
+  }
+  else if (ftcOutcome == 'Invalid') {
+    res.redirect(`actions-to-withdraw`)
+  }
+   else {
+     res.redirect(`ftx-contact-issues`)
+  }
+})
 
 
 
