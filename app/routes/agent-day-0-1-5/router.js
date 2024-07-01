@@ -440,6 +440,9 @@ router.post(`/fta-make-contact-router`, (req, res) => {
   else if (ftaOutcome == 'Invalid') {
     res.redirect(`actions-to-withdraw`)
   }
+  else if (ftaOutcome == 'Disallow') {
+    res.redirect(`actions-to-disallow`)
+  }
    else {
      res.redirect(`ftx-contact-issues`)
   }
@@ -453,6 +456,9 @@ router.post(`/ftc-make-contact-router`, (req, res) => {
   }
   else if (ftcOutcome == 'Invalid') {
     res.redirect(`actions-to-withdraw`)
+  }
+  else if (ftcOutcome == 'Disallow') {
+    res.redirect(`actions-to-disallow`)
   }
    else {
      res.redirect(`ftx-contact-issues`)
