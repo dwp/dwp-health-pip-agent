@@ -415,7 +415,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']
 
   if (preparationOutcomeTaskList == 'Ready') {
-    res.redirect(`application-6-about`)
+    res.redirect(`application-6-overview`)
   }
   else if (preparationOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)
@@ -440,7 +440,7 @@ router.post(`/fta-make-contact-router`, (req, res) => {
   else if (ftaOutcome == 'Invalid') {
     res.redirect(`actions-to-withdraw`)
   }
-  else if (ftaOutcome == 'Disallow') {
+  else if (ftaOutcome  == 'Disallow') {
     res.redirect(`actions-to-disallow`)
   }
    else {
