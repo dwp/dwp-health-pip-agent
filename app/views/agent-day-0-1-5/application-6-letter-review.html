@@ -17,7 +17,7 @@
       {% include "agent-day-0-1-5/record-id-base.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you need for<br> the decision letter</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check information to be used<br>for the decision letter</h1>
 
       <!------------H1 LEGEND------------>
 
@@ -85,7 +85,7 @@
         <!------------OUTCOME LEGEND------------>
 
 
-      {{ govukSummaryList({
+      <!-- {{ govukSummaryList({
         rows: [
           {
             key: {
@@ -112,7 +112,20 @@
             }
           }
           ]
-        }) }}
+        }) }} -->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Outcome"
+              },
+              value: {
+                html: dynamicOutcome
+              }
+            }
+            ]
+          }) }}
 
 
 
@@ -177,7 +190,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            1. Preparing food:
+            Preparing food
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -220,7 +233,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            2. Taking nutrition
+            Taking nutrition
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -263,7 +276,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            3. Managing therapy or monitoring a health condition
+            Managing therapy or monitoring a health condition
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -306,7 +319,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            4. Washing and bathing
+            Washing and bathing
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -349,7 +362,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            5. Managing toilet needs or incontinence
+            Managing toilet needs or incontinence
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -392,7 +405,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            6. Dressing and undressing
+            Dressing and undressing
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -436,7 +449,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            7. Communicating verbally
+            Communicating verbally
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -479,7 +492,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            8. Reading and understanding signs, symbols and words
+            Reading and understanding signs, symbols and words
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -522,7 +535,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            9. Engaging with other people face to face
+            Engaging with other people face to face
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -565,7 +578,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            10. Making budgeting decisions
+            Making budgeting decisions
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -611,7 +624,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            11. Planning and following journeys
+            Planning and following journeys
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -654,7 +667,7 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            12. Moving around
+             Moving around
           </dt>
           <dd class="govuk-summary-list__value">
 
@@ -694,20 +707,22 @@
       </dl>
 
 
-<br><br>
-
-<h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What you need to do now</h3>
+<!-- <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What you need to do now</h3>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Use the information from the table to create a decision letter using the Microsoft Word template.<br>You then need to send this letter to the applicant.</p>
 
 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens after you send the letter</h3>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This application will continue to be processed outside of this service.</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">We will save a copy of this page in the applicant's record. No work you have done in the service will be lost.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">We will save a copy of this page in the applicant's record. No work you have done in the service will be lost.</p> -->
+
+<h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens after you send the letter</h3>
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This application will continue to be processed outside of this service.</p> -->
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Once the arreas payments are created that detail will be added to the letter and it will<br>be sent along with your content here, @dave</p>
 
 
 
 
         {{ govukButton({
-          text: "Finish and close",
+          text: "Confirm letter content and continue",
           classes: "govuk-!-margin-bottom-8"
         }) }}
 
