@@ -465,6 +465,16 @@ router.post(`/ftc-make-contact-router`, (req, res) => {
   }
 })
 
+router.post(`/application-vcc-check-router`, (req, res) => {
+  const vccCheck = req.session.data['application-vcc-check']
+
+  if (vccCheck == 'BAU') {
+    res.redirect(`eject-reason-justification`)
+  }
+   else {
+     res.redirect(`application-6-letter-review`)
+  }
+})
 
 
 
