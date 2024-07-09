@@ -29,7 +29,7 @@
 
 
           {% else %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There was no issues with this application</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are no issues with this application</h1>
 
 
 
@@ -65,11 +65,6 @@
               value: "Withdraw",
               text: "Withdraw application",
               checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
-            },
-            {
-              value: "Disallow",
-              text: "Disallow application",
-              checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
             }
             ]
           }) }}
