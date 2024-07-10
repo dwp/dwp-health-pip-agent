@@ -10,13 +10,14 @@
 
 {% block content %}
 
-<form action="eject-reason-justification" method="post" class="form">
+<form action="eject-reason-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-13/record-id.html" %}
 
+Pelican
       {{ govukRadios({
         idPrefix: "eject-reason",
         name: "eject-reason",
@@ -33,19 +34,42 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "eject-reason-1",
+          value: "a",
           text: "The service does not let me do what I need to process it",
-          checked: (data["eject-reason"] == "eject-reason-1")
+          checked: (data["eject-reason"] == "a")
         },
         {
-          value: "eject-reason-2",
-          text: "Something creates risk to the applicant",
-          checked: (data["eject-reason"] == "eject-reason-2")
+          value: "a",
+          text: "Something creates risk to the applicant (Vulnerabilities)",
+          checked: (data["eject-reason"] == "a")
         },
         {
-          value: "eject-reason-3",
-          text: "Issues were found while preparing it for an assessment provider",
-          checked: (data["eject-reason"] == "eject-reason-3")
+          divider: "Pelican"
+        },
+        {
+          value: "a",
+          text: "Disallow application",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Withdraw application",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Application needs to be moved to PIPcs (If processing this is already known)",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "extend",
+          text: "Extend time to complete HIG (PIP2)",
+          checked: (data["eject-reason"] == "extend")
+        },
+        {
+          value: "a",
+          text: "IDV was completed over the phone (Passed or failed)",
+          checked: (data["eject-reason"] == "a")
         },
         {
           value: "eject-reason-other",
@@ -54,8 +78,6 @@
         }
         ]
       }) }}
-
-
 
       {{ govukButton({
         text: "Continue",

@@ -432,11 +432,14 @@ router.post(`/application-rates-check-router`, (req, res) => {
 router.post(`/eject-reason-router`, (req, res) => {
   const ejectReason = req.session.data['eject-reason']
 
-  if (ejectReason == 'eject-reason-other-1') {
+  if (ejectReason == 'a') {
     res.redirect(`eject-reason-justification`)
   }
   else if (ejectReason == 'eject-reason-other') {
-    res.redirect(`eject-reason-other`)
+    res.redirect(`eject-reason-justification`)
+  }
+  else if (ejectReason == 'extend') {
+    res.redirect(`extend-journey`)
   }
    else {
     res.redirect(`eject-reason-justification`)
