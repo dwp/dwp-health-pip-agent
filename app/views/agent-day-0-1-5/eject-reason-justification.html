@@ -10,14 +10,14 @@
 
 {% block content %}
 
-<form action="eject-download" method="post" class="form">
+<form action="eject-data" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-13/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What issues were found while processing this applicaiton?</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What issues were found when [Prep for AP] or [Prep for Decision] or [Making a decision]?</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This will be added to the applicant's event history in their record, so others can see the reason for sending the application back to BAU.</p>
 
       <!-- {% if data["eject-reason"] == "eject-reason-other" %} -->

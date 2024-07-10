@@ -407,7 +407,7 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`/agent-0-13/eject-reason`)
   }
    else {
-    res.redirect(`exit-event-history`)
+    res.redirect(`eject-reason-justification`)
   }
 })
 
