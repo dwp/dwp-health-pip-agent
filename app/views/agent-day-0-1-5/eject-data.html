@@ -1,0 +1,328 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent-0-13/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You need to move application<br>data back to PIPcs</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You need to do the following things.</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Help from SWIs</p>
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Prepare an application<br>for an assessment<br>provider</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent">Issue 1</td>
+                <td class="govuk-table__cell govuk-40-percent"><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue 2</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue 2</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue X</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Issue X</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Yes</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Prepare an application<br>for a desison</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent">Issue 1</td>
+                <td class="govuk-table__cell govuk-40-percent"><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue 2</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue 2</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell ">Issue X</td>
+                <td class="govuk-table__cell "><b>Yes</b></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Issue X</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Yes</b></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-8">Daily living scoring</h3>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Preparing food</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+          {% if data["application-about-a1-score-overwrite"] %}
+          {% include "agent-day-0-1-5/application-about-a1-score-overwrite.html" %}
+          {% else %}
+          [X]
+          {% endif %}
+          out of 8
+          </p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-padding-top-1">
+            {% include "agent-day-0-1-5/application-about-a1-descriptor-overwrite.html" %}
+          </p>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Taking nutrition</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+          {% if data["application-about-a1-score-overwrite"] %}
+          {% include "agent-day-0-1-5/application-about-a1-score-overwrite.html" %}
+          {% else %}
+          [X]
+          {% endif %}
+          out of 8
+          </p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-padding-top-1">
+            {% include "agent-day-0-1-5/application-about-a1-descriptor-overwrite.html" %}
+          </p>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Last activity scored</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+          {% if data["application-about-a1-score-overwrite"] %}
+          {% include "agent-day-0-1-5/application-about-a1-score-overwrite.html" %}
+          {% else %}
+          [X]
+          {% endif %}
+          out of 8
+          </p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-padding-top-1">
+            {% include "agent-day-0-1-5/application-about-a1-descriptor-overwrite.html" %}
+          </p>
+
+        </div>
+      </div>
+
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-8">Mobility scoring</h3>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Preparing food</p>
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+                {% if data["application-about-a1-score-overwrite"] %}
+                {% include "agent-day-0-1-5/application-about-a1-score-overwrite.html" %}
+                {% else %}
+                [X]
+                {% endif %}
+                out of 8
+                </p>
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-padding-top-1">
+                  {% include "agent-day-0-1-5/application-about-a1-descriptor-overwrite.html" %}
+                </p>
+
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-third">
+                    <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Outcome and dates</p>
+                  </div>
+
+                  <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter govuk-!-padding-top-1">
+                        <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Total score</p>
+                      </div>
+                      <div class="govuk-grid-column-three-quarters govuk-!-padding-top-1">
+
+                          <ul class="govuk-list govuk-list--bullet">
+                          <li>12 points for the daily living part - this means you have been awarded the enhanced rate</li>
+                          <li>12 points for the mobility part - this means you have been awarded the enhanced rate</li>
+                        </ul>
+
+                      </div>
+
+                      <div class="govuk-grid-column-full">
+                      <table class="govuk-table">
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-25-percent"><b>Award date</b></td>
+                            <td class="govuk-table__cell govuk-75-percent">20 November 2023</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Award review date</b></td>
+                            <td class="govuk-table__cell govuk-table--no-bottom-border">19 November 2026</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        </div>
+
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+            </div>
+
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+      {{ govukRadios({
+        idPrefix: "eject-data",
+        name: "eject-data",
+        fieldset: {
+          legend: {
+            text: "Has data has now been moved back to PIPcs?" ,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["eject-data"] == "Yes"),
+                conditional: {
+                  html: scoreOverwite
+                }
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["eject-data"] == "No")
+        }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Confirm data transfer complete",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "I have moved over the data"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
