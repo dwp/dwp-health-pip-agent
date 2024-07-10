@@ -18,10 +18,15 @@
       {% include "agent-0-13/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You need to move application<br>data back to PIPcs</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">You need to do the following things.</p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Help from SWIs</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You need to move application<br>data back to PIPcs</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>You need to do the following things:<b></p>
 
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <li>Copy and paste data from this page to PIPcs</li>
+      <li>Download a copy of the Application data using the link at the bottom to then save it in ECMS</li>
+    </ul>
+
+<br>
 
 
       <div class="govuk-grid-row">
@@ -262,9 +267,15 @@
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">(TBC is this even a thing?)Download the application PDF and upload to DRS - this will then be shown in supporting documents</p>
+                <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc2.pdf" target="_blank">Application data (PDF)</a></p>
+              </div>
+            </div>
 
 
-      {{ govukRadios({
+      <!-- {{ govukRadios({
         idPrefix: "eject-data",
         name: "eject-data",
         fieldset: {
@@ -295,13 +306,13 @@
         ]
       }) }}
 
-      or
+      or -->
 
       {{ govukCheckboxes({
         name: "waste",
         fieldset: {
           legend: {
-            text: "CTA B: Confirm data transfer complete",
+            text: "@dave Confirm data transfer complete",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
