@@ -18,12 +18,12 @@
       {% include "agent-0-13/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You need to move application<br>data back to PIPcs</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>You need to do the following things:<b></p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Move this application to PIPCS</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You need to:</p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-      <li>Copy and paste data from this page to PIPcs</li>
-      <li>Download a copy of the Application data using the link at the bottom to then save it in ECMS</li>
+      <li>copy and paste this information to PIPCS</li>
+      <li>download a copy of the <a class="" href="pip-doc2.pdf" target="_blank">application data (PDF)</a> and upload it to ECMS - it will then be available in supporting documents</li>
     </ul>
 
 <br>
@@ -267,12 +267,12 @@
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 
-            <div class="govuk-grid-row">
+            <!-- <div class="govuk-grid-row">
               <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
                 <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">(TBC is this even a thing?)Download the application PDF and upload to DRS - this will then be shown in supporting documents</p>
                 <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc2.pdf" target="_blank">Application data (PDF)</a></p>
               </div>
-            </div>
+            </div> -->
 
 
       <!-- {{ govukRadios({
@@ -312,7 +312,7 @@
         name: "waste",
         fieldset: {
           legend: {
-            text: "@dave Confirm data transfer complete",
+            text: "You need to confirm that you have moved the application to PIPCS",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -323,7 +323,7 @@
         items: [
           {
             value: "carcasses",
-            text: "I have moved over the data"
+            text: "I have moved the application to PIPCS"
           }
         ]
       }) }}
