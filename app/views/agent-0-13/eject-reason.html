@@ -35,12 +35,12 @@ Pelican
         items: [
         {
           value: "a",
-          text: "The service does not let me do what I need to process it",
+          text: "I cannot do what I need to do in the service",
           checked: (data["eject-reason"] == "a")
         },
         {
           value: "a",
-          text: "Something creates risk to the applicant (Vulnerabilities)",
+          text: "There is a potential risk to the applicant (vulnerability)",
           checked: (data["eject-reason"] == "a")
         },
         {
@@ -58,22 +58,22 @@ Pelican
         },
         {
           value: "a",
-          text: "Application needs to be moved to PIPcs (If processing this is already known)",
+          text: "Application needs to be moved to PIPCS (If processing this is already known)",
           checked: (data["eject-reason"] == "a")
         },
         {
           value: "extend",
-          text: "Extend time to complete HIG (PIP2)",
+          text: "The applicant needs more time to complete the health information gather (PIP2)",
           checked: (data["eject-reason"] == "extend")
         },
         {
           value: "a",
-          text: "IDV was completed over the phone (Passed or failed)",
+          text: "Identity verification was completed on the phone (either passed or failed)",
           checked: (data["eject-reason"] == "a")
         },
         {
           value: "eject-reason-other",
-          text: "Other",
+          text: "Other reason",
           checked: (data["eject-reason"] == "eject-reason-other")
         }
         ]
