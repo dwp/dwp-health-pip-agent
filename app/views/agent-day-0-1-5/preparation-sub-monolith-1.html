@@ -61,7 +61,7 @@
       name: "assurance-sub-monolith-X-X",
       fieldset: {
       legend: {
-      html: "IDV done?",
+      html: "Has the applicant verified their identity online?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
       }
@@ -83,7 +83,7 @@
       ]
       }) }}
 
-      {{govukTag({
+      <!-- {{govukTag({
         text: "New",
         classes: "govuk-tag--green"
       })}}
@@ -118,7 +118,140 @@ But this wouldnt be known till they are in the AP report findings?
     checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
     }
     ]
-    }) }}
+    }) }} -->
+
+    {{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-X-X",
+name: "assurance-sub-monolith-X-X",
+fieldset: {
+legend: {
+html: "Do they have any stays in hospital or similar institutions?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+text: "Check the health information gather (PIP2) and assessment report."
+},
+items: [
+{
+value: "Expected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Expected",
+text: "Yes, but they are self-funding",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Unexpected",
+text: "No",
+checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+}
+]
+}) }}
+
+{{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-X-X",
+name: "assurance-sub-monolith-X-X",
+fieldset: {
+legend: {
+html: "Do they have any stays in care homes?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+text: "Check the health information gather (PIP2) and assessment report."
+},
+items: [
+{
+value: "Expected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Expected",
+text: "Yes, but they are self-funding",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Unexpected",
+text: "No",
+checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+}
+]
+}) }}
+
+{{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-X-X",
+name: "assurance-sub-monolith-X-X",
+fieldset: {
+legend: {
+html: "Do they have any stays in nursing homes?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+text: "Check the health information gather (PIP2) and assessment report."
+},
+items: [
+{
+value: "Expected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Expected",
+text: "Yes, but they are self-funding",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Unexpected",
+text: "No",
+checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+}
+]
+}) }}
+
+{{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-X-X",
+name: "assurance-sub-monolith-X-X",
+fieldset: {
+legend: {
+html: "Do they have any stays in residential schools or colleges?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+text: "Check the health information gather (PIP2) and assessment report."
+},
+items: [
+{
+value: "Expected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Expected",
+text: "Yes, but they are self-funding",
+checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+},
+{
+value: "Unexpected",
+text: "No",
+checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+}
+]
+}) }}
+
 
 
     {{govukTag({
@@ -134,13 +267,13 @@ What we doing with this? Are we saying that in AP report there might be new HCP 
   name: "assurance-sub-monolith-X-X",
   fieldset: {
   legend: {
-  html: "Health care professionals?",
+  html: "Does the assessment report mention any health care professionals not provided in the health information gather (PIP2)?",
   isPageHeading: true,
   classes: "govuk-fieldset__legend--m "
   }
   },
   hint: {
-  text: "Check XXX."
+  text: "Check the health information gather (PIP2) and assessment report."
   },
   items: [
   {
@@ -406,7 +539,7 @@ classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-  text: "@dave Check event history and documents in DRS(SD)"
+  text: "Check event history and supporting documents for a letter requesting their application to be withdrawn."
 },
 items: [
 {
