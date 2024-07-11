@@ -194,12 +194,7 @@ text: "Check Searchlight and CPS."
 items: [
 {
 value: "Unexpected",
-text: "Yes - they are under 16",
-checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
-},
-{
-value: "Unexpected",
-text: "Yes - they are over 16",
+text: "Yes,
 checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
 },
 {
@@ -306,7 +301,7 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   name: "assurance-sub-monolith-3-7",
   fieldset: {
     legend: {
-      html: "Do they get Constant Attendance Allowance (CAA) (Make rates YN)?",
+      html: "Do they get Constant Attendance Allowance (CAA)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -317,24 +312,9 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   items: [
   {
     value: "Unexpected",
-    text: "Yes - exceptional rate",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
   },
-  {
-    value: "Unexpected",
-    text: "Yes - intermediate rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - full day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - part day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  }  ,
   {
       value: "Expected",
       text: "No",
