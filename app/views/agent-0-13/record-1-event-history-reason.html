@@ -17,6 +17,7 @@
 
       {% include "agent-0-13/record-id.html" %}
 
+Pelican
       {{ govukRadios({
         idPrefix: "record-1-event-history-reason",
         name: "record-1-event-history-reason",
@@ -33,14 +34,14 @@
         classes: "govuk-radios",
         items: [
         {
+          value: "Reason type",
+          text: "This should go back to BAU marker",
+          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-3")
+        },
+        {
           value: "record-1-event-history-reason-bau",
           text: "I need to move the application back to BAU",
           checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-bau")
-        },
-        {
-          value: "Reason type",
-          text: "Pelican 1",
-          checked: (data["record-1-event-history-reason"] == "record-1-event-history-reason-3")
         },
         {
           value: "Withdraw application",
