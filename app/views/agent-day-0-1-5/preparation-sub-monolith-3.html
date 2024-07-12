@@ -16,16 +16,15 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-
-    <form action="preparation-linear-outcome" method="post" class="form">
-
-
     <div class="govuk-grid-column-two-thirds">
+
+    <form action="preparation-sub-monolith-4" method="post" class="form">
+
 
       {% include "agent-day-0-1-5/record-id-base.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any benefits or if the applicant is working abroad</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any potential flags or markers</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -47,362 +46,282 @@
       <ul class="app-task-list__items app-task-list__items-pip">
 
 
-<!-- {{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-3-1",
-name: "assurance-sub-monolith-3-1",
-fieldset: {
-legend: {
-html: "Are they working abroad?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check registration (PIP1). Call the applicant if necessary. "
-},
-items: [
-{
-value: "Unexpected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-3-1"] == "Unexpected")
-},
-{
-value: "Expected",
-text: "No",
-checked: (data["assurance-sub-monolith-3-1"] == "Expected")
-}
-]
-}) }} -->
 
-<!-- {{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-3-2",
-name: "assurance-sub-monolith-3-2",
-fieldset: {
-legend: {
-html: "Do they get any foreign benefits?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-  text: "Check the registration (PIP1). Call the applicant if necessary. "
-},
-items: [
-{
-value: "Unexpected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-3-2"] == "Unexpected")
-},
-{
-value: "Expected",
-text: "No",
-checked: (data["assurance-sub-monolith-3-2"] == "Expected")
-}
-]
-}) }} -->
+        <!-- {{ govukRadios({
+      classes: "govuk-radios--small govuk-!-margin-bottom-4",
+      idPrefix: "assurance-sub-monolith-2-1",
+      name: "assurance-sub-monolith-2-1",
+      fieldset: {
+      legend: {
+      html: "Do they need an alternative format?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+      }
+      },
+      hint: {
+      text: "Check registration (PIP1) and Searchlight. You could also check PIPCS for any previous claims."
+      },
+      items: [
+      {
+      value: "Unexpected",
+      text: "Yes",
+      checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
+      },
+      {
+      value: "Expected",
+      text: "No",
+      checked: (data["assurance-sub-monolith-2-1"] == "Expected")
+      }
+      ]
+      }) }} -->
 
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-3-3",
-name: "assurance-sub-monolith-3-3",
-fieldset: {
-legend: {
-html: "Do they get Disability Living Allowance (DLA)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight and CPS."
-},
-items: [
-{
-value: "Unexpected",
-text: "Yes - they are under 16",
-checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
-},
-{
-value: "Unexpected",
-text: "Yes - they are over 16",
-checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
-},
-{
-value: "Expected",
-text: "No",
-checked: (data["assurance-sub-monolith-3-3"] == "Expected")
-}
-]
-}) }}
+      {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-1-9",
+        name: "assurance-sub-monolith-1-9",
+        fieldset: {
+          legend: {
+            html: "Have they withdrawn their claim?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m "
+          }
+        },
+        hint: {
+          text: "Check event history and supporting documents for a letter requesting their application to be withdrawn."
+        },
+        items: [
+        {
+          value: "Unexpected",
+          text: "Yes",
+          checked: (data["assurance-sub-monolith-1-9"] == "Unexpected")
+        },
+        {
+          value: "Expected",
+          text: "No",
+          checked: (data["assurance-sub-monolith-1-9"] == "Expected")
+        }
+        ]
+      }) }}
 
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-3-4",
-name: "assurance-sub-monolith-3-4",
-fieldset: {
-legend: {
-html: "Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight. "
-},
-items: [
-{
-value: "Unexpected",
-text: "Yes - CDP",
-checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
-},
-{
-value: "Unexpected",
-text: "Yes - ADP",
-checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
-},
-{
-value: "Expected",
-text: "No",
-checked: (data["assurance-sub-monolith-3-4"] == "Expected")
-}
-]
-}) }}
+      {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-1-8",
+        name: "assurance-sub-monolith-1-8",
+        fieldset: {
+          legend: {
+            html: "Do they need additional support?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m "
+          }
+        },
+        hint: {
+          text: "Check registration (PIP1). You could also check PIPCS for any previous claims."
+        },
+        items: [
+        {
+          value: "Unexpected",
+          text: "Yes",
+          checked: (data["assurance-sub-monolith-1-8"] == "Unexpected")
+        },
+        {
+          value: "Expected",
+          text: "No",
+          checked: (data["assurance-sub-monolith-1-8"] == "Expected")
+        }
+        ]
+      }) }}
 
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-3-5",
-name: "assurance-sub-monolith-3-5",
-fieldset: {
-legend: {
-html: "Do they get Armed Forces Personal Independence Payment (AFPIP)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-  text: "Check Searchlight and contact Veterans UK if necessary."
-},
-items: [
-{
-value: "Unexpected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-3-5"] == "Unexpected")
-},
-{
-value: "Expected",
-text: "No",
-checked: (data["assurance-sub-monolith-3-5"] == "Expected")
-}
-]
-}) }}
 
+        <!-- {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-2",
+        name: "assurance-sub-monolith-2-2",
+        fieldset: {
+        legend: {
+        html: "Do debt management have an interest in them on Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: ""
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-2"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-2"] == "Expected")
+        }
+        ]
+        }) }} -->
+
+        {{govukTag({
+          text: "Edit",
+          classes: "govuk-tag--green"
+        })}}
 
         {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-3",
+        name: "assurance-sub-monolith-2-3",
+        fieldset: {
+        legend: {
+        html: "Is there evidence of fraud present? (Might need to cover a few other areas @sarah) NIFU/IND",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "@dave Check Seachlight, the event history and PIPCS for any previous claims which might indicate potential fraud."
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-3"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-3"] == "Expected")
+        }
+        ]
+        }) }}
+
+        {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-4",
+        name: "assurance-sub-monolith-2-4",
+        fieldset: {
+        legend: {
+        html: "Do they have an unacceptable customer behaviour (UCB) or keep customer interactions safe (KCIS) marker on Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "You could also check PIPCS for any previous claims."
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-4"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-4"] == "Expected")
+        }
+        ]
+        }) }}
+
+
+        <!-- TBC
+        {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-5",
+        name: "assurance-sub-monolith-2-5",
+        fieldset: {
+        legend: {
+        html: "2 Does their gender match what we hold in Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "You can also call the applicant if necessary."
+        },
+        items: [
+        {
+        value: "Expected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-5"] == "Expected")
+        },
+        {
+        value: "Unexpected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-5"] == "Unexpected")
+        }
+        ]
+        }) }} -->
+
+
+
+
+<!--
+        {{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-3-6",
-  name: "assurance-sub-monolith-3-6",
+  idPrefix: "assurance-sub-monolith-2-4",
+  name: "assurance-sub-monolith-2-4",
   fieldset: {
     legend: {
-      html: "Do they get War Pensioners' Mobility Supplement (WPMS)?",
+      html: "Have they returned the health information gather (PIP2)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check Searchlight and email the war pensions team if necessary."
+    text: "If there is no health information gather (PIP2), check the event history for evidence of good cause for not returning it. "
   },
   items: [
-    {
-    value: "Unexpected",
+  {
+    value: "Expected",
     text: "Yes",
-    checked: (data["assurance-sub-monolith-3-6"] == "Unexpected")
+    checked: (data["assurance-sub-monolith-2-4"] == "Expected")
   },
   {
     value: "Expected",
+    text: "No - but good cause has been accepted for not returning it",
+    checked: (data["assurance-sub-monolith-2-4"] == "Expected")
+  },
+  {
+    value: "Blocked",
     text: "No",
-    checked: (data["assurance-sub-monolith-3-6"] == "Expected")
+    checked: (data["assurance-sub-monolith-2-4"] == "Blocked")
   }
   ]
-}) }}
-
-        {{ govukRadios({
-  classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-3-7",
-  name: "assurance-sub-monolith-3-7",
-  fieldset: {
-    legend: {
-      html: "Do they get Constant Attendance Allowance (CAA)?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-    }
-  },
-  hint: {
-    text: "Check Searchlight."
-  },
-  items: [
-  {
-    value: "Unexpected",
-    text: "Yes - exceptional rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - intermediate rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - full day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - part day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  }  ,
-  {
-      value: "Expected",
-      text: "No",
-      checked: (data["assurance-sub-monolith-3-7"] == "Expected")
-    }
-  ]
-}) }}
-
-
-<!------------H1 LEGEND------------>
-  {% set legendHintDetails %}
-
-
-  <p class="govuk-body govuk-!-margin-bottom-2"></p>
-
-  <ul class="govuk-list govuk-list">
-
-
-    <li>Pension Credit</li>
-    <li>Income Support</li>
-    <li>Jobseeker's Allowance</li>
-    <li>Employment and Support Allowance</li>
-    <li>Universal Credit</li>
-    <li>Attendance Allowance</li>
-    <li>Carer's allowance</li>
-    <li>Contribution-based Employment and Support Allowance</li>
-    <li>Incapacity Benefit</li>
-    <li>Industrial Death Benefit</li>
-    <li>Mobility Supplement</li>
-    <li>State Pension</li>
-    <li>Severe Disablement Allowance</li>
-    <li>Unemployability Supplement or Allowance</li>
-    <li>War Disablement Pension</li>
-    <li>Widowed Mother’s Allowance</li>
-    <li>Widowed Parent’s Allowance</li>
-    <li>Widow’s Pension</li>
-
-
-  </ul>
-<!--
-  WinterFuel
-  Pension Credit.
-  Income Support.
-  Income Support based Jobseeker's Allowance.
-  Income support based Employment and Support Allowance.
-  Universal Credit.
-
-  Xmas
-  Attendance Allowance
-  Carer's allowance
-  Contribution-based Employment and Support Allowance (once the main phase of the benefit is entered after the first 13 weeks of claim)
-  Incapacity Benefit at the long-term rate
-  Industrial Death Benefit (for widows or widowers)
-  Mobility Supplement
-  State Pension (including Graduated Retirement Benefit)
-  Severe Disablement Allowance (transitionally protected)
-  Unemployability Supplement or Allowance (paid under Industrial Injuries or War Pensions schemes)
-  War Disablement Pension at State Pension age
-  War Widow’s Pension
-  Widowed Mother’s Allowance
-  Widowed Parent’s Allowance
-  Widow’s Pension -->
-
-
-  {% endset %}
-
-  {% set legendHint %}
-
-  <p class="govuk-body govuk-!-margin-bottom-2">  Core benefits: State Pension, UC, AA, JSA if none of these check the other list
-</p>
-
-
-  {{ govukDetails({
-    summaryText: "Other benefits to check",
-    classes: "govuk-!-margin-bottom-0",
-    html: legendHintDetails
-  }) }}
-
-  {% endset %}
-
-
-{{govukTag({
-  text: "New",
-  classes: "govuk-tag--green"
-})}}
-
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-X-X",
-name: "assurance-sub-monolith-X-X",
-fieldset: {
-legend: {
-html: "Do they get any of the core benefits?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-html: legendHint
-},
-items: [
-{
-value: "Expected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-X-X"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
-}
-]
-}) }}
+}) }} -->
 
         <!-- {{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-3-5",
-  name: "assurance-sub-monolith-3-5",
+  idPrefix: "assurance-sub-monolith-2-5",
+  name: "assurance-sub-monolith-2-5",
   fieldset: {
     legend: {
-      html: "Check 5: Action",
+      html: "Have they attended their assessment?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check details"
+    text: "Check assessment provider contact history or event history for evidence of good cause if they have not attended their assessment."
   },
   items: [
   {
     value: "Expected",
-    text: "Expected",
-    checked: (data["assurance-sub-monolith-3-5"] == "Expected")
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-2-5"] == "Expected")
+  },
+  {
+    value: "Expected",
+    text: "No - but good cause has been accepted for not attending",
+    checked: (data["assurance-sub-monolith-2-5"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Unexpected",
-    checked: (data["assurance-sub-monolith-3-5"] == "Unexpected")
+    text: "No",
+    checked: (data["assurance-sub-monolith-2-5"] == "Unexpected")
   }
   ]
 }) }} -->
+
+
 
 {{ govukButton({
   text: "Continue",
