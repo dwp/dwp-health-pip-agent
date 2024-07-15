@@ -29,7 +29,7 @@
 
 
           {% else %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There was no issues with this application</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are no issues with this application</h1>
 
 
 
@@ -53,12 +53,12 @@
             items: [
             {
               value: "Ready",
-              text: "Continue to decision",
+              text: "Continue to make a decision",
               checked: (data["preparation-linear-outcome"] == "Ready")
             },
             {
               value: "BAU",
-              text: "Send application back to BAU",
+              text: "Move application to PIPCS",
               checked: (data["preparation-linear-outcome"] == "BAU")
             }
             ]
