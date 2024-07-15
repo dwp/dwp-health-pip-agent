@@ -132,7 +132,7 @@
       }) }}
 
 
-{{ govukRadios({
+<!-- {{ govukRadios({
 classes: "govuk-radios--small govuk-!-margin-bottom-4",
 idPrefix: "assurance-sub-monolith-3-3",
 name: "assurance-sub-monolith-3-3",
@@ -159,7 +159,7 @@ text: "No",
 checked: (data["assurance-sub-monolith-3-3"] == "Expected")
 }
 ]
-}) }}
+}) }} -->
 
         <!-- {{ govukRadios({
         classes: "govuk-radios--small govuk-!-margin-bottom-4",
@@ -187,7 +187,7 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
         checked: (data["assurance-sub-monolith-2-2"] == "Expected")
         }
         ]
-        }) }} -->
+        }) }}
 
         {{govukTag({
           text: "Edit",
@@ -200,13 +200,13 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
         name: "assurance-sub-monolith-2-3",
         fieldset: {
         legend: {
-        html: "Is there evidence of fraud present? (Might need to cover a few other areas @sarah) NIFU/IND",
+        html: "Is there evidence of fraud? (Might need to cover a few other areas @sarah) NIFU/IND",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m "
         }
         },
         hint: {
-        text: "@dave Check Seachlight, the event history and PIPCS for any previous claims which might indicate potential fraud."
+        text: "Check Searchlight, event history and PIPCS for any previous claims which might indicate potential fraud."
         },
         items: [
         {
@@ -278,7 +278,7 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
         checked: (data["assurance-sub-monolith-2-5"] == "Unexpected")
         }
         ]
-        }) }} -->
+        }) }}
 
 
 
@@ -324,7 +324,7 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
   {% set legendHintDetails %}
 
 
-  <p class="govuk-body govuk-!-margin-bottom-2"></p>
+  <!-- <p class="govuk-body govuk-!-margin-bottom-2"></p>
 
   <ul class="govuk-list govuk-list">
 
@@ -372,18 +372,18 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
   War Widow’s Pension
   Widowed Mother’s Allowance
   Widowed Parent’s Allowance
-  Widow’s Pension -->
+  Widow’s Pension
 
 
-  {% endset %}
+  <!-- {% endset %} -->
 
-  {% set legendHint %}
+  <!-- {% set legendHint %}
 
   <p class="govuk-body govuk-!-margin-bottom-2"> Check Searchlight to see if they get State Pension, Universal Credit, Attendance Allowance, Jobseeker's Allowance or another benefit listed.
 </p>
 
 
-  {{ govukDetails({
+  <!-- {{ govukDetails({
     summaryText: "Other benefits to check",
     classes: "govuk-!-margin-bottom-0",
     html: legendHintDetails
@@ -392,13 +392,13 @@ checked: (data["assurance-sub-monolith-3-3"] == "Expected")
   {% endset %}
 
 
-{{govukTag({
+<!-- {{govukTag({
   text: "New",
   classes: "govuk-tag--green"
 })}}
 
 
-{{ govukRadios({
+<!-- {{ govukRadios({
 classes: "govuk-radios--small govuk-!-margin-bottom-4",
 idPrefix: "assurance-sub-monolith-X-X",
 name: "assurance-sub-monolith-X-X",
@@ -424,7 +424,7 @@ text: "No",
 checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
 }
 ]
-}) }}
+}) }} -->
 
 
 

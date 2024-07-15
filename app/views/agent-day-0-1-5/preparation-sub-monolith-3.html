@@ -24,7 +24,7 @@
       {% include "agent-day-0-1-5/record-id-base.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">@dave Check any accommodation issues</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any accommodation issues</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -178,20 +178,20 @@
           ]
         }) }}
 
-        New
+        
         {{ govukRadios({
           classes: "govuk-radios--small govuk-!-margin-bottom-4",
           idPrefix: "assurance-sub-monolith-X-X",
           name: "assurance-sub-monolith-X-X",
           fieldset: {
             legend: {
-              html: "Detained in legal custody?",
+              html: "Have they been detained in prison or legal custody?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m "
             }
           },
           hint: {
-            text: "XXXX"
+            text: "Check the health information gather (PIP2) and assessment report."
           },
           items: [
           {
