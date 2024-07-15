@@ -104,6 +104,62 @@ checked: (data["assurance-sub-monolith-3-2"] == "Expected")
 }) }} -->
 
 {{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-3-1",
+name: "assurance-sub-monolith-3-1",
+fieldset: {
+legend: {
+html: "Are they working abroad?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+text: "Check the registration (PIP1), health information gather (PIP2) and assessment report. Call the applicant if necessary.  "
+},
+items: [
+{
+value: "Unexpected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-3-1"] == "Unexpected")
+},
+{
+value: "Expected",
+text: "No",
+checked: (data["assurance-sub-monolith-3-1"] == "Expected")
+}
+]
+}) }}
+
+{{ govukRadios({
+classes: "govuk-radios--small govuk-!-margin-bottom-4",
+idPrefix: "assurance-sub-monolith-3-2",
+name: "assurance-sub-monolith-3-2",
+fieldset: {
+legend: {
+html: "Do they get any foreign benefits?",
+isPageHeading: true,
+classes: "govuk-fieldset__legend--m "
+}
+},
+hint: {
+  text: "Check the registration (PIP1), health information gather (PIP2) and assessment report. Call the applicant if necessary. "
+},
+items: [
+{
+value: "Unexpected",
+text: "Yes",
+checked: (data["assurance-sub-monolith-3-2"] == "Unexpected")
+},
+{
+value: "Expected",
+text: "No",
+checked: (data["assurance-sub-monolith-3-2"] == "Expected")
+}
+]
+}) }}
+
+{{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
   idPrefix: "assurance-sub-monolith-3-3",
   name: "assurance-sub-monolith-3-3",
