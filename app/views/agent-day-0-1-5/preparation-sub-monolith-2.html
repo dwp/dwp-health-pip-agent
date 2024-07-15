@@ -131,6 +131,34 @@
         ]
       }) }}
 
+      {{ govukRadios({
+    classes: "govuk-radios--small govuk-!-margin-bottom-4",
+    idPrefix: "assurance-sub-monolith-2-1",
+    name: "assurance-sub-monolith-2-1",
+    fieldset: {
+    legend: {
+    html: "Do they need an alternative format?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m "
+    }
+    },
+    hint: {
+    text: "Check registration (PIP1) and Searchlight. You could also check PIPCS for any previous claims."
+    },
+    items: [
+    {
+    value: "Unexpected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
+    },
+    {
+    value: "Expected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-2-1"] == "Expected")
+    }
+    ]
+    }) }}
+
 
 <!-- {{ govukRadios({
 classes: "govuk-radios--small govuk-!-margin-bottom-4",
