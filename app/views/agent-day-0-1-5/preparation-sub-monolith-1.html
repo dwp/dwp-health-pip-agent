@@ -61,7 +61,7 @@ Process a PIP application
               name: "assurance-sub-monolith-X-X",
               fieldset: {
                 legend: {
-                  html: "Has the applicant verified their identity online?",
+                  html: "Has the applicant verified their identity?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m "
                 }
@@ -72,7 +72,12 @@ Process a PIP application
               items: [
               {
                 value: "Expected",
-                text: "Yes",
+                text: "Yes - online ",
+                checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+              },
+              {
+                value: "Expected",
+                text: "Yes - by phone ",
                 checked: (data["assurance-sub-monolith-X-X"] == "Expected")
               },
               {
@@ -82,10 +87,7 @@ Process a PIP application
               }
               ]
             }) }}
-            Yes - Apply<br>
-            Yes - Telephone<br>
-            No
-            <br><br>
+        
 
 
             {{govukTag({
