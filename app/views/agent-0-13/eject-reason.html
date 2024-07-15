@@ -44,7 +44,25 @@ Pelican
           checked: (data["eject-reason"] == "a")
         },
         {
-          divider: "Pelican"
+          divider: "Pelican reasons"
+        },
+        {
+          value: "a",
+          text: "Change of circumstances",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Error in claimant data gather",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Additional support need identified",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          divider: "Pelican prompt"
         },
         {
           value: "a",
@@ -78,6 +96,8 @@ Pelican
         }
         ]
       }) }}
+
+
 
       {{ govukButton({
         text: "Continue",

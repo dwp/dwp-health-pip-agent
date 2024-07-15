@@ -52,7 +52,33 @@
 
       <ul class="app-task-list__items app-task-list__items-pip">
 
-
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-1-8",
+          name: "assurance-sub-monolith-1-8",
+          fieldset: {
+            legend: {
+              html: "Do they need additional support?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check registration (PIP1). You could also check PIPCS for any previous claims."
+          },
+          items: [
+          {
+            value: "Unexpected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-1-8"] == "Unexpected")
+          },
+          {
+            value: "Expected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-1-8"] == "Expected")
+          }
+          ]
+        }) }}
 
         {{ govukRadios({
       classes: "govuk-radios--small govuk-!-margin-bottom-4",
