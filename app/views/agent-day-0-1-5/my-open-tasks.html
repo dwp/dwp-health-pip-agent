@@ -28,8 +28,8 @@
       <form action="login-router" method="post" class="form">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have no open tasks</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Applications you have actively paused will remain here till compeleted</p>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Tasks that are timed out will be assigned to you till 00:00, you will then get them back when you request a new application to process</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Applications you have paused will remain here until they are compeleted</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Tasks that are timed out will be assigned to you until midnight. You will then get them back when you request a new application to process.</p>
 
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You can start <a class="" href="system-application-selector">processing an application</a>.</p>
 
@@ -54,11 +54,11 @@
 
                                   <thead class="govuk-table__head">
                                     <tr class="govuk-table__row">
-                                      <td class="govuk-table__cell govuk-20-percent">Task creation date</td>
+                                      <td class="govuk-table__cell govuk-20-percent">Task created</td>
                                       <!-- <td class="govuk-table__cell govuk-15-percent">NINO</td> -->
 
                                       <td class="govuk-table__cell govuk-40-percent">Name</td>
-                                      <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
+                                      <td class="govuk-table__cell govuk-25-percent">Application status</td>
                                     </tr>
                                   </thead>
 
@@ -66,7 +66,7 @@
                                     <td class="govuk-table__cell table-spacer"> 1 May 2024</td>
                                     <!-- <td class="govuk-table__cell table-spacer"> NA 11 22 33 c</td> -->
                                     <td class="govuk-table__cell table-spacer"><a href="my-open-tasks-record">Jeff Bridges</a></td>
-                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Preparing for AP</td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Prepare for assessment provider</td>
                                     <!-- <td class="govuk-table__cell table-spacer">
 
                                       {% if data["application-1-task-t4"] == "Done" %}
@@ -86,7 +86,7 @@
                                     <td class="govuk-table__cell table-spacer"> 29 June 2024</td>
                                     <!-- <td class="govuk-table__cell table-spacer"> NA 88 44 77 c</td> -->
                                     <td class="govuk-table__cell table-spacer"><a href="my-open-tasks-record">Sam Elliot</a></td>
-                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Preparing for decided</td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Prepare for decision</td>
                                     <!-- <td class="govuk-table__cell table-spacer">
 
                                       {% if data["application-1-task-t4"] == "Done" %}
@@ -105,7 +105,7 @@
                                     <td class="govuk-table__cell table-spacer"> 15 July 2024</td>
                                     <!-- <td class="govuk-table__cell table-spacer"> NA 77 55 66 c</td> -->
                                     <td class="govuk-table__cell table-spacer"><a href="my-open-tasks-record">Julianne Moore</a></td>
-                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Making a decision</td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Make a decision</td>
                                     <!-- <td class="govuk-table__cell table-spacer">
 
                                       {% if data["application-1-task-t4"] == "Done" %}
@@ -124,8 +124,8 @@
                                   <tr class="govuk-table__row">
                                     <td class="govuk-table__cell table-spacer"> 15 July 2024</td>
                                     <!-- <td class="govuk-table__cell table-spacer"> NA 77 55 66 c</td> -->
-                                    <td class="govuk-table__cell table-spacer"><a href="my-open-tasks-record">Julianne Moore</a></td>
-                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Applicaiton needs to be moved back to BAU</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="my-open-tasks-record">John Turturro</a></td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Needs to be moved to PIPCS</td>
                                     <!-- <td class="govuk-table__cell table-spacer">
 
                                       {% if data["application-1-task-t4"] == "Done" %}
