@@ -68,6 +68,23 @@ router.post(`/system-application-selector-router`, (req, res) => {
   }
 })
 
+router.post(`/system-myopentasks-selector-router`, (req, res) => {
+  const openTaskSelector = req.session.data['system-myopentasks-selector']
+
+  if (openTaskSelector == '1') {
+    res.redirect(`my-open-tasks`)
+  }
+  else if (openTaskSelector == '2') {
+    res.redirect(`my-open-tasks`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+
 router.post(`/section-4-add-1-router`, (req, res) => {
   const add1 = req.session.data['section-4-add-1']
 

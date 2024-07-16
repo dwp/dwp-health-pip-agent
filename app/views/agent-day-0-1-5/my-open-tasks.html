@@ -10,7 +10,7 @@
 
 {% block content %}
 
-{% if data["application-1-task-t4"]  === "Pause" or data["application-1-exit-bail-call"] === "bail" or data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+{% if data["system-myopentasks-selector"]  === "2" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -28,8 +28,10 @@
       <form action="login-router" method="post" class="form">
 
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have no open tasks</h1>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Tasks will only be paused for 2 days before they will<br>be assigned to someone else.</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can start <a class="govuk-body govuk-!-font-size-19" href="application-selector">processing a new application</a>.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Applications you have actively paused will remain here till compeleted</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Tasks that are timed out will be assigned to you till 00:00, you will then get them back when you request a new application to process</p>
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You can start <a class="" href="system-application-selector">processing an application</a>.</p>
 
       </div>
     </div>
@@ -46,99 +48,89 @@
 
 
 
-            {% if data["application-1-task-t4"]  === "Pause" %}
+                                {% if data["system-myopentasks-selector"]  === "2" %}
 
-            <table class="govuk-table">
+                                <table class="govuk-table">
 
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-20-percent">Date</td>
-                <td class="govuk-table__cell govuk-40-percent">Name</td>
-                <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
-                <td class="govuk-table__cell govuk-15-percent">Status</td>
-              </tr>
-              </thead>
+                                  <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell govuk-20-percent">Task creation date</td>
+                                      <td class="govuk-table__cell govuk-15-percent">NINO</td>
 
-                                  {% if data["application-1-task-t4"] %}
+                                      <td class="govuk-table__cell govuk-40-percent">Name</td>
+                                      <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
+                                    </tr>
+                                  </thead>
 
-                                      <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell table-spacer"> 25 August 2023</td>
-                                        <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Jeff Bridges</a></td>
-                                        <td class="govuk-table__cell table-spacer"><a href=""></a>Verify details</td>
-                                        <td class="govuk-table__cell table-spacer">
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"> 1 August 2023</td>
+                                    <td class="govuk-table__cell table-spacer"> NA 11 22 33 c</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Jeff Bridges</a></td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Preparing for AP</td>
+                                    <!-- <td class="govuk-table__cell table-spacer">
 
-                                          {% if data["application-1-task-t4"] == "Done" %}
-                                            <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                          {% elif data["application-1-task-t4"]  === "Bad" %}
-                                            <strong class="govuk-tag app-task-list__apl-task-bad">Issue</strong>
-                                          {% elif data["application-1-task-t4"]  === "Pause" %}
-                                            <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
-                                          {% else %}
-                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                          {% endif %}
+                                      {% if data["application-1-task-t4"] == "Done" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                                      {% elif data["application-1-task-t4"]  === "Bad" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-bad">Issue</strong>
+                                      {% elif data["application-1-task-t4"]  === "Pause" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                                      {% else %}
+                                      <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                                      {% endif %}
 
-                                        </td>
-                                        </tr>
-                                      </table>
-                                    {% else %}
-                                    {% endif %}
+                                    </td> -->
 
 
-          {% elif data["application-5-about-a6"] == "Amended" and data["application-5-about-a12"] == "Amended" and data["evidence-3-grade"] %}
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"> 29 July 2024</td>
+                                    <td class="govuk-table__cell table-spacer"> NA 88 44 77 c</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Sam Elliot</a></td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Preparing for decided</td>
+                                    <!-- <td class="govuk-table__cell table-spacer">
 
-                        <table class="govuk-table">
+                                      {% if data["application-1-task-t4"] == "Done" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                                      {% elif data["application-1-task-t4"]  === "Bad" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-bad">Issue</strong>
+                                      {% elif data["application-1-task-t4"]  === "Pause" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                                      {% else %}
+                                      <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                                      {% endif %}
 
-                        <thead class="govuk-table__head">
-                          <tr class="govuk-table__row">
-                            <td class="govuk-table__cell govuk-20-percent">Date</td>
-                            <td class="govuk-table__cell govuk-30-percent">Name</td>
-                            <td class="govuk-table__cell govuk-20-percent">Type</td>
-                            <td class="govuk-table__cell govuk-20-percent">Actions</td>
-                          </tr>
-                          </thead>
+                                    </td> -->
 
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell table-spacer"> 12 Dec 2023</td>
-                              <td class="govuk-table__cell table-spacer"><a href="application-5-overview-sam-return">Jeff Bridges</a></td>
-                              <td class="govuk-table__cell table-spacer"><a href=""></a>New application</td>
-                              <td class="govuk-table__cell table-spacer"><a href=""></a>Reviewed by SAM</td>
-                              <!-- <td class="govuk-table__cell table-spacer"><a href=""></a>Ready to complete</td> -->
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer"> 25 July 2024</td>
+                                    <td class="govuk-table__cell table-spacer"> NA 77 55 66 c</td>
+                                    <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Julianne Moore</a></td>
+                                    <td class="govuk-table__cell table-spacer"><a href=""></a>Making a decision</td>
+                                    <!-- <td class="govuk-table__cell table-spacer">
 
-                              </tr>
-                            </table>
+                                      {% if data["application-1-task-t4"] == "Done" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                                      {% elif data["application-1-task-t4"]  === "Bad" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-bad">Issue</strong>
+                                      {% elif data["application-1-task-t4"]  === "Pause" %}
+                                      <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                                      {% else %}
+                                      <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                                      {% endif %}
 
-                    {% elif data["application-1-exit-bail-call"]  === "bail" %}
-
-                    <table class="govuk-table">
-
-                    <thead class="govuk-table__head">
-                      <tr class="govuk-table__row">
-                        <td class="govuk-table__cell govuk-20-percent">Date</td>
-                        <td class="govuk-table__cell govuk-40-percent">Name</td>
-                        <td class="govuk-table__cell govuk-25-percent">Last action taken</td>
-                        <td class="govuk-table__cell govuk-15-percent">Status</td>
-                      </tr>
-                      </thead>
-
-                                      <tr class="govuk-table__row">
-                                        <td class="govuk-table__cell table-spacer"> 25 August 2023</td>
-                                        <td class="govuk-table__cell table-spacer"><a href="application-1-tasklist">Jeff Bridges</a></td>
-                                        <td class="govuk-table__cell table-spacer"><a href=""></a>Verify details</td>
-                                        <td class="govuk-table__cell table-spacer">
-                                        <td class="govuk-table__cell table-spacer">
-                                            <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
-                                        </td>
-                                        </tr>
-                                      </table>
+                                    </td> -->
+                                  </tr>
+                                </table>
 
 
 
 
 
-                      {% else %}
+
+                                {% else %}
+                                {% endif %}
 
 
-                      {% endif %}
 
 
 
