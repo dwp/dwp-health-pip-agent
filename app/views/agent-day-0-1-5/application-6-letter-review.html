@@ -37,7 +37,7 @@
         {% set dynamicOutcome %}
 
         {% if data["system-application-selector"]  == "1" %}
-        I have looked at your claim and decided I cannot award you Personal Independence Payment
+        We are not able to give you Personal Independence Payment (PIP)
 
         {% else %}
 
@@ -707,9 +707,10 @@
 
       {% if data["system-application-selector"]  == "1" %}
 
-      I am Nill award
+
       <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Nil award noise</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
 
 
         {% else %}
@@ -717,7 +718,7 @@
       <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will then be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
 
       {% endif %}
 
