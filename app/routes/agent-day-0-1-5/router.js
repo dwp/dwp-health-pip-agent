@@ -423,10 +423,30 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
   else if (assuranceOutcomeTaskList == 'BAU') {
     res.redirect(`/agent-0-13/eject-reason`)
   }
+  else if (assuranceOutcomeTaskList == 'Disallow') {
+    res.redirect(`assurance-disallow-check`)
+  }
    else {
     res.redirect(`eject-reason-justification`)
   }
 })
+
+router.post(`/assurance-disallow-check-router`, (req, res) => {
+  const assuranceOutcomeTaskList = req.session.data['assurance-disallow-check']
+
+  if (assuranceOutcomeTaskList == 'Yes') {
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
+  else if (assuranceOutcomeTaskList == 'No') {
+    res.redirect(`assurance-disallow-actions`)
+  }
+   else {
+    res.redirect(`eject-reason-justification`)
+  }
+})
+
+
+
 
 router.post(`/preparation-linear-outcome-router`, (req, res) => {
   const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']

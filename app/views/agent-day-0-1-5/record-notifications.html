@@ -70,6 +70,20 @@
       type: 'success'
     }) }}
 
+    {% elif data["assurance-disallow-check"] == "No" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">You have disllowed the applciation, you have sent the letter and its now closed as far as the systems knows</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+
+
   {% else %}
 
 {% endif %}
