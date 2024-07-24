@@ -421,16 +421,16 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (assuranceOutcomeTaskList == 'BAU') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (assuranceOutcomeTaskList == 'Withdraw') {
     res.redirect(`assurance-withdraw-check`)
   }
    else {
-    res.redirect(`eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
@@ -438,13 +438,13 @@ router.post(`/assurance-disallow-check-router`, (req, res) => {
   const assuranceOutcomeDisallow = req.session.data['assurance-disallow-check']
 
   if (assuranceOutcomeDisallow == 'Yes') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (assuranceOutcomeDisallow == 'No') {
     res.redirect(`assurance-disallow-actions`)
   }
    else {
-    res.redirect(`eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
@@ -452,16 +452,16 @@ router.post(`/assurance-withdraw-check-router`, (req, res) => {
   const assuranceOutcomeWithdraw = req.session.data['assurance-withdraw-check']
 
   if (assuranceOutcomeWithdraw == 'Yes') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (assuranceOutcomeWithdraw == 'No') {
     res.redirect(`assurance-withdraw-actions`)
   }
   else if (assuranceOutcomeWithdraw == 'DontKnow') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
    else {
-    res.redirect(`eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
@@ -477,7 +477,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (preparationOutcomeTaskList == 'BAU') {
-    res.redirect(`/agent-0-13/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
    else {
     res.redirect(`exit-event-history`)
@@ -525,7 +525,7 @@ router.post(`/application-vcc-check-router`, (req, res) => {
   const vccCheck = req.session.data['application-vcc-check']
 
   if (vccCheck == 'BAU') {
-    res.redirect(`eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
    else {
      res.redirect(`application-6-letter-review`)
