@@ -27,7 +27,7 @@ router.post(`/eject-reason-router`, (req, res) => {
   if (ejectReason == 'PIPcs') {
     res.redirect(`eject-reason-justification`)
   }
-  else if (ejectReason == 'eject-reason-other') {
+  else if (ejectReason == 'Other') {
     res.redirect(`eject-reason-justification`)
   }
   else if (ejectReason == 'Extend') {

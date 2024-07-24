@@ -34,6 +34,7 @@
         {% if data["eject-reason"] == "Withdraw"%}<li>The applicaiton was withdrawn</li>{% else %}{% endif %}
         {% if data["eject-reason"] == "Disallow"%}<li>The applicaiton was disallowed</li>{% else %}{% endif %}
         {% if data["eject-reason"] == "PIPcs"%}<li>The applicaiton is now in PIPcs</li>{% else %}{% endif %}
+        {% if data["eject-reason"] == "Other"%}<li>You told us about some other stuff</li>{% else %}{% endif %}
 
       </ul>
       <br><br>
