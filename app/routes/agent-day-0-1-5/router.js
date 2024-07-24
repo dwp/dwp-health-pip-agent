@@ -457,6 +457,9 @@ router.post(`/assurance-withdraw-check-router`, (req, res) => {
   else if (assuranceOutcomeWithdraw == 'No') {
     res.redirect(`assurance-withdraw-actions`)
   }
+  else if (assuranceOutcomeWithdraw == 'DontKnow') {
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
    else {
     res.redirect(`eject-reason-justification`)
   }
