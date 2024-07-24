@@ -94,6 +94,20 @@
       type: 'information'
     }) }}
 
+    {% elif data["assurance-mm-tasklist-outcome"] == "PIPcs" or data["preparation-linear-outcome"] == "PIPcs" or data["eject-reason"] == "PIPcs" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">This has gone back to BAU brah</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'information'
+    }) }}
+
+
+
 
   {% else %}
 

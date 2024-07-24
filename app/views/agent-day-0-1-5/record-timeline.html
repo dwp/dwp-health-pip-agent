@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="/move-to-pipcs-1/eject-reason" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-5/record-id-base.html" %}
+
+
+
+        <!-- <form action="eject-reason-router" method="post" class="form"> -->
+
+
+        {% if data["eject-reason"] %}
+
+      <p class="govuk-fieldset__legend--l"><b>You did a thing:</b></p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% if data["eject-reason"] == "Extend"%}<li>Extend deadline</li>{% else %}{% endif %}
+        {% if data["eject-reason"] == "ID"%}<li>You told us about ID</li>{% else %}{% endif %}
+        {% if data["eject-reason"] == "Withdraw"%}<li>The applicaiton was withdrawn</li>{% else %}{% endif %}
+        {% if data["eject-reason"] == "Disallow"%}<li>The applicaiton was disallowed</li>{% else %}{% endif %}
+        {% if data["eject-reason"] == "PIPcs"%}<li>The applicaiton is now in PIPcs</li>{% else %}{% endif %}
+
+      </ul>
+      <br><br>
+      {% else %}
+
+        {% endif %}
+
+
+
+          {{ govukRadios({
+            idPrefix: "record-timeline",
+            name: "record-timeline",
+            fieldset: {
+              legend: {
+                html: "I am the timeline, what do you want to do?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Entry",
+              text: "Add entry to timeline",
+              checked: (data["record-timeline"] == "Entry")
+            }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Contine",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
