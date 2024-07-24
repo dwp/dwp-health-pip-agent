@@ -420,7 +420,7 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
   if (assuranceOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)
   }
-  else if (assuranceOutcomeTaskList == 'BAU') {
+  else if (assuranceOutcomeTaskList == 'PIPcs') {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
@@ -476,7 +476,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   else if (preparationOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)
   }
-  else if (preparationOutcomeTaskList == 'BAU') {
+  else if (preparationOutcomeTaskList == 'PIPcs') {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
   else if (preparationOutcomeTaskList == 'Withdraw') {
@@ -527,7 +527,7 @@ router.post(`/ftc-make-contact-router`, (req, res) => {
 router.post(`/application-vcc-check-router`, (req, res) => {
   const vccCheck = req.session.data['application-vcc-check']
 
-  if (vccCheck == 'BAU') {
+  if (vccCheck == 'PIPcs') {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
    else {

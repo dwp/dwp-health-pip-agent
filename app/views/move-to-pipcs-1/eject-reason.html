@@ -10,7 +10,18 @@
 
 {% block content %}
 
+
+
+
 <form action="eject-reason-router" method="post" class="form">
+  {% if data["record-timeline"] == "Entry" %}
+
+    {% else %}
+    <!-- <form action="eject-reason-router" method="post" class="form"> -->
+
+    {% endif %}
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -34,29 +45,29 @@ Pelican
         classes: "govuk-radios",
         items: [
         {
-          value: "a",
+          value: "PIPcs",
           text: "Applicaiton needs to be moved to PIPcs",
-          checked: (data["eject-reason"] == "a")
+          checked: (data["eject-reason"] == "PIPcs")
         },
         {
-          value: "a",
+          value: "Disallow",
           text: "Disallow application",
-          checked: (data["eject-reason"] == "a")
+          checked: (data["eject-reason"] == "Disallow")
         },
         {
-          value: "a",
+          value: "Withdraw",
           text: "Withdraw application",
-          checked: (data["eject-reason"] == "a")
+          checked: (data["eject-reason"] == "Withdraw")
         },
         {
-          value: "a",
+          value: "Extend",
           text: "Extend deadline",
-          checked: (data["eject-reason"] == "X")
+          checked: (data["eject-reason"] == "Extend")
         },
         {
-          value: "a",
+          value: "ID",
           text: "Telephone identity verification was conducted",
-          checked: (data["eject-reason"] == "a")
+          checked: (data["eject-reason"] == "ID")
         },
         {
           value: "eject-reason-other",

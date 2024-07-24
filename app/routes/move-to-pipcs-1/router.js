@@ -24,14 +24,23 @@ router.use(`/pip-doc8.pdf`, express.static(path.resolve('app/views/agent-0-7/pip
 router.post(`/eject-reason-router`, (req, res) => {
   const ejectReason = req.session.data['eject-reason']
 
-  if (ejectReason == 'a') {
+  if (ejectReason == 'PIPcs') {
     res.redirect(`eject-reason-justification`)
   }
   else if (ejectReason == 'eject-reason-other') {
     res.redirect(`eject-reason-justification`)
   }
-  else if (ejectReason == 'extend') {
-    res.redirect(`extend-journey`)
+  else if (ejectReason == 'Extend') {
+    res.redirect(`/agent-day-0-1-5/record-timeline`)
+  }
+  else if (ejectReason == 'Withdraw') {
+    res.redirect(`/agent-day-0-1-5/assurance-withdraw-check`)
+  }
+  else if (ejectReason == 'Disallow') {
+    res.redirect(`/agent-day-0-1-5/record-timeline`)
+  }
+  else if (ejectReason == 'ID') {
+    res.redirect(`/agent-day-0-1-5/record-timeline`)
   }
    else {
     res.redirect(`eject-reason-justification`)
