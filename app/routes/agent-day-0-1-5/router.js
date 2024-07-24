@@ -421,10 +421,10 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (assuranceOutcomeTaskList == 'BAU') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`tbc`)
   }
   else if (assuranceOutcomeTaskList == 'Withdraw') {
     res.redirect(`assurance-withdraw-check`)
@@ -452,13 +452,13 @@ router.post(`/assurance-withdraw-check-router`, (req, res) => {
   const assuranceOutcomeWithdraw = req.session.data['assurance-withdraw-check']
 
   if (assuranceOutcomeWithdraw == 'Yes') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
   else if (assuranceOutcomeWithdraw == 'No') {
     res.redirect(`assurance-withdraw-actions`)
   }
   else if (assuranceOutcomeWithdraw == 'DontKnow') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
    else {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
@@ -477,7 +477,10 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (preparationOutcomeTaskList == 'BAU') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+  }
+  else if (preparationOutcomeTaskList == 'Withdraw') {
+    res.redirect(`assurance-withdraw-check`)
   }
    else {
     res.redirect(`exit-event-history`)

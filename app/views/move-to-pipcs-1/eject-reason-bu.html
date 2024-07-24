@@ -23,7 +23,7 @@ Pelican
         name: "eject-reason",
         fieldset: {
           legend: {
-            html: "Add an event",
+            html: "Why does this application need to move to PIPCS?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -35,8 +35,34 @@ Pelican
         items: [
         {
           value: "a",
-          text: "Applicaiton needs to be moved to PIPcs",
+          text: "I cannot do what I need to do in the service",
           checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "There is potential risk to the applicant (vulnerability)",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          divider: "Pelican reasons"
+        },
+        {
+          value: "a",
+          text: "Change of circumstances",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Error in claimant data gather",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "a",
+          text: "Additional support need identified",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          divider: "Pelican prompt"
         },
         {
           value: "a",
@@ -50,12 +76,17 @@ Pelican
         },
         {
           value: "a",
-          text: "Extend deadline",
-          checked: (data["eject-reason"] == "X")
+          text: "Application needs to be moved to PIPCS (If processing this is already known)",
+          checked: (data["eject-reason"] == "a")
+        },
+        {
+          value: "extend",
+          text: "The applicant needs more time to complete the health information gather (PIP2)",
+          checked: (data["eject-reason"] == "extend")
         },
         {
           value: "a",
-          text: "Telephone identity verification was conducted",
+          text: "Identity verification was completed on the phone (either passed or failed)",
           checked: (data["eject-reason"] == "a")
         },
         {
