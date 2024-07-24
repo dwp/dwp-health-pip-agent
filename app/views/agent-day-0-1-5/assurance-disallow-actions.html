@@ -65,34 +65,34 @@
       </div>
 
 
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
 
-      {{ govukCheckboxes({
-        name: "waste",
-        fieldset: {
-          legend: {
-            text: "You need to confirm that you have sent the letter brah",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        items: [
-          {
-            value: "carcasses",
-            text: "I have moved the application to PIPCS"
-          }
-        ]
-      }) }}
+            {{ govukCheckboxes({
+              name: "waste",
+              fieldset: {
+                legend: {
+                  text: "You need to confirm that you have sent the letter brah",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              items: [
+                {
+                  value: "carcasses",
+                  text: "I have moved the application to PIPCS"
+                }
+              ]
+            }) }}
 
-      {{ govukButton({
-        text: "Finish and close",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+            {{ govukButton({
+              text: "Finish and close",
+              classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
+            }) }}
 
         </div>
       </div>
