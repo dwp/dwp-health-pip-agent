@@ -37,6 +37,9 @@ router.use('/agent-day-0-1-3', require('./routes/agent-day-0-1-3/router.js'));
 router.use('/agent-day-0-1-4', require('./routes/agent-day-0-1-4/router.js'));
 router.use('/agent-day-0-1-5', require('./routes/agent-day-0-1-5/router.js'));
 
+router.use('/move-to-pipcs-1', require('./routes/move-to-pipcs-1/router.js'));
+
+
 module.exports = router
 
 //v12//
