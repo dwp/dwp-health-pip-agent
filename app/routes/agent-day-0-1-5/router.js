@@ -424,7 +424,10 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`/agent-0-13/eject-reason`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
-    res.redirect(`assurance-disallow-check`)
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
+  else if (assuranceOutcomeTaskList == 'Withdraw') {
+    res.redirect(`assurance-withdraw-check`)
   }
    else {
     res.redirect(`eject-reason-justification`)
@@ -432,12 +435,12 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
 })
 
 router.post(`/assurance-disallow-check-router`, (req, res) => {
-  const assuranceOutcomeTaskList = req.session.data['assurance-disallow-check']
+  const assuranceOutcomeDisallow = req.session.data['assurance-disallow-check']
 
-  if (assuranceOutcomeTaskList == 'Yes') {
+  if (assuranceOutcomeDisallow == 'Yes') {
     res.redirect(`/agent-0-13/eject-reason`)
   }
-  else if (assuranceOutcomeTaskList == 'No') {
+  else if (assuranceOutcomeDisallow == 'No') {
     res.redirect(`assurance-disallow-actions`)
   }
    else {
@@ -445,6 +448,19 @@ router.post(`/assurance-disallow-check-router`, (req, res) => {
   }
 })
 
+router.post(`/assurance-withdraw-check-router`, (req, res) => {
+  const assuranceOutcomeWithdraw = req.session.data['assurance-withdraw-check']
+
+  if (assuranceOutcomeWithdraw == 'Yes') {
+    res.redirect(`/agent-0-13/eject-reason`)
+  }
+  else if (assuranceOutcomeWithdraw == 'No') {
+    res.redirect(`assurance-withdraw-actions`)
+  }
+   else {
+    res.redirect(`eject-reason-justification`)
+  }
+})
 
 
 
