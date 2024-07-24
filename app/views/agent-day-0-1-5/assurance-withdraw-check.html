@@ -22,6 +22,9 @@
           <!------------H1 LEGEND------------>
             {% set legendHint %}
 
+            <p class="govuk-body govuk-!-margin-top-2">Check supporting documents for ??</p>
+
+
             <p class="govuk-body govuk-!-margin-top-2">Vulnerabilities include:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>apples</li>
@@ -38,7 +41,7 @@
             name: "assurance-withdraw-check",
             fieldset: {
               legend: {
-                html: "Does the applciation have any sign of vulnerability?",
+                html: "Is there any evidence to suggest this application could have vulnerability?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -57,6 +60,11 @@
               value: "No",
               text: "No",
               checked: (data["assurance-withdraw-check"] == "No")
+            },
+            {
+              value: "DontKnow",
+              text: "Don't know",
+              checked: (data["assurance-withdraw-check"] == "DontKnow")
             }
             ]
           }) }}
