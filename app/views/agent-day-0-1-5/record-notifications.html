@@ -70,7 +70,7 @@
       type: 'success'
     }) }}
 
-    {% elif data["assurance-disallow-check"] == "No" or data["assurance-withdraw-check"] == "No" %}
+    {% elif data["assurance-disallow-check"] == "No" %}
 
 
     {% set html %}
@@ -82,11 +82,35 @@
       type: 'success'
     }) }}
 
-    {% elif data["assurance-disallow-check"] == "Yes" or data["assurance-withdraw-check"] == "Yes" %}
+    {% elif data["assurance-withdraw-check"] == "No" %}
 
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">This has gone back to BAU brah</p>
+    <p class="govuk-body govuk-!-font-size-19">@dave You have withdraw the applciation, you have sent the letter and its now closed as far as the systems knows</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'success'
+    }) }}
+
+    {% elif data["assurance-disallow-check"] == "Yes" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">@dave This has gone back to BAU brah because of disallow</p>
+    {% endset %}
+
+    {{ govukNotificationBanner({
+      html: html,
+      type: 'information'
+    }) }}
+
+    {% elif data["assurance-withdraw-check"] == "Yes" %}
+
+
+    {% set html %}
+    <p class="govuk-body govuk-!-font-size-19">@dave This has gone back to BAU brah because of withdral</p>
     {% endset %}
 
     {{ govukNotificationBanner({
@@ -98,7 +122,7 @@
 
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">This has gone back to BAU brah</p>
+    <p class="govuk-body govuk-!-font-size-19">@dave This has gone back to BAU brah</p>
     {% endset %}
 
     {{ govukNotificationBanner({
