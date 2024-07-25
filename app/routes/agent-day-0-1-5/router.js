@@ -63,6 +63,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '6') {
     res.redirect(`fta-make-contact`)
   }
+  else if (applicationSelector == '7') {
+    res.redirect(`preparation-linear-outcome`)
+  }
    else {
     res.redirect(`XXX`)
   }
