@@ -29,6 +29,41 @@
       {% include "agent-0-13/record-id.html" %}
 
 Pelican
+
+
+      {% if data["confim-bau"] %}
+
+      {{ govukRadios({
+        idPrefix: "eject-reason",
+        name: "eject-reason",
+        fieldset: {
+          legend: {
+            html: "Add an event",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Other",
+          text: "Other reason",
+          checked: (data["eject-reason"] == "Other")
+        }
+        ]
+      }) }}
+
+
+      If the claim is BAU then what are we adding here?
+      If there is only a single radio, its not a radio set anymore
+
+<br><br>
+
+      {% else %}
+
       {{ govukRadios({
         idPrefix: "eject-reason",
         name: "eject-reason",
@@ -77,8 +112,10 @@ Pelican
         ]
       }) }}
 
+      {% endif %}
 
-
+@dave watch out for the double radios, its on or off depending on if the applicaiton is in BAU
+<br><br>
       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
