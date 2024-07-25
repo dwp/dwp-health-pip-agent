@@ -18,16 +18,27 @@
       {% include "agent-0-13/record-id.html" %}
 
 
+
+      {% if data["confim-bau"] %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@dave This application is no longer in the PIPservice its the in PIPcs castle</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">
+        These were the issues and the content that was moved over
+      </p>
+
+      {% else %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Move this application to PIPCS</h1>
 
-@dave This applicaiton has been moved to PIPcs
-      
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><b>You need to:</b></p>
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
       <li>copy and paste this information to PIPCS</li>
       <li>download a copy of the <a class="" href="pip-doc2.pdf" target="_blank">application data (PDF)</a> and upload it<br> to ECMS - it willthen be available in supporting documents</li>
     </ul>
+
+      {% endif %}
+
+
 
 <br>
 
@@ -267,52 +278,15 @@
             </div>
 
 
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+      {% if data["confim-bau"] %}
 
-            <!-- <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
-                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">(TBC is this even a thing?)Download the application PDF and upload to DRS - this will then be shown in supporting documents</p>
-                <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc2.pdf" target="_blank">Application data (PDF)</a></p>
-              </div>
-            </div> -->
+      {% else %}
 
-
-      <!-- {{ govukRadios({
-        idPrefix: "eject-data",
-        name: "eject-data",
-        fieldset: {
-          legend: {
-            text: "CTA A: Has data has now been moved back to PIPcs?" ,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: ""
-        },
-        classes: "govuk-radios",
-        items: [
-        {
-          value: "Yes",
-          text: "Yes",
-          checked: (data["eject-data"] == "Yes"),
-                conditional: {
-                  html: scoreOverwite
-                }
-        },
-        {
-          value: "No",
-          text: "No",
-          checked: (data["eject-data"] == "No")
-        }
-        ]
-      }) }}
-
-      or -->
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
       {{ govukCheckboxes({
-        name: "waste",
+        name: "confim-bau",
         fieldset: {
           legend: {
             text: "You need to confirm that you have moved the application to PIPCS",
@@ -325,7 +299,7 @@
         },
         items: [
           {
-            value: "carcasses",
+            value: "confim-bau",
             text: "I have moved the application to PIPCS"
           }
         ]
@@ -333,8 +307,12 @@
 
       {{ govukButton({
         text: "Finish and close",
-        classes: "govuk-!-margin-bottom-8"
+        classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-3"
       }) }}
+
+      {% endif %}
+
+
 
         </div>
       </div>
