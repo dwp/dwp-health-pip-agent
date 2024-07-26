@@ -11,7 +11,13 @@
 {% block content %}
 
 
+
+{% if data["system-application-selector"] == "7" %}
+<form action="preparation-linear-outcome" method="post" class="form">
+{% else %}
 <form action="preparation-sub-monolith-1" method="post" class="form">
+{% endif %}
+
 
 
 
