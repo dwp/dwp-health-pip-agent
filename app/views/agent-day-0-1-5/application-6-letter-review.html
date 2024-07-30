@@ -713,32 +713,41 @@
 
       </dl>
 
-      {% if data["system-application-selector"]  == "1" %}
+
+    </div>
+  </div>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% if data["system-application-selector"]  == "1" %}
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-quarter">
+
+            <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
 
 
-        {% else %}
+              {% else %}
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will then be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
+            <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will then be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You do not need to do anything further once you confirm the letter content.</p>
 
-      {% endif %}
+            {% endif %}
 
+            {{ govukButton({
+              text: "Confirm letter content and continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
 
-        {{ govukButton({
-          text: "Confirm letter content and continue",
-          classes: "govuk-!-margin-bottom-8"
-        }) }}
-
-
-        </div>
       </div>
+    </div>
 
   </form>
 
