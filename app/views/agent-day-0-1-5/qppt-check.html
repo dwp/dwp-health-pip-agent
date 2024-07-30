@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-alt" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-5/record-id-base.html" %}
+
+
+
+          {{ govukRadios({
+            idPrefix: "preparation-linear-outcome",
+            name: "preparation-linear-outcome",
+            fieldset: {
+              legend: {
+                html: "Given the information supplied, can they be paid from their date of claim [DD MM YYYY]",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["preparation-linear-outcome"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["preparation-linear-outcome"] == "No")
+            }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
