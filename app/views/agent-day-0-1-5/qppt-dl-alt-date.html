@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="qppt-alt" method="post" class="form">
+<form action="qppt-m-check" method="post" class="form">
 
 
 
@@ -22,8 +22,8 @@
 
 
           {{ govukDateInput({
-            id: "claim-date-of-claim",
-            namePrefix: "claim-date-of-claim",
+            id: "qppt-dl-alt-date",
+            namePrefix: "qppt-dl-alt-date",
             fieldset: {
               legend: {
                 html: "When can the applicant be paid from?",
@@ -38,17 +38,17 @@
               {
                 name: "day",
                 classes: "govuk-input--width-2",
-                value: data["claim-date-of-claim-day"]
+                value: data["qppt-dl-alt-date-day"]
               },
               {
                 name: "month",
                 classes: "govuk-input--width-2",
-                value: data["claim-date-of-claim-month"]
+                value: data["qppt-dl-alt-date-month"]
               },
               {
                 name: "year",
                 classes: "govuk-input--width-4",
-                value: data["claim-date-of-claim-year"]
+                value: data["qppt-dl-alt-date-year"]
               }
             ]
           }) }}
