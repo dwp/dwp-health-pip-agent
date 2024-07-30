@@ -538,6 +538,29 @@ router.post(`/application-vcc-check-router`, (req, res) => {
   }
 })
 
+router.post(`/qppt-dl-check-router`, (req, res) => {
+  const qpptDaily = req.session.data['qppt-dl-check']
+
+  if (qpptDaily == 'Yes') {
+    res.redirect(`qppt-m-check`)
+  }
+   else {
+     res.redirect(`qppt-dl-alt-date`)
+  }
+})
+
+router.post(`/qppt-m-check-router`, (req, res) => {
+  const qpptMoto = req.session.data['qppt-m-check']
+
+  if (qpptMoto == 'Yes') {
+    res.redirect(`award-dates-data-input`)
+  }
+   else {
+     res.redirect(`qppt-m-alt-date`)
+  }
+})
+
+
 
 
 module.exports = router

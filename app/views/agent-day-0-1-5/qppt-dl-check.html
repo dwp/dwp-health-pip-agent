@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="qppt-alt" method="post" class="form">
+<form action="qppt-dl-check-router" method="post" class="form">
 
 
 
@@ -23,11 +23,11 @@
 
 
           {{ govukRadios({
-            idPrefix: "preparation-linear-outcome",
-            name: "preparation-linear-outcome",
+            idPrefix: "qppt-dl-check",
+            name: "qppt-dl-check",
             fieldset: {
               legend: {
-                html: "Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
+                html: "DailyLiving: Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -40,12 +40,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["preparation-linear-outcome"] == "Yes")
+              checked: (data["qppt-dl-check"] == "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: (data["preparation-linear-outcome"] == "No")
+              checked: (data["qppt-dl-check"] == "No")
             }
             ]
           }) }}
