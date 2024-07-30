@@ -23,7 +23,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application was moved to PIPCS</h1>
 
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">
-        This is the information that was moved from this service to PIPCS. 
+        This is the information that was moved from this service to PIPCS.
       </p>
 
       {% else %}
@@ -40,7 +40,7 @@
 
 
 
-      {% if data["system-application-selector"] == "05" or data["system-application-selector"] == "7" or data["confim-bau"] %}
+      {% if data["system-application-selector"] == "05" or data["system-application-selector"] == "7" or data["confim-bau"] or data["eject-reason"] == "PIPcs"%}
 
 
 
@@ -85,7 +85,7 @@
       {% else %}
       {% endif %}
 
-      {% if data["system-application-selector"] == "7" or data["confim-bau"] %}
+      {% if data["system-application-selector"] == "7" or data["confim-bau"] or data["eject-reason"] == "PIPcs" %}
 
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -129,7 +129,7 @@
       {% else %}
       {% endif %}
 
-      {% if data["system-application-selector"] == "2" or data["confim-bau"] %}
+      {% if data["system-application-selector"] == "2" or data["confim-bau"] or data["eject-reason"] == "PIPcs"%}
 
 
 
