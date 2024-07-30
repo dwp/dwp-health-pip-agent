@@ -27,7 +27,7 @@
 
         {% if data["eject-reason"] %}
 
-      <p class="govuk-fieldset__legend--l"><b>You did a thing:</b></p>
+      <p class="govuk-fieldset__legend--l"><b>Action taken:</b></p>
       <ul class="govuk-list govuk-list--bullet">
         {% if data["eject-reason"] == "Extend"%}<li>Extend deadline</li>{% else %}{% endif %}
         {% if data["eject-reason"] == "ID"%}<li>You told us about ID</li>{% else %}{% endif %}
@@ -37,10 +37,10 @@
 
         {% if data["eject-reason"] == "PIPcs"%}
         <ul class="govuk-list govuk-list--no-bullet">
-        <li>(Title) The applicaiton is now in PIPcs</li>
-        <li>(Justification) Reasons</li>
-        <li><a class="govuk-link" href="/move-to-pipcs-1/eject-data">Data from process</a></li>
-        <li>(Date) DD MM YYYY</li>
+        <li>This application was moved to PIPCS</li>
+        <li>Justification: The applicant showed signs of vulnerability</li>
+        <li><a class="govuk-link" href="/move-to-pipcs-1/eject-data">View the information that was moved to PIPCS</a></li>
+        <li>Date moved: 25 7 2024</li>
         {% else %}{% endif %}
 
       </ul>
@@ -56,7 +56,7 @@
             name: "record-timeline",
             fieldset: {
               legend: {
-                html: "I am the timeline, what do you want to do?",
+                html: "I am the timeline. What do you want to do?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }

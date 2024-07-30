@@ -81,7 +81,7 @@ Pelican
         items: [
         {
           value: "PIPcs",
-          text: "Applicaiton needs to be moved to PIPcs (What does this do if its already done?)",
+          text: "Application needs to be moved to PIPCS",
           checked: (data["eject-reason"] == "PIPcs")
         },
         {
@@ -101,12 +101,17 @@ Pelican
         },
         {
           value: "ID",
-          text: "Telephone identity verification was conducted",
+          text: "Passed IDV",
+          checked: (data["eject-reason"] == "ID")
+        },
+        {
+          value: "ID",
+          text: "Failed IDV",
           checked: (data["eject-reason"] == "ID")
         },
         {
           value: "Other",
-          text: "Other reason",
+          text: "Other",
           checked: (data["eject-reason"] == "Other")
         }
         ]
@@ -114,7 +119,7 @@ Pelican
 
       {% endif %}
 
-@dave watch out for the double radios, its on or off depending on if the applicaiton is in BAU
+<!-- @dave watch out for the double radios, its on or off depending on if the applicaiton is in BAU -->
 <br><br>
       {{ govukButton({
         text: "Continue",
