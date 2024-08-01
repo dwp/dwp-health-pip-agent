@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="system-application-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-application-selector",
+  name: "system-application-selector",
+  fieldset: {
+    legend: {
+      text: "Select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "0",
+    text: "'Prepare an application for AP' (TaskList)",
+    checked: (data["system-application-selector"] == "0")
+  },
+  {
+    value: "05",
+    text: "'Prepare an application for AP' (Linear)",
+    checked: (data["system-application-selector"] == "05")
+  },
+  {
+    value: "4",
+    text: "'Prepare an application for decision' (Linear)",
+    checked: (data["system-application-selector"] == "4")
+  },
+  {
+    value: "7",
+    text: "'Prepare an application for decision' (single page)",
+    checked: (data["system-application-selector"] == "7")
+  },
+  {
+    value: "1",
+    text: "Nil award (N)",
+    checked: (data["system-application-selector"] == "1")
+  },
+  {
+    value: "2",
+    text: "Award (A)",
+    checked: (data["system-application-selector"] == "2")
+  },
+  {
+    value: "5",
+    text: "Failed to comply",
+    checked: (data["system-application-selector"] == "5")
+  },
+  {
+    value: "6",
+    text: "Failed to attend",
+    checked: (data["system-application-selector"] == "6")
+  }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">New application to process (Dynamic content depending on entry point)</h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <!-- <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Application details</caption> -->
+
+            <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-40-percent"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+          <!-- <tr class="govuk-table__row">
+            <td class="govuk-table__header">Identity compeleted by citizen</td>
+            <td class="govuk-table__cell">Incomplete<br> Completed (Telephone) <br> Completed (Apply)</td>
+          </tr> -->
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Application submitted</td>
+            <td class="govuk-table__cell">19 March 2024</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Assessment report completed</td>
+            <td class="govuk-table__cell">26 March 2024</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Age</td>
+            <td class="govuk-table__cell">65 (20 February 1959)</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+      <!-- <table class="govuk-table govuk-!-margin-bottom-6">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Conditions and functional restrictions taken from assessment report</caption>
+
+            <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-20-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-20-percent"></th>
+
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Conditions</td>
+            <td class="govuk-table__cell">Fibromyalgia<br>Anxiety</td>
+            <td class="govuk-table__cell"></td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Had the functional restriction for<br> at least 3 months</td>
+            <td class="govuk-table__cell">Daily living<br>Mobility</td>
+            <td class="govuk-table__cell">Yes<br>Yes</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Likely to have the functional <br>restriction in 9 months</td>
+            <td class="govuk-table__cell">Daily living<br>Mobility</td>
+            <td class="govuk-table__cell">Yes<br>Yes</td>
+          </tr>
+
+        </tbody>
+      </table> -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
