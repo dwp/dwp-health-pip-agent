@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="qppt-dl-check-router" method="post" class="form">
+<form action="qppt-m-3m-check-router" method="post" class="form">
 
 
 
@@ -23,11 +23,11 @@
 
 
           {{ govukRadios({
-            idPrefix: "qppt-dl-check",
-            name: "qppt-dl-check",
+            idPrefix: "qppt-m-3m-check",
+            name: "qppt-m-3m-check",
             fieldset: {
               legend: {
-                html: "DailyLiving: Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
+                html: "Moto: Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
@@ -40,12 +40,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["qppt-dl-check"] == "Yes")
+              checked: (data["qppt-m-3m-check"] == "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: (data["qppt-dl-check"] == "No")
+              checked: (data["qppt-m-3m-check"] == "No")
             }
             ]
           }) }}
