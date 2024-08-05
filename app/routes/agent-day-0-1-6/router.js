@@ -538,14 +538,17 @@ router.post(`/application-vcc-check-router`, (req, res) => {
   }
 })
 
-router.post(`/qppt-dl-check-router`, (req, res) => {
-  const qpptDaily = req.session.data['qppt-dl-check']
+router.post(`/qppt-dl-3m-check-router`, (req, res) => {
+  const qpptDaily = req.session.data['qppt-dl-3m-check']
 
   if (qpptDaily == 'Yes') {
-    res.redirect(`qppt-m-check`)
+    res.redirect(`qppt-dl-9m-check`)
+  }
+  else if (qpptDaily == 'Split') {
+    res.redirect(`qppt-dl-3m-split`)
   }
    else {
-     res.redirect(`qppt-dl-alt-date`)
+     res.redirect(`qppt-dl-3m-alt-date`)
   }
 })
 
@@ -553,7 +556,7 @@ router.post(`/qppt-m-check-router`, (req, res) => {
   const qpptMoto = req.session.data['qppt-m-check']
 
   if (qpptMoto == 'Yes') {
-    res.redirect(`award-dates-data-input`)
+    res.redirect(`qppt-m-9m-check`)
   }
    else {
      res.redirect(`qppt-m-alt-date`)

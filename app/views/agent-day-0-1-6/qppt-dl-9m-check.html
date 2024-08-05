@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-9m-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+<!------------H1 LEGEND------------>
+  {% set dynamicHint %}
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-4">This is the 3 months qualifying period prior to date of submission</p> -->
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Assesment provider has indicated that they will have restrictions for at least 9 months after DD MM YYYY (date of assessment)</p>
+
+    <!-- <ul class="govuk-list govuk-list--bullet">
+      <li>The Assesment provider has indicated that they met the 3 month qualifying period prior to date of assesment was met</li>
+    </ul> -->
+
+  {% endset %}
+<!------------Legend--------------->
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-9m-check",
+            name: "qppt-dl-9m-check",
+            fieldset: {
+              legend: {
+                html: "Will the applicant have daily living restrictions 9 months after DD MM YYYY? (date of submission/effective date if alt)",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-9m-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-9m-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
