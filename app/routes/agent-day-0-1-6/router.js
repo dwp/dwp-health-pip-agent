@@ -547,10 +547,30 @@ router.post(`/qppt-dl-3m-check-router`, (req, res) => {
   else if (qpptDaily == 'Split') {
     res.redirect(`qppt-dl-3m-split`)
   }
+  else if (qpptDaily == 'EffectiveDate') {
+    res.redirect(`qppt-dl-effective-date-check`)
+  }
+  else if (qpptDaily == 'NoRestrictions') {
+    res.redirect(`qppt-dl-9m-check`)
+  }
    else {
-     res.redirect(`qppt-dl-3m-alt-date`)
+     res.redirect(`qppt-dl-9m-check`)
   }
 })
+
+router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
+  const qpptEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
+
+  if (qpptEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-dl-effective-date-multi`)
+  }
+})
+
+
+
 
 router.post(`/qppt-m-check-router`, (req, res) => {
   const qpptMoto = req.session.data['qppt-m-check']
