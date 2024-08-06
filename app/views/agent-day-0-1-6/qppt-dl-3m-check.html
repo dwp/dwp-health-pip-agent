@@ -26,7 +26,7 @@
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Assesment provider has indicated that they had rescttions 3 months before DD MM YYYY (assessment date)</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Assesment provider has indicated that they had restrictions 3 months before DD MM YYYY (assessment date)</p>
 
     <!-- <ul class="govuk-list govuk-list--bullet">
       <li>The Assesment provider has indicated that they met the 3 month qualifying period prior to date of assesment was met</li>
@@ -57,14 +57,19 @@
               checked: (data["qppt-dl-3m-check"] == "Yes")
             },
             {
-              value: "No",
-              text: "No",
-              checked: (data["qppt-dl-3m-check"] == "No")
+              value: "EffectiveDate",
+              text: "No – An effective date needed",
+              checked: (data["qppt-dl-3m-check"] == "EffectiveDate")
             },
             {
-              value: "Split",
-              text: "No - Split start",
-              checked: (data["qppt-dl-3m-check"] == "Split")
+              value: "NoRestrictions",
+              text: "No – There are no restrictions found",
+              checked: (data["qppt-dl-3m-check"] == "NoRestrictions")
+            },
+            {
+              value: "Pause",
+              text: "I need to come back to this later",
+              checked: (data["qppt-dl-3m-check"] == "Pause")
             }
             ]
           }) }}

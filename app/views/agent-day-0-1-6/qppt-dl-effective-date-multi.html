@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="application-6-about" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+
+When will the first effective date start?
+<br><br>
+What was the outcome for this period?
+<br>
+— Nil<br>
+— Standard<br>
+— Enhanced<br>
+<br><br>
+When will the second effective date start for the onward payment?
+<br><br>
+These scores will be taken from the process
+<br><br>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

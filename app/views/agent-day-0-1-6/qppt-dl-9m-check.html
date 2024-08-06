@@ -58,12 +58,16 @@
             },
             {
               value: "No",
-              text: "No",
+              text: "No – The restrictions will end before the 9 month",
+              checked: (data["qppt-dl-9m-check"] == "No")
+            },
+            {
+              value: "No",
+              text: "No – There are no restrictions found",
               checked: (data["qppt-dl-9m-check"] == "No")
             }
             ]
           }) }}
-
 
 
       {{ govukButton({
