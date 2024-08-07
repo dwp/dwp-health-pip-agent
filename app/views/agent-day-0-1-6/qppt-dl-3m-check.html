@@ -20,18 +20,17 @@
 
       {% include "agent-day-0-1-6/record-id-base.html" %}
 
-<!------------H1 LEGEND------------>
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant have Daily Living restrictions 3 months before  {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}? (date of submission)</h1>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 HINT------------>
   {% set dynamicHint %}
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-4">This is the 3 months qualifying period prior to date of submission</p> -->
-
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Assesment provider has indicated that they had restrictions 3 months before DD MM YYYY (assessment date)</p>
-
-    <!-- <ul class="govuk-list govuk-list--bullet">
-      <li>The Assesment provider has indicated that they met the 3 month qualifying period prior to date of assesment was met</li>
-    </ul> -->
-
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they had restrictions 3 months before {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (assessment date)</p>
   {% endset %}
 <!------------Legend--------------->
 
@@ -41,7 +40,7 @@
             name: "qppt-dl-3m-check",
             fieldset: {
               legend: {
-                html: "Did the applicant have Daily Living restrictions 3 months before DD MM YYYY? (date of submission)",
+                html: dynamicH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
