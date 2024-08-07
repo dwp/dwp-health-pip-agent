@@ -110,7 +110,8 @@
 </table>
 
 
-{% if data["qppt-dl-effective-date-check"] == "Yes" or data["qppt-dl-9m-check"] == "Yes"%}
+
+{% if data["qppt-dl-effective-date-check"] == "Yes" or data["qppt-dl-9m-check"] == "Yes" or data["qppt-dl-9m-check"] == "EndBefore9" or data["qppt-dl-9m-check"] == "NoRestrictions" or data["qppt-m-9m-check"] == "EndBefore9" or data["qppt-m-9m-check"] == "NoRestrictions" %}
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
