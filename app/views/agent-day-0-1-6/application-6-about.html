@@ -110,9 +110,7 @@
 </table>
 
 
-{% if data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
-{% else %}
-
+{% if data["qppt-dl-effective-date-check"] == "Yes" or data["qppt-dl-9m-check"] == "Yes"%}
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -394,6 +392,8 @@
 
                 </div>
                 </div>
+{% elif data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
+{% else %}
 
 {% endif %}
 
