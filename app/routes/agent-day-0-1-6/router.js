@@ -608,13 +608,13 @@ router.post(`/qppt-m-9m-check-router`, (req, res) => {
   const qpptMobility9m = req.session.data['qppt-m-9m-check']
 
   if (qpptMobility9m == 'Yes') {
-    res.redirect(`XXX`)
+    res.redirect(`application-6-about`)
   }
   else if (qpptMobility9m == 'No') {
-    res.redirect(`XXX`)
+    res.redirect(`application-6-about`)
   }
    else {
-     res.redirect(`XXX`)
+     res.redirect(`application-6-about`)
   }
 })
 
