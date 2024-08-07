@@ -562,13 +562,13 @@ router.post(`/qppt-dl-9m-check-router`, (req, res) => {
   const qpptDaily9m = req.session.data['qppt-dl-9m-check']
 
   if (qpptDaily9m == 'Yes') {
-    res.redirect(`qppt-m-3m-check`)
+    res.redirect(`application-6-about`)
   }
   else if (qpptDaily9m == 'No') {
-    res.redirect(`qppt-m-3m-check`)
+    res.redirect(`application-6-about`)
   }
    else {
-     res.redirect(`qppt-m-3m-check`)
+     res.redirect(`application-6-about`)
   }
 })
 
