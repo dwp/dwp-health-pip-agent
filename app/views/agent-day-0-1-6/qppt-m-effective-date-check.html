@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-m-effective-date-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+
+      {{ govukRadios({
+        idPrefix: "qppt-m-effective-date-check",
+        name: "qppt-m-effective-date-check",
+        fieldset: {
+          legend: {
+            html: "(Split rate)Is there more than one condition that effects the start date // Is it a single effective date for Daily living?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "This means that they might have had a lower amount earlier in the QP and then it goes up to a higher ammount"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["qppt-m-effective-date-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["qppt-m-effective-date-check"] == "No")
+        }
+        ]
+      }) }}
+
+Single effetive date
+<br>
+More than one condition meaning more than one start date?
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

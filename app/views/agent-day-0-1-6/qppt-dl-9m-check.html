@@ -20,18 +20,19 @@
 
       {% include "agent-day-0-1-6/record-id-base.html" %}
 
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Will the applicant have Daily Living restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment)? </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
 <!------------H1 LEGEND------------>
   {% set dynamicHint %}
-    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-4">This is the 3 months qualifying period prior to date of submission</p> -->
-
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The Assesment provider has indicated that they will have restrictions for at least 9 months after DD MM YYYY (date of assessment)</p>
-
-    <!-- <ul class="govuk-list govuk-list--bullet">
-      <li>The Assesment provider has indicated that they met the 3 month qualifying period prior to date of assesment was met</li>
-    </ul> -->
-
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they will have restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment) </p>
   {% endset %}
 <!------------Legend--------------->
 
@@ -41,13 +42,13 @@
             name: "qppt-dl-9m-check",
             fieldset: {
               legend: {
-                html: "Will the applicant have daily living restrictions 9 months after DD MM YYYY? (date of submission/effective date if alt)",
+                html: dynamicH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              html: dynamicHint
+              html: ""
             },
             classes: "govuk-radios",
             items: [
@@ -58,7 +59,7 @@
             },
             {
               value: "No",
-              text: "No – The restrictions will end before the 9 month",
+              text: "No – The restrictions will end before the 9 months",
               checked: (data["qppt-dl-9m-check"] == "No")
             },
             {

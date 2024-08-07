@@ -20,6 +20,19 @@
 
       {% include "agent-day-0-1-6/record-id-base.html" %}
 
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant have Mobility restrictions 3 months before  {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}? (date of submission)</h1>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 HINT------------>
+  {% set dynamicHint %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they had restrictions 3 months before {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (assessment date)</p>
+  {% endset %}
+<!------------Legend--------------->
 
 
           {{ govukRadios({
@@ -27,13 +40,13 @@
             name: "qppt-m-3m-check",
             fieldset: {
               legend: {
-                html: "Moto: Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
+                html: dynamicH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              text: "The application date of claim is 5 months in the past"
+              html: dynamicHint
             },
             classes: "govuk-radios",
             items: [
@@ -43,9 +56,19 @@
               checked: (data["qppt-m-3m-check"] == "Yes")
             },
             {
-              value: "No",
-              text: "No",
-              checked: (data["qppt-m-3m-check"] == "No")
+              value: "EffectiveDate",
+              text: "No – An effective date needed",
+              checked: (data["qppt-m-3m-check"] == "EffectiveDate")
+            },
+            {
+              value: "NoRestrictions",
+              text: "No – There are no restrictions found",
+              checked: (data["qppt-m-3m-check"] == "NoRestrictions")
+            },
+            {
+              value: "Pause",
+              text: "I need to come back to this later",
+              checked: (data["qppt-m-3m-check"] == "Pause")
             }
             ]
           }) }}

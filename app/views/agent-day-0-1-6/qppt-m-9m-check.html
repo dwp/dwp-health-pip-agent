@@ -20,6 +20,21 @@
 
       {% include "agent-day-0-1-6/record-id-base.html" %}
 
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Will the applicant have Mobility restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment)? </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 LEGEND------------>
+  {% set dynamicHint %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they will have restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment) </p>
+  {% endset %}
+<!------------Legend--------------->
 
 
           {{ govukRadios({
@@ -27,13 +42,13 @@
             name: "qppt-m-9m-check",
             fieldset: {
               legend: {
-                html: "Moto: Given the information supplied, can they be paid from their date of claim DD MM YYYY [Qualifying period]",
+                html: dynamicH1,
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             hint: {
-              text: "The application date of claim is 5 months in the past"
+              html: ""
             },
             classes: "govuk-radios",
             items: [
@@ -44,12 +59,16 @@
             },
             {
               value: "No",
-              text: "No",
+              text: "No – The restrictions will end before the 9 months",
+              checked: (data["qppt-m-9m-check"] == "No")
+            },
+            {
+              value: "No",
+              text: "No – There are no restrictions found",
               checked: (data["qppt-m-9m-check"] == "No")
             }
             ]
           }) }}
-
 
 
       {{ govukButton({

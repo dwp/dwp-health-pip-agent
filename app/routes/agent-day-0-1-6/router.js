@@ -539,29 +539,43 @@ router.post(`/application-vcc-check-router`, (req, res) => {
 })
 
 router.post(`/qppt-dl-3m-check-router`, (req, res) => {
-  const qpptDaily = req.session.data['qppt-dl-3m-check']
+  const qpptDaily3m = req.session.data['qppt-dl-3m-check']
 
-  if (qpptDaily == 'Yes') {
+  if (qpptDaily3m == 'Yes') {
     res.redirect(`qppt-dl-9m-check`)
   }
-  else if (qpptDaily == 'Split') {
+  else if (qpptDaily3m == 'Split') {
     res.redirect(`qppt-dl-3m-split`)
   }
-  else if (qpptDaily == 'EffectiveDate') {
+  else if (qpptDaily3m == 'EffectiveDate') {
     res.redirect(`qppt-dl-effective-date-check`)
   }
-  else if (qpptDaily == 'NoRestrictions') {
+  else if (qpptDaily3m == 'NoRestrictions') {
     res.redirect(`qppt-dl-9m-check`)
   }
    else {
-     res.redirect(`qppt-dl-9m-check`)
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-dl-9m-check-router`, (req, res) => {
+  const qpptDaily9m = req.session.data['qppt-dl-9m-check']
+
+  if (qpptDaily9m == 'Yes') {
+    res.redirect(`qppt-m-3m-check`)
+  }
+  else if (qpptDaily9m == 'No') {
+    res.redirect(`qppt-m-3m-check`)
+  }
+   else {
+     res.redirect(`qppt-m-3m-check`)
   }
 })
 
 router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
-  const qpptEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
+  const qpptDailyEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
 
-  if (qpptEffectiveDateCheck == 'Yes') {
+  if (qpptDailyEffectiveDateCheck == 'Yes') {
     res.redirect(`qppt-dl-3m-alt-date`)
   }
    else {
@@ -570,16 +584,48 @@ router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
 })
 
 
+router.post(`/qppt-m-3m-check-router`, (req, res) => {
+  const qpptMobility3m = req.session.data['qppt-m-3m-check']
 
-
-router.post(`/qppt-m-check-router`, (req, res) => {
-  const qpptMoto = req.session.data['qppt-m-check']
-
-  if (qpptMoto == 'Yes') {
+  if (qpptMobility3m == 'Yes') {
+    res.redirect(`qppt-m-9m-check`)
+  }
+  else if (qpptMobility3m == 'Split') {
+    res.redirect(`qppt-m-3m-split`)
+  }
+  else if (qpptMobility3m == 'EffectiveDate') {
+    res.redirect(`qppt-m-effective-date-check`)
+  }
+  else if (qpptMobility3m == 'NoRestrictions') {
     res.redirect(`qppt-m-9m-check`)
   }
    else {
-     res.redirect(`qppt-m-alt-date`)
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-m-9m-check-router`, (req, res) => {
+  const qpptMobility9m = req.session.data['qppt-m-9m-check']
+
+  if (qpptMobility9m == 'Yes') {
+    res.redirect(`XXX`)
+  }
+  else if (qpptMobility9m == 'No') {
+    res.redirect(`XXX`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
+  const qpptMobilityEffectiveDateCheck = req.session.data['qppt-m-effective-date-check']
+
+  if (qpptMobilityEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-m-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-m-effective-date-multi`)
   }
 })
 
