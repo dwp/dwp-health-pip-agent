@@ -34,7 +34,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-5/record-id-base.html" %}
+      {% include "agent-day-0-1-6/record-id-base.html" %}
 
 
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check details about the applicant</h2>
@@ -208,6 +208,63 @@
     value: "Unexpected",
     text: "No",
     checked: (data["assurance-sub-monolith-1-5"] == "Unexpected")
+  }
+  ]
+}) }}
+
+
+{{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-1-11",
+  name: "assurance-sub-monolith-1-11",
+  fieldset: {
+    legend: {
+      html: "Is there any evidence to suggest this RES / PRES?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "XXX."
+  },
+  items: [
+  {
+    value: "Unexpected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-1-11"] == "Unexpected")
+  },
+  {
+    value: "Expected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-1-11"] == "Expected")
+  }
+  ]
+}) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-1-12",
+  name: "assurance-sub-monolith-1-12",
+  fieldset: {
+    legend: {
+      html: "Is there any evidence to suggest this Imagration?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "XXX."
+  },
+  items: [
+  {
+    value: "Unexpected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-1-12"] == "Unexpected")
+  },
+  {
+    value: "Expected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-1-12"] == "Expected")
   }
   ]
 }) }}
