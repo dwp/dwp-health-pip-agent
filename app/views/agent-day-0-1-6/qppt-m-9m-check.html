@@ -23,7 +23,7 @@
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Will the applicant have Mobility restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment)? </h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the applicant likely to have mobility restrictions 9 months after their assessment on {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}?</h1>
 
 
         {% endset %}
@@ -59,12 +59,12 @@
             },
             {
               value: "EndBefore9",
-              text: "No – The restrictions will end before the 9 months",
+              text: "No – they are not likely to have restrictions",
               checked: (data["qppt-m-9m-check"] == "EndBefore9")
             },
             {
               value: "NoRestrictions",
-              text: "No – There are no restrictions found",
+              text: "No restrictions were found",
               checked: (data["qppt-m-9m-check"] == "NoRestrictions")
             }
             ]
