@@ -22,15 +22,15 @@
 
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant have Mobility restrictions 3 months before  {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}? (date of submission)</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant have mobility restrictions for at least 3 months before they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?</h1>
 
         {% endset %}
       <!------------Legend--------------->
 
 <!------------H1 HINT------------>
   {% set dynamicHint %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they had restrictions 3 months before {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (assessment date)</p>
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assessment provider indicated that the applicant had restrictions for at least 3 months before their assessment on {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
   {% endset %}
 <!------------Legend--------------->
 
@@ -57,12 +57,12 @@
             },
             {
               value: "EffectiveDate",
-              text: "No – An effective date needed",
+              text: "No – I need to enter an effective date",
               checked: (data["qppt-m-3m-check"] == "EffectiveDate")
             },
             {
               value: "NoRestrictions",
-              text: "No – There are no restrictions found",
+              text: "No restrictions were found",
               checked: (data["qppt-m-3m-check"] == "NoRestrictions")
             }
             ]
