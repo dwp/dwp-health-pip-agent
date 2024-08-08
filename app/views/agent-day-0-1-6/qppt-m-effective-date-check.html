@@ -26,13 +26,13 @@
         name: "qppt-m-effective-date-check",
         fieldset: {
           legend: {
-            html: "(Split rate)Is there more than one condition that effects the start date // Is it a single effective date for Daily living?",
+            html: "Do you want to create a single effective date for mobility?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "This means that they might have had a lower amount earlier in the QP and then it goes up to a higher ammount"
+          html: ""
         },
         classes: "govuk-radios",
         items: [
@@ -43,15 +43,15 @@
         },
         {
           value: "No",
-          text: "No",
+          text: "No - it's a split rate decision",
           checked: (data["qppt-m-effective-date-check"] == "No")
         }
         ]
       }) }}
 
-Single effetive date
+<!-- Single effetive date
 <br>
-More than one condition meaning more than one start date?
+More than one condition meaning more than one start date? -->
 
 
 
