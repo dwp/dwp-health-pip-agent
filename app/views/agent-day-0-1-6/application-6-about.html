@@ -1,4 +1,9 @@
+{% if data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
+{% extends "layout.html" %}
+{% else %}
 {% extends "layout-eject.html" %}
+{% endif %}
+
 
 {% block pageTitle %}
   Process a PIP application
