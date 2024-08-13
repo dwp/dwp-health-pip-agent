@@ -424,7 +424,7 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (assuranceOutcomeTaskList == 'PIPcs') {
-    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
     res.redirect(`tbc`)
@@ -480,7 +480,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (preparationOutcomeTaskList == 'PIPcs') {
-    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
   }
   else if (preparationOutcomeTaskList == 'Withdraw') {
     res.redirect(`assurance-withdraw-check`)
