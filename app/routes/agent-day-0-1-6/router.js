@@ -551,7 +551,7 @@ router.post(`/qppt-dl-3m-check-router`, (req, res) => {
     res.redirect(`qppt-dl-effective-date-check`)
   }
   else if (qpptDaily3m == 'NoRestrictions') {
-    res.redirect(`qppt-dl-9m-check`)
+    res.redirect(`application-6-about`)
   }
    else {
      res.redirect(`pause`)
@@ -597,7 +597,7 @@ router.post(`/qppt-m-3m-check-router`, (req, res) => {
     res.redirect(`qppt-m-effective-date-check`)
   }
   else if (qpptMobility3m == 'NoRestrictions') {
-    res.redirect(`qppt-m-9m-check`)
+    res.redirect(`application-6-about`)
   }
    else {
      res.redirect(`pause`)
