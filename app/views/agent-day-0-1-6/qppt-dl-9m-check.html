@@ -23,7 +23,7 @@
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the applicant likely to have daily living restrictions for 9 months after
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the applicant likely to have daily living restrictions 9 months after
 
             {% if data["qppt-dl-effective-date-check"] == "Yes" %}
             {{ data['qppt-dl-alt-date-day'] + ' ' + (data['qppt-dl-alt-date-month'] | getMonth) + ' ' + data['qppt-dl-alt-date-year']}}
