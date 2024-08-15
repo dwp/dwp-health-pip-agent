@@ -18,18 +18,23 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+<h2 class="govuk-heading-xl govuk-!-margin-bottom-6">For testing only</h2>
+
+<!-- Application submission date -->
+<!-- This is just for the scenario -->
       {{ govukDateInput({
         id: "qppt-set-data-submission-date",
         namePrefix: "qppt-set-data-submission-date",
         fieldset: {
           legend: {
-            html: "Application submission date",
+            html: "",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-2"
           }
         },
         hint: {
-          html: "This is just for the scenario"
+          html: ""
         },
         items: [
           {
@@ -50,18 +55,21 @@
         ]
       }) }}
 
+<!-- Assessment date
+This is just for the scenario -->
+
           {{ govukDateInput({
             id: "qppt-set-data-assessment-date",
             namePrefix: "qppt-set-data-assessment-date",
             fieldset: {
               legend: {
-                html: "Assessment date",
+                html: "",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-2"
               }
             },
             hint: {
-              html: "This is just for the scenario"
+              html: ""
             },
             items: [
               {

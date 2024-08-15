@@ -119,9 +119,7 @@
 {% if
   data["qppt-m-effective-date-check"] == "Yes" or
   data["qppt-m-9m-check"] == "Yes" or
-  data["qppt-m-9m-check"] == "EndBefore9" or
-  data["qppt-m-3m-check"] == "NoRestrictions" or 
-  data["qppt-m-9m-check"] == "NoRestrictions" %}
+  data["qppt-m-9m-check"] == "EndBefore9"  %}
 
 <!--
 data["qppt-dl-effective-date-check"] == "Yes" or
@@ -409,6 +407,22 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
 
                 </div>
                 </div>
+
+
+               {% elif data["qppt-dl-3m-check"] == "NoRestrictions" and data["qppt-m-3m-check"] == "NoRestrictions"%}
+
+               <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">There is no entitlement due qualifying period and prospective test for both Dailiy Living and Mobility</h1>
+               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
+
+
+               {{ govukButton({
+                 name: "process-c-nil-task-list",
+                 value: "X",
+                 checked: (data["X"] == "X"),
+                 text: "Continue",
+                 classes: "govuk-!-margin-right-2",
+                 href: "application-6-letter-review"
+               }) }}
 
 {% elif data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
 {% else %}
