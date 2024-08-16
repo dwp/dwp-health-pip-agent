@@ -424,7 +424,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                  href: "Other actions will happen"
                }) }}
 
-{% elif data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
+{% elif data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
 {% else %}
 
 {% endif %}
@@ -474,7 +474,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
 
             {% endif %}
 
-            {% elif data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
+            {% elif data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
 
 
             <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">This application needs to be moved to PIPCS</h1>
