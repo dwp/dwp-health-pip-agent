@@ -548,7 +548,10 @@ router.post(`/qppt-dl-3m-check-router`, (req, res) => {
     res.redirect(`qppt-dl-3m-split`)
   }
   else if (qpptDaily3m == 'EffectiveDate') {
-    res.redirect(`qppt-dl-effective-date-check`)
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+  else if (qpptDaily3m == 'SplitRate') {
+    res.redirect(`qppt-dl-effective-date-multi`)
   }
   else if (qpptDaily3m == 'NoRestrictions') {
     res.redirect(`application-6-about`)
@@ -594,7 +597,10 @@ router.post(`/qppt-m-3m-check-router`, (req, res) => {
     res.redirect(`qppt-m-3m-split`)
   }
   else if (qpptMobility3m == 'EffectiveDate') {
-    res.redirect(`qppt-m-effective-date-check`)
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+  else if (qpptMobility3m == 'SplitRate') {
+    res.redirect(`qppt-m-effective-date-multi`)
   }
   else if (qpptMobility3m == 'NoRestrictions') {
     res.redirect(`application-6-about`)
