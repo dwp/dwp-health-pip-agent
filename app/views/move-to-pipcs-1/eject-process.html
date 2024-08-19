@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="XXX" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPcs</h1>
+
+
+Do a thing
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Use the <a href="/agent-day-0-1-5/record-timeline">Timeline (Opens in a new tab)</a> to select 'Need to move to PIPCS', this will add an entry into the timeline</p>
+
+Next steps
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Once you have added an entry to the timeline you will need to return to this page to complete this process</p>
+
+
+
+Conformation
+      {{ govukCheckboxes({
+        name: "confim-bau",
+        fieldset: {
+          legend: {
+            text: "Add 'Need to move to PIPCS' to the timeline",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "confim-bau",
+            text: "I confirm 'Need to move to PIPCS' was added to the timeline"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-3"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
