@@ -13,7 +13,7 @@
 
 
 
-<form action="/agent-day-0-1-6/entry-home" method="post" class="form">
+<form action="eject-timeline" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -22,15 +22,21 @@
 
       {% if data["assurance-mm-tasklist-outcome"] == "PIPcs" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Moving this application to PIPCS</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Move application to PIPCS'.</p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Move application to PIPCS'.</p> -->
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">To complete this task select 'Move application to PIPCS'<br>within the timeline.</p>
+
 
       {% elif data["assurance-mm-tasklist-outcome"] == "Withdraw" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Withdrawing this application</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Withdraw application'.</p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Withdraw application'.</p> -->
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">To complete this task select 'Withdraw application' within the timeline.</p>
+
 
       {% elif data["assurance-mm-tasklist-outcome"] == "Disallow" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Disallowing this application</h1>
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Disallow application'.</p>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Disallow application'.</p> -->
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">To complete this task select 'Disallow application'<br>within the timeline.</p>
+
       {% else %}
 
       X
@@ -60,12 +66,12 @@
             text: "I confirm 'Need to move to PIPCS' was added to the timeline"
           }
         ]
-      }) }}
+      }) }} -->
 
       {{ govukButton({
-        text: "Finish and close",
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-3"
-      }) }} -->
+      }) }}
 
         </div>
       </div>
