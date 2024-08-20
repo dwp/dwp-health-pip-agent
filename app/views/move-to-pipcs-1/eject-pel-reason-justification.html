@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <form action="eject-event-history" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+Pelican
+<!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">What issues were found when [Prep for AP] or [Prep for Decision] or [Making a decision]?</h1> -->
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Add a note to the event</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This will be added to the applicant's event history in their record, so others can see the reason for sending the application back to BAU.</p>
+
+      {% if data["eject-reason"] == "Other" %}
+
+            <!------------H1 LEGEND------------>
+              {% set legendName %}
+              <p class="govuk-body govuk-!-margin-bottom-0"><b>Categorise this entry</b></p>
+
+              {% endset %}
+            <!------------Legend--------------->
+
+            {{ govukInput({
+              label: {
+                html: legendName
+              },
+              hint: {
+                text: ""
+              },
+              id: "nino",
+              name: "",
+              classes: "govuk-input--width-20 govuk-!-margin-bottom-0",
+              value: data["eject-reason-other"]
+            }) }}
+
+        {% else %}
+
+        {% endif %}
+
+            <!------------H1 LEGEND------------>
+              {% set legendTextFieldHeader %}
+              <p class="govuk-body govuk-!-margin-bottom-0"><b>Add context to your note, try not to use PII</b></p>
+              {% endset %}
+            <!------------Legend--------------->
+
+
+        {{ govukTextarea({
+          name: "eject-reason-other-detail",
+          id: "eject-reason-other-detail",
+          classes: "govukTextarea--overwrite",
+          label: {
+            html: legendTextFieldHeader,
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          hint: {
+            html: ""
+          },
+          value: data["eject-reason-other-detail"]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

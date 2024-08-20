@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<form action="eject-pel-reason-justification" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+Pelican
+
+      {{ govukRadios({
+        idPrefix: "eject-reason",
+        name: "eject-reason",
+        fieldset: {
+          legend: {
+            html: "Add an event",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "PIPcs",
+          text: "Application needs to be moved to PIPCS",
+          checked: (data["eject-reason"] == "PIPcs")
+        },
+        {
+          value: "Disallow",
+          text: "Disallow application",
+          checked: (data["eject-reason"] == "Disallow")
+        },
+        {
+          value: "Withdraw",
+          text: "Withdraw application",
+          checked: (data["eject-reason"] == "Withdraw")
+        },
+        {
+          value: "Extend",
+          text: "Extend deadline",
+          checked: (data["eject-reason"] == "Extend")
+        },
+        {
+          value: "ID",
+          text: "Passed IDV",
+          checked: (data["eject-reason"] == "ID")
+        },
+        {
+          value: "ID",
+          text: "Failed IDV",
+          checked: (data["eject-reason"] == "ID")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: (data["eject-reason"] == "Other")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
