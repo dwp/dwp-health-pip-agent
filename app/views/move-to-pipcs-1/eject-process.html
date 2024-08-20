@@ -13,25 +13,22 @@
 
 
 
-<form action="XXX" method="post" class="form">
+<form action="/agent-day-0-1-6/entry-home" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent-0-13/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPcs</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Moving an applicaiton to PIPcs</h1>
 
 
-Do a thing
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Use the <a href="/agent-day-0-1-5/record-timeline">Timeline (Opens in a new tab)</a> to select 'Need to move to PIPCS', this will add an entry into the timeline</p>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Use the <a href="eject-pel-findsomeone" target="_blank">Timeline (Opens in a new tab)</a> to select<br>'Need to move to PIPCS'</p>
 
-Next steps
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Once you have added an entry to the timeline you will need to return to this page to complete this process</p>
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Once you have added an entry to the timeline you will need to return to this page to complete this process</p> -->
 
 
 
-Conformation
       {{ govukCheckboxes({
         name: "confim-bau",
         fieldset: {
@@ -42,7 +39,7 @@ Conformation
           }
         },
         hint: {
-          text: ""
+          text: "Once you have added an entry to the timeline you will need to return to this page to complete this process"
         },
         items: [
           {
