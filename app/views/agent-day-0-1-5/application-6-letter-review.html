@@ -42,7 +42,7 @@
         {% else %}
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
-  <ul class="govuk-list govuk-list--bullet">
+  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
     <li>[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
     <li>[XX] points for the daily living part - this means the applicant has not been given this part</li>
     <li>[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
@@ -192,6 +192,46 @@
 
                 {% endif %}
 
+
+                <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Physical documents and supporting evidence</h3>
+
+          {% set DynamicSelectedDocumentsList %}
+
+
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>Information provided by care home</li>
+            <li>Care planCertificate of Vision Impairment (CVI)</li>
+            <li>Information provided by community mental health team</li>
+            <li>Health professional consultation report</li>
+            <li>Information provided by Customer Compliance Officer</li>
+            <li>Letter from consultantReport from consultant</li>
+            <li>Telephone advice from consultant</li>
+          </ul>
+
+              {% endset %}
+
+              {{ govukSummaryList({
+                rows: [
+                {
+                  key: {
+                    text: "Selected documents"
+                  },
+                  value: {
+                    html:
+                    DynamicSelectedDocumentsList
+                  },
+                  actions: {
+                    items: [
+                    {
+                      href: "application-evidence-used-b",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                    ]
+                  }
+                }
+                ]
+              }) }}
 
 
       <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
