@@ -61,14 +61,17 @@
               checked: (data["qppt-m-3m-check"] == "EffectiveDate")
             },
             {
-              value: "SplitRate",
-              text: "No – it's a split rate decision",
-              checked: (data["qppt-m-3m-check"] == "SplitRate")
-            },
-            {
               value: "NoRestrictions",
               text: "No restrictions were found",
               checked: (data["qppt-m-3m-check"] == "NoRestrictions")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "SplitRate",
+              text: "I need to make a split rate decision",
+              checked: (data["qppt-m-3m-check"] == "SplitRate")
             }
             ]
           }) }}
