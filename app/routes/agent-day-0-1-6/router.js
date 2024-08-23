@@ -424,13 +424,13 @@ router.post(`/assurance-mm-tasklist-outcome-router`, (req, res) => {
     res.redirect(`entry-home`)
   }
   else if (assuranceOutcomeTaskList == 'PIPcs') {
-    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
   else if (assuranceOutcomeTaskList == 'Disallow') {
-    res.redirect(`tbc`)
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
   else if (assuranceOutcomeTaskList == 'Withdraw') {
-    res.redirect(`assurance-withdraw-check`)
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
    else {
     res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
