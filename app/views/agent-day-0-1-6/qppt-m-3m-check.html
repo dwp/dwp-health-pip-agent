@@ -22,7 +22,7 @@
 
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant have mobility restrictions for at least 3 months before they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant meet the 3 month qualifying period when they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?</h1>
 
         {% endset %}
       <!------------Legend--------------->
@@ -57,18 +57,21 @@
             },
             {
               value: "EffectiveDate",
-              text: "No – I need to enter an effective date",
+              text: "No – I need to enter the date the qualifying period will be met",
               checked: (data["qppt-m-3m-check"] == "EffectiveDate")
+            },
+            {
+              value: "NoRestrictions",
+              text: "No – they will not meet the qualifying period for this application",
+              checked: (data["qppt-m-3m-check"] == "NoRestrictions")
+            },
+            {
+              divider: "or"
             },
             {
               value: "SplitRate",
               text: "I need to make a split rate decision",
               checked: (data["qppt-m-3m-check"] == "SplitRate")
-            },
-            {
-              value: "NoRestrictions",
-              text: "No – they will not meet the qualifying period",
-              checked: (data["qppt-m-3m-check"] == "NoRestrictions")
             }
             ]
           }) }}
