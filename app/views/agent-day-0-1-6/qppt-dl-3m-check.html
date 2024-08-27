@@ -20,9 +20,20 @@
 
       {% include "agent-day-0-1-6/record-id-base.html" %}
 
-      <!------------H1 HEADER------------>
+
+
+
         {% set dynamicH1 %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Did the applicant meet the 3 month qualifying period when they submitted their application on  {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+              Did the applicant meet the 3 month qualifying period when they submitted their application on
+            {% if data["qppt-set-data-submission-date-day"] %}
+              {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}
+            {% else %}
+              Manual January 2024
+            {% endif %}
+              ?
+          </h1>
 
         {% endset %}
       <!------------Legend--------------->
@@ -30,7 +41,15 @@
 <!------------H1 HINT------------>
   {% set dynamicHint %}
     <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assessment provider indicated that the applicant had restrictions for at least 3 months before their assessment on {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+
+          The assessment provider indicated that the applicant had restrictions for at least 3 months before their assessment on
+        {% if data["qppt-set-data-assessment-date-day"] %}
+          {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+        {% else %}
+          1 March 2024.
+        {% endif %}
+
   {% endset %}
 <!------------Legend--------------->
 
