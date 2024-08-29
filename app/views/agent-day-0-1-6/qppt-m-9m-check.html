@@ -33,7 +33,7 @@
                 they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?
 
                 {% elif data["qppt-m-alt-date-day"] %}
-                the date the qualifying period will be met {{ data['qppt-m-alt-date-day'] + ' ' + (data['qppt-m-alt-date-month'] | getMonth) + ' ' + data['qppt-m-alt-date-year']}}?
+                {{ data['qppt-m-alt-date-day'] + ' ' + (data['qppt-m-alt-date-month'] | getMonth) + ' ' + data['qppt-m-alt-date-year']}}?
 
               {% else %}
                 1 January 2024?
