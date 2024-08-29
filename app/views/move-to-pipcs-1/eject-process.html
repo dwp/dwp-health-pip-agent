@@ -18,24 +18,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-0-13/record-id.html" %}
+      {% include "agent-0-13/record-id-base.html" %}
 
       {% if data["assurance-mm-tasklist-outcome"] == "PIPcs" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Moving this application<br>to PIPCS</h1>
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Move application to PIPCS'.</p> -->
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in the timeline to complete this action.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in event history to complete this action.</p>
 
 
       {% elif data["assurance-mm-tasklist-outcome"] == "Withdraw" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Withdrawing this application</h1>
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Withdraw application'.</p> -->
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Withdraw application’ in the timeline to complete this action.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Withdraw application’ in event history to complete this action.</p>
 
 
       {% elif data["assurance-mm-tasklist-outcome"] == "Disallow" %}
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Disallowing this application</h1>
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Disallow application'.</p> -->
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Disallow application’ in the timeline to complete this action.</p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Disallow application’ in event history to complete this action.</p>
 
 
       {% else %}
