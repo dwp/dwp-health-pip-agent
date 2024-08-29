@@ -597,7 +597,7 @@ router.post(`/qppt-m-3m-check-router`, (req, res) => {
     res.redirect(`qppt-m-3m-split`)
   }
   else if (qpptMobility3m == 'EffectiveDate') {
-    res.redirect(`qppt-dl-3m-alt-date`)
+    res.redirect(`qppt-m-3m-alt-date`)
   }
   else if (qpptMobility3m == 'SplitRate') {
     res.redirect(`qppt-m-effective-date-multi`)
