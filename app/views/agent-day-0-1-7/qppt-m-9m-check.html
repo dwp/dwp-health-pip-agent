@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-m-9m-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the applicant likely to have mobility restrictions 9 months after
+
+              {% if data["qppt-set-data-submission-date-day"] %}
+                they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?
+
+                {% elif data["qppt-m-alt-date-day"] %}
+                {{ data['qppt-m-alt-date-day'] + ' ' + (data['qppt-m-alt-date-month'] | getMonth) + ' ' + data['qppt-m-alt-date-year']}}?
+
+              {% else %}
+                1 January 2024?
+              {% endif %}
+
+                </h1>
+              </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 LEGEND------------>
+  {% set dynamicHint %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they will have restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment) </p>
+  {% endset %}
+<!------------Legend--------------->
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-m-9m-check",
+            name: "qppt-m-9m-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: ""
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-m-9m-check"] == "Yes")
+            },
+            {
+              value: "EndBefore9",
+              text: "No – the restrictions are unlikely to last 9 months",
+              checked: (data["qppt-m-9m-check"] == "EndBefore9")
+            }
+            ]
+          }) }}
+
+
+          <!-- ,
+          {
+            value: "NoRestrictions",
+            text: "No restrictions were found",
+            checked: (data["qppt-m-9m-check"] == "NoRestrictions")
+          } -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
