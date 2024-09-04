@@ -476,14 +476,14 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   if (preparationOutcomeTaskList == 'Ready') {
     res.redirect(`application-6-overview`)
   }
-  else if (preparationOutcomeTaskList == 'AP') {
-    res.redirect(`entry-home`)
+  else if (preparationOutcomeTaskList == 'Disallow') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
   else if (preparationOutcomeTaskList == 'PIPcs') {
-    res.redirect(`/move-to-pipcs-1/eject-reason`)
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
   else if (preparationOutcomeTaskList == 'Withdraw') {
-    res.redirect(`assurance-withdraw-check`)
+    res.redirect(`/move-to-pipcs-1/eject-process`)
   }
    else {
     res.redirect(`exit-event-history`)
