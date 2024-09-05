@@ -23,7 +23,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-6/record-id-base.html" %}
+      {% include "agent-day-0-1-7/record-id-base.html" %}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Select and justify a descriptor for each activity</h1>
 
@@ -119,17 +119,7 @@
 
 
 
-{% if
-  data["qppt-m-effective-date-check"] == "Yes" or
-  data["qppt-m-9m-check"] == "Yes" or
-  data["qppt-m-9m-check"] == "NoRestrictions"  %}
 
-
-<!--
-data["qppt-dl-effective-date-check"] == "Yes" or
-data["qppt-dl-9m-check"] == "Yes" or
-data["qppt-dl-9m-check"] == "EndBefore9" or
-data["qppt-dl-9m-check"] == "NoRestrictions" or -->
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
@@ -154,7 +144,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                     <td class="govuk-table__cell table-spacer">
 
                     {% if data["application-about-a1-score-overwrite"] %}
-                    {% include "agent-day-0-1-6/application-about-a1-score-overwrite.html" %}
+                    {% include "agent-day-0-1-7/application-about-a1-score-overwrite.html" %}
                     {% else %}
                     0
                     {% endif %}
@@ -175,7 +165,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a2-score">Taking nutrition</a></td>
                       <td class="govuk-table__cell table-spacer">
                         {% if data["application-about-a2-score-overwrite"] %}
-                        {% include "agent-day-0-1-6/application-about-a2-score-overwrite.html" %}
+                        {% include "agent-day-0-1-7/application-about-a2-score-overwrite.html" %}
                         {% else %}
                         0
                         {% endif %}
@@ -193,7 +183,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                     <td class="govuk-table__cell table-spacer"><a href="application-6-about-a3-score">Managing therapy or monitoring<br>a health condition</a></td>
                     <td class="govuk-table__cell table-spacer">
                       {% if data["application-about-a3-score-overwrite"] %}
-                      {% include "agent-day-0-1-6/application-about-a3-score-overwrite.html" %}
+                      {% include "agent-day-0-1-7/application-about-a3-score-overwrite.html" %}
                       {% else %}
                       0
                       {% endif %}
@@ -211,7 +201,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                           <td class="govuk-table__cell table-spacer"><a href="application-6-about-a4-score">Washing and bathing</a></td>
                           <td class="govuk-table__cell table-spacer">
                             {% if data["application-about-a4-score-overwrite"] %}
-                            {% include "agent-day-0-1-6/application-about-a4-score-overwrite.html" %}
+                            {% include "agent-day-0-1-7/application-about-a4-score-overwrite.html" %}
                             {% else %}
                             0
                             {% endif %}
@@ -230,7 +220,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a5-score">Managing toilet needs or incontinence</a></td>
                       <td class="govuk-table__cell table-spacer">
                         {% if data["application-about-a5-score-overwrite"] %}
-                        {% include "agent-day-0-1-6/application-about-a5-score-overwrite.html" %}
+                        {% include "agent-day-0-1-7/application-about-a5-score-overwrite.html" %}
                         {% else %}
                         0
                         {% endif %}
@@ -248,7 +238,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                               <td class="govuk-table__cell table-spacer"><a href="application-6-about-a6-score">Dressing and undressing</a></td>
                               <td class="govuk-table__cell table-spacer">
                                 {% if data["application-about-a6-score-overwrite"] %}
-                                {% include "agent-day-0-1-6/application-about-a6-score-overwrite.html" %}
+                                {% include "agent-day-0-1-7/application-about-a6-score-overwrite.html" %}
                                 {% else %}
                                 0
                                 {% endif %}
@@ -266,7 +256,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                                 <td class="govuk-table__cell table-spacer"><a href="application-6-about-a7-score">Communicating verbally</a></td>
                                 <td class="govuk-table__cell table-spacer">
                                   {% if data["application-about-a7-score-overwrite"] %}
-                                  {% include "agent-day-0-1-6/application-about-a7-score-overwrite.html" %}
+                                  {% include "agent-day-0-1-7/application-about-a7-score-overwrite.html" %}
                                   {% else %}
                                   0
                                   {% endif %}
@@ -284,7 +274,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                             <td class="govuk-table__cell table-spacer"><a href="application-6-about-a8-score">Reading and understanding signs,<br>symbols and words</a></td>
                             <td class="govuk-table__cell table-spacer">
                               {% if data["application-about-a8-score-overwrite"] %}
-                              {% include "agent-day-0-1-6/application-about-a8-score-overwrite.html" %}
+                              {% include "agent-day-0-1-7/application-about-a8-score-overwrite.html" %}
                               {% else %}
                               0
                               {% endif %}
@@ -302,7 +292,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                               <td class="govuk-table__cell table-spacer"><a href="application-6-about-a9-score">Engaging with other people face to face</a></td>
                               <td class="govuk-table__cell table-spacer">
                                 {% if data["application-about-a9-score-overwrite"] %}
-                                {% include "agent-day-0-1-6/application-about-a9-score-overwrite.html" %}
+                                {% include "agent-day-0-1-7/application-about-a9-score-overwrite.html" %}
                                 {% else %}
                                 0
                                 {% endif %}
@@ -321,7 +311,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                                 <td class="govuk-table__cell table-spacer"><a href="application-6-about-a10-score">Making budgeting decisions</a></td>
                                 <td class="govuk-table__cell table-spacer">
                                   {% if data["application-about-a10-score-overwrite"] %}
-                                  {% include "agent-day-0-1-6/application-about-a10-score-overwrite.html" %}
+                                  {% include "agent-day-0-1-7/application-about-a10-score-overwrite.html" %}
                                   {% else %}
                                   0
                                   {% endif %}
@@ -369,7 +359,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                                 <td class="govuk-table__cell table-spacer"><a href="application-6-about-a11-score">Planning and following journeys</a></td>
                                 <td class="govuk-table__cell table-spacer">
                                   {% if data["application-about-a11-score-overwrite"] %}
-                                  {% include "agent-day-0-1-6/application-about-a11-score-overwrite.html" %}
+                                  {% include "agent-day-0-1-7/application-about-a11-score-overwrite.html" %}
                                   {% else %}
                                   0
                                   {% endif %}
@@ -386,7 +376,7 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a12-score">Moving around</a></td>
                       <td class="govuk-table__cell table-spacer">
                         {% if data["application-about-a12-score-overwrite"] %}
-                        {% include "agent-day-0-1-6/application-about-a12-score-overwrite.html" %}
+                        {% include "agent-day-0-1-7/application-about-a12-score-overwrite.html" %}
                         {% else %}
                         0
                         {% endif %}
@@ -413,111 +403,13 @@ data["qppt-dl-9m-check"] == "NoRestrictions" or -->
                 </div>
 
 
-               {% elif data["qppt-dl-3m-check"] == "NoRestrictions" and data["qppt-m-3m-check"] == "NoRestrictions"%}
-
-               <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The applicant did not meet the qualifying period and prospective test for daily living and mobility</h1>
-               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">They will not be awarded PIP.</p>
 
 
-               {{ govukButton({
-                 name: "process-c-nil-task-list",
-                 value: "X",
-                 checked: (data["X"] == "X"),
-                 text: "Continue",
-                 classes: "govuk-!-margin-right-2",
-                 href: "Other actions will happen"
-               }) }}
-
-{% elif data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
-{% else %}
-
-{% endif %}
-
-        <!------------ ––– ------------>
+<!-- STATUS AND CTA SPACE -->
 
 
+{% include "agent-day-0-1-7/qppt-status.html" %}
 
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-
-            {% if data["application-about-a12-score-overwrite"] %}
-
-
-            {% if data["system-application-selector"]  == "1" %}
-            <!-- I am Nill award -->
-
-            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
-
-
-            {{ govukButton({
-              name: "process-c-nil-task-list",
-              value: "X",
-              checked: (data["X"] == "X"),
-              text: "Continue",
-              classes: "govuk-!-margin-right-2",
-              href: "application-6-letter-review"
-            }) }}
-
-            {% else %}
-
-
-            <!-- I am not nil award -->
-            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
-
-
-            {{ govukButton({
-              name: "process-c-nil-task-list",
-              value: "X",
-              checked: (data["X"] == "X"),
-              text: "Continue",
-              classes: "govuk-!-margin-right-2",
-              href: "award-dates-data-input"
-            }) }}
-
-            {% endif %}
-
-            {% elif
-            data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-dl-9m-check"] == "SplitRate"
-            or
-            data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m--m-check"] == "SplitRate"
-            %}
-
-
-
-            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">This application needs to be moved to PIPCS</h1>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">
-
-              {% if
-              data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-9m-check"] == "SplitRate"
-              or
-              data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-m-9m-check"] == "EffectiveDate"  %}
-              %}
-
-              {% elif
-              data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "SplitRate" %}
-              %}
-
-              We are not currently able to process split rate awards in this service.</p>
-              {% else %}
-
-              {% endif %}
-
-
-
-            {{ govukButton({
-              name: "process-c-nil-task-list",
-              value: "X",
-              checked: (data["X"] == "X"),
-              text: "Continue",
-              classes: "govuk-!-margin-right-2",
-              href: "/move-to-pipcs-1/eject-reason-justification"
-            }) }}
-
-            {% else %}
-
-            {% endif %}
 
           </div>
         </div>
