@@ -314,9 +314,16 @@ Send to PIPcs due to Split rate
 
 <!-- ——————————————————————— -->
 
-
 {% if
-  data["qppt-dl-3m-check"] == "Yes" or data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-dl-3m-check"] == "NoRestrictions"
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-m-3m-check"] == "SplitRate"
+or
+  data["qppt-dl-3m-check"] == "EffectiveDate"
+  and
+  data["qppt-m-3m-check"] == "SplitRate"
+or
+  data["qppt-dl-3m-check"] == "NoRestrictions"
   and
   data["qppt-m-3m-check"] == "SplitRate"
 %}
@@ -344,10 +351,18 @@ Send to PIPcs due to Split rate
 {% if
   data["qppt-dl-3m-check"] == "SplitRate"
   and
-  data["qppt-m-3m-check"] == "Yes" or data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "NoRestrictions"
+  data["qppt-m-3m-check"] == "Yes"
+or
+  data["qppt-dl-3m-check"] == "SplitRate"
+  and
+  data["qppt-m-3m-check"] == "EffectiveDate"
+or
+  data["qppt-dl-3m-check"] == "SplitRate"
+  and
+  data["qppt-m-3m-check"] == "NoRestrictions"
 %}
 
-S2
+S3
 <br>
 Dail living: SplitRate
 <br>
