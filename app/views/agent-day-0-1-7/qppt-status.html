@@ -395,11 +395,17 @@ data["qppt-m-9m-check"] == "No"
 
  -->
 
+
+ {% set dynamicInspector %}
+
+   {% endset %}
+
+
  <br>
  <br>
  <br>
 
  {{ govukDetails({
    summaryText: "Inspector",
-   text: "XXXX"
+   html: dynamicInspector
  }) }}

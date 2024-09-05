@@ -25,8 +25,6 @@
 
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the applicant likely to have daily living restrictions 9 months after
 
-Context
-
             {% if data["qppt-set-data-submission-date-day"] %}
               they submitted their application on {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}?
 
@@ -44,12 +42,9 @@ Context
         {% endset %}
       <!------------Legend--------------->
 
-<!------------H1 LEGEND------------>
-  <!-- {% set dynamicHint %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p>
+  {% set dynamicHint %}
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assesment provider has indicated that they will have restrictions for at least 9 months after {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}} (date of assessment) </p>
-  {% endset %} -->
-<!------------Legend--------------->
+  {% endset %}
 
 
           {{ govukRadios({
@@ -63,7 +58,7 @@ Context
               }
             },
             hint: {
-              html: ""
+              html: dynamicHint
             },
             classes: "govuk-radios",
             items: [
