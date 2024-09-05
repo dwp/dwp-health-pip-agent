@@ -1,0 +1,116 @@
+
+
+{% if
+  data["qppt-m-effective-date-check"] == "Yes" or
+  data["qppt-m-9m-check"] == "Yes" or
+  data["qppt-m-9m-check"] == "NoRestrictions"  %}
+
+
+               {% elif data["qppt-dl-3m-check"] == "NoRestrictions" and data["qppt-m-3m-check"] == "NoRestrictions"%}
+
+               <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The applicant did not meet the qualifying period and prospective test for daily living and mobility</h1>
+               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">They will not be awarded PIP.</p>
+
+
+               {{ govukButton({
+                 name: "process-c-nil-task-list",
+                 value: "X",
+                 checked: (data["X"] == "X"),
+                 text: "Continue",
+                 classes: "govuk-!-margin-right-2",
+                 href: "Other actions will happen"
+               }) }}
+
+{% elif data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
+{% else %}
+
+{% endif %}
+
+        <!------------ ––– ------------>
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            {% if data["application-about-a12-score-overwrite"] %}
+
+
+            {% if data["system-application-selector"]  == "1" %}
+            <!-- I am Nill award -->
+
+            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
+
+
+            {{ govukButton({
+              name: "process-c-nil-task-list",
+              value: "X",
+              checked: (data["X"] == "X"),
+              text: "Continue",
+              classes: "govuk-!-margin-right-2",
+              href: "application-6-letter-review"
+            }) }}
+
+            {% else %}
+
+
+            <!-- I am not nil award -->
+            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
+
+
+            {{ govukButton({
+              name: "process-c-nil-task-list",
+              value: "X",
+              checked: (data["X"] == "X"),
+              text: "Continue",
+              classes: "govuk-!-margin-right-2",
+              href: "award-dates-data-input"
+            }) }}
+
+            {% endif %}
+
+
+            {% elif
+              data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-9m-check"] == "SplitRate"
+            or
+            data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-9m-check"] == "EffectiveDate"
+            %}
+
+            <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">This application needs to be moved to PIPCS</h1>
+
+
+              {% if
+              data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-9m-check"] == "SplitRate"
+              %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process EFECTIVE DATES</p>
+
+
+              {% elif
+              data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-9m-check"] == "EffectiveDate"
+              %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process split rate awards in this service.</p>
+              {% else %}
+
+
+
+
+              {% endif %}
+
+
+
+            {{ govukButton({
+              name: "process-c-nil-task-list",
+              value: "X",
+              checked: (data["X"] == "X"),
+              text: "Continue",
+              classes: "govuk-!-margin-right-2",
+              href: "/move-to-pipcs-1/eject-reason-justification"
+            }) }}
+
+            {% else %}
+
+            {% endif %}

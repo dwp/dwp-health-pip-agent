@@ -1,0 +1,405 @@
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "Yes"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "Yes"
+
+%}
+
+P1
+<br>
+Dail living: Yes / Yes
+<br>
+Mobility: Yes / Yes
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: payment
+<br>
+Mobility: Payment
+
+{% else %}
+{% endif %}
+
+<!-- ——————————————————————— -->
+
+
+
+{% if
+  data["qppt-dl-3m-check"] == "NoRestrictions"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "Yes"
+
+%}
+
+P2
+<br>
+Daily living: NoRestrictions
+<br>
+Mobility: Yes / Yes
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: Payment
+
+{% else %}
+{% endif %}
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "Yes"
+  and
+  data["qppt-m-3m-check"] == "NoRestrictions"
+
+%}
+
+P3
+<br>
+Daily living: Yes / Yes
+<br>
+Mobility: NoRestrictions
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: Payment
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "NoRestrictions" and data["qppt-m-3m-check"] == "NoRestrictions"
+%}
+
+N1
+<br>
+Dail living: NoRestrictions
+<br>
+Mobility: NoRestrictions
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "EndBefore9"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "EndBefore9"
+
+%}
+
+N2
+<br>
+Dail living: Yes / EndBefore9
+<br>
+Mobility: Yes / EndBefore9
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "Yes"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "EndBefore9"
+
+%}
+
+N3
+<br>
+Dail living: Yes / Yes
+<br>
+Mobility: Yes / EndBefore9
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: Payment
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "EndBefore9"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "Yes"
+
+%}
+
+N4
+<br>
+Dail living: Yes / EndBefore9
+<br>
+Mobility: Yes / Yes
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: Payment
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "EffectiveDate"
+  and
+  data["qppt-m-3m-check"] == "EffectiveDate"
+%}
+
+E1
+<br>
+Dail living: Effective
+<br>
+Mobility: Effective
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to effective date
+
+{% else %}
+{% endif %}
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "EffectiveDate"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+
+%}
+
+E2
+<br>
+Dail living: Effective
+<br>
+Mobility: Any
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to effective date
+
+
+{% else %}
+{% endif %}
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-m-3m-check"] == "EffectiveDate"
+%}
+
+E3
+<br>
+Dail living: Any
+<br>
+Mobility: Effective
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to effective date
+
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "SplitRate"
+  and
+  data["qppt-m-3m-check"] == "SplitRate"
+%}
+
+S1
+<br>
+Dail living: SplitRate
+<br>
+Mobility: SplitRate
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to Split rate
+
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes" or data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-dl-3m-check"] == "NoRestrictions"
+  and
+  data["qppt-m-3m-check"] == "SplitRate"
+%}
+
+S2
+<br>
+Dail living: Any
+<br>
+Mobility: SplitRate
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to Split rate
+
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "SplitRate"
+  and
+  data["qppt-m-3m-check"] == "Yes" or data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "NoRestrictions"
+%}
+
+S2
+<br>
+Dail living: SplitRate
+<br>
+Mobility: Any
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to Split rate
+
+
+{% else %}
+{% endif %}
+
+
+
+
+
+
+
+<!-- Reference -->
+
+<!--
+Daily living
+
+Yes
+data["qppt-dl-3m-check"] == "Yes"
+data["qppt-dl-3m-check"] == "EffectiveDate"
+data["qppt-dl-3m-check"] == "NoRestrictions"
+data["qppt-dl-3m-check"] == "SplitRate"
+
+data["qppt-dl-9m-check"] == "Yes"
+data["qppt-dl-9m-check"] == "No"
+
+
+Mobility
+data["qppt-m-3m-check"] == "Yes"
+data["qppt-m-3m-check"] == "EffectiveDate"
+data["qppt-m-3m-check"] == "NoRestrictions"
+data["qppt-m-3m-check"] == "SplitRate"
+
+data["qppt-m-9m-check"] == "Yes"
+data["qppt-m-9m-check"] == "No"
+
+ -->
+
+ <br>
+ <br>
+ <br>
+
+ {{ govukDetails({
+   summaryText: "Inspector",
+   text: "XXXX"
+ }) }}
