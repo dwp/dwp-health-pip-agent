@@ -214,6 +214,63 @@ Mobility: Payment
 
 
 {% if
+  data["qppt-dl-3m-check"] == "Yes"
+  and
+  data["qppt-dl-9m-check"] == "EndBefore9"
+  and
+  data["qppt-m-3m-check"] == "NoRestrictions"
+%}
+
+N5
+<br>
+Dail living: Yes / EndBefore9
+<br>
+Mobility: NoRestrictions
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "NoRestrictions"
+  and
+  data["qppt-m-3m-check"] == "Yes"
+  and
+  data["qppt-m-9m-check"] == "EndBefore9"
+
+%}
+
+N6
+<br>
+Dail living: NoRestrictions
+<br>
+Mobility: Yes / EndBefore9
+<br>
+See scores: Yes
+<br><br>
+Outcome
+<br>
+Daily living: None
+<br>
+Mobility: None
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+{% if
   data["qppt-dl-3m-check"] == "EffectiveDate"
   and
   data["qppt-m-3m-check"] == "EffectiveDate"
