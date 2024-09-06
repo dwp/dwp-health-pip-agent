@@ -290,6 +290,58 @@ Send to PIPcs due to effective date
 
 
 {% if
+  data["qppt-dl-3m-check"] == "EffectiveDate"
+  and
+  data["qppt-m-3m-check"] == "NoRestrictions"
+%}
+
+E4
+<br>
+Dail living: EffectiveDate
+<br>
+Mobility: NoRestrictions
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to effective date
+
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
+  data["qppt-dl-3m-check"] == "NoRestrictions"
+  and
+  data["qppt-m-3m-check"] == "EffectiveDate"
+%}
+
+E5
+<br>
+Dail living: NoRestrictions
+<br>
+Mobility: EffectiveDate
+<br>
+See scores: No
+<br><br>
+Outcome
+<br>
+Send to PIPcs due to effective date
+
+
+{% else %}
+{% endif %}
+
+
+<!-- ——————————————————————— -->
+
+
+{% if
   data["qppt-dl-3m-check"] == "SplitRate"
   and
   data["qppt-m-3m-check"] == "SplitRate"
