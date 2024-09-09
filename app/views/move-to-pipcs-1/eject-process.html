@@ -38,6 +38,12 @@
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Disallow application’ in event history to complete this action.</p>
 
 
+      {% elif data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Moving this application<br>to PIPCS</h1>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Go to the <a href="eject-timeline">timeline</a> and select 'Move application to PIPCS'.</p> -->
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in event history to complete this action.</p>
+
+
       {% else %}
 
       X
