@@ -66,6 +66,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '7') {
     res.redirect(`preparation-linear-overview`)
   }
+  else if (applicationSelector == '8') {
+    res.redirect(`qppt-overview`)
+  }
    else {
     res.redirect(`XXX`)
   }
@@ -637,6 +640,7 @@ router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
      res.redirect(`qppt-m-effective-date-multi`)
   }
 })
+
 
 
 
