@@ -21,17 +21,17 @@
       {% include "agent-0-13/record-id-base.html" %}
 
       {% if data["qppt-m-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate" %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application needs to be moved to PIPcs because as there is split rates</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPCS as it cannot be processed in this service</h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in event history to complete this action.</p>
 
         {% elif data["qppt-dl-3m-check"] == "EffectiveDate" or data["qppt-dl-3m-check"] == "EffectiveDate"%}
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application needs to be moved to PIPcs because as there is effective dates</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPCS as it cannot be processed in this service</h1>
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in event history to complete this action.</p>
 
 
       {% else %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application needs to be moved to PIPcs as they will not meet the qualifying period</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPCS as it cannot be processed in this service</h1>
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Select ‘Move application to PIPCS’ in event history to complete this action.</p>
 
 
