@@ -56,8 +56,8 @@
 
 
           {{ govukRadios({
-            idPrefix: "qppt-dl-3m-check",
-            name: "qppt-dl-3m-check",
+            idPrefix: "qppt-dl-3m9m-check",
+            name: "qppt-dl-3m9m-check",
             fieldset: {
               legend: {
                 html: dynamicH1,
@@ -73,17 +73,17 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["qppt-dl-3m-check"] == "Yes")
+              checked: (data["qppt-dl-3m9m-check"] == "Yes")
             },
             {
               value: "EffectiveDate",
               text: "No – I need to enter the date the qualifying period will be met",
-              checked: (data["qppt-dl-3m-check"] == "EffectiveDate")
+              checked: (data["qppt-dl-3m9m-check"] == "EffectiveDate")
             },
             {
               value: "NoRestrictions",
               text: "No – they will not meet the qualifying period for this application",
-              checked: (data["qppt-dl-3m-check"] == "NoRestrictions")
+              checked: (data["qppt-dl-3m9m-check"] == "NoRestrictions")
             },
             {
               divider: "or"
@@ -91,7 +91,7 @@
             {
               value: "SplitRate",
               text: "I need to make a split rate decision",
-              checked: (data["qppt-dl-3m-check"] == "SplitRate")
+              checked: (data["qppt-dl-3m9m-check"] == "SplitRate")
             }
             ]
           }) }}
