@@ -14,13 +14,13 @@ Send application to PIPcs
   {% if
   data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate"
   %}
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process split rate decisions in this service.</p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process it in this service.</p>
 
 
   {% elif
   data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "EffectiveDate"
   %}
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process applications that do not meet the qualifying period in this service.</p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process it in this service.</p>
 
   {% else %}
   {% endif %}
