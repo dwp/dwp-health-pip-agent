@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="assurance-disallow-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id-base.html" %}
+
+
+
+          <!------------H1 LEGEND------------>
+            {% set legendHint %}
+
+            <p class="govuk-body govuk-!-margin-top-2">Vulnerabilities include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>apples</li>
+              <li>oranges</li>
+              <li>pears</li>
+            </ul>
+
+
+          {% endset %}
+          <!------------Legend--------------->
+
+          {{ govukRadios({
+            idPrefix: "assurance-disallow-check",
+            name: "assurance-disallow-check",
+            fieldset: {
+              legend: {
+                html: "Does the applciation have any sign of vulnerability?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: legendHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["assurance-disallow-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["assurance-disallow-check"] == "No")
+            },
+            {
+              value: "DontKnow",
+              text: "Don't know",
+              checked: (data["assurance-disallow-check"] == "DontKnow")
+            }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
