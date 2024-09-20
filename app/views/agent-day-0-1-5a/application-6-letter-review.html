@@ -195,32 +195,21 @@
 
                 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Supporting documents</h3>
 
+
+
+
           {% set DynamicSelectedDocumentsList %}
-
-
-          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-            <li>Information provided by care home</li>
-            <li>Care plan</li>
-            <li>Certificate of Vision Impairment (CVI)</li>
-            <li>Information provided by community mental health team</li>
-            <li>Health professional consultation report</li>
-            <li>Information provided by Customer Compliance Officer</li>
-            <li>Letter from consultantReport from consultant</li>
-            <li>Report from consultant</li>
-            <li>Telephone advice from consultant</li>
-          </ul>
-
-              {% endset %}
+            {% include "agent-day-0-1-5a/documents-used.html" %}
+          {% endset %}
 
               {{ govukSummaryList({
                 rows: [
                 {
                   key: {
-                    text: "Selected documents"
+                    html: "Selected documents"
                   },
                   value: {
-                    html:
-                    DynamicSelectedDocumentsList
+                    html: DynamicSelectedDocumentsList
                   },
                   actions: {
                     items: [
