@@ -19,6 +19,7 @@
 
                 <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Which documents did you use when making your decision?</h2>
                 <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These will be referenced in the decision letter.<br>Select all that apply.</p>
+
                 <!------------H1 LEGEND------------>
                   {% set dynamicDivide %}
 
@@ -53,62 +54,62 @@
                                         },
                                         items: [
                                           {
-                                            value: "c1",
-                                            text: " Information provided by care home",
+                                            value: "Information provided by care home",
+                                            text: "Information provided by care home",
                                             checked: (data["application-evidence-used-c"] == "c1")
                                           },
                                           {
-                                            value: "c2",
+                                            value: "Care plan",
                                             text: "Care plan",
                                             checked: (data["application-evidence-used-c"] == "c2")
                                           },
                                           {
-                                            value: "c3",
-                                            text: " Certificate of Vision Impairment (CVI)",
+                                            value: "Certificate of Vision Impairment (CVI)",
+                                            text: "Certificate of Vision Impairment (CVI)",
                                             checked: (data["application-evidence-used-c"] == "c3")
                                           },
                                           {
-                                            value: "c4",
-                                            text: " Information provided by community mental health team",
+                                            value: "Information provided by community mental health team",
+                                            text: "Information provided by community mental health team",
                                             checked: (data["application-evidence-used-c"] == "c4")
                                           },
                                           {
-                                            value: "c5",
-                                            text: " Health professional consultation report",
+                                            value: "Health professional consultation report",
+                                            text: "Health professional consultation report",
                                             checked: (data["application-evidence-used-c"] == "c5")
                                           },
                                           {
-                                            value: "c6",
-                                            text: " Information provided by Customer Compliance Officer",
+                                            value: "Information provided by Customer Compliance Officer",
+                                            text: "Information provided by Customer Compliance Officer",
                                             checked: (data["application-evidence-used-c"] == "c6")
                                           },
                                           {
-                                            value: "c7",
-                                            text: " Letter from consultant",
+                                            value: "Letter from consultant",
+                                            text: "Letter from consultant",
                                             checked: (data["application-evidence-used-c"] == "c7")
                                           },
                                           {
-                                            value: "c8",
-                                            text: " Report from consultant",
+                                            value: "Report from consultant",
+                                            text: "Report from consultant",
                                             checked: (data["application-evidence-used-c"] == "c8")
                                           },
                                           {
-                                            value: "c9",
-                                            text: " Telephone advice from consultant",
+                                            value: "Telephone advice from consultant",
+                                            text: "Telephone advice from consultant",
                                             checked: (data["application-evidence-used-c"] == "c9")
                                           },
                                           {
-                                            value: "c10",
-                                            text: " Letter from counsellor",
+                                            value: "Letter from counsellor",
+                                            text: "Letter from counsellor",
                                             checked: (data["application-evidence-used-c"] == "c10")
                                           },
                                           {
-                                            value: "c11",
-                                            text: " Report from counsellor",
+                                            value: "Report from counsellor",
+                                            text: "Report from counsellor",
                                             checked: (data["application-evidence-used-c"] == "c11")
                                           },
                                           {
-                                            value: "c12",
+                                            value: "Telephone advice from counsellor",
                                             text: "Telephone advice from counsellor",
                                             checked: (data["application-evidence-used-c"] == "c12")
                                           }
@@ -130,8 +131,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-d",
+                                        name: "application-evidence-used-d",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -142,14 +143,14 @@
                                         },
                                         items: [
                                           {
-                                            value: "111",
-                                            text: " Information provided by day centre",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Information provided by day centre",
+                                            text: "Information provided by day centre",
+                                            checked: (data["application-evidence-used-d"] == "d1")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Claim for Disability Living Allowance",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Claim for Disability Living Allowance",
+                                            text: "Claim for Disability Living Allowance",
+                                            checked: (data["application-evidence-used-d"] == "d2")
                                           }
                                         ]
                                       }) }}
@@ -167,8 +168,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-e",
+                                        name: "application-evidence-used-e",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -179,24 +180,24 @@
                                         },
                                         items: [
                                           {
-                                            value: "111",
+                                            value: "Enquiry form",
                                             text: "Enquiry form",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            checked: (data["application-evidence-used-e"] == "e1")
                                           },
                                           {
-                                            value: "111",
+                                            value: "Extra information applicant gave us",
                                             text: "Extra information applicant gave us",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            checked: (data["application-evidence-used-e"] == "e2")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Eye care professional's report",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Eye care professional's report",
+                                            text: "Eye care professional's report",
+                                            checked: (data["application-evidence-used-e"] == "e3")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Health care professional assessment for Employment and Support Allowance",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Health care professional assessment for Employment and Support Allowance",
+                                            text: "Health care professional assessment for Employment and Support Allowance",
+                                            checked: (data["application-evidence-used-e"] == "e4")
                                           }
                                         ]
                                       }) }}
@@ -214,8 +215,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-f",
+                                        name: "application-evidence-used-f",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -226,9 +227,9 @@
                                         },
                                         items: [
                                           {
-                                            value: "111",
-                                            text: " Information provided by Fraud Investigation Service",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Information provided by Fraud Investigation Service",
+                                            text: "Information provided by Fraud Investigation Service",
+                                            checked: (data["application-evidence-used-f"] == "f1")
                                           }
                                         ]
                                       }) }}
@@ -246,8 +247,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-g",
+                                        name: "application-evidence-used-g",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -258,24 +259,24 @@
                                         },
                                         items: [
                                           {
-                                            value: "111",
-                                            text: " Information provided by GP's surgery",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Information provided by GP's surgery",
+                                            text: "Information provided by GP's surgery",
+                                            checked: (data["application-evidence-used-g"] == "g1")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Letter from GP",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Letter from GP",
+                                            text: "Letter from GP",
+                                            checked: (data["application-evidence-used-g"] == "g2")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Report from GP",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Report from GP",
+                                            text: "Report from GP",
+                                            checked: (data["application-evidence-used-g"] == "g3")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Telephone advice from GP",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Telephone advice from GP",
+                                            text: "Telephone advice from GP",
+                                            checked: (data["application-evidence-used-g"] == "g4")
                                           }
                                         ]
                                       }) }}
@@ -293,8 +294,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-h",
+                                        name: "application-evidence-used-h",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -305,34 +306,34 @@
                                         },
                                         items: [
                                         {
-                                          value: "111",
+                                          value: "Health information gather (PIP2)",
                                           text: "Health information gather (PIP2)",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          checked: (data["application-evidence-used-h"] == "h1")
                                         },
                                           {
-                                            value: "111",
-                                            text: " Information provided by Home Office",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Information provided by Home Office",
+                                            text: "Information provided by Home Office",
+                                            checked: (data["application-evidence-used-h"] == "h2")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Information provided by hospital",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Information provided by hospital",
+                                            text: "Information provided by hospital",
+                                            checked: (data["application-evidence-used-h"] == "h3")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Letter from hospital doctor",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Letter from hospital doctor",
+                                            text: "Letter from hospital doctor",
+                                            checked: (data["application-evidence-used-h"] == "h4")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Report from hospital doctor",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Report from hospital doctor",
+                                            text: "Report from hospital doctor",
+                                            checked: (data["application-evidence-used-h"] == "h5")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Telephone advice from hospital doctor",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Telephone advice from hospital doctor",
+                                            text: "Telephone advice from hospital doctor",
+                                            checked: (data["application-evidence-used-h"] == "h6")
                                           }
                                         ]
                                       }) }}
@@ -350,8 +351,8 @@
                                       <div class="govuk-grid-column-two-third">
 
                                       {{ govukCheckboxes({
-                                        idPrefix: "application-evidence-used",
-                                        name: "application-evidence-used",
+                                        idPrefix: "application-evidence-used-i",
+                                        name: "application-evidence-used-i",
                                         classes: "govuk-checkboxes--small",
                                         fieldset: {
                                           legend: {
@@ -362,19 +363,19 @@
                                         },
                                         items: [
                                           {
-                                            value: "111",
-                                            text: " Health care professional assessment for Incapacity Benefit",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Health care professional assessment for Incapacity Benefit",
+                                            text: "Health care professional assessment for Incapacity Benefit",
+                                            checked: (data["application-evidence-used-i"] == "i1")
                                           },
                                           {
-                                            value: "111",
+                                            value: "Interview under caution",
                                             text: "Interview under caution",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            checked: (data["application-evidence-used-i"] == "i2")
                                           },
                                           {
-                                            value: "111",
-                                            text: " Claim for Industrial Injuries Disablement Benefit",
-                                            checked: (data["application-evidence-used"] == "1")
+                                            value: "Claim for Industrial Injuries Disablement Benefit",
+                                            text: "Claim for Industrial Injuries Disablement Benefit",
+                                            checked: (data["application-evidence-used-i"] == "i3")
                                           }
                                         ]
                                       }) }}
@@ -392,8 +393,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-j",
+                                      name: "application-evidence-used-j",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -404,9 +405,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
+                                          value: "Information provided by Jobcentre Plus",
                                           text: "Information provided by Jobcentre Plus",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          checked: (data["application-evidence-used-j"] == "j1")
                                         }
                                       ]
                                     }) }}
@@ -424,8 +425,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-l",
+                                      name: "application-evidence-used-l",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -436,9 +437,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Information provided by local authority",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by local authority",
+                                          text: "Information provided by local authority",
+                                          checked: (data["application-evidence-used-l"] == "l1")
                                         }
                                       ]
                                     }) }}
@@ -457,8 +458,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-n",
+                                      name: "application-evidence-used-n",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -469,9 +470,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Information provided by nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by nurse",
+                                          text: "Information provided by nurse",
+                                          checked: (data["application-evidence-used-n"] == "n1")
                                         }
                                       ]
                                     }) }}
@@ -490,8 +491,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-o",
+                                      name: "application-evidence-used-o",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -502,19 +503,19 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
+                                          value: "Letter from occupational therapist",
                                           text: "Letter from occupational therapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          checked: (data["application-evidence-used-o"] == "o1")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from occupational therapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from occupational therapist",
+                                          text: "Report from occupational therapist",
+                                          checked: (data["application-evidence-used-o"] == "o2")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from occupational therapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from occupational therapist",
+                                          text: "Telephone advice from occupational therapist",
+                                          checked: (data["application-evidence-used-o"] == "o3")
                                         }
                                       ]
                                     }) }}
@@ -533,8 +534,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-p",
+                                      name: "application-evidence-used-p",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -545,94 +546,94 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Information provided by Pension Service",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by Pension Service",
+                                          text: "Information provided by Pension Service",
+                                          checked: (data["application-evidence-used-p"] == "p1")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Information provided by Primary Care Trust",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by Primary Care Trust",
+                                          text: "Information provided by Primary Care Trust",
+                                          checked: (data["application-evidence-used-p"] == "p2")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Information provided by Prison Service",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by Prison Service",
+                                          text: "Information provided by Prison Service",
+                                          checked: (data["application-evidence-used-p"] == "p3")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from community psychiatric nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from community psychiatric nurse",
+                                          text: "Letter from community psychiatric nurse",
+                                          checked: (data["application-evidence-used-p"] == "p4")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from community psychiatric nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from community psychiatric nurse",
+                                          text: "Report from community psychiatric nurse",
+                                          checked: (data["application-evidence-used-p"] == "p5")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from community psychiatric nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from community psychiatric nurse",
+                                          text: "Telephone advice from community psychiatric nurse",
+                                          checked: (data["application-evidence-used-p"] == "p6")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from physiotherapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from physiotherapist",
+                                          text: "Letter from physiotherapist",
+                                          checked: (data["application-evidence-used-p"] == "p7")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from physiotherapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from physiotherapist",
+                                          text: "Report from physiotherapist",
+                                          checked: (data["application-evidence-used-p"] == "p8")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from physiotherapist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from physiotherapist",
+                                          text: "Telephone advice from physiotherapist",
+                                          checked: (data["application-evidence-used-p"] == "p9")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from psychiatric social worker",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from psychiatric social worker",
+                                          text: "Letter from psychiatric social worker",
+                                          checked: (data["application-evidence-used-p"] == "p10")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from psychiatric social worker",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from psychiatric social worker",
+                                          text: "Report from psychiatric social worker",
+                                          checked: (data["application-evidence-used-p"] == "p11")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from psychiatric social worker",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from psychiatric social worker",
+                                          text: "Telephone advice from psychiatric social worker",
+                                          checked: (data["application-evidence-used-p"] == "p12")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from psychiatrist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from psychiatrist",
+                                          text: "Letter from psychiatrist",
+                                          checked: (data["application-evidence-used-p"] == "p13")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from psychiatrist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from psychiatrist",
+                                          text: "Report from psychiatrist",
+                                          checked: (data["application-evidence-used-p"] == "p14")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from psychiatrist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from psychiatrist",
+                                          text: "Telephone advice from psychiatrist",
+                                          checked: (data["application-evidence-used-p"] == "p15")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from psychologist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from psychologist",
+                                          text: "Letter from psychologist",
+                                          checked: (data["application-evidence-used-p"] == "p16")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from psychologist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from psychologist",
+                                          text: "Report from psychologist",
+                                          checked: (data["application-evidence-used-p"] == "p17")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from psychologist",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from psychologist",
+                                          text: "Telephone advice from psychologist",
+                                          checked: (data["application-evidence-used-p"] == "p18")
                                         }
                                       ]
                                     }) }}
@@ -651,8 +652,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-r",
+                                      name: "application-evidence-used-r",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -663,9 +664,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Health professional review report",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Health professional review report",
+                                          text: "Health professional review report",
+                                          checked: (data["application-evidence-used-r"] == "r1")
                                         }
                                       ]
                                     }) }}
@@ -684,8 +685,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-s",
+                                      name: "application-evidence-used-s",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -696,44 +697,44 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Health professional supplementary advice",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Health professional supplementary advice",
+                                          text: "Health professional supplementary advice",
+                                          checked: (data["application-evidence-used-s"] == "s1")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Information provided by school",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by school",
+                                          text: "Information provided by school",
+                                          checked: (data["application-evidence-used-s"] == "s2")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Information provided by school",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by school",
+                                          text: "Information provided by school",
+                                          checked: (data["application-evidence-used-s"] == "s3")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Information provided by social worker",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by social worker",
+                                          text: "Information provided by social worker",
+                                          checked: (data["application-evidence-used-s"] == "s4")
                                         },
                                         {
-                                          value: "111",
+                                          value: "Surveillance logs",
                                           text: "Surveillance logs",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          checked: (data["application-evidence-used-s"] == "s5")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Letter from specialist nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Letter from specialist nurse",
+                                          text: "Letter from specialist nurse",
+                                          checked: (data["application-evidence-used-s"] == "s6")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Report from specialist nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Report from specialist nurse",
+                                          text: "Report from specialist nurse",
+                                          checked: (data["application-evidence-used-s"] == "s7")
                                         },
                                         {
-                                          value: "111",
-                                          text: " Telephone advice from specialist nurse",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Telephone advice from specialist nurse",
+                                          text: "Telephone advice from specialist nurse",
+                                          checked: (data["application-evidence-used-s"] == "s8")
                                         }
                                       ]
                                     }) }}
@@ -752,8 +753,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-t",
+                                      name: "application-evidence-used-t",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -764,9 +765,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Information provided by teacher",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by teacher",
+                                          text: "Information provided by teacher",
+                                          checked: (data["application-evidence-used-t"] == "t1")
                                         }
                                       ]
                                     }) }}
@@ -785,8 +786,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-v",
+                                      name: "application-evidence-used-v",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -797,9 +798,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Visiting officer's report",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Visiting officer's report",
+                                          text: "Visiting officer's report",
+                                          checked: (data["application-evidence-used-v"] == "1")
                                         }
                                       ]
                                     }) }}
@@ -818,8 +819,8 @@
                                     <div class="govuk-grid-column-two-third">
 
                                     {{ govukCheckboxes({
-                                      idPrefix: "application-evidence-used",
-                                      name: "application-evidence-used",
+                                      idPrefix: "application-evidence-used-w",
+                                      name: "application-evidence-used-w",
                                       classes: "govuk-checkboxes--small",
                                       fieldset: {
                                         legend: {
@@ -830,9 +831,9 @@
                                       },
                                       items: [
                                         {
-                                          value: "111",
-                                          text: " Information provided by Welfare Rights Advisor",
-                                          checked: (data["application-evidence-used"] == "1")
+                                          value: "Information provided by Welfare Rights Advisor",
+                                          text: "Information provided by Welfare Rights Advisor",
+                                          checked: (data["application-evidence-used-w"] == "w1")
                                         }
                                       ]
                                     }) }}
