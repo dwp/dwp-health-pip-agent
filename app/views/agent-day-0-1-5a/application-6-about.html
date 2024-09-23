@@ -1,4 +1,12 @@
+
+{% extends "layout.html" %}
+
+<!-- {% if data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
+{% extends "layout.html" %}
+{% else %}
 {% extends "layout-eject.html" %}
+{% endif %} -->
+
 
 {% block pageTitle %}
   Process a PIP application
@@ -15,7 +23,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-5a/record-id-base.html" %}
+      {% include "agent-day-0-1-7/record-id-base.html" %}
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Select and justify a descriptor for each activity</h1>
 
@@ -61,342 +69,71 @@
 </table>
 
 
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-
-                            <table class="govuk-table">
-                      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
-
-
-                <thead class="govuk-table__head">
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
-                    <td class="govuk-table__cell govuk-16-percent">Score</td>
-                    <td class="govuk-table__cell govuk-16-percent">Status</td>
-
-                  </tr>
-                  </thead>
-
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell table-spacer"><a href="application-6-about-a1-score">Preparing food</a></td>
-                    <td class="govuk-table__cell table-spacer">
-
-                    {% if data["application-about-a1-score-overwrite"] %}
-                    {% include "agent-day-0-1-5a/application-about-a1-score-overwrite.html" %}
-                    {% else %}
-                    0
-                    {% endif %}
-
-                    </td>
-
-                    <td class="govuk-table__cell table-spacer">
-                      {% if data["application-about-a1-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                      {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                      {% endif %}
-                    </td>
-
-
-
-                    </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell table-spacer"><a href="application-6-about-a2-score">Taking nutrition</a></td>
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a2-score-overwrite"] %}
-                        {% include "agent-day-0-1-5a/application-about-a2-score-overwrite.html" %}
-                        {% else %}
-                        0
-                        {% endif %}
-                      </td>
-
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a2-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                        {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                        {% endif %}
-                      </td>
-
-                      </tr>
-
-                    <tr class="govuk-table__row">
-                    <td class="govuk-table__cell table-spacer"><a href="application-6-about-a3-score">Managing therapy or monitoring<br>a health condition</a></td>
-                    <td class="govuk-table__cell table-spacer">
-                      {% if data["application-about-a3-score-overwrite"] %}
-                      {% include "agent-day-0-1-5a/application-about-a3-score-overwrite.html" %}
-                      {% else %}
-                      0
-                      {% endif %}
-                    </td>
-
-                    <td class="govuk-table__cell table-spacer">
-                      {% if data["application-about-a3-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                      {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                      {% endif %}
-                    </td>
-
-                    </tr>
-
-                        <tr class="govuk-table__row">
-                          <td class="govuk-table__cell table-spacer"><a href="application-6-about-a4-score">Washing and bathing</a></td>
-                          <td class="govuk-table__cell table-spacer">
-                            {% if data["application-about-a4-score-overwrite"] %}
-                            {% include "agent-day-0-1-5a/application-about-a4-score-overwrite.html" %}
-                            {% else %}
-                            0
-                            {% endif %}
-                          </td>
-
-                          <td class="govuk-table__cell table-spacer">
-                            {% if data["application-about-a4-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                            {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                            {% endif %}
-                          </td>
-
-
-                          </tr>
-
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell table-spacer"><a href="application-6-about-a5-score">Managing toilet needs or incontinence</a></td>
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a5-score-overwrite"] %}
-                        {% include "agent-day-0-1-5a/application-about-a5-score-overwrite.html" %}
-                        {% else %}
-                        0
-                        {% endif %}
-                      </td>
-
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a5-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                        {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                        {% endif %}
-                      </td>
-
-                      </tr>
-
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell table-spacer"><a href="application-6-about-a6-score">Dressing and undressing</a></td>
-                              <td class="govuk-table__cell table-spacer">
-                                {% if data["application-about-a6-score-overwrite"] %}
-                                {% include "agent-day-0-1-5a/application-about-a6-score-overwrite.html" %}
-                                {% else %}
-                                0
-                                {% endif %}
-                              </td>
-
-                              <td class="govuk-table__cell table-spacer">
-                                {% if data["application-about-a6-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                {% endif %}
-                              </td>
-
-                              </tr>
-
-                              <tr class="govuk-table__row">
-                                <td class="govuk-table__cell table-spacer"><a href="application-6-about-a7-score">Communicating verbally</a></td>
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a7-score-overwrite"] %}
-                                  {% include "agent-day-0-1-5a/application-about-a7-score-overwrite.html" %}
-                                  {% else %}
-                                  0
-                                  {% endif %}
-                                </td>
-
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a7-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                  {% endif %}
-                                </td>
-
-                                </tr>
-
-                          <tr class="govuk-table__row">
-                            <td class="govuk-table__cell table-spacer"><a href="application-6-about-a8-score">Reading and understanding signs,<br>symbols and words</a></td>
-                            <td class="govuk-table__cell table-spacer">
-                              {% if data["application-about-a8-score-overwrite"] %}
-                              {% include "agent-day-0-1-5a/application-about-a8-score-overwrite.html" %}
-                              {% else %}
-                              0
-                              {% endif %}
-                            </td>
-
-                            <td class="govuk-table__cell table-spacer">
-                              {% if data["application-about-a8-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                              {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                              {% endif %}
-                            </td>
-
-                            </tr>
-
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell table-spacer"><a href="application-6-about-a9-score">Engaging with other people face to face</a></td>
-                              <td class="govuk-table__cell table-spacer">
-                                {% if data["application-about-a9-score-overwrite"] %}
-                                {% include "agent-day-0-1-5a/application-about-a9-score-overwrite.html" %}
-                                {% else %}
-                                0
-                                {% endif %}
-                              </td>
-
-                              <td class="govuk-table__cell table-spacer">
-                                {% if data["application-about-a9-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                {% endif %}
-                              </td>
-
-                              </tr>
-
-
-                              <tr class="govuk-table__row">
-                                <td class="govuk-table__cell table-spacer"><a href="application-6-about-a10-score">Making budgeting decisions</a></td>
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a10-score-overwrite"] %}
-                                  {% include "agent-day-0-1-5a/application-about-a10-score-overwrite.html" %}
-                                  {% else %}
-                                  0
-                                  {% endif %}
-                                </td>
-
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a10-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                  {% endif %}
-                                </td>
-
-                                </tr>
-
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
-                              <td class="govuk-table__cell table-spacer"><strong>0</strong>
-                              </td>
-
-                              <td class="govuk-table__cell table-spacer">
-                                &nbsp
-                              </td>
-
-                              </tr>
-
-
-
-                            </table>
-
-                            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
-
-                              <table class="govuk-table">
-
-                                <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Mobility activities</h1>
-
-                                <thead class="govuk-table__head">
-                                  <tr class="govuk-table__row">
-                                    <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
-                                    <td class="govuk-table__cell govuk-16-percent">Score</td>
-                                    <td class="govuk-table__cell govuk-16-percent">Status</td>
-
-                                  </tr>
-                                  </thead>
-
-                              <tr class="govuk-table__row">
-                                <td class="govuk-table__cell table-spacer"><a href="application-6-about-a11-score">Planning and following journeys</a></td>
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a11-score-overwrite"] %}
-                                  {% include "agent-day-0-1-5a/application-about-a11-score-overwrite.html" %}
-                                  {% else %}
-                                  0
-                                  {% endif %}
-                                </td>
+    <table class="govuk-table">
 
-                                <td class="govuk-table__cell table-spacer">
-                                  {% if data["application-about-a11-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                                  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                                  {% endif %}
-                                </td>
-                                </tr>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Qualifying period and prospective test</h1>
 
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell table-spacer"><a href="application-6-about-a12-score">Moving around</a></td>
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a12-score-overwrite"] %}
-                        {% include "agent-day-0-1-5a/application-about-a12-score-overwrite.html" %}
-                        {% else %}
-                        0
-                        {% endif %}
-                      </td>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-60-percent"></td>
+          <td class="govuk-table__cell govuk-25-percent"></td>
+          <td class="govuk-table__cell govuk-15-percent"></td>
+        </tr>
+        </thead>
 
-                      <td class="govuk-table__cell table-spacer">
-                        {% if data["application-about-a12-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                        {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                        {% endif %}
-                      </td>
-                      </tr>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">
+          <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="qppt-dl-3m-check">Daily living</a></p>
 
-                      <tr class="govuk-table__row">
-                        <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
-                        <td class="govuk-table__cell table-spacer"><strong>0</strong></td>
-                      <td class="govuk-table__cell table-spacer">
-                        &nbsp
-                      </td>
-                        </tr>
+        </td>
 
-                  </table>
+        <td class="govuk-table__cell table-spacer"></td>
+        <td class="govuk-table__cell table-spacer">
 
-                </div>
-                </div>
+          {% if data["qppt-dl-3m-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+          {% endif %}
 
+        </td>
+        </tr>
 
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">
+              <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="qppt-m-3m-check">Mobility</a></p>
 
-        <!------------ ––– ------------>
+            </td>
 
+            <td class="govuk-table__cell table-spacer"></td>
+            <td class="govuk-table__cell table-spacer">
 
+              {% if data["qppt-m-3m-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+              {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+              {% endif %}
 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+            </td>
+            </tr>
 
-  {% if data["application-about-a12-score-overwrite"] %}
+</table>
 
-  {% if data["system-application-selector"]  == "1" %}
-        <!-- I am Nill award -->
+{% include "agent-day-0-1-5a/tasklist-status.html" %}
 
-    <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
+{% include "agent-day-0-1-5a/tasklist-cta.html" %}
 
 
-          {{ govukButton({
-          name: "process-c-nil-task-list",
-          value: "X",
-          checked: (data["X"] == "X"),
-          text: "Continue",
-          classes: "govuk-!-margin-right-2",
-          href: "application-6-letter-review"
-          }) }}
+<!-- STATUS AND CTA SPACE -->
 
 
 
-          {% else %}
 
 
-          <!-- I am not nil award -->
-  <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
 
+{% include "agent-day-0-1-5a/qppt-status.html" %}
 
-        {{ govukButton({
-        name: "process-c-nil-task-list",
-        value: "X",
-        checked: (data["X"] == "X"),
-        text: "Continue",
-        classes: "govuk-!-margin-right-2",
-        href: "award-dates-data-input"
-        }) }}
 
-
-
-    {% endif %}
-  {% else %}
-
-  {% endif %}
-
-</div>
-</div>
+          </div>
+        </div>
 
 
 

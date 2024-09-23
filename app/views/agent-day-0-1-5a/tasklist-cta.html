@@ -1,0 +1,100 @@
+
+
+{% if
+  data["qppt-m-3m-check"] == "EffectiveDate"
+  or
+  data["qppt-m-3m-check"] == "SplitRate"
+
+%}
+<!-- Send application to PIPcs -->
+
+
+<h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-4">This application needs to be moved to PIPCS</h1>
+
+  {% if
+  data["qppt-dl-3m-check"] == "SplitRate" or data["qppt-m-3m-check"] == "SplitRate"
+  %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process it in this service.</p>
+
+
+  {% elif
+  data["qppt-m-3m-check"] == "EffectiveDate" or data["qppt-m-3m-check"] == "EffectiveDate"
+  %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We are not currently able to process it in this service.</p>
+
+  {% else %}
+  {% endif %}
+
+
+
+{{ govukButton({
+  name: "process-c-nil-task-list",
+  value: "X",
+  checked: (data["X"] == "X"),
+  text: "Continue",
+  classes: "govuk-!-margin-right-2",
+  href: "/move-to-pipcs-1/eject-process"
+}) }}
+
+
+
+
+{% else %}
+<!-- Show scores -->
+{% endif %}
+
+
+        <!------------ ––– ------------>
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            {% if data["application-about-a12-score-overwrite"] %}
+
+
+                {% if data["application-about-a12-score-overwrite"]  == "a1" or data["application-about-a12-score-overwrite"]  == "b2" or data["application-about-a12-score-overwrite"]  == "c3"%}
+                <!-- I am Nill award -->
+
+
+                <!-- I am not nil award -->
+                a1
+                <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
+
+                {{ govukButton({
+                  name: "process-c-nil-task-list",
+                  value: "X",
+                  checked: (data["X"] == "X"),
+                  text: "Continue",
+                  classes: "govuk-!-margin-right-2",
+                  href: "application-6-letter-review"
+                }) }}
+
+
+                {% elif data["application-about-a12-score-overwrite"]  == "d4" or data["application-about-a12-score-overwrite"]  == "e5" or data["application-about-a12-score-overwrite"]  == "f6" %}
+                <!-- I am an award -->
+
+                <!-- I am Nill award -->
+                f6
+                <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
+
+                {{ govukButton({
+                  name: "process-c-nil-task-list",
+                  value: "X",
+                  checked: (data["X"] == "X"),
+                  text: "Continue",
+                  classes: "govuk-!-margin-right-2",
+                  href: "award-dates-data-input"
+                }) }}
+
+
+                {% else %}
+
+                {% endif %}
+
+
+            {% else %}
+            {% endif %}
