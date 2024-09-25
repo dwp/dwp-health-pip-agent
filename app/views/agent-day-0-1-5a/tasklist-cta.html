@@ -54,12 +54,10 @@
             {% if data["application-about-a12-score-overwrite"] %}
 
 
-                {% if data["application-about-a12-score-overwrite"]  == "a1" or data["application-about-a12-score-overwrite"]  == "b2" or data["application-about-a12-score-overwrite"]  == "c3"%}
-                <!-- I am Nill award -->
+            {% if data["system-scenario-selector"]  == "sss3" %}
 
 
-                <!-- I am not nil award -->
-                a1
+                S1 (Nil)
                 <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
 
@@ -73,11 +71,25 @@
                 }) }}
 
 
-                {% elif data["application-about-a12-score-overwrite"]  == "d4" or data["application-about-a12-score-overwrite"]  == "e5" or data["application-about-a12-score-overwrite"]  == "f6" %}
-                <!-- I am an award -->
+                {% elif data["system-scenario-selector"]  == "sss3" %}
 
-                <!-- I am Nill award -->
-                f6
+                s2 (Say)
+                <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
+
+                {{ govukButton({
+                  name: "process-c-nil-task-list",
+                  value: "X",
+                  checked: (data["X"] == "X"),
+                  text: "Continue",
+                  classes: "govuk-!-margin-right-2",
+                  href: "award-dates-data-input"
+                }) }}
+
+
+                {% elif data["system-scenario-selector"]  == "sss3" %}
+
+                S3 (Pay)
                 <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will be awarded PIP.</p>
 
