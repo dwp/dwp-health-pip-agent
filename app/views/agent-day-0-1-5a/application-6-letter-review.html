@@ -66,7 +66,7 @@
             <li>[s1] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
             <li>[s1] points for the mobility part - this means the applicant has not been given this part</li>
 
-    {% elif data["qppt-dl-3m-check"] == "sss2" %}
+    {% elif data["system-scenario-selector"] == "sss2" %}
     <li>I am the out come for S2</li>
     <br>
           <li>[s2] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
@@ -74,7 +74,7 @@
           <li>[s2] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
           <li>[s2] points for the mobility part - this means the applicant has not been given this part</li>
 
-    {% elif data["qppt-dl-3m-check"] == "sss3" %}
+    {% elif data["system-scenario-selector"] == "sss3" %}
     <li>I am the out come for S3</li>
     <br>
           <li>[s3] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
@@ -212,12 +212,18 @@
               <!------------Legend--------------->
 
 
+
+{% set dynamicAwardStartDate %}
 {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+{% endset %}
 
-{{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}
+{% set dynamicAwardReviewDate %}
+  {{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}
+{% endset %}
 
-{{ data['award-dates-ap-period']}}
-
+{% set dynamicAwardPeriod %}
+  {{ data['award-dates-ap-period']}}
+{% endset %}
 
 {% set dynamicEndDate %}
   {% include "agent-day-0-1-5a/award-data-end-date.html" %}
@@ -232,7 +238,7 @@
                         text: "Award start date"
                       },
                       value: {
-                        text: "2 March 2024"
+                        text: dynamicAwardStartDate
                       }
                     },
                     {
@@ -240,7 +246,15 @@
                         text: "Award review date"
                       },
                       value: {
-                        text: "1 March 2026"
+                        text: dynamicAwardReviewDate
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Award period"
+                      },
+                      value: {
+                        html: dynamicAwardPeriod
                       }
                     },
                     {
