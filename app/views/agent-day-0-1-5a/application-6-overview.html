@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-5a/record-id-base.html" %}
+      {% include "agent-day-0-1-5a/record-id-sss.html" %}
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
@@ -38,24 +38,23 @@
             <td class="govuk-table__cell">Incomplete<br> Completed (Telephone) <br> Completed (Apply)</td>
           </tr> -->
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header">Application submitted</td>
-            <td class="govuk-table__cell">Day Month 2024</td>
-          </tr>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header">Application submitted</td>
+              <td class="govuk-table__cell">{% include "agent-day-0-1-5a/sss-dates-application-submitted.html" %}</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header">Assessment report completed</td>
+              <td class="govuk-table__cell">{% include "agent-day-0-1-5a/sss-dates-application-complete.html" %}</td>
+            </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header">Assessment report completed</td>
-            <td class="govuk-table__cell">Day Month 2024</td>
-          </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__header">Age</td>
+              <td class="govuk-table__cell">{% include "agent-day-0-1-5a/sss-dates-age.html" %}</td>
+            </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__header">Age</td>
-            <td class="govuk-table__cell">XX (Day Month Year)</td>
-          </tr>
-
-
-        </tbody>
-      </table>
+          </tbody>
+        </table>
 
 
       <!-- <table class="govuk-table govuk-!-margin-bottom-6">
