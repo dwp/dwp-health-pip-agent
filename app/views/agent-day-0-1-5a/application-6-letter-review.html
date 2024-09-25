@@ -32,6 +32,18 @@
         {% endset %}
       <!------------Legend--------------->
 
+
+
+{% set dynamicQPPTOutcome %}
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+{% include "agent-day-0-1-5a/qppt-outcome.html" %}
+  </ul>
+{% endset %}
+
+
       <!------------OUTCOME LEGEND------------>
 
         {% set dynamicOutcome %}
@@ -43,10 +55,39 @@
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
   <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-    <li>[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
-    <li>[XX] points for the daily living part - this means the applicant has not been given this part</li>
-    <li>[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
-    <li>[XX] points for the mobility part - this means the applicant has not been given this part</li>
+
+
+    {% if
+      data["system-scenario-selector"] == "sss1" %}
+      <li>I am the out come for S1</li>
+      <br>
+            <li>[s1] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
+            <li>[s1] points for the daily living part - this means the applicant has not been given this part</li>
+            <li>[s1] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
+            <li>[s1] points for the mobility part - this means the applicant has not been given this part</li>
+
+    {% elif data["qppt-dl-3m-check"] == "sss2" %}
+    <li>I am the out come for S2</li>
+    <br>
+          <li>[s2] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
+          <li>[s2] points for the daily living part - this means the applicant has not been given this part</li>
+          <li>[s2] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
+          <li>[s2] points for the mobility part - this means the applicant has not been given this part</li>
+
+    {% elif data["qppt-dl-3m-check"] == "sss3" %}
+    <li>I am the out come for S3</li>
+    <br>
+          <li>[s3] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
+          <li>[s3] points for the daily living part - this means the applicant has not been given this part</li>
+          <li>[s3] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
+          <li>[s3] points for the mobility part - this means the applicant has not been given this part</li>
+
+    {% else %}
+
+    None selected
+
+    {% endif %}
+
   </ul>
 
 
@@ -120,15 +161,28 @@
           rows: [
             {
               key: {
-                text: "Outcome"
+                text: "Qualifying Period Perspective test"
               },
               value: {
-                html: dynamicOutcome
+                html: dynamicQPPTOutcome
               }
             }
             ]
           }) }}
 
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Outcome"
+                },
+                value: {
+                  html: dynamicOutcome
+                }
+              }
+              ]
+            }) }}
 
 
               {% if data["system-application-selector"]  == "1" %}
@@ -158,6 +212,17 @@
               <!------------Legend--------------->
 
 
+{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+
+{{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}
+
+{{ data['award-dates-ap-period']}}
+
+
+{% set dynamicEndDate %}
+  {% include "agent-day-0-1-5a/award-data-end-date.html" %}
+{% endset %}
+
 
 
                 {{ govukSummaryList({
@@ -180,10 +245,10 @@
                     },
                     {
                       key: {
-                        text: "End date"
+                        html: "End date"
                       },
                       value: {
-                        text: "1 March 2027"
+                        html: dynamicEndDate
                       }
                     }
                   ]

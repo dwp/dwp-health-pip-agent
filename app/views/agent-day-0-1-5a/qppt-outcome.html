@@ -1,0 +1,68 @@
+
+{% if
+  data["qppt-dl-3m-check"] == "Yes" %}
+  <li>[Yes] QPPT Daily living 3m outcome</li>
+
+{% elif data["qppt-dl-3m-check"] == "EffectiveDate" %}
+<li>[EffectiveDate] QPPT Daily living 3m outcome</li>
+
+{% elif data["qppt-dl-3m-check"] == "NoRestrictions" %}
+<li>[NoRestrictions] QPPT Daily living 3m outcome</li>
+
+{% elif data["qppt-dl-3m-check"] == "SplitRate" %}
+<li>[SplitRate] QPPT Daily living 3m outcome</li>
+
+{% else %}
+
+None selected
+
+{% endif %}
+
+
+{% if
+  data["qppt-dl-9m-check"] == "Yes" %}
+  <li>[Yes] QPPT Daily living 9m outcome</li>
+
+{% elif data["qppt-dl-9m-check"] == "No" %}
+<li>[No] QPPT Daily living 3m outcome</li>
+
+{% else %}
+
+None selected
+
+{% endif %}
+
+
+
+{% if
+  data["qppt-m-3m-check"] == "Yes" %}
+  <li>[Yes] QPPT Mobility 3m outcome</li>
+
+{% elif data["qppt-m-3m-check"] == "EffectiveDate" %}
+<li>[EffectiveDate] QPPT Mobility 3m outcome</li>
+
+{% elif data["qppt-m-3m-check"] == "NoRestrictions" %}
+<li>[NoRestrictions] QPPT Mobility 3m outcome</li>
+
+{% elif data["qppt-m-3m-check"] == "SplitRate" %}
+<li>[SplitRate] QPPT Mobility 3m outcome</li>
+
+{% else %}
+
+None selected
+
+{% endif %}
+
+
+{% if
+  data["qppt-m-9m-check"] == "Yes" %}
+  <li>[Yes] QPPT Mobility 9m outcome</li>
+
+{% elif data["qppt-m-9m-check"] == "No" %}
+<li>[No] QPPT Mobility 3m outcome</li>
+
+{% else %}
+
+None selected
+
+{% endif %}
