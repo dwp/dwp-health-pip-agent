@@ -1,0 +1,46 @@
+
+
+    {% if data["award-dates-AP-rec-check"] == "Yes" and data["award-dates-ap-period"] == "No future assessments required" %}
+      No end date
+
+    {% elif data["award-dates-AP-rec-check"] == "No" %}
+
+          {% if data["award-dates-review-manual"] == "1y" %}
+            31 December 2025
+
+          {% elif data["award-dates-review-manual"] == "18m" %}
+            1 July 2026
+
+          {% elif data["award-dates-review-manual"] == "2y" %}
+            1 January 2027
+
+            {% elif data["award-dates-review-manual"] == "3y" %}
+              1 January 2028
+
+            {% elif data["award-dates-review-manual"] == "4y" %}
+              1 January 2029
+
+            {% elif data["award-dates-review-manual"] == "5y" %}
+              1 January 2030
+
+            {% elif data["award-dates-review-manual"] == "10y" %}
+              1 January 2035
+
+            {% elif data["award-dates-review-manual"] == "None" %}
+              {{ data['award-dates-payment-date-day'] + ' ' + (data['award-dates-payment-date-month'] | getMonth) + ' ' + data['award-dates-payment-date-year']}}
+
+
+            {% elif data["award-dates-review-manual"] == "Indefinite" %}
+              No end date
+
+            {% elif data["award-dates-review-manual"] == "Other" %}
+              Other
+
+            {% else %}
+              1 January 2028
+            {% endif %}
+
+      {% else %}
+        Nothing selected
+
+{% endif %}
