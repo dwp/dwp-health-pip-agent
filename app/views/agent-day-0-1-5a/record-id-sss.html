@@ -1,0 +1,29 @@
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% if data["system-scenario-selector"] == "sss1" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Mr 1</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 1</p>
+
+      {% elif data["system-scenario-selector"] == "sss2" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Mr 2</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 2</p>
+
+      {% elif data["system-scenario-selector"] == "sss3" %}
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Mr 3</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 3</p>
+
+      {% else %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jeff Bridges</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 11 22 33 C</p>
+
+
+      {% endif %}
+
+
+    </div>
+  </div>

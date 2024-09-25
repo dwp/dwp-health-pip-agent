@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-7/record-id-base.html" %}
+      {% include "agent-day-0-1-5a/record-id-sss.html" %}
 
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
@@ -30,6 +30,9 @@
 
               {% elif data["qppt-dl-alt-date-day"] %}
               {{ data['qppt-dl-alt-date-day'] + ' ' + (data['qppt-dl-alt-date-month'] | getMonth) + ' ' + data['qppt-dl-alt-date-year']}}?
+
+              {% elif data["system-scenario-selector"] %}
+                {% include "agent-day-0-1-5a/sss-dates-application-submitted.html" %}
 
             {% else %}
               1 January 2024?
@@ -43,7 +46,16 @@
       <!------------Legend--------------->
 
   {% set dynamicHint %}
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assessment provider indicated they are likely to have daily living restrictions 9 months after their assessment on {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">The assessment provider indicated they are likely to have daily living restrictions 9 months after their assessment on
+
+        {% if data["system-scenario-selector"] %}
+          {% include "agent-day-0-1-5a/sss-dates-application-complete.html" %}
+
+        {% else %}
+        {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+
+        {% endif %}
+
   {% endset %}
 
 

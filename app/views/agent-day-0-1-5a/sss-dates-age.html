@@ -1,0 +1,12 @@
+{% if data["system-scenario-selector"] == "sss1" %}
+  S1 (Day Month year)
+
+{% elif data["system-scenario-selector"] == "sss2" %}
+  S2 (Day Month year)
+
+{% elif data["system-scenario-selector"] == "sss3" %}
+  S3 (Day Month year)
+
+{% else %}
+  XX (Day Month year)
+{% endif %}
