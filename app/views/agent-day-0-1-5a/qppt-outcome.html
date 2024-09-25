@@ -1,13 +1,13 @@
 
 {% if
   data["qppt-dl-3m-check"] == "Yes" %}
-  <li>[Yes] QPPT Daily living 3m outcome</li>
+  <li>Met 3 month qualifying period for daily living</li>
 
 {% elif data["qppt-dl-3m-check"] == "EffectiveDate" %}
-<li>[EffectiveDate] QPPT Daily living 3m outcome</li>
+<li>To get PIP you must have needed help with your daily living or mobility needs for 3 months or more. As your needs started less than 3 months before the date you claimed PIP, I cannot award you PIP for help with your daily living or mobility needs from (caseSubmissionDate) to (decDLQPDate - 1day).</li>
 
 {% elif data["qppt-dl-3m-check"] == "NoRestrictions" %}
-<li>[NoRestrictions] QPPT Daily living 3m outcome</li>
+<li>No daily living restrictions were found.</li>
 
 {% elif data["qppt-dl-3m-check"] == "SplitRate" %}
 <li>[SplitRate] QPPT Daily living 3m outcome</li>
@@ -21,10 +21,10 @@ None selected
 
 {% if
   data["qppt-dl-9m-check"] == "Yes" %}
-  <li>[Yes] QPPT Daily living 9m outcome</li>
+  <li>Met 9 month prospective test for daily living</li>
 
 {% elif data["qppt-dl-9m-check"] == "No" %}
-<li>[No] QPPT Daily living 3m outcome</li>
+<li>To get PIP you must have needed help with your daily living needs for 3 months or more and expect to need help for another 9 months. As your needs are likely to reduce in this time, I cannot award you PIP for help with your daily living needs.</li>
 
 {% else %}
 
@@ -36,13 +36,13 @@ None selected
 
 {% if
   data["qppt-m-3m-check"] == "Yes" %}
-  <li>[Yes] QPPT Mobility 3m outcome</li>
+  <li>Met 3 month qualifying period for mobility</li>
 
 {% elif data["qppt-m-3m-check"] == "EffectiveDate" %}
-<li>[EffectiveDate] QPPT Mobility 3m outcome</li>
+<li>To get PIP you must have needed help with your daily living or mobility needs for 3 months or more. As your needs started less than 3 months before the date you claimed PIP, I cannot award you PIP for help with your daily living or mobility needs from (caseSubmissionDate) to (decDLQPDate - 1day).</li>
 
 {% elif data["qppt-m-3m-check"] == "NoRestrictions" %}
-<li>[NoRestrictions] QPPT Mobility 3m outcome</li>
+<li>No mobility restrictions were found.</li>
 
 {% elif data["qppt-m-3m-check"] == "SplitRate" %}
 <li>[SplitRate] QPPT Mobility 3m outcome</li>
@@ -56,10 +56,10 @@ None selected
 
 {% if
   data["qppt-m-9m-check"] == "Yes" %}
-  <li>[Yes] QPPT Mobility 9m outcome</li>
+  <li>[Yes] Met 9 month prospective test for mobility</li>
 
 {% elif data["qppt-m-9m-check"] == "No" %}
-<li>[No] QPPT Mobility 3m outcome</li>
+<li>[No] To get PIP you must have needed help with your mobility needs for 3 months or more and expect to need help for another 9 months. As your needs are likely to reduce in this time, I cannot award you PIP for help with your mobility needs.</li>
 
 {% else %}
 
