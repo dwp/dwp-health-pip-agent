@@ -102,6 +102,21 @@
                   href: "award-dates-data-input"
                 }) }}
 
+                {% elif data["system-scenario-selector"]  == "sss4" %}
+
+                S4 (Pay)
+                <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">You have selected and justified your descriptors</h1>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will not be awarded PIP.</p>
+
+                {{ govukButton({
+                  name: "process-c-nil-task-list",
+                  value: "X",
+                  checked: (data["X"] == "X"),
+                  text: "Continue",
+                  classes: "govuk-!-margin-right-2",
+                  href: "application-6-letter-review"
+                }) }}
+
 
                 {% else %}
 
