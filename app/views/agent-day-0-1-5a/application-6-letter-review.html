@@ -59,32 +59,57 @@
     {% if
       data["system-scenario-selector"] == "sss1" %}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p> -->
+      Your application for Personal Independence Payment (PIP) was unsuccessful.
 
-            <li>0 points for the daily living part - this means the applicant has not been given this part</li>
-            <li>0 points for the mobility part - this means the applicant has not been given this part</li>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <!-- <li>0 points for the daily living part - this means the applicant has not been given this part</li> -->
+            <!-- <li>0 points for the mobility part - this means the applicant has not been given this part</li> -->
+  </ul>
 
     {% elif data["system-scenario-selector"] == "sss2" %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will:</p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-          <li>8 points for the daily living part - this means the applicant has been given the [standard] rate</li>
-          <li>4 points for the mobility part - this means the applicant has not been given this part</li>
+          <li>get the standard rate of £72.65 a week for daily living from
+            {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+            to
+            {% include "agent-day-0-1-5a/award-data-end-date.html" %}
+          </li>
+          <li>not get the mobility part of PIP
+          </li>
+
+
+  </ul>
 
     {% elif data["system-scenario-selector"] == "sss3" %}
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-          <li>17 points for the daily living part - this means the applicant has been given the [enhanced] rate</li>
-          <li>12 points for the mobility part - this means the applicant has been given the [enhanced] rate</li>
+          <!-- <li>17 points for the daily living part - this means the applicant has been given the [enhanced] rate</li> -->
+          <!-- <li>12 points for the mobility part - this means the applicant has been given the [enhanced] rate</li> -->
+
+          <li>enhanced rate of £108.55 a week for daily living from
+            {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+            to
+            {% include "agent-day-0-1-5a/award-data-end-date.html" %}
+          </li>
+          <li>enhanced rate of £75.75 a week for mobility from
+            {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+            to
+            {% include "agent-day-0-1-5a/award-data-end-date.html" %}
+          </li>
+  </ul>
 
     {% elif data["system-scenario-selector"] == "sss4" %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-          <li>0 points for the daily living part - this means the applicant has not been given this part</li>
-          <li>0 points for the mobility part - this means the applicant has not been given this part</li>
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p> -->
+    Your application for Personal Independence Payment (PIP) was unsuccessful.
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <!-- <li>0 points for the daily living part - this means the applicant has not been given this part</li> -->
+          <!-- <li>0 points for the mobility part - this means the applicant has not been given this part</li> -->
+</ul>
 
     {% else %}
 
@@ -92,7 +117,7 @@
 
     {% endif %}
 
-  </ul>
+
 
 
         {% endif %}
