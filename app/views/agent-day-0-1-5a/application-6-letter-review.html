@@ -54,33 +54,37 @@
         {% else %}
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
-  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
 
     {% if
       data["system-scenario-selector"] == "sss1" %}
-      <li> (S1) You will get the:</li>
-      <br>
-            <li>[s1] points for the daily living part - this means the applicant has not been given this part</li>
-            <li>[s1] points for the mobility part - this means the applicant has not been given this part</li>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+            <li>0 points for the daily living part - this means the applicant has not been given this part</li>
+            <li>0 points for the mobility part - this means the applicant has not been given this part</li>
 
     {% elif data["system-scenario-selector"] == "sss2" %}
-    <li>(S2) You will get the:</li>
-    <br>
-          <li>[s2] points for the daily living part - this means the applicant has been given the [standard] rate</li>
-          <li>[s2] points for the mobility part - this means the applicant has not been given this part</li>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+          <li>8 points for the daily living part - this means the applicant has been given the [standard] rate</li>
+          <li>4 points for the mobility part - this means the applicant has not been given this part</li>
 
     {% elif data["system-scenario-selector"] == "sss3" %}
-    <li>(S3) You will get the:</li>
-    <br>
-          <li>[s3] points for the daily living part - this means the applicant has been given the [enhanced] rate</li>
-          <li>[s3] points for the mobility part - this means the applicant has been given the [enhanced] rate</li>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+          <li>17 points for the daily living part - this means the applicant has been given the [enhanced] rate</li>
+          <li>12 points for the mobility part - this means the applicant has been given the [enhanced] rate</li>
 
     {% elif data["system-scenario-selector"] == "sss4" %}
-    <li>(S4) You will get the:</li>
-    <br>
-          <li>[s4] points for the daily living part - this means the applicant has not been given this part</li>
-          <li>[s4] points for the mobility part - this means the applicant has not been given this part</li>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+          <li>0 points for the daily living part - this means the applicant has not been given this part</li>
+          <li>0 points for the mobility part - this means the applicant has not been given this part</li>
 
     {% else %}
 
@@ -125,37 +129,6 @@
 
         {% endset %}
 
-        <!------------OUTCOME LEGEND------------>
-
-
-      <!-- {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Sam Elliot"
-            }
-          },
-          {
-            key: {
-              text: "National Insurance number"
-            },
-            value: {
-              text: "NA 11 22 33 C"
-            }
-          },
-          {
-            key: {
-              text: "Outcome"
-            },
-            value: {
-              html: dynamicOutcome
-            }
-          }
-          ]
-        }) }} -->
 
 
 
@@ -176,7 +149,7 @@
               rows: [
                 {
                   key: {
-                    text: "Qualifying period and prospective test"
+                    html: "Qualifying period<br>and prospective test"
                   },
                   value: {
                     html: dynamicQPPTOutcome
@@ -186,31 +159,12 @@
               }) }}
 
 
-              {% if data["system-application-selector"]  == "1" %}
-
-              <!-- I am Nill award -->
-
-                {% else %}
 
 
-
-              <!------------Q2 LEGEND------------>
-                {% set dynamicDateRange %}
-
-
-                [Day] [Month] [Year]
-                <!-- From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] | getMonth) + ' ' + data['application-6-award-period-date-start-year']}}
+              {% if
+                data["system-scenario-selector"] == "sss2" or data["system-scenario-selector"] == "sss3" %}
 
 
-                {% if data["application-6-award-period-end-check"]  == "Yes" %}
-                to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] | getMonth) + ' ' + data['application-6-award-period-date-end-year']}}
-                {% else %}
-                (there is no end date)
-                {% endif %} -->
-
-                {% endset %}
-
-              <!------------Legend--------------->
 
 
 
@@ -270,7 +224,14 @@
                 }) }}
 
 
-                {% endif %}
+
+
+
+
+            {% else %}
+
+
+            {% endif %}
 
 
                 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Supporting documents</h3>
