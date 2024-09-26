@@ -1,3 +1,36 @@
+<!-- September jeff letter testing -->
+
+{% if data["system-scenario-selector"] == "sss1" or data["system-scenario-selector"] == "sss4" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Nil award You have successfully processed this application. The applicant has not been awarded PIP.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{% elif data["system-scenario-selector"] == "sss2" or data["system-scenario-selector"] == "sss3" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Award You have successfully processed this application. The applicant has not been awarded PIP.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+{% endif %}
+
+
+
+
+
+
 
 {% if data["system-application-selector"]  == "1" %}
 
@@ -129,8 +162,6 @@
       html: html,
       type: 'information'
     }) }}
-
-
 
 
   {% else %}
