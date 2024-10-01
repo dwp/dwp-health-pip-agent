@@ -3,7 +3,7 @@
 {% if data["system-scenario-selector"] == "sss1" or data["system-scenario-selector"] == "sss4" %}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Nil award You have successfully processed this application. The applicant has not been awarded PIP.</p>
+<p class="govuk-body govuk-!-font-size-19">You have processed this application as much as you can in this service. The applicant has not been awarded PIP.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -15,7 +15,7 @@
 {% elif data["system-scenario-selector"] == "sss2" or data["system-scenario-selector"] == "sss3" %}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Award You have successfully processed this application. The applicant has not been awarded PIP.</p>
+<p class="govuk-body govuk-!-font-size-19">You have processed this application as much as you can in this service. The applicant has been awarded PIP.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
