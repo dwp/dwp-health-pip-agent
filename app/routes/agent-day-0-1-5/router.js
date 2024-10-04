@@ -66,6 +66,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '7') {
     res.redirect(`preparation-linear-overview`)
   }
+  else if (applicationSelector == '8') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
    else {
     res.redirect(`XXX`)
   }
@@ -560,6 +563,41 @@ router.post(`/qppt-m-check-router`, (req, res) => {
   }
 })
 
+// Single task list items
+
+router.post(`/assurance-tasklist-item-1-router`, (req, res) => {
+  const assuranceCheckItem1 = req.session.data['assurance-tasklist-item-1']
+
+  if (assuranceCheckItem1 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-2`)
+  }
+  else if (assuranceCheckItem1 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-2`)
+  }
+  else if (assuranceCheckItem1  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-2-router`, (req, res) => {
+  const assuranceCheckItem2 = req.session.data['assurance-tasklist-item-2']
+
+  if (assuranceCheckItem2 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-3`)
+  }
+  else if (assuranceCheckItem2 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-3`)
+  }
+  else if (assuranceCheckItem2  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
 
 
 
