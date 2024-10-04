@@ -20,10 +20,10 @@
 
 
 
-    {% if data["assurance-tasklist-item-21"] %}
+    {% if data["assurance-tasklist-item-10"] %}
     <form action="assurance-tasklist-separate" method="post" class="form">
     {% else %}
-    <form action="assurance-tasklist-item-21-router" method="post" class="form">
+    <form action="assurance-tasklist-item-10-router" method="post" class="form">
     {% endif %}
 
 
@@ -34,33 +34,33 @@
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "assurance-tasklist-item-21",
-        name: "assurance-tasklist-item-21",
+        idPrefix: "assurance-tasklist-item-10",
+        name: "assurance-tasklist-item-10",
         fieldset: {
           legend: {
-            html: "XXXX",
+            html: "Do they have a representative or appointee in Searchlight?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          text: "XXXX"
+          text: ""
         },
         items: [
         {
           value: "Expected",
           text: "Yes",
-          checked: (data["assurance-tasklist-item-21"] == "Expected")
+          checked: (data["assurance-tasklist-item-10"] == "Expected")
         },
         {
           value: "Unexpected",
           text: "No",
-          checked: (data["assurance-tasklist-item-21"] == "Unexpected")
+          checked: (data["assurance-tasklist-item-10"] == "Unexpected")
         },
         {
           value: "Pause",
           text: "Come back to this later",
-          checked: (data["assurance-tasklist-item-21"] == "Pause")
+          checked: (data["assurance-tasklist-item-10"] == "Pause")
         }
         ]
         }) }}
