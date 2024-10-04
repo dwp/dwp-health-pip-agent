@@ -373,11 +373,11 @@
   <div class="govuk-grid-row govuk-!-margin-top-0">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["assurance-sub-monolith-2"] == "Request" %}
+    {% if data["assurance-tasklist-item-23"] == "Unexpected"  %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You cannot process this application yet</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Brah You cannot process this application yet</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to send the ID verification letter and wait for a response.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This is serious brah, this is going to PIPcs</p>
 
 
       {{ govukButton({
@@ -389,7 +389,7 @@
       href: "entry-home"
       }) }}
 
-    {% elif data["assurance-sub-monolith-1-1"] == "Expected" and data["assurance-sub-monolith-2-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Expected"%}
+    {% elif data["assurance-tasklist-item-23"] == "Expected"  %}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -417,9 +417,14 @@
     checked: (data["assurance-mm-tasklist-outcome"] == "AP")
   },
   {
-    value: "BAU",
-    text: "Send application back to BAU",
-    checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
+    value: "PIPcs",
+    text: "Move application to PIPCS",
+    checked: (data["assurance-mm-tasklist-outcome"] == "PIPcs")
+  },
+  {
+    value: "Disallow",
+    text: "Disallow application",
+    checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
   },
   {
     value: "Withdraw",
@@ -434,11 +439,15 @@
   classes: "govuk-!-margin-bottom-8"
 }) }}
 
-{% elif data["assurance-sub-monolith-3-1"] == "Blocked" and data["assurance-sub-monolith-2-1"] == "Expected" and data["assurance-sub-monolith-3-1"] == "Blocked"%}
+{% elif data["assurance-tasklist-item-23"] == "Pause"  %}
 
-<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details but the PIP2 is missing</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Several paused tasks</h1> -->
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="XXX" target="_blank" rel="noopener">I need to come back to this later</a></p>
+
+
 
 {% elif data["assurance-sub-monolith-3-7"] == "Unexpected"  %}
 
@@ -474,9 +483,14 @@
       checked: (data["assurance-mm-tasklist-outcome"] == "AP")
     },
     {
-      value: "BAU",
-      text: "Send application back to BAU",
-      checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
+      value: "PIPcs",
+      text: "Move application to PIPCS",
+      checked: (data["assurance-mm-tasklist-outcome"] == "PIPcs")
+    },
+    {
+      value: "Disallow",
+      text: "Disallow application",
+      checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
     },
     {
       value: "Withdraw",
