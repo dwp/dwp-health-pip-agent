@@ -11,10 +11,10 @@
 {% block content %}
 
 {% if data["system-application-selector"]  == "9" %}
-<form action="application-payment-detials-available" method="post" class="form">
+<form action="application-payment-detials-check" method="post" class="form">
   {% else %}
   <form action="entry-home" method="post" class="form">
-  {% endset %}
+  {% endif %}
 
 
 
@@ -787,11 +787,12 @@
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The letter will then be sent to the applicant.</p>
 
                 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What will happen next </h3>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The applicant's payments will be calculated</p>
 
-
-                  {% else %}
-
+                {{ govukButton({
+                  text: "Continue and check for payment details",
+                  classes: "govuk-!-margin-bottom-8"
+                }) }}
 
               {% else %}
 
@@ -800,13 +801,14 @@
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The letter will then be sent to the applicant.</p>
 
-
-            {% endif %}
-
             {{ govukButton({
               text: "Confirm letter content and continue",
               classes: "govuk-!-margin-bottom-8"
             }) }}
+
+            {% endif %}
+
+
 
       </div>
     </div>
