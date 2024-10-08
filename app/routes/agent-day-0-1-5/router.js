@@ -69,6 +69,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '8') {
     res.redirect(`assurance-tasklist-separate`)
   }
+  else if (applicationSelector == '9') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
    else {
     res.redirect(`XXX`)
   }
