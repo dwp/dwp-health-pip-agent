@@ -15,10 +15,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 @import "patterns/task-list";
 
-@import "explore";
-@import "explore-header";
-@import "explore-govuk-overrides";
-
+// DWP frontend October 2024
+@import "node_modules/@dwp/dwp-frontend/components/internal-service-header/internal-service-header.scss";
+ 
 
 
 
