@@ -778,6 +778,11 @@
             <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The letter will be sent to the applicant.</p>
 
+            {{ govukButton({
+              text: "Confirm letter content and continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
 
             {% elif data["system-application-selector"]  == "9" %}
 
@@ -789,7 +794,7 @@
                 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What will happen next </h3>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The applicant's payments will be calculated. This may take up to 24 hours. </p>
                 <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The applicant's payments will be calculated. This may take up to 24 hours. </p> -->
-                
+
                 {{ govukButton({
                   text: "Continue and check for payment details",
                   classes: "govuk-!-margin-bottom-8"
