@@ -169,10 +169,10 @@
           <a class="app-task-list__task-name" href="assurance-tasklist-item-9" aria-describedby="task-X">
             <!-- [1-9]  --> Special Rules End of Life (SREL)
           </a>
-          {% if data["assurance-tasklist-item-10"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-tasklist-item-10"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-tasklist-item-10"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
-          {% elif data["assurance-tasklist-item-10"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% if data["assurance-tasklist-item-9"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-tasklist-item-9"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-tasklist-item-9"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["assurance-tasklist-item-9"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
@@ -439,20 +439,15 @@
   classes: "govuk-!-margin-bottom-8"
 }) }}
 
-{% elif data["assurance-tasklist-item-23"] == "Pause"  %}
+{% elif data["assurance-tasklist-item-21"] == "Pause"  %}
 
-<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Several paused tasks</h1> -->
-<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
+<h1 class="govuk-heading-m govuk-!-margin-bottom-2">XXX</h1>
 
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="XXX" target="_blank" rel="noopener">I need to come back to this later</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this later</a></p>
 
 
 
 {% elif data["assurance-sub-monolith-3-7"] == "Unexpected"  %}
-
-
-
 
 
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1> -->
