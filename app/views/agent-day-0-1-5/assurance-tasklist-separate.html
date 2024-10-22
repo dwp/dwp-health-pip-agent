@@ -375,10 +375,48 @@
 
     {% if data["assurance-tasklist-item-23"] == "Unexpected"  %}
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application needs to be moved to PIPCS.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XX</p>
 
+
+      {{ govukRadios({
+        idPrefix: "assurance-mm-tasklist-outcome",
+        name: "assurance-mm-tasklist-outcome",
+        fieldset: {
+          legend: {
+            html: "What do you want to do now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "AP",
+          text: "Send application to assessment provider",
+          checked: (data["assurance-mm-tasklist-outcome"] == "AP")
+        },
+        {
+          value: "PIPcs",
+          text: "Move application to PIPCS",
+          checked: (data["assurance-mm-tasklist-outcome"] == "PIPcs")
+        },
+        {
+          value: "Disallow",
+          text: "Disallow application",
+          checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
+        },
+        {
+          value: "Withdraw",
+          text: "Withdraw application",
+          checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
+        }
+        ]
+      }) }}
 
       {{ govukButton({
       name: "process-c-nil-task-list",
@@ -391,9 +429,9 @@
 
     {% elif data["assurance-tasklist-item-23"] == "Expected"  %}
 
-<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p>
 
 
 {{ govukRadios({
@@ -495,7 +533,7 @@
 
 
     {% else %}
-    
+
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this application later</a></p>
 
 
