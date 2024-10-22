@@ -32,34 +32,30 @@
         {% endset %}
       <!------------Legend--------------->
 
+
+
+
+
       <!------------OUTCOME LEGEND------------>
 
-        {% set dynamicOutcome %}
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Outcome</h3>
+
 
         {% if data["system-application-selector"]  == "1" %}
         The applicant will not be given PIP
 
         {% else %}
 
+        {% endif %}
+
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
   <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-    <li>[Yes/NoRestrictions] QPPT Daily living 3m outcome</li>
-    <li>[Yes/No] QPPT Daily living 9m outcome</li>
-    <li>[Yes/NoRestrictions] QPPT Mobility 3m outcome</li>
-    <li>[Yes/No] QPPT Mobility 9m outcome</li>
-
-    <br>
     <li>[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
     <li>[XX] points for the daily living part - this means the applicant has not been given this part</li>
     <li>[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
     <li>[XX] points for the mobility part - this means the applicant has not been given this part</li>
   </ul>
-
-
-        {% endif %}
-
-        {% endset %}
 
         {% set firstPaymentDetails %}
 
@@ -94,57 +90,12 @@
         <!------------OUTCOME LEGEND------------>
 
 
-      <!-- {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: "Sam Elliot"
-            }
-          },
-          {
-            key: {
-              text: "National Insurance number"
-            },
-            value: {
-              text: "NA 11 22 33 C"
-            }
-          },
-          {
-            key: {
-              text: "Outcome"
-            },
-            value: {
-              html: dynamicOutcome
-            }
-          }
-          ]
-        }) }} -->
-
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Outcome"
-              },
-              value: {
-                html: dynamicOutcome
-              }
-            }
-            ]
-          }) }}
-
-
 
               {% if data["system-application-selector"]  == "1" %}
 
               <!-- I am Nill award -->
 
                 {% else %}
-
-
 
               <!------------Q2 LEGEND------------>
                 {% set dynamicDateRange %}
@@ -161,20 +112,110 @@
                 {% endif %} -->
 
                 {% endset %}
+                <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Qualifying period and perspective test</h3>
 
-              <!------------Legend--------------->
 
-
+                <li>[Yes/NoRestrictions] QPPT Daily living 3m outcome</li>
+                <li>[Yes/No] QPPT Daily living 9m outcome</li>
+                <li>[Yes/NoRestrictions] QPPT Mobility 3m outcome</li>
+                <li>[Yes/No] QPPT Mobility 9m outcome</li>
 
 
                 {{ govukSummaryList({
                   rows: [
-                  {
+                    {
+                      key: {
+                        text: "DL"
+                      },
+                      value: {
+                        text: "XXX"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "qppt-dl-3m-check",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "DL M"
+                      },
+                      value: {
+                        text: "XXX"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "qppt-dl-9m-check",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "M QP"
+                      },
+                      value: {
+                        text: "XXX"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "qppt-m-3m-check",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      key: {
+                        text: "M P"
+                      },
+                      value: {
+                        text: "XXX"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "qppt-m-9m-check",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }) }}
+
+              <!------------Legend--------------->
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Review dates</h3>
+
+
+                {{ govukSummaryList({
+                  rows: [
+                    {
                       key: {
                         text: "Award start date"
                       },
                       value: {
                         text: "2 March 2024"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
                       }
                     },
                     {
@@ -183,6 +224,15 @@
                       },
                       value: {
                         text: "1 March 2026"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
                       }
                     },
                     {
@@ -191,6 +241,15 @@
                       },
                       value: {
                         text: "1 March 2027"
+                      },
+                      actions: {
+                        items: [
+                          {
+                            href: "award-dates-playback",
+                            text: "Change",
+                            visuallyHiddenText: "XXX"
+                          }
+                        ]
                       }
                     }
                   ]
@@ -200,12 +259,14 @@
                 {% endif %}
 
 
-                <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Supporting documents</h3>
+
+
+                <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Supporting documents</h3>
 
           {% set DynamicSelectedDocumentsList %}
 
 
-          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6 ">
             <li>Information provided by care home</li>
             <li>Care plan</li>
             <li>Certificate of Vision Impairment (CVI)</li>
@@ -220,6 +281,7 @@
               {% endset %}
 
               {{ govukSummaryList({
+                classes: "govuk-summary-list--no-border",
                 rows: [
                 {
                   key: {
@@ -243,7 +305,7 @@
               }) }}
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Daily living scoring</h3>
 
       <!-- 1 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -676,7 +738,7 @@
       </dl>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Mobility scoring</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Mobility scoring</h3>
 
       <!-- 11 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -775,17 +837,17 @@
 
         {% if data["system-application-selector"]  == "1" %}
 
-            <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The letter will be sent to the applicant.</p>
+            <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-4">What happens next</h3>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">The letter will be sent to the applicant.</p>
 
 
 
               {% else %}
 
 
-            <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What happens next</h3>
+            <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-4">What happens next</h3>
             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
-            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">The letter will then be sent to the applicant.</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">The letter will then be sent to the applicant.</p>
 
 
             {% endif %}
