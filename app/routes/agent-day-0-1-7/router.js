@@ -69,10 +69,15 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '8') {
     res.redirect(`qppt-overview`)
   }
+  else if (applicationSelector == '10') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
    else {
     res.redirect(`XXX`)
   }
 })
+
+
 
 router.post(`/system-myopentasks-selector-router`, (req, res) => {
   const openTaskSelector = req.session.data['system-myopentasks-selector']
