@@ -647,6 +647,8 @@ router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
 })
 
 
+
+
 // Prepare for decisions Single task list items
 
 router.post(`/preparation-tasklist-item-1-router`, (req, res) => {
@@ -1088,6 +1090,27 @@ router.post(`/preparation-tasklist-item-25-router`, (req, res) => {
   }
    else {
      res.redirect(`25`)
+  }
+})
+
+
+router.post(`/preparation-mm-tasklist-outcome-router`, (req, res) => {
+  const preparationOutcomeTaskList = req.session.data['preparation-mm-tasklist-outcome']
+
+  if (preparationOutcomeTaskList == 'Decision') {
+    res.redirect(`application-6-about`)
+  }
+  else if (preparationOutcomeTaskList == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (preparationOutcomeTaskList == 'Disallow') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (preparationOutcomeTaskList == 'Withdraw') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+   else {
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
