@@ -70,7 +70,7 @@ router.post(`/system-application-selector-router`, (req, res) => {
     res.redirect(`qppt-overview`)
   }
   else if (applicationSelector == '10') {
-    res.redirect(`preparation-tasklist-separate`)
+    res.redirect(`preparation-overview`)
   }
    else {
     res.redirect(`XXX`)
