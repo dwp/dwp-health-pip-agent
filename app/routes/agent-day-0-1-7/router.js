@@ -647,6 +647,449 @@ router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
 })
 
 
+// Prepare for decisions Single task list items
+
+router.post(`/preparation-tasklist-item-1-router`, (req, res) => {
+  const preparationCheckItem1 = req.session.data['preparation-tasklist-item-1']
+
+  if (preparationCheckItem1 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-2`)
+  }
+  else if (preparationCheckItem1 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-2`)
+  }
+  else if (preparationCheckItem1  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-2-router`, (req, res) => {
+  const preparationCheckItem2 = req.session.data['preparation-tasklist-item-2']
+
+  if (preparationCheckItem2 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-3`)
+  }
+  else if (preparationCheckItem2 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-3`)
+  }
+  else if (preparationCheckItem2  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-3-router`, (req, res) => {
+  const preparationCheckItem3 = req.session.data['preparation-tasklist-item-3']
+
+  if (preparationCheckItem3 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-4-router`, (req, res) => {
+  const preparationCheckItem4 = req.session.data['preparation-tasklist-item-4']
+
+  if (preparationCheckItem4 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-5`)
+  }
+  else if (preparationCheckItem4 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-5`)
+  }
+  else if (preparationCheckItem4  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-router`, (req, res) => {
+  const preparationCheckItem5 = req.session.data['preparation-tasklist-item-5']
+
+  if (preparationCheckItem5 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem5 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem5  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`5`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-6-router`, (req, res) => {
+  const preparationCheckItem6 = req.session.data['preparation-tasklist-item-6']
+
+  if (preparationCheckItem6 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-7`)
+  }
+  else if (preparationCheckItem6 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-7`)
+  }
+  else if (preparationCheckItem6  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`6`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-7-router`, (req, res) => {
+  const preparationCheckItem7 = req.session.data['preparation-tasklist-item-7']
+
+  if (preparationCheckItem7 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-8`)
+  }
+  else if (preparationCheckItem7 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-8`)
+  }
+  else if (preparationCheckItem7  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`7`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-8-router`, (req, res) => {
+  const preparationCheckItem8 = req.session.data['preparation-tasklist-item-8']
+
+  if (preparationCheckItem8 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-9`)
+  }
+  else if (preparationCheckItem8 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-9`)
+  }
+  else if (preparationCheckItem8  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`8`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-9-router`, (req, res) => {
+  const preparationCheckItem9 = req.session.data['preparation-tasklist-item-9']
+
+  if (preparationCheckItem9 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`9`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-10-router`, (req, res) => {
+  const preparationCheckItem10 = req.session.data['preparation-tasklist-item-10']
+
+  if (preparationCheckItem10 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-11`)
+  }
+  else if (preparationCheckItem10 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-11`)
+  }
+  else if (preparationCheckItem10  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`10`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-11-router`, (req, res) => {
+  const preparationCheckItem11 = req.session.data['preparation-tasklist-item-11']
+
+  if (preparationCheckItem11 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-12`)
+  }
+  else if (preparationCheckItem11 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-12`)
+  }
+  else if (preparationCheckItem11  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`11`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-12-router`, (req, res) => {
+  const preparationCheckItem12 = req.session.data['preparation-tasklist-item-12']
+
+  if (preparationCheckItem12 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-13`)
+  }
+  else if (preparationCheckItem12 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-13`)
+  }
+  else if (preparationCheckItem12  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`12`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-13-router`, (req, res) => {
+  const preparationCheckItem13 = req.session.data['preparation-tasklist-item-13']
+
+  if (preparationCheckItem13 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-14`)
+  }
+  else if (preparationCheckItem13 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-14`)
+  }
+  else if (preparationCheckItem13  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`13`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-14-router`, (req, res) => {
+  const preparationCheckItem14 = req.session.data['preparation-tasklist-item-14']
+
+  if (preparationCheckItem14 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-15`)
+  }
+  else if (preparationCheckItem14 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-15`)
+  }
+  else if (preparationCheckItem14  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`14`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-15-router`, (req, res) => {
+  const preparationCheckItem15 = req.session.data['preparation-tasklist-item-15']
+
+  if (preparationCheckItem15 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-16`)
+  }
+  else if (preparationCheckItem15 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-16`)
+  }
+  else if (preparationCheckItem15  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`15`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-16-router`, (req, res) => {
+  const preparationCheckItem16 = req.session.data['preparation-tasklist-item-16']
+
+  if (preparationCheckItem16 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-17`)
+  }
+  else if (preparationCheckItem16 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-17`)
+  }
+  else if (preparationCheckItem16  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`16`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-17-router`, (req, res) => {
+  const preparationCheckItem17 = req.session.data['preparation-tasklist-item-17']
+
+  if (preparationCheckItem17 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-17-router`, (req, res) => {
+  const preparationCheckItem17 = req.session.data['preparation-tasklist-item-17']
+
+  if (preparationCheckItem17 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-18-router`, (req, res) => {
+  const preparationCheckItem18 = req.session.data['preparation-tasklist-item-18']
+
+  if (preparationCheckItem18 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-19`)
+  }
+  else if (preparationCheckItem18 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-19`)
+  }
+  else if (preparationCheckItem18  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`18`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-19-router`, (req, res) => {
+  const preparationCheckItem19 = req.session.data['preparation-tasklist-item-19']
+
+  if (preparationCheckItem19 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-20`)
+  }
+  else if (preparationCheckItem19 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-20`)
+  }
+  else if (preparationCheckItem19  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`19`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-20-router`, (req, res) => {
+  const preparationCheckItem20 = req.session.data['preparation-tasklist-item-20']
+
+  if (preparationCheckItem20 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-21`)
+  }
+  else if (preparationCheckItem20 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-21`)
+  }
+  else if (preparationCheckItem20  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`20`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-21-router`, (req, res) => {
+  const preparationCheckItem21 = req.session.data['preparation-tasklist-item-21']
+
+  if (preparationCheckItem21 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-22`)
+  }
+  else if (preparationCheckItem21 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-22`)
+  }
+  else if (preparationCheckItem21  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`21`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-22-router`, (req, res) => {
+  const preparationCheckItem22 = req.session.data['preparation-tasklist-item-22']
+
+  if (preparationCheckItem22 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-23`)
+  }
+  else if (preparationCheckItem22 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-23`)
+  }
+  else if (preparationCheckItem22  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`22`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-23-router`, (req, res) => {
+  const preparationCheckItem23 = req.session.data['preparation-tasklist-item-23']
+
+  if (preparationCheckItem23 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-24`)
+  }
+  else if (preparationCheckItem23 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-24`)
+  }
+  else if (preparationCheckItem23  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`23`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-24-router`, (req, res) => {
+  const preparationCheckItem24 = req.session.data['preparation-tasklist-item-24']
+
+  if (preparationCheckItem24 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-25`)
+  }
+  else if (preparationCheckItem24 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-25`)
+  }
+  else if (preparationCheckItem24  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`24`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-25-router`, (req, res) => {
+  const preparationCheckItem25 = req.session.data['preparation-tasklist-item-25']
+
+  if (preparationCheckItem25 == 'Expected') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+  else if (preparationCheckItem25 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+  else if (preparationCheckItem25  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`25`)
+  }
+})
 
 
 module.exports = router
