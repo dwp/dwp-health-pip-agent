@@ -723,16 +723,50 @@ router.post(`/preparation-tasklist-item-5-router`, (req, res) => {
   const preparationCheckItem5 = req.session.data['preparation-tasklist-item-5']
 
   if (preparationCheckItem5 == 'Expected') {
-    res.redirect(`preparation-tasklist-item-6`)
+    res.redirect(`preparation-tasklist-item-5-1`)
   }
   else if (preparationCheckItem5 == 'Unexpected') {
-    res.redirect(`preparation-tasklist-item-6`)
+    res.redirect(`preparation-tasklist-item-5-1`)
   }
   else if (preparationCheckItem5  == 'Pause') {
     res.redirect(`preparation-tasklist-separate`)
   }
    else {
      res.redirect(`5`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-1-router`, (req, res) => {
+  const preparationCheckItem51 = req.session.data['preparation-tasklist-item-5-1']
+
+  if (preparationCheckItem51 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-5-2`)
+  }
+  else if (preparationCheckItem51 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-5-2`)
+  }
+  else if (preparationCheckItem51  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`51`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-2-router`, (req, res) => {
+  const preparationCheckItem52 = req.session.data['preparation-tasklist-item-5-2']
+
+  if (preparationCheckItem52 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem52 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem52  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`52`)
   }
 })
 
