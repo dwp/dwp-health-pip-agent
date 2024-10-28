@@ -63,7 +63,7 @@
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="preparation-tasklist-item-1" aria-describedby="task-X">
-            <!-- [1-1]  --> (1) IDV (New)
+            <!-- [1-1]  --> (1) Identity verification
           </a>
           {% if data["preparation-tasklist-item-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["preparation-tasklist-item-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
@@ -368,7 +368,7 @@
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="preparation-tasklist-item-22" aria-describedby="task-X">
-            <!-- [1-22]  --> (22) Care home
+            <!-- [1-22]  --> (22) Care homes
           </a>
           {% if data["preparation-tasklist-item-22"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
           {% elif data["preparation-tasklist-item-22"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
@@ -437,7 +437,7 @@
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XX</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can move the application to PIPCS or continue to make a decision.</p>
 
 
       {{ govukRadios({
@@ -464,16 +464,6 @@
           value: "PIPcs",
           text: "Move application to PIPCS",
           checked: (data["preparation-mm-tasklist-outcome"] == "PIPcs")
-        },
-        {
-          value: "Disallow",
-          text: "Disallow application",
-          checked: (data["preparation-mm-tasklist-outcome"] == "Disallow")
-        },
-        {
-          value: "Withdraw",
-          text: "Withdraw application",
-          checked: (data["preparation-mm-tasklist-outcome"] == "Withdraw")
         }
         ]
       }) }}
@@ -491,7 +481,7 @@
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">It is ready for a decision.</p>
 
 
 {{ govukRadios({
