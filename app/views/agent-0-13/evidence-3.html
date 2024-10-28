@@ -112,8 +112,38 @@
 }) }}
 
 
+
+
 {% endset -%}
 
+
+{{ govukRadios({
+  idPrefix: "evidence-3-harmful",
+  name: "evidence-3-harmful",
+  fieldset: {
+    legend: {
+      text: "@dave Is this document harmful?" ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This document will not be identified to the citizen"
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["evidence-3-harmful"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["evidence-3-harmful"] == "No")
+  }
+  ]
+}) }}
 
 {{ govukRadios({
   idPrefix: "evidence-3-grade",
