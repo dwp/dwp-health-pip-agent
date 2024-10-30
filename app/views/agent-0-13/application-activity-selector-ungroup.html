@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="application-activity-selector" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "agent-0-13/record-id.html" %}
+
+
+
+              {{ govukRadios({
+                idPrefix: "inbound-1-greeting",
+                name: "inbound-1-greeting",
+                fieldset: {
+                  legend: {
+                    html: "Are you sure you want to ungroup all justifications?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--xl"
+                  }
+                },
+                hint: {
+                  text: "You will lose all group justification text"
+                },
+                classes: "govuk-radios",
+                items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  checked: (data["inbound-1-greeting"] == "Yes")
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  checked: (data["inbound-1-greeting"] == "No")
+                }
+                ]
+              }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+</div>
+</div>
+
+  </form>
+
+{% endblock %}
