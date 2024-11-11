@@ -42,7 +42,7 @@
 
 
         {% if data["system-application-selector"]  == "1" %}
-        The applicant will not be given PIP
+        [~The applicant will not be given PIP]
 
         {% else %}
 
@@ -95,7 +95,81 @@
 
         <!------------OUTCOME LEGEND------------>
 
+        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Qualifying period and prospective test</h3>
 
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Daily living qualifying period met"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-3m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Likely to still have daily living restrictions"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-9m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Mobility qualifying period met"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-3m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Likely to still have moblity restrictions"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-9m-check",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
 
               {% if data["system-application-selector"]  == "1" %}
 
@@ -118,81 +192,6 @@
                 {% endif %} -->
 
                 {% endset %}
-                <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Qualifying period and prospective test</h3>
-
-
-                {{ govukSummaryList({
-                  rows: [
-                    {
-                      key: {
-                        text: "Daily living qualifying period met"
-                      },
-                      value: {
-                        text: "Yes"
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "qppt-dl-3m-check",
-                            text: "Change",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      key: {
-                        text: "Likely to still have daily living restrictions"
-                      },
-                      value: {
-                        text: "Yes"
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "qppt-dl-9m-check",
-                            text: "Change",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      key: {
-                        text: "Mobility qualifying period met"
-                      },
-                      value: {
-                        text: "Yes"
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "qppt-m-3m-check",
-                            text: "Change",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      key: {
-                        text: "Likely to still have moblity restrictions"
-                      },
-                      value: {
-                        text: "Yes"
-                      },
-                      actions: {
-                        items: [
-                          {
-                            href: "qppt-m-9m-check",
-                            text: "Change",
-                            visuallyHiddenText: "XXX"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }) }}
 
               <!------------Legend--------------->
 
@@ -839,9 +838,9 @@
 
         <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What you need to do now</h3>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Select the appropriate letter template and copy the information on this page to the relevant sections.</p>
-        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">@dave Soemthing about address <a href="/v13/case-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p> -->
 
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will then need to send the letter to the applicant. Their address is in their <a href="/v13/case-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will then need to send the letter to the applicant.</p>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You will then need to send the letter to the applicant. Their address is in their <a href="/v13/case-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p> -->
 
 
 
