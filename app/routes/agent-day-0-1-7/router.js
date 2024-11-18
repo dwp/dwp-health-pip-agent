@@ -40,10 +40,10 @@ router.post(`/system-application-selector-router`, (req, res) => {
   const applicationSelector = req.session.data['system-application-selector']
 
   if (applicationSelector == '1') {
-    res.redirect(`application-6-overview`)
+    res.redirect(`application-6-about`)
   }
   else if (applicationSelector == '2') {
-    res.redirect(`application-6-overview`)
+    res.redirect(`application-6-about`)
   }
   else if (applicationSelector == '3') {
     res.redirect(`award-dates-data-input`)

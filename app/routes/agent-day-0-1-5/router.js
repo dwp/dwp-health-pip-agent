@@ -480,7 +480,7 @@ router.post(`/preparation-linear-outcome-router`, (req, res) => {
   const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']
 
   if (preparationOutcomeTaskList == 'Ready') {
-    res.redirect(`application-6-overview`)
+    res.redirect(`application-6-about`)
   }
   else if (preparationOutcomeTaskList == 'Disallow') {
     res.redirect(`/move-to-pipcs-1/eject-process`)
@@ -566,7 +566,7 @@ router.post(`/qppt-m-check-router`, (req, res) => {
   }
 })
 
-// Single task list items
+// Prepare for AP Single task list items
 
 router.post(`/assurance-tasklist-item-1-router`, (req, res) => {
   const assuranceCheckItem1 = req.session.data['assurance-tasklist-item-1']
