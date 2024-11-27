@@ -19,97 +19,51 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information you are <br> adding to the decision letter</br></h1>
 
-      <!------------H1 LEGEND------------>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Outcome</h3>
 
-        {% set dynamicAgentNotes %}
-
-          {% if data["application-5-letter-edit"]%}
-          Change
-          {% else %}
-          Add
-          {% endif %}
-
-        {% endset %}
-      <!------------Legend--------------->
-
-
-
-{% set dynamicQPPTOutcome %}
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
-<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-
-{% include "agent-day-0-1-5a/qppt-outcome.html" %}
-  </ul>
-{% endset %}
 
 
       <!------------OUTCOME LEGEND------------>
 
-        {% set dynamicOutcome %}
-
-        {% if data["system-application-selector"]  == "1" %}
-        The applicant will not be given PIP
-
-        {% else %}
-
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
-
-
     {% if
       data["system-scenario-selector"] == "sss1" %}
 
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p> -->
       Your application for Personal Independence Payment (PIP) was unsuccessful.
 
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-            <!-- <li>0 points for the daily living part - this means the applicant has not been given this part</li> -->
-            <!-- <li>0 points for the mobility part - this means the applicant has not been given this part</li> -->
+
   </ul>
 
     {% elif data["system-scenario-selector"] == "sss2" %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will:</p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-          <li>get the standard rate of £72.65 a week for daily living from
+    <p class="govuk-body govuk-!-margin-bottom-2">
+            You will get the standard rate of £72.65 a week for daily living from
             {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
             to
             {% include "agent-day-0-1-5a/award-data-end-date.html" %}
-          </li>
-          <li>not get the mobility part of PIP
-          </li>
+          </p>
+          <p>You will not get the mobility part of PIP
+          </p>
 
-
-  </ul>
 
     {% elif data["system-scenario-selector"] == "sss3" %}
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-          <!-- <li>17 points for the daily living part - this means the applicant has been given the [enhanced] rate</li> -->
-          <!-- <li>12 points for the mobility part - this means the applicant has been given the [enhanced] rate</li> -->
-
-          <li>enhanced rate of £108.55 a week for daily living from
+    <p class="govuk-body govuk-!-margin-bottom-2">
+            You will get enhanced rate of £108.55 a week for daily living from
             {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
             to
             {% include "agent-day-0-1-5a/award-data-end-date.html" %}
-          </li>
-          <li>enhanced rate of £75.75 a week for mobility from
+          </p>
+          <p>You will get enhanced rate of £75.75 a week for mobility from
             {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
             to
             {% include "agent-day-0-1-5a/award-data-end-date.html" %}
-          </li>
-  </ul>
+          </p>
 
     {% elif data["system-scenario-selector"] == "sss4" %}
 
     <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will get the:</p> -->
     Your application for Personal Independence Payment (PIP) was unsuccessful.
-
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <!-- <li>0 points for the daily living part - this means the applicant has not been given this part</li> -->
-          <!-- <li>0 points for the mobility part - this means the applicant has not been given this part</li> -->
-</ul>
 
     {% else %}
 
@@ -120,148 +74,176 @@
 
 
 
-        {% endif %}
+              <!------------ Qualifying period and prospective test ------------>
 
-        {% endset %}
-
-        {% set firstPaymentDetails %}
-
-        {% if data["system-application-selector"]  == "1" %}
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Qualifying period and prospective test</h3>
 
 
-
-        {% else %}
-
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Your first payment will be £2,300.</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This will be paid into your bank account within 3 days.</p>
-
-        {{ govukSummaryList({
-          rows: [
-          {
-                key: {
-                  text: "First payment"
-                },
-                value: {
-                  html: firstPaymentDetails
-                }
-              }
-            ]
-          }) }}
-
-        {% endif %}
-
-
-
-        {% endset %}
-
-
-
-
-          {{ govukSummaryList({
-            rows: [
-              {
-                key: {
-                  text: "Outcome"
-                },
-                value: {
-                  html: dynamicOutcome
-                }
-              }
-              ]
-            }) }}
-
-            {{ govukSummaryList({
-              rows: [
-                {
-                  key: {
-                    html: "Qualifying period<br>and prospective test"
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "Daily living qualifying period met"
+                    },
+                    value: {
+                      text: "Yes"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "qppt-dl-3m-check",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
                   },
-                  value: {
-                    html: dynamicQPPTOutcome
+                  {
+                    key: {
+                      text: "Likely to still have daily living restrictions"
+                    },
+                    value: {
+                      text: "Yes"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "qppt-dl-9m-check",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Mobility qualifying period met"
+                    },
+                    value: {
+                      text: "Yes"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "qppt-m-3m-check",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Likely to still have moblity restrictions"
+                    },
+                    value: {
+                      text: "Yes"
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "qppt-m-9m-check",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
                   }
-                }
                 ]
               }) }}
 
 
+              <!-- Review dates -->
 
 
-              {% if
-                data["system-scenario-selector"] == "sss2" or data["system-scenario-selector"] == "sss3" %}
+            {% if
+              data["system-scenario-selector"] == "sss2" or data["system-scenario-selector"] == "sss3" %}
+
+              {% set dynamicAwardStartDate %}
+              {{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
+              {% endset %}
+
+              {% set dynamicAwardReviewDate %}
+                {{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}
+              {% endset %}
+
+              {% set dynamicAwardPeriod %}
+                {{ data['award-dates-ap-period']}}
+              {% endset %}
+
+              {% set dynamicEndDate %}
+                {% include "agent-day-0-1-5a/award-data-end-date.html" %}
+              {% endset %}
 
 
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Review dates</h3>
 
 
-
-{% set dynamicAwardStartDate %}
-{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}
-{% endset %}
-
-{% set dynamicAwardReviewDate %}
-  {{ data['award-dates-ap-report-date-day'] + ' ' + (data['award-dates-ap-report-date-month'] | getMonth) + ' ' + data['award-dates-ap-report-date-year']}}
-{% endset %}
-
-{% set dynamicAwardPeriod %}
-  {{ data['award-dates-ap-period']}}
-{% endset %}
-
-{% set dynamicEndDate %}
-  {% include "agent-day-0-1-5a/award-data-end-date.html" %}
-{% endset %}
-
-
-
-                {{ govukSummaryList({
-                  rows: [
+              {{ govukSummaryList({
+                rows: [
                   {
-                      key: {
-                        text: "Award start date"
-                      },
-                      value: {
-                        text: dynamicAwardStartDate
-                      }
+                    key: {
+                      text: "Award start date"
                     },
-                    {
-                      key: {
-                        text: "Award review date"
-                      },
-                      value: {
-                        text: dynamicAwardReviewDate
-                      }
+                    value: {
+                      text: dynamicAwardStartDate
                     },
-                    {
-                      key: {
-                        text: "Award period"
-                      },
-                      value: {
-                        html: dynamicAwardPeriod
-                      }
-                    },
-                    {
-                      key: {
-                        html: "End date"
-                      },
-                      value: {
-                        html: dynamicEndDate
-                      }
+                    actions: {
+                      items: [
+                        {
+                          href: "award-dates-playback",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
                     }
-                  ]
-                }) }}
+                  },
+                  {
+                    key: {
+                      text: "Award review date"
+                    },
+                    value: {
+                      html: dynamicAwardReviewDate
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "award-dates-playback",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "End date"
+                    },
+                    value: {
+                      html: dynamicEndDate
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "award-dates-playback",
+                          text: "Change",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+              {% else %}
 
 
+              {% endif %}
 
-
-
-
-            {% else %}
-
-
-            {% endif %}
+              <!-- Supporting documents -->
 
 
                 <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Supporting documents</h3>
-
-
 
 
           {% set DynamicSelectedDocumentsList %}
