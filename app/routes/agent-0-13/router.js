@@ -463,6 +463,24 @@ router.post(`/service-app-claim-details-router`, (req, res) => {
   }
 })
 
+router.post(`/ecp-washup-router`, (req, res) => {
+  const ecpWashup = req.session.data['ecp-washup']
+
+  if (ecpWashup == '1') {
+    res.redirect(`XXX`)
+  }
+  else if (ecpWashup == '2') {
+    res.redirect(`XXX`)
+  }
+  else if (ecpWashup == '3') {
+    res.redirect(`XXX`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 
 
