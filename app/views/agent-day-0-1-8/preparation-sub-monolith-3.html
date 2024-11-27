@@ -1,0 +1,223 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="preparation-sub-monolith-4" method="post" class="form">
+
+
+      {% include "agent-day-0-1-7/record-id-base.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any accommodation issues</h2>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXXX.</p> -->
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-X-X",
+          name: "assurance-sub-monolith-X-X",
+          fieldset: {
+            legend: {
+              html: "Do they have any stays in hospital or similar institutions?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check the health information gather (PIP2) and assessment report."
+          },
+          items: [
+          {
+            value: "Expected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Expected",
+            text: "Yes, but they are self-funding",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Unexpected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+          }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-X-X",
+          name: "assurance-sub-monolith-X-X",
+          fieldset: {
+            legend: {
+              html: "Do they have any stays in care homes?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check the health information gather (PIP2) and assessment report."
+          },
+          items: [
+          {
+            value: "Expected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Expected",
+            text: "Yes, but they are self-funding",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Unexpected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+          }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-X-X",
+          name: "assurance-sub-monolith-X-X",
+          fieldset: {
+            legend: {
+              html: "Do they have any stays in nursing homes?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check the health information gather (PIP2) and assessment report."
+          },
+          items: [
+          {
+            value: "Expected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Expected",
+            text: "Yes, but they are self-funding",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Unexpected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+          }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-X-X",
+          name: "assurance-sub-monolith-X-X",
+          fieldset: {
+            legend: {
+              html: "Do they have any stays in residential schools or colleges?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check the health information gather (PIP2) and assessment report."
+          },
+          items: [
+          {
+            value: "Expected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Expected",
+            text: "Yes, but they are self-funding",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Unexpected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+          }
+          ]
+        }) }}
+
+        
+        {{ govukRadios({
+          classes: "govuk-radios--small govuk-!-margin-bottom-4",
+          idPrefix: "assurance-sub-monolith-X-X",
+          name: "assurance-sub-monolith-X-X",
+          fieldset: {
+            legend: {
+              html: "Have they been detained in prison or legal custody?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m "
+            }
+          },
+          hint: {
+            text: "Check the health information gather (PIP2) and assessment report."
+          },
+          items: [
+          {
+            value: "Expected",
+            text: "Yes",
+            checked: (data["assurance-sub-monolith-X-X"] == "Expected")
+          },
+          {
+            value: "Unexpected",
+            text: "No",
+            checked: (data["assurance-sub-monolith-X-X"] == "Unexpected")
+          }
+          ]
+        }) }}
+
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "5a" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- {% if data["record-1-bank-detials-j-1-bank-name"] %}
+<form action="application-5-tasklist" method="post" class="form">
+{% else %}
+<form action="application-rates-check-router" method="post" class="form">
+{% endif %} -->
+
+<form action="application-vcc-check-router" method="post" class="form">
+  <!-- <form action="application-rates-check-router" method="post" class="form"> -->
+
+
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include "agent-day-0-1-7/record-id-base.html" %}
+
+
+
+{% if data["record-1-bank-detials-j-1-bank-name"] %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Bank details were added</h1>
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is now seen as done, you can crack on brah</p> -->
+
+
+{% else %}
+
+
+When the service has calculated over 5k
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@dave The service has calculated a potential large arrears payment</h1>
+
+<!-- Under 5k but check for Vulnerabilities
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@dave Vulnerabilities found when processing</h1> -->
+
+          <div class="govuk-!-margin-bottom-6">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you think they may struggle or are vulnerable in any way send the application back to BAU</p>
+
+<!--
+            <p class="govuk-body govuk-!-margin-bottom-2">Within the applciation the applicant and AP </p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+              <li>
+                All documents have been seen and used
+              </li>
+            </ul> -->
+
+
+
+      {{ govukRadios({
+        idPrefix: "aapplication-vcc-check",
+        name: "application-vcc-check",
+        fieldset: {
+          legend: {
+            html: "@dave Given what you know do you think this person is okay with a large first payment without calling them?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Good",
+          text: "No vulnerabilities found",
+          checked: (data["application-vcc-check"] == "Good")
+        },
+        {
+          value: "BAU",
+          text: "Vulnerabilities found - Send back to BAU",
+          checked: (data["application-vcc-check"] == "BAU")
+        }
+        ]
+      }) }}
+
+{% endif %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+<p class="govuk-!-margin-bottom-0"><a class="" href="application-rates-check">Large capital check</a>
+
+
+{% endblock %}

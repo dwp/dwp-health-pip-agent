@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-6/record-id-base.html" %}
+
+
+
+
+        {% set dynamicH1 %}
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+              Did the applicant meet the 3 month qualifying period for daily living when they submitted their application on
+            {% if data["qppt-set-data-submission-date-day"] %}
+              {{ data['qppt-set-data-submission-date-day'] + ' ' + (data['qppt-set-data-submission-date-month'] | getMonth) + ' ' + data['qppt-set-data-submission-date-year']}}
+            {% else %}
+              1 January 2024
+            {% endif %}
+              ?
+          </h1>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 HINT------------>
+  {% set dynamicHint %}
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+
+          The assessment provider indicated they had daily living restrictions for at least 3 months before their assessment on
+        {% if data["qppt-set-data-assessment-date-day"] %}
+          {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+        {% else %}
+          1 March 2024.
+        {% endif %}
+
+  {% endset %}
+<!------------Legend--------------->
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-3m-check",
+            name: "qppt-dl-3m-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-3m-check"] == "Yes")
+            },
+            {
+              value: "EffectiveDate",
+              text: "No – I need to enter the date the qualifying period will be met",
+              checked: (data["qppt-dl-3m-check"] == "EffectiveDate")
+            },
+            {
+              value: "NoRestrictions",
+              text: "No – they will not meet the qualifying period for this application",
+              checked: (data["qppt-dl-3m-check"] == "NoRestrictions")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "SplitRate",
+              text: "I need to make a split rate decision",
+              checked: (data["qppt-dl-3m-check"] == "SplitRate")
+            }
+            ]
+          }) }}
+
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
