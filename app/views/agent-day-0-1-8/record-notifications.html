@@ -14,7 +14,7 @@
 
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">Payment details are now being created. These will be available in the applicant's record once they are ready.</p>
+    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The applicant has been awarded PIP.</p>
     {% endset %}
 
     {{ govukNotificationBanner({
@@ -22,7 +22,12 @@
       type: 'success'
     }) }}
 
-    {% elif data["assurance-mm-tasklist-outcome"] == "AP" or data["ftc-make-contact"] == "Valid" or data["fta-make-contact"] == "Invalid"  %}
+      {% else %}
+
+    {% endif %}
+
+
+    {% if data["assurance-tasklist-separate-outcome"] == "AP"%}
 
 
     {% set html %}
@@ -34,7 +39,11 @@
       type: 'success'
     }) }}
 
-    {% elif data["ftc-make-contact"] == "Invalid" or data["fta-make-contact"] == "Invalid" %}
+    {% else %}
+
+  {% endif %}
+
+    {% if data["ftc-make-contact"] == "Invalid" or data["fta-make-contact"] == "Invalid" %}
 
 
     {% set html %}
