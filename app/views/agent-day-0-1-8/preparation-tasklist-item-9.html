@@ -18,14 +18,7 @@
   <div class="govuk-grid-row">
 
 
-
-
-      {% if data["preparation-tasklist-item-10"] %}
-      <form action="preparation-tasklist-separate" method="post" class="form">
-      {% else %}
       <form action="preparation-tasklist-item-9-router" method="post" class="form">
-      {% endif %}
-
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -53,8 +46,13 @@
           checked: (data["preparation-tasklist-item-9"] == "Expected")
         },
         {
+          value: "Unexpected-spa",
+          text: "No, applicant is over State Pension age",
+          checked: (data["preparation-tasklist-item-9"] == "Unexpected-spa")
+        },
+        {
           value: "Unexpected",
-          text: "No",
+          text: "No, applicant is under 16 years old",
           checked: (data["preparation-tasklist-item-9"] == "Unexpected")
         },
         {
