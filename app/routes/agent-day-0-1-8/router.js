@@ -822,10 +822,30 @@ router.post(`/assurance-tasklist-item-12-router`, (req, res) => {
   if (assuranceCheckItem12 == 'Expected') {
     res.redirect(`assurance-tasklist-item-13`)
   }
+  else if (assuranceCheckItem12 == 'Unexpected-spa') {
+    res.redirect(`assurance-tasklist-item-12-1`)
+  }
   else if (assuranceCheckItem12 == 'Unexpected') {
     res.redirect(`assurance-tasklist-item-13`)
   }
   else if (assuranceCheckItem12  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`12`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-12-1-router`, (req, res) => {
+  const assuranceCheckItem12_1 = req.session.data['assurance-tasklist-item-12-1']
+
+  if (assuranceCheckItem12_1 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12_1 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12_1  == 'Pause') {
     res.redirect(`assurance-tasklist-separate`)
   }
    else {
@@ -1211,11 +1231,15 @@ router.post(`/preparation-tasklist-item-8-router`, (req, res) => {
   }
 })
 
+
 router.post(`/preparation-tasklist-item-9-router`, (req, res) => {
   const preparationCheckItem9 = req.session.data['preparation-tasklist-item-9']
 
   if (preparationCheckItem9 == 'Expected') {
     res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9 == 'Unexpected-spa') {
+    res.redirect(`preparation-tasklist-item-9-1`)
   }
   else if (preparationCheckItem9 == 'Unexpected') {
     res.redirect(`preparation-tasklist-item-10`)
@@ -1225,6 +1249,23 @@ router.post(`/preparation-tasklist-item-9-router`, (req, res) => {
   }
    else {
      res.redirect(`9`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-9-1-router`, (req, res) => {
+  const preparationCheckItem9_1 = req.session.data['preparation-tasklist-item-9-1']
+
+  if (preparationCheckItem9_1 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9_1 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9_1  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`9-1`)
   }
 })
 

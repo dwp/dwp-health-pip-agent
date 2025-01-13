@@ -211,6 +211,9 @@
           {% elif data["assurance-tasklist-item-12"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
           {% elif data["assurance-tasklist-item-12"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
           {% elif data["assurance-tasklist-item-12"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% elif data["assurance-tasklist-item-12-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-tasklist-item-12-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-tasklist-item-12-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
           {% endif %}
