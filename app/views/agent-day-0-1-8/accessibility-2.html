@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="accessibility-done" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set summary1 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Either: does not receive medication or therapy or need to monitor a health condition; or can manage medication or therapy or monitor a health condition unaided
+        </p>
+      {% endset %}
+
+      {% set summary2 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs any one or more of the following: to use an aid or appliance to be able to managed medication; supervision, prompting or assistance to be able to manage medication supervision, prompting or assistance to be able to monitor a health condition
+        </p>
+      {% endset %}
+
+      {% set summary3 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary4 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary5 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary6 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week
+        </p>
+      {% endset %}
+
+
+
+
+
+      {{ govukRadios({
+        idPrefix: "application-about-a5-score-overwrite",
+        name: "application-about-a5-score-overwrite",
+        fieldset: {
+          legend: {
+            html: "Which descriptor do you want to select for managing therapy or monitoring a health condition?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "XX",
+          html: "<strong>Descriptor A (0 points)</strong>",
+          hint: {
+            html: summary1
+          }
+        },
+
+        {
+          value: "XX",
+          html: "<strong>Descriptor B (1 point)</strong>",
+          hint: {
+            html: summary2
+          }
+        },
+
+        {
+          value: "XX",
+          html: "<strong>Descriptor C (2 points)</strong>",
+          hint: {
+            html: summary3
+          }
+        },
+
+        {
+          value: "XX",
+          html: "<strong>Descriptor D (4 points)</strong>",
+          hint: {
+            html: summary4
+          }
+        },
+
+        {
+          value: "XX",
+          html: "<strong>Descriptor E (6 points)</strong>",
+          hint: {
+            html: summary5
+          }
+        },
+
+        {
+          value: "XX",
+          html: "<strong>Descriptor F (8 points)</strong>",
+          hint: {
+            html: summary6
+          }
+        }
+
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
