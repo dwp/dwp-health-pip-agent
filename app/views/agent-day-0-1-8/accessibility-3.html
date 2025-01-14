@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="accessibility-done" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Managing therapy or monitoring a health condition</h2>
+
+
+      {% set summary1 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Either:
+        </p>
+        <ul class="govuk-list govuk-!-margin-bottom-0 govuk-list--bullet">
+          <li>does not receive medication or therapy or need to monitor a health condition; or</li>
+          <li>can manage medication or therapy or monitor a health condition unaided</li>
+        </ul>
+      {% endset %}
+
+      {% set summary2 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs any one or more of the following:
+        </p>
+        <ul class="govuk-list govuk-!-margin-bottom-0 govuk-list--bullet">
+          <li>to use an aid or appliance to be able to managed medication;</li>
+          <li>supervision, prompting or assistance to be able to manage medication</li>
+          <li>supervision, prompting or assistance to be able to monitor a health condition</li>
+        </ul>
+      {% endset %}
+
+      {% set summary3 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary4 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 3.5 but no more than 7 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary5 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 7 but no more than 14 hours a week
+        </p>
+      {% endset %}
+
+      {% set summary6 %}
+        <p class="govuk-body govuk-!-margin-bottom-1">
+          Needs supervision, prompting or assistance to be able to manage therapy that takes more than 14 hours a week
+        </p>
+      {% endset %}
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Descriptor A (0 points)"
+            },
+            value: {
+              html: summary1
+            }
+          },
+          {
+            key: {
+              html: "Descriptor B (1 point)"
+            },
+            value: {
+              html: summary2
+            }
+          },
+          {
+            key: {
+              html: "Descriptor C (2 points)"
+            },
+            value: {
+              html: summary3
+            }
+          },
+          {
+            key: {
+              html: "Descriptor D (4 points)"
+            },
+            value: {
+              html: summary4
+            }
+          },
+          {
+            key: {
+              html: "Descriptor E (6 points)"
+            },
+            value: {
+              html: summary5
+            }
+          },
+          {
+            key: {
+              html: "Descriptor F (8 points)"
+            },
+            value: {
+              html: summary6
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        idPrefix: "application-about-a5-score-overwrite",
+        name: "application-about-a5-score-overwrite",
+        fieldset: {
+          legend: {
+            html: "Which descriptor do you want to select for managing therapy or monitoring a health condition?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "XX",
+          html: "Descriptor A (0 points)",
+          hint: {
+            html: ""
+          }
+        },
+
+        {
+          value: "XX",
+          html: "Descriptor B (1 point)",
+          hint: {
+            html: ""
+          }
+        },
+
+        {
+          value: "XX",
+          html: "Descriptor C (2 points)",
+          hint: {
+            html: ""
+          }
+        },
+
+        {
+          value: "XX",
+          html: "Descriptor D (4 points)",
+          hint: {
+            html: ""
+          }
+        },
+
+        {
+          value: "XX",
+          html: "Descriptor E (6 points)",
+          hint: {
+            html: ""
+          }
+        },
+
+        {
+          value: "XX",
+          html: "Descriptor F (8 points)",
+          hint: {
+            html: ""
+          }
+        }
+
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

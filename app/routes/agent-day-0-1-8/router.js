@@ -1579,5 +1579,24 @@ router.post(`/preparation-mm-tasklist-outcome-router`, (req, res) => {
   }
 })
 
+router.post(`/accessibility-ab-router`, (req, res) => {
+  const accessibilityAB = req.session.data['accessibility-ab']
+
+  if (accessibilityAB == '1') {
+    res.redirect(`accessibility-1`)
+  }
+  else if (accessibilityAB == '2') {
+    res.redirect(`accessibility-2`)
+  }
+  else if (accessibilityAB == '3') {
+    res.redirect(`accessibility-3`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
 
 module.exports = router
