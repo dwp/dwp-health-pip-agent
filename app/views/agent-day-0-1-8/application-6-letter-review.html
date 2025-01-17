@@ -9,7 +9,16 @@
 {% endblock %}
 
 {% block content %}
-<form action="/move-to-pipcs-1/eject-timeline" method="post" class="form">
+
+
+{% if data["application-about-a12-score-overwrite"]  == "a1" %}
+
+  <form action="entry-home" method="post" class="form">
+
+  {% else %}
+  <form action="/move-to-pipcs-1/eject-timeline" method="post" class="form">
+
+  {% endif %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -850,10 +859,9 @@
         <!------------Legend--------------->
 
 
-
-
         {{ govukCheckboxes({
-          name: "waste",
+          idPrefix: "ConfimLetter",
+          name: "ConfimLetter",
           fieldset: {
             classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
             legend: {
@@ -868,7 +876,8 @@
           items: [
             {
               value: "ConfimLetter",
-              text: "I confirm that I have fully checked the information for the decision letter."
+              text: "I confirm that I have fully checked the information for the decision letter.",
+              checked: (data["application-about-a9-score-overwrite"] == "0")
             }
           ]
         }) }}

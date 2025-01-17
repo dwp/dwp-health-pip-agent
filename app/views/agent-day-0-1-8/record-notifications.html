@@ -2,7 +2,9 @@
 {% if data["system-application-selector"]  == "1" %}
 
     {% set html %}
-    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The applicant has not been awarded PIP.</p>
+    <p class="govuk-body govuk-!-font-size-19">You have successfully processed this [application] and sent the decision letter. The person has not been awarded PIP.</p>
+    <p class="govuk-body govuk-!-font-size-19">@rachel time is mins for payments / Time for letter going in to DRS is mins also.</p>
+
     {% endset %}
 
     {{ govukNotificationBanner({
