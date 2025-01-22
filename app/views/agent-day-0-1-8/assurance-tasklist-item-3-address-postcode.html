@@ -25,9 +25,7 @@
 
 
       <!------------H1 LEGEND------------>
-        {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter their home address postcode?</h2>
-        {% endset %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Find their home address</h2>
       <!------------Legend--------------->
 
       <form action="address-choice" method="post" class="form">
@@ -37,11 +35,25 @@
           value: data["postcode"],
           classes: "govuk-input--width-10",
           label: {
-            html: dynamicH1
+            html: "Post code"
+          },
+          hint: {
+            text: "For example, AA3 1AB."
           }
         }) }}
 
-
+        {{ govukInput({
+          id: "prefix",
+          name: "prefix",
+          value: data["prefix"],
+          classes: "govuk-input--width-10",
+          label: {
+            html: "Building number or namee"
+          },
+          hint: {
+            text: "For example, 15 or Prospect Cottage."
+          }
+        }) }}
 
       {{ govukButton({
         text: "Find address"
