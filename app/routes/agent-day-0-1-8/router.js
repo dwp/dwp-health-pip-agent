@@ -680,6 +680,25 @@ router.post(`/assurance-tasklist-item-3-router`, (req, res) => {
   }
 })
 
+router.post(`/assurance-tasklist-item-3-address-actions-router`, (req, res) => {
+  const assuranceCheckItem3Actions = req.session.data['assurance-tasklist-item-3-address-actions']
+
+  if (assuranceCheckItem3Actions == 'Update') {
+    res.redirect(`assurance-tasklist-item-3-address-postcode`)
+  }
+  else if (assuranceCheckItem3Actions == 'Issue') {
+    res.redirect(`assurance-tasklist-item-3-address-cant-resolve`)
+  }
+  else if (assuranceCheckItem3Actions  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+
+
 router.post(`/assurance-tasklist-item-4-router`, (req, res) => {
   const assuranceCheckItem4 = req.session.data['assurance-tasklist-item-4']
 

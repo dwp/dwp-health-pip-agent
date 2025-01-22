@@ -1,0 +1,96 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+    <form action="assurance-tasklist-item-3-address-review" method="post" class="form">
+
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+
+
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter their home address</h2>
+
+
+
+          {{ govukInput({
+            label: {
+              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "address-line-1",
+            name: "address-line-1"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode"
+          }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}
