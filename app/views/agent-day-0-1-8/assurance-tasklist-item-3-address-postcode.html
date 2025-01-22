@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <form action="assurance-tasklist-item-3-address-select" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter their home address postcode?</h2>
+        {% endset %}
+      <!------------Legend--------------->
+
+      <form action="address-choice" method="post" class="form">
+        {{ govukInput({
+          id: "postcode",
+          name: "postcode",
+          value: data["postcode"],
+          classes: "govuk-input--width-10",
+          label: {
+            html: dynamicH1
+          }
+        }) }}
+
+
+
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+
+
+    </div>
+  </div>
+
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="assurance-tasklist-item-3-address-manual">Enter their address manually</a>
+    </li>
+  </ul>
+  <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+
+  </form>
+
+{% endblock %}
