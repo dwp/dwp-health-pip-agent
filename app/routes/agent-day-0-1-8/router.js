@@ -686,6 +686,9 @@ router.post(`/assurance-tasklist-item-3-address-actions-router`, (req, res) => {
   if (assuranceCheckItem3Actions == 'Update') {
     res.redirect(`assurance-tasklist-item-3-address-postcode`)
   }
+  else if (assuranceCheckItem3Actions == 'Accept') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
   else if (assuranceCheckItem3Actions == 'Issue') {
     res.redirect(`assurance-tasklist-item-3-address-cant-resolve`)
   }
