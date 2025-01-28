@@ -9,11 +9,29 @@
 {% endblock %}
 
 {% block content %}
-{% include "includes/js-back-link.html" %}
+{% include "agent-0-13/record-id-base.html" %}
 
 <form action="record-foundation-applications" method="post" class="form">
 
   <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "record-foundation-overview"
+        },
+        {
+          text: "Applications and decision",
+          href: "record-foundation-applications"
+        },
+        {
+          text: "Decision date",
+          href: "record-foundation-application-breakdown"
+        }
+      ]
+    }) }}
 
     <div class="govuk-grid-column-two-thirds">
 
