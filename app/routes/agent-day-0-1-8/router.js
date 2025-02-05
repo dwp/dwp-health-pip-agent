@@ -51,6 +51,9 @@ router.post(`/system-application-selector-router`, (req, res) => {
   else if (applicationSelector == '10') {
     res.redirect(`preparation-overview`)
   }
+  else if (applicationSelector == '11') {
+    res.redirect(`preparation-overview`)
+  }
    else {
     res.redirect(`XXX`)
   }
