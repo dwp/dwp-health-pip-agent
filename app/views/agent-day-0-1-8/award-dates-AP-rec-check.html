@@ -18,30 +18,46 @@
       {% include "agent-day-0-1-8/record-id-base.html" %}
 
       {% if data["award-dates-ap-period"] == "No future assessments required" %}
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you agree with the assessment provider's recommendation that no future assessments are needed?</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation that no future assessments are needed?</h2>
 
       {% elif data["award-dates-ap-period"] == "Other" %}
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you agree with the assessment provider's recommendation to award until {{ data['award-dates-ap-period-other-day'] + ' ' + (data['award-dates-ap-period-other-month'] | getMonth) + ' ' + data['award-dates-ap-period-other-year']}}?</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation to award until {{ data['award-dates-ap-period-other-day'] + ' ' + (data['award-dates-ap-period-other-month'] | getMonth) + ' ' + data['award-dates-ap-period-other-year']}}?</h2>
 
       {% else %}
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4"> Do you agree with the assessment provider's recommended award review period of {{data["award-dates-ap-period"]}}?</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6"> Do you agree with the assessment provider's recommended award review period of {{data["award-dates-ap-period"]}}?</h2>
       {% endif %}
 
 
       {% set legendHint %}
 
-        <!-- <p class="govuk-body govuk-!-margin-bottom-2">The applicant:</p> -->
+      <p class="govuk-body govuk-!-margin-bottom-2"><b>Assessment recommendation note</b></p>
+      <p class="govuk-body govuk-!-margin-bottom-4">Something about this date from the AP to help contex of the date selection</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2"><b>Applicant condierations</b></p>
+      <p class="govuk-body govuk-!-margin-bottom-2">The applicant is 65 and will reach State Pension age on 20 February 2028</p>
+
+
+      <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Something about this date from the AP to help contex of the date selection</p>
+
+        <li>
+          Something about this date from the AP to help contex of the date selection
+        </li>
+      </ul> -->
+
+        <!-- <p class="govuk-body govuk-!-margin-bottom-2">Applicant condierations:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <!-- <li>
-            is 65 and will reach State Pension age on 20 February 2028
-          </li> -->
-          <!-- <li>
+          <li>
+            The applicant is 65 and will reach State Pension age on 20 February 2028
+          </li>
+          <li>
             will be awarded the standard rate for daily living
           </li>
           <li>
             will not be awarded for mobility
-          </li> -->
-        </ul>
+          </li>
+        </ul> -->
 
         {% endset %}
       <!------------Legend--------------->
