@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="award-dates-AP-rec-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">The assessment provider has selected a non-numerical date for the award period</h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Considerations for entering a date</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <!-- <li>
+            is 65 and will reach State Pension age on 20 February 2028
+          </li> -->
+          <li>
+            Use the first day of the month if an exact date within a month is unclear
+          </li>
+          <li>
+            Use the first day of the year if an exact date within a year is unclear
+          </li>
+        </ul>
+
+      {{ govukDateInput({
+        id: "award-dates-applicaiton-start-date",
+        namePrefix: "award-dates-applicaiton-start-date",
+        fieldset: {
+          legend: {
+            html: "Adjust the date for the award perid",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-applicaiton-start-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-applicaiton-start-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["award-dates-applicaiton-start-date-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
