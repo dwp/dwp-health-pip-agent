@@ -32,7 +32,12 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
+
+
+        {% if data["system-application-selector"] == "11" %}
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This application is now ready for a decision.</p>
+        {% else %}
+        {% endif %}
 
 
 
