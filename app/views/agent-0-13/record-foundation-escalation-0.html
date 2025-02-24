@@ -39,8 +39,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "preparation-tasklist-item-8",
-        name: "preparation-tasklist-item-8",
+        idPrefix: "record-foundation-escalation-0",
+        name: "record-foundation-escalation-0",
         fieldset: {
           legend: {
             html: "Do they understand the process and are happy to continue?",
@@ -53,14 +53,14 @@
         },
         items: [
         {
-          value: "Unexpected",
+          value: "Agree",
           text: "Agree",
-          checked: (data["preparation-tasklist-item-8"] == "Unexpected")
+          checked: (data["record-foundation-escalation-0"] == "Agree")
         },
         {
-          value: "Expected",
+          value: "Disagree",
           text: "Disagree",
-          checked: (data["preparation-tasklist-item-8"] == "Expected")
+          checked: (data["record-foundation-escalation-0"] == "Disagree")
         }
         ]
         }) }}

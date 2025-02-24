@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-escalation-4" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Get an undersanding of why there is issues with the chosen areas</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"></p>
+
+      <p class="govuk-body">Try and gather the following issues for each area:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>Dates</li>
+        <li>Details about the thing</li>
+        <li>Reference of eveidence</li>
+      </ul>
+
+      {{ govukTextarea({
+        name: "Scores and activities",
+        id: "Scores and activities",
+        rows: "4",
+        label: {
+          text: "Scores and activities",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Capture the issue the applicant has with the activties and scores that were provided"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "Scores and activities",
+        id: "Scores and activities",
+        rows: "4",
+        label: {
+          text: "Award period",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Capture the issue the applicant has with the activties and scores that were provided"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "Scores and activities",
+        id: "Scores and activities",
+        rows: "4",
+        label: {
+          text: "Other issues",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Capture the issue the applicant has with the activties and scores that were provided"
+        }
+      }) }}
+
+      <!-- {{ govukTextarea({
+        name: "application-5-about-a6-reason",
+        id: "application-5-about-a6-reason",
+        classes: " govukTextarea--overwrite",
+        rows: "3",
+        label: {
+          text: "Other issues",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          html: "Capture the issue the applicant has with the activties and scores that were provided"
+        },
+        value: data["application-5-about-a6-reason"]
+      }) }} -->
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -43,7 +43,7 @@
               name: "ecp-washup",
               fieldset: {
                 legend: {
-                  text: "Do you want to add your notes to the event history now?",
+                  text: "These notes will be added to the event histroy, do you want to tag these to an applicaiton also?",
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--m"
                 }
@@ -60,13 +60,8 @@
               },
                 {
                 value: "3",
-                text: "I need to take more actions to this record",
+                text: "No",
                 checked: (data["ecp-washup"] == "3")
-              },
-                {
-                value: "2",
-                text: "No, I need to refer something to another team",
-                checked: (data["ecp-washup"] == "2")
               }
               ]
             }) }}

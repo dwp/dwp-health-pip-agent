@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-overview" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Thank you, someone will take a look at this</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Next steps, this will be automaticly sent to the right person to review it</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We will let you know the outcome or make contact to ask any further questions</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You have told us that you are going to send us more details, we will contact you within two week if we have not heard from you. </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">If you dont provide us with any futher evdeince apart from what you have given us today, then we will be making another decison based on what we currently know and understand</p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
