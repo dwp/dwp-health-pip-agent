@@ -11,6 +11,19 @@
 {% else %}
 {% endif %}
 
+{% if data["record-foundation-escalation-0"] %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">MR request has been made and someone will pick it up, notes where added to the Event history and processing notes</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+{% endif %}
 
 {% if data["find-someone-1-offline-return"]  == "Yes" %}
 

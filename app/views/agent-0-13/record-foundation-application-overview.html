@@ -11,7 +11,7 @@
 {% block content %}
 {% include "agent-0-13/record-id-base.html" %}
 
-<form action="record-foundation-applications" method="post" class="form">
+<form action="record-foundation-escalation-0" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -38,8 +38,8 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Decision overview</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Status: Closed</p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Daily living: Nil (0 points)</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Status: Application in payment</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Daily living: Standard (8 points)</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Mobility: Nil (0 points)</p>
 
 
@@ -96,14 +96,51 @@
 
     <p class="govuk-heading-l govuk-!-margin-bottom-6">Resouces</p>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Processing notes</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-applicaion-evidence-notes" class="govuk-link" rel="noreferrer noopener" target="">Processing and tagged notes</a></p>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="application-5-view-evidence" class="govuk-link" rel="noreferrer noopener" target="">Documents used to support outcome</a></p>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="pip-letter.pdf" class="govuk-link" rel="noreferrer noopener" target="">Letters sent</a></p>
 
 
-    <p class="govuk-heading-l govuk-!-margin-bottom-6">Actions</p>
-    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">No actions can be taken given the application is now over 13 months old</p>
+      {{ govukRadios({
+        idPrefix: "applicaiton-actions",
+        name: "applicaiton-actions",
+        fieldset: {
+          legend: {
+            html: "Claim actions",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "a1",
+          html: "Amend this decision",
+          checked: (data["applicaiton-actions"] == "1")
+        },
+        {
+          value: "a1",
+          html: "Escalation",
+          checked: (data["applicaiton-actions"] == "2")
+        },
+        {
+          value: "a1",
+          html: "Close this claim",
+          checked: (data["applicaiton-actions"] == "2")
+        }
+        ]
+      }) }}
 
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="record-foundation-escalation-0" class="govuk-link" rel="noreferrer noopener" target="">E</a></p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
 
         </div>
       </div>

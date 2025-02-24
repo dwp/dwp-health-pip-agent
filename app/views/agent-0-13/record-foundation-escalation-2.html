@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-escalation-3" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukCheckboxes({
+          idPrefix: "application-evidence-used",
+          name: "application-evidence-used",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "What part of the decision are they unhappy with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply"
+          },
+          items: [
+            {
+              value: "1",
+              text: "The start date",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Qualifying periods",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Perspective test",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Documentation specified within the applicaiton letter",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Some or all of the activty scores",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Award period",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              value: "2",
+              text: "Award amounts",
+              checked: (data["application-evidence-used"] == "1")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "Not happy with everything",
+              checked: true,
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

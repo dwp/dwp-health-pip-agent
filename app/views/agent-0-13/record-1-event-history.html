@@ -29,7 +29,7 @@
   </div>
 
 
-    {% include "agent-0-13/record-navigation.html" %}
+  {% include "agent-0-13/record-foundation-navigation.html" %}
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
@@ -119,6 +119,20 @@
       </thead>
 
 
+
+
+      {% if data["record-foundation-escalation-0"] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+        <td class="govuk-table__cell table-spacer">Inbound call</td>
+        <td class="govuk-table__cell table-spacer">A request for an MR, here is a link to the notes, Notes from chat with applicant <br><a class="" href="record-applicaion-evidence-notes" target="">View Notes</a></td>
+        <!-- <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">XXX</a></td> -->
+
+        </tr>
+
+      {% else %}
+      {% endif %}
 
       <!-- SHOW AND TELL START -->
 
@@ -286,7 +300,7 @@
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
         <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
+        <td class="govuk-table__cell table-spacer">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. 
         </td>
         <td class="govuk-table__cell table-spacer"></td>
         </tr>
