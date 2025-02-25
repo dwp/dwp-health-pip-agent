@@ -480,9 +480,42 @@ router.post(`/ecp-washup-router`, (req, res) => {
   }
 })
 
+router.post(`/record-foundation-application-overview-router`, (req, res) => {
+  const recordOverviewRouter = req.session.data['applicaiton-actions']
+
+  if (recordOverviewRouter == '1') {
+    res.redirect(`XXX`)
+  }
+  else if (recordOverviewRouter == '2') {
+    res.redirect(`record-foundation-escalation-0`)
+  }
+  else if (recordOverviewRouter == '3') {
+    res.redirect(`XXX`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 
+
+router.post(`/record-foundation-escalation-1-doc-check-router`, (req, res) => {
+  const recordEscalationDocCheck = req.session.data['record-foundation-escalation-1-doc-check']
+
+  if (recordEscalationDocCheck == 'Yes') {
+    res.redirect(`record-foundation-escalation-1-docs-yes`)
+  }
+  else if (recordEscalationDocCheck == 'No') {
+    res.redirect(`record-foundation-escalation-2`)
+  }
+  else if (recordEscalationDocCheck == '3') {
+    res.redirect(`XXX`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 module.exports = router

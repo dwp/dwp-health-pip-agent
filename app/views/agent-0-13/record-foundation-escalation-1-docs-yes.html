@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-escalation-2" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukCheckboxes({
+        idPrefix: "application-evidence-used",
+        name: "application-evidence-used",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "What type of documents are expecting from you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "Select all that apply"
+        },
+        items: [
+          {
+            value: "1",
+            text: "GP letter",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type A",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type B",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type C",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type D",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type E",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            value: "2",
+            text: "Type F",
+            checked: (data["application-evidence-used"] == "1")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "none",
+            text: "Something else",
+            checked: true,
+            behaviour: "exclusive"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
