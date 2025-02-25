@@ -36,10 +36,7 @@
     <div class="govuk-grid-column-full">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Decision overview</h1>
-
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Status: Application in progress</p>
-
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review and gain an understanding of the decison</h1>
 
       <p class="govuk-heading-l govuk-!-margin-bottom-6">Key events</p>
 
@@ -50,13 +47,13 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Registration completed</td>
           <td class="govuk-table__cell">1 March 2025</td>
-           <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip1" target=""></a></td> <!--View registration details -->
+          <td class="govuk-table__cell"></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__header">Health information gather (HIG) submitted</td>
           <td class="govuk-table__cell">1 March 2025</td>
-          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip2" target=""></a></td> <!--View HIG details -->
+          <td class="govuk-table__cell"></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -65,13 +62,37 @@
           <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip1and2" target=""></a></td>
         </tr>
 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Prepare for Assessemnt provider checks</td>
+          <td class="govuk-table__cell">2 March 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Assessment report completed</td>
+          <td class="govuk-table__cell">1 April 2025</td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Pre-decision checks completed</td>
+          <td class="govuk-table__cell">2 April 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Decision made</td>
+          <td class="govuk-table__cell">10 April 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-decision" target="">View decision</a></td>
+        </tr>
+
       </tbody>
     </table>
 
     <p class="govuk-heading-l govuk-!-margin-bottom-6">Resouces</p>
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-applicaion-evidence-notes" class="govuk-link" rel="noreferrer noopener" target="">Processing and tagged notes</a></p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-foundation-view-graded-evidence" class="govuk-link" rel="noreferrer noopener" target="">Documents used to support outcome</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="application-5-view-evidence" class="govuk-link" rel="noreferrer noopener" target="">Documents used to support outcome</a></p>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="pip-letter.pdf" class="govuk-link" rel="noreferrer noopener" target="">Letters sent</a></p>
 
 
@@ -92,13 +113,18 @@
         items: [
         {
           value: "1",
-          html: "Update application details",
+          html: "Amend this decision",
           checked: (data["applicaiton-actions"] == "1")
         },
         {
           value: "2",
-          html: "Add more time for citizen to complete X",
+          html: "Start a mandatory reconsideration",
           checked: (data["applicaiton-actions"] == "2")
+        },
+        {
+          value: "3",
+          html: "Refer for an Appeal (Conditional based on MR)",
+          checked: (data["applicaiton-actions"] == "3")
         },
         {
           value: "4",
