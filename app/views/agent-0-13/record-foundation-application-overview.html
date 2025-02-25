@@ -11,7 +11,7 @@
 {% block content %}
 {% include "agent-0-13/record-id-base.html" %}
 
-<form action="record-foundation-escalation-0" method="post" class="form">
+  <form action="record-foundation-application-overview-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -117,24 +117,27 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "a1",
+          value: "1",
           html: "Amend this decision",
           checked: (data["applicaiton-actions"] == "1")
         },
         {
-          value: "a1",
-          html: "Escalation",
+          value: "2",
+          html: "Start a Mandatory reconsideration",
           checked: (data["applicaiton-actions"] == "2")
         },
         {
-          value: "a1",
+          value: "3",
+          html: "Refer for an Appeal",
+          checked: (data["applicaiton-actions"] == "3")
+        },
+        {
+          value: "4",
           html: "Close this claim",
-          checked: (data["applicaiton-actions"] == "2")
+          checked: (data["applicaiton-actions"] == "4")
         }
         ]
       }) }}
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="record-foundation-escalation-0" class="govuk-link" rel="noreferrer noopener" target="">E</a></p>
 
 
       {{ govukButton({
