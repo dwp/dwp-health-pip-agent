@@ -17,12 +17,53 @@
     <form action="application-5-about-a-autofill" method="post" class="form">
     {% endif %}
 
+    {% include "agent-0-13/record-id.html" %}
+
+
+    {% if data["application-5-about-a1"] == "Agree" %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Task list",
+          href: "application-5-about-clear"
+        },
+        {
+          text: "Preparing food overview",
+          href: "application-5-about-a1"
+        }
+      ]
+    }) }}
+
+    {% else %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Task list",
+          href: "application-5-about-clear"
+        },
+        {
+          text: "Preparing food overview",
+          href: "application-5-about-a1"
+        },
+        {
+          text: "Select descriptor",
+          href: "application-5-about-a1"
+        }
+      ]
+    }) }}
+
+
+    {% endif %}
+
 
       <div class="govuk-grid-row">
 
         <div class="govuk-grid-column-three-quarters">
 
-          {% include "agent-0-13/record-id.html" %}
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
