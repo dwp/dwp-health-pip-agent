@@ -43,7 +43,7 @@
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Mobility: Standard (8 points)</p>
 
 
-      <p class="govuk-heading-l govuk-!-margin-bottom-6">Key events</p>
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Important events</p>
 
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -62,13 +62,13 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header">OIDV completed</td>
+          <td class="govuk-table__header">Identity verified</td>
           <td class="govuk-table__cell">1 March 2025</td>
           <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip1and2" target=""></a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header">Prepare applicaiton for Assessemnt provider checks completed</td>
+          <td class="govuk-table__header">'Prepare application for assessemnt provider' checks completed</td>
           <td class="govuk-table__cell">2 March 2025</td>
           <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
         </tr>
@@ -80,7 +80,7 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header">Prepare applicaiton for decision checks completed</td>
+          <td class="govuk-table__header">'Prepare application for decision' checks completed</td>
           <td class="govuk-table__cell">2 April 2025</td>
           <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
         </tr>
@@ -94,10 +94,10 @@
       </tbody>
     </table>
 
-    <p class="govuk-heading-l govuk-!-margin-bottom-6">Resouces</p>
+    <p class="govuk-heading-l govuk-!-margin-bottom-6">Resources</p>
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-applicaion-evidence-notes" class="govuk-link" rel="noreferrer noopener" target="">Processing and tagged notes</a></p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-foundation-view-graded-evidence" class="govuk-link" rel="noreferrer noopener" target="">Evidence used to support the decision</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-foundation-view-graded-evidence" class="govuk-link" rel="noreferrer noopener" target="">Documents used to support the decision</a></p>
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="pip-letter.pdf" class="govuk-link" rel="noreferrer noopener" target="">Letters sent</a></p>
 
 
@@ -106,7 +106,7 @@
         name: "applicaiton-actions",
         fieldset: {
           legend: {
-            html: "Claim actions",
+            html: "What would you like to do?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -123,12 +123,12 @@
         },
         {
           value: "2",
-          html: "Record intent for a mandatory reconsideration",
+          html: "Record that someone has asked for a mandatory reconsideration",
           checked: (data["applicaiton-actions"] == "2")
         },
         {
           value: "3",
-          html: "Refer for an Appeal (Conditional based on MR)",
+          html: "Refer for an appeal (this is conditional based on MR)",
           checked: (data["applicaiton-actions"] == "3")
         },
         {

@@ -38,7 +38,7 @@
           classes: "govuk-checkboxes",
           fieldset: {
             legend: {
-              text: "What part of the decision are they unhappy with?",
+              text: "Which part of their decision are they challenging?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -49,27 +49,27 @@
           items: [
             {
               value: "1",
-              text: "The start date",
+              text: "Start date",
               checked: (data["record-foundation-escalation-2"] == "1")
             },
             {
               value: "2",
-              text: "Qualifying periods",
+              text: "Qualifying period",
               checked: (data["record-foundation-escalation-2"] == "2")
             },
             {
               value: "2",
-              text: "Perspective test",
+              text: "Prospective test",
               checked: (data["record-foundation-escalation-2"] == "2")
             },
             {
               value: "3",
-              text: "Documentation specified within the applicaiton letter",
+              text: "Supporting documents listed in decision letter",
               checked: (data["record-foundation-escalation-2"] == "3")
             },
             {
               value: "4",
-              text: "Some or all of the activty scores",
+              text: "Activity scores",
               checked: (data["record-foundation-escalation-2"] == "4")
             },
             {
@@ -87,7 +87,7 @@
             },
             {
               value: "none",
-              text: "Not happy with everything",
+              text: "Challenging everything",
               checked: true,
               behaviour: "exclusive"
             }
