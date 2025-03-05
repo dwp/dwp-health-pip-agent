@@ -45,8 +45,28 @@
               {% if data["qppt-set-data-assessment-date-day"] %}
                 {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
               {% else %}
-                1 March 2024.
+                DD M YYY.
               {% endif %}
+
+              <br><br>
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                The assessment provider indicated they <b>did not</b> have mobility restrictions during the 3 months before their assessment on
+              {% if data["qppt-set-data-assessment-date-day"] %}
+                {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
+              {% else %}
+                DD MM YYYY.
+              {% endif %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+                Context from openTextField.
+              </p>
+
+              <br><br>
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                The assessment provider indicated they <b>did not</b> have any mobility restrictions during the 3 months before their assessment on DD MM YYYY.
+              </p>
 
         {% endset %}
       <!------------Legend--------------->
