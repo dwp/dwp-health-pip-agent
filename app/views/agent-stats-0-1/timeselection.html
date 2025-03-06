@@ -15,125 +15,86 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Between 9 February 2023 and today. <a href="X" class="govuk-link" rel="X" target="">Change dates</a>.</p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
+
+    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Setting your data ranges</h1> -->
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1"></p>
 
 
-    <div class="govuk-grid-row govuk-!-padding-top-2">
-      <div class="govuk-grid-column-one-third ">
-        {% include "agent-stats-0-1/service-stats-menu.html" %}
-      </div>
+    {{ govukDateInput({
+      id: "award-dates-review-manual-other",
+      namePrefix: "award-dates-review-manual-other",
+      fieldset: {
+        legend: {
+          html: "What date do you want the data to be shown from?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+        }
+      },
+      hint: {
+        html: "The service went live on 1 September YYYY"
+      },
+      items: [
+        {
+          name: "day",
+          classes: "govuk-input--width-2",
+          value: data["award-dates-review-manual-other-day"]
+        },
+        {
+          name: "month",
+          classes: "govuk-input--width-2",
+          value: data["award-dates-review-manual-other-month"]
+        },
+        {
+          name: "year",
+          classes: "govuk-input--width-4",
+          value: data["award-dates-review-manual-other-year"]
+        }
+      ]
+    }) }}
 
-      <div class="govuk-grid-column-two-thirds">
+<br>
 
-        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications in progress within the PIPservice</h2>
-        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Between 9 February 2023 and 19 September 2023.</p> -->
+    {{ govukDateInput({
+      id: "award-dates-review-manual-other",
+      namePrefix: "award-dates-review-manual-other",
+      fieldset: {
+        legend: {
+          html: "When do you want the stats data to end?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+        }
+      },
+      hint: {
+        html: ""
+      },
+      items: [
+        {
+          name: "day",
+          classes: "govuk-input--width-2",
+          value: data["award-dates-review-manual-other-day"]
+        },
+        {
+          name: "month",
+          classes: "govuk-input--width-2",
+          value: data["award-dates-review-manual-other-month"]
+        },
+        {
+          name: "year",
+          classes: "govuk-input--width-4",
+          value: data["award-dates-review-manual-other-year"]
+        }
+      ]
+    }) }}
 
-
-
-                  <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-full">
-                      <div class="govuk-grid-row">
-                        <div class="govuk-grid-column-one-half">
-                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Active applications</h3>
-
-
-                        </div>
-                        <div class="govuk-grid-column-one-half">
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total Apply applicaitons in progress</p>
-                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">17</p>
-
-                        </div>
-
-                        </div>
-
-                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
-
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-                <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Applications in assessment provider phase</h3>
-
-              </div>
-              <div class="govuk-grid-column-one-half">
-
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Referred to assessment provider</p>
-              <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">23</p>
-
-              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Returned from assessment provider</p>
-              <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">2</p>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
-
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-half">
-<h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Disallowed applicaitons</h3>
-
-</div>
-<div class="govuk-grid-column-one-half">
-
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total Disallowed</p>
-<p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">12</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                  <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-one-half">
-                      <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of the 12 disallowed applications</h3>
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
 
 
-                    </div>
-                    <div class="govuk-grid-column-one-half">
-
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Not eligible</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
-
-                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Failure to comply</p>
-                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">12</p>
-
-                    </div>
-
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-      </div>
     </div>
   </div>
-</div>
 
 
 
