@@ -51,7 +51,7 @@
               <br><br>
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-                The assessment provider indicated they <b>did not</b> have mobility restrictions during the 3 months before their assessment on
+                The assessment provider indicated they <b>did not</b> have mobility restrictions for at least 3 months before their assessment on
               {% if data["qppt-set-data-assessment-date-day"] %}
                 {{ data['qppt-set-data-assessment-date-day'] + ' ' + (data['qppt-set-data-assessment-date-month'] | getMonth) + ' ' + data['qppt-set-data-assessment-date-year']}}.</p>
               {% else %}
@@ -65,7 +65,7 @@
               <br><br>
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-                The assessment provider indicated they <b>did not</b> have any mobility restrictions during the 3 months before their assessment on DD MM YYYY.
+                The assessment provider indicated they <b>did not</b> have any mobility restrictions in the 3 months before their assessment on DD MM YYYY.
               </p>
 
         {% endset %}
