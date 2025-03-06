@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Between 1 September 2024 and today. <a href="timeselection" class="govuk-link" rel="X" target="">Change dates</a>.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+      <div class="govuk-grid-column-one-third ">
+        {% include "agent-stats-0-2/service-stats-menu.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Reason applications were<br>moved to PIPcs</h2>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Data from 'Prepage applciation for AP' only</p> -->
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Applications moved<br>to PIPcs</h3>
+
+
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total moved to PIPcs</p>
+                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">58</p>
+
+                        </div>
+
+                        </div>
+
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of the 58 online applications received</h3>
+
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Payment Functionality not Integrated</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">12</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Failed to Attend / Failed to Comply</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">3</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Change Address/Tel No/Bank details</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">1</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Mismatch/Discrepancies in Info</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">21</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Hospital/Care Home Admission</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Overlapping Benefits</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Residency/Immigration Status/Abroad</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Residency/Immigration Status/Abroad</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Alternative Format/Appointee</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Death</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Prison Case</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">SREL</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Withdrawal/Duplicate claims</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">4</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Suspected Fraud/ID at Risk/ID not confirmed</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">5</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Keep Customer Interactions Safe</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Digital Issues/User Error</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">5</p>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
