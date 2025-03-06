@@ -11,13 +11,14 @@
 
 {% block content %}
 
+<form action="service-stats" method="post" class="form">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1>
 
-    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Setting your data ranges</h1> -->
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-8">What data range do you want to use for the stats?</h1>
     <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1"></p>
 
 
@@ -32,7 +33,7 @@
         }
       },
       hint: {
-        html: "The service went live on 1 September YYYY"
+        html: "The service went live on 1 September 2024"
       },
       items: [
         {
@@ -86,11 +87,12 @@
         }
       ]
     }) }}
-
+<br>
     {{ govukButton({
       text: "Continue",
       classes: "govuk-!-margin-bottom-8"
     }) }}
+
 
 
     </div>
