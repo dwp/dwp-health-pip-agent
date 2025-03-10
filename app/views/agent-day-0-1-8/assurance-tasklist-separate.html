@@ -109,6 +109,33 @@
         </li>
 
         <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="assurance-tasklist-item-3a" aria-describedby="task-X">
+            <!-- [1-24]  --> Correspondence address
+          </a>
+          {% if data["assurance-tasklist-item-3a"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-tasklist-item-3a"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-tasklist-item-3a"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["assurance-tasklist-item-3a"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="assurance-tasklist-item-5" aria-describedby="task-X">
+            <!-- [1-5]  --> Date of death
+          </a>
+          {% if data["assurance-tasklist-item-5"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["assurance-tasklist-item-5"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["assurance-tasklist-item-5"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["assurance-tasklist-item-5"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="assurance-tasklist-item-4" aria-describedby="task-X">
             <!-- [1-4]  --> Date of birth
           </a>
