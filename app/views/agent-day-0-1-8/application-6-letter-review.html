@@ -889,13 +889,47 @@
 
               {% else %}
 
-Payment
-              <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What you need to do now</h3>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Select the appropriate letter template and copy the information on this page to the relevant sections.</p>
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You will then need to add the payment details once they are available in the applicant's record. The letter will be ready to send once you've added the payment details. The applicant’s address is in their registration (PIP1).</p>
+
+              <!------------CheckBox Hint------------>
+
+                {% set dynamicCheckBoxHintPayment %}
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The decision letter will be generated based on the information above and sent automatically. The letter will also include payment details.</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This is your last opportunity to see the information that will be in the letter, so make sure you have checked it carefully. </p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Do not proceed unless you are completely sure the information is correct.</p>
+
+                {% endset %}
+              <!------------Legend--------------->
+
+
+
+
+
+              {{ govukCheckboxes({
+                idPrefix: "ConfimLetter",
+                name: "ConfimLetter",
+                fieldset: {
+                  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
+                  legend: {
+                    text: "Send decision letter",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+                  }
+                },
+                hint: {
+                  html: dynamicCheckBoxHintPayment
+                },
+                items: [
+                  {
+                    value: "ConfimLetter",
+                    text: "I confirm that I have fully checked the information for the decision letter.",
+                    checked: (data["application-about-a9-score-overwrite"] == "0")
+                  }
+                ]
+              }) }}
 
               {{ govukButton({
-                text: "Continue",
+                text: "Send decision letter",
                 classes: "govuk-!-margin-bottom-8"
               }) }}
 
