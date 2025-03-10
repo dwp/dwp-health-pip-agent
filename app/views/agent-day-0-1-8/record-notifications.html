@@ -17,7 +17,9 @@
 
     {% set html %}
     <p class="govuk-body govuk-!-font-size-19">You have successfully processed this application. The applicant has been awarded PIP.</p>
-    {% endset %}
+    <p class="govuk-body govuk-!-font-size-19">The sent letter will be available to view in ECMS shortly.</p>
+
+  {% endset %}
 
     {{ govukNotificationBanner({
       html: html,
