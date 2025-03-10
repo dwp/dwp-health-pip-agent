@@ -673,7 +673,7 @@ router.post(`/assurance-tasklist-item-3-router`, (req, res) => {
   const assuranceCheckItem3 = req.session.data['assurance-tasklist-item-3']
 
   if (assuranceCheckItem3 == 'Expected') {
-    res.redirect(`assurance-tasklist-item-4`)
+    res.redirect(`assurance-tasklist-item-3a`)
   }
   else if (assuranceCheckItem3 == 'Unexpected') {
     res.redirect(`assurance-tasklist-item-4`)
@@ -706,7 +706,22 @@ router.post(`/assurance-tasklist-item-3-address-actions-router`, (req, res) => {
   }
 })
 
+router.post(`/assurance-tasklist-item-3a-router`, (req, res) => {
+  const assuranceCheckItem3a = req.session.data['assurance-tasklist-item-3a']
 
+  if (assuranceCheckItem3a == 'Expected') {
+    res.redirect(`assurance-tasklist-item-4`)
+  }
+  else if (assuranceCheckItem3a == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-4`)
+  }
+  else if (assuranceCheckItem3a  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
 
 router.post(`/assurance-tasklist-item-4-router`, (req, res) => {
   const assuranceCheckItem4 = req.session.data['assurance-tasklist-item-4']
@@ -1127,16 +1142,33 @@ router.post(`/preparation-tasklist-item-3-router`, (req, res) => {
   const preparationCheckItem3 = req.session.data['preparation-tasklist-item-3']
 
   if (preparationCheckItem3 == 'Expected') {
-    res.redirect(`preparation-tasklist-item-4`)
+    res.redirect(`preparation-tasklist-item-3a`)
   }
   else if (preparationCheckItem3 == 'Unexpected') {
-    res.redirect(`preparation-tasklist-item-4`)
+    res.redirect(`preparation-tasklist-item-3a`)
   }
   else if (preparationCheckItem3  == 'Pause') {
     res.redirect(`preparation-tasklist-separate`)
   }
    else {
      res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-3a-router`, (req, res) => {
+  const preparationCheckItem3a = req.session.data['preparation-tasklist-item-3a']
+
+  if (preparationCheckItem3a == 'Expected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3a == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3a  == 'Pause') {
+    res.redirect(`preparation-tasklist-separate`)
+  }
+   else {
+     res.redirect(`4`)
   }
 })
 
