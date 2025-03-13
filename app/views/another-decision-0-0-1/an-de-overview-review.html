@@ -9,34 +9,17 @@
 {% endblock %}
 
 {% block content %}
-{% include "agent-0-13/record-id-base.html" %}
 
-  <form action="record-foundation-application-overview-router" method="post" class="form">
+  <form action="an-de-overview-review-router" method="post" class="form">
+    {% include "another-decision-0-0-1/record-id-base.html" %}
 
   <div class="govuk-grid-row">
 
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Overview",
-          href: "record-foundation-overview"
-        },
-        {
-          text: "Applications and decision",
-          href: "record-foundation-applications"
-        },
-        {
-          text: "1 March 2025",
-          href: "record-foundation-application-breakdown"
-        }
-      ]
-    }) }}
 
     <div class="govuk-grid-column-full">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review and gain an understanding of the decison</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review and gain an understanding<br>of the decison</h1>
 
       <p class="govuk-heading-l govuk-!-margin-bottom-6">Important events</p>
 
@@ -97,8 +80,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "applicaiton-actions",
-        name: "applicaiton-actions",
+        idPrefix: "an-de-overview-review",
+        name: "an-de-overview-review",
         fieldset: {
           legend: {
             html: "Claim actions",
@@ -114,17 +97,17 @@
         {
           value: "1",
           html: "Make an amend (Secretary of state amendment)",
-          checked: (data["applicaiton-actions"] == "1")
+          checked: (data["an-de-overview-review"] == "1")
         },
         {
           value: "2",
           html: "Create a new decision",
-          checked: (data["applicaiton-actions"] == "2")
+          checked: (data["an-de-overview-review"] == "2")
         },
         {
-          value: "4",
+          value: "3",
           html: "Close this claim",
-          checked: (data["applicaiton-actions"] == "4")
+          checked: (data["an-de-overview-review"] == "2")
         }
         ]
       }) }}
