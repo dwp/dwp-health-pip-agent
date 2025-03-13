@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="preparation-linear-outcome-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+      {% if data["system-application-selector"] == "7" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have completed your checks to prepare this application for a decision</h1>
+
+
+    {% else %}
+
+    {% if data["assurance-sub-monolith-1-0"] == "Unexpected" or data["assurance-sub-monolith-1-1"] == "Unexpected" or data["assurance-sub-monolith-1-2"] == "Unexpected" or data["assurance-sub-monolith-1-3"] == "Unexpected" or data["assurance-sub-monolith-1-4"] == "Unexpected" or data["assurance-sub-monolith-1-5"] == "Unexpected" or data["assurance-sub-monolith-1-6"] == "Unexpected" or data["assurance-sub-monolith-1-7"] == "Unexpected" or data["assurance-sub-monolith-1-8"] == "Unexpected" or data["assurance-sub-monolith-1-9"] == "Unexpected" or data["assurance-sub-monolith-2-1"] == "Unexpected" or data["assurance-sub-monolith-2-2"] == "Unexpected" or data["assurance-sub-monolith-2-3"] == "Unexpected" or data["assurance-sub-monolith-2-4"] == "Unexpected" or data["assurance-sub-monolith-2-5"] == "Unexpected" or data["assurance-sub-monolith-3-1"] == "Unexpected" or data["assurance-sub-monolith-3-2"] == "Unexpected" or data["assurance-sub-monolith-3-3"] == "Unexpected" or data["assurance-sub-monolith-3-4"] == "Unexpected" or data["assurance-sub-monolith-3-5"] == "Unexpected" or data["assurance-sub-monolith-3-6"] == "Unexpected" or data["assurance-sub-monolith-3-7"] == "Unexpected"
+    %}
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are issues with this application</h1>
+    {% include "agent-day-0-1-8/assurance-sub-monolith-outcome-list.html" %}
+
+
+        {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are no issues with this application</h1>
+
+        {% endif %}
+
+
+
+
+    {% endif %}
+
+
+          {{ govukRadios({
+            idPrefix: "preparation-linear-outcome",
+            name: "preparation-linear-outcome",
+            fieldset: {
+              legend: {
+                html: "What do you want to do now?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: ""
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Ready",
+              text: "Continue to make a decision",
+              checked: (data["preparation-linear-outcome"] == "Ready")
+            },
+            {
+              value: "PIPcs",
+              text: "Move application to PIPCS",
+              checked: (data["preparation-linear-outcome"] == "PIPcs")
+            },
+            {
+              value: "PIPcs",
+              text: "Disallow application",
+              checked: (data["preparation-linear-outcome"] == "PIPcs")
+            },
+            {
+              value: "PIPcs",
+              text: "Withdraw application",
+              checked: (data["preparation-linear-outcome"] == "PIPcs")
+            }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

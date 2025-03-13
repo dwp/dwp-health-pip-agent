@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+    {% if data["assurance-tasklist-item-10"] %}
+    <form action="assurance-tasklist-separate" method="post" class="form">
+    {% else %}
+    <form action="assurance-tasklist-item-9-router" method="post" class="form">
+    {% endif %}
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "assurance-tasklist-item-9",
+        name: "assurance-tasklist-item-9",
+        fieldset: {
+          legend: {
+            html: "Is there any evidence to suggest this application could have been made under Special Rules End of Life (SREL)?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Check supporting documents for an SR1 form."
+        },
+        items: [
+        {
+          value: "Unexpected",
+          text: "Yes",
+          checked: (data["assurance-tasklist-item-9"] == "Unexpected")
+        },
+        {
+          value: "Expected",
+          text: "No",
+          checked: (data["assurance-tasklist-item-9"] == "Expected")
+        },
+        {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["assurance-tasklist-item-9"] == "Pause")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

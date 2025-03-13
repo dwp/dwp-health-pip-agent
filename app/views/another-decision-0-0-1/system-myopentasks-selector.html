@@ -9,15 +9,15 @@
 {% endblock %}
 
 {% block content %}
-<form action="system-application-selector-router" method="post" class="form">
+<form action="system-myopentasks-selector-router" method="post" class="form">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
 {{ govukRadios({
   classes: "govuk-radios",
-  idPrefix: "system-application-selector",
-  name: "system-application-selector",
+  idPrefix: "system-myopentasks-selector",
+  name: "system-myopentasks-selector",
   fieldset: {
     legend: {
       text: "Select a scenario",
@@ -30,30 +30,15 @@
   },
   items: [
   {
-    value: "8",
-    text: "'Prepare an application for an AP' (TaskList)",
-    checked: (data["system-application-selector"] == "8")
-  },
-  {
-    value: "10",
-    text: "'Preparation application for decision' (TaskList): Todo",
-    checked: (data["system-application-selector"] == "10")
-  },
-  {
-    value: "11",
-    text: "'Preparation application for decision' (TaskList): Complete",
-    checked: (data["system-application-selector"] == "11")
-  },
-  {
     value: "1",
-    text: "Nil award (N) with V1 QPPT",
-    checked: (data["system-application-selector"] == "1")
+    text: "No open task",
+    checked: (data["system-myopentasks-selector"] == "1")
   },
   {
-      value: "2",
-      text: "Award (A) with V1 QPPT",
-      checked: (data["system-application-selector"] == "2")
-    }
+    value: "2",
+    text: "Open tasks",
+    checked: (data["system-myopentasks-selector"] == "2")
+  }
   ]
 }) }}
 
