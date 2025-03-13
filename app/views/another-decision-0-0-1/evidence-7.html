@@ -10,18 +10,16 @@
 
 {% block content %}
 
-<form action="application-6-view-evidence" method="post" class="form">
+<form action="application-5-view-evidence" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% include "agent-day-0-1-8/record-id-base.html" %}
+      {% include "another-decision-0-0-1/record-id.html" %}
 
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Health information gather (PIP2)</h1>
       <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="evidence-7" target="_blank">You can also view this document in a new tab or window</a></p>
-
-
 
 
       <div class="govuk-grid-row">
@@ -559,7 +557,7 @@
 {% endset -%}
 
 
-<!-- {{ govukRadios({
+{{ govukRadios({
   idPrefix: "evidence-7-grade",
   name: "evidence-7-grade",
   fieldset: {
@@ -589,7 +587,7 @@
     checked: (data["evidence-7-grade"] == "Good")
   }
   ]
-}) }} -->
+}) }}
 
 
 {{ govukButton({

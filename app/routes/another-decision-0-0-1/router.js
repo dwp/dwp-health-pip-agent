@@ -55,7 +55,7 @@ router.post(`/system-application-selector-router`, (req, res) => {
     res.redirect(`preparation-overview`)
   }
   else if (applicationSelector == '12') {
-    res.redirect(`man-recon-overview`)
+    res.redirect(`an-de-overview`)
   }
    else {
     res.redirect(`XXX`)
@@ -1653,6 +1653,25 @@ router.post(`/accessibility-ab-router`, (req, res) => {
   }
    else {
     res.redirect(`XXX`)
+  }
+})
+
+// MAN RECON / ANOTHER DECISION
+
+router.post(`/an-de-overview-review-router`, (req, res) => {
+  const anDeOverview = req.session.data['an-de-overview-review']
+
+  if (anDeOverview == '1') {
+    res.redirect(`XXX1`)
+  }
+  else if (anDeOverview == '2') {
+    res.redirect(`an-de-preparation-tasklist`)
+  }
+  else if (anDeOverview == '3') {
+    res.redirect(`XXX3`)
+  }
+   else {
+    res.redirect(`XXXO`)
   }
 })
 
