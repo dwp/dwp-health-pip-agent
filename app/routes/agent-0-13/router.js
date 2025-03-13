@@ -507,7 +507,7 @@ router.post(`/record-foundation-escalation-1-doc-check-router`, (req, res) => {
     res.redirect(`record-foundation-escalation-1-docs-yes`)
   }
   else if (recordEscalationDocCheck == 'No') {
-    res.redirect(`record-foundation-escalation-2`)
+    res.redirect(`record-foundation-escalation-4`)
   }
   else if (recordEscalationDocCheck == '3') {
     res.redirect(`XXX`)
