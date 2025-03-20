@@ -32,17 +32,12 @@
     <div class="govuk-grid-column-two-thirds">
 
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">We will now reconsider the decision</h1>
+
       {% if data["record-foundation-escalation-1-doc-check"] == "Yes" %}
 
-Stuff for yes
-
-      {% else %}
-
-      {% endif %}
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">We will now reconsider the decision</h1>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>They have told us that they're going to send us additional supporting evidence</b></p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
         <li>to only send information about how their health condition or disability affects their daily life</li>
         <li>to only send photocopies as we cannot return documents</li>
@@ -57,7 +52,7 @@ Stuff for yes
         <li>type A</li>
         <li>other stuff</li>
       </ul>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><b>Address for sending additional supporting evidence<b></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><b>Address for sending additional supporting evidence<b></p>
 <div class="govuk-inset-text">
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Freepost RTEU-HBEC-RGTG</p>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Personal Independence Payment 1</p>
@@ -73,6 +68,18 @@ Stuff for yes
         <li>they will get a letter called a Mandatory Reconsideration Notice telling them whether we've changed the decision</li>
         <li>time taken</li>
       </ul>
+
+      {% else %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>No to evidence </b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX:
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>XXX</li>
+      </ul>
+
+
+
+      {% endif %}
 
       {{ govukButton({
         text: "Continue",
