@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="timeselection-preset-router" method="post" class="form">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1> -->
+
+    {{ govukRadios({
+      idPrefix: "timeselection-preset",
+      name: "timeselection-preset",
+      fieldset: {
+        legend: {
+          html: "What data range do you want to see?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "today",
+        text: "Today",
+        checked: (data["timeselection-preset"] == "today")
+      },
+      {
+        value: "yesterday",
+        text: "Yesterday",
+        checked: (data["timeselection-preset"] == "yesterday")
+      },
+      {
+        value: "thisweek",
+        text: "This week",
+        checked: (data["timeselection-preset"] == "thisweek")
+      },
+      {
+        value: "previousweek",
+        text: "Previous week",
+        checked: (data["timeselection-preset"] == "previousweek")
+      },
+      {
+        value: "thismonth",
+        text: "This month",
+        checked: (data["timeselection-preset"] == "thismonth")
+      },
+      {
+        value: "previousmonth",
+        text: "Previous month",
+        checked: (data["timeselection-preset"] == "previousmonth")
+      },
+      {
+        value: "all",
+        text: "Start of service",
+        checked: (data["timeselection-preset"] == "all")
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "custom",
+        text: "Custom date range",
+        checked: (data["timeselection-preset"] == "custom")
+      }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

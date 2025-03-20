@@ -420,11 +420,14 @@ a.govuk-skip-link {text-decoration: underline;}
 }
 
 .govuk-inset-text--action-notifications {
-  background-color: #ededed;
+  background-color: #f3f2f1;
   color: #000000;
-  // border-radius: 75px;
+  border-radius: 2px;
   // float: right;
   // margin-right:12%;
+  border-left: 0;
+  // border: 1px solid #b1b4b6;
+
 }
 
 
