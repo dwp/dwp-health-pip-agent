@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+    {% include "agent-stats-0-3/timeselection-chosen.html" %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Ty Taf overview",
+          href: "team"
+        },
+        {
+          text: "Ty Taf breakdown",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+
+
+      <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Ty Taf team breakdown</h2>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">View team breakdown</p> -->
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                      <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-15-percent">Name</th>
+                            <th scope="col" class="govuk-table__header govuk-25 -percent">In progress</th>
+                            <th scope="col" class="govuk-table__header govuk-15-percent">Moved to PIPcs</th>
+                            <th scope="col" class="govuk-table__header govuk-15-percent">Paused</th>
+                            <th scope="col" class="govuk-table__header govuk-15-percent">Paid</th>
+                            <th scope="col" class="govuk-table__header govuk-15-percent">Nilled</th>
+
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">John Goodman</td>
+                            <td class="govuk-table__cell">1</td>
+                            <td class="govuk-table__cell">0</td>
+                            <td class="govuk-table__cell">4</td>
+                            <td class="govuk-table__cell">4</td>
+                            <td class="govuk-table__cell">10</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">John Turturro</td>
+                            <td class="govuk-table__cell">0</td>
+                            <td class="govuk-table__cell">0</td>
+                            <td class="govuk-table__cell">1</td>
+                            <td class="govuk-table__cell">8</td>
+                            <td class="govuk-table__cell">2</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Sam Elliott</td>
+                            <td class="govuk-table__cell">0</td>
+                            <td class="govuk-table__cell">1</td>
+                            <td class="govuk-table__cell">1</td>
+                            <td class="govuk-table__cell">10</td>
+                            <td class="govuk-table__cell">15</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">Total</th>
+                            <td class="govuk-table__cell"><b>1</b></td>
+                            <td class="govuk-table__cell"><b>1</b></td>
+                            <td class="govuk-table__cell"><b>7</b></td>
+                            <td class="govuk-table__cell"><b>22</b></td>
+                            <td class="govuk-table__cell"><b>27</b></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
