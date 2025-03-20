@@ -1,0 +1,34 @@
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+
+{% if data["timeselection-preset"] == "custom" %}
+
+{{ data['timeselection-date-from-day'] + ' ' + (data['timeselection-date-from-month'] | getMonth) + ' ' + data['timeselection-date-from-year']}}
+–
+{{ data['timeselection-date-to-day'] + ' ' + (data['timeselection-date-to-month'] | getMonth) + ' ' + data['timeselection-date-to-year']}}.
+
+{% elif data["timeselection-preset"] == "today" %}
+Wednesday 19 March 2025 (Today).
+
+{% elif data["timeselection-preset"] == "yesterday" %}
+Tuesday 18 March 2025 (Yesterday).
+
+{% elif data["timeselection-preset"] == "thisweek" %}
+Monday 17 March 2025 – Today.
+
+{% elif data["timeselection-preset"] == "previousweek" %}
+10 March 2025 – 14 March 2025 (Previous week).
+
+{% elif data["timeselection-preset"] == "thismonth" %}
+1 March 2025 – Today.
+
+{% elif data["timeselection-preset"] == "previousmonth" %}
+1 February 2025 – Friday 28 February 2025 (Previous month).
+
+
+{% elif data["timeselection-preset"] == "all" %}
+1 September 2024 – Today (Start of service).
+
+{% else %}
+{% endif %}
+
+<a href="timeselection-preset" class="govuk-link" rel="X" target="">Change dates</a></p>
