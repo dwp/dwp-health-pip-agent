@@ -45,8 +45,22 @@
       </ul>
 
       {{ govukTextarea({
-        name: "Scores and activities",
-        id: "Scores and activities",
+        name: "an-de-award-period",
+        id: "an-de-award-period",
+        rows: "4",
+        label: {
+          text: "Award period",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "an-de-preparing-food",
+        id: "an-de-preparing-food",
         rows: "4",
         label: {
           text: "Preparing food",
@@ -59,8 +73,8 @@
       }) }}
 
       {{ govukTextarea({
-        name: "Scores and activities",
-        id: "Scores and activities",
+        name: "an-de-taking-nutrition",
+        id: "an-de-taking-nutrition",
         rows: "4",
         label: {
           text: "Taking nutrition",
@@ -73,8 +87,8 @@
       }) }}
 
       {{ govukTextarea({
-        name: "Scores and activities",
-        id: "Scores and activities",
+        name: "an-de-other-issues",
+        id: "an-de-other-issues",
         rows: "4",
         label: {
           text: "Any other issues",
