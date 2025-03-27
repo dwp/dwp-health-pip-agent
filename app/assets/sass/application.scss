@@ -692,3 +692,15 @@ padding-bottom: 0px !important;
 .govuk-breadcrumbs {
   background: none!important;
 }
+
+.govuk-inlinestats {
+  margin:0;
+  display: inline;
+  float:left
+}
+.govuk-inlinestatssmall {
+  margin-top:41px;
+  margin-left:6px;
+  display: inline;
+  float:left
+}
