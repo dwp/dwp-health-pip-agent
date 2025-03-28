@@ -23,7 +23,7 @@
       name: "timeselection-preset",
       fieldset: {
         legend: {
-          html: "Which data range do you want to see?",
+          html: "When do you want to see data for?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -65,7 +65,7 @@
       },
       {
         value: "all",
-        text: "Start of service (30 September 2024 to today)",
+        text: "From the start of PIP Service (30 September 2024 to today)",
         checked: (data["timeselection-preset"] == "all")
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         value: "custom",
-        text: "Custom data range",
+        text: "Custom date range",
         checked: (data["timeselection-preset"] == "custom")
       }
       ]
