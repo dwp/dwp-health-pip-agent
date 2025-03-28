@@ -7,30 +7,30 @@
 {{ data['timeselection-date-to-day'] + ' ' + (data['timeselection-date-to-month'] | getMonth) + ' ' + data['timeselection-date-to-year']}}.
 
 {% elif data["timeselection-preset"] == "today" %}
-Wednesday 19 March 2025 (Today).
+Friday 28 March 2025 (today).
 
 {% elif data["timeselection-preset"] == "yesterday" %}
-Tuesday 18 March 2025 (Yesterday).
+Thursday 27 March 2025 (yesterday).
 
 {% elif data["timeselection-preset"] == "thisweek" %}
-Monday 17 March 2025 – Today.
+Monday 24 March 2025 to today.
 
 {% elif data["timeselection-preset"] == "previousweek" %}
-10 March 2025 – 14 March 2025 (Previous week).
+17 March 2025 to 21 March 2025 (previous week).
 
 {% elif data["timeselection-preset"] == "thismonth" %}
-1 March 2025 – Today.
+1 March 2025 to today.
 
 {% elif data["timeselection-preset"] == "previousmonth" %}
-1 February 2025 – Friday 28 February 2025 (Previous month).
+1 February 2025 to Friday 28 February 2025 (previous month).
 
 
 {% elif data["timeselection-preset"] == "all" %}
-1 September 2024 – Today (Start of service).
+30 September 2024 to today (start of service).
 
 {% else %}
 
-1 September 2024 – Today (Start of service).
+30 September 2024 to today (start of service).
 
 {% endif %}
 
