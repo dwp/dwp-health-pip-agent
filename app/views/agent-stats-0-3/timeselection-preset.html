@@ -23,7 +23,7 @@
       name: "timeselection-preset",
       fieldset: {
         legend: {
-          html: "What data range do you want to see?",
+          html: "Which data range do you want to see?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--xl"
         }
@@ -65,7 +65,7 @@
       },
       {
         value: "all",
-        text: "Start of service (1 September 2024 – Today)",
+        text: "Start of service (30 September 2024 to today)",
         checked: (data["timeselection-preset"] == "all")
       },
       {
@@ -73,7 +73,7 @@
       },
       {
         value: "custom",
-        text: "Custom date range",
+        text: "Custom data range",
         checked: (data["timeselection-preset"] == "custom")
       }
       ]
