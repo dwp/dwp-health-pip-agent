@@ -156,6 +156,19 @@ router.post(`/postcode-router`, (req, res) => {
   }
 })
 
+router.post(`/preferance-stated-router`, (req, res) => {
+  const preferanceStated = req.session.data['preferance-stated']
+
+  if (preferanceStated == 'English') {
+    res.redirect(`example-page`)
+  }
+  else if (preferanceStated == 'Welsh') {
+    res.redirect(`example-page-welsh`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 
