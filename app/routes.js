@@ -8,10 +8,6 @@ const router = express.Router()
 router.use('/sprint-24-25', require('./views/sprint-24-25/_routes'));
 router.use('/sprint-39', require('./views/sprint-39/_routes'));
 router.use('/v12', require('./views/v12/case-review/_routes'));
-router.use('/pa-0-1/apply', require('./routes/pa-0-1/apply.js'));
-router.use('/pa-0-2/apply', require('./routes/pa-0-2/apply.js'));
-router.use('/pa-0-3/apply', require('./routes/pa-0-3/apply.js'));
-router.use('/pa-0-4/apply', require('./routes/pa-0-4/apply.js'));
 router.use('/agent-0-1', require('./routes/agent-0-1/router.js'));
 router.use('/agent-0-1-1', require('./routes/agent-0-1/router.js'));
 router.use('/pa-0-5/apply', require('./routes/pa-0-5/apply.js'));
@@ -28,6 +24,13 @@ router.use('/agent-0-10', require('./routes/agent-0-10/router.js'));
 router.use('/agent-0-11', require('./routes/agent-0-11/router.js'));
 router.use('/agent-0-12', require('./routes/agent-0-12/router.js'));
 router.use('/agent-0-13', require('./routes/agent-0-13/router.js'));
+
+router.use('/pa-0-1/apply', require('./routes/pa-0-1/apply.js'));
+router.use('/pa-0-2/apply', require('./routes/pa-0-2/apply.js'));
+router.use('/pa-0-3/apply', require('./routes/pa-0-3/apply.js'));
+router.use('/pa-0-4/apply', require('./routes/pa-0-4/apply.js'));
+router.use('/pa-0-5/apply', require('./routes/pa-0-5/apply.js'));
+router.use('/pa-0-6/apply', require('./routes/pa-0-6/apply.js'));
 
 router.use('/citizen-outcome-0-1', require('./routes/citizen-outcome-0-1/router.js'));
 
