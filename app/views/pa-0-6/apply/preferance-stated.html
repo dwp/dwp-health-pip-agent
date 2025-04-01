@@ -1,0 +1,56 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<form action="preferance-stated-router" method="post" class="form">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        idPrefix: "preferance-stated",
+        name: "preferance-stated",
+        fieldset: {
+          legend: {
+            html: "What language was the link sent in?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "English",
+          html: "English",
+          checked: (data["preferance-stated"] == "English")
+        },
+        {
+          value: "Welsh",
+          html: "Welsh",
+          checked: (data["preferance-stated"] == "Welsh")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}
