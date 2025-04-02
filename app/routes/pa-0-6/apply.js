@@ -157,7 +157,7 @@ router.post(`/postcode-router`, (req, res) => {
 })
 
 router.post(`/preferance-stated-router`, (req, res) => {
-  const preferanceStated = req.session.data['preferance-stated']
+  const preferanceStated = req.session.data['applicant-welsh-check']
 
   if (preferanceStated == 'English') {
     res.redirect(`example-page`)

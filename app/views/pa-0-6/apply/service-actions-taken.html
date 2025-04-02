@@ -1,0 +1,41 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Send link to PIP invited digital
+
+{% endblock %}
+
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+
+      {% if data["applicant-welsh-check"] == "English" %}
+      <form action="example-page" method="post" class="form">
+
+      {% else %}
+        <form action="example-page-welsh" method="post" class="form">
+
+      {% endif %}
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Citizen will will land and complete OIDV before HIG</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Send this invitation if they have completed PIP1 over the phone.</p> -->
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}

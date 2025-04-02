@@ -17,8 +17,8 @@
 
 
       {{ govukRadios({
-        idPrefix: "preferance-stated",
-        name: "preferance-stated",
+        idPrefix: "applicant-welsh-check",
+        name: "applicant-welsh-check",
         fieldset: {
           legend: {
             html: "What language was the link sent in?",
@@ -34,12 +34,12 @@
         {
           value: "English",
           html: "English",
-          checked: (data["preferance-stated"] == "English")
+          checked: (data["applicant-welsh-check"] == "English")
         },
         {
           value: "Welsh",
           html: "Welsh",
-          checked: (data["preferance-stated"] == "Welsh")
+          checked: (data["applicant-welsh-check"] == "Welsh")
         }
         ]
       }) }}
