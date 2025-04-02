@@ -1,0 +1,196 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Send link to PIP invited digital
+
+{% endblock %}
+
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <form action="link-sent" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check details before sending the link to the Health Information Gather</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
+
+
+
+<!------------H1 LEGEND------------>
+  {% set dynamicNINO %}
+
+  {% if data["applicant-details-capture-nino"]%}
+  {{ data["applicant-details-capture-nino"]}}
+  {% else %}
+  QQ 11 22 33 C
+  {% endif %}
+
+  {% endset %}
+<!------------Legend--------------->
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              html: data["applicant-details-capture-nino"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "First name"
+            },
+            value: {
+              html: data["applicant-details-capture-name"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Second name"
+            },
+            value: {
+              html: data["applicant-details-capture-secondname"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email address"
+            },
+            value: {
+              html: data["applicant-details-capture-email"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              html: data['applicant-details-capture-dob-day'] + ' ' + (data['applicant-details-capture-dob-month'] | getMonth) + ' ' + data['applicant-details-capture-dob-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Post code"
+            },
+            value: {
+              html: data["applicant-details-capture-postcode"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Lives in Wales"
+            },
+            value: {
+              html: data["applicant-details-capture-lives-wales"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Corrospondance language"
+            },
+            value: {
+              html: data["applicant-welsh-check"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      {% if data["check-outcome"] == "Yes" %}
+
+      {% else %}
+
+
+      {% endif %}
+
+
+      {{ govukButton({
+        text: "Send link to Health information gather",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}

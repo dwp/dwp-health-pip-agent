@@ -1,0 +1,219 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Send link to PIP invited digital
+
+{% endblock %}
+
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <form action="applicant-details-capture-router" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter claimant details</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
+
+      <!------------H1 LEGEND------------>
+        {% set legendNINO %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">National Insurance number</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendNINO
+        },
+        hint: {
+          text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+        },
+        id: "applicant-details-capture-nino",
+        name: "applicant-details-capture-nino",
+        classes: "govuk-!-width-one-third govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-nino"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendNAME %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">First name</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendNAME
+        },
+        hint: {
+          text: "Include capital letters in the name where needed. For example, Janet."
+        },
+        id: "applicant-details-capture-name",
+        name: "applicant-details-capture-name",
+        classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-name"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendSECONDNAME %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Last name</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendSECONDNAME
+        },
+        hint: {
+          text: "Include capital letters in the name where needed. For example, Smith-Johnson."
+        },
+        id: "applicant-details-capture-secondname",
+        name: "applicant-details-capture-secondname",
+        classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-secondname"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendEMAIL %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Email address</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendEMAIL
+        },
+        hint: {
+          text: "This is the email address the PIP2 invite will be sent to."
+        },
+        id: "applicant-details-capture-email",
+        name: "applicant-details-capture-email",
+        classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-email"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendDOB %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Date of birth</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukDateInput({
+        id: "applicant-details-capture-dob",
+        namePrefix: "applicant-details-capture-dob",
+        fieldset: {
+          legend: {
+            html: legendDOB,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: "For example, 27 3 1981"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["applicant-details-capture-dob-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["applicant-details-capture-dob-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["applicant-details-capture-dob-year"]
+          }
+        ]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendMOBILE %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Mobile number</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendMOBILE
+        },
+        hint: {
+          text: ""
+        },
+        id: "applicant-details-capture-mobile",
+        name: "applicant-details-capture-mobile",
+        classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-mobile"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendPOSTCODE %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Postcode</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: legendPOSTCODE
+        },
+        hint: {
+          text: ""
+        },
+        id: "applicant-details-capture-postcode",
+        name: "applicant-details-capture-postcode",
+        classes: "govuk-!-width-one-third govuk-!-margin-bottom-1",
+        value: data["applicant-details-capture-postcode"]
+      }) }}
+
+      <!------------H1 LEGEND------------>
+        {% set legendLIVESWALES %}
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukRadios({
+        idPrefix: "applicant-details-capture-lives-wales",
+        name: "applicant-details-capture-lives-wales",
+        fieldset: {
+          legend: {
+            html: legendLIVESWALES,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "This dertermins if we can off the service in Welsh"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["applicant-details-capture-lives-wales"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["applicant-details-capture-lives-wales"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Search again",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}

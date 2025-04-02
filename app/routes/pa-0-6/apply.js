@@ -170,6 +170,19 @@ router.post(`/preferance-stated-router`, (req, res) => {
   }
 })
 
+router.post(`/applicant-details-capture-router`, (req, res) => {
+  const checkLivesInWales = req.session.data['applicant-details-capture-lives-wales']
+
+  if (checkLivesInWales == 'Yes') {
+    res.redirect(`applicant-welsh-check`)
+  }
+  else if (checkLivesInWales == 'No') {
+    res.redirect(`cya`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 

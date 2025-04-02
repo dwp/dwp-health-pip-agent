@@ -1,7 +1,7 @@
 {% extends "layout-apply.html" %}
 
 {% block pageTitle %}
-  Process a PIP application
+Send link to PIP invited digital
 
 {% endblock %}
 
@@ -9,7 +9,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="descriptors-outcome" method="post" class="form">
+    <form action="service-overview" method="post" class="form">
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -33,7 +33,7 @@
         },
         id: "nino",
         name: "",
-        classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
+        classes: "govuk-!-width-two-thirds govuk-!-margin-bottom-1",
         value: data["nino"]
       }) }}
 
@@ -41,6 +41,9 @@
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
+
+      <p class="govuk-body govuk-!-font-size-19"><a href="find-someone-null" class="govuk-link" rel="noreferrer noopener">No results found</a></p>
+
 
     </div>
   </div>
