@@ -1,0 +1,45 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Send link to PIP invited digital
+
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="applicant-details-capture" method="post" class="form">
+    <div class="govuk-grid-column-full">
+
+      <!------------H1 LEGEND------------>
+        {% set legendNAME %}
+        {{ data["applicant-details-capture-name"]}}Name
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set legendEMAIL %}
+        {{ data["applicant-details-capture-email"]}} Email
+        {% endset %}
+      <!------------Legend--------------->
+
+            {{ govukPanel({
+              titleText: legendNAME,
+              html: legendEMAIL
+            }) }}
+
+            <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-8"><a href="find-someone" class="govuk-link" rel="noreferrer noopener">Finish and close</a></p> -->
+
+
+            {{ govukButton({
+              text: "Finish close",
+              classes: "govuk-button--secondary govuk-!-margin-top-6"
+            }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}

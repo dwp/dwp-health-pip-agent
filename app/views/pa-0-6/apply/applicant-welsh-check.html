@@ -1,0 +1,82 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Send link to PIP invited digital
+
+{% endblock %}
+
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <form action="cya" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">About Welsh</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">When we send you a link to the Welsh Health information gather this means that XXX </p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This also means that all other forms and commnication will also be in Welsh.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We can still chat to you in Welsh over the phone.</p>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This includes: </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            SMS messages
+          </li>
+          <li>
+            Emails
+          </li>
+          <li>
+            Paper forms
+          </li>
+          <li>
+            Decisions
+          </li>
+        </ul>
+
+      {{ govukRadios({
+        idPrefix: "applicant-welsh-check",
+        name: "applicant-welsh-check",
+        fieldset: {
+          legend: {
+            html: "Would you like to continue with Welsh?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Welsh",
+          text: "Yes – Welsh",
+          checked: (data["applicant-welsh-check"] == "Welsh")
+        },
+        {
+          value: "English",
+          text: "No – English",
+          checked: (data["applicant-welsh-check"] == "English")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}
