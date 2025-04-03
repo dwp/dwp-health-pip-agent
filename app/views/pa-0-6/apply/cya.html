@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check details before sending the link to the Health Information Gather</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check details before sending email invitation to the online health information gather</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
 
 
@@ -37,7 +37,7 @@
         rows: [
           {
             key: {
-              text: "National insurance number"
+              text: "National Insurance number"
             },
             value: {
               html: data["applicant-details-capture-nino"]
@@ -71,7 +71,7 @@
           },
           {
             key: {
-              text: "Second name"
+              text: "Last name"
             },
             value: {
               html: data["applicant-details-capture-secondname"]
@@ -122,7 +122,7 @@
           },
           {
             key: {
-              text: "Post code"
+              text: "Postcode"
             },
             value: {
               html: data["applicant-details-capture-postcode"]
@@ -139,7 +139,7 @@
           },
           {
             key: {
-              text: "Welsh YN"
+              text: "Do they want to continue in Welsh?"
             },
             value: {
               html: data["applicant-welsh-check"]
@@ -186,7 +186,7 @@
 
 
       {{ govukButton({
-        text: "Continue",
+        text: "Send email",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 
