@@ -174,9 +174,27 @@
 
       <!------------H1 LEGEND------------>
         {% set legendLIVESWALES %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Do they want to continue their application in Welsh?
-</h1>
+        <h1 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-0">Do they want to continue their application in Welsh?</h1>
         <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set legendHINT %}
+
+        <p class="govuk-body govuk-!-font-size-19">
+          This means they will receive a link to complete the health information gather in Welsh.</p>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This also means that all further forms and written communications we send will be in Welsh, including: </p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>SMS messages</li>
+          <li>emails</li>
+          <li>paper forms</li>
+          <li>decision letters</li>
+        </ul>
+
 
         {% endset %}
       <!------------Legend--------------->
@@ -192,14 +210,7 @@
           }
         },
         hint: {
-          html: "This means they will receive a link to complete the health information gather in Welsh.
-
-This also means that all further forms and written communications we send will be in Welsh, including:
-	<ul><li>SMS messages</li>
-	<li>emails</li>
-	<li>paper forms</li>
-	<li>decision letters</li></ul>
-"
+          html: legendHINT
         },
         classes: "govuk-radios",
         items: [
