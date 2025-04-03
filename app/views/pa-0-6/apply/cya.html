@@ -139,24 +139,7 @@
           },
           {
             key: {
-              text: "Lives in Wales"
-            },
-            value: {
-              html: data["applicant-details-capture-lives-wales"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Corrospondance language"
+              text: "Welsh YN"
             },
             value: {
               html: data["applicant-welsh-check"]
@@ -175,6 +158,25 @@
       }) }}
 
 
+      <!-- {
+        key: {
+          text: "Lives in Wales"
+        },
+        value: {
+          html: data["applicant-details-capture-lives-wales"]
+        },
+        actions: {
+          items: [
+            {
+              href: "#",
+              text: "Change",
+              visuallyHiddenText: "name"
+            }
+          ]
+        }
+      }, -->
+
+
       {% if data["check-outcome"] == "Yes" %}
 
       {% else %}
@@ -184,7 +186,7 @@
 
 
       {{ govukButton({
-        text: "Send link to Health information gather",
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 

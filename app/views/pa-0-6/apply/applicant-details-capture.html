@@ -10,7 +10,8 @@
 {% include "includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
-    <form action="applicant-details-capture-router" method="post" class="form">
+    <form action="cya" method="post" class="form">
+      <!-- <form action="applicant-details-capture-router" method="post" class="form"> -->
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -173,13 +174,15 @@
 
       <!------------H1 LEGEND------------>
         {% set legendLIVESWALES %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">is welsh yes??</h1>
+        <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1> -->
+
         {% endset %}
       <!------------Legend--------------->
 
       {{ govukRadios({
-        idPrefix: "applicant-details-capture-lives-wales",
-        name: "applicant-details-capture-lives-wales",
+        idPrefix: "applicant-welsh-check",
+        name: "applicant-welsh-check",
         fieldset: {
           legend: {
             html: legendLIVESWALES,
@@ -188,26 +191,28 @@
           }
         },
         hint: {
-          html: "This dertermins if we can off the service in Welsh"
+          html: "XXX"
         },
         classes: "govuk-radios",
         items: [
         {
           value: "Yes",
-          text: "Yes",
-          checked: (data["applicant-details-capture-lives-wales"] == "Yes")
+          text: "Welsh",
+          checked: (data["applicant-welsh-check"] == "Yes")
         },
         {
           value: "No",
-          text: "No",
-          checked: (data["applicant-details-capture-lives-wales"] == "No")
+          text: "English",
+          checked: (data["applicant-welsh-check"] == "No")
         }
         ]
       }) }}
 
 
+
+
       {{ govukButton({
-        text: "Search again",
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 
