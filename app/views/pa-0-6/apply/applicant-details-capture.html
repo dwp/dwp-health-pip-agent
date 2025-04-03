@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter claimant details</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter applicant details</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
 
       <!------------H1 LEGEND------------>
@@ -31,7 +31,7 @@
           html: legendNINO
         },
         hint: {
-          text: "It's on your National Insurance card, benefit letter, payslip or P60. For example, 'QQ 12 34 56 C'."
+          text: "It's on their National Insurance card, benefit letter, payslip or P60. For example, QQ 12 34 56 C."
         },
         id: "applicant-details-capture-nino",
         name: "applicant-details-capture-nino",
@@ -88,7 +88,7 @@
           html: legendEMAIL
         },
         hint: {
-          text: "This is the email address the PIP2 invite will be sent to."
+          text: "This is the email address the invitation to complete the health information gather online will be sent to."
         },
         id: "applicant-details-capture-email",
         name: "applicant-details-capture-email",
@@ -174,7 +174,8 @@
 
       <!------------H1 LEGEND------------>
         {% set legendLIVESWALES %}
-        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">is welsh yes??</h1>
+        <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Do they want to continue their application in Welsh?
+</h1>
         <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1> -->
 
         {% endset %}
@@ -191,17 +192,24 @@
           }
         },
         hint: {
-          html: "XXX"
+          html: "This means they will receive a link to complete the health information gather in Welsh.
+
+This also means that all further forms and written communications we send will be in Welsh, including:
+	<ul><li>SMS messages</li>
+	<li>emails</li>
+	<li>paper forms</li>
+	<li>decision letters</li></ul>
+"
         },
         classes: "govuk-radios",
         items: [
         {
           value: "Yes",
-          text: "Welsh",
+          text: "Yes, the applicant wants to continue in Welsh",
           checked: (data["applicant-welsh-check"] == "Yes")
         },
         {
-          value: "No",
+          value: "No, the applicant wants to continue in English",
           text: "English",
           checked: (data["applicant-welsh-check"] == "No")
         }
