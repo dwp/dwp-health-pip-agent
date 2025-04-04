@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Between 30 September 2024 and today. <a href="timeselection-preset" class="govuk-link" rel="X" target="">Change dates</a>.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+      <div class="govuk-grid-column-one-third ">
+        {% include "agent-stats-0-3/has-service-stats-menu.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Referrals in progress in HAS</h2>
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-1">Total referrals in progress</h3>
+                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">400</p>
+
+                        </div>
+
+                      </div>
+
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+
+                    <!-- <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of 400 referrals in progress</h3> -->
+
+
+                    <table class="govuk-table">
+                      <caption class="govuk-table__caption govuk-table__caption--s">Breakdown of 400 referrals in progress</caption>
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-half govuk-table--no-bottom-border"></th>
+                          <th scope="col" class="govuk-table__header govuk-!-width-one-half govuk-table--no-bottom-border"></th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Assigned</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">100</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Awaiting decision</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">10</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Book appointment</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">1</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Book paper based review</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Gathering information</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">HCP audit</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">HCP review</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">In review</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">280</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Medical evidence not received</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">4</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Medical evidence received</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Paper based review booked</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">PIPCS descriptors updated</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">PIP paper based review</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Questionnaire not returned</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">5</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Rebook appointment</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Report ready</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Request medical evidence</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Senior HCP advice</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">Unassigned</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-!-padding-top-4">WCA paper based review</td>
+                          <td class="govuk-table__cell govuk-!-font-size-36">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                "name": "Assigned",
+                "name": "Awaiting decision",
+                "name": "Book appointment",
+                "name": "Book paper based review",
+                "name": "Gathering information",
+                "name": "HCP audit",
+                "name": "HCP review",
+                "name": "In review",
+                "name": "Medical evidence not received",
+                "name": "Medical evidence received",
+                "name": "Paper based review booked",
+                "name": "PIPCS descriptors updated",
+                "name": "PIP paper based review",
+                "name": "Questionnaire not returned",
+                "name": "Rebook appointment",
+                "name": "Report ready",
+                "name": "Request medical evidence",
+                "name": "Senior HCP advice",
+                "name": "Unassigned",
+                "name": "WCA paper based review",
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
