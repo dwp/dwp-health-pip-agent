@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Move applciation data back to BAU</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will need to do the following things to complete the transfer back to BAU</p>
+
+      <p class="govuk-heading-m govuk-!-margin-bottom-2">View application to copy and paste it back into PIPcs</p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href=/application-data target="_blank">Application data (HTML)</a></p>
+
+
+      <p class="govuk-heading-m govuk-!-margin-bottom-2">Download the application PDF and put in Supporting Doucments</p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc2.pdf" target="_blank">Application data (PDF)</a></p>
+
+
+
+      {{ govukButton({
+        text: "Contine",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-13/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "agent-0-13/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-13/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {% include "agent-0-13/record-foundation-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Payments</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The agent will see future events. They will see the date of the event, the details and any actions they can take in relation to the event.</p> -->
+
+
+
+    <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-25-percent">Date</td>
+        <td class="govuk-table__cell govuk-50-percent">Event</td>
+        <td class="govuk-table__cell govuk-35-percent">Actions</td>
+      </tr>
+      </thead>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">8 Nov 2023</td>
+        <td class="govuk-table__cell table-spacer">Payment for PIP made <br>£200</td>
+        <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+        </tr>
+
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">1 Nov 2023</td>
+          <td class="govuk-table__cell table-spacer">Payment for PIP made <br>£200</td>
+          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+          </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer"></td>
+
+        <td class="govuk-table__cell table-spacer">Award uprating from <br>£172.75 to £200</td>
+
+        <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">25 Oct 2023</td>
+          <td class="govuk-table__cell table-spacer">Payment for PIP made <br>£172.75</td>
+          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
+            <td class="govuk-table__cell table-spacer">Payment for PIP made <br>£172.75</td>
+            <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">11 Oct 2023</td>
+              <td class="govuk-table__cell table-spacer">Payment for PIP made <br>£172.75</td>
+              <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View payment breakdown</a></td>
+              </tr>
+
+
+      </table>
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

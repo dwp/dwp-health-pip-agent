@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "agent-0-13/record-id-base.html" %}
+
+  <form action="record-foundation-application-overview-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "record-foundation-overview"
+        },
+        {
+          text: "Applications and decision",
+          href: "record-foundation-applications"
+        },
+        {
+          text: "1 January 2025",
+          href: "record-foundation-application-breakdown"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-full">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Decision overview</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Status: Application in payment</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Daily living: Enhanced (12 points)</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Mobility: Standard (8 points)</p>
+
+
+      <p class="govuk-heading-l govuk-!-margin-bottom-6">Important events</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Registration completed</td>
+          <td class="govuk-table__cell">1 January 2025</td>
+           <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip1" target=""></a></td> <!--View registration details -->
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Health information gather (HIG) submitted</td>
+          <td class="govuk-table__cell">1 January 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip2" target=""></a></td> <!--View HIG details -->
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Identity verified</td>
+          <td class="govuk-table__cell">1 January 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-pip1and2" target=""></a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">'Prepare application for assessement provider' checks completed</td>
+          <td class="govuk-table__cell">2 January 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Assessment report completed</td>
+          <td class="govuk-table__cell">1 February 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-ap" target=""></a></td> <!--View assessment report -->
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">'Prepare application for decision' checks completed</td>
+          <td class="govuk-table__cell">2 February 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-prep-checks" target="">View check outcome</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Decision made</td>
+          <td class="govuk-table__cell">1 March 2025</td>
+          <td class="govuk-table__cell"><a class="" href="record-applicaion-evidence-decision" target="">View decision</a></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <p class="govuk-heading-l govuk-!-margin-bottom-6">Resources</p>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-applicaion-evidence-notes" class="govuk-link" rel="noreferrer noopener" target="">Processing and tagged notes</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="record-foundation-view-graded-evidence" class="govuk-link" rel="noreferrer noopener" target="">Documents used to support the decision</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="pip-letter.pdf" class="govuk-link" rel="noreferrer noopener" target="">Letters sent</a></p>
+
+
+      {{ govukRadios({
+        idPrefix: "applicaiton-actions",
+        name: "applicaiton-actions",
+        fieldset: {
+          legend: {
+            html: "What would you like to do?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "2",
+          html: "Record that someone has asked for their decision to be reconsidered",
+          checked: (data["applicaiton-actions"] == "2")
+        },
+        {
+          value: "4",
+          html: "Close this claim",
+          checked: (data["applicaiton-actions"] == "4")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

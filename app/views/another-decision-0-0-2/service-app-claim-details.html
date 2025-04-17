@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="service-app-claim-details-router" method="post" class="form">
+  {% include "agent-0-13/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Applicaiton status</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This is a page that shows some one what actions can be done</p> -->
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 26 March 2024</p> -->
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Submission date: <b>DD Month Year</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Status: <b>Current</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Who is working on it: <b>Agent Smith</b></p>
+
+      {{ govukRadios({
+        idPrefix: "service-app-claim-details",
+        name: "service-app-claim-details",
+        fieldset: {
+          legend: {
+            html: "What do you need to do?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "1",
+          text: "Change status",
+          checked: (data["service-app-claim-details"] == "1")
+        },
+        {
+          value: "2",
+          text: "Add an event to their Event History",
+          checked: (data["service-app-claim-details"] == "2")
+        },
+        {
+          value: "3",
+          text: "View something from their application/claim",
+          checked: (data["service-app-claim-details"] == "3")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "4",
+          text: "There is an issue with this application",
+          checked: (data["service-app-claim-details"] == "4")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
