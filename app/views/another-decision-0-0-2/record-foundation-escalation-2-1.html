@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-escalation-3" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukCheckboxes({
+          idPrefix: "record-foundation-escalation-2-1",
+          name: "record-foundation-escalation-2-1",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which activities do they think they were given incorrect points for?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+            {
+              value: "1",
+              text: "Preparing food",
+              checked: (data["record-foundation-escalation-2-1"] == "1")
+            },
+            {
+              value: "2",
+              text: "Taking nutrition",
+              checked: (data["record-foundation-escalation-2-1"] == "2")
+            },
+            {
+              value: "3",
+              text: "Managing therapy or monitoring a health condition",
+              checked: (data["record-foundation-escalation-2-1"] == "3")
+            },
+            {
+              value: "4",
+              text: "Washing and bathing",
+              checked: (data["record-foundation-escalation-2-1"] == "4")
+            },
+            {
+              value: "5",
+              text: "Managing toilet needs or incontinence",
+              checked: (data["record-foundation-escalation-2-1"] == "5")
+            },
+            {
+              value: "5",
+              text: "Dressing and undressing",
+              checked: (data["record-foundation-escalation-2-1"] == "6")
+            },
+            {
+              value: "7",
+              text: "Communicating verbally",
+              checked: (data["record-foundation-escalation-2-1"] == "7")
+            },
+            {
+              value: "8",
+              text: "Reading and understanding signs, symbols and words",
+              checked: (data["record-foundation-escalation-2-1"] == "8")
+            },
+            {
+              value: "9",
+              text: "Engaging with other people face to face",
+              checked: (data["record-foundation-escalation-2-1"] == "9")
+            },
+            {
+              value: "10",
+              text: "Making budgeting decisions",
+              checked: (data["record-foundation-escalation-2-1"] == "10")
+            },
+            {
+              value: "11",
+              text: "Planning and following journeys",
+              checked: (data["record-foundation-escalation-2-1"] == "11")
+            },
+            {
+              value: "12",
+              text: "Moving around",
+              checked: (data["record-foundation-escalation-2-1"] == "12")
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "All of them"            }
+          ]
+        }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

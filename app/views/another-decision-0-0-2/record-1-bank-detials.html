@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "agent-0-13/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "agent-0-13/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "agent-0-13/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {% include "agent-0-13/record-foundation-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+
+
+    {% if data["record-1-bank-detials-j-1-bank-name"] %}
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Bank details</h3>
+
+
+
+    {% set SetTelephone %}
+      {% if data["appointees-telephone"] %}
+        {{data["appointees-telephone"]}}
+      {% else %}
+        <p class="govuk-body">07700 900457</p>
+      {% endif %}
+    {% endset -%}
+
+
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Bank name"
+          },
+          value: {
+            html: data["record-1-bank-detials-j-1-bank-name"]
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-bank-detials-j-1",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Account number"
+          },
+          value: {
+            html: data["record-1-bank-detials-j-1-bank-account"]
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-bank-detials-j-1",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Sort code"
+          },
+          value: {
+            html: data["record-1-bank-detials-j-1-bank-sort"]
+          },
+          actions: {
+            items: [
+              {
+                href: "record-1-bank-detials-j-1",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+    {% else %}
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">There are no bank details</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can <a class="" href="record-1-bank-detials-j-1" target="">add bank details now</a>.</p>
+    {% endif %}
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

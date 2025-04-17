@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-1-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-13/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">{% if data["application-1-about-a12"] == "Agree" %} Why did you given Making budgeting decisions a score of 6
+            {% elif data["application-1-about-a12"] == "Amended" %}You have changed the score of making budgeting decisions from 4 to {{ data["score-overwrite"]}}
+            {% else %}
+            {% endif %}</h1>
+
+      {{ govukTextarea({
+        name: "application-1-about-a12-reason",
+        id: "application-1-about-a12-reason",
+        label: {
+          text: "Why did you change the score?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: ""
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

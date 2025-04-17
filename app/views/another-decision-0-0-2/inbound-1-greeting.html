@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="inbound-1-greeting-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Hello, you have reached the Department for Work and Pensions</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Before we start, I need check if we need to go<br>through any security questions with you.</p>
+
+      {{ govukRadios({
+        idPrefix: "inbound-1-greeting",
+        name: "inbound-1-greeting",
+        fieldset: {
+          legend: {
+            html: "Do you need help with an application<br> you have submitted?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["inbound-1-greeting"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["inbound-1-greeting"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

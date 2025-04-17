@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+
+{% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="outbound-2-finder-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">I need some information so that I can confirm I'm talking to the right person</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
+
+      <!------------H1 LEGEND------------>
+        {% set legendName %}
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Name of the applicant</h1>
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukRadios({
+        idPrefix: "outbound-2-finder-name",
+        name: "outbound-2-finder-name",
+        fieldset: {
+          legend: {
+            html: "What is your name?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m v"
+          }
+        },
+        hint: {
+          text: "Jeff Bridges is the expected answer"
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+        {
+          value: "Yes",
+          text: "Matches",
+          checked: (data["outbound-2-finder-name"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "Does not match",
+          checked: (data["outbound-2-finder-name"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        idPrefix: "outbound-2-finder-dob",
+        name: "outbound-2-finder-dob",
+        fieldset: {
+          legend: {
+            html: "What is your date of birth?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "20 2 1959 is the expected answer"
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+        {
+          value: "Yes",
+          text: "Matches",
+          checked: (data["outbound-2-finder-dob"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "Does not match",
+          checked: (data["outbound-2-finder-dob"] == "No")
+        }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "outbound-2-finder-nino",
+        name: "outbound-2-finder-nino",
+        fieldset: {
+          legend: {
+            html: "What is your National Insurance number?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "NA 11 22 33 C is the expected answer"
+        },
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        items: [
+        {
+          value: "Yes",
+          text: "Matches",
+          checked: (data["outbound-2-finder-nino"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "Does not match",
+          checked: (data["outbound-2-finder-nino"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
