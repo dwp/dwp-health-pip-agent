@@ -174,13 +174,13 @@
 
       <!------------H1 LEGEND------------>
         {% set legendLIVESWALES %}
-        <h1 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-0">Do they want to continue their application in Welsh?</h1>
+        <h1 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-0">Which language do they want to continue their application in?</h1>
         <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Does the applicant live in Wales?</h1> -->
 
         {% endset %}
       <!------------Legend--------------->
 
-  
+
       {{ govukRadios({
         idPrefix: "applicant-welsh-check",
         name: "applicant-welsh-check",
@@ -197,15 +197,16 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "Welsh",
-          text: "Yes, the applicant wants to continue in Welsh",
-          checked: (data["applicant-welsh-check"] == "Welsh")
+          value: "English",
+          text: "English",
+          checked: (data["applicant-welsh-check"] == "English")
         },
         {
-          value: "English",
-          text: "No,the applicant wants to continue in English",
-          checked: (data["applicant-welsh-check"] == "English")
+          value: "Welsh",
+          text: "Welsh",
+          checked: (data["applicant-welsh-check"] == "Welsh")
         }
+
         ]
       }) }}
 
