@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-disagree-reasons-router" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukCheckboxes({
+          idPrefix: "an-de-disagree-reasons",
+          name: "an-de-disagree-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which part of their decision do they disagree with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Start",
+              text: "Start date or inline without hint?",
+              checked: (data["an-de-disagree-reasons"] == "Start"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "QP",
+              text: "Qualifying period",
+              checked: (data["an-de-disagree-reasons"] == "QP"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "PT",
+              text: "Prospective test",
+              checked: (data["an-de-disagree-reasons"] == "PT"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Doc",
+              text: "Supporting documents listed in decision letter",
+              checked: (data["an-de-disagree-reasons"] == "Doc"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Points",
+              text: "Points given",
+              checked: (data["an-de-disagree-reasons"] == "Points"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Award",
+              text: "Award period",
+              checked: (data["an-de-disagree-reasons"] == "Award"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Payments",
+              text: "Award amounts We mean money",
+              checked: (data["an-de-disagree-reasons"] == "Payments"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Report",
+              text: "Health Care Professional report",
+              checked: (data["an-de-disagree-reasons"] == "Report"),
+              hint: {
+                text: "What this means"
+              }
+            }
+          ]
+        }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
