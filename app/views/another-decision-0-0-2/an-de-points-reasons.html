@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="record-foundation-escalation-3" method="post" class="form">
+<form action="an-de-reason-details" method="post" class="form">
 
   {% include "agent-day-0-1-8/record-id-base.html" %}
 
@@ -33,8 +33,8 @@
 
 
         {{ govukCheckboxes({
-          idPrefix: "record-foundation-escalation-2-1",
-          name: "record-foundation-escalation-2-1",
+          idPrefix: "an-de-points-reasons",
+          name: "an-de-points-reasons",
           classes: "govuk-checkboxes",
           fieldset: {
             legend: {
@@ -50,62 +50,62 @@
             {
               value: "1",
               text: "Preparing food",
-              checked: (data["record-foundation-escalation-2-1"] == "1")
+              checked: (data["an-de-points-reasons"] == "1")
             },
             {
               value: "2",
               text: "Taking nutrition",
-              checked: (data["record-foundation-escalation-2-1"] == "2")
+              checked: (data["an-de-points-reasons"] == "2")
             },
             {
               value: "3",
               text: "Managing therapy or monitoring a health condition",
-              checked: (data["record-foundation-escalation-2-1"] == "3")
+              checked: (data["an-de-points-reasons"] == "3")
             },
             {
               value: "4",
               text: "Washing and bathing",
-              checked: (data["record-foundation-escalation-2-1"] == "4")
+              checked: (data["an-de-points-reasons"] == "4")
             },
             {
               value: "5",
               text: "Managing toilet needs or incontinence",
-              checked: (data["record-foundation-escalation-2-1"] == "5")
+              checked: (data["an-de-points-reasons"] == "5")
             },
             {
               value: "5",
               text: "Dressing and undressing",
-              checked: (data["record-foundation-escalation-2-1"] == "6")
+              checked: (data["an-de-points-reasons"] == "6")
             },
             {
               value: "7",
               text: "Communicating verbally",
-              checked: (data["record-foundation-escalation-2-1"] == "7")
+              checked: (data["an-de-points-reasons"] == "7")
             },
             {
               value: "8",
               text: "Reading and understanding signs, symbols and words",
-              checked: (data["record-foundation-escalation-2-1"] == "8")
+              checked: (data["an-de-points-reasons"] == "8")
             },
             {
               value: "9",
               text: "Engaging with other people face to face",
-              checked: (data["record-foundation-escalation-2-1"] == "9")
+              checked: (data["an-de-points-reasons"] == "9")
             },
             {
               value: "10",
               text: "Making budgeting decisions",
-              checked: (data["record-foundation-escalation-2-1"] == "10")
+              checked: (data["an-de-points-reasons"] == "10")
             },
             {
               value: "11",
               text: "Planning and following journeys",
-              checked: (data["record-foundation-escalation-2-1"] == "11")
+              checked: (data["an-de-points-reasons"] == "11")
             },
             {
               value: "12",
               text: "Moving around",
-              checked: (data["record-foundation-escalation-2-1"] == "12")
+              checked: (data["an-de-points-reasons"] == "12")
             }
           ]
         }) }}
