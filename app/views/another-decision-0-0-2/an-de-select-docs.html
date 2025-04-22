@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="record-foundation-escalation-4" method="post" class="form">
+<form action="an-de-select-docs-router" method="post" class="form">
 
   {% include "agent-day-0-1-8/record-id-base.html" %}
 
@@ -32,8 +32,8 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukCheckboxes({
-        idPrefix: "application-evidence-used",
-        name: "application-evidence-used",
+        idPrefix: "an-de-select-docs",
+        name: "an-de-select-docs",
         classes: "govuk-checkboxes",
         fieldset: {
           legend: {
@@ -49,44 +49,46 @@
           {
             value: "1",
             text: "GP letter",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type A",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type B",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type C",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type D",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type E",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             value: "2",
             text: "Type F",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["an-de-select-docs"] == "1")
           },
           {
             divider: "or"
           },
           {
-            value: "none",
-            text: "Something else"
+            value: "Advanced",
+            text: "I cant see what i'm looking for",
+            checked: (data["an-de-select-docs"] == "Advanced")
+
           }
         ]
       }) }}

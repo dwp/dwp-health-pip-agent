@@ -661,7 +661,6 @@ padding-bottom: 0px !important;
   }
 }
 
-
 .govuk-table--no-bottom-border {
   border-bottom: none
 }
@@ -711,4 +710,20 @@ padding-bottom: 0px !important;
 
 .govuk-aligned-right{
 float: right;
+}
+
+
+.govuk-tag--filter {
+  background-color:#f3f2f1;
+  padding: 10px!important;
+  margin-right:10px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 19px !important;  /*input has OS specific font-family*/
+
+}
+
+.govuk-find-doc{
+  text-decoration: none;
+
 }

@@ -73,8 +73,16 @@
             },
             {
               value: "Doc",
-              text: "Supporting documents listed in decision letter",
+              text: "Documents",
               checked: (data["an-de-disagree-reasons"] == "Doc"),
+              hint: {
+                text: "The docuemnts we have that you've sent in, nowt else"
+              }
+            },
+            {
+              value: "Report",
+              text: "Health Care Professional report",
+              checked: (data["an-de-disagree-reasons"] == "Report"),
               hint: {
                 text: "What this means"
               }
@@ -97,16 +105,8 @@
             },
             {
               value: "Payments",
-              text: "Award amounts We mean money",
+              text: "Award amounts We mean money, arrears, payments in your account",
               checked: (data["an-de-disagree-reasons"] == "Payments"),
-              hint: {
-                text: "What this means"
-              }
-            },
-            {
-              value: "Report",
-              text: "Health Care Professional report",
-              checked: (data["an-de-disagree-reasons"] == "Report"),
               hint: {
                 text: "What this means"
               }

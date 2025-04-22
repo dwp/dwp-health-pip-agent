@@ -500,22 +500,35 @@ router.post(`/record-foundation-application-overview-router`, (req, res) => {
 
 
 
-router.post(`/record-foundation-escalation-1-doc-check-router`, (req, res) => {
-  const recordEscalationDocCheck = req.session.data['record-foundation-escalation-1-doc-check']
+router.post(`/an-de-doc-check-router`, (req, res) => {
+  const anDeDocCheck = req.session.data['an-de-doc-check']
 
-  if (recordEscalationDocCheck == 'Yes') {
-    res.redirect(`record-foundation-escalation-1-docs-yes`)
+  if (anDeDocCheck == 'YesAdvanced') {
+    res.redirect(`an-de-find-docs`)
   }
-  else if (recordEscalationDocCheck == 'No') {
-    res.redirect(`record-foundation-escalation-4`)
+  else if (anDeDocCheck == 'YesBasic') {
+    res.redirect(`an-de-select-docs`)
   }
-  else if (recordEscalationDocCheck == '3') {
-    res.redirect(`XXX`)
+  else if (anDeDocCheck == 'No') {
+    res.redirect(`an-de-next-steps`)
   }
    else {
-    res.redirect(`XXX`)
+    res.redirect(`an-de-find-docs`)
   }
 })
+
+router.post(`/an-de-select-docs-router`, (req, res) => {
+  const anDeBasicDocSelect = req.session.data['an-de-select-docs']
+
+  if (anDeBasicDocSelect == 'Advanced') {
+    res.redirect(`an-de-find-docs`)
+  }
+   else {
+    res.redirect(`an-de-next-steps`)
+  }
+})
+
+
 
 router.post(`/record-foundation-escalation-0-router`, (req, res) => {
   const recordEscalationCheckToContinue = req.session.data['record-foundation-escalation-0']
@@ -568,7 +581,5 @@ router.post(`/an-de-disagree-reasons-router`, (req, res) => {
     res.redirect(`XXX`)
   }
 })
-
-
 
 module.exports = router

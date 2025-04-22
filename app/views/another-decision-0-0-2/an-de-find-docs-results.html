@@ -1,0 +1,132 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-find-docs-results" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">What additional supporting evidence do they want to send?</h1>
+
+
+
+<!------------H1 LEGEND------------>
+  {% set DynamicHeader %}
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Find a document type</h1>
+  {% endset %}
+<!------------Legend--------------->
+
+<!------------H1 LEGEND------------>
+  {% set DynamicFilter %}
+  {{data["find-document"]}} <a class="govuk-find-doc" href="an-de-find-docs">✕</a>
+  {% endset %}
+<!------------Legend--------------->
+
+      {{ govukInput({
+        label: {
+          html: DynamicHeader
+        },
+        hint: {
+          text: "Start typing and it sort the Docs"
+        },
+        id: "find-document",
+        name: "find-document",
+        classes: "govuk-!-width-two-thirds",
+        value: data["find-document"]
+      }) }}
+
+      {{ govukTag({
+        html: DynamicFilter,
+        classes: "govuk-tag--grey govuk-tag--filter govuk-!-margin-top- govuk-!-margin-bottom-6"
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Search",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-3",
+          href: "an-de-find-docs-results"
+        }) }}
+
+        <a class="govuk-link" href="an-de-find-docs">Clear filter</a>
+      </div>
+
+
+
+
+      <!------------Dynamic checkbox------------>
+
+      {% set DynamicCheckBox %}
+
+      {% if data["find-document"] %}
+        {{data["find-document"]}}
+      {% else %}
+        Document type
+      {% endif %}
+
+      {% endset %}
+
+      <!------------Legend--------------->
+
+
+      {{ govukCheckboxes({
+        idPrefix: "application-evidence-used",
+        name: "application-evidence-used",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Documents",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "Select all that apply."
+        },
+        items: [
+          {
+            value: "1",
+            html: DynamicCheckBox,
+            checked: (data["application-evidence-used"] == "1")
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8",
+        href: "record-foundation-escalation-4"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
