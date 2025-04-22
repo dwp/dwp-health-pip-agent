@@ -49,11 +49,13 @@
         <li>their points could go up or down</li>
       </ul>
 
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">@Rachel Time</p>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Method time</p>
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>Over the phone it could take X</li>
+        <li>Over the phone</li>
         <li>We can also send you a paper form, but this will take longer</li>
         <li>You can get the form from GOV.uk</li>
+        <li>Do it online</li>
+
       </ul>
 
       {{ govukRadios({
@@ -84,6 +86,11 @@
         {
           value: "No",
           text: "No - I dont have time for this",
+          checked: (data["record-foundation-escalation-0"] == "No")
+        },
+        {
+          value: "No",
+          text: "Did you know you can do this online?",
           checked: (data["record-foundation-escalation-0"] == "No")
         }
         ]
