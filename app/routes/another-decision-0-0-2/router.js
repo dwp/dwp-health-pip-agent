@@ -517,5 +517,58 @@ router.post(`/record-foundation-escalation-1-doc-check-router`, (req, res) => {
   }
 })
 
+router.post(`/record-foundation-escalation-0-router`, (req, res) => {
+  const recordEscalationCheckToContinue = req.session.data['record-foundation-escalation-0']
+
+  if (recordEscalationCheckToContinue == 'Yes') {
+    res.redirect(`an-de-disagree-reasons`)
+  }
+  else if (recordEscalationCheckToContinue == 'No') {
+    res.redirect(`an-de-callback`)
+  }
+  else if (recordEscalationCheckToContinue == 'PaperForm') {
+    res.redirect(`an-de-send-form`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/an-de-disagree-reasons-router`, (req, res) => {
+  const anDEdisagreeReasons = req.session.data['an-de-disagree-reasons']
+
+  if (anDEdisagreeReasons == '1') {
+    res.redirect(`an-de-disagree-reasons-points`)
+  }
+  else if (anDEdisagreeReasons == 'Start') {
+    res.redirect(`an-de-warmhandover`)
+  }
+  else if (anDEdisagreeReasons == 'QP') {
+    res.redirect(`an-de-warmhandover`)
+  }
+  else if (anDEdisagreeReasons == 'PT') {
+    res.redirect(`an-de-warmhandover`)
+  }
+  else if (anDEdisagreeReasons == 'Doc') {
+    res.redirect(`XXX`)
+  }
+  else if (anDEdisagreeReasons == 'Points') {
+    res.redirect(`an-de-points-reasons`)
+  }
+  else if (anDEdisagreeReasons == 'Award') {
+    res.redirect(`an-de-warmhandover`)
+  }
+  else if (anDEdisagreeReasons == 'Payments') {
+    res.redirect(`an-de-warmhandover`)
+  }
+  else if (anDEdisagreeReasons == 'Report') {
+    res.redirect(`XXX`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 module.exports = router

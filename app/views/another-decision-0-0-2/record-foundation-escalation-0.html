@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="record-foundation-escalation-2" method="post" class="form">
+<form action="record-foundation-escalation-0-router" method="post" class="form">
 
   {% include "agent-day-0-1-8/record-id-base.html" %}
 
@@ -49,6 +49,13 @@
         <li>their points could go up or down</li>
       </ul>
 
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">@Rachel Time</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>Over the phone it could take X</li>
+        <li>We can also send you a paper form, but this will take longer</li>
+        <li>You can get the form from GOV.uk</li>
+      </ul>
+
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
         idPrefix: "record-foundation-escalation-0",
@@ -65,14 +72,19 @@
         },
         items: [
         {
-          value: "Agree",
+          value: "Yes",
           text: "Yes",
-          checked: (data["record-foundation-escalation-0"] == "Agree")
+          checked: (data["record-foundation-escalation-0"] == "Yes")
         },
         {
-          value: "Disagree",
-          text: "No",
-          checked: (data["record-foundation-escalation-0"] == "Disagree")
+          value: "PaperForm",
+          text: "No - I would like todo it using a paper form",
+          checked: (data["record-foundation-escalation-0"] == "PaperForm")
+        },
+        {
+          value: "No",
+          text: "No - I dont have time for this",
+          checked: (data["record-foundation-escalation-0"] == "No")
         }
         ]
         }) }}
