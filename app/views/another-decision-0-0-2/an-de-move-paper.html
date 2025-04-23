@@ -31,22 +31,67 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">I'll send you a copy or you can get it from GOV.uk</h1>
-
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>XXX</b>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Tell us in writing why they disagree with their decision </h1>
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>Give URL</li>
-        <li>Send form from notify</li>
-        <li>Send form via paper</li>
-
+      <li>go to the GOV.UK website</li>
+      <li>click on the magnifying glass in the top right corner of the page</li>
+      <li>search for CRMR1</li>
+      <li>download and complete the mandatory reconsideration request form with the details of why they disagree with our decision</li>
+      <li>post it back to the address in the form</li>
       </ul>
 
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-overview",
+        name: "an-de-overview",
+        fieldset: {
+          legend: {
+            html: "How would they like to receive the mandatory reconsideration request form?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "By post",
+          hint: {
+            text: "It may take up to 3 weeks to arrive"},
+          checked: (data["an-de-overview"] == "Yes")
+
+        },
+        {
+          value: "NoTime",
+          text: "By email",
+          hint: {
+            text: "It will arrive almost immediately"},
+          checked: (data["an-de-overview"] == "NoTime")
+        },
+        {
+          value: "MoveOnline",
+          text: "By download ",
+          hint: {
+            text: "Visit GOV.UK and search for CRMR1"},
+          checked: (data["an-de-overview"] == "MoveOnline")
+        }
+        ]
+        }) }}
 
 
       {{ govukButton({
-        text: "Finish and close",
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
+
 
         </div>
       </div>
