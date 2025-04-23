@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="record-foundation-escalation-0-router" method="post" class="form">
+<form action="an-de-overview-router" method="post" class="form">
 
   {% include "agent-day-0-1-8/record-id-base.html" %}
 
@@ -51,20 +51,20 @@
 
       <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Method time</p>
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>Over the phone</li>
-        <li>We can also send you a paper form, but this will take longer</li>
+        <li>Over the phone, this will be 20 - 50 mins depending on, on average 30 ish</li>
+        <li>We can also send you a paper form, but this will take longer, roughly 1 weeks</li>
         <li>You can get the form from GOV.uk</li>
-        <li>Do it online</li>
+        <li>Do it online, using your login details you had when you applied</li>
 
       </ul>
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "record-foundation-escalation-0",
-        name: "record-foundation-escalation-0",
+        idPrefix: "an-de-overview",
+        name: "an-de-overview",
         fieldset: {
           legend: {
-            html: "Do they want to continue?",
+            html: "Do they want to continue over the phone?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -76,22 +76,22 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["record-foundation-escalation-0"] == "Yes")
+          checked: (data["an-de-overview"] == "Yes")
         },
         {
-          value: "PaperForm",
+          value: "MoveOnline",
+          text: "No – I want to do this online",
+          checked: (data["an-de-overview"] == "MoveOnline")
+        },
+        {
+          value: "NoPaper",
           text: "No - I would like todo it using a paper form",
-          checked: (data["record-foundation-escalation-0"] == "PaperForm")
+          checked: (data["an-de-overview"] == "NoPaper")
         },
         {
-          value: "No",
+          value: "NoTime",
           text: "No - I dont have time for this",
-          checked: (data["record-foundation-escalation-0"] == "No")
-        },
-        {
-          value: "No",
-          text: "Did you know you can do this online?",
-          checked: (data["record-foundation-escalation-0"] == "No")
+          checked: (data["an-de-overview"] == "NoTime")
         }
         ]
         }) }}
