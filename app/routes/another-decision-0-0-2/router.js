@@ -487,7 +487,7 @@ router.post(`/record-foundation-application-overview-router`, (req, res) => {
     res.redirect(`XXX`)
   }
   else if (recordOverviewRouter == '2') {
-    res.redirect(`record-foundation-escalation-0`)
+    res.redirect(`an-de-overview`)
   }
   else if (recordOverviewRouter == '3') {
     res.redirect(`XXX`)
