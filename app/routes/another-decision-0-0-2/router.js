@@ -530,22 +530,45 @@ router.post(`/an-de-select-docs-router`, (req, res) => {
 
 
 
-router.post(`/record-foundation-escalation-0-router`, (req, res) => {
-  const recordEscalationCheckToContinue = req.session.data['record-foundation-escalation-0']
+router.post(`/an-de-overview-router`, (req, res) => {
+  const recordEscalationCheckToContinue = req.session.data['an-de-overview']
 
   if (recordEscalationCheckToContinue == 'Yes') {
-    res.redirect(`an-de-disagree-reasons`)
+    res.redirect(`an-de-letter-check`)
   }
-  else if (recordEscalationCheckToContinue == 'No') {
+  else if (recordEscalationCheckToContinue == 'NoPaper') {
+    res.redirect(`an-de-move-paper`)
+  }
+  else if (recordEscalationCheckToContinue == 'NoTime') {
     res.redirect(`an-de-callback`)
   }
-  else if (recordEscalationCheckToContinue == 'PaperForm') {
-    res.redirect(`an-de-send-form`)
+  else if (recordEscalationCheckToContinue == 'MoveOnline') {
+    res.redirect(`an-de-move-online`)
   }
    else {
     res.redirect(`XXX`)
   }
 })
+
+router.post(`/an-de-letter-check-router`, (req, res) => {
+  const anDeLetterCheck = req.session.data['an-de-letter-check']
+
+  if (anDeLetterCheck == 'Yes') {
+    res.redirect(`an-de-disagree-reasons`)
+  }
+  else if (anDeLetterCheck == 'No') {
+    res.redirect(`an-de-warmhandover-check`)
+  }
+  else if (anDeLetterCheck == 'NoLetter') {
+    res.redirect(`an-de-callback`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
 
 router.post(`/an-de-disagree-reasons-router`, (req, res) => {
   const anDEdisagreeReasons = req.session.data['an-de-disagree-reasons']
