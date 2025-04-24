@@ -60,19 +60,19 @@
         value: data["find-document"]
       }) }}
 
-      {{ govukTag({
+      <!-- {{ govukTag({
         html: DynamicFilter,
         classes: "govuk-tag--grey govuk-tag--filter govuk-!-margin-top- govuk-!-margin-bottom-6"
-      }) }}
+      }) }} -->
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Apply Filter",
-          classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-3",
+          text: "Apply filter",
+          classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-0",
           href: "an-de-find-docs-results"
         }) }}
 
-        <!-- <a class="govuk-link" href="an-de-find-docs">Clear all filters</a> -->
+        <a class="govuk-link" href="an-de-find-docs">Clear filter</a>
       </div>
 
 

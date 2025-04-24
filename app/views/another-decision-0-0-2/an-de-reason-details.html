@@ -116,6 +116,26 @@
 
 <!-- —————————— -->
 
+            {% if data["an-de-points-reasons"] == "3" %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "3",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
 
 
         {% else %}
