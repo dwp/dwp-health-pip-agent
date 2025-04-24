@@ -568,12 +568,15 @@ router.post(`/an-de-letter-check-router`, (req, res) => {
 })
 
 
-
+// From colin about selecting more than one
 
 router.post(`/an-de-disagree-reasons-router`, (req, res) => {
   const anDEdisagreeReasons = req.session.data['an-de-disagree-reasons']
 
-  if (anDEdisagreeReasons == '1') {
+if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.length > 1  ) {
+    res.redirect("an-de-warmhandover")
+  }
+  else if (anDEdisagreeReasons == '1') {
     res.redirect(`an-de-disagree-reasons-points`)
   }
   else if (anDEdisagreeReasons == 'Start') {
@@ -601,7 +604,7 @@ router.post(`/an-de-disagree-reasons-router`, (req, res) => {
     res.redirect(`XXX`)
   }
    else {
-    res.redirect(`XXX`)
+    res.redirect(`an-de-warmhandover`)
   }
 })
 
