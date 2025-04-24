@@ -82,7 +82,7 @@
 
 
 
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">1 document type found</h1>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">1 document type found using filter</h1>
 
     <!-- <p class="govuk-body govuk-!-margin-bottom-2">"{{data["find-document"]}}"</p> -->
 
@@ -150,10 +150,10 @@
             value: data["find-document"]
           }) }}
 
-          {{ govukTag({
+          <!-- {{ govukTag({
             html: DynamicFilter,
             classes: "govuk-tag--grey govuk-tag--filter govuk-!-margin-top- govuk-!-margin-bottom-6"
-          }) }}
+          }) }} -->
 
           <div class="govuk-button-group">
             {{ govukButton({
@@ -162,7 +162,7 @@
               href: "an-de-find-docs-results-alt1"
             }) }}
 
-            <!-- <a class="govuk-link" href="an-de-find-docs-alt1">Clear all filters</a> -->
+            <a class="govuk-link" href="an-de-find-docs-alt1">Clear filter</a>
           </div>
 
 
