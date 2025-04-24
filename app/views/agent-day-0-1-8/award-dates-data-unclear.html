@@ -19,11 +19,15 @@
 
 
 
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The assessment provider has selected 'other' review period</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">The assessment provider selected 'other' award review period</h1>
 
         <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Problem context: The service can not tell what has been written, it might be really clear... also might not</p> -->
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Assessment report provider stated: <b>12th March 2027</b></p>
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The assessment provider report completed on  12 3 2007 stated:</p>
+
+          <div class="govuk-inset-text">
+  Review again in March 2027
+</div>
 
 
 <!--
@@ -36,31 +40,20 @@
  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Assessment report was completed on provider date: <b>12th March 2027</b></p> -->
 
 
-        <p class="govuk-body govuk-!-margin-bottom-2"><b>Help to select the right date</b></p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>
-            If no day, then assessment report completed day
-          </li>
-          <li>
-            If no day and month, then assessment report completed day and month
-          </li>
-          <li>
-            If no month, then assessment report completed month
-          </li>
-        </ul>
+
 
       {{ govukDateInput({
         id: "award-dates-applicaiton-start-date",
         namePrefix: "award-dates-applicaiton-start-date",
         fieldset: {
           legend: {
-            html: "Enter date claim should be reviewed",
+            html: "Enter the date the award should be reviewed",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
           }
         },
         hint: {
-          html: "Assessment report was completed on provider date: <b>12 3 2027</b>"
+          html: "If the report does not include a day or month for the award review, use the same day or month the report was completed."
         },
         items: [
           {
