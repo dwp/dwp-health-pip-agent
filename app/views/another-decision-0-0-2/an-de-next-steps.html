@@ -36,14 +36,38 @@
 
       {% if data["an-de-doc-check"] == "YesAdvanced" or data["an-de-doc-check"] == "YesBasic" %}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>They have told us they're going to send us additional supporting evidence</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>They have told us they will send additional supporting evidence:<b></p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>GP letter</li>
+        <li>type A</li>
+        <li>other stuff</li>
+      </ul>
+
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This can be done either online or by post.</>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Uploading additional supporting evidence online <b></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
+
+  <div class="govuk-inset-text">
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><ul><li>go to GOV.UK</li>
+    <li>log in using the details from when you applied</li>
+  <li>select 'Upload evidence to support your PIP claim'</li> </ul> </p>
+  </div>
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><b>Address for sending additional supporting evidence by post<b></p>
+  <div class="govuk-inset-text">
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Freepost RTEU-HBEC-RGTG</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Personal Independence Payment 1</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Mail Handling Site A</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Wolverhampton</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">WV98 1AA</p>
+  </div>
+
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:
       <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>to only send information about how their health condition or disability affects their daily life</li>
         <li>to only send photocopies as we cannot return documents</li>
         <li>to write their full name and reference number on the top of each photocopy they send</li>
-        <li>we will contact them in 2 weeks if we have not received the documents</li>
-        <li>if they do not send their additional supporting evidence, we will reconsider the decision based on what we currently know and understand</li>
       </ul>
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Supporting evidence they said they're going to send<b></p>
@@ -53,39 +77,28 @@
         <li>other stuff</li>
       </ul>
 
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Uploading evidence <b></p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">What about digital?</p>
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Use pip.com/login</p>
-      </div>
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><b>Address for sending additional supporting evidence<b></p>
-      <div class="govuk-inset-text">
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Freepost RTEU-HBEC-RGTG</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Personal Independence Payment 1</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Mail Handling Site A</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Wolverhampton</p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">WV98 1AA</p>
-      </div>
+
 
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Explain what will happen next<b></p>
         <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
         <li>once we've received the additional supporting evidence, someone will look at all the information again and make another decision </li>
         <li>we may have to contact XYZ</li>
+        <li>if they do not send their additional supporting evidence, we will reconsider the decision based on what we currently know and understand</li>
         <li>they will get a letter called a Mandatory Reconsideration Notice telling them whether we've changed the decision</li>
-        <li>time taken</li>
+        <li>they should receive this within 15 weeks</li>
       </ul>
       {% else %}
 
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Explain what will happen next</b>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Explain that:
         <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
-          <li>as they did not send any additional supporting evidence, the decision will be reconsidered based on what we currently know and understand</li>
+          <li>as they did not want to send any additional supporting evidence, their decision will be reconsidered based on what we currently know and understand</li>
           <li>someone will look at all the information again and make another decision </li>
-          <li>we may have to contact XYZ</li>
+          <li>we may have to contact them for further information</li>
           <li>they will get a letter called a Mandatory Reconsideration Notice telling them whether we've changed the decision</li>
-          <li>time taken</li>
+          <li>they should receive this within 15 weeks</li>
         </ul>
 
 
@@ -94,7 +107,7 @@
       {% endif %}
 
       {{ govukButton({
-        text: "Continue",
+        text: "Finish and close",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 

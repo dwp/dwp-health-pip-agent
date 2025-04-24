@@ -38,7 +38,7 @@
           classes: "govuk-checkboxes",
           fieldset: {
             legend: {
-              text: "Which activities do they think they were given incorrect points for?",
+              text: "Which activities do they disagree with, based on the points given?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -46,7 +46,8 @@
           hint: {
             html: "Select all that apply."
           },
-          items: [
+
+        items: [
             {
               value: "1",
               text: "Preparing food",
@@ -54,12 +55,12 @@
             },
             {
               value: "2",
-              text: "Taking nutrition",
+              text: "Eating and drinking",
               checked: (data["an-de-points-reasons"] == "2")
             },
             {
               value: "3",
-              text: "Managing therapy or monitoring a health condition",
+              text: "Managing treatments",
               checked: (data["an-de-points-reasons"] == "3")
             },
             {
@@ -69,7 +70,7 @@
             },
             {
               value: "5",
-              text: "Managing toilet needs or incontinence",
+              text: "Using the toilet or managing incontinence",
               checked: (data["an-de-points-reasons"] == "5")
             },
             {
@@ -79,22 +80,22 @@
             },
             {
               value: "7",
-              text: "Communicating verbally",
+              text: "Talking, listening and understanding",
               checked: (data["an-de-points-reasons"] == "7")
             },
             {
               value: "8",
-              text: "Reading and understanding signs, symbols and words",
+              text: "Reading",
               checked: (data["an-de-points-reasons"] == "8")
             },
             {
               value: "9",
-              text: "Engaging with other people face to face",
+              text: "Mixing with other people",
               checked: (data["an-de-points-reasons"] == "9")
             },
             {
               value: "10",
-              text: "Making budgeting decisions",
+              text: "Managing your money",
               checked: (data["an-de-points-reasons"] == "10")
             },
             {
