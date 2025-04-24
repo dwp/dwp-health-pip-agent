@@ -445,7 +445,7 @@
 
     <!------------H1 LEGEND------------>
       {% set DynamicHeader %}
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Find a document type</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Filter document types</h1>
       {% endset %}
     <!------------Legend--------------->
 
@@ -454,7 +454,7 @@
         html: DynamicHeader
       },
       hint: {
-        text: "Start typing the name of the document you're looking for - does it need the Search button or does it not just automatically do it? "
+        text: ""
       },
       id: "find-document",
       name: "find-document",
@@ -464,7 +464,7 @@
 
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Search ",
+              text: "Apply filter",
               classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-0"
             }) }}
 

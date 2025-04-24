@@ -80,7 +80,12 @@
 
     {% set dynamicResultsHeader %}
 
-    Documents filtered 1
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">1 document type found</h1>
+
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2">"{{data["find-document"]}}"</p> -->
+
 
     {% endset %}
 
@@ -122,7 +127,7 @@
 
     <!------------H1 LEGEND------------>
       {% set DynamicHeader %}
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Find a document type</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Filter document types</h1>
       {% endset %}
     <!------------Legend--------------->
 
@@ -137,7 +142,7 @@
               html: DynamicHeader
             },
             hint: {
-              text: "Start typing and it sort the Docs"
+              text: ""
             },
             id: "find-document",
             name: "find-document",
@@ -152,12 +157,12 @@
 
           <div class="govuk-button-group">
             {{ govukButton({
-              text: "Search",
+              text: "Apply filter",
               classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-3",
               href: "an-de-find-docs-results-alt1"
             }) }}
 
-            <a class="govuk-link" href="an-de-find-docs-alt1">Clear all filters</a>
+            <!-- <a class="govuk-link" href="an-de-find-docs-alt1">Clear all filters</a> -->
           </div>
 
 
