@@ -74,7 +74,7 @@
 
         {% if data["an-de-disagree-reasons"] == "Points" %}
 
-            {% if data["an-de-points-reasons"] == "1" %}
+           {% if data["an-de-points-reasons"] == "1" or "1" in data["an-de-points-reasons"] %}
 
             {{ govukTextarea({
               name: "an-de-preparing-food",
