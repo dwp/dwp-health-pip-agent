@@ -506,6 +506,9 @@ router.post(`/an-de-doc-check-router`, (req, res) => {
   if (anDeDocCheck == 'YesAdvanced') {
     res.redirect(`an-de-find-docs`)
   }
+  else if (anDeDocCheck == 'YesAdvancedAlt1') {
+    res.redirect(`an-de-find-docs-alt1`)
+  }
   else if (anDeDocCheck == 'YesBasic') {
     res.redirect(`an-de-select-docs`)
   }

@@ -37,7 +37,7 @@
 
 <!------------H1 LEGEND------------>
   {% set DynamicHeader %}
-  <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Find a document type</h1>
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Filter document types</h1>
   {% endset %}
 <!------------Legend--------------->
 
@@ -52,7 +52,7 @@
           html: DynamicHeader
         },
         hint: {
-          text: "Start typing and it sort the Docs"
+          text: ""
         },
         id: "find-document",
         name: "find-document",
@@ -67,12 +67,12 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Search",
+          text: "Apply Filter",
           classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-3",
           href: "an-de-find-docs-results"
         }) }}
 
-        <a class="govuk-link" href="an-de-find-docs">Clear all filters</a>
+        <!-- <a class="govuk-link" href="an-de-find-docs">Clear all filters</a> -->
       </div>
 
 
@@ -99,7 +99,7 @@
         classes: "govuk-checkboxes",
         fieldset: {
           legend: {
-            text: "Documents",
+            text: "1 document type found",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -118,11 +118,6 @@
 
 
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8",
-        href: "an-de-next-steps"
-      }) }}
 
         </div>
       </div>
