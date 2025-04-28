@@ -95,7 +95,7 @@
 
 <!-- —————————— -->
 
-            {% if data["an-de-points-reasons"] == "2" %}
+{% if data["an-de-points-reasons"] == "2" or "2" in data["an-de-points-reasons"] %}
 
               {{ govukTextarea({
                 name: "an-de-taking-nutrition",
@@ -116,14 +116,14 @@
 
 <!-- —————————— -->
 
-            {% if data["an-de-points-reasons"] == "3" %}
+{% if data["an-de-points-reasons"] == "3" or "3" in data["an-de-points-reasons"] %}
 
               {{ govukTextarea({
                 name: "an-de-taking-nutrition",
                 id: "an-de-taking-nutrition",
                 rows: "4",
                 label: {
-                  text: "3",
+                  text: "Managing treatments",
                   classes: "govuk-label--s",
                   isPageHeading: true
                 },
@@ -138,8 +138,203 @@
             <!-- —————————— -->
 
 
-        {% else %}
-        {% endif %}
+
+{% if data["an-de-points-reasons"] == "4" or "4" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Washing and bathing",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+{% if data["an-de-points-reasons"] == "5" or "5" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Using the toilet or managing incontinence",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+
+{% if data["an-de-points-reasons"] == "6" or "6" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Dressing and undressing",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+
+{% if data["an-de-points-reasons"] == "7" or "7" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Talking, listening and understanding",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+
+{% if data["an-de-points-reasons"] == "8" or "8" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Reading",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+
+{% if data["an-de-points-reasons"] == "9" or "9" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Mixing with other people",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+<!-- —————————— -->
+
+{% if data["an-de-points-reasons"] == "10" or "10" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Managing your money",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+{% if data["an-de-points-reasons"] == "11" or "11" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Planning and following journeys",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+{% if data["an-de-points-reasons"] == "12" or "12" in data["an-de-points-reasons"] %}
+
+              {{ govukTextarea({
+                name: "an-de-taking-nutrition",
+                id: "an-de-taking-nutrition",
+                rows: "4",
+                label: {
+                  text: "Moving around",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+            {% else %}
+            {% endif %}
+
+            <!-- —————————— -->
+
+
+                {% else %}
+                {% endif %}
 
 </div>
 
