@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="an-de-disagree-reasons-router" method="post" class="form">
+<form action="an-de-points-reasons" method="post" class="form">
 
   {% include "agent-day-0-1-8/record-id-base.html" %}
 
@@ -31,13 +31,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
         {{ govukCheckboxes({
           idPrefix: "an-de-disagree-reasons",
           name: "an-de-disagree-reasons",
           classes: "govuk-checkboxes",
           fieldset: {
             legend: {
-              text: "Which part of their decision do they disagree with?",
+              text: "Which dates did you have issues with?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -46,41 +47,33 @@
             html: "Select all that apply."
           },
           items: [
-          {
-            value: "Points",
-            text: "Points given for one or more of the activities",
-            checked: (data["an-de-disagree-reasons"] == "Points")
-          },
-
             {
-              value: "Dates",
-              text: "Dates mentioned in the decision letter",
-              checked: (data["an-de-disagree-reasons"] == "Dates")
-            },
-
-            {
-              value: "Report",
-              text: "Healthcare professional report - do they even get to see this? Or is it just snippets in the decision letter like 'the Ap said you were whatever'?",
-              checked: (data["an-de-disagree-reasons"] == "Report")
-            },
-
-            {
-              value: "Award",
-              text: "Length of the award period",
-              checked: (data["an-de-disagree-reasons"] == "Award")
+              value: "Start",
+              text: "Start date or inline without hint?",
+              checked: (data["an-de-disagree-reasons"] == "Start"),
+              hint: {
+                text: "What this means"
+              }
             },
             {
-              value: "Doc",
-              text: "Evidence used to make the decision",
-              checked: (data["an-de-disagree-reasons"] == "Doc")
+              value: "QP",
+              text: "Qualifying period",
+              checked: (data["an-de-disagree-reasons"] == "QP"),
+              hint: {
+                text: "What this means"
+              }
             },
             {
-              value: "Payments",
-              text: "Payment amounts including arrears",
-              checked: (data["an-de-disagree-reasons"] == "Payments")
+              value: "PT",
+              text: "Prospective test",
+              checked: (data["an-de-disagree-reasons"] == "PT"),
+              hint: {
+                text: "What this means"
+              }
             }
           ]
         }) }}
+
 
       {{ govukButton({
         text: "Continue",
