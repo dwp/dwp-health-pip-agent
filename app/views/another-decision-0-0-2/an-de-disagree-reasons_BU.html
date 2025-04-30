@@ -31,6 +31,89 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+        {{ govukCheckboxes({
+          idPrefix: "an-de-disagree-reasons",
+          name: "an-de-disagree-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which part of their decision do they disagree with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Start",
+              text: "Start date or inline without hint?",
+              checked: (data["an-de-disagree-reasons"] == "Start"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "QP",
+              text: "Qualifying period",
+              checked: (data["an-de-disagree-reasons"] == "QP"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "PT",
+              text: "Prospective test",
+              checked: (data["an-de-disagree-reasons"] == "PT"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Doc",
+              text: "Documents",
+              checked: (data["an-de-disagree-reasons"] == "Doc"),
+              hint: {
+                text: "The docuemnts we have that you've sent in, nowt else"
+              }
+            },
+            {
+              value: "Report",
+              text: "Healthcare professional report",
+              checked: (data["an-de-disagree-reasons"] == "Report"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Points",
+              text: "Points given",
+              checked: (data["an-de-disagree-reasons"] == "Points"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Award",
+              text: "How long they have been awarded PIP for",
+              checked: (data["an-de-disagree-reasons"] == "Award"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "Payments",
+              text: "Award amounts We mean money, arrears, payments in your account",
+              checked: (data["an-de-disagree-reasons"] == "Payments"),
+              hint: {
+                text: "What this means"
+              }
+            }
+          ]
+        }) }}
+
         {{ govukCheckboxes({
           idPrefix: "an-de-disagree-reasons",
           name: "an-de-disagree-reasons",

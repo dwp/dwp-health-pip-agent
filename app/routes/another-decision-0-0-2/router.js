@@ -579,17 +579,14 @@ router.post(`/an-de-disagree-reasons-router`, (req, res) => {
 if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.length > 1  ) {
     res.redirect("an-de-warmhandover")
   }
+  else if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.includes ('Dates') ) {
+      res.redirect("an-de-disagree-dates")
+  }
   else if (anDEdisagreeReasons == '1') {
     res.redirect(`an-de-disagree-reasons-points`)
   }
-  else if (anDEdisagreeReasons == 'Start') {
-    res.redirect(`an-de-warmhandover`)
-  }
-  else if (anDEdisagreeReasons == 'QP') {
-    res.redirect(`an-de-warmhandover`)
-  }
-  else if (anDEdisagreeReasons == 'PT') {
-    res.redirect(`an-de-warmhandover`)
+  else if (anDEdisagreeReasons == 'Dates') {
+    res.redirect(`an-de-disagree-dates`)
   }
   else if (anDEdisagreeReasons == 'Doc') {
     res.redirect(`XXX`)
