@@ -576,11 +576,12 @@ router.post(`/an-de-letter-check-router`, (req, res) => {
 router.post(`/an-de-disagree-reasons-router`, (req, res) => {
   const anDEdisagreeReasons = req.session.data['an-de-disagree-reasons']
 
-if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.length > 1  ) {
-    res.redirect("an-de-warmhandover")
+  if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.includes ('Dates')  && anDEdisagreeReasons.length === 2 ) {
+    console.log("VERY SPECIAL ROUTE");
+    res.redirect("an-de-disagree-dates");
   }
-  else if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.includes ('Dates') ) {
-      res.redirect("an-de-disagree-dates")
+  else if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.length > 1  ) {
+    res.redirect("an-de-warmhandover?points-redirect")
   }
   else if (anDEdisagreeReasons == '1') {
     res.redirect(`an-de-disagree-reasons-points`)
