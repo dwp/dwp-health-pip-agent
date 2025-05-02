@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Between 30 September 2024 and today. <a href="timeselection-preset" class="govuk-link" rel="X" target="">Change dates</a>.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+      <div class="govuk-grid-column-one-third ">
+        {% include "agent-stats-0-4/service-stats-menu.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Applications in progress in PIP Apply</h2>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Between 9 February 2023 and 19 September 2023.</p> -->
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Applications in progress in PIP Apply</h3>
+
+
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total</p>
+                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">17</p>
+
+                        </div>
+
+                        </div>
+
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of 17 applications in progress</h3>
+
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Application started (Registration)</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">0</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Started health information gather (HIG)</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">17</p>
+                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
