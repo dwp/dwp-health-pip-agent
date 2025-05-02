@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  HAS service statistics
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Service statistics</h1>
+    {% include "agent-stats-0-3/timeselection-chosen.html" %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-9">Updated today at 8:30am</p>
+
+
+
+    <div class="govuk-grid-row govuk-!-padding-top-2">
+      <div class="govuk-grid-column-one-third ">
+        {% include "agent-stats-0-3/has-service-stats-menu.html" %}
+      </div>
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-8">Completed referrals by Lot in HAS </h2>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Between 9 February 2023 and 19 September 2023.</p> -->
+
+
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-half">
+                          <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-3">Completed referrals<br>by all Lots</h3>
+
+
+                        </div>
+                        <div class="govuk-grid-column-one-half">
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Total</p>
+                          <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">500</p>
+
+                        </div>
+
+                        </div>
+
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible  govuk-section-break--visible-seperator">
+
+
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Breakdown of 500 completed referrals by Lot</h3>
+
+                      </div>
+                      <div class="govuk-grid-column-one-half">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">DWP (Lot 100)</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">450</p>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Capita (Lot 2)</p>
+                      <p class="govuk-body govuk-heading-st govuk-!-margin-bottom-0">50</p>
+                      <!-- <h3 class="govuk-body govuk-!-font-size-48 govuk-!-margin-bottom-0">14,000</h3> -->
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
