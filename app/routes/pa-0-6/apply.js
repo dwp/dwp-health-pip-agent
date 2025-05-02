@@ -193,7 +193,10 @@ router.post(`/id-scenario-selection-router`, (req, res) => {
   else if (invidedScenarioSelection == 'Scenario1') {
     res.redirect(`cya`)
   }
-  else if (invidedScenarioSelection == 'Scenario2') {
+  else if (invidedScenarioSelection == 'Scenario2a') {
+    res.redirect(`cya`)
+  }
+  else if (invidedScenarioSelection == 'Scenario2b') {
     res.redirect(`cya`)
   }
    else {

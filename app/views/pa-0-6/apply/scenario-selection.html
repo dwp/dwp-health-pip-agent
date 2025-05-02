@@ -36,13 +36,18 @@
         },
         {
           value: "Scenario1",
-          html: "Scenario 1: Post deployment Welsh, tell them its in English but cant change",
+          html: "Scenario 1: Defaulted to English allow for change",
           checked: (data["id-scenario-selection"] == "Scenario1")
         },
         {
-          value: "Scenario2",
-          html: "Scenario 2: Pre deployment Welsh / Dont tell them what lanauge it is, reissue of link",
-          checked: (data["id-scenario-selection"] == "Scenario2")
+          value: "Scenario2a",
+          html: "Scenario 2a: Show previous",
+          checked: (data["id-scenario-selection"] == "Scenario2a")
+        },
+        {
+          value: "Scenario2b",
+          html: "Scenario 2b: Show nothing",
+          checked: (data["id-scenario-selection"] == "Scenario2b")
         }
         ]
       }) }}

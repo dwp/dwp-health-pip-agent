@@ -189,6 +189,30 @@ They can do XYZ
               items: [
                 {
                   href: "applicant-details-capture",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% elif data["id-scenario-selection"] == "Scenario2a" %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "A Language they want to continue their application in"
+            },
+            value: {
+              html: "English or Welsh (Previous)"
+            },
+            actions: {
+              items: [
+                {
+                  href: "applicant-details-capture",
                   text: "",
                   visuallyHiddenText: "name"
                 }
@@ -197,6 +221,9 @@ They can do XYZ
           }
         ]
       }) }}
+
+      {% elif data["id-scenario-selection"] == "Scenario2b" %}
+
 
       {% else %}
       {% endif %}
