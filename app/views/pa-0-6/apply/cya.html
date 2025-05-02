@@ -33,7 +33,17 @@
   {% endset %}
 <!------------Legend--------------->
 
+
+      {% if data["id-scenario-selection"] == "Senario2" %}
+
+They can do XYZ
+
+      {% else %}
+      {% endif %}
+
+
       {{ govukSummaryList({
+        classes: "govuk-!-margin-bottom-0",
         rows: [
           {
             key: {
@@ -45,7 +55,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -62,7 +72,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -79,7 +89,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -96,7 +106,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -113,7 +123,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -130,13 +140,20 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
               ]
             }
-          },
+          }
+        ]
+      }) }}
+
+      {% if data["id-scenario-selection"] == "Scenario0" %}
+
+      {{ govukSummaryList({
+        rows: [
           {
             key: {
               text: "Language they want to continue their application in"
@@ -147,7 +164,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "applicant-details-capture",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -157,37 +174,40 @@
         ]
       }) }}
 
+      {% elif data["id-scenario-selection"] == "Scenario1" %}
 
-      <!-- {
-        key: {
-          text: "Lives in Wales"
-        },
-        value: {
-          html: data["applicant-details-capture-lives-wales"]
-        },
-        actions: {
-          items: [
-            {
-              href: "#",
-              text: "Change",
-              visuallyHiddenText: "name"
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Language they want to continue their application in"
+            },
+            value: {
+              html: data["applicant-welsh-check"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "applicant-details-capture",
+                  text: "",
+                  visuallyHiddenText: "name"
+                }
+              ]
             }
-          ]
-        }
-      }, -->
-
-
-      {% if data["check-outcome"] == "Yes" %}
+          }
+        ]
+      }) }}
 
       {% else %}
-
-
       {% endif %}
+
+
+
 
 
       {{ govukButton({
         text: "Send email invitation",
-        classes: "govuk-!-margin-bottom-8"
+        classes: "govuk-!-margin-top-8 govuk-!-margin-bottom-8"
       }) }}
 
     </div>

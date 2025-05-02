@@ -1,0 +1,59 @@
+{% extends "layout-apply.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="id-scenario-selection-router" method="post" class="form">
+
+
+      {{ govukRadios({
+        idPrefix: "id-scenario-selection",
+        name: "id-scenario-selection",
+        fieldset: {
+          legend: {
+            html: "Select a scenario",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Scenario0",
+          html: "Scenario 0: New, capture detials for first time",
+          checked: (data["id-scenario-selection"] == "Scenario0")
+        },
+        {
+          value: "Scenario1",
+          html: "Scenario 1: Post deployment Welsh, tell them its in English but cant change",
+          checked: (data["id-scenario-selection"] == "Scenario1")
+        },
+        {
+          value: "Scenario2",
+          html: "Scenario 2: Pre deployment Welsh / Dont tell them what lanauge it is, reissue of link",
+          checked: (data["id-scenario-selection"] == "Scenario2")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}

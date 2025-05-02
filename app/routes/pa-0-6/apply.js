@@ -184,6 +184,24 @@ router.post(`/applicant-details-capture-router`, (req, res) => {
   }
 })
 
+router.post(`/id-scenario-selection-router`, (req, res) => {
+  const invidedScenarioSelection = req.session.data['id-scenario-selection']
+
+  if (invidedScenarioSelection == 'Scenario0') {
+    res.redirect(`find-someone`)
+  }
+  else if (invidedScenarioSelection == 'Scenario1') {
+    res.redirect(`cya`)
+  }
+  else if (invidedScenarioSelection == 'Scenario2') {
+    res.redirect(`cya`)
+  }
+   else {
+    res.redirect(`find-someone`)
+  }
+})
+
+
 
 
 module.exports = router
