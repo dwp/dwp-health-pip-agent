@@ -181,6 +181,8 @@
       <!------------Legend--------------->
 
 
+      {% if data["id-scenario-selection"] == "Scenario0" %}
+
       {{ govukRadios({
         idPrefix: "applicant-welsh-check",
         name: "applicant-welsh-check",
@@ -209,6 +211,10 @@
 
         ]
       }) }}
+
+
+      {% else %}
+      {% endif %}
 
 
 
