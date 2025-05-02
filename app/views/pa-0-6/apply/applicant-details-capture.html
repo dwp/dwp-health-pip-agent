@@ -212,6 +212,47 @@
         ]
       }) }}
 
+      {% elif data["id-scenario-selection"] == "Scenario1" %}
+
+
+      {{ govukRadios({
+        idPrefix: "applicant-welsh-check",
+        name: "applicant-welsh-check",
+        fieldset: {
+          legend: {
+            html: legendLIVESWALES,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: legendHINT
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "English",
+          text: "English",
+          checked: (data["applicant-welsh-check"] == "English")
+        },
+        {
+          value: "Welsh",
+          text: "Welsh",
+          checked: (data["applicant-welsh-check"] == "Welsh")
+        }
+
+        ]
+      }) }}
+
+      {% elif data["id-scenario-selection"] == "Scenario2a" %}
+
+
+
+      {% elif data["id-scenario-selection"] == "Scenario2b" %}
+
+
+
+
 
       {% else %}
       {% endif %}
