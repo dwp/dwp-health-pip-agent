@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="service-app-status-change" method="post" class="form">
+  {% include "another-decision-0-0-2/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Changing a change to the applicaiton status</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Status changes will do a bunch of things to this application</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 26 March 2024</p> -->
+
+      {{ govukRadios({
+        idPrefix: "service-app-status-change",
+        name: "service-app-status-change",
+        fieldset: {
+          legend: {
+            html: "What is the new status of the applciation?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "1",
+          text: "Person has died",
+          checked: (data["service-app-status-change"] == "1")
+        },
+        {
+          value: "2",
+          text: "Send application to HAS",
+          checked: (data["service-app-status-change"] == "2")
+        },
+        {
+          value: "3",
+          text: "Something 3",
+          checked: (data["service-app-status-change"] == "3")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "4",
+          text: "Something 4",
+          checked: (data["service-app-status-change"] == "4")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

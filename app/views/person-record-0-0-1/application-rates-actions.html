@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "5a" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+<!-- {% if data["record-1-bank-detials-j-1-bank-name"] %}
+<form action="application-5-tasklist" method="post" class="form">
+{% else %}
+<form action="application-rates-actions-router" method="post" class="form">
+{% endif %} -->
+
+<form action="application-5-letter-review" method="post" class="form">
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        {% include "another-decision-0-0-2/record-id.html" %}
+
+<!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Actions for payments</h1> -->
+
+
+      {{ govukRadios({
+        idPrefix: "application-rates-actions",
+        name: "application-rates-actions",
+        fieldset: {
+          legend: {
+            html: "How does the applicant want to receive their first payment of £2,300?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "You can view the notes from the call in their record if needed"
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "2",
+          text: "Paid in full",
+          checked: (data["application-rates-actions"] == "2")
+        },
+        {
+          value: "1",
+          text: "In instalments",
+          checked: (data["application-rates-actions"] == "1")
+        },
+        {
+          value: "3",
+          text: "Another way",
+          checked: (data["application-rates-actions"] == "3")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+{% endblock %}
