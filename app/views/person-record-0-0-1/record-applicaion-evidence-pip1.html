@@ -1,0 +1,308 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-view-evidence" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+      {% include "includes/js-back-link.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">This information was supplied by the applicant within their Registration (PIP1)</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This information was supplied by the applicant within Registration (PIP1) and their Health Information Gather (HIG) (PIP2)</p>
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Personal details</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>National Insurance number</b></td>
+                <td class="govuk-table__cell govuk-40-percent">NA 11 22 33 C</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Name</b></td>
+                <td class="govuk-table__cell">Jeff Bridges</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Age</b></td>
+                <td class="govuk-table__cell">50</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Date of birth</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">5 January 1978</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Accommodation</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Home address</b></td>
+                <td class="govuk-table__cell govuk-40-percent">10 Pearl Street<br>Bristol<br>BS3 4AB<br>United Kingdom</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Can write to this address</b></td>
+                <td class="govuk-table__cell">Yes</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Correspondence address</b></td>
+                <td class="govuk-table__cell">11 Pearl Street<br>Bristol<br>BS3 4AB<br>United Kingdom</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Currently in health or care accommodation</b></td>
+                <td class="govuk-table__cell">No</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>When they went into health or care accommodation</b></td>
+                <td class="govuk-table__cell">Not applicable</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Health or care accommodation address</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Not applicable</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Telephone</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Mobile phone number</b></td>
+                <td class="govuk-table__cell govuk-40-percent">07777 7777777</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Wants text updates about applicaiton</b></td>
+                <td class="govuk-table__cell">07777 7777776</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Landline</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">01207 214568</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Alternative<br>communication<br>format</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Needs communications in another format</b></td>
+                <td class="govuk-table__cell govuk-40-percent">Yes</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Format needed</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Large format prints</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Help and support</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Needs help communicating with us</b></td>
+                <td class="govuk-table__cell govuk-40-percent">Yes</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Needs help completing forms and understanding letters	</b></td>
+                <td class="govuk-table__cell">Large format prints</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Being helped with claim</b></td>
+                <td class="govuk-table__cell">Large format prints</td>
+              </tr>
+
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Motability scheme</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">No</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Health Care professionals</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent govuk-table--no-bottom-border"><b>Health and care professionals can share information</b></td>
+                <td class="govuk-table__cell govuk-40-percent govuk-table--no-bottom-border">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Health professional 1</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Name</b></td>
+                <td class="govuk-table__cell govuk-40-percent">Dr Camilla Stasiak</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Profession</b></td>
+                <td class="govuk-table__cell">Doctor</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Phone number	</b></td>
+                <td class="govuk-table__cell">020 8291 7007</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Address</b></td>
+                <td class="govuk-table__cell">
+                  The Vale Medical Centre<br>
+                  195-197 Perry Vale<br>
+                  Forest Hill<br>
+                  London<br>
+                  SE23 2JF<br>
+                  United Kingdom
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Approximate date of last appointment</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">No given</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Health professional 2</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+        </div>
+
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"><b>Name</b></td>
+                <td class="govuk-table__cell govuk-40-percent">Mr Ramon Niekrash</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Profession</b></td>
+                <td class="govuk-table__cell">Doctor</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Phone number	</b></td>
+                <td class="govuk-table__cell">	020 8836 5435</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><b>Address</b></td>
+                <td class="govuk-table__cell">
+                  Queen Elizabeth Hospital<br>
+                  Stadium Rd<br>
+                  Greenwich<br>
+                  London<br>
+                  SE18 4QH<br>
+                  United Kingdom
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Approximate date of last appointment</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">No given</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi-call.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-other-actions-next-steps" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4"></h1> -->
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">We have your details.</p> -->
+
+      {{ govukTextarea({
+        id: "inbound-1-end-call-washup-details",
+        namePrefix: "inbound-1-end-call-washup-details",
+          label: {
+            text: "Create a note about the call",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Do not include personal or financial information",
+            value: data["inbound-1-end-call-washup-detials"]
+          }
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

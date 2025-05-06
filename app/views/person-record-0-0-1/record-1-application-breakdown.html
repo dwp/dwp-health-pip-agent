@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "includes/js-back-link.html" %}
+
+<form action="record-1-applications" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This area would contain all the information about this particular application.</h1>
+
+      <h2 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Actions would be things like:</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>View applicaiton data supplied at the time</li>
+        <li>Amend an application that has not yet been processed</li>
+        <li>Supply new information to controubute towards an application that has not yet been processed</li>
+        <li><a class="" href="pip-letter.pdf" target="">Resend</a> conformation letters</li>
+        <li>View what an agent had done, selected so that others can know how the outcome was reached</li>
+        <li>View any notes against the application</li>
+        <li>View the outcome</li>
+      </ul>
+
+
+        <br><br><br>
+
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

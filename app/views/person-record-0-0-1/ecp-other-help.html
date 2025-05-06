@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi-ecp.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="ecp-other-help-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">End of call process</h1> -->
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p> -->
+
+      {{ govukRadios({
+        idPrefix: "ecp-other-help",
+        name: "ecp-other-help",
+        fieldset: {
+          legend: {
+            html: "Is there anything I can help you with?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["ecp-other-help"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["ecp-other-help"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

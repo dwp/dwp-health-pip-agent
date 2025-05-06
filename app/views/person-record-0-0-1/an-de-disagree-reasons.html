@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-disagree-reasons-router" method="post" class="form">
+
+  {% include "person-record-0-0-1/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {{ govukCheckboxes({
+          idPrefix: "an-de-disagree-reasons",
+          name: "an-de-disagree-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which part of their decision do they disagree with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+          {
+            value: "Points",
+            text: "Points given and justification for one or more of the activities",
+            checked: (data["an-de-disagree-reasons"] == "Points")
+          },
+
+            {
+              value: "Dates",
+              text: "Dates mentioned in the decision letter",
+              checked: (data["an-de-disagree-reasons"] == "Dates")
+            },
+
+            {
+              value: "Award",
+              text: "Length of the award period",
+              checked: (data["an-de-disagree-reasons"] == "Award")
+            },
+            {
+              value: "Doc",
+              text: "Evidence used to make the decision",
+              checked: (data["an-de-disagree-reasons"] == "Doc")
+            },
+            {
+              value: "Payments",
+              text: "Payment amounts including arrears",
+              checked: (data["an-de-disagree-reasons"] == "Payments")
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="an-de-reason-details-alt" class="govuk-link" rel="noreferrer noopener" target="">Reasons details alt</a></p>
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
