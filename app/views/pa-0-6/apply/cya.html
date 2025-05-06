@@ -150,6 +150,17 @@ They can do XYZ
         ]
       }) }}
 
+      <!------------H1 LEGEND------------>
+        {% set legendLanguage %}
+          {% if data["applicant-welsh-check"] %}
+            {{data["applicant-welsh-check"]}}
+          {% else %}
+            English (default)
+          {% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
+
       {% if data["id-scenario-selection"] == "Scenario0" %}
 
       {{ govukSummaryList({
@@ -159,7 +170,7 @@ They can do XYZ
               text: "Language they want to continue their application in"
             },
             value: {
-              html: data["applicant-welsh-check"]
+              html: legendLanguage
             },
             actions: {
               items: [
@@ -176,6 +187,7 @@ They can do XYZ
 
       {% elif data["id-scenario-selection"] == "Scenario1" %}
 
+
       {{ govukSummaryList({
         rows: [
           {
@@ -183,7 +195,7 @@ They can do XYZ
               text: "Language they want to continue their application in"
             },
             value: {
-              html: data["applicant-welsh-check"]
+              html: legendLanguage
             },
             actions: {
               items: [
@@ -207,7 +219,7 @@ They can do XYZ
               text: "A Language they want to continue their application in"
             },
             value: {
-              html: "English or Welsh (Previous)"
+              html: legendLanguage
             },
             actions: {
               items: [
