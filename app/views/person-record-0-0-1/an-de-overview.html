@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-overview-router" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reconsider a decision</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Before you start, make sure the person who has asked for their decision to be reconsidered understands that:</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>PIP is assessed on how their condition affects them, not the condition itself
+        <li>the decision letter they have received tells them the information that's been used to make the decision and the points given for each activity</li>
+        <li>the rate of PIP awarded depends on the total points for all of the activities</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Explain what will happen next</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>We'll record the details of which parts of the decision they disagree with.</li>
+        <li>There'll be an opportunity to send additional evidence to support the application.</li>
+        <li>Someone will look at all the information again and make another decision.</li>
+        <li>Their points could go up or down.</li>
+      </ul>
+
+
+
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-overview",
+        name: "an-de-overview",
+        fieldset: {
+          legend: {
+            html: "How would they like to tell us about why they disagree with their decision?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Over the phone now",
+          hint: {
+            text: "The call will take around 30 minutes"},
+          checked: (data["an-de-overview"] == "Yes")
+
+        },
+        {
+          value: "NoTime",
+          text: "Over the phone later",
+          hint: {
+            text: "We can arrange a call back at a more suitable time"},
+          checked: (data["an-de-overview"] == "NoTime")
+        },
+        {
+          value: "MoveOnline",
+          text: "Online ",
+          hint: {
+            text: "They will need their login details from when they applied"},
+          checked: (data["an-de-overview"] == "MoveOnline")
+        },
+        {
+          value: "NoPaper",
+          text: "On a paper form",
+          hint: {
+            text: "We can either send this to them or they can download from the GOV.UK website"},
+          checked: (data["an-de-overview"] == "NoPaper")
+        }
+        ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

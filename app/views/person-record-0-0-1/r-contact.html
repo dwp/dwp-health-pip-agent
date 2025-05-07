@@ -25,19 +25,16 @@
   {% include "person-record-0-0-1/record-foundation-navigation.html" %}
 
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Phone number and email</h3>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="#" target="">Add an another contact method</a></p>
 
 
-    {% if data["record-1-bank-detials-j-1-bank-name"] %}
-
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Bank details</h3>
-
-
-
-    {% set SetTelephone %}
-      {% if data["appointees-telephone"] %}
-        {{data["appointees-telephone"]}}
+    {% set SetLandlineTelephone %}
+      {% if data["record-1-contact-landline-telephone"] %}
+        {{data["record-1-contact-landline-telephone"]}}
       {% else %}
-        <p class="govuk-body">07700 900457</p>
+        <p class="govuk-body">0191 488 3188</p>
       {% endif %}
     {% endset -%}
 
@@ -48,51 +45,51 @@
       rows: [
         {
           key: {
-            text: "Bank name"
+            text: "Mobile telephone"
           },
           value: {
-            html: data["record-1-bank-detials-j-1-bank-name"]
+            html: "0796 009 3500"
           },
           actions: {
             items: [
               {
-                href: "record-1-bank-detials-j-1",
+                href: "#",
                 text: "Change",
-                visuallyHiddenText: "name"
+                visuallyHiddenText: "contact details"
               }
             ]
           }
         },
         {
           key: {
-            text: "Account number"
+            text: "Landline telephone"
           },
           value: {
-            html: data["record-1-bank-detials-j-1-bank-account"]
+            html: SetLandlineTelephone
           },
           actions: {
             items: [
               {
-                href: "record-1-bank-detials-j-1",
+                href: "r-contact-landline-telephone",
                 text: "Change",
-                visuallyHiddenText: "date of birth"
+                visuallyHiddenText: "contact details"
               }
             ]
           }
         },
         {
           key: {
-            text: "Sort code"
+            text: "Email"
           },
           value: {
-            html: data["record-1-bank-detials-j-1-bank-sort"]
+            html: '<p class="govuk-body">the-dude@example.com</p>'
           },
           actions: {
             items: [
               {
-                href: "record-1-bank-detials-j-1",
+                href: "#",
                 text: "Change",
-                visuallyHiddenText: "date of birth"
+                visuallyHiddenText: "contact details"
               }
             ]
           }
@@ -101,12 +98,10 @@
     }) }}
 
 
-    {% else %}
-    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">There are no bank details</h3>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can <a class="" href="record-1-bank-detials-j-1" target="">add bank details now</a>.</p>
-    {% endif %}
 
 
+
+  </div>
   </div>
 
 

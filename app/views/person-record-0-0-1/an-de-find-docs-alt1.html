@@ -1,0 +1,488 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-find-docs-results-alt1" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">What additional supporting evidence do they want to send?</h1>
+
+
+
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <!------------Dynamic CheckBox------------>
+
+    {% set DynamicCheckBox %}
+
+    {% if data["find-document"] %}
+      {{data["find-document"]}}
+    {% else %}
+      Document type
+    {% endif %}
+
+    {% endset %}
+
+    <!------------Legend--------------->
+
+    {{ govukCheckboxes({
+      idPrefix: "an-de-select-docs",
+      name: "an-de-select-docs",
+      classes: "govuk-checkboxes",
+      fieldset: {
+        legend: {
+          text: "Select documents",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        html: "Select all that apply."
+      },
+      items: [
+      {
+        value: "111",
+        text: " Information provided by care home",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Care plan",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Certificate of Vision Impairment (CVI)",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Information provided by community mental health team",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Health professional consultation report",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Information provided by Customer Compliance Officer",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Letter from consultant",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Report from consultant",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Telephone advice from consultant",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Letter from counsellor",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Report from counsellor",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Telephone advice from counsellor",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Information provided by day centre",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Claim for Disability Living Allowance",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: "Enquiry form",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: "Extra information applicant gave us",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Eye care professional's report",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Health care professional assessment for Employment and Support Allowance",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Information provided by Fraud Investigation Service",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Information provided by GP's surgery",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Letter from GP",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Report from GP",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: " Telephone advice from GP",
+        checked: (data["application-evidence-used"] == "1")
+      },
+      {
+        value: "111",
+        text: "Health information gather (PIP2)",
+        checked: (data["application-evidence-used"] == "1")
+      },
+        {
+          value: "111",
+          text: " Information provided by Home Office",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by hospital",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from hospital doctor",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from hospital doctor",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from hospital doctor",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Health care professional assessment for Incapacity Benefit",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: "Interview under caution",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Claim for Industrial Injuries Disablement Benefit",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: "Information provided by Jobcentre Plus",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by local authority",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: "Letter from occupational therapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from occupational therapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from occupational therapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by Pension Service",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by Primary Care Trust",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by Prison Service",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from community psychiatric nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from community psychiatric nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from community psychiatric nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from physiotherapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from physiotherapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from physiotherapist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from psychiatric social worker",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from psychiatric social worker",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from psychiatric social worker",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from psychiatrist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from psychiatrist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from psychiatrist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from psychologist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from psychologist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from psychologist",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Health professional review report",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Health professional supplementary advice",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by school",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by school",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by social worker",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: "Surveillance logs",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Letter from specialist nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Report from specialist nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Telephone advice from specialist nurse",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by teacher",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Visiting officer's report",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          value: "111",
+          text: " Information provided by Welfare Rights Advisor",
+          checked: (data["application-evidence-used"] == "1")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "Advanced",
+          text: "Something else",
+          checked: (data["an-de-select-docs"] == "Advanced")
+
+        }
+      ]
+    }) }}
+
+<br><br>
+
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Continue when all documents have been selected</p> -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8",
+        href: "an-de-next-steps"
+      }) }}
+
+
+  </div>
+
+
+
+  <div class="govuk-grid-column-one-third">
+
+    <!------------H1 LEGEND------------>
+      {% set DynamicHeader %}
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Filter document types</h1>
+      {% endset %}
+    <!------------Legend--------------->
+
+    {{ govukInput({
+      label: {
+        html: DynamicHeader
+      },
+      hint: {
+        text: ""
+      },
+      id: "find-document",
+      name: "find-document",
+      classes: "govuk-!-width-full",
+      value: data["find-document"]
+    }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Apply filter",
+              classes: "govuk-button--secondary govuk-!-margin-bottom-8 govuk-!-margin-top-0"
+            }) }}
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-points-reasons" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        {{ govukCheckboxes({
+          idPrefix: "an-de-disagree-reasons",
+          name: "an-de-disagree-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which dates did you have issues with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Start",
+              text: "Start date or inline without hint?",
+              checked: (data["an-de-disagree-reasons"] == "Start"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "QP",
+              text: "Qualifying period",
+              checked: (data["an-de-disagree-reasons"] == "QP"),
+              hint: {
+                text: "What this means"
+              }
+            },
+            {
+              value: "PT",
+              text: "Prospective test",
+              checked: (data["an-de-disagree-reasons"] == "PT"),
+              hint: {
+                text: "What this means"
+              }
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="an-de-reason-details-alt" class="govuk-link" rel="noreferrer noopener" target="">Reasons details alt</a></p>
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

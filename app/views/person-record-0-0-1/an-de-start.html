@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-foundation-escalation-0" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Escalation",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Starting the escalation process</h1>
+
+      <h2 class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Before you start make sure the following have taken place</h2>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>Helped the applicant / claimant understand PIP so that the issue of escalation is regarding the outcome and not a lack of undersanding PIP as a whole</li>
+        <li>Somethig else</li>
+      </ul> -->
+
+      {{ govukRadios({
+        idPrefix: "applicaiton-actions",
+        name: "applicaiton-actions",
+        fieldset: {
+          legend: {
+            html: "Which application do you want to us to re-look at?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "1",
+          html: "Claim in payment (1 January 2025)",
+          checked: (data["applicaiton-actions"] == "1")
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "2",
+          html: "Closed application (6 August 2024)",
+          checked: (data["applicaiton-actions"] == "2")
+        },
+        {
+          value: "3",
+          html: "Closed application (2 July 2017)",
+          checked: (data["applicaiton-actions"] == "3")
+        },
+        {
+          value: "4",
+          html: "Closed application (20 July 2016)",
+          checked: (data["applicaiton-actions"] == "4")
+        }
+        ]
+      }) }}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="record-foundation-applications" class="govuk-link" rel="noreferrer noopener" target="">I need to see more details about these applciaitons</a></p>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

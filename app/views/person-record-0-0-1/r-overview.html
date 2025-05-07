@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-1/record-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+
+
+      {% include "person-record-0-0-1/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+
+    {% include "person-record-0-0-1/record-foundation-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Overview</h3>
+
+    <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">PIP application status: <strong>In payment</strong>
+
+    {% if data["r-flags-add"] %}
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24 govuk-!-margin-bottom-2">Flags and markers</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4 ">Citizen needs support in the following areas</p>
+
+    {% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">KCIS / UCB</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Prevous incidence of XYZ</p>
+
+      {% else %}
+      {% endif %}
+
+      {% if data["r-flags-add"] == "Flag2" or "Flag2" in data["r-flags-add"] %}
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Vulnerability</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Prevous incidence of XYZ</p>
+
+      {% else %}
+      {% endif %}
+
+      {% if data["r-flags-add"] == "Flag3" or "Flag3" in data["r-flags-add"] %}
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Additional support</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Does anyone know what this does?</p>
+      {% else %}
+      {% endif %}
+
+      {% if data["r-flags-add"] == "Flag4" or "Flag4" in data["r-flags-add"] %}
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-1">Something else</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">XXX</p>
+      {% else %}
+      {% endif %}
+
+    {% else %}
+    {% endif %}
+
+
+  </div>
+
+
+    </form>
+{% endblock %}
