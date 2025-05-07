@@ -25,7 +25,7 @@
 {% else %}
 {% endif %}
 
-{% if data["find-someone-1-offline-return"]  == "Yes" %}
+{% if data["find-someone-1-offline-return"]  == "Yes" or  data["find-someone-1-offline-return"]  == "YesLinked"%}
 
   {% else %}
 
@@ -277,20 +277,7 @@
 
         {% endif %}
 
-        {% if data["record-1-contact-landline-telephone"] %}
 
-          {% set html %}
-          <p class="govuk-body govuk-!-font-size-19">A new number has been added '{{data["record-1-contact-landline-telephone"]}}' has been added to the record.</p>
-          {% endset %}
-
-          {{ govukNotificationBanner({
-            html: html,
-            type: 'success'
-          }) }}
-
-          {% else %}
-
-          {% endif %}
 
         {% if data["application-1-task-t5"]  == "Bad"%}
         {% set html %}
@@ -397,38 +384,67 @@
 
         {% endif %}
 
-
-        {% if data["r-flags-add"] %}
-
-        {% set html %}
-        <p class="govuk-body govuk-!-font-size-19">Flags were added</p>
-        {% endset %}
-
-        {{ govukNotificationBanner({
-          html: html,
-          type: 'success'
-        }) }}
-
-
-        {% else %}
-        {% endif %}
-
-        {% if data["r-address-add"] %}
-
-        {% set html %}
-        <p class="govuk-body govuk-!-font-size-19">Address was updated</p>
-        {% endset %}
-
-        {{ govukNotificationBanner({
-          html: html,
-          type: 'success'
-        }) }}
-
-
-        {% else %}
-        {% endif %}
-
-
-
-
 {% endif %}
+
+
+<!-- top Level Notifications -->
+
+
+{% if data["r-flags-add"] %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Flags were added</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{% else %}
+{% endif %}
+
+{% if data["r-address-add"] %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">Address was updated</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+{% endif %}
+
+{% if data["r-appointees-add"] %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">POA was updated</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% else %}
+{% endif %}
+
+
+{% if data["record-1-contact-landline-telephone"] %}
+
+  {% set html %}
+  <p class="govuk-body govuk-!-font-size-19">A new number has been added '{{data["record-1-contact-landline-telephone"]}}' has been added to the record.</p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: 'success'
+  }) }}
+
+  {% else %}
+
+  {% endif %}
