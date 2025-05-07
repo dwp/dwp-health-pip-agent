@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-exit" method="post" class="form">
+
+  {% include "agent-day-0-1-8/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "record-foundation-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "record-foundation-Escalation-start"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Advise that they need to have their decision letter with them during the call
+</h1>
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This is so we can:</p>
+<ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+  <li>accurately record which parts of the decision they disagree with</li>
+  <li>make sure we get the right outcome for them</li>
+</ul>
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-letter-check",
+        name: "an-de-letter-check",
+        fieldset: {
+          legend: {
+            html: "Do they need us to resend their decision letter?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This may take up to 3 weeks to arrive."
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["an-de-letter-check"] == "Yes")
+        },
+        {
+          value: "NoLetter",
+          text: "No",
+          checked: (data["an-de-letter-check"] == "NoLetter")
+        }
+        ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

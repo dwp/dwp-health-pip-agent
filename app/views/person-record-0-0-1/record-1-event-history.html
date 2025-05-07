@@ -34,7 +34,7 @@
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can <a class="" href="record-1-event-history-reason" target="">add new event</a> to the event history.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="record-1-event-history-reason" target="">Add new event</a> to the event history.</p>
 
 
 <div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
@@ -111,9 +111,8 @@
 
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell govuk-20-percent">Date</td>
-        <td class="govuk-table__cell govuk-20-percent">Event</td>
-        <td class="govuk-table__cell govuk-60-percent">Details</td>
+        <td class="govuk-table__cell govuk-33-percent">Date</td>
+        <td class="govuk-table__cell govuk-66-percent">Details</td>
         <!-- <td class="govuk-table__cell govuk-20-percent">Actions</td> -->
       </tr>
       </thead>
@@ -123,13 +122,25 @@
 
       {% if data["applicaiton-actions"] == "2" %}
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next. <br><a class="" href="record-applicaion-evidence-notes" target="">View notes</a></td>
-        <!-- <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">XXX</a></td> -->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">Today</td>
 
-        </tr>
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Talked through process</li>
+              <li>Requested an MR</li>
+            </ul>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next. </p>
+            <a class="" href="record-applicaion-evidence-notes" target="">View notes in full</a>
+
+          </td>
+          </tr>
 
       {% else %}
       {% endif %}
@@ -236,28 +247,63 @@
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Update</td>
-        <td class="govuk-table__cell table-spacer">Application processed and notification sent <a class="" href="pip-letter.pdf" target="_blank">View letter</a></td>
-          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Application processed and notification sent</li>
+            <li>Changed landline</li>
+          </ul>
+
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+          <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
+          <a class="" href="record-foundation-application-overview" target="">Action</a>
+
+        </td>
         </tr>
+
+
+
         {% elif data["inbound-1-end-call-washup"] == "2"%}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">Call was made, no actions taken, help with XY or Z, no addional action</td>
-        <td class="govuk-table__cell table-spacer">None
 
-      </tr>
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+          <p class="govuk-body govuk-!-margin-bottom-3">No actions taken, just a call to get some help</p>
+          <a class="" href="record-foundation-application-overview" target="">Action</a>
+
+        </td>
+        </tr>
 
       {% elif data["inbound-1-end-call-dispute"] == "Yes"%}
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">Requested a call back to dispute level of award</td>
-        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">In progress</strong>
-        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">Today</td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Requested a call back to dispute level of award</li>
+              <li>Changed landline</li>
+            </ul>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Did the action over several calls as line was poor</p>
+            <a class="" href="record-foundation-application-overview" target="">Action</a>
+
+          </td>
+          </tr>
 
 
       {% else %}
@@ -271,20 +317,27 @@
 
       {% if data["application-1-outcome-letter-check"] %}
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Update</td>
-        <td class="govuk-table__cell table-spacer">Application processed and<br>notification sent<br><a class="" href="pip-letter.pdf" target="_blank">View letter</a> </td>
-          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
-        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">Today</td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Application processed and notification sent</li>
+              <li>Changed landline</li>
+            </ul>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
+            <a class="" href="record-foundation-application-overview" target="">Action</a>
+
+          </td>
+          </tr>
 
       {% else %}
-      <!-- <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">18 Sep 2023</td>
-        <td class="govuk-table__cell table-spacer">Update</td>
-        <td class="govuk-table__cell table-spacer">Application processed and<br>notification sent - <a class="" href="pip-letter.pdf" target="_blank">view letter</a></td>
-          <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">Resend letter</a></td>
-        </tr> -->
       {% endif %}
 
       {% if data["appointees-lpa-check"] == "Yes" %}
@@ -294,39 +347,94 @@
         <td class="govuk-table__cell table-spacer">Lasting power of attorney (LPA) access code added</td>
         <td class="govuk-table__cell table-spacer">
         </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">Today</td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Lasting power of attorney (LPA) access code added</li>
+              <li>Changed landline</li>
+            </ul>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
+
+          </td>
+          </tr>
+
         {% else %}
         {% endif %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+          <p class="govuk-body govuk-!-margin-bottom-3">No action taken</p>
+
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+          <p class="govuk-body govuk-!-margin-bottom-3"> XXX  This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
+
+           <a class="" href="record-foundation-application-overview" target="">Action</a>
+
         </td>
-        <td class="govuk-table__cell table-spacer"></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell table-spacer">16 Oct 2023</td>
-          <td class="govuk-table__cell table-spacer">Letter sent</td>
-          <td class="govuk-table__cell table-spacer">Reissued PIP2 form</td>
-          <td class="govuk-table__cell table-spacer"></td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Letter sent</p>
+
+
+              <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Reissue award letter</li>
+                <li>Changed landline</li>
+                <li>Removed Helper</li>
+              </ul>
+
+            </p>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Manual notes</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Citzen asked for another copy of the decsion letter</p>
+
+          </td>
           </tr>
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">1 Oct 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">1 Oct 2023</td>
 
-        <td class="govuk-table__cell table-spacer">General enquiry</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr>
+            <td class="govuk-table__cell table-spacer">
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+              <p class="govuk-body govuk-!-margin-bottom-3">David Connifey</p>
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">29 Sep 2023</td>
-        <td class="govuk-table__cell table-spacer">Outbound call</td>
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+              <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
 
-        <td class="govuk-table__cell table-spacer">Requested care plan</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr>
+            </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">29 Sep 2023</td>
+
+              <td class="govuk-table__cell table-spacer">
+                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Outbound call</p>
+
+                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+                <p class="govuk-body govuk-!-margin-bottom-3">I have requested a care plan from the citizen</p>
+
+                 <a class="" href="record-foundation-application-overview" target="">Action</a>
+
+              </td>
+              </tr>
 
 
 

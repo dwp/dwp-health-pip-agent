@@ -397,4 +397,25 @@
 
         {% endif %}
 
+
+        {% if data["r-flags-add"] %}
+
+        {% set html %}
+        <p class="govuk-body govuk-!-font-size-19">Flags were added</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+
+        {% else %}
+
+
+        {% endif %}
+
+
+
+
 {% endif %}

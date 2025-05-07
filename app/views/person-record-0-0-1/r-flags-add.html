@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-1/record-id-base.html" %}
+
+<form action="r-flags" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "record-foundation-overview"
+        },
+        {
+          text: "Flags and markers",
+          href: "record-foundation-application-breakdown"
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukCheckboxes({
+        idPrefix: "r-flags-add",
+        name: "r-flags-add",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "What flags or markers need to be added? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "Select all that apply."
+        },
+        items: [
+          {
+            value: "Flag1",
+            text: "KCIS (Keep citizen information save) and UCB (Unacceptable citizen behabour)",
+            checked: (data["r-flags-add"] == "Flag1"),
+            hint: {
+              text: "This is for when this scenario happens"
+            }
+          },
+
+          {
+            value: "Flag2",
+            text: "Vulnerability",
+            checked: (data["r-flags-add"] == "Flag2"),
+            hint: {
+              text: "This is for when this scenario happens"
+            }
+          },
+          {
+            value: "Flag3",
+            text: "Additional support",
+            checked: (data["r-flags-add"] == "Flag3"),
+            hint: {
+              text: "This is for when this scenario happens"
+            }
+          },
+          {
+            value: "Flag4",
+            text: "Something else",
+            checked: (data["r-flags-add"] == "Flag4"),
+            hint: {
+              text: "This is for when this scenario happens"
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
