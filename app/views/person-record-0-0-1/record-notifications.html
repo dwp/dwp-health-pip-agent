@@ -411,8 +411,21 @@
 
 
         {% else %}
+        {% endif %}
+
+        {% if data["r-address-add"] %}
+
+        {% set html %}
+        <p class="govuk-body govuk-!-font-size-19">Address was updated</p>
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
 
 
+        {% else %}
         {% endif %}
 
 

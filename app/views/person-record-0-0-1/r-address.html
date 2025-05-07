@@ -27,9 +27,25 @@
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Address</h3>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-appointees-add" target="">Add a temporary care address</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="#" target="">Add a temporary care address</a></p>
 
         <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-4">Where they live</h3>
+
+
+        <!------------H1 LEGEND------------>
+          {% set legendAddress %}
+
+        {% if data["r-address-add"] %}
+
+        A house in <br>Sunderland <br>SU1 4ST'
+
+        {% else %}
+        Original: Barrack Road <br>Newcastle upon Tyne <br>NE1 4ST'
+
+        {% endif %}
+
+          {% endset %}
+        <!------------Legend--------------->
 
         {{ govukSummaryList({
           rows: [
@@ -43,7 +59,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "r-address-add",
                   text: "Change",
                   visuallyHiddenText: "contact details"
                 }
@@ -55,12 +71,12 @@
                 text: "Address"
               },
               value: {
-                html: 'Barrack Road <br>Newcastle upon Tyne <br>NE1 4ST'
+                html: legendAddress
               },
               actions: {
                 items: [
                   {
-                    href: "#",
+                    href: "r-address-add",
                     text: "Change",
                     visuallyHiddenText: "contact details"
                   }
