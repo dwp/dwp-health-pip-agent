@@ -27,7 +27,7 @@
   <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Age and date of birth</h3>
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">View or change the person's date of birth.</p>
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">View or change the person's date of birth.</p> -->
 
 
         {% set SetLandlineTelephone %}
@@ -43,6 +43,23 @@
 
         {{ govukSummaryList({
           rows: [
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              html: "4 December 1949"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
             {
               key: {
                 text: "Age"
@@ -54,7 +71,7 @@
                 items: [
                   {
                     href: "#",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "contact details"
                   }
                 ]
@@ -62,33 +79,16 @@
             },
             {
               key: {
-                text: "Date of birth"
+                text: "State Pension age"
               },
               value: {
-                html: "4 December 1949"
+                html: "Reached State Pension (65) <br> on 4 December 2014"
               },
               actions: {
                 items: [
                   {
                     href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "contact details"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Verified date of birth"
-              },
-              value: {
-                html: 'No'
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
+                    text: "",
                     visuallyHiddenText: "contact details"
                   }
                 ]
