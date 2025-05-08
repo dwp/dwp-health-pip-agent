@@ -101,87 +101,88 @@
 
     </div>
   </div>
-
-
     </div>
   </div>
-
-
-
 </div>
+
 
 <table class="govuk-table govuk-!-margin-top-0">
 
 <thead class="govuk-table__head">
   <tr class="govuk-table__row">
-    <td class="govuk-table__cell govuk-20-percent">Date</td>
-    <td class="govuk-table__cell govuk-20-percent">Event</td>
-    <td class="govuk-table__cell govuk-60-percent">Details</td>
+    <td class="govuk-table__cell govuk-33-percent">Date</td>
+    <td class="govuk-table__cell govuk-66-percent">Details</td>
     <!-- <td class="govuk-table__cell govuk-20-percent">Actions</td> -->
   </tr>
   </thead>
 
 
 
+  {% if data["applicaiton-actions"] == "2" %}
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell table-spacer">Today</td>
+
+      <td class="govuk-table__cell table-spacer">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+        <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Talked through process of MR</li>
+          <li>Took details about MR</li>
+          <li>Citizen to send in more documents listed in full notes</li>
+        </ul>
+      </p>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+        <p class="govuk-body govuk-!-margin-bottom-3">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next.</p>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-3"><a class="" href="record-applicaion-evidence-notes" target="">View notes</a></p>
+
+
+      </td>
+      </tr>
+
+  {% else %}
+  {% endif %}
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell table-spacer">18 October 2023</td>
+
+    <td class="govuk-table__cell table-spacer">
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Reissue award letter</li>
+        <li>Changed landline</li>
+        <li>Removed helper</li>
+      </ul>
+    </p>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+      <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
+
+    </td>
+    </tr>
+
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-        <td class="govuk-table__cell table-spacer">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
-</td>
-        <!-- <td class="govuk-table__cell table-spacer"></td> -->
+        <td class="govuk-table__cell table-spacer">1 October 2023</td>
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+          <!-- <p class="govuk-body govuk-!-margin-bottom-3">David Connifey</p> -->
+
+          <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p> -->
+          <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
+
+        </td>
         </tr>
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">1 Oct 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-
-        <td class="govuk-table__cell table-spacer">Wanted an update on progress of application</td>
-        <!-- <td class="govuk-table__cell table-spacer"></td> -->
-      </tr>
-<!--
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">16 Sept 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-
-        <td class="govuk-table__cell table-spacer">General enquiry</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">1 Apr 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-
-        <td class="govuk-table__cell table-spacer">General enquiry</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">20 Mar 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-
-        <td class="govuk-table__cell table-spacer">Application re-opened</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr>
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">1 Feb 2023</td>
-        <td class="govuk-table__cell table-spacer">Inbound call</td>
-
-        <td class="govuk-table__cell table-spacer">Asked about a closed application</td>
-        <td class="govuk-table__cell table-spacer"></td>
-      </tr> -->
 
 
 
-
-
-      </table>
+  </table>
 
 
 
-  </div>
-  </div>
-
-
+</div>
     </form>
 {% endblock %}

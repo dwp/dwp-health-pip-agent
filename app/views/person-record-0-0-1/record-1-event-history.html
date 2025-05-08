@@ -91,18 +91,13 @@
       classes: "govuk-button--secondary govuk-!-margin-bottom-4"
       }) }}
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-Septembererator">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
 
 
     </div>
   </div>
-
-
     </div>
   </div>
-
-
-
 </div>
 
 
@@ -119,7 +114,6 @@
 
 
 
-
       {% if data["applicaiton-actions"] == "2" %}
 
         <tr class="govuk-table__row">
@@ -127,251 +121,24 @@
 
           <td class="govuk-table__cell table-spacer">
             <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
-
             <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
 
             <ul class="govuk-list govuk-list--bullet">
-              <li>Talked through process</li>
-              <li>Requested an MR</li>
+              <li>Talked through process of MR</li>
+              <li>Took details about MR</li>
+              <li>Citizen to send in more documents listed in full notes</li>
             </ul>
-
+          </p>
             <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
-            <p class="govuk-body govuk-!-margin-bottom-3">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next. </p>
-            <a class="" href="record-applicaion-evidence-notes" target="">View notes in full</a>
+            <p class="govuk-body govuk-!-margin-bottom-3">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next.</p>
+            <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-3"><a class="" href="record-applicaion-evidence-notes" target="">View notes</a></p>
+
 
           </td>
           </tr>
 
       {% else %}
       {% endif %}
-
-      <!-- SHOW AND TELL START -->
-
-      {% if data["record-1-event-history-reason"] %}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">{{data["record-1-event-history-reason-category"]}}</td>
-        <td class="govuk-table__cell table-spacer">{{data["record-1-event-history-reason"]}}{{data["record-1-event-history-reason-other-detail"]}} <br><a class="" href="record-1-bank-detials" target="">View detials</a></td>
-        <!-- <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">XXX</a></td> -->
-
-        </tr>
-
-      {% else %}
-      {% endif %}
-
-      {% if data["search"] %}
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell table-spacer">Today</td>
-            <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
-            <td class="govuk-table__cell table-spacer">Complaint assigned to QAM, process started</td>
-            <!-- <td class="govuk-table__cell table-spacer"><a class="" href="#" target="">View progress</a></td> -->
-
-            </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell table-spacer"></td>
-              <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
-              <td class="govuk-table__cell table-spacer">A new number has been added '0191 100 2000' has been added to the record</td>
-              <!-- <td class="govuk-table__cell table-spacer"></td> -->
-
-              </tr>
-
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell table-spacer"></td>
-              <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
-              <td class="govuk-table__cell table-spacer">Care plan requested. A new task  will be created once it's received.</td>
-              <!-- <td class="govuk-table__cell table-spacer"></td> -->
-
-              </tr>
-
-            {% else %}
-            {% endif %}
-
-            <!-- SHOW AND TELL END -->
-
-      {% if data["call-notes"] or data["record-1-bank-detials-j-1-bank-name"] %}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Outbound<br>call</td>
-        <td class="govuk-table__cell table-spacer">{{data["call-notes"]}} and bank details added</td>
-        <!-- <td class="govuk-table__cell table-spacer"><a class="" href="record-1-bank-detials" target="">View notes and actions</a></td> -->
-
-        </tr>
-
-      {% else %}
-      {% endif %}
-
-
-
-      {% if data["application-4-care-plan"]  == "Yes"%}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Outbound call</td>
-        <td class="govuk-table__cell table-spacer">Dispute implement</td>
-        <td class="govuk-table__cell table-spacer">Assigned to QAM</td>
-
-        </tr>
-
-        {% else %}
-        {% endif %}
-
-      {% if data["application-4-care-plan"]  == "Yes"%}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Outbound call</td>
-        <td class="govuk-table__cell table-spacer">A new number has been added '0458475893' has been added to the record</td>
-        <td class="govuk-table__cell table-spacer"></td>
-
-        </tr>
-
-        {% else %}
-        {% endif %}
-
-      {% if data["application-4-care-plan"]  == "Yes"%}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Outbound call</td>
-        <td class="govuk-table__cell table-spacer">Care plan requested. A new task  will be created once it's received.</td>
-        <td class="govuk-table__cell table-spacer"></td>
-
-        </tr>
-
-      {% elif data["application-1-outcome-letter-check"] %}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-
-        <td class="govuk-table__cell table-spacer">
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
-
-          <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Application processed and notification sent</li>
-            <li>Changed landline</li>
-          </ul>
-
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
-          <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
-          <a class="" href="record-foundation-application-overview" target="">Action</a>
-
-        </td>
-        </tr>
-
-
-
-        {% elif data["inbound-1-end-call-washup"] == "2"%}
-
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-
-        <td class="govuk-table__cell table-spacer">
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
-
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
-          <p class="govuk-body govuk-!-margin-bottom-3">No actions taken, just a call to get some help</p>
-          <a class="" href="record-foundation-application-overview" target="">Action</a>
-
-        </td>
-        </tr>
-
-      {% elif data["inbound-1-end-call-dispute"] == "Yes"%}
-
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell table-spacer">Today</td>
-
-          <td class="govuk-table__cell table-spacer">
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
-
-            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Requested a call back to dispute level of award</li>
-              <li>Changed landline</li>
-            </ul>
-
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
-            <p class="govuk-body govuk-!-margin-bottom-3">Did the action over several calls as line was poor</p>
-            <a class="" href="record-foundation-application-overview" target="">Action</a>
-
-          </td>
-          </tr>
-
-
-      {% else %}
-      <!-- <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">N/A</td>
-        <td class="govuk-table__cell table-spacer">No events</td>
-        <td class="govuk-table__cell table-spacer">N/A</td>
-        </tr> -->
-      {% endif %}
-
-      {% if data["application-1-outcome-letter-check"] %}
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell table-spacer">Today</td>
-
-          <td class="govuk-table__cell table-spacer">
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
-
-            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Application processed and notification sent</li>
-              <li>Changed landline</li>
-            </ul>
-
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
-            <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
-            <a class="" href="record-foundation-application-overview" target="">Action</a>
-
-          </td>
-          </tr>
-
-      {% else %}
-      {% endif %}
-
-      {% if data["appointees-lpa-check"] == "Yes" %}
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">Today</td>
-        <td class="govuk-table__cell table-spacer">Outbound call</td>
-        <td class="govuk-table__cell table-spacer">Lasting power of attorney (LPA) access code added</td>
-        <td class="govuk-table__cell table-spacer">
-        </tr>
-
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell table-spacer">Today</td>
-
-          <td class="govuk-table__cell table-spacer">
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outbound call</p>
-
-            <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
-
-            <ul class="govuk-list govuk-list--bullet">
-              <li>Lasting power of attorney (LPA) access code added</li>
-              <li>Changed landline</li>
-            </ul>
-
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1"><noscript>
-
-            </noscript>otes</p>
-            <p class="govuk-body govuk-!-margin-bottom-3">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
-
-          </td>
-          </tr>
-
-        {% else %}
-        {% endif %}
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell table-spacer">18 October 2023</td>
@@ -388,8 +155,6 @@
         </p>
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
           <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
-
-
 
         </td>
         </tr>
@@ -432,13 +197,10 @@
 
 
 
-      </table>
+            </table>
 
 
 
-  </div>
-  </div>
-
-
-    </form>
-{% endblock %}
+          </div>
+              </form>
+          {% endblock %}
