@@ -67,6 +67,29 @@
         </tr>
 
 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">21 February 2005</td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Application made for PIP</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Closed</p>
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outcome</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">Daily living: Standard rate</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Mobility: Standard rate</p>
+
+
+             {% if data["find-someone-1-offline-return"]  == "YesLinked" %}
+             <a class="" href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/decision#outcome" target="">View decision details</a>
+
+             {% else %}
+             <a class="" href="#" target="">View decision details</a>
+
+             {% endif %}
+
+          </td>
+          </tr>
+
 
       </table>
 
