@@ -42,7 +42,7 @@
         classes: "govuk-checkboxes",
         fieldset: {
           legend: {
-            text: "What flags or markers need to be added? ",
+            text: "Which flags or markers need to be added? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -53,32 +53,33 @@
         items: [
           {
             value: "Flag1",
-            text: "KCIS (Keep citizen information save) and UCB (Unacceptable citizen behabour)",
+            text: "KCIS marker (Keep Customer Interactions Safe)",
             checked: (data["r-flags-add"] == "Flag1"),
             hint: {
-              text: "This is for when this scenario happens"
+              text: "Use this if you have felt threatened, felt abused, were intimdated or subjected to actual physical or psychological harm during an interaction with the person."
             }
           },
 
           {
             value: "Flag2",
-            text: "Vulnerability",
+            text: "Financially vulnerable marker",
             checked: (data["r-flags-add"] == "Flag2"),
             hint: {
-              text: "This is for when this scenario happens"
+              text: "Use this when the person may be unable to manage large payments, either due to their personal circumstances or their limited capacity to understand financial matters."
             }
           },
           {
             value: "Flag3",
-            text: "Additional support",
+            text: "Additional support marker",
             checked: (data["r-flags-add"] == "Flag3"),
             hint: {
-              text: "This is for when this scenario happens"
+              text: "Use this  if there is evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems."
             }
           },
+
           {
             value: "Flag4",
-            text: "Something else",
+            text: "Another type of marker",
             checked: (data["r-flags-add"] == "Flag4"),
             hint: {
               text: "This is for when this scenario happens"
