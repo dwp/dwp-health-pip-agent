@@ -393,7 +393,32 @@
 {% if data["r-flags-add"] %}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Flags were added</p>
+<p class="govuk-body govuk-!-font-size-19">
+
+
+{% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
+  'KCIS / UCB',
+  {% else %}
+  {% endif %}
+
+  {% if data["r-flags-add"] == "Flag2" or "Flag2" in data["r-flags-add"] %}
+  'Financially vulnerable',
+  {% else %}
+  {% endif %}
+
+  {% if data["r-flags-add"] == "Flag3" or "Flag3" in data["r-flags-add"] %}
+  'Additional support',
+  {% else %}
+  {% endif %}
+
+  {% if data["r-flags-add"] == "Flag4" or "Flag4" in data["r-flags-add"] %}
+  'Something else'
+  {% else %}
+  {% endif %}
+
+' flags and markers have been added to the record.</p>
+
+
 {% endset %}
 
 {{ govukNotificationBanner({
