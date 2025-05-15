@@ -11,12 +11,15 @@
 
 {% block content %}
 
+ <!-- include "includes/js-back-link.html"  -->
+
+
 <form action="timeselection-preset-router" method="post" class="form">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics</h1> -->
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Service statistics data</h1>
 
     {{ govukRadios({
       idPrefix: "timeselection-preset",
@@ -25,7 +28,7 @@
         legend: {
           html: "When do you want to see data for?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--xl"
+          classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
@@ -75,6 +78,42 @@
         value: "custom",
         text: "Custom date range",
         checked: (data["timeselection-preset"] == "custom")
+      }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "source-preset",
+      name: "source-preset",
+      fieldset: {
+        legend: {
+          html: "What data source do you want to see?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m govuk-!-padding-top-6"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "source-invited",
+        text: "Invided digital data only",
+        checked: (data["source-preset"] == "source-invited")
+      },
+      {
+        value: "source-apply",
+        text: "Apply data only",
+        checked: (data["source-preset"] == "source-apply")
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "all",
+        text: "Data from all sources: Invided digital and Apply",
+        checked: (data["source-preset"] == "source-all")
       }
       ]
     }) }}
