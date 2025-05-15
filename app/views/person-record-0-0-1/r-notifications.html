@@ -1,6 +1,6 @@
 {% if data["record-1-event-history-reason"] %}
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Yo! an entry was added to the Event History</p>
+<p class="govuk-body govuk-!-font-size-19">An entry was added to the event history.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -397,7 +397,7 @@
 
 
 {% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
-  'KCIS / UCB',
+  'KCIS',
   {% else %}
   {% endif %}
 
@@ -448,7 +448,7 @@
 {% if data["r-appointees-add"] %}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">A new Power of Attorney 'Sam Elliot' has been added to the record.</p>
+<p class="govuk-body govuk-!-font-size-19">A new Power of Attorney 'Sam Elliott' has been added to the person's record.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
