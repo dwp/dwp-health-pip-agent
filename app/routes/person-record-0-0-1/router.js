@@ -609,4 +609,25 @@ router.post(`/an-de-disagree-reasons-router`, (req, res) => {
   }
 })
 
+router.post(`/r-address-add-outcomes-router`, (req, res) => {
+  const addressOutcomeNextSteps = req.session.data['r-address-add-outcomes']
+
+  if (addressOutcomeNextSteps == 'OutcomeAwardReview') {
+    res.redirect(`r-address-add-nextsteps`)
+  }
+  else if (addressOutcomeNextSteps == 'OutcomeMove') {
+    res.redirect(`r-address-add-nextsteps`)
+  }
+  else if (addressOutcomeNextSteps == 'OutcomeNoChange') {
+    res.redirect(`r-address`)
+  }
+   else {
+    res.redirect(`address`)
+  }
+})
+
+
+
+
+
 module.exports = router
