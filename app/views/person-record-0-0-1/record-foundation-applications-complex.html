@@ -32,6 +32,8 @@
     <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Chronological view of all applicaitons,<br>MRs, appeals or award reviews</p> -->
 
 
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Current decision family</h3>
+
 
     <table class="govuk-table">
 
@@ -44,15 +46,15 @@
 
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell table-spacer">1 January 2025</td>
+        <td class="govuk-table__cell table-spacer">1 March 2025</td>
 
         <td class="govuk-table__cell table-spacer">
-          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Application made for PIP</p>
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Award update</p>
           <p class="govuk-body govuk-!-margin-bottom-3">In payment</p>
 
           <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outcome</p>
           <p class="govuk-body govuk-!-margin-bottom-0">Daily living: Enhanced rate</p>
-          <p class="govuk-body govuk-!-margin-bottom-3">Mobility: Standard rate</p>
+          <p class="govuk-body govuk-!-margin-bottom-3">Mobility: Enhanced rate</p>
 
 
            {% if data["find-someone-1-offline-return"]  == "YesLinked" %}
@@ -65,6 +67,45 @@
 
         </td>
         </tr>
+
+<!-- border-bottom-end -->
+
+        <tr class="govuk-table__row ">
+          <td class="govuk-table__cell table-spacer">1 January 2025</td>
+
+          <td class="govuk-table__cell table-spacer">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">Application made for PIP</p>
+            <!-- <p class="govuk-body govuk-!-margin-bottom-3">Superseded</p> -->
+
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Outcome</p>
+            <p class="govuk-body govuk-!-margin-bottom-0">Daily living: Enhanced rate</p>
+            <p class="govuk-body govuk-!-margin-bottom-3">Mobility: Standard rate</p>
+
+
+             {% if data["find-someone-1-offline-return"]  == "YesLinked" %}
+             <a class="" href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review-dev/decision" target="">View decision details</a>
+
+             {% else %}
+             <a class="" href="record-foundation-application-overview" target="">View decision details</a>
+
+             {% endif %}
+
+          </td>
+          </tr>
+
+        </table>
+
+        <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Previous decision family</h3>
+
+
+        <table class="govuk-table">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-33-percent">Submission date</td>
+            <td class="govuk-table__cell govuk-66-percent">Status</td>
+          </tr>
+          </thead>
 
 
         <tr class="govuk-table__row">
@@ -94,8 +135,8 @@
       </table>
 
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="record-foundation-applications-complex" target="">Decision families</p>
 
+  </div>
   </div>
 
 
