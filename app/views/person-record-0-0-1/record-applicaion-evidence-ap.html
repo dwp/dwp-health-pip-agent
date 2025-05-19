@@ -10,18 +10,17 @@
 
 {% block content %}
 
-<form action="application-5-view-evidence" method="post" class="form">
+<form action="application-6-view-evidence" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% include "person-record-0-0-1/record-id.html" %}
+      {% include "person-record-0-0-1/record-id-base.html" %}
 
       {% include "includes/js-back-link.html" %}
 
-
-
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Health assessment report</h1>
+      <!-- <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="evidence-6" target="_blank">You can also view this document in a new tab or window</a></p> -->
 
 
       <div class="govuk-grid-row">
@@ -34,29 +33,44 @@
           <table class="govuk-table">
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent">Date of birth:</td>
+                <td class="govuk-table__cell govuk-40-percent"><b>20 February 1959</b></td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent">Benefit:</td>
+                <td class="govuk-table__cell govuk-40-percent"><b>Personal Independence Payment</b></td>
+              </tr>
+              <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-60-percent">Application submitted:</td>
                 <td class="govuk-table__cell govuk-40-percent"><b>19 March 2024</b></td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">Date of assessment:</td>
-                <td class="govuk-table__cell"><b>26 March 2024</b></td>
+                <td class="govuk-table__cell"><b>5 April 2024</b></td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">Date report completed:</td>
-                <td class="govuk-table__cell"><b>26 March 2024</b></td>
+                <td class="govuk-table__cell"><b>8 April 2024</b></td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell">Assessment type:</td>
-                <td class="govuk-table__cell"><b>Telephone (PA4)</b></td>
+                <td class="govuk-table__cell">
+                  <b>Telephone</b>
+                  <br>
+                  <b>Face to face</b>
+                  <br>
+                  <b>Paper</b>
+                </td>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Healthcare professional:</td>
-                <td class="govuk-table__cell"><b>John Goodman</b></td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border">Healthcare professional:</td>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Gary Busey</b></td>
               </tr>
-              <tr class="govuk-table__row">
+              <!-- <tr class="govuk-table__row">
                 <td class="govuk-table__cell govuk-table--no-bottom-border">Job:</td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Nurse</b></td>
-              </tr>
+                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>GP</b></td>
+              </tr> -->
             </tbody>
           </table>
 
@@ -65,10 +79,180 @@
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Evidence used</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-60-percent">Evidence type A</td>
+                      <td class="govuk-table__cell govuk-40-percent"></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Evidence type B </td>
+                      <td class="govuk-table__cell"></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-table--no-bottom-border">Evidence type C</td>
+                      <td class="govuk-table__cell govuk-table--no-bottom-border"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Other evidence used</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-60-percent govuk-table--no-bottom-border">Open text field</td>
+                      <td class="govuk-table__cell govuk-40-percent govuk-table--no-bottom-border"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Evidence requested<br>but not returned</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-60-percent govuk-table--no-bottom-border">Open text field</td>
+                      <td class="govuk-table__cell govuk-40-percent govuk-table--no-bottom-border"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Other evidence requested <br>but not returned</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
+                <table class="govuk-table">
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell govuk-60-percent govuk-table--no-bottom-border">Open text field</td>
+                      <td class="govuk-table__cell govuk-40-percent govuk-table--no-bottom-border"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Consultation</p>
+
+                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                        &nbsp
+                    </div>
+
+                    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Consultation date
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Date Month Year
+                        </p>
+
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Identity confirmed
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Yes / No
+                        </p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          How identity was confirmed
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Method
+                        </p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Consent given
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Yes / No
+                        </p>
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Additional attendee name
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-4">
+                        Name Name
+                        </p>
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Relationship or role
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Name Name
+                        </p>
+
+                        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Additional attendee name
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-4">
+                        Name Name
+                        </p>
+
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Relationship or role
+                        </p>
+                        <p class="govuk-body govuk-!-margin-bottom-2">
+                        Name Name
+                        </p>
+
+                    </div>
+                  </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">History of conditions</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-4">History of condition</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
@@ -77,181 +261,164 @@
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
           <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p> -->
 
+
+              <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-4">Condition name</p>
+              <p class="govuk-body govuk-!-margin-bottom-6">
+
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                        When did the condition or disability start?
+                    </p>
+
+                    <p class="govuk-body govuk-!-margin-bottom-6">
+                      Answer
+                    </p>
+
+                    <!--  -->
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                        Diagnosis, impact and variability
+                    </p>
+
+                    <p class="govuk-body govuk-!-margin-bottom-6">
+                      Answer
+                    </p>
+
+                    <!--  -->
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                        Current treatments, specialists input and hospital stays
+                    </p>
+
+                    <p class="govuk-body govuk-!-margin-bottom-6">
+                      Answer
+                    </p>
+
+                    <!--  -->
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                        Home Therapies [Conditional]
+                    </p>
+
+                    <p class="govuk-body govuk-!-margin-bottom-6">
+                      Answer
+                    </p>
+
+                    <!--  -->
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                        Suicidal thoughts and self harm [Conditional]
+                    </p>
+
+                    <p class="govuk-body govuk-!-margin-bottom-6">
+                      Answer
+                    </p>
+
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+              <p class="govuk-body govuk-!-margin-bottom-2">
+              (Legacy) The scope of the assessment was explained to the claimant and the claimant gave verbal consent to proceed.
+            </p>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
           <p class="govuk-body govuk-!-margin-bottom-2">
-            <strong>Primary condition: Fibromyalgia</strong>
+            <strong>Fibromyalgia (Legacy)</strong>
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He was diagnosed with fibromyalgia in 2019 and has had the symptoms for about 3-4 years following a tick bite. He saw the GP at the time and was given antibiotics, but after this it got worse and worse, he revisited the GP with his symptoms several times.
+            He was diagnosed by his GP in 2012 and started on pain relief. He tried different medications for pain which did not work. He then took Tramadol (pain relief) for 4 years, he then moved to America for a while, took pain relief there but came off this. He no longer takes Tramadol but does use over the counter pain relief. <br><br> He was referred to pain management but did not attend as the referral was lost - he states that he has since been re-referred to the pain management service 1 month ago.<br><br> He states that his GP has discussed him being referred to weight managed as he nearly obese on the weight scale (BMI - body mass index). He has not been referred to any other services. <br><br> Day to day he experiences symptoms of forgetfulness - fibro fog, feeling overpowered with pain in his shoulders (worse on the right side), lower right side of his back and hip as well as both ankles where he has a lot of tension when he walks. His knees and elbows are ok. <br><br> He suffers with fatigue also but is not sure what is related to his sleep apnoea. He feels that his symptoms have worsened over time, more so since 2021. He reports no variability. He has not needed to stay in hospital as a result of this.
+            <br><br>
+            Myofacial pain syndrome (long term pain condition were pressure on areas - trigger points, causes pain). He was diagnosed by a specialist last year. He was referred to an orthodontist due to him wearing a mouth guard for 20 years but there is no other treatment planned. He experiences pain symptoms - he is unable to differentiate this from his fibromyalgia pain and this follows the same above history. He takes over the counter pain relief but feels that his left sided jaw pain is the worst.
           </p>
-        <p>
-        <p class="govuk-body govuk-!-margin-bottom-2">
-          He was sent for a scan on his head which came back as fine. His GP diagnosed him with fibromyalgia. His symptoms include legs feeling like pins and needles, stinging, legs feel heavy and arms also feel heavy and stinging. His head can have sensations of pins and needles. He has pain in the arms and legs everyday. He states that he gets acid reflux and certain foods make this worse.
-        </p>
-      <p class="govuk-body govuk-!-margin-bottom-2">
-        He experiences tiredness easily but also doesn't sleep well due to pain. He has good and bad days with this, he feels her bad days are about 4 days out of 7 where his pain is worse. He uses pain relief for this. No other treatment such as physiotherapy or acupuncture.
 
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <strong>Other conditions</strong>
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            No other medical problems reported during the assessment.
+          </p>
 
-<p class="govuk-body govuk-!-margin-bottom-2">
-  <strong>Secondary condition: Anxiety</strong>
-
-      </p>
-      <p class="govuk-body govuk-!-margin-bottom-2">
-        He has some anxiety that just makes him feel hot and on edge at certain times of the day and just feels he misses how he used to be.
-      </p>
-      <p class="govuk-body govuk-!-margin-bottom-2">
-        No input from the community mental health team, no psychiatrist or mental health nurse. No history of suicidal thoughts.
-      </p>
         </div>
       </div>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Medication</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-        </div>
-
-        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header govuk-30-percent">Type</th>
-                <th scope="col" class="govuk-table__header govuk-70-percent">Details</th>
-              </tr>
-            </thead>
-
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell ">Gabapentin - for nerve pain</td>
-                <td class="govuk-table__cell ">
-
-                  <ul class="govuk-list">
-
-                    <li>
-                        <b>Dose:</b> 300mg
-                    </li>
-
-                    <li>
-                        <b>Frequency:</b> 3 times per day
-                    </li>
-
-                    <li>
-                        <b>Efficacy:</b> Ineffective
-                    </li>
-
-                    <li>
-                        <b>Side effects:</b> None
-                    </li>
-
-                    <li>
-                        <b>Additional information:</b> None
-                    </li>
-                  </ul>
-
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border">Mirtazapine - to aid sleep (second-line anti-depressant)</td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border">
-
-                  <ul class="govuk-list">
-
-                    <li>
-                        <b>Dose:</b> 7.5mg
-                    </li>
-
-                    <li>
-                        <b>Frequency:</b> Once per night
-                    </li>
-
-                    <li>
-                        <b>Efficacy:</b> Little effect
-                    </li>
-
-                    <li>
-                        <b>Side effects:</b> None
-                    </li>
-
-                    <li>
-                        <b>Additional information:</b> None
-                    </li>
-                  </ul>
-
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
-
-        </div>
-      </div>
-
-
-
-      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-
-
-      <!-- <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Supporting documents</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-        </div>
-
-        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Document type</th>
-                <th scope="col" class="govuk-table__header">Details</th>
-              </tr>
-            </thead>
-
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Care Plan 2022e</td>
-                <td class="govuk-table__cell"><b>Details</b></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">GP letter</td>
-                <td class="govuk-table__cell"><b>Details</b></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Document 3</td>
-                <td class="govuk-table__cell"><b>Details</b></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border">Prescription receipt</td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Details</b></td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-      </div> -->
-
-      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Medical treatments</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Current medication<br>and treatment</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
         </div>
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            He states that he is phoned weekly by a clinical psychologist and they talk about coping mechanisms and breathing, they are involved because of his fibromyalgia/ pain. He is under the pain management team and the clinical psychologist was recommended by her pain nurse. He is not under the care of rheumatology.
-          </p>
+
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-4">Medication name</p>
+                <p class="govuk-body govuk-!-margin-bottom-6">
+
+
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Dosage
+                      </p>
+
+                      <p class="govuk-body govuk-!-margin-bottom-6">
+                        Answer
+                      </p>
+
+                      <!--  -->
+
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Frequency
+                      </p>
+
+                      <p class="govuk-body govuk-!-margin-bottom-6">
+                        Answer
+                      </p>
+
+                      <!--  -->
+
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Reason for taking
+                      </p>
+
+                      <p class="govuk-body govuk-!-margin-bottom-6">
+                        Answer
+                      </p>
+
+                      <!--  -->
+
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Effectiveness [Conditional]
+                      </p>
+
+                      <p class="govuk-body govuk-!-margin-bottom-6">
+                        Answer
+                      </p>
+
+                      <!--  -->
+
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                          Side Effects [Conditional]
+                      </p>
+
+                      <p class="govuk-body govuk-!-margin-bottom-6">
+                        Answer
+                      </p>
+
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                <p class="govuk-body govuk-!-margin-bottom-2">
+                  (Legacy) He is doing home physio exercises himself at night time before bed time.
+                  Uses CPAP machine 2-3 nights a week for sleep apnoea. Has not used this for a month. He is able to set this up and use it himself. He does not use this as he knows it is not working as he needs the BIPAP.
+                </p>
+
+
+
         </div>
       </div>
 
@@ -267,40 +434,136 @@
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He lives in a house, he is hoping to move to a one storey property as he struggles with the stairs. His home is 2 storey, his bathroom is downstairs and bedroom is upstairs, no upstairs toilet.
+            <b>Accommodation:</b> He lives in a flat - second floor, accessed by stairs. He lives by himself.
+            The shower is over the bath.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He lives in a house, he is hoping to move to a one storey property as he struggles with the stairs. His home is 2 storey, his bathroom is downstairs and bedroom is upstairs, no upstairs toilet.
+            <b>Aids and adaptation:</b> None
           </p>
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            He has got no aids or adaptations to the home. He has bought things like a massage chair for himself and he has bought himself a foot circulation machine and a massage mat.
-          </p>
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            He has had no home assessments from occupational therapy (OT) before.
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He has got a driving licence with no restrictions. He hasn't driven for about 6 months, this is because of his arms and legs, he feels he can't control his legs enough and would be at risk of hitting the wrong pedal, his legs can go numb and he finds the steering wheel hard to hold. He hasn't been advised not to drive, but he is aware he would struggle. He feels he could probably drive on a good day.
+          <b>Education:</b> He went to a normal school, had coloured filters for reading and extra time in exams. He then attended university after A 'levels and a foundation degree. He used dragon software to read things out for him in lessons whilst at university for his bachelor degree. He studied software engineering as a bachelor degree. He then did an Masters in Business Administration (MBA) and graduated in 2021 - he was supported by his Masters Tutors as per masters degree candidates and this was all coursework online. He did not use any aids whilst doing his MBA.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He is currently employed, this job involves cleaning and he will clean in a pub, this involves wiping surfaces, mopping floors, dusting and general cleaning and tidying of the pub. He has worked there for 10-11 years. He works part-time, about 12 hours per week over 5 days. No changes to his role to make it any easier, but his boss is aware of his health conditions and he is allowed to sit and rest if needed. No long-term sickness from this role over the last year. After working he will be worn out and he has broken sleep which affects him.
+            <b>Work:</b> He stopped working in December 2023, he was a programme manager for Amazon full time and prior to this a data analyst and worked in analytics over the years, including for Google. He left his role in December as he was performing poorly. Amazon did not provide him with any occupational health input and let him go without supporting him due to his dyslexia causing fatigue. He is currently looking for work, has applied for over 100 jobs, with blue chip companies and has had 3 interviews so far. He states the job market is currently tough.
           </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He is right-handed.
+            <b>Driving:</b> He has a driving licence but was advised not to drive by the sleep apnoea service due to his ongoing tests in 2022. He stopped driving in 2012 as he did not need a car as he lived in central London.
           </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
           <p class="govuk-body govuk-!-margin-bottom-2">
-            He has got a dog at home. He will feed his dog and his partner walks the dog normally. He went to mainstream school and sat his exams. He didn't do other studying afterwards.
+            <b>How else do they get around:</b> He uses public transport and walks places. As he is not working he stays at home more but is he has to go out anywhere he will use the underground and buses or walks places.
           </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Pets:</b> None
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Caring responsibilities:</b> None
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Hobbies/pastimes:</b> He plays chess on his phone to keep his brain active. He tries to read in his spare time. He is looking for work and applying for jobs constantly. He likes to spend his time exercising, on the cross trainer and he has accessed courses as he is on UC, an engineering one to give himself more employment opportunities. He likes to go for walks.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Housework:</b> He does do housework and tries to not let the place get too messy. He does his own laundry and dishes. Hoovering is a problem due to back pain. He does do this and does clean his bath but has back pain.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Shopping:</b> It is too difficult to carry shopping due to pain in his back and has food deliveries. When this comes he puts this away himself.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Who completed the questionnaire:</b> Himself.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>Any formal or informal support received:</b> None and manages himself.
+          </p>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>How do they spend their day, any difference at the weekends?</b> He spends time with his partner at the weekends at times and during the weekdays.
+          </p>
+
         </div>
       </div>
+
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Physical examination</p>
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                  &nbsp
+              </div>
+
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    Consent to physical examination
+                  </p>
+                  <p class="govuk-body govuk-!-margin-bottom-2"><b>
+                  Yes / No
+                  </b></p>
+
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    Reason physical examination was not required
+                  </p>
+                  <p class="govuk-body govuk-!-margin-bottom-2"><b>
+                  Open text field
+                  </b></p>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    Chaperone name
+                  </p>
+                  <p class="govuk-body govuk-!-margin-bottom-2"><b>
+                  Name Name
+                  </b></p>
+                  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                  <p class="govuk-body govuk-!-margin-bottom-2">
+                    Physical examination notes
+                  </p>
+                  <p class="govuk-body govuk-!-margin-bottom-2"><b>
+                  Open text field
+                  </b></p>
+
+              </div>
+            </div>
+
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Observations</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Mental state observations</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
@@ -308,11 +571,23 @@
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Answered all questions clearly and appropriately. Speech was clear, coherent and relevant. Provided information independently.
+            IOs showed no that he did not appear fatigued or tired during the assessment. There was no expression of pain, breathlessness or wheeze.
           </p>
+
           <p class="govuk-body govuk-!-margin-bottom-2">
-            No reports of pain for the most part. Pain was reported when he changed position.
+            There is no other evidence to support restriction.
           </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            This is consistent with the lack of reported restriction in the questionnaire and the ability reported in the FH.
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            It is likely that he can stand and then move more than 200 metres, either aided or unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+          </p>
+
+
+
         </div>
       </div>
 
@@ -320,7 +595,7 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Mental state</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Informal observations</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
@@ -328,29 +603,43 @@
 
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Engaged well and developed a good rapport over the phone.
+            Did not sound anxious during the assessment. Did not require prompting.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            No evidence of anxiety, distress or agitation. Did not appear to be flat/low in mood or withdrawn.
+            Manner appeared normal and did not appear withdrawn. Mood appeared stable.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Did not require prompting.
+            Had adequate rapport
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Had adequate memory and concentration.
+            Had adequate insight.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            No evidence of cognitive impairment.
+            Had adequate memory.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Appeared to be alert and orientated.
+            Did cope with the assessment despite the prolonged length of it and being assessed alone.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Had good insight.
+            Speech was normal in tone and content. Volume was normal and comprehensible.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-2">
-            Speech was normal in amount, content, rate, tone and volume.
+            No evidence of a cognitive impairment.
           </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            Engaged with the assessment process without any input.
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            (Telephone assessment undertaken)
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            The telephone assessment lasted 2 hours and 20 minutes. He did not appear fatigued or tired during the assessment.
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            There was no expression of pain, breathlessness or wheeze.
+          </p>
+
+
         </div>
       </div>
 
@@ -358,103 +647,706 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Other observations</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Daily living findings</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
         </div>
-
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            No other observations to note.
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-4">Preparing food</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+          He will prepare things like pasta, cuts up some onions normally. He makes himself quite simple meals and relies on himself for this only, preferring it this way. <br><br>He has had one incident where he has cut his index finger where he needed a plaster whilst chopping. States this was due to a muscle flinch. He does not use any aids. he does not need prompting. He is able to make teas and coffees, using the kettle.
           </p>
+
+
+          <p class="govuk-heading-s govuk-!-margin-bottom-2">
+            How well can they prepare food?
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+            (1a) can prepare a cook a simple meal unaided
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">
+            <b>Justification for preparing food</b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-8">
+          PIP2 - Reports issues with muscle flinching in his right arm.
+
+          <br><br>HOC shows that he is under GP care for his back and fibromyalgia, having just been referred to pain clinic. MT shows that he takes no prescribed pain relief and only OTC anti inflammatory pain and as required mild pain relief.
+
+          <br><br>HOC shows arm flinching but there is no FE to support significant restriction with this. FH in activity 4 - washing and bathing, shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger. The above FH reports that he has just cut himself once as a result of his flinching when preparing food in the kitchen.
+
+          <br><br>HOC shows that he has sleep apnoea and whilst he reports fatigue as an issue, he is only needing to take a 20 minute nap in the day normally to feel refreshed. SOH shows that he likes to exercise and go for walks. It also shows that is doing housework, is looking for work and was working full time until 4 months ago having lost his job due to his performance and he did not have any occupation health input.
+
+          <br><br>IOs showed no that he did not appear fatigued or tired during the assessment. There was no expression of pain, breathlessness or wheeze.
+
+          <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia and he has been able to obtain a MBA in recent years without any significant support or aids.
+
+          <br><br>SOH shows that he has been able to achieve a degree and a post grad MBA. He has been working in responsible roles within blue chip companies.
+
+          <br><br>Although he lost his job in December 2023, he did not have any occupational health input prior to this. There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+          There is no other evidence to support restriction.
+
+          <br><br>Any reported restriction in his questionnaire is likely to be medically inconsistent.
+          It is likely that he can prepare and cook a simple meal unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+        </p>
+
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Taking nutrition</p>
+
+
+          <p class="govuk-heading-s govuk-!-margin-bottom-2">
+            How well can they take nutrition
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+            (2a) Can take nutrition unaided
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">
+            <b>Justification for taking nutrition</b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            He is able to take drinks himself. He does eat and drink by himself, does not use any adapted cutlery, does not need prompting and has no issues swallowing or chewing other than biting his lip or cheek. He does not need to be prompted.
+
+            <br><br>PIP2 - he bites into his tongue and cheeks due to temporomandibular joint pain leading to jaw soreness.
+
+            <br><br>There is no HOC to support dietetic support at present and there is no reported weight loss. He takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of autism. There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective. There is no other evidence to support restriction.
+
+            <br><br>Whilst HOC shows Temporomandibular joint pain and referral to an orthodontist, he has not been to A&E since 2003 with any oral injuries despite reporting that he bites his lip daily when eating. As above, there is no evidence of dietic support for this, special diets or alternative food administration routes.
+
+
+          </p>
+
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Managing therapy or monitoring a health condition</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-4">
+            <b>How well can they manage therapy or monitor a health condition?</b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+            (3a) Either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">
+            <b>Justification for managing therapy or monitoring a health condition</b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            HOC shows arm flinching but there is no FE to support significant restriction with this. FH in activity 4 - washing and bathing, shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger.
+            <br><br>This is medically consistent with the FH which shows no significant restriction.
+            <br><br>It is likely that he can take nutrition unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+            <br><br>He takes his own medication himself and requires no prompting, assistance and uses no aids.
+
+            <br><br>PIP2 - reports no issues.
+
+            <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of autism. There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective. There is no other evidence to support restriction.
+
+            <br><br>MT shows that he takes no prescribed medication and OTC pain relief only. He is independent with his home physio exercises as he is with his CPAP machine.
+            Whilst HOC shows Temporomandibular joint pain and referral to an orthodontist, he has not been to A&E since 2003 with any oral injuries despite reporting that he bites his lip daily when eating.
+
+            <br><br>HOC shows arm flinching but there is no FE to support significant restriction with this. FH in activity 4 - washing and bathing, shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger.
+            This is medically consistent with the FH and questionnaire which shows no significant restriction.
+
+            <br><br>It is likely that he either does not receive medication or therapy or need to monitor a health condition, or can manage medication or therapy or monitor a health condition unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard
+
+
+          </p>
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Washing and bathing</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <b>
+              How well can they wash and bathe?
+            </b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+            (4a) Can wash and bathe unaided
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-4">
+            <b>Justification for washing and bathing</b>
+          </p>
+
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            He is able to get into the bath himself, then washes himself and gets out of he time bath himself. He does wet shave himself normally and does not normally cut himself as a result of flinching. He requires no prompting, has no assistance and uses no aids.
+
+            <br><br>PIP2 - reports problems with balance. Suffers with stiffness and pain.
+
+            <br><br>HOC shows that he is under GP care for his back and fibromyalgia, having just been referred to pain clinic. MT shows that he takes no prescribed pain relief and only OTC anti inflammatory pain and as required mild pain relief.
+
+            <br><br>HOC shows arm flinching but there is no FE to support significant restriction with this. FH
+            shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger.
+
+            <br><br>HOC shows that he has sleep apnoea and whilst he reports fatigue as an issue, he is only needing to take a 20 minute nap in the day normally to feel refreshed. SOH shows that he likes to exercise and go for walks. It also shows that is doing housework, is looking for work and was working full time until 4 months ago having lost his job due to his performance and he did not have any occupational health input.
+
+            <br><br>IOs showed no that he did not appear fatigued or tired during the assessment. There was no expression of pain, breathlessness or wheeze.
+
+            <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+
+            <br><br>There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+
+            <br><br>This is consistent with the lack of reported restriction in his FH.
+
+            <br><br>The reported restriction in the questionnaire is likely to be medically inconsistent.
+
+            <br><br>There is no other evidence to support restriction.
+
+            <br><br>It is likely that he can wash and bathe unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+
+          </p>
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Managing toilet needs or incontinence</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+
+            Reports no issues with getting on and off the toilet, cleaning himself and does not have any incontinence or wear incontinence pads. He does not require prompting.
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they manage toilet needs or incontinence?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (5a) Can manage toilet needs or incontinence unaided
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for managing toilet needs and incontinence</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+            PIP2 - reports no issues.
+
+            <br><br>HOC shows that he is under GP care for his back and fibromyalgia, having just been referred to pain clinic. MT shows that he takes no prescribed pain relief and only OTC anti inflammatory pain and as required mild pain relief.
+
+            <br><br>HOC shows arm flinching but there is no FE to support significant restriction with this. FH shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger.
+
+            <br><br>HOC shows that he has sleep apnoea and whilst he reports fatigue as an issue, he is only needing to take a 20 minute nap in the day normally to feel refreshed. SOH shows that he likes to exercise and go for walks. It also shows that is doing housework, is looking for work and was working full time until 4 months ago having lost his job due to his performance and he did not have any occupational health input.
+
+            <br><br>IOs showed no that he did not appear fatigued or tired during the assessment. There was no expression of pain, breathlessness or wheeze.
+
+            <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+            There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+
+            <br><br>This is consistent with the lack of reported restriction in his FH and questionnaire.
+
+            <br><br>There is no other evidence to support restriction.
+
+            <br><br>It is likely that he can manage toilet needs or incontinence unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+
+          </p>
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Dressing and undressing</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+            He will find getting his socks on more difficult as his hamstrings are tight due to his fibromyalgia and he finds himself off balance needing to sit on the bed to dress. He will still dress himself despite pain, leaning forward as required. He requires no aids, assistance of prompting to dress or with choice of clothing.
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they dress and undress?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (6a) Can dress and undress unaided
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for dressing and undressing</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+              PIP2 - reports no issues.
+
+              <br><br>HOC shows that he is under GP care for his back and fibromyalgia, having just been referred to pain clinic. MT shows that he takes no prescribed pain relief and only OTC anti inflammatory pain and as required mild pain relief.
+
+              <br><br>HOC shows arm flinching but there is no FE to support significant restriction with this. FH shows that he still wet shaves himself which is unlikely to support significant risk from any flinching when there is no reported trigger.
+
+              <br><br>HOC shows that he has sleep apnoea and whilst he reports fatigue as an issue, he is only needing to take a 20 minute nap in the day normally to feel refreshed. SOH shows that he likes to exercise and go for walks. It also shows that is doing housework, is looking for work and was working full time until 4 months ago having lost his job due to his performance and he did not have any occupation health input.
+
+              <br><br>IOs showed no that he did not appear fatigued or tired during the assessment. There was no expression of pain, breathlessness or wheeze.
+
+              <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+
+              <br><br>There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+
+              <br><br>This is consistent with the lack of reported restriction in his questionnaire.
+
+              <br><br>The reported restriction in the FH is likely to be medically inconsistent and is likely to be mitigated by sitting down to dress which is not in scope.
+              <br><br>There is no other evidence to support restriction.
+              <br><br>It is likely that he can dress and undress unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+
+
+
+          </p>
+
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Communicating verbally</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+            He states he gets by daily with communicating with people. He does not use any aids. He is better when he is at work but states that people used to ask him to repeat himself. He has been told that he mumbles and slurs his words. He talks too fast. He gets by, repeating himself. He does struggle engaging in loud environments as he cannot speak loud enough.
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they communicate verbally?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (7a) Can express and understand verbal information unaided
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for communicating verbally</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+            PIP2 - reports issues due to obstructive sleep apnoea, resulting in slurred speech and due to a mouth guard that he has been wearing for 20 years, this has affected his speech.
+            HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia and he has been able to obtain a MBA in recent years without any significant support or aids.
+
+            <br><br>SOH shows that he has been able to achieve a degree and a post grad MBA. He has been working in responsible roles within blue chip companies. Although he lost his job in December 2023, he did not have any occupational health input prior to this. There was no evidence in his MSE to show any restriction from a mental health, communication or cognitive perspective.
+
+            <br><br>Whilst HOC shows a history of Temporomandibular (jaw) joint pain and fatigue, IO showed that he was communicative, was talkative, spoke in context, was easily understood, spoke at a normal rate and was able to understand the assessors questions. This was despite the assessment taking 2 hours and 20 minutes.
+
+            <br><br>There is no other evidence to support restriction.
+
+            <br><br>The reported restriction in the questionnaire and FH is likely to be medically inconsistent.
+            It is likely that he can express and understand verbal information unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+
+          </p>
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Reading and understanding signs,symbols and words</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+            He states that he used to use a screen filter and dragon software and does not use any aids at all now. He is able to read unaided for 20 minutes without the need to stop. He uses no aids or specialist software when he is using his lap top when applying for jobs.
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they read and understand signs, symbols and words?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (8a) Can read and understand basic and complex written information either unaided or using spectacles or contact lenses            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for reading and understanding signs, symbols and words</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+            PIP2 - reports no issues.
+
+            <br><br>HOC shows no formal diagnosis of Autism and although he had support at school, this was for his dyslexia and he has been able to obtain a MBA in recent years without any significant support or aids.
+
+            <br><br>SOH shows that he has been working in responsible roles within blue chip companies. Although he lost his job in December 2023, he did not have any occupational health input
+            prior to this.
+
+            <br><br>There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+
+            <br><br>Whilst SOH shows the use of aids whilst at school and the use of software for his dyslexia, FH shows no recent use of these.
+
+            <br><br>There is no other evidence to support restriction.
+
+            <br><br>This is consistent with no restriction being reported in the questionnaire and the ability to complete this task unaided in his FH.
+
+            <br><br>It is likely that he can read and understand basic and complex written information either unaided or using spectacles or contact lenses, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+          </p>
+
+
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Engaging with other people face to face</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+            He spends time with his girlfriend. He will attend appointments by himself and is able to engage with people on the way whilst using public transport and will have a conversation with them if they ask for directions. He was able to engage with people at work. He gets on better engaging with people in general if he is outdoors as they can hear him better. He has been engaging with people face to face for interviews without support as well as the job centre and meeting with the advisor unaided.
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they engage with other people face to face?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (9a) Can engage with other people unaided
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for engaging face to face</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+            PIP2 - reports that he has a depressive disorder and has been been through an assessment for autism.
+
+
+          </p>
+
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Making budgeting decisions</p>
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <b>
+                How well can they make budgeting decisions?
+              </b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-6">
+              (10a) Can manage complex budgeting decisions unaided
+            <p class="govuk-body govuk-!-margin-bottom-4">
+              <b>Justification for making budgeting decisions</b>
+            </p>
+
+            <p class="govuk-body govuk-!-margin-bottom-8">
+            HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+
+            <br><br>SOH shows that he has been working in responsible roles within blue chip companies. Although he lost his job in December 2023, he did not have any occupational health input prior to this.
+
+            <br><br>There was no evidence in his MSE to show any restriction from a mental health, communication or cognitive perspective.
+
+            <br><br>IO showed that he was communicative, was talkative, spoke in context, was easily understood, spoke at a normal rate and was able to understand the assessors questions.
+
+            <br><br>This was despite the assessment taking 2 hours and 20 minutes.
+
+            <br><br>There is no other evidence to support restriction.
+
+            <br><br>This is overall consistent with the lack of restriction indicated on the FH.
+            <br><br>Any reported restriction in the questionnaire is likely to be medically inconsistent.
+            <br><br>It is likely that he can engage with other people unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+            <br><br>He looks after his own finances and money without any support or help and is able to budget accordingly.
+
+            <br><br>PIP2 - reports no issues.
+            <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+
+            <br><br>SOH shows that he has been working in responsible roles within blue chip companies. Although he lost his job in December 2023, he did not have any occupational health input prior to this. He has been able to complete a MBA in recent years.
+
+            <br><br>There was no evidence in his MSE to show any restriction from a mental health or cognitive perspective.
+
+            <br><br>This is overall consistent with the lack of restriction indicated on the FH and questionnaire.
+            <br><br>It is likely that he can manage complex budgeting decisions unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly.
+
+          </p>
+
+
         </div>
       </div>
 
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Daily living functional restriction</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Mobility findings</p>
 
           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
             &nbsp
         </div>
-
         <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Planning and following journeys</p>
+          <p class="govuk-body govuk-!-margin-bottom-6">
 
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-60-percent">Have they had the functional restriction for at least 3 months?</td>
-                <td class="govuk-table__cell govuk-40-percent"><b>Yes</b></td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border">Are they likely to have the functional restriction in 9 months?</td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Yes</b></td>
-              </tr>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <b>
+                  How well can they plan and follow journeys?
+                </b>
+              </p>
 
-            </tbody>
-          </table>
+              <p class="govuk-body govuk-!-margin-bottom-6">
+                (11a) Can plan and follow the route of a journey unaided
+              <p class="govuk-body govuk-!-margin-bottom-4">
+                <b>Justification for planning and following journeys</b>
+              </p>
 
+              <p class="govuk-body govuk-!-margin-bottom-8">
+              He is able to plan his own journeys when he has to. He can use buses, trains and undergrounds himself and does not need to be supported. He can speak and engage with people on the way and can manage diversions in the underground.
+
+              <br><br>PIP2 - reports no issues.
+              <br><br>HOC shows that he takes no medication for this mental health, is under GP care and there are no further plans for treatment. There is no formal diagnosis of Autism and although he had support at school, this was for his dyslexia.
+
+              <br><br>SOH shows that he has been working in responsible roles within blue chip companies. Although he lost his job in December 2023, he did not have any occupational health input prior to this. He uses public transport and walks places. As he is not working he stays at home more but is he has to go out anywhere
+              </p>
+
+          <!--------------------------------><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Moving around</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-6">
+
+              He will use the underground and buses or walks places.
+              </p>
+
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <b>
+                  How well can they move around?
+                </b>
+              </p>
+
+              <p class="govuk-body govuk-!-margin-bottom-6">
+                (12a) Can stand and then move more than 200 metres, either aided or unaided
+              <p class="govuk-body govuk-!-margin-bottom-4">
+                <b>Justification for moving around</b>
+              </p>
+
+              <p class="govuk-body govuk-!-margin-bottom-8">
+
+
+              There was no evidence in his MSE to show any restriction from a mental health, communication or cognitive perspective.
+
+              <br><br>There is no other evidence to support restriction.
+
+              <br><br>This is overall consistent with the lack of restriction indicated on the FH and in the questionnaire.
+
+              <br><br>It is likely that he can plan and follow the route of a journey unaided, on the majority of days, ensuring safety, timeliness, that it is done to an acceptable standard and repeatedly
+              <br><br>He will go for walks 2 days a week lasting 20-60 minutes at a time. He does this without needing to stop. On the other days will use the cross trainer for 30-45 minutes at the gym 3 times a week (these are variable intensity workouts - ramping up to high intensities). This is a 10 minute walk each way week to the gym and then returning from the gym. He can do this without needing to rest. He uses no aids and states that he tends to walk at an above average pace.
+
+              <br><br>PIP2 - reports no issues.
+
+              <br><br>PIP2 - Reports issues with muscle flinching in his right arm.
+
+              <br><br>HOC shows that he is under GP care for his back and fibromyalgia, having just been referred to pain clinic. MT shows that he takes no prescribed pain relief and only OTC anti inflammatory pain and as required mild pain relief.
+
+              <br><br>HOC shows that he has sleep apnoea and whilst he reports fatigue as an issue, he is only needing to take a 20 minute nap in the day normally to feel refreshed. SOH shows that he likes to exercise and go for walks. It also shows that is doing housework, is looking for work and was working full time until 4 months ago having lost his job due to his performance and he did not have any occupational health input.
+
+              </p>
+
+          </div>
         </div>
-      </div>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Daily living qualifying period and prospective test</p>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Mobility functional restriction</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+              &nbsp
+          </div>
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-            &nbsp
+          <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                Have they had the functional restriction for at least 3 months?
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+              No daily living restriction found
+              </p>
+
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                Are they likely to have the functional restriction in 9 months?
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                No daily living restriction found
+              </p>
+
+          </div>
         </div>
 
-        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-0">
 
-          <table class="govuk-table ">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-60-percent">Have they had the functional restriction for at least 3 months?</td>
-                <td class="govuk-table__cell govuk-40-percent"><b>Yes</b></td>
-              </tr>
-              <tr class="govuk-table__row ">
-                <td class="govuk-table__cell  govuk-table--no-bottom-border">Are they likely to have the functional restriction in 9 months?</td>
-                <td class="govuk-table__cell  govuk-table--no-bottom-border"><b>Yes</b></td>
-              </tr>
-
-            </tbody>
-          </table>
-
-        </div>
-      </div>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                  <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Mobility qualifying period and prospective test</p>
 
-      <!-- <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Award review recommendation</p>
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                    &nbsp
+                </div>
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-            &nbsp
-        </div>
+                <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
 
-        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Evidence used</p>
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                      Have they had the functional restriction for at least 3 months?
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                    No mobility restriction found
+                    </p>
 
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100
-          </p>
-        </div>
-      </div> -->
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                      Are they likely to have the functional restriction in 9 months?
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      No mobility restriction found
+                    </p>
+
+                </div>
+              </div>
 
 
-      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                  <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Recommendation</p>
+
+                  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                    &nbsp
+                </div>
+
+                <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                      Recommended future review period
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                    X
+                    </p>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                      Reason for this review period
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      XXX
+                    </p>
+
+                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                      Is it likely the functional restriction will still be present when reviewed?
+                    </p>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                      XXX
+                    </p>
+
+
+                </div>
+              </div>
+
+
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Additional support</p>
+
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                            &nbsp
+                        </div>
+
+                        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                              Do they need additional support for future claims processes?
+                            </p>
+                            <p class="govuk-body govuk-!-margin-bottom-2">
+                            Yes / No
+                            </p>
+
+                        </div>
+                      </div>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Special rules</p>
+
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                            &nbsp
+                        </div>
+
+                        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">
+                              Do they meet the criteria for special rules?
+                            </p>
+                            <p class="govuk-body govuk-!-margin-bottom-2">
+                              Yes / No
+                            </p>
+
+                        </div>
+                      </div>
+
+                      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-2">
+                          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-6">Harmful information</p>
+
+                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                            &nbsp
+                        </div>
+
+                        <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+
+
+                            <p class="govuk-body govuk-!-margin-bottom-2">
+                            No harmful information has been included in this report
+                            </p>
+
+
+                        </div>
+                      </div>
 
 
 
@@ -497,6 +1389,37 @@
 
 {% endset -%}
 
+<!--
+{{ govukRadios({
+  idPrefix: "evidence-6-grade",
+  name: "evidence-6-grade",
+  fieldset: {
+    legend: {
+      text: "Is there an issue with this document?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Remove",
+    text: "Yes",
+    checked: (data["evidence-6-grade"] == "Remove"),
+          conditional: {
+            html: nextAction
+          }
+      },
+  {
+    value: "Good",
+    text: "No",
+    checked: (data["evidence-6-grade"] == "Good")
+  }
+  ]
+}) }} -->
 
         </div>
       </div>
