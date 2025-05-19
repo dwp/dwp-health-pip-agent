@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-1/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-1/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-1/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {% include "person-record-0-0-1/r-navigation.html" %}
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Bank details</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="#" target="">Add an another contact method</a></p> -->
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name on the account"
+          },
+          value: {
+            html: "Jeff Bridges"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Account type"
+          },
+          value: {
+            html: "Bank"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Bank name"
+          },
+          value: {
+            html: "Monzo"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Sort code"
+          },
+          value: {
+            html: "** ** 33"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              },
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Account number"
+          },
+          value: {
+            html: "** ** ** 55"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              },
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}
