@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "person-record-0-0-1/record-id-base.html" %}
+
+  <form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "record-foundation-overview"
+        },
+        {
+          text: "Move to...",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+      {{ govukRadios({
+        idPrefix: "applicaiton-actions",
+        name: "applicaiton-actions",
+        fieldset: {
+          legend: {
+            html: "Where does this record need to move to?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "2",
+          html: "PIPcs",
+          checked: (data["applicaiton-actions"] == "2")
+        },
+        {
+          value: "5",
+          html: "Disability Living Allowance (DLA)",
+          checked: (data["applicaiton-actions"] == "4")
+        },
+        {
+          value: "4",
+          html: "Adult Disability Payment (ADP)",
+          checked: (data["applicaiton-actions"] == "4")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
