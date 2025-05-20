@@ -19,9 +19,9 @@
 
       {% if data["id-scenario-selection"] == "Scenario2a" %}
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Claimant record</h1>
-    
+
       {% else %}
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check details and send invitation to complete the health information gather online</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check details and send invitation email</h1>
 
       {% endif %}
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Something</p> -->
@@ -151,6 +151,25 @@ They can do XYZ
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
+
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Mobile number"
+            },
+            value: {
+              html: data["applicant-details-capture-postcode"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "applicant-details-capture",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+
               ]
             }
           }
