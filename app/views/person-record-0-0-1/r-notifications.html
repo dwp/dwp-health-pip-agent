@@ -398,22 +398,22 @@
 <p class="govuk-body govuk-!-font-size-19">
 
 
-{% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
+{% if data["r-flags-add"] and (data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"]) %}
   'KCIS',
   {% else %}
   {% endif %}
 
-  {% if data["r-flags-add"] == "Flag2" or "Flag2" in data["r-flags-add"] %}
+  {% if data["r-flags-add"] and (data["r-flags-add"] == "Flag2" or "Flag2" in data["r-flags-add"]) %}
   'Financially vulnerable',
   {% else %}
   {% endif %}
 
-  {% if data["r-flags-add"] == "Flag3" or "Flag3" in data["r-flags-add"] %}
+  {% if data["r-flags-add"] and (data["r-flags-add"] == "Flag3" or "Flag3" in data["r-flags-add"]) %}
   'Additional support',
   {% else %}
   {% endif %}
 
-  {% if data["r-flags-add"] == "Flag4" or "Flag4" in data["r-flags-add"] %}
+  {% if data["r-flags-add"] and (data["r-flags-add"] == "Flag4" or "Flag4" in data["r-flags-add"]) %}
   'Something else'
   {% else %}
   {% endif %}
@@ -433,7 +433,7 @@ attributes: {
 
 
 
-{% set html %}
+{% set DynamicAddress %}
 <p class="govuk-body govuk-!-font-size-19">A new address 'Richardson Road, Newcastle upon Tyne, NE2 4BJ' has been added to the record.</p>
 </p>
 {% endset %}
@@ -443,13 +443,13 @@ attributes: {
 attributes: {
   id: "r-address-add"
 },
-  html: html,
+  html: DynamicAddress,
   type: 'success'
 }) }}
 
 
 
-{% set html %}
+{% set DynamicAppointee %}
 <p class="govuk-body govuk-!-font-size-19">A new Power of Attorney 'Sam Elliott' has been added to the person's record.</p>
 {% endset %}
 
@@ -458,7 +458,7 @@ attributes: {
 attributes: {
   id: "r-appointees-add"
 },
-  html: html,
+  html: DynamicAppointee,
   type: 'success'
 }) }}
 
