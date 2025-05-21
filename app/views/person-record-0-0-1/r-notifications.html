@@ -397,7 +397,7 @@
 {% set flagContext %}
 <p class="govuk-body govuk-!-font-size-19">
 
- 
+
 {% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
   'KCIS',
   {% else %}
@@ -425,7 +425,7 @@
 {{ govukNotificationBanner({
   classes: "prototype-banner-hidden",
 attributes: {
-  id: "r-flags-add"
+  id: "r-flags-add-marker"
 },
   html: flagContext,
   type: 'success'
