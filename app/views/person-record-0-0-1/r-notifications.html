@@ -25,6 +25,9 @@
 {% else %}
 {% endif %}
 
+
+
+
 {% if data["find-someone-1-offline-return"]  == "Yes" or  data["find-someone-1-offline-return"]  == "YesLinked"%}
 
   {% else %}
@@ -388,11 +391,10 @@
 
 
 <!-- top Level Notifications -->
+<!-- Colins banner -->
+<!-- Add # to the url on the final return page -->
 
-
-{% if data["r-flags-add"] %}
-
-{% set html %}
+{% set flagContext %}
 <p class="govuk-body govuk-!-font-size-19">
 
 
@@ -416,23 +418,20 @@
   {% else %}
   {% endif %}
 
-' flags and markers have been added to the person's record.</p>
-
+  ' flags and markers have been added to the person's record.</p>
 
 {% endset %}
 
 {{ govukNotificationBanner({
-  html: html,
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-add"
+},
+  html: flagContext,
   type: 'success'
 }) }}
 
 
-{% else %}
-{% endif %}
-
-
-
-<!-- Colins banner -->
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">A new address 'Richardson Road, Newcastle upon Tyne, NE2 4BJ' has been added to the record.</p>
