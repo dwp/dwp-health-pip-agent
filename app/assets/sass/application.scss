@@ -737,3 +737,13 @@ float: right;
   border-bottom: 0 solid #000;
 
 }
+
+// colin bannder
+
+.prototype-banner-hidden {
+    display: none;
+}
+
+.prototype-banner-hidden:target {
+    display: block;
+}

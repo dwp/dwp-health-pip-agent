@@ -430,7 +430,9 @@
 {% else %}
 {% endif %}
 
-{% if data["r-address-add"] %}
+
+
+<!-- Colins banner -->
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">A new address 'Richardson Road, Newcastle upon Tyne, NE2 4BJ' has been added to the record.</p>
@@ -438,26 +440,29 @@
 {% endset %}
 
 {{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-address-add"
+},
   html: html,
   type: 'success'
 }) }}
 
-{% else %}
-{% endif %}
 
-{% if data["r-appointees-add"] %}
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">A new Power of Attorney 'Sam Elliott' has been added to the person's record.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-appointees-add"
+},
   html: html,
   type: 'success'
 }) }}
 
-{% else %}
-{% endif %}
 
 
 
