@@ -11,15 +11,13 @@ function makeAStay(data) {
 }
 
 // PDF DOWNLOADER
-router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-letter.pdf')))
-router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc1.pdf')))
-router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc2.pdf')))
-router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc3.pdf')))
-router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc4.pdf')))
-router.use(`/pip-doc5.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc5.pdf')))
-router.use(`/pip-doc6.pdf`, express.static(path.resolve('app/views/agent-0-11/pip-doc6.pdf')))
-
-
+router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-letter.pdf')))
+router.use(`/pip-doc1.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc1.pdf')))
+router.use(`/pip-doc2.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc2.pdf')))
+router.use(`/pip-doc3.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc3.pdf')))
+router.use(`/pip-doc4.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc4.pdf')))
+router.use(`/pip-doc5.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc5.pdf')))
+router.use(`/pip-doc8.pdf`, express.static(path.resolve('app/views/agent-0-7/pip-doc8.pdf')))
 
 // —————————————————————————————————
 
@@ -37,6 +35,50 @@ router.post(`/test-radio-router`, (req, res) => {
     res.redirect(`XXX`)
   }
 })
+
+router.post(`/system-application-selector-router`, (req, res) => {
+  const applicationSelector = req.session.data['system-application-selector']
+
+  if (applicationSelector == '1') {
+    res.redirect(`application-6-about`)
+  }
+  else if (applicationSelector == '2') {
+    res.redirect(`application-6-about`)
+  }
+  else if (applicationSelector == '8') {
+    res.redirect(`assurance-overview`)
+  }
+  else if (applicationSelector == '10') {
+    res.redirect(`preparation-overview`)
+  }
+  else if (applicationSelector == '11') {
+    res.redirect(`preparation-overview`)
+  }
+  else if (applicationSelector == '12') {
+    res.redirect(`man-recon-overview`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+router.post(`/system-myopentasks-selector-router`, (req, res) => {
+  const openTaskSelector = req.session.data['system-myopentasks-selector']
+
+  if (openTaskSelector == '1') {
+    res.redirect(`my-open-tasks`)
+  }
+  else if (openTaskSelector == '2') {
+    res.redirect(`my-open-tasks`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
 
 
 router.post(`/section-4-add-1-router`, (req, res) => {
@@ -126,30 +168,14 @@ router.post(`/inbound-1-greeting-router`, (req, res) => {
   }
 })
 
-router.post(`/ecp-other-help-router`, (req, res) => {
-  const inboundEndCallProcess = req.session.data['ecp-other-help']
+router.post(`/inbound-1-end-call-process-router`, (req, res) => {
+  const inboundEndCallProcess = req.session.data['inbound-1-end-call-process']
 
   if (inboundEndCallProcess == 'Yes') {
-    res.redirect(`record-other-actions`)
+    res.redirect(`inbound-1-end-call-dispute`)
   }
   else if (inboundEndCallProcess == 'No') {
-    res.redirect(`ecp-goodbye`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
-})
-
-
-
-router.post(`/record-other-actions-router`, (req, res) => {
-  const endCallProcessReturnToRecord = req.session.data['record-other-actions']
-
-  if (endCallProcessReturnToRecord == 'A') {
-    res.redirect(`record-other-actions-request-callback`)
-  }
-  else if (endCallProcessReturnToRecord == 'B') {
-    res.redirect(`record-1-overview`)
+    res.redirect(`inbound-1-end-call-exit`)
   }
    else {
     res.redirect(`XXX`)
@@ -171,41 +197,6 @@ router.post(`/application-3-lpa-1-router`, (req, res) => {
 })
 
 
-
-router.post(`/application-selector-router`, (req, res) => {
-  const applicationSelector = req.session.data['application-selector']
-
-  if (applicationSelector == '1') {
-    res.redirect(`application-1-overview`)
-  }
-  else if (applicationSelector == '2') {
-    res.redirect(`application-2-overview`)
-  }
-  else if (applicationSelector == '3') {
-    res.redirect(`application-3-overview`)
-  }
-  else if (applicationSelector == '4') {
-    res.redirect(`application-4-overview`)
-  }
-  else if (applicationSelector == '5') {
-    res.redirect(`application-5-overview`)
-  }
-  else if (applicationSelector == '5a') {
-    res.redirect(`application-prompt-whats-done`)
-  }
-  else if (applicationSelector == 'A') {
-    res.redirect(`assurance-overview`)
-  }
-  else if (applicationSelector == 'AM') {
-    res.redirect(`assurance-overview`)
-  }
-  else if (applicationSelector == 'APR') {
-    res.redirect(`assurance-overview`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
-})
 
 
 router.post(`/outbound-precall-router`, (req, res) => {
@@ -317,10 +308,10 @@ router.post(`/application-5-award-review-check-router`, (req, res) => {
   const awardReview = req.session.data['application-5-award-review-check']
 
   if (awardReview == 'No') {
-    res.redirect(`application-5-award-review-date-manual`)
+    res.redirect(`application-5-award-review-date`)
   }
    else {
-    res.redirect(`application-5-award-review-date-prompt`)
+    res.redirect(`application-5-letter-review`)
   }
 })
 
@@ -359,138 +350,1326 @@ router.post(`/application-1-task-t3-routers`, (req, res) => {
 })
 
 
+router.post(`/application-6-award-period-end-check-router`, (req, res) => {
+  const awardPeriodCheck = req.session.data['application-6-award-period-end-check']
 
-router.post(`/check-outcome-routers`, (req, res) => {
-  const checkOutcome = req.session.data['check-outcome']
-
-  if (checkOutcome == 'Yes') {
-    res.redirect(`application-activity-selector`)
+  if (awardPeriodCheck == 'Yes') {
+    res.redirect(`application-6-assessment-report-completed`)
   }
    else {
-    res.redirect(`application-5-award-review-check`)
+    res.redirect(`application-6-award-date-needed`)
   }
 })
 
-router.post(`/application-5-letter-review-router`, (req, res) => {
-  const letterReview = req.session.data['application-5-letter-review']
 
-  if (letterReview == 'Yes') {
+router.post(`/application-6-award-date-needed-router`, (req, res) => {
+  const awardDateCheck = req.session.data['application-6-award-date-needed']
+
+  if (awardDateCheck == 'Yes') {
+    res.redirect(`application-6-agree-AP`)
+  }
+   else {
+    res.redirect(`application-6-award-period-end`)
+  }
+})
+
+
+router.post(`/award-dates-AP-rec-check-router`, (req, res) => {
+  const agreeAPCheck = req.session.data['award-dates-AP-rec-check']
+
+  if (agreeAPCheck == 'Yes') {
+    res.redirect(`award-dates-playback`)
+  }
+   else {
+    res.redirect(`award-dates-review-manual`)
+  }
+})
+
+router.post(`/award-dates-review-manual-router`, (req, res) => {
+  const reviewDatesManual = req.session.data['award-dates-review-manual']
+
+  if (reviewDatesManual == 'None') {
+    res.redirect(`award-dates-payment-date`)
+  }
+   else {
+    res.redirect(`award-dates-playback`)
+  }
+})
+
+
+
+
+router.post(`/award-dates-payment-check-router`, (req, res) => {
+  const paymentEndDate = req.session.data['award-dates-payment-check']
+
+  if (paymentEndDate == 'Yes') {
+    res.redirect(`award-dates-payment-date`)
+  }
+   else {
+    res.redirect(`award-dates-playback`)
+  }
+})
+
+router.post(`/assurance-tasklist-separate-outcome-router`, (req, res) => {
+  const assuranceOutcomeTaskList = req.session.data['assurance-tasklist-separate-outcome']
+
+  if (assuranceOutcomeTaskList == 'AP') {
     res.redirect(`entry-home`)
   }
+  else if (assuranceOutcomeTaskList == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (assuranceOutcomeTaskList == 'Disallow') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (assuranceOutcomeTaskList == 'Withdraw') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
    else {
-    res.redirect(`letter-error`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
-router.post(`/outbound-2-finder-router`, (req, res) => {
-  const outboundFinder = req.session.data['outbound-2-finder-name']
+router.post(`/assurance-disallow-check-router`, (req, res) => {
+  const assuranceOutcomeDisallow = req.session.data['assurance-disallow-check']
 
-  if (outboundFinder == 'No') {
-    res.redirect(`outbound-2-finder-fail`)
+  if (assuranceOutcomeDisallow == 'Yes') {
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
+  }
+  else if (assuranceOutcomeDisallow == 'No') {
+    res.redirect(`assurance-disallow-actions`)
   }
    else {
-    res.redirect(`outbound-2-security-a`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
-router.post(`/outbound-2-call-prep-router`, (req, res) => {
-  const outboundPrep = req.session.data['outbound-2-call-prep']
+router.post(`/assurance-withdraw-check-router`, (req, res) => {
+  const assuranceOutcomeWithdraw = req.session.data['assurance-withdraw-check']
 
-  if (outboundPrep == 'Yes') {
-    res.redirect(`outbound-2-greeting`)
+  if (assuranceOutcomeWithdraw == 'Yes') {
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+  }
+  else if (assuranceOutcomeWithdraw == 'No') {
+    res.redirect(`assurance-withdraw-actions`)
+  }
+  else if (assuranceOutcomeWithdraw == 'DontKnow') {
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
    else {
-    res.redirect(`record-1-overview`)
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
 })
 
-router.post(`/application-1-task-t6-router`, (req, res) => {
-  const applicationCheckT6 = req.session.data['application-1-task-t6']
 
-  if (applicationCheckT6 == 'Call') {
-    res.redirect(`outbound-2-exit-to-call`)
+
+router.post(`/preparation-linear-outcome-router`, (req, res) => {
+  const preparationOutcomeTaskList = req.session.data['preparation-linear-outcome']
+
+  if (preparationOutcomeTaskList == 'Ready') {
+    res.redirect(`application-6-overview`)
+  }
+  else if (preparationOutcomeTaskList == 'AP') {
+    res.redirect(`entry-home`)
+  }
+  else if (preparationOutcomeTaskList == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-reason`)
+  }
+  else if (preparationOutcomeTaskList == 'Withdraw') {
+    res.redirect(`assurance-withdraw-check`)
   }
    else {
-    res.redirect(`application-5-tasklist`)
+    res.redirect(`exit-event-history`)
   }
 })
 
-router.post(`/application-rates-check-router`, (req, res) => {
-  const applicationCheckRates = req.session.data['application-rates-check']
 
-  if (applicationCheckRates == 'Call') {
-    res.redirect(`outbound-2-exit-to-call`)
+
+
+router.post(`/fta-make-contact-router`, (req, res) => {
+  const ftaOutcome = req.session.data['fta-make-contact']
+
+  if (ftaOutcome == 'Valid') {
+    res.redirect(`entry-home`)
   }
-  else if (applicationCheckRates == 'Pause') {
-    res.redirect(`application-1-exit-early`)
+  else if (ftaOutcome == 'Invalid') {
+    res.redirect(`actions-to-withdraw`)
+  }
+  else if (ftaOutcome  == 'Disallow') {
+    res.redirect(`actions-to-disallow`)
   }
    else {
-    res.redirect(`application-rates-actions`)
+     res.redirect(`ftx-contact-issues`)
   }
 })
 
-router.post(`/eject-reason-router`, (req, res) => {
-  const ejectReason = req.session.data['eject-reason']
+router.post(`/ftc-make-contact-router`, (req, res) => {
+  const ftcOutcome = req.session.data['ftc-make-contact']
 
-  if (ejectReason == 'a') {
-    res.redirect(`eject-reason-justification`)
+  if (ftcOutcome == 'Valid') {
+    res.redirect(`entry-home`)
   }
-  else if (ejectReason == 'eject-reason-other') {
-    res.redirect(`eject-reason-justification`)
+  else if (ftcOutcome == 'Invalid') {
+    res.redirect(`actions-to-withdraw`)
   }
-  else if (ejectReason == 'extend') {
-    res.redirect(`extend-journey`)
+  else if (ftcOutcome == 'Disallow') {
+    res.redirect(`actions-to-disallow`)
   }
    else {
-    res.redirect(`eject-reason-justification`)
+     res.redirect(`ftx-contact-issues`)
   }
 })
 
-router.post(`/service-app-claim-details-router`, (req, res) => {
-  const serviceAppClaimActions = req.session.data['service-app-claim-details']
+router.post(`/application-vcc-check-router`, (req, res) => {
+  const vccCheck = req.session.data['application-vcc-check']
 
-  if (serviceAppClaimActions == '1') {
-    res.redirect(`service-app-status-change`)
-  }
-  else if (serviceAppClaimActions == '2') {
-    res.redirect(`../v13/case-review/event-history.html`)
-  }
-  else if (serviceAppClaimActions == '3') {
-    res.redirect(`/agent-day-0-1-4/application-6-view-evidence`)
+  if (vccCheck == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
   }
    else {
-    res.redirect(`eject-overview`)
+     res.redirect(`application-6-letter-review`)
   }
 })
 
-router.post(`/ecp-washup-router`, (req, res) => {
-  const ecpWashup = req.session.data['ecp-washup']
 
-  if (ecpWashup == '1') {
+// QPPT
+
+router.post(`/qppt-dl-3m-check-router`, (req, res) => {
+  const qpptDaily3m = req.session.data['qppt-dl-3m-check']
+
+  if (qpptDaily3m == 'Yes') {
+    res.redirect(`qppt-dl-9m-check`)
+  }
+  else if (qpptDaily3m == 'Split') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptDaily3m == 'EffectiveDate') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptDaily3m == 'SplitRate') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptDaily3m == 'NoRestrictions') {
+    res.redirect(`application-6-about`)
+  }
+   else {
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-dl-9m-check-router`, (req, res) => {
+  const qpptDaily9m = req.session.data['qppt-dl-9m-check']
+
+  if (qpptDaily9m == 'Yes') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptDaily9m == 'No') {
+    res.redirect(`application-6-about`)
+  }
+   else {
+     res.redirect(`application-6-about`)
+  }
+})
+
+router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
+  const qpptDailyEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
+
+  if (qpptDailyEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-dl-effective-date-multi`)
+  }
+})
+
+
+router.post(`/qppt-m-3m-check-router`, (req, res) => {
+  const qpptMobility3m = req.session.data['qppt-m-3m-check']
+
+  if (qpptMobility3m == 'Yes') {
+    res.redirect(`qppt-m-9m-check`)
+  }
+  else if (qpptMobility3m == 'Split') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptMobility3m == 'EffectiveDate') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptMobility3m == 'SplitRate') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptMobility3m == 'NoRestrictions') {
+    res.redirect(`application-6-about`)
+  }
+   else {
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-m-9m-check-router`, (req, res) => {
+  const qpptMobility9m = req.session.data['qppt-m-9m-check']
+
+  if (qpptMobility9m == 'Yes') {
+    res.redirect(`application-6-about`)
+  }
+  else if (qpptMobility9m == 'No') {
+    res.redirect(`application-6-about`)
+  }
+   else {
+     res.redirect(`application-6-about`)
+  }
+})
+
+router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
+  const qpptMobilityEffectiveDateCheck = req.session.data['qppt-m-effective-date-check']
+
+  if (qpptMobilityEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-m-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-m-effective-date-multi`)
+  }
+})
+
+
+
+// Prepare for AP Single task list items
+
+router.post(`/assurance-tasklist-item-1-router`, (req, res) => {
+  const assuranceCheckItem1 = req.session.data['assurance-tasklist-item-1']
+
+  if (assuranceCheckItem1 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-2`)
+  }
+  else if (assuranceCheckItem1 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-2`)
+  }
+  else if (assuranceCheckItem1  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-2-router`, (req, res) => {
+  const assuranceCheckItem2 = req.session.data['assurance-tasklist-item-2']
+
+  if (assuranceCheckItem2 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-3`)
+  }
+  else if (assuranceCheckItem2 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-3`)
+  }
+  else if (assuranceCheckItem2  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-3-router`, (req, res) => {
+  const assuranceCheckItem3 = req.session.data['assurance-tasklist-item-3']
+
+  if (assuranceCheckItem3 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-3a`)
+  }
+  else if (assuranceCheckItem3 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-4`)
+  }
+  else if (assuranceCheckItem3  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-3-address-actions-router`, (req, res) => {
+  const assuranceCheckItem3Actions = req.session.data['assurance-tasklist-item-3-address-actions']
+
+  if (assuranceCheckItem3Actions == 'Update') {
+    res.redirect(`assurance-tasklist-item-3-address-postcode`)
+  }
+  else if (assuranceCheckItem3Actions == 'Accept') {
+    res.redirect(`assurance-tasklist-item-3-address-postcode`)
+  }
+  else if (assuranceCheckItem3Actions == 'Issue') {
+    res.redirect(`assurance-tasklist-item-3-address-cant-resolve`)
+  }
+  else if (assuranceCheckItem3Actions  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-3a-router`, (req, res) => {
+  const assuranceCheckItem3a = req.session.data['assurance-tasklist-item-3a']
+
+  if (assuranceCheckItem3a == 'Expected') {
+    res.redirect(`assurance-tasklist-item-4`)
+  }
+  else if (assuranceCheckItem3a == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-4`)
+  }
+  else if (assuranceCheckItem3a  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-4-router`, (req, res) => {
+  const assuranceCheckItem4 = req.session.data['assurance-tasklist-item-4']
+
+  if (assuranceCheckItem4 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-5`)
+  }
+  else if (assuranceCheckItem4 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-5`)
+  }
+  else if (assuranceCheckItem4  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-5-router`, (req, res) => {
+  const assuranceCheckItem5 = req.session.data['assurance-tasklist-item-5']
+
+  if (assuranceCheckItem5 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-6`)
+  }
+  else if (assuranceCheckItem5 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-6`)
+  }
+  else if (assuranceCheckItem5  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`5`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-6-router`, (req, res) => {
+  const assuranceCheckItem6 = req.session.data['assurance-tasklist-item-6']
+
+  if (assuranceCheckItem6 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-7`)
+  }
+  else if (assuranceCheckItem6 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-7`)
+  }
+  else if (assuranceCheckItem6  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`6`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-7-router`, (req, res) => {
+  const assuranceCheckItem7 = req.session.data['assurance-tasklist-item-7']
+
+  if (assuranceCheckItem7 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-8`)
+  }
+  else if (assuranceCheckItem7 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-8`)
+  }
+  else if (assuranceCheckItem7  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`7`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-8-router`, (req, res) => {
+  const assuranceCheckItem8 = req.session.data['assurance-tasklist-item-8']
+
+  if (assuranceCheckItem8 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-9`)
+  }
+  else if (assuranceCheckItem8 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-9`)
+  }
+  else if (assuranceCheckItem8  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`8`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-9-router`, (req, res) => {
+  const assuranceCheckItem9 = req.session.data['assurance-tasklist-item-9']
+
+  if (assuranceCheckItem9 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-10`)
+  }
+  else if (assuranceCheckItem9 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-10`)
+  }
+  else if (assuranceCheckItem9  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`9`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-10-router`, (req, res) => {
+  const assuranceCheckItem10 = req.session.data['assurance-tasklist-item-10']
+
+  if (assuranceCheckItem10 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-11`)
+  }
+  else if (assuranceCheckItem10 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-11`)
+  }
+  else if (assuranceCheckItem10  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`10`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-11-router`, (req, res) => {
+  const assuranceCheckItem11 = req.session.data['assurance-tasklist-item-11']
+
+  if (assuranceCheckItem11 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-12`)
+  }
+  else if (assuranceCheckItem11 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-12`)
+  }
+  else if (assuranceCheckItem11  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`11`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-12-router`, (req, res) => {
+  const assuranceCheckItem12 = req.session.data['assurance-tasklist-item-12']
+
+  if (assuranceCheckItem12 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12 == 'Unexpected-spa') {
+    res.redirect(`assurance-tasklist-item-12-1`)
+  }
+  else if (assuranceCheckItem12 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`12`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-12-1-router`, (req, res) => {
+  const assuranceCheckItem12_1 = req.session.data['assurance-tasklist-item-12-1']
+
+  if (assuranceCheckItem12_1 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12_1 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-13`)
+  }
+  else if (assuranceCheckItem12_1  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`12`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-13-router`, (req, res) => {
+  const assuranceCheckItem13 = req.session.data['assurance-tasklist-item-13']
+
+  if (assuranceCheckItem13 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-14`)
+  }
+  else if (assuranceCheckItem13 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-14`)
+  }
+  else if (assuranceCheckItem13  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`13`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-14-router`, (req, res) => {
+  const assuranceCheckItem14 = req.session.data['assurance-tasklist-item-14']
+
+  if (assuranceCheckItem14 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-15`)
+  }
+  else if (assuranceCheckItem14 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-15`)
+  }
+  else if (assuranceCheckItem14  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`14`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-15-router`, (req, res) => {
+  const assuranceCheckItem15 = req.session.data['assurance-tasklist-item-15']
+
+  if (assuranceCheckItem15 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-16`)
+  }
+  else if (assuranceCheckItem15 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-16`)
+  }
+  else if (assuranceCheckItem15  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`15`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-16-router`, (req, res) => {
+  const assuranceCheckItem16 = req.session.data['assurance-tasklist-item-16']
+
+  if (assuranceCheckItem16 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-17`)
+  }
+  else if (assuranceCheckItem16 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-17`)
+  }
+  else if (assuranceCheckItem16  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`16`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-17-router`, (req, res) => {
+  const assuranceCheckItem17 = req.session.data['assurance-tasklist-item-17']
+
+  if (assuranceCheckItem17 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-18`)
+  }
+  else if (assuranceCheckItem17 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-18`)
+  }
+  else if (assuranceCheckItem17  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-17-router`, (req, res) => {
+  const assuranceCheckItem17 = req.session.data['assurance-tasklist-item-17']
+
+  if (assuranceCheckItem17 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-18`)
+  }
+  else if (assuranceCheckItem17 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-18`)
+  }
+  else if (assuranceCheckItem17  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-18-router`, (req, res) => {
+  const assuranceCheckItem18 = req.session.data['assurance-tasklist-item-18']
+
+  if (assuranceCheckItem18 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-19`)
+  }
+  else if (assuranceCheckItem18 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-19`)
+  }
+  else if (assuranceCheckItem18  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`18`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-19-router`, (req, res) => {
+  const assuranceCheckItem19 = req.session.data['assurance-tasklist-item-19']
+
+  if (assuranceCheckItem19 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-20`)
+  }
+  else if (assuranceCheckItem19 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-20`)
+  }
+  else if (assuranceCheckItem19  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`19`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-20-router`, (req, res) => {
+  const assuranceCheckItem20 = req.session.data['assurance-tasklist-item-20']
+
+  if (assuranceCheckItem20 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-21`)
+  }
+  else if (assuranceCheckItem20 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-21`)
+  }
+  else if (assuranceCheckItem20  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`20`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-21-router`, (req, res) => {
+  const assuranceCheckItem21 = req.session.data['assurance-tasklist-item-21']
+
+  if (assuranceCheckItem21 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-22`)
+  }
+  else if (assuranceCheckItem21 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-22`)
+  }
+  else if (assuranceCheckItem21  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`21`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-22-router`, (req, res) => {
+  const assuranceCheckItem22 = req.session.data['assurance-tasklist-item-22']
+
+  if (assuranceCheckItem22 == 'Expected') {
+    res.redirect(`assurance-tasklist-item-23`)
+  }
+  else if (assuranceCheckItem22 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-item-23`)
+  }
+  else if (assuranceCheckItem22  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`22`)
+  }
+})
+
+router.post(`/assurance-tasklist-item-23-router`, (req, res) => {
+  const assuranceCheckItem23 = req.session.data['assurance-tasklist-item-23']
+
+  if (assuranceCheckItem23 == 'Expected') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+  else if (assuranceCheckItem23 == 'Unexpected') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+  else if (assuranceCheckItem23  == 'Pause') {
+    res.redirect(`assurance-tasklist-separate`)
+  }
+   else {
+     res.redirect(`23`)
+  }
+})
+
+
+
+// Prepare for decisions Single task list items
+
+router.post(`/preparation-tasklist-item-1-router`, (req, res) => {
+  const preparationCheckItem1 = req.session.data['preparation-tasklist-item-1']
+
+  if (preparationCheckItem1 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-2`)
+  }
+  else if (preparationCheckItem1 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-2`)
+  }
+  else if (preparationCheckItem1  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-2-router`, (req, res) => {
+  const preparationCheckItem2 = req.session.data['preparation-tasklist-item-2']
+
+  if (preparationCheckItem2 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-3`)
+  }
+  else if (preparationCheckItem2 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-3`)
+  }
+  else if (preparationCheckItem2  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-3-router`, (req, res) => {
+  const preparationCheckItem3 = req.session.data['preparation-tasklist-item-3']
+
+  if (preparationCheckItem3 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-3a`)
+  }
+  else if (preparationCheckItem3 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-3a`)
+  }
+  else if (preparationCheckItem3  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-3a-router`, (req, res) => {
+  const preparationCheckItem3a = req.session.data['preparation-tasklist-item-3a']
+
+  if (preparationCheckItem3a == 'Expected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3a == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-4`)
+  }
+  else if (preparationCheckItem3a  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-4-router`, (req, res) => {
+  const preparationCheckItem4 = req.session.data['preparation-tasklist-item-4']
+
+  if (preparationCheckItem4 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-5`)
+  }
+  else if (preparationCheckItem4 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-5`)
+  }
+  else if (preparationCheckItem4  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`4`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-router`, (req, res) => {
+  const preparationCheckItem5 = req.session.data['preparation-tasklist-item-5']
+
+  if (preparationCheckItem5 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-5-1`)
+  }
+  else if (preparationCheckItem5 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-5-1`)
+  }
+  else if (preparationCheckItem5  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`5`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-1-router`, (req, res) => {
+  const preparationCheckItem51 = req.session.data['preparation-tasklist-item-5-1']
+
+  if (preparationCheckItem51 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-5-2`)
+  }
+  else if (preparationCheckItem51 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-5-2`)
+  }
+  else if (preparationCheckItem51  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`51`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-5-2-router`, (req, res) => {
+  const preparationCheckItem52 = req.session.data['preparation-tasklist-item-5-2']
+
+  if (preparationCheckItem52 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem52 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-6`)
+  }
+  else if (preparationCheckItem52  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`52`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-6-router`, (req, res) => {
+  const preparationCheckItem6 = req.session.data['preparation-tasklist-item-6']
+
+  if (preparationCheckItem6 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-7`)
+  }
+  else if (preparationCheckItem6 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-7`)
+  }
+  else if (preparationCheckItem6  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`6`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-7-router`, (req, res) => {
+  const preparationCheckItem7 = req.session.data['preparation-tasklist-item-7']
+
+  if (preparationCheckItem7 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-8`)
+  }
+  else if (preparationCheckItem7 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-8`)
+  }
+  else if (preparationCheckItem7  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`7`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-8-router`, (req, res) => {
+  const preparationCheckItem8 = req.session.data['preparation-tasklist-item-8']
+
+  if (preparationCheckItem8 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-9`)
+  }
+  else if (preparationCheckItem8 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-9`)
+  }
+  else if (preparationCheckItem8  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`8`)
+  }
+})
+
+
+router.post(`/preparation-tasklist-item-9-router`, (req, res) => {
+  const preparationCheckItem9 = req.session.data['preparation-tasklist-item-9']
+
+  if (preparationCheckItem9 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9 == 'Unexpected-spa') {
+    res.redirect(`preparation-tasklist-item-9-1`)
+  }
+  else if (preparationCheckItem9 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`9`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-9-1-router`, (req, res) => {
+  const preparationCheckItem9_1 = req.session.data['preparation-tasklist-item-9-1']
+
+  if (preparationCheckItem9_1 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9_1 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-10`)
+  }
+  else if (preparationCheckItem9_1  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`9-1`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-10-router`, (req, res) => {
+  const preparationCheckItem10 = req.session.data['preparation-tasklist-item-10']
+
+  if (preparationCheckItem10 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-11`)
+  }
+  else if (preparationCheckItem10 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-11`)
+  }
+  else if (preparationCheckItem10  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`10`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-11-router`, (req, res) => {
+  const preparationCheckItem11 = req.session.data['preparation-tasklist-item-11']
+
+  if (preparationCheckItem11 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-12`)
+  }
+  else if (preparationCheckItem11 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-12`)
+  }
+  else if (preparationCheckItem11  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`11`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-12-router`, (req, res) => {
+  const preparationCheckItem12 = req.session.data['preparation-tasklist-item-12']
+
+  if (preparationCheckItem12 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-13`)
+  }
+  else if (preparationCheckItem12 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-13`)
+  }
+  else if (preparationCheckItem12  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`12`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-13-router`, (req, res) => {
+  const preparationCheckItem13 = req.session.data['preparation-tasklist-item-13']
+
+  if (preparationCheckItem13 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-14`)
+  }
+  else if (preparationCheckItem13 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-14`)
+  }
+  else if (preparationCheckItem13  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`13`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-14-router`, (req, res) => {
+  const preparationCheckItem14 = req.session.data['preparation-tasklist-item-14']
+
+  if (preparationCheckItem14 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-15`)
+  }
+  else if (preparationCheckItem14 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-15`)
+  }
+  else if (preparationCheckItem14  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`14`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-15-router`, (req, res) => {
+  const preparationCheckItem15 = req.session.data['preparation-tasklist-item-15']
+
+  if (preparationCheckItem15 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-16`)
+  }
+  else if (preparationCheckItem15 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-16`)
+  }
+  else if (preparationCheckItem15  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`15`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-16-router`, (req, res) => {
+  const preparationCheckItem16 = req.session.data['preparation-tasklist-item-16']
+
+  if (preparationCheckItem16 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-17`)
+  }
+  else if (preparationCheckItem16 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-17`)
+  }
+  else if (preparationCheckItem16  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`16`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-17-router`, (req, res) => {
+  const preparationCheckItem17 = req.session.data['preparation-tasklist-item-17']
+
+  if (preparationCheckItem17 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-17-router`, (req, res) => {
+  const preparationCheckItem17 = req.session.data['preparation-tasklist-item-17']
+
+  if (preparationCheckItem17 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-18`)
+  }
+  else if (preparationCheckItem17  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`17`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-18-router`, (req, res) => {
+  const preparationCheckItem18 = req.session.data['preparation-tasklist-item-18']
+
+  if (preparationCheckItem18 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-19`)
+  }
+  else if (preparationCheckItem18 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-19`)
+  }
+  else if (preparationCheckItem18  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`18`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-19-router`, (req, res) => {
+  const preparationCheckItem19 = req.session.data['preparation-tasklist-item-19']
+
+  if (preparationCheckItem19 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-20`)
+  }
+  else if (preparationCheckItem19 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-20`)
+  }
+  else if (preparationCheckItem19  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`19`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-20-router`, (req, res) => {
+  const preparationCheckItem20 = req.session.data['preparation-tasklist-item-20']
+
+  if (preparationCheckItem20 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-21`)
+  }
+  else if (preparationCheckItem20 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-21`)
+  }
+  else if (preparationCheckItem20  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`20`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-21-router`, (req, res) => {
+  const preparationCheckItem21 = req.session.data['preparation-tasklist-item-21']
+
+  if (preparationCheckItem21 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-22`)
+  }
+  else if (preparationCheckItem21 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-22`)
+  }
+  else if (preparationCheckItem21  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`21`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-22-router`, (req, res) => {
+  const preparationCheckItem22 = req.session.data['preparation-tasklist-item-22']
+
+  if (preparationCheckItem22 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-23`)
+  }
+  else if (preparationCheckItem22 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-23`)
+  }
+  else if (preparationCheckItem22  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`22`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-23-router`, (req, res) => {
+  const preparationCheckItem23 = req.session.data['preparation-tasklist-item-23']
+
+  if (preparationCheckItem23 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-24`)
+  }
+  else if (preparationCheckItem23 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-24`)
+  }
+  else if (preparationCheckItem23  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`23`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-24-router`, (req, res) => {
+  const preparationCheckItem24 = req.session.data['preparation-tasklist-item-24']
+
+  if (preparationCheckItem24 == 'Expected') {
+    res.redirect(`preparation-tasklist-item-25`)
+  }
+  else if (preparationCheckItem24 == 'Unexpected') {
+    res.redirect(`preparation-tasklist-item-25`)
+  }
+  else if (preparationCheckItem24  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`24`)
+  }
+})
+
+router.post(`/preparation-tasklist-item-25-router`, (req, res) => {
+  const preparationCheckItem25 = req.session.data['preparation-tasklist-item-25']
+
+  if (preparationCheckItem25 == 'Expected') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+  else if (preparationCheckItem25 == 'Unexpected') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+  else if (preparationCheckItem25  == 'Pause') {
+    res.redirect(`mr-preparation-tasklist`)
+  }
+   else {
+     res.redirect(`25`)
+  }
+})
+
+
+router.post(`/preparation-mm-tasklist-outcome-router`, (req, res) => {
+  const preparationOutcomeTaskList = req.session.data['preparation-mm-tasklist-outcome']
+
+  if (preparationOutcomeTaskList == 'Decision') {
+    res.redirect(`application-6-about`)
+  }
+  else if (preparationOutcomeTaskList == 'PIPcs') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (preparationOutcomeTaskList == 'Disallow') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+  else if (preparationOutcomeTaskList == 'Withdraw') {
+    res.redirect(`/move-to-pipcs-1/eject-process`)
+  }
+   else {
+    res.redirect(`/move-to-pipcs-1/eject-reason-justification`)
+  }
+})
+
+router.post(`/accessibility-ab-router`, (req, res) => {
+  const accessibilityAB = req.session.data['accessibility-ab']
+
+  if (accessibilityAB == '1') {
+    res.redirect(`accessibility-1`)
+  }
+  else if (accessibilityAB == '2') {
+    res.redirect(`accessibility-2`)
+  }
+  else if (accessibilityAB == '3') {
+    res.redirect(`accessibility-3`)
+  }
+   else {
     res.redirect(`XXX`)
   }
-  else if (ecpWashup == '2') {
-    res.redirect(`XXX`)
-  }
-  else if (ecpWashup == '3') {
-    res.redirect(`XXX`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
 })
 
-router.post(`/record-foundation-application-overview-router`, (req, res) => {
-  const recordOverviewRouter = req.session.data['applicaiton-actions']
+router.post(`/mr-application-overview-router`, (req, res) => {
+  const mrApplicationOverView = req.session.data['mr-application-overview']
 
-  if (recordOverviewRouter == '1') {
-    res.redirect(`XXX`)
+  if (mrApplicationOverView == 'Start-MR') {
+    res.redirect(`mr-preparation-tasklist`)
   }
-  else if (recordOverviewRouter == '2') {
-    res.redirect(`an-de-overview`)
+  else if (mrApplicationOverView == 'Yes') {
+    res.redirect(`mr-preparation-checklist`)
   }
-  else if (recordOverviewRouter == '3') {
-    res.redirect(`XXX`)
+  else if (mrApplicationOverView == '2') {
+    res.redirect(`XXXX`)
+  }
+  else if (mrApplicationOverView == '3') {
+    res.redirect(`XXXX`)
   }
    else {
     res.redirect(`XXX`)
@@ -499,114 +1678,5 @@ router.post(`/record-foundation-application-overview-router`, (req, res) => {
 
 
 
-
-router.post(`/an-de-doc-check-router`, (req, res) => {
-  const anDeDocCheck = req.session.data['an-de-doc-check']
-
-  if (anDeDocCheck == 'YesAdvanced') {
-    res.redirect(`an-de-find-docs`)
-  }
-  else if (anDeDocCheck == 'YesAdvancedAlt1') {
-    res.redirect(`an-de-find-docs-alt1`)
-  }
-  else if (anDeDocCheck == 'YesBasic') {
-    res.redirect(`an-de-select-docs`)
-  }
-  else if (anDeDocCheck == 'No') {
-    res.redirect(`an-de-next-steps`)
-  }
-   else {
-    res.redirect(`an-de-find-docs`)
-  }
-})
-
-router.post(`/an-de-select-docs-router`, (req, res) => {
-  const anDeBasicDocSelect = req.session.data['an-de-select-docs']
-
-  if (anDeBasicDocSelect == 'Advanced') {
-    res.redirect(`an-de-find-docs`)
-  }
-   else {
-    res.redirect(`an-de-next-steps`)
-  }
-})
-
-
-
-router.post(`/an-de-overview-router`, (req, res) => {
-  const recordEscalationCheckToContinue = req.session.data['an-de-overview']
-
-  if (recordEscalationCheckToContinue == 'Yes') {
-    res.redirect(`an-de-letter-check`)
-  }
-  else if (recordEscalationCheckToContinue == 'NoPaper') {
-    res.redirect(`an-de-move-paper`)
-  }
-  else if (recordEscalationCheckToContinue == 'NoTime') {
-    res.redirect(`an-de-callback`)
-  }
-  else if (recordEscalationCheckToContinue == 'MoveOnline') {
-    res.redirect(`an-de-move-online`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
-})
-
-router.post(`/an-de-letter-check-router`, (req, res) => {
-  const anDeLetterCheck = req.session.data['an-de-letter-check']
-
-  if (anDeLetterCheck == 'Yes') {
-    res.redirect(`an-de-disagree-reasons`)
-  }
-  else if (anDeLetterCheck == 'No') {
-    res.redirect(`an-de-warmhandover-check`)
-  }
-  else if (anDeLetterCheck == 'NoLetter') {
-    res.redirect(`an-de-callback`)
-  }
-   else {
-    res.redirect(`XXX`)
-  }
-})
-
-
-// From colin about selecting more than one
-
-router.post(`/an-de-disagree-reasons-router`, (req, res) => {
-  const anDEdisagreeReasons = req.session.data['an-de-disagree-reasons']
-
-  if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.includes ('Dates')  && anDEdisagreeReasons.length === 2 ) {
-    console.log("VERY SPECIAL ROUTE");
-    res.redirect("an-de-disagree-dates");
-  }
-  else if (anDEdisagreeReasons.includes ('Points') && anDEdisagreeReasons.length > 1  ) {
-    res.redirect("an-de-warmhandover?points-redirect")
-  }
-  else if (anDEdisagreeReasons == '1') {
-    res.redirect(`an-de-disagree-reasons-points`)
-  }
-  else if (anDEdisagreeReasons == 'Dates') {
-    res.redirect(`an-de-disagree-dates`)
-  }
-  else if (anDEdisagreeReasons == 'Doc') {
-    res.redirect(`XXX`)
-  }
-  else if (anDEdisagreeReasons == 'Points') {
-    res.redirect(`an-de-points-reasons`)
-  }
-  else if (anDEdisagreeReasons == 'Award') {
-    res.redirect(`an-de-warmhandover`)
-  }
-  else if (anDEdisagreeReasons == 'Payments') {
-    res.redirect(`an-de-warmhandover`)
-  }
-  else if (anDEdisagreeReasons == 'Report') {
-    res.redirect(`XXX`)
-  }
-   else {
-    res.redirect(`an-de-warmhandover`)
-  }
-})
 
 module.exports = router

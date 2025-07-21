@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-2/r-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Chronological view of all applicaitons,<br>MRs, appeals or award reviews</p> -->
+
+
+    <h3 class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">There are no applications or claims.</h3>
+
+
+
+          {% include "person-record-0-0-2/r-scenarios.html" %}
+
+
+  </div>
+
+
+    </form>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Accessing citizen documents</h2>
+
+
+
+
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You can view the health information gather (PIP1 and PIP2), assessment report, and any supporting documents for this application on connected services</p>
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Helth Assessment Service (HAS) Supporting Documents will give you access to documents usually found in DRS</p> -->
+
+
+
+  <table class="govuk-table govuk-!-margin-bottom-8">
+
+    <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Supports the application</h1> -->
+
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-100-percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+      <td class="govuk-table__cell govuk--percent"></td>
+    </tr>
+    </thead>
+
+    {% if data["evidence-5-grade"] == "Good" %}
+        {% include "agent-day-0-1-9/evidence-5-status.html" %}
+    {% elif data["evidence-5-grade"] == "Bad" %}
+    {% elif data["evidence-5-grade"] == "Remove" %}
+    {% else %}
+    {% endif %}
+
+
+    {% include "agent-day-0-1-9/evidence-10-status.html" %}
+    {% include "agent-day-0-1-9/evidence-6-status.html" %}
+    {% include "agent-day-0-1-9/evidence-11-status.html" %}
+
+
+    <!-- {% include "agent-day-0-1-9/evidence-9-status.html" %} -->
+
+    <!-- {% include "agent-day-0-1-9/evidence-7-status.html" %} -->
+    <!-- {% include "agent-day-0-1-9/evidence-8-status.html" %} -->
+
+          {% if data["evidence-1-grade"] == "Good" %}
+              {% include "agent-day-0-1-9/evidence-1-status.html" %}
+          {% elif data["evidence-1-grade"] == "Bad" %}
+          {% else %}
+          {% endif %}
+
+          {% if data["evidence-2-grade"] == "Good" %}
+              {% include "agent-day-0-1-9/evidence-2-status.html" %}
+          {% elif data["evidence-2-grade"] == "Bad" %}
+          {% else %}
+          {% endif %}
+
+          {% if data["evidence-4-grade"] == "Good" %}
+              {% include "agent-day-0-1-9/evidence-4-status.html" %}
+          {% elif data["evidence-4-grade"] == "Bad" %}
+          {% elif data["evidence-4-grade"] == "Remove" %}
+          {% else %}
+          {% endif %}
+
+
+          </table>
+
+
+
+  <!---------------- BAD AREA END ------------------>
+
+
+      {{ govukButton({
+        text: "Go back",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-6-view-evidence-b">B</a></p>
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

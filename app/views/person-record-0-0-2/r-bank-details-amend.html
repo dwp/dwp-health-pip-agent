@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/record-id-base.html" %}
+
+<form action="r-bank-details#r-bank-details" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-applications"
+        },
+        {
+          text: "Bank detials",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter new name for account owner</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Name on account"
+        },
+        id: "bank-name-on-account",
+        name: "bank-name-on-account",
+        classes: "govuk-input--width-20",
+        value: data["bank-name-on-account"]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

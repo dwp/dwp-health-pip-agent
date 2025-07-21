@@ -44,6 +44,7 @@ router.use('/agent-day-0-1-5a', require('./routes/agent-day-0-1-5a/router.js'));
 router.use('/agent-day-0-1-6', require('./routes/agent-day-0-1-6/router.js'));
 router.use('/agent-day-0-1-7', require('./routes/agent-day-0-1-7/router.js'));
 router.use('/agent-day-0-1-8', require('./routes/agent-day-0-1-8/router.js'));
+router.use('/agent-day-0-1-9', require('./routes/agent-day-0-1-9/router.js'));
 
 
 router.use('/move-to-pipcs-1', require('./routes/move-to-pipcs-1/router.js'));
@@ -57,6 +58,7 @@ router.use('/another-decision-0-0-1', require('./routes/another-decision-0-0-1/r
 router.use('/another-decision-0-0-2', require('./routes/another-decision-0-0-2/router.js'));
 
 router.use('/person-record-0-0-1', require('./routes/person-record-0-0-1/router.js'));
+router.use('/person-record-0-0-2', require('./routes/person-record-0-0-2/router.js'));
 
 
 module.exports = router

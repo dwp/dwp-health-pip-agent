@@ -1,0 +1,171 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-2/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-contact-add-outcomes" method="post" class="form">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {% include "person-record-0-0-2/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Contact details</h3>
+
+    {% set SetLandlineTelephone %}
+      {% if data["record-1-contact-landline-telephone"] %}
+        {{data["record-1-contact-landline-telephone"]}}
+      {% else %}
+        <p class="govuk-body">0191 488 3188</p>
+      {% endif %}
+    {% endset -%}
+
+
+    {% if data["r-appointees-add"] %}
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-4">Primary</h3>
+    {% else %}
+    {% endif %}
+
+    {% if data["r-appointees-add"] %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: "Sam Elliott"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Relationship to the applicant"
+          },
+          value: {
+            html: "Power of attorney"
+          },
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            html: "0796 009 4452"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Applicant</h3>
+    {% else %}
+    {% endif %}
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Mobile telephone"
+          },
+          value: {
+            html: "0796 009 3500"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Landline telephone"
+          },
+          value: {
+            html: SetLandlineTelephone
+          },
+          actions: {
+            items: [
+              {
+                href: "r-contact-landline-telephone",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Email"
+          },
+          value: {
+            html: '<p class="govuk-body">the-dude@example.com</p>'
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

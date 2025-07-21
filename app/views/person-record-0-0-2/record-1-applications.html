@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-2/record-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Applications and decisions</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">The agent will see a history of the person's applications for benefits, and the status of each one.</p> -->
+
+
+
+    <table class="govuk-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-25-percent">Date</td>
+        <td class="govuk-table__cell govuk-50-percent">Event</td>
+        <td class="govuk-table__cell govuk-25-percent">Status</td>
+      </tr>
+      </thead>
+<!--
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">2 Oct 2023</td>
+
+        <td class="govuk-table__cell table-spacer">AP report received. Awaiting decision.</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">TO DO</strong>
+        </tr> -->
+
+
+                <!-- <tr class="govuk-table__row">
+                  <td class="govuk-table__cell table-spacer">18 Oct 2023</td>
+
+                  <td class="govuk-table__cell table-spacer">Application processed<br>Awarded Enhanced / Enhanced<br><a class="" href="record-1-application-breakdown" target="">View application</a></td>
+                  <td class="govuk-table__cell table-spacer">In payment
+
+                  </tr> -->
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell table-spacer">16 Oct 2023</td>
+
+          <td class="govuk-table__cell table-spacer">Assessment report<br><a class="" href="record-1-application-breakdown" target="">View AP report</a></td>
+
+          <td class="govuk-table__cell table-spacer">Received
+
+          <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong> -->
+          </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">15 Oct 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Healthcare assessment</td>
+        <td class="govuk-table__cell table-spacer">Done
+
+        <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong> -->
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">1 Oct 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Application made for PIP<br><a class="" href="record-1-application-breakdown" target="">View application</a></td>
+        <td class="govuk-table__cell table-spacer">Received
+
+        <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Recivied</strong> -->
+        </tr>
+
+          <!-- <tr class="govuk-table__row">
+            <td class="govuk-table__cell table-spacer">...</td>
+
+            <td class="govuk-table__cell table-spacer">...</td>
+
+            <td class="govuk-table__cell table-spacer">...</tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">2 Jan 2023</td>
+
+        <td class="govuk-table__cell table-spacer">Applied for Attendance Allowance</td>
+
+        <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-bad" id="eligibility-completed">Rejected</strong>
+        </tr> -->
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">6 Aug 2018</td>
+
+        <td class="govuk-table__cell table-spacer">Application made for PIP<br>Not awarded<br><a class="" href="record-1-application-breakdown" target="">View application</a></td>
+        <td class="govuk-table__cell table-spacer">Closed
+
+        <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong> -->
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">25 July 2017</td>
+
+        <td class="govuk-table__cell table-spacer">Application made for PIP<br>Not awarded<br><a class="" href="record-1-application-breakdown" target="">View application</a></td>
+        <td class="govuk-table__cell table-spacer">Closed
+
+        <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong> -->
+        </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">20 July 2016</td>
+
+        <td class="govuk-table__cell table-spacer">Application made for PIP<br>Not awarded<br><a class="" href="record-1-application-breakdown" target="">View application</a></td>
+        <td class="govuk-table__cell table-spacer">Closed
+
+        <!-- <td class="govuk-table__cell table-spacer"><strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">Closed</strong> -->
+        </tr>
+
+      </table>
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

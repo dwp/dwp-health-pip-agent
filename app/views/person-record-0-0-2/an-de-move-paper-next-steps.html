@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-1-event-history#an-de-mr-reg-flag" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+
+{% if data["an-de-move-paper"] == "ByPost" %}
+
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Send the paper form by post</h1>
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Advise the person that:</h1>
+<ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-4">
+  <li>we will post them the form to complete</li>
+  <li>it may take up to 3 weeks to arrive</li>
+  <li>we will register that they've asked us to reconsider their decision</li>
+</ul>
+
+{% elif data["an-de-move-paper"] == "ByEmail" %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Send the paper form by email</h1>
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Advise the person:</h1>
+<ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-4">
+  <li>that you will email them the form to complete and return to us </li>
+  <li>to confirm their email address</li>
+  <li>that we will register that they've asked us to reconsider their decision</li>
+</ul>
+
+{% elif data["an-de-move-paper"] == "ByDownload" %}
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Explain how to download the form online</h1>
+
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Advise the person:</h1>
+  <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-4">
+    <li>to go to GOV.UK and use the magnifying glass in the top right corner to search for CRMR1</li>
+    <li>that they can download the form and either print it or complete it on screen</li>
+    <li>that we will register that they've asked us to reconsider their decision</li>
+  </ul>
+
+
+{% else %}
+
+Blank
+
+{% endif %}
+
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-2">They should return the completed form either:</h1>
+        <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
+          <li>by post to the address at the top of their decision letter</li>
+          <li>by logging into their PIP account and selecting 'uploading supporting evidence'</li>
+        </ul>
+
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+  </form>
+
+{% endblock %}

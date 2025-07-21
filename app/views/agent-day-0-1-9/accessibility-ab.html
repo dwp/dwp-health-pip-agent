@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="accessibility-ab-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "accessibility-ab",
+        name: "accessibility-ab",
+        fieldset: {
+          legend: {
+            text: "Select a scenario",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "1",
+          text: "1",
+          checked: (data["accessibility-ab"] == "1")
+        },
+        {
+          value: "2",
+          text: "2",
+          checked: (data["accessibility-ab"] == "2")
+        },
+        {
+          value: "3",
+          text: "3",
+          checked: (data["accessibility-ab"] == "3")
+        }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

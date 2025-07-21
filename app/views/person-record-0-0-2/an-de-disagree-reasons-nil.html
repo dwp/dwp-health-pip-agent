@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-disagree-reasons-router" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <!---------- 1 ---------->
+
+              {% set 1Html %}
+
+              {{ govukTextarea({
+                name: "an-de-disagree-reasons-award",
+                id: "an-de-disagree-reasons-award",
+                rows: "4",
+                label: {
+                  text: "Add details for Length of the award period",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+              {% endset -%}
+
+      <!---------- 2 ---------->
+
+              {% set 2Html %}
+
+              {{ govukTextarea({
+                name: "an-de-disagree-reasons-doc",
+                id: "an-de-disagree-reasons-doc",
+                rows: "4",
+                label: {
+                  text: "Add details for Evidence used to make the decision",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+              {% endset -%}
+
+      <!---------- 3 ---------->
+
+              {% set 3Html %}
+
+              {{ govukTextarea({
+                name: "an-de-disagree-reasons-payments",
+                id: "an-de-disagree-reasons-payments",
+                rows: "4",
+                label: {
+                  text: "Add details for Payment amounts including arrears",
+                  classes: "govuk-label--s",
+                  isPageHeading: true
+                },
+                hint: {
+                  html: ""
+                }
+              }) }}
+
+              {% endset -%}
+
+      <!----------  ---------->
+
+
+        {{ govukCheckboxes({
+          idPrefix: "an-de-disagree-reasons",
+          name: "an-de-disagree-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which part of their decision do they disagree with?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+          items: [
+          {
+            value: "Points",
+            text: "Points given and justification for one or more of the activities",
+            checked: (data["an-de-disagree-reasons"] == "Points")
+          },
+
+            {
+              value: "Dates",
+              text: "Dates mentioned in the decision letter",
+              checked: (data["an-de-disagree-reasons"] == "Dates")
+            },
+            {
+              value: "Doc",
+              text: "Evidence used to make the decision",
+              checked: (data["an-de-disagree-reasons"] == "Doc"),
+              conditional: {
+                html: 2Html
+              }
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+
+        </div>
+      </div>
+      <a class="govuk-link" href="an-de-disagree-reasons">Award options</a>
+
+  </form>
+
+{% endblock %}
