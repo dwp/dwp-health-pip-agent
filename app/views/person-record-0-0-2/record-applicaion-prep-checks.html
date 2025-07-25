@@ -1,0 +1,190 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-view-evidence" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "person-record-0-0-2/record-id.html" %}
+
+      {% include "includes/js-back-link.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pre-assessment provider and pre-decison check outcomes</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">This shows if anything has changed between pre assessment<br>provider checks and pre decsision checks.</p>
+
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-33-percent"><b>Check<b></td>
+              <td class="govuk-table__cell govuk-33-percent"><b>Prepare application for assessment provider<b></td>
+              <td class="govuk-table__cell govuk-33-percent"><b>Prepare application<br>for a decision<b></td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">National Insurance number</td>
+              <td class="govuk-table__cell">—</td>
+              <td class="govuk-table__cell">Confirmed</td>
+
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Name</td>
+              <td class="govuk-table__cell">Matched</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Address</td>
+              <td class="govuk-table__cell">Did not match – Updated manually</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Date of birth</td>
+              <td class="govuk-table__cell">Matched</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Date of death</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nationality</td>
+              <td class="govuk-table__cell">Matched</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Residency and presence</td>
+              <td class="govuk-table__cell">Matched</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Immigration status</td>
+              <td class="govuk-table__cell">Matched</td>
+              <td class="govuk-table__cell">Matched</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Special Rules End of Life (SREL)</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Representative or appointee</td>
+              <td class="govuk-table__cell">None</td>
+              <td class="govuk-table__cell">None</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Withdrawn</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Age criteria</td>
+              <td class="govuk-table__cell">Met</td>
+              <td class="govuk-table__cell">—</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Additional support</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Alternative format</td>
+              <td class="govuk-table__cell">None</td>
+              <td class="govuk-table__cell">None</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Fraud</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Keep customer interactions safe (KCIS)</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Working abroad</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Foreign benefits</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Disability Living Allowance (DLA)</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Child Disability Payment or Adult Disability Payment</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Armed Forces Independence Payment (AFIP)</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">War Pensioners' Mobility Supplement (WPMS)</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Constant Attendance Allowance (CAA</td>
+              <td class="govuk-table__cell">No</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Hospital or similar institutions</td>
+              <td class="govuk-table__cell">—</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Care homes</td>
+              <td class="govuk-table__cell">—</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Nursing homes</td>
+              <td class="govuk-table__cell">—</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Residential schools or colleges</td>
+              <td class="govuk-table__cell">—</td>
+              <td class="govuk-table__cell">No</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell govuk-table--no-bottom-border">Prison or legal custody</td>
+              <td class="govuk-table__cell govuk-table--no-bottom-border">—</td>
+              <td class="govuk-table__cell govuk-table--no-bottom-border">No</td>
+
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

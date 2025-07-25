@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="record-1-event-history#XXX" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Close the call</h1>
+
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person as they don't want to continue, their decision will not change.</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">An entry will be added to the event history.</p>
+
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+  </form>
+
+{% endblock %}

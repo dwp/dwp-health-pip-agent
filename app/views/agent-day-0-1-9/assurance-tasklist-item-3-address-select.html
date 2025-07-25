@@ -1,0 +1,123 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+    <form action="assurance-tasklist-item-3-address-review" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Select their home address postcode?</h2>
+
+      <p>6 addresses found for <strong>{{data["postcode"]}}</strong> and <strong>{{data["prefix"]}}</strong> <a href='assurance-tasklist-item-3-address-postcode'>Search again</a></p>
+
+<br>
+
+      {{ govukRadios({
+      name: "select-an-address",
+      classes: "govuk-radios--small",
+      fieldset: {
+        legend: {
+          text: "Select an address",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      formGroup: {
+        beforeInputs: {
+          html: ""
+        }
+      },
+      items: [
+        {
+          value: "1 Washington Street, Worcester, WR1 1NL",
+          text: "1 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 1"
+          }
+        },
+        {
+          value: "10 Washington Street, Worcester, WR1 1NL",
+          text: "10 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 2"
+          }
+        },
+        {
+          value: "11 Washington Street, Worcester, WR1 1NL",
+          text: "11 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 2"
+          }
+        },
+        {
+          value: "101 Washington Street, Worcester, WR1 1NL",
+          text: "101 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 3"
+          }
+        },
+        {
+          value: "110 Washington Street, Worcester, WR1 1NL",
+          text: "110 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 4"
+          }
+        },
+        {
+          value: "111 Washington Street, Worcester, WR1 1NL",
+          text: "111 Washington Street, Worcester, WR1 1NL",
+          attributes: {
+            "data-ga-question": "Select an address",
+            "data-ga-answer": "Answer 5"
+          }
+        }
+      ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+
+
+    </div>
+  </div>
+
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="assurance-tasklist-item-3-address-manual">Enter their address manually</a>
+    </li>
+  </ul>
+  <!--<p class="govuk-body govuk-!-padding-top-6"><a href="eject-error-reason">Save claim and exit</a></p>-->
+
+
+  </form>
+
+{% endblock %}

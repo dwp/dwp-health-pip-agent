@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="record-1-event-history-filter-router" method="post" class="form">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+
+      <style>
+      #accordion-default > div.govuk-accordion__controls > button {display: none}
+      /* #accordion-default-heading-1 > span {display: none} */
+      </style>
+
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-2/r-navigation.html" %}
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Filter by event type: &nbsp;&nbsp;<a class="govuk-body govuk-!-font-size-19" href="#"><strong>Clear</strong></a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Inbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Outbound calls</a> &nbsp;&nbsp; <a class="govuk-body govuk-!-font-size-19" href="#">Letters</a> </p> -->
+
+
+<div class="govuk-accordion govuk-!-margin-bottom-0" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          Filter by event type
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+      {{ govukCheckboxes({
+      idPrefix: "record-1-event-history-filter",
+      name: "record-1-event-history-filter",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+      legend: {
+      text: "Select filter type",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s "
+      }
+      },
+      items: [
+      {
+      value: "1",
+      text: "Inbound calls",
+      checked: (data["record-1-event-history-filter"] == "1")
+      },
+      {
+      value: "2",
+      text: "Outbound calls",
+      checked: (data["record-1-event-history-filter"] == "2")
+      },
+      {
+      value: "3",
+      text: "Letters sent",
+      checked: (data["record-1-event-history-filter"] == "3")
+      },
+      {
+      value: "4",
+      text: "Letters received",
+      checked: (data["record-1-event-history-filter"] == "4")
+      },
+      {
+      value: "0",
+      text: "Clear*",
+      checked: (data["record-1-event-history-filter"] == "0")
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Apply",
+      classes: "govuk-button--secondary govuk-!-margin-bottom-4"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="govuk-table govuk-!-margin-top-0">
+
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell govuk-33-percent">Date</td>
+    <td class="govuk-table__cell govuk-66-percent">Details</td>
+    <!-- <td class="govuk-table__cell govuk-20-percent">Actions</td> -->
+  </tr>
+  </thead>
+
+
+
+  {% if data["applicaiton-actions"] == "2" %}
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell table-spacer">Today</td>
+
+      <td class="govuk-table__cell table-spacer">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+        <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Talked through process of MR</li>
+          <li>Took details about MR</li>
+          <li>Citizen to send in more documents listed in full notes</li>
+        </ul>
+      </p>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+        <p class="govuk-body govuk-!-margin-bottom-3">Request for their decision to be reconsidered. Recorded the reasons they disagreed with the decision and explained what will happen next.</p>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-3"><a class="" href="record-applicaion-evidence-notes" target="">View notes</a></p>
+
+
+      </td>
+      </tr>
+
+  {% else %}
+  {% endif %}
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell table-spacer">18 October 2023</td>
+
+    <td class="govuk-table__cell table-spacer">
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Reissue award letter</li>
+        <li>Changed landline</li>
+        <li>Removed helper</li>
+      </ul>
+    </p>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p>
+      <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
+
+    </td>
+    </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">1 October 2023</td>
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Inbound call</p>
+          <!-- <p class="govuk-body govuk-!-margin-bottom-3">David Connifey</p> -->
+
+          <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Notes</p> -->
+          <p class="govuk-body govuk-!-margin-bottom-3">Information taken from the call</p>
+
+        </td>
+        </tr>
+
+
+
+
+  </table>
+
+
+
+</div>
+    </form>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+  <form action="mr-application-overview" method="post" class="form">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Mandatory Reconsideration overview</h1>
+
+
+
+        {% if data["system-application-selector"] == "11" %}
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This application is now ready for a decision.</p>
+        {% else %}
+        {% endif %}
+
+
+
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__header">Online identity verification</td>
+          <td class="govuk-table__cell">Incomplete (Means we have to call them to assure and means BAU, so why are we seeing this task?)<br> Completed (Telephone but wouldnt be here as sent to BAU, so why are we seeing this task?)  <br> Completed (Apply)</td>
+        </tr> -->
+        <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Application submitted</td>
+            <td class="govuk-table__cell">1 December 2023</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Decision made</td>
+            <td class="govuk-table__cell">1 March 2024</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Mandatory reconsideration registed</td>
+            <td class="govuk-table__cell">Today</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

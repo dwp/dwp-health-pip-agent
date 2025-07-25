@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/record-id-base.html" %}
+
+<form action="r-flags#r-flags-add-marker" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Flags and markers",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      {{ govukCheckboxes({
+        idPrefix: "r-flags-add",
+        name: "r-flags-add",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Which flags or markers do you need to add? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: "Select all that apply."
+        },
+        items: [
+          {
+            value: "Flag1",
+            text: "KCIS marker (Keep Customer Interactions Safe)",
+            checked: (data["r-flags-add"] == "Flag1"),
+            hint: {
+              text: "Use this if you have felt threatened, felt abused, were intimdated or subjected to actual physical or psychological harm during an interaction with the person."
+            }
+          },
+
+          {
+            value: "Flag2",
+            text: "Financially vulnerable marker",
+            checked: (data["r-flags-add"] == "Flag2"),
+            hint: {
+              text: "Use this when the person may be unable to manage large payments, either due to their personal circumstances or their limited capacity to understand financial matters."
+            }
+          },
+          {
+            value: "Flag5",
+            text: "ACS",
+            checked: (data["r-flags-add"] == "Flag5"),
+            hint: {
+              text: "@rachel"
+            }
+          },
+          {
+            value: "Flag6",
+            text: "VCC",
+            checked: (data["r-flags-add"] == "Flag6"),
+            hint: {
+              text: "@rachel"
+            }
+          },
+          {
+            value: "Flag3",
+            text: "Additional support marker",
+            checked: (data["r-flags-add"] == "Flag3"),
+            hint: {
+              text: "Use this  if there is evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems."
+            }
+          },
+
+          {
+            value: "Flag4",
+            text: "Another type of marker",
+            checked: (data["r-flags-add"] == "Flag4"),
+            hint: {
+              text: "This is for when this scenario happens"
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -21,6 +21,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "explore.scss";
 @import "explore-header";
 @import "explore-govuk-overrides";
+// @import "dwpQuickReference";
+// @import "govukSummaryList";
 
 
 
@@ -710,6 +712,10 @@ padding-bottom: 0px !important;
 float: right;
 }
 
+.govuk-table__cell--right{
+float: right!important;
+text-align: right!important;
+}
 
 .govuk-tag--filter {
   background-color:#f3f2f1;
@@ -746,4 +752,14 @@ float: right;
 
 .prototype-banner-hidden:target {
     display: block;
+}
+
+.govuk-table {
+  border-bottom: 0px !important;
+}
+
+
+
+.govuk-extra-padding-right {
+  padding-left: 40px !important;
 }

@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Record the primary condition or disability
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block head %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="/public/images/accessible-autocomplete.min.css"/>
+  <script src="/public/javascripts/accessible-autocomplete2.min.js"></script>
+  <style>
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+      font-family: GDS Transport,arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="health-condition-typo-router" method="post">
+
+
+
+      {% include "agent-day-0-2-1/record-id.html" %}
+
+
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">No results found for "sriasis"</h1>
+
+
+
+
+
+
+
+
+        <!-- <p class="govuk-body govuk-!-margin-bottom-4">Did you mean: {{ data["health-condition-primary-search"]}}</p> -->
+
+
+
+        <!------------ DYNAMIC CTA------------>
+          {% set dynamicCTA %}
+                Did you mean 'Psoriasis'?
+
+          {% endset %}
+        <!------------Legend--------------->
+
+
+        {{ govukRadios({
+          idPrefix: "health-condition-typo",
+          name: "health-condition-typo",
+          fieldset: {
+            legend: {
+              html: dynamicCTA,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: legendNumbers
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            html: "Yes",
+            checked: (data["health-condition-typo"] == "Yes")
+          },
+          {
+            value: "No",
+            html: "No – Search again",
+            checked: (data["health-condition-typo"] == "No")
+          },
+          {
+            value: "Advanced",
+            html: "No – Search by category",
+            checked: (data["health-condition-typo"] == "Advanced")
+          }
+          ]
+        }) }}
+
+        <!-- <p class="govuk-body govuk-!-padding-bottom-4">
+          <a class="govuk-link govuk-link--no-visited-state" href="health-condition-advanced-search">I need help to find a condition</a>
+        </p> -->
+
+        <button type="health-condition-summary-1" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

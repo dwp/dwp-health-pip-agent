@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/record-id-base.html" %}
+
+<form action="r-bank-details#r-bank-details" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-applications"
+        },
+        {
+          text: "Bank detials",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Add new bank detials</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Name on account"
+        },
+        id: "bank-name-on-account",
+        name: "bank-name-on-account",
+        classes: "govuk-input--width-20",
+        value: data["bank-name-on-account"]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Bank name"
+        },
+        id: "bank-name",
+        name: "bank-name",
+        classes: "govuk-input--width-20",
+        value: data["bank-name"]
+      }) }}
+
+{{ govukInput({
+  name: "bank-sort-code",
+  id: "bank-sort-code",
+  classes: "govuk-input--width-10",
+  value: data["bank-sort-code"],
+  label: {
+    text: "Sort code"
+  }
+}) }}
+
+{{ govukInput({
+  name: "bank-account-number",
+  id: "bank-account-number",
+  classes: "govuk-input--width-10",
+  value: data["bank-account-number"],
+  label: {
+    text: "Account number"
+  }
+}) }}
+
+<!--
+{{ govukInput({
+  name: "Roll number",
+  id: "Roll number",
+  classes: "govuk-input--width-20",
+  value: data["roll-number"],
+  label: {
+    html: "Roll or reference number<br>"
+  },
+  hint: {
+    text: "If your account has a roll or reference number, you need to provide it. You will find it on your statement or passbook."
+  }
+}) }}
+-->
+
+
+{% set buildingSociety %}
+
+{{ govukInput({
+  name: "bank-roll-number",
+  id: "bank-roll-number",
+  classes: "govuk-input--width-20",
+  value: data["bank-roll-number"],
+  label: {
+    html: "Roll or reference number"
+  },
+  hint: {
+    text: ""
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "bank-roll-number-check",
+  name: "bank-roll-number-check",
+  fieldset: {
+    legend: {
+      text: "Does your account have a roll or reference number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+{
+  value: "Building society",
+  text: "Yes",
+  checked: (data["bank-roll-number-check"] == "Yes"),
+    conditional: {
+      html: buildingSociety
+    }
+  },
+  {
+      value: "Bank account",
+      text: "No",
+      checked: (data["bank-roll-number-check"] == "No")
+  }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

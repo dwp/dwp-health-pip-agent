@@ -12,39 +12,32 @@
 
 
 
-      {% if data["application-selector"] == "AM" %}
-        Monolith
-        <form action="assurance-monolith" method="post" class="form">
 
-          {% elif data["application-selector"] == "APR" %}
-            Progressive
-            <form action="assurance-pr-tasklist" method="post" class="form">
-
-
-      {% else %}
-      <form action="assurance-tasklist" method="post" class="form">
-
-      {% endif %}
+    <form action="assurance-tasklist-separate" method="post" class="form">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "another-decision-0-0-2/record-id.html" %}
+      {% include "another-decision-0-0-2/record-id-base.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for an assessment provider</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
 
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <!-- <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Application details</caption> -->
 
             <th scope="col" class="govuk-table__header govuk-60-percent"></th>
             <th scope="col" class="govuk-table__header govuk-40-percent"></th>
           </tr>
         </thead>
+
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__header">Online identity verification</td>
+          <td class="govuk-table__cell">Incomplete (Means we have to call them to assure and means BAU, so why are we seeing this task?)<br> Completed (Telephone but wouldnt be here as sent to BAU, so why are we seeing this task?)  <br> Completed (Apply)</td>
+        </tr> -->
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -53,15 +46,17 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__header">Age of applicant</td>
-            <td class="govuk-table__cell">65 (20 February 1959)</td>
+            <td class="govuk-table__cell">65</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Date of birth</td>
+            <td class="govuk-table__cell">20 February 1959</td>
           </tr>
 
 
         </tbody>
       </table>
 
-
-<br>
       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"

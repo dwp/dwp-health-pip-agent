@@ -1,18 +1,22 @@
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <form action="login-router" method="post" class="form">
-
-      {% if data["search"] %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data ["search"]}}</h1>
-      {% elif data["application-selector"] == "4" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">Sam Elliot</h1>
-
-      {% else %} <h1 class="govuk-heading-l govuk-!-margin-bottom-1"><a href="/another-decision-0-0-2/outbound-2-exit-to-call" class="govuk-link">Jeff Bridges</a></h1>
-      <!--<h1 class="govuk-heading-l govuk-!-margin-bottom-1"><a href="/another-decision-0-0-2/outbound-2-exit-to-call" class="govuk-link" target="_blank">Jeff Bridges</a></h1> -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
 
 
+        <section class="dwp-quick-reference govuk-!-margin-bottom-8" aria-label="Case information">
+        <dl class="dwp-quick-reference__block">
+        <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+      {% if data["search"] %}
+        <dd class="dwp-quick-reference__primary">{{ data ["search"]}}</dd>
+      {% elif data["application-selector"] == "4" %}
+        <dd class="dwp-quick-reference__primary">Sam Elliot</dd>
+      {% else %}
+        <dd class="dwp-quick-reference__primary">Jeff Bridges <a href="/person-record-0-0-2/outbound-2-exit-to-call" class="govuk-link">Jeff Bridges</a></dd>
       {% endif %}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 11 22 33 C</p>
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="/another-decision-0-0-2/start-call" class="govuk-link" target="_blank">View Jeff Bridges record</a></p> -->
+        <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary govuk-visually-hidden">National Insurance number:</dt>
+        <dd class="dwp-quick-reference__secondary">NA 11 22 33 C</dd>
+        </dl>
+        </section>
 
+      </div>
     </div>
-  </div>

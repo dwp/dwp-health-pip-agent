@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Record the primary condition or disability
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block head %}
+  {{super()}}
+
+  <link rel="stylesheet" type="text/css" href="/public/images/accessible-autocomplete.min.css"/>
+  <script src="/public/javascripts/accessible-autocomplete2.min.js"></script>
+  <style>
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+      font-family: GDS Transport,arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="health-condition-typo" method="post">
+
+
+
+      {% include "person-record-0-0-2/record-id.html" %}
+
+
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Record the primary condition or disability</h1>
+
+
+
+          <label for="autocomplete-customTemplates"></label>
+          <div id="tt-customTemplates" class="autocomplete-wrapper"></div>
+
+
+
+
+<script type="text/javascript">
+  function customSuggest (query, syncResults) {
+    var results = [
+      { endonym: 'Feet, Knees, Ankle', spelling: "Feed", name: 'Legs' },
+      { endonym: 'Fingers, Wrists, Hands', spelling: "", name: 'Arms' },
+      { endonym: 'Eyes, Mouth, Teeth, Nose', spelling: "", name: 'Face' }
+    ]
+    syncResults(query
+      ? results.filter(function (result) {
+          var resultContains = result.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
+          var endonymContains = result.endonym.toLowerCase().indexOf(query.toLowerCase()) !== -1
+          var spellingContains = result.spelling.toLowerCase().indexOf(query.toLowerCase()) !== -1
+          return resultContains || endonymContains || spellingContains
+        })
+      : []
+    )
+  }
+
+  function inputValueTemplate (result) {
+    return result && result.name
+  }
+
+  function suggestionTemplate (result) {
+    return result && '<strong>' + result.name + '</strong>' +
+      ' (' + result.endonym + ')'
+  }
+
+  element = document.querySelector('#tt-customTemplates')
+  id = 'autocomplete-customTemplates'
+  accessibleAutocomplete({
+    element: element,
+    id: id,
+    source: customSuggest,
+    templates: {
+      inputValue: inputValueTemplate,
+      suggestion: suggestionTemplate
+    }
+  })
+</script>
+
+
+<div class="govuk-grid-row govuk-!-padding-top-8">
+  <div class="govuk-grid-column-two-thirds">
+
+<p class="govuk-body govuk-!-padding-bottom-4">
+  <a class="govuk-link govuk-link--no-visited-state" href="health-condition-advanced-search">Help to find a condition</a>
+</p>
+
+<!-- <p class="govuk-body">
+  <a href="health-condition-primary-enter" class="govuk-link govuk-link--no-visited-state govuk-!-margin-bottom-2">I cannot record a condition</a>
+</p> -->
+
+<button type="health-condition-summary-1" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+</div>
+
+    </form>
+
+{% endblock %}

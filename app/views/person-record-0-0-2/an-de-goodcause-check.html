@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-letter-check" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data["applicaiton-actions"] == "1m" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This decision was made more than one month ago</h1>
+
+      {% elif data["applicaiton-actions"] == "13m" %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">This decision was made more than 13 months ago</h1>
+
+      {% else %}
+      {% endif %}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:</p>
+      <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>mandatory reconsiderations must be requested within one month of the date on the decision letter</li>
+          <li>we may still be able to consider the request if they have good reason for contacting us late</li>
+      </ul>
+
+      {{ govukTextarea({
+        name: "an-de-goodcause-reason",
+        id: "an-de-goodcause-reason",
+        rows: "4",
+        label: {
+          text: "Record the reasons they have requested the mandatory reconsderation more than one month after their decision",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

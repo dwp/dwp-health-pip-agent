@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Activities - Additional Information
+{% endblock %}
+
+{% block main %}
+
+{% include "v13/case-review/record-id-bar.html" %}
+
+<div class="govuk-width-container">
+    <div class="column-full">
+      <nav class="navigation-secondary">
+        <ul>
+          <li>
+            <a href="../personal-details">Personal details</a>
+          </li>
+          <li>
+            <a href="../supporting-documents">Supporting documents</a>
+          </li>
+          <li>
+              <a href="../conditions">Conditions</a>
+          </li>
+          <li>
+              <a href="../activities" class="active" aria-current="section">Activities</a>
+          </li>
+          <!--<li>
+            <a href="../summary">Questions and answers</a>
+          </li>-->
+        </ul>
+      </nav>
+
+    </div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+  <main class="govuk-main-wrapper">
+
+   <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Activity</span>
+          Additional information
+     </h1>
+
+       <!-- SAM ELLIOT -->
+       {% if data["system-application-selector"] == "2" %}
+
+
+       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Is there anything else you would like to tell us about?</h2>
+       <p class="govuk-body govuk-!-margin-bottom-4">Yes</p>
+
+       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tell us anything else you think we should know about how your health condition or disability affects you, that you have not mentioned already.</h2>
+       <p class="govuk-body govuk-!-margin-bottom-4">I have a hard time leaving the house due to hallucinations and delusions and I have frequent overdoses and suicide attempts. I also deal with a lot of fatigue and cycling between excessive sleepiness and insomnia which makes it very difficult for me to go out and do things I need to do. </p>
+       <!-- <p class="govuk-body govuk-!-margin-bottom-4">XXX</p> -->
+
+
+       <!-- JEFF BRIDGES -->
+       {% else %}
+
+           <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Is there anything else you would like to tell us about?</h2>
+           <p class="govuk-body govuk-!-margin-bottom-4">No</p>
+
+           <!-- <p class="govuk-body govuk-!-margin-bottom-4">n/a</p> -->
+           <!-- <p class="govuk-body govuk-!-margin-bottom-4">XXX</p>
+           <p class="govuk-body govuk-!-margin-bottom-4">XXX</p> -->
+
+       {% endif %}
+
+
+</div>
+</div>
+
+
+    </main>
+  </div>
+
+{% endblock %}

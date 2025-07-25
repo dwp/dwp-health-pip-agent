@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="health-condition-choice-router" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+health-condition-summary-6
+
+      {% include "agent-day-0-2-1/record-id.html" %}
+
+
+        {{ govukRadios({
+          idPrefix: "health-condition-choice",
+          name: "health-condition-choice",
+          fieldset: {
+            legend: {
+              html: "Do you want to add Psoriasis?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: legendNumbers
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "Yes",
+            html: "Yes",
+            checked: (data["health-condition-choice"] == "Yes")
+          },
+          {
+            value: "No",
+            html: "No – Search again",
+            checked: (data["health-condition-choice"] == "No")
+          }
+          ]
+        }) }}
+
+        <!-- <p class="govuk-body govuk-!-padding-bottom-4">
+          <a class="govuk-link govuk-link--no-visited-state" href="health-condition-advanced-search">I need help to find a condition</a>
+        </p> -->
+
+        <button type="health-condition-summary-1" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

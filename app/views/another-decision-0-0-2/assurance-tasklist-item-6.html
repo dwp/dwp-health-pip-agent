@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+
+
+    {% if data["assurance-tasklist-item-7"] %}
+    <form action="assurance-tasklist-separate" method="post" class="form">
+    {% else %}
+    <form action="assurance-tasklist-item-6-router" method="post" class="form">
+    {% endif %}
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "assurance-tasklist-item-6",
+        name: "assurance-tasklist-item-6",
+        fieldset: {
+          legend: {
+            html: "Does their nationality match what we hold in Searchlight?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Expected",
+          text: "Yes",
+          checked: (data["assurance-tasklist-item-6"] == "Expected")
+        },
+        {
+          value: "Unexpected",
+          text: "No",
+          checked: (data["assurance-tasklist-item-6"] == "Unexpected")
+        },
+        {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["assurance-tasklist-item-6"] == "Pause")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

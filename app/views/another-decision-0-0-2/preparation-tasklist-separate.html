@@ -1,0 +1,616 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="preparation-mm-tasklist-outcome-router" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for a decision</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h1>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-4">@dave Links will open in a new tab</p> -->
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/v13/case-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank" rel="noopener">Supporting documents (opens in new tab)</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="evidence-6" target="_blank" rel="noopener">Health assessment report (opens in new tab)</a></p>
+
+
+    </div>
+  </div>
+
+
+
+
+    <!------------ ––– ------------>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These are the remaining details for you to check. All other eligibility checks have been done already.</p> -->
+
+
+
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+<h1 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-1">Check application</h1>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-1" aria-describedby="task-X">
+            <!-- [1-1]  --> Identity verification
+          </a>
+          {% if data["preparation-tasklist-item-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-2" aria-describedby="task-X">
+            <!-- [1-2]  --> Name
+          </a>
+          {% if data["preparation-tasklist-item-2"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-2"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-2"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-2"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-3" aria-describedby="task-X">
+            <!-- [1-3]  --> Address
+          </a>
+          {% if data["preparation-tasklist-item-3"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-3"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-3"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-3"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-3a" aria-describedby="task-X">
+            <!-- [1-3]  --> Correspondence address
+          </a>
+          {% if data["preparation-tasklist-item-3a"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-3a"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-3a"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-3a"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-4" aria-describedby="task-X">
+            <!-- [1-4]  --> Date of death
+          </a>
+          {% if data["preparation-tasklist-item-4"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-4"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-4"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-4"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-5" aria-describedby="task-X">
+            <!-- [1-5]  --> Nationality
+          </a>
+          {% if data["preparation-tasklist-item-5"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-5"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-5"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-5"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-5-1" aria-describedby="task-X">
+            <!-- [1-5-1]  --> Residency and presence
+          </a>
+          {% if data["preparation-tasklist-item-5-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-5-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-5-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-5-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-5-2" aria-describedby="task-X">
+            <!-- [1-5-2]  --> Immigration status
+          </a>
+          {% if data["preparation-tasklist-item-5-2"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-5-2"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-5-2"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-5-2"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-6" aria-describedby="task-X">
+            <!-- [1-6]  --> Special Rules End of Life (SREL)
+          </a>
+          {% if data["preparation-tasklist-item-6"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-6"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-6"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-6"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-7" aria-describedby="task-X">
+            <!-- [1-7]  --> Representative or appointee
+          </a>
+          {% if data["preparation-tasklist-item-7"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-7"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-7"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-7"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-8" aria-describedby="task-X">
+            <!-- [1-8]  --> Withdrawn
+          </a>
+          {% if data["preparation-tasklist-item-8"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-8"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-8"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-8"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-9" aria-describedby="task-X">
+            <!-- [1-9]  --> Age criteria
+          </a>
+          {% if data["preparation-tasklist-item-9"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-9"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-9"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-9"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+          {% elif data["preparation-tasklist-item-9-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-9-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-9-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-10" aria-describedby="task-X">
+            <!-- [1-10]  --> Additional support
+          </a>
+          {% if data["preparation-tasklist-item-10"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-10"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-10"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-10"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-11" aria-describedby="task-X">
+            <!-- [1-11]  --> Alternative format
+          </a>
+          {% if data["preparation-tasklist-item-11"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-11"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-11"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-11"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-12" aria-describedby="task-X">
+            <!-- [1-12]  --> Fraud
+          </a>
+          {% if data["preparation-tasklist-item-12"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-12"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-12"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-12"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-13" aria-describedby="task-X">
+            <!-- [1-13]  --> Keep customer interactions safe (KCIS)
+          </a>
+          {% if data["preparation-tasklist-item-13"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-13"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-13"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-13"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-14" aria-describedby="task-X">
+            <!-- [1-14]  --> Working abroad
+          </a>
+          {% if data["preparation-tasklist-item-14"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-14"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-14"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-14"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-15" aria-describedby="task-X">
+            <!-- [1-15]  --> Foreign benefits
+          </a>
+          {% if data["preparation-tasklist-item-15"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-15"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-15"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-15"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-16" aria-describedby="task-X">
+            <!-- [1-16]  --> Disability Living Allowance (DLA)
+          </a>
+          {% if data["preparation-tasklist-item-16"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-16"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-16"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-16"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-17" aria-describedby="task-X">
+            <!-- [1-17]  --> Child Disability Payment or Adult Disability Payment
+          </a>
+          {% if data["preparation-tasklist-item-17"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-17"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-17"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-20"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-18" aria-describedby="task-X">
+            <!-- [1-18]  --> Armed Forces Independence Payment (AFIP)
+          </a>
+          {% if data["preparation-tasklist-item-18"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-18"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-18"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-18"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-19" aria-describedby="task-X">
+            <!-- [1-19]  --> War Pensioners' Mobility Supplement (WPMS)
+          </a>
+          {% if data["preparation-tasklist-item-19"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-19"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-19"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-19"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-20" aria-describedby="task-X">
+            <!-- [1-20]  --> Constant Attendance Allowance (CAA)
+          </a>
+          {% if data["preparation-tasklist-item-20"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-20"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-20"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-20"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-21" aria-describedby="task-X">
+            <!-- [1-21]  --> Hospital or similar institutions
+          </a>
+          {% if data["preparation-tasklist-item-21"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-21"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-21"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-21"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-22" aria-describedby="task-X">
+            <!-- [1-22]  --> Care homes
+          </a>
+          {% if data["preparation-tasklist-item-22"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-22"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-22"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-22"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-23" aria-describedby="task-X">
+            <!-- [1-23]  --> Nursing homes
+          </a>
+          {% if data["preparation-tasklist-item-23"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-23"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-23"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-23"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-24" aria-describedby="task-X">
+            <!-- [1-24]  --> Residential schools or colleges
+          </a>
+          {% if data["preparation-tasklist-item-24"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-24"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-24"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-24"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="preparation-tasklist-item-25" aria-describedby="task-X">
+            <!-- [1-25]  --> Prison or legal custody
+          </a>
+          {% if data["preparation-tasklist-item-25"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["preparation-tasklist-item-25"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["preparation-tasklist-item-25"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["preparation-tasklist-item-25"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+    </ol>
+
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data["preparation-tasklist-item-25"] == "Unexpected"  %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can move the application to PIPCS or continue to make a decision.</p>
+
+
+      {{ govukRadios({
+        idPrefix: "preparation-mm-tasklist-outcome",
+        name: "preparation-mm-tasklist-outcome",
+        fieldset: {
+          legend: {
+            html: "What do you want to do now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Decision",
+          text: "Continue to make a decision",
+          checked: (data["preparation-mm-tasklist-outcome"] == "Decision")
+        },
+        {
+          value: "PIPcs",
+          text: "Move application to PIPCS",
+          checked: (data["preparation-mm-tasklist-outcome"] == "PIPcs")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "entry-home"
+      }) }}
+
+    {% elif data["preparation-tasklist-item-25"] == "Expected"  %}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">It is ready for a decision.</p>
+
+
+{{ govukRadios({
+  idPrefix: "preparation-mm-tasklist-outcome",
+  name: "preparation-mm-tasklist-outcome",
+  fieldset: {
+    legend: {
+      html: "What do you want to do now?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Decision",
+    text: "Continue to make a decision",
+    checked: (data["preparation-mm-tasklist-outcome"] == "Decision")
+  },
+  {
+    value: "PIPcs",
+    text: "Move application to PIPCS",
+    checked: (data["preparation-mm-tasklist-outcome"] == "PIPcs")
+  },
+  {
+    value: "Disallow",
+    text: "Disallow application",
+    checked: (data["preparation-mm-tasklist-outcome"] == "Disallow")
+  },
+  {
+    value: "Withdraw",
+    text: "Withdraw application",
+    checked: (data["preparation-mm-tasklist-outcome"] == "Withdraw")
+  }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+{% elif data["preparation-sub-monolith-3-7"] == "Unexpected"  %}
+
+
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1> -->
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You have some options</p> -->
+
+  {% include "another-decision-0-0-2/preparation-sub-monolith-outcome-list.html" %}
+
+
+  {{ govukRadios({
+    idPrefix: "preparation-mm-tasklist-outcome",
+    name: "preparation-mm-tasklist-outcome",
+    fieldset: {
+      legend: {
+        html: "What do you want to do now?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    classes: "govuk-radios",
+    items: [
+    {
+      value: "Decision",
+      text: "Continue to make a decision",
+      checked: (data["preparation-mm-tasklist-outcome"] == "Decision")
+    },
+    {
+      value: "PIPcs",
+      text: "Move application to PIPCS",
+      checked: (data["preparation-mm-tasklist-outcome"] == "PIPcs")
+    },
+    {
+      value: "Disallow",
+      text: "Disallow application",
+      checked: (data["preparation-mm-tasklist-outcome"] == "Disallow")
+    },
+    {
+      value: "Withdraw",
+      text: "Withdraw application",
+      checked: (data["preparation-mm-tasklist-outcome"] == "Withdraw")
+    }
+    ]
+  }) }}
+
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
+    {% else %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this application later</a></p>
+
+
+    {% endif %}
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

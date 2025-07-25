@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-move-paper-next-steps" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Overview",
+        href: "r-overview"
+      },
+      {
+        text: "Applications and decision",
+        href: "r-applications"
+      },
+      {
+        text: "Register a mandatory reconsideration",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-move-paper",
+        name: "an-de-move-paper",
+        fieldset: {
+          legend: {
+            text: "How do they want to receive the paper form?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "ByPost",
+          text: "By post",
+          hint: {
+            text: "It may take up to 3 weeks to arrive"},
+          checked: (data["an-de-move-paper"] == "ByPost")
+        },
+        {
+          value: "ByEmail",
+          text: "By email",
+          hint: {
+            text: ""},
+          checked: (data["an-de-move-paper"] == "ByEmail")
+        },
+        {
+          value: "ByDownload",
+          text: "By download ",
+          hint: {
+            text: ""},
+          checked: (data["an-de-move-paper"] == "ByDownload")
+        }
+        ]
+        }) }}
+
+        <!-- It will arrive almost immediately
+        Visit GOV.UK and search for CRMR1 -->
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

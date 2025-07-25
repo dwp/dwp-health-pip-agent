@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What recommendation are you making for this case?
+{% endblock %}
+
+{% block main %}
+
+{% include "v13/case-review/record-id-bar.html" %}
+
+
+    <div class="govuk-width-container">
+      <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form method="post" action="#" onclick=" checkButton()" class="score">
+
+
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "decision-point-descriptor-assessment",
+      name: "next-step",
+      fieldset: {
+        legend: {
+          text: "What recommendation are you making for this case?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "Case is ready for a decision",
+          text: "Case is ready for a decision"
+        },
+        {
+          value: "Refer case for an assessment",
+          text: "Refer case for an assessment"
+        }
+      ]
+    }) }}
+
+
+    {{ govukButton({
+      text: "Continue",
+      href: ""
+    }) }}
+
+    </form>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+        </main>
+      </div>
+
+{% endblock %}

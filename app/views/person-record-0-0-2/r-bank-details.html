@@ -1,0 +1,308 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-2/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="login-router" method="post" class="form">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+  {% include "person-record-0-0-2/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Bank details</h3>
+
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="#" target="">Add an another contact method</a></p> -->
+
+
+
+
+
+    {% set dynamicBankAccountName %}
+
+      {% if data["bank-name-on-account"] %}
+        {{data["bank-name-on-account"]}}
+
+      {% else %}
+        Jeff Bridges
+      {% endif %}
+
+    {% endset -%}
+
+
+    <!-------  ------->
+
+    {% set dynamicBankType %}
+
+      {% if data["bank-roll-number-check"] %}
+        Building society
+
+      {% else %}
+        Bank
+      {% endif %}
+
+    {% endset -%}
+
+
+
+    <!-------  ------->
+
+    {% set dynamicBankName %}
+
+      {% if data["bank-name"] %}
+        {{data["bank-name"]}}
+
+      {% else %}
+        Monzo
+      {% endif %}
+
+    {% endset -%}
+
+
+    <!-------  ------->
+
+    {% set dynamicBankSort %}
+
+      {% if data["bank-sort-code"] %}
+        {{data["bank-sort-code"]}}
+
+      {% else %}
+        ** ** 33
+      {% endif %}
+
+    {% endset -%}
+
+
+    <!-------  ------->
+
+    {% set dynamicBankAccount %}
+
+      {% if data["bank-account-number"] %}
+        {{data["bank-account-number"]}}
+
+      {% else %}
+        ** ** ** 55
+      {% endif %}
+
+    {% endset -%}
+
+
+    <!-------  ------->
+
+    {% set dynamicBuildingSociety %}
+
+      {% if data["bank-roll-number"] %}
+        {{data["bank-roll-number"]}}
+
+      {% else %}
+        ** ** ** 55
+      {% endif %}
+
+    {% endset -%}
+
+
+    <!-------  ------->
+
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name on the account"
+          },
+          value: {
+            html: dynamicBankAccountName
+          },
+          actions: {
+            items: [
+              {
+                href: "r-bank-details-amend",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Account type"
+          },
+          value: {
+            html: dynamicBankType
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Bank name"
+          },
+          value: {
+            html: dynamicBankName
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Sort code"
+          },
+          value: {
+            html: dynamicBankSort
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "View",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Account number"
+          },
+          value: {
+            html: dynamicBankAccount
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "View",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {% if data["bank-roll-number-check"] == "No" %}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-top-0",
+      rows: [
+        {
+          key: {
+            text: "Roll or reference number"
+          },
+          value: {
+            html: dynamicBuildingSociety
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "View",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {% else %}
+    {% endif %}
+
+
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="r-bank-details-new" target="">Change account details</a></p>
+
+
+    <!-- <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-33-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-24-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-15-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-15-percent"></th>
+
+          </tr>
+
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Name on the account	</td>
+            <td class="govuk-table__cell">Jeff Bridges	</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell "><a class="govuk-aligned-right" href="#" target="">Change</a></td>
+          </tr>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row border-bottom-end-clear">
+              <td class="govuk-table__header border-bottom-end-clear">Account details</td>
+              <td class="govuk-table__cell">Type of account</td>
+              <td class="govuk-table__cell">Bank</td>
+              <td class="govuk-table__cell "><a class="govuk-aligned-right" href="#" target="">Change</a></td>
+            </tr>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row border-bottom-end-clear">
+        <td class="govuk-table__header border-bottom-end-clear"></td>
+        <td class="govuk-table__cell">Bank name</td>
+        <td class="govuk-table__cell">Monzo</td>
+        <td class="govuk-table__cell "></td>
+      </tr>
+
+      <tr class="govuk-table__row border-bottom-end-clear">
+        <td class="govuk-table__cell border-bottom-end-clear"></td>
+        <td class="govuk-table__cell">Sort code</td>
+        <td class="govuk-table__cell">** ** 33</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td>
+
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell">Account number</td>
+        <td class="govuk-table__cell">** ** ** 55</td>
+        <td class="govuk-table__cell"><a class="govuk-aligned-right" href="#" target="">View</a></td>
+
+      </tr>
+
+    </tbody>
+</table> -->
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Conditions
+{% endblock %}
+
+{% block main %}
+
+{% include "v13/case-review/record-id-bar.html" %}
+
+
+
+<div class="govuk-width-container">
+  <div class="column-full">
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="personal-details">Personal details</a>
+        </li>
+        <li>
+          {% if data["system-application-selector"] == "2" %}
+<a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list">Supporting documents</a>
+{% else %}
+<a href="https://supporting-docs-prototype.herokuapp.com/vStarling-nil/document-list">Supporting documents</a>
+{% endif %}
+        </li>
+        <li>
+            <a href="conditions" class="active" aria-current="section">Conditions</a>
+        </li>
+        <li>
+            <a href="activities">Activities</a>
+        </li>
+        <!--<li>
+          <a href="summary">Questions and answers</a>
+        </li>-->
+      </ul>
+    </nav>
+
+  </div>
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+  <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+          Conditions
+        </h1>
+
+        {% if data["system-application-selector"] == "2" %}
+
+<!-- Sam conditions -->
+        <table class="govuk-table" id="tagrow">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" width="75%">Condition</th>
+              <th scope="col" class="govuk-table__header">Approximate start date</th>
+                      </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+                  <td scope="row" class="govuk-table__cell"><a href="condition-one">Migraines</a></td>
+                    <td scope="row" class="govuk-table__cell">21 months ago </td>
+
+        </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-two">
+                EUPD
+              </a></td>
+               <td scope="row" class="govuk-table__cell">27 months ago</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-three">
+                Asthma
+                </a></td>
+                  <td scope="row" class="govuk-table__cell">13 years </td>
+              </tr>
+
+          </tbody>
+        </table>
+
+<!-- JEFF Conditions -->
+
+        {% else %}
+        <!-- Jeff  conditions -->
+
+        <table class="govuk-table" id="tagrow">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" width="75%">Condition</th>
+              <th scope="col" class="govuk-table__header">Approximate start date</th>
+                      </tr>
+                </thead>
+
+                <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-one">
+                Obstructive Sleep Apnoea
+              </a></td>
+               <td scope="row" class="govuk-table__cell">October 2007 </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-two">
+                Fibromyalgia
+                </a></td>
+                  <td scope="row" class="govuk-table__cell">2012</td>
+              </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-three">
+                Myofacial pain syndrome
+                </a></td>
+          <td scope="row" class="govuk-table__cell">2023</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="condition-four">
+                Chronic back pain
+                </a></td>
+              <td scope="row" class="govuk-table__cell">2004</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        {% endif %}
+
+    </div>
+
+  </div>
+  </main>
+</div>
+
+
+<!-- <script>
+
+  // Retrieve number of questions for each condition
+  document.getElementById("tag-condition1").innerHTML = localStorage.getItem("unanswered-conditions1");
+  document.getElementById("tag-condition2").innerHTML = localStorage.getItem("unanswered-conditions2");
+  document.getElementById("tag-condition3").innerHTML = localStorage.getItem("unanswered-conditions3");
+  document.getElementById("tag-condition4").innerHTML = localStorage.getItem("unanswered-conditions4");
+  document.getElementById("tag-condition5").innerHTML = localStorage.getItem("unanswered-conditions5");
+  document.getElementById("tag-condition6").innerHTML = localStorage.getItem("unanswered-conditions6");
+  document.getElementById("tag-condition7").innerHTML = localStorage.getItem("unanswered-conditions7");
+  document.getElementById("tag-condition8").innerHTML = localStorage.getItem("unanswered-conditions8");
+
+
+
+</script> -->
+
+
+{% endblock %}

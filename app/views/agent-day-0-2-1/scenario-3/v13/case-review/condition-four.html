@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Condition 4
+{% endblock %}
+
+{% block main %}
+<!--<div class="govuk-width-container">-->
+{% include "v13/case-review/record-id-bar.html" %}
+
+
+
+<div class="govuk-width-container">
+    <div class="column-full">
+      <nav class="navigation-secondary">
+        <ul>
+          <li>
+            <a href="personal-details">Personal details</a>
+          </li>
+          <li>
+            {% if data["system-application-selector"] == "2" %}
+<a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list">Supporting documents</a>
+{% else %}
+<a href="https://supporting-docs-prototype.herokuapp.com/vStarling-nil/document-list">Supporting documents</a>
+{% endif %}
+          </li>
+          <li>
+              <a href="conditions" class="active" aria-current="section">Conditions</a>
+          </li>
+          <li>
+              <a href="activities">Activities</a>
+          </li>
+          <!--<li>
+            <a href="summary">Questions and answers</a>
+          </li>-->
+        </ul>
+      </nav>
+
+    </div>
+
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- SAM ELLIOT -->
+      {% if data["system-application-selector"] == "2" %}
+
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Condition</span>
+          xxx
+         </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Approximate start date</h2>
+      <p class="govuk-body govuk-!-margin-bottom-4">No</p>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about this condition</h2>
+      <p class="govuk-body govuk-!-margin-bottom-4">XXX</p>
+
+
+      <!-- JEFF BRIDGES -->
+      {% else %}
+      
+
+      <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Condition</span>
+          Chronic back pain
+     </h1>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Approximate start date</h2>
+          <p class="govuk-body govuk-!-margin-bottom-4">2004</p>
+
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Tell us about this condition</h2>
+          <p class="govuk-body govuk-!-margin-bottom-4">Dr Cummings diagnosed me with obstructive sleep apnoea ni October 2007 and Iwas referred for asleep study. Due ot administrative mistakes, several misdiagnoses, and the transition from paper-based ot digital records, I struggled ot get asleep study until 2022. The sleep study ni 2022 concluded with a formal diagnosis of obstructive sleep apnoea and I was placed on CPAP therapy.</p>
+          <p class="govuk-body govuk-!-margin-bottom-4">As the OSA has not improved under CPAP therapy, I have been referred to Hospital for polysomnography (an overnight sleep assessment evaluating brainwave and central nervous system activity). Fibromyalgia was diagnosed in 2012 by a doctor at. I started a course of Tramadol 50mg. Hospital diagnosed me with Myofascial pain syndrome in 2023. I have a history of chronic back  pain, first diagnosed by several appointments with physiotherapy.<p>
+
+      {% endif %}
+</main>
+    </div>
+
+
+
+{% endblock %}

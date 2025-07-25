@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "person-record-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-2/record-id-base.html" %}
+
+{% if data["r-address-add-outcomes"] == "OutcomeAwardReview" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "r-applications"
+    },
+    {
+      text: "Award review",
+      href: ""
+    }
+  ]
+}) }}
+
+{% elif data["r-address-add-outcomes"] == "OutcomeMove" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Overview",
+      href: "r-applications"
+    },
+    {
+      text: "Moving to Scotland",
+      href: ""
+    }
+  ]
+}) }}
+
+{% else %}
+
+{% endif %}
+
+<form action="r-address" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% if data["r-address-add-outcomes"] == "OutcomeAwardReview" %}
+
+
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You are starting a full award review given the significant changes made</h1>
+
+    {% elif data["r-address-add-outcomes"] == "OutcomeMove" %}
+
+
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Starting the transfer claimant to Adult Disability Payment (ADP)</h1>
+      {% else %}
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Next steps</h1>
+
+    {% endif %}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

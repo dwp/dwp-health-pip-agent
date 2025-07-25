@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %} Personal details {% endblock %}
+
+{% block main %}
+
+{% include "v13/case-review/record-id-bar.html" %}
+
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="personal-details" class="active" aria-current="section">I am event history</a>
+        </li>
+        <!-- <li>
+          {% if data["system-application-selector"] == "2" %}
+          <a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list">Supporting documents</a>
+          {% else %}
+          <a href="https://supporting-docs-prototype.herokuapp.com/vStarling-nil/document-list">Supporting documents</a>
+          {% endif %}
+        </li> -->
+        <li>
+          <a href="conditions">Conditions</a>
+        </li>
+        <li>
+          <a href="activities">Activities</a>
+        </li>
+
+        <li>
+          <a href="event-history">Event history</a>
+        </li>
+
+        <li>
+          <a href="Other-actions">Other actions</a>
+        </li>
+
+      </ul>
+    </nav>
+</div>
+
+
+<br><br><br><br>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-9">I am event history</h1>
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<!-- <form action="application-vcc-check" method="post" class="form"> -->
+  <form action="assurance-tasklist-separate" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check address details</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This will be the address the decison letter will be sent to</p>
+
+
+<table class="govuk-table govuk-!-margin-bottom-8">
+
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <!-- <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Application details</caption> -->
+
+    <th scope="col" class="govuk-table__header govuk-40-percent"></th>
+    <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+    <th scope="col" class="govuk-table__header govuk-20-percent"></th>
+
+  </tr>
+</thead>
+
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__header">The address does not match what is in SearchLight</td>
+    <td class="govuk-table__cell">{{ data['assurance-tasklist-item-3-address-actions']}}</td>
+    <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="assurance-tasklist-item-3-address-actions">Change</a></td>
+
+  </tr>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__header">Address</td>
+      <td class="govuk-table__cell">Address line
+                                <br>Address two
+                                <br>Address three
+      </td>
+
+      <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="assurance-tasklist-item-3-address-postcode">Change</a></td>
+
+    </tr>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__header">Post code</td>
+      <td class="govuk-table__cell">{{ data['postcode']}}</td>
+      <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="assurance-tasklist-item-3-address-postcode">Change</a></td>
+
+    </tr>
+
+</tbody>
+</table>
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

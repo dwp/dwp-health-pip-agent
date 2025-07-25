@@ -1,0 +1,303 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Record the primary condition or disability
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block head %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="/public/images/accessible-autocomplete.min.css"/>
+  <script src="/public/javascripts/accessible-autocomplete2.min.js"></script>
+  <style>
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+      font-family: GDS Transport,arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" method="post">
+    <form action="health-condition-advanced-search-cat2-skin" method="post">
+
+
+
+      {% include "person-record-0-0-2/record-id.html" %}
+
+
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Help to find a condition</h1>
+
+
+
+
+
+
+
+
+        <p class="govuk-body govuk-!-margin-bottom-8">Refine your search by selecting a category</p>
+
+        <!------------H1 LEGEND------------>
+          {% set legendName %}
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Manual search</h1>
+          {% endset %}
+        <!------------Legend--------------->
+
+        <!-- {{ govukInput({
+          label: {
+            html: legendName
+          },
+          hint: {
+            text: ""
+          },
+          id: "search",
+          name: "search",
+          classes: "govuk-input--width-30 govuk-!-margin-bottom-6",
+          value: data["search"]
+        }) }} -->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+            {{ govukCheckboxes({
+            idPrefix: "cat2-filter",
+            name: "cat2-filter",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+            legend: {
+            text: "Categories",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s "
+            }
+            },
+            items: [
+            {
+            value: "cat2-1",
+            text: "Autoimmune (connective tissue disorders)",
+            checked: (data["cat2-filter"] == "cat2-1")
+            },
+            {
+            value: "cat2-2",
+            text: "Cardiovascular",
+            checked: (data["cat2-filter"] == "cat2-2")
+            },
+            {
+            value: "cat2-3",
+            text: "Diseases of Pregnancy and the Postnatal Period",
+            checked: (data["cat2-filter"] == "cat2-3")
+            },
+            {
+            value: "cat2-4",
+            text: "Diseases of the immune system",
+            checked: (data["cat2-filter"] == "cat2-4")
+            },
+            {
+            value: "cat2-5",
+            text: "Endocrine",
+            checked: (data["cat2-filter"] == "cat2-5")
+            },
+            {
+            value: "cat2-6",
+            text: "Gastrointestinal",
+            checked: (data["cat2-filter"] == "cat2-6")
+            },
+            {
+            value: "cat2-7",
+            text: "Genitourinary",
+            checked: (data["cat2-filter"] == "cat2-7")
+            },
+            {
+            value: "cat2-8",
+            text: "Haematological",
+            checked: (data["cat2-filter"] == "cat2-8")
+            },
+            {
+            value: "cat2-9",
+            text: "Hearing disorders",
+            checked: (data["cat2-filter"] == "cat2-9")
+            },
+            {
+            value: "cat2-10",
+            text: "Infectious",
+            checked: (data["cat2-filter"] == "cat2-10")
+            }
+            ]
+            }) }}
+
+
+
+
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+            {{ govukCheckboxes({
+            idPrefix: "cat2-filter",
+            name: "cat2-filter",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+            legend: {
+            text: ".",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s "
+            }
+            },
+            items: [
+              {
+              value: "cat2-11",
+              text: "Malignant",
+              checked: (data["cat2-filter"] == "cat2-11")
+              },
+              {
+              value: "cat2-12",
+              text: "Metabolic",
+              checked: (data["cat2-filter"] == "cat2-12")
+              },
+              {
+              value: "cat2-13",
+              text: "Multisystem and extremes of age",
+              checked: (data["cat2-filter"] == "cat2-13")
+              },
+              {
+              value: "cat2-14",
+              text: "Musculoskeletal (general)",
+              checked: (data["cat2-filter"] == "cat2-14")
+              },
+              {
+              value: "cat2-15",
+              text: "Musculoskeletal (regional)",
+              checked: (data["cat2-filter"] == "cat2-15")
+              },
+              {
+              value: "cat2-16",
+              text: "Neurological",
+              checked: (data["cat2-filter"] == "cat2-16")
+              },
+              {
+              value: "cat2-17",
+              text: "Psychiatric disorders",
+              checked: (data["cat2-filter"] == "cat2-17")
+              },
+              {
+              value: "cat2-18",
+              text: "Respiratory",
+              checked: (data["cat2-filter"] == "cat2-18")
+              },
+              {
+              value: "cat2-19",
+              text: "Skin",
+              checked: (data["cat2-filter"] == "cat2-19")
+              },
+              {
+              value: "cat2-20",
+              text: "Visual",
+              checked: (data["cat2-filter"] == "cat2-20")
+              }
+            ]
+            }) }}
+
+
+
+          </div>
+
+
+
+          <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Apply filter",
+                classes: "govuk-button"
+
+              }) }}
+
+
+            </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Filtered results</h1>
+
+        <p class="govuk-body govuk-!-margin-bottom-6"> 20 of 20 conditions shown</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Achondroplasia</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Acne vulgaris</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Aortic valve disease</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Brachial plexus</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Cancer of renal pelvis</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Chronic venous insufficiency</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Cognitive disorder due to stroke</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Diabetes mellitus (non insulin dependent)</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Eczema (dermatitis)</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Endometriosis</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Ehlers-Danlos syndrome</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Ehlers-Danlos syndrome (hypermobility type)</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Golfer elbow (medial epicondylitis)</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Infection brain or nervous system other </a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Keratoconus</a></p>
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Leg ulcers (arterial)</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Leg ulcers (venous)</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Pressure sores</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="health-condition-choice">Psoriasis</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Rosacea</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Other diseases of blood vessels/lymphatics</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Other diseases of collagen and elastic tissue</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Other papulosquamous and inflammatory rashes</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Urticaria</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">Varicose eczema</a></p>
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}

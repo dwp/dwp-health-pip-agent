@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Prototypes for research</h1>
+<br>
+
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link" href="scenario-1/entry-home">Scenario 1</a></p>
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="scenario-2/health-condition-primary-search">Scenario 2</a></p>
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="scenario-3/entry-home">Scenario 3</a></p>
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="scenario-4/entry-home">Scenario 4 (AS)</a></p>
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="scenario-5/health-condition-list">Scenario 5 (T)</a></p>
+
+
+
+    <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="/person-record-0-0-1/find-someone-1-offline-gather">Find someone</a></p>
+
+
+  </form>
+
+{% endblock %}

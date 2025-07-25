@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-stats.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -82,7 +82,7 @@
       ]
     }) }}
 
-    {{ govukRadios({
+    <!-- {{ govukRadios({
       idPrefix: "source-preset",
       name: "source-preset",
       fieldset: {
@@ -116,7 +116,7 @@
         checked: (data["source-preset"] == "source-all")
       }
       ]
-    }) }}
+    }) }} -->
 
 
     {{ govukButton({
