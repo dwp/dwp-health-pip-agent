@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Record the primary condition or disability
+Health conditions or disabilities
 {% endblock %}
 
 {% block header %}
@@ -35,30 +35,13 @@ Record the primary condition or disability
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td scope="row" class="govuk-table__cell">
-
-
-
-{% if data["health-condition-typo"] %}
-  Psoriasis
-
-{% else %}
-
-{% if data["cat2-filter"] == "cat2-21" %}
-  No condition
-{% elif data["cat2-filter"] == "cat2-19" %}
-  Psoriasis
-{% else %}
-  Empty
-{% endif %}
-
-{% endif %}
-
+              <td scope="row" class="govuk-table__cell">Condition not found</td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"><a href="health-condition-primary-search-change">Change</a></td>
             </tr>
           </tbody>
         </table>
+
 
 
 

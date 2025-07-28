@@ -1690,7 +1690,33 @@ router.post(`/scenario-4/health-condition-choice-router`, (req, res) => {
 
 
 
+router.post(`/scenario-4/health-condition-advanced-search-router`, (req, res) => {
+  const cat2Router = req.session.data['cat2-filter']
 
+  if (cat2Router == 'cat2-19') {
+    res.redirect(`health-condition-advanced-search-cat2-skin`)
+  }
+  else if (cat2Router == 'cat2-21') {
+    res.redirect(`health-condition-advanced-search-cat2-nocondition`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/scenario-4/health-condition-choice-router`, (req, res) => {
+  const conditionChoiceRouter = req.session.data['cat2-filter']
+
+  if (conditionChoiceRouter == 'Yes') {
+    res.redirect(`health-condition-summary-6`)
+  }
+  else if (conditionChoiceRouter == 'No') {
+    res.redirect(`health-condition-advanced-search-cat2`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 

@@ -16,9 +16,28 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-health-condition-summary-6
+
 
       {% include "agent-day-0-2-1/record-id.html" %}
+
+
+      <!------------H1 LEGEND------------>
+{% set dynamicH1 %}
+
+{% if data["cat2-filter"] == "cat2-21" %}
+  Do you want to add 'No condition'?
+{% elif data["cat2-filter"] == "cat2-19" %}
+  Do you want to add Psoriasis?
+{% else %}
+  Do you want to add XXX?
+{% endif %}
+
+{% endset %}
+      <!------------Legend--------------->
+
+
+
+
 
 
         {{ govukRadios({
@@ -26,7 +45,7 @@ health-condition-summary-6
           name: "health-condition-choice",
           fieldset: {
             legend: {
-              html: "Do you want to add Psoriasis?",
+              html: dynamicH1,
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
