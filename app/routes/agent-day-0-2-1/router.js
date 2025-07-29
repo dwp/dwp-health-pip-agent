@@ -1694,7 +1694,7 @@ router.post(`/scenario-4/health-condition-advanced-search-router`, (req, res) =>
   const cat2Router = req.session.data['cat2-filter']
 
   if (cat2Router == 'cat2-16') {
-    res.redirect(`health-condition-advanced-search-cat2-Neurological`)
+    res.redirect(`health-condition-advanced-search-cat2-neurological`)
   }
   else if (cat2Router == 'cat2-19') {
     res.redirect(`health-condition-advanced-search-cat2-skin`)
@@ -1711,7 +1711,7 @@ router.post(`/scenario-5/health-condition-advanced-search-router`, (req, res) =>
   const cat2Router = req.session.data['cat2-filter']
 
   if (cat2Router == 'cat2-16') {
-    res.redirect(`health-condition-advanced-search-cat2-Neurological`)
+    res.redirect(`health-condition-advanced-search-cat2-nNeurological`)
   }
   else if (cat2Router == 'cat2-19') {
     res.redirect(`health-condition-advanced-search-cat2-skin`)
