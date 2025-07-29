@@ -34,8 +34,9 @@ Record the primary condition or disability
 
 
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">No results found for "sriasis"</h1>
+          <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">No results found for "sorisis"</h1> -->
 
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">No results found</h1>
 
 
 
@@ -49,7 +50,7 @@ Record the primary condition or disability
 
         <!------------ DYNAMIC CTA------------>
           {% set dynamicCTA %}
-                Did you mean 'Psoriasis'?
+                What do you want todo now?
 
           {% endset %}
         <!------------Legend--------------->
@@ -71,18 +72,13 @@ Record the primary condition or disability
           classes: "govuk-radios",
           items: [
           {
-            value: "Yes",
-            html: "Yes",
-            checked: (data["health-condition-typo"] == "Yes")
-          },
-          {
             value: "No",
-            html: "No – Search again",
+            html: "Search again",
             checked: (data["health-condition-typo"] == "No")
           },
           {
             value: "Advanced",
-            html: "No – Search by category",
+            html: "Search by category",
             checked: (data["health-condition-typo"] == "Advanced")
           }
           ]

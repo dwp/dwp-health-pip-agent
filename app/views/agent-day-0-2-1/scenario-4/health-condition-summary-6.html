@@ -48,6 +48,14 @@ Record the primary condition or disability
   No condition
 {% elif data["cat2-filter"] == "cat2-19" %}
   Psoriasis
+
+  {% elif data["cat2-filter"] == "cat2-16" %}
+    Other or unspecified neurological disorders
+
+  {% elif data["cat2-filter"] == "cat2-16" %}
+    cat2-16
+
+
 {% else %}
   Empty
 {% endif %}

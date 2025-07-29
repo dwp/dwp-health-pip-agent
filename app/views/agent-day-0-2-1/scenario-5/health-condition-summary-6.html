@@ -37,21 +37,28 @@ Record the primary condition or disability
             <tr class="govuk-table__row">
               <td scope="row" class="govuk-table__cell">
 
-                {% if data["accessibleAutocomplete"] %}
-                  {{ data["accessibleAutocomplete"]}}
 
-                {% else %}
-                  Psoriasis
 
-                {% endif %}
+{% if data["health-condition-typo"] %}
+  Psoriasis
 
-                 </td>
+{% else %}
+
+{% if data["cat2-filter"] == "cat2-21" %}
+  No condition
+{% elif data["cat2-filter"] == "cat2-19" %}
+  Psoriasis
+{% else %}
+  Empty
+{% endif %}
+
+{% endif %}
+
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"><a href="health-condition-primary-search-change">Change</a></td>
             </tr>
           </tbody>
         </table>
-
 
 
 

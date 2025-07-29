@@ -1,0 +1,322 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Record the primary condition or disability
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block head %}
+  {{super()}}
+  <link rel="stylesheet" type="text/css" href="/public/images/accessible-autocomplete.min.css"/>
+  <script src="/public/javascripts/accessible-autocomplete2.min.js"></script>
+  <style>
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+      font-family: GDS Transport,arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" method="post">
+    <form action="health-condition-advanced-search-router" method="post">
+
+
+
+      {% include "person-record-0-0-2/record-id.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Find a condition or disablity</h1>
+      <p class="govuk-body govuk-!-margin-bottom-8">Select a category to filter conditions.</p>
+
+        <!------------H1 LEGEND------------>
+          {% set legendName %}
+          <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Manual search</h1>
+          {% endset %}
+        <!------------Legend--------------->
+
+        <!-- {{ govukInput({
+          label: {
+            html: legendName
+          },
+          hint: {
+            text: ""
+          },
+          id: "search",
+          name: "search",
+          classes: "govuk-input--width-30 govuk-!-margin-bottom-6",
+          value: data["search"]
+        }) }} -->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+
+            {{ govukCheckboxes({
+            idPrefix: "cat2-filter",
+            name: "cat2-filter",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+            legend: {
+            text: "Categories",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s "
+            }
+            },
+            items: [
+            {
+            value: "cat2-1",
+            text: "Autoimmune (connective tissue disorders)",
+            checked: (data["cat2-filter"] == "cat2-1")
+            },
+            {
+            value: "cat2-2",
+            text: "Cardiovascular",
+            checked: (data["cat2-filter"] == "cat2-2")
+            },
+            {
+            value: "cat2-3",
+            text: "Diseases of Pregnancy and the Postnatal Period",
+            checked: (data["cat2-filter"] == "cat2-3")
+            },
+            {
+            value: "cat2-4",
+            text: "Diseases of the immune system",
+            checked: (data["cat2-filter"] == "cat2-4")
+            },
+            {
+            value: "cat2-5",
+            text: "Endocrine",
+            checked: (data["cat2-filter"] == "cat2-5")
+            },
+            {
+            value: "cat2-6",
+            text: "Gastrointestinal",
+            checked: (data["cat2-filter"] == "cat2-6")
+            },
+            {
+            value: "cat2-7",
+            text: "Genitourinary",
+            checked: (data["cat2-filter"] == "cat2-7")
+            },
+            {
+            value: "cat2-8",
+            text: "Haematological",
+            checked: (data["cat2-filter"] == "cat2-8")
+            },
+            {
+            value: "cat2-9",
+            text: "Hearing disorders",
+            checked: (data["cat2-filter"] == "cat2-9")
+            },
+            {
+            value: "cat2-10",
+            text: "Infectious",
+            checked: (data["cat2-filter"] == "cat2-10")
+            },
+            {
+            value: "cat2-11",
+            text: "Malignant",
+            checked: (data["cat2-filter"] == "cat2-11")
+            }
+            ]
+            }) }}
+
+
+
+
+          </div>
+          <div class="govuk-grid-column-one-half">
+
+            {{ govukCheckboxes({
+            idPrefix: "cat2-filter",
+            name: "cat2-filter",
+            classes: "govuk-checkboxes--small",
+            fieldset: {
+            legend: {
+            text: ".",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s "
+            }
+            },
+            items: [
+              {
+              value: "cat2-12",
+              text: "Metabolic",
+              checked: (data["cat2-filter"] == "cat2-12")
+              },
+              {
+              value: "cat2-13",
+              text: "Multisystem and extremes of age",
+              checked: (data["cat2-filter"] == "cat2-13")
+              },
+              {
+              value: "cat2-14",
+              text: "Musculoskeletal (general)",
+              checked: (data["cat2-filter"] == "cat2-14")
+              },
+              {
+              value: "cat2-15",
+              text: "Musculoskeletal (regional)",
+              checked: (data["cat2-filter"] == "cat2-15")
+              },
+              {
+              value: "cat2-16",
+              text: "Neurological",
+              checked: (data["cat2-filter"] == "cat2-16")
+              },
+              {
+              value: "cat2-17",
+              text: "Psychiatric disorders",
+              checked: (data["cat2-filter"] == "cat2-17")
+              },
+              {
+              value: "cat2-18",
+              text: "Respiratory",
+              checked: (data["cat2-filter"] == "cat2-18")
+              },
+              {
+              value: "cat2-19",
+              text: "Skin",
+              checked: (data["cat2-filter"] == "cat2-19")
+              },
+              {
+              value: "cat2-20",
+              text: "Visual",
+              checked: (data["cat2-filter"] == "cat2-20")
+              },
+              {
+              value: "cat2-21",
+              text: "Other or no condition",
+              checked: (data["cat2-filter"] == "cat2-21")
+              }
+            ]
+            }) }}
+
+
+
+          </div>
+
+
+
+          <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Apply filter",
+                classes: "govuk-button"
+
+              }) }}
+
+              {{ govukButton({
+                text: "Clear all filters",
+                classes: "govuk-button--secondary",
+                href: "health-condition-advanced-search-cat2"
+              })  }}
+            </div>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible-seperator">
+
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Filtered results</h1>
+        <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Filtered results for "Neurological"</h1> -->
+
+        <p class="govuk-body govuk-!-margin-bottom-6"> 15 of 15</p>
+
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Benign essential tremor	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Blepharospasm	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Brachial plexus 	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cataplexy	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebral palsy ataxic	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebral palsy athetoid 	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebral palsy other/type not known	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebral palsy quadriplegia	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebral palsy spastic diplegia	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebralpalsy hemiparesis	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Cerebrovascular accident (stroke)	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Charcot Marie Tooth disease	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Chronic fatigue syndrome	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Creutzfeldt Jacob disease (Transmissible Spongiform Encephalopathy TSE)	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Dermatomyositis	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Diabetic neuropathy	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Drop attacks	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Duchenne muscular dystrophy	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Dystrophia myotonica	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Facioscapulohumeral muscular dystrophy	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Friedrich's ataxia	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Generalised seizures (with status in last 12 months)	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Generalised seizures (without status in last 12 months)	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Guillain Barre syndrome	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Head injury with  cognitive and sensorimotor impairment	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Head injury with cognitive impairment	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Head injury with sensorimotor impairment	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Huntington's disease	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Hydrocephalus	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Infection brain or nervous system other 	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Limb girdle muscular dystrophy	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Migraine	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Motor neurone disease	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Multiple sclerosis	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Muscular dystrophy Other/type not known	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Myasthenia gravis	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Narcolepsy	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Neurofibromatosis	</a></p>
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Non epileptic attack disorder (pseudoseizures)	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other ataxias	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other benign tumours	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other causes of headache	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other causes of spinal cord compression	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other cerebrovascular disease  	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other degenerative neuronal diseases	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other diseases of muscle	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other movement disorders 	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other neuropathies not known including peripheral	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other non epileptic disturbances of consciousness	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="health-condition-summary-6">	Other or unspecified neurological disorders	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other peripheral nerve injury	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Other syncope	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Parkinson's disease	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Parkinsonism 	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Partial seizures (with status in last 12 months)	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Partial seizures (without status in last 12 months)	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Poliomyelitis and post polio syndrome	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Polymyositis	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Spina bifida	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Stokes Adams attacks (cardiovascular syncope)	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Syringomyelia and syringobulbia	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Torticollis	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Tourette's syndrome	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Transient ischaemic attacks (TIAs)	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Traumatic paraplegia	</a></p> -->
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Traumatic tetraplegia	</a></p>
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Unclassifiable seizures	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Viral encephalitis or meningitis and its complications	</a></p> -->
+        <!-- <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="#">	Writer's cramp	</a></p> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <p class="govuk-!-margin-bottom-4"><a class="govuk-link govuk-!-margin-bottom-4" href="health-condition-summary-not-listed">	I cannot find the condition	</a></p>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+    </form>
+
+
+  </div>
+</div>
+{% endblock %}
