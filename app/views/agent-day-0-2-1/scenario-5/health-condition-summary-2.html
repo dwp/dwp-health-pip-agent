@@ -47,7 +47,17 @@ Health conditions or disabilities
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td scope="row" class="govuk-table__cell">Psoriasis</td>
+              <td scope="row" class="govuk-table__cell">
+
+                {% if data["health-condition-primary-search"] %}
+                  {{ data["health-condition-primary-search"]}}
+
+                {% else %}
+                  Other or unspecified neurological disorders
+
+                {% endif %}
+
+              </td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"><a href="health-condition-primary-search">Change</a></td>
             </tr>

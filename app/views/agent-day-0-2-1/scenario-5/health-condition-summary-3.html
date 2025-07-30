@@ -34,7 +34,17 @@ Health conditions or disabilities
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td scope="row" class="govuk-table__cell">Condition 1 {{ data["health-condition-primary-search"]}}</td>
+              <td scope="row" class="govuk-table__cell">
+
+                {% if data["health-condition-primary-search"] %}
+                  {{ data["health-condition-primary-search"]}}
+
+                {% else %}
+                  Other or unspecified neurological disorders
+
+                {% endif %}
+
+              </td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"><a href="health-condition-primary-search-change">Change</a></td>
             </tr>
@@ -53,14 +63,14 @@ Health conditions or disabilities
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td scope="row" class="govuk-table__cell">Condition 2 {{ data["health-condition-2-search"]}} </td>
+              <td scope="row" class="govuk-table__cell">{{ data["health-condition-2-search"]}} </td>
               <td class="govuk-table__cell"><a href="#">Change</a></td>
               <td class="govuk-table__cell"><a href="#">Remove</a></td>
             </tr>
           </tbody>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td scope="row" class="govuk-table__cell">Condition 3 {{ data["health-condition-3-search"]}} </td>
+              <td scope="row" class="govuk-table__cell">{{ data["health-condition-3-search"]}} </td>
               <td class="govuk-table__cell"><a href="#">Change</a></td>
               <td class="govuk-table__cell"><a href="#">Remove</a></td>
             </tr>
