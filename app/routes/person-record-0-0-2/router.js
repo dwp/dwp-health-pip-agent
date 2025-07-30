@@ -580,7 +580,7 @@ router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
     res.redirect(`an-de-overview`)
   }
   else if (anDeLetterInHandCheck == 'No') {
-    res.redirect(`???`)
+    res.redirect(`an-de-reissue-lost-letter`)
   }
   else if (anDeLetterInHandCheck == 'NoLetter') {
     res.redirect(`an-de-callback`)
@@ -589,6 +589,21 @@ router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
     res.redirect(`XXX`)
   }
 })
+
+router.post(`/an-de-reissue-lost-letter-router`, (req, res) => {
+  const anDeReissueLostLetter = req.session.data['an-de-reissue-lost-letter']
+
+  if (anDeReissueLostLetter == 'Yes') {
+    res.redirect(`an-de-overview`)
+  }
+  else if (anDeReissueLostLetter == 'No') {
+    res.redirect(`an-de-overview`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
 
 
 
