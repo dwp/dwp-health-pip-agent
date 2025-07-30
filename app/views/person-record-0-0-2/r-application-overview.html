@@ -108,8 +108,8 @@
         <!-- <caption class="govuk-table__caption govuk-table__caption--m">Personal Independence status</caption> -->
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
-            <th scope="col" class="govuk-table__header govuk-!-width-two-quarters">Event</th>
+            <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+            <th scope="col" class="govuk-table__header govuk-!-width-two-quarters"></th>
             <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
 
           </tr>
@@ -158,7 +158,21 @@
         </td>
 
         {% else %}
-        <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-applicaion-evidence-decision" target="">View</a><a class="govuk-aligned-right" href="record-applicaion-evidence-decision" target="">Actions</a></td>
+        <td class="govuk-table__cell govuk-aligned-right">
+
+          <!-- <a class="govuk-aligned-right" href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review-dev/decision" target="">View (C)</a><a class="govuk-aligned-right" href="record-applicaion-evidence-decision" target="">Actions</a> -->
+
+        <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="r-decision-actions">Actions<span class="govuk-visually-hidden"></span></a>
+          </li>
+          <li class="govuk-summary-list__actions-list-item">
+            <a class="govuk-link" href="record-applicaion-evidence-decision">View<span class="govuk-visually-hidden"> contact details</span></a>
+          </li>
+        </ul>
+
+        </td>
+
         {% endif %}
         </tr>
 

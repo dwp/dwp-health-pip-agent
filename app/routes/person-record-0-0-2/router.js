@@ -560,7 +560,7 @@ router.post(`/an-de-letter-check-router`, (req, res) => {
   const anDeLetterCheck = req.session.data['an-de-letter-check']
 
   if (anDeLetterCheck == 'Yes') {
-    res.redirect(`an-de-overview`)
+    res.redirect(`an-de-letter-inhand-check`)
   }
   else if (anDeLetterCheck == 'No') {
     res.redirect(`an-de-reissue-letter`)
@@ -572,6 +572,24 @@ router.post(`/an-de-letter-check-router`, (req, res) => {
     res.redirect(`XXX`)
   }
 })
+
+router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
+  const anDeLetterInHandCheck = req.session.data['an-de-letter-inhand-check']
+
+  if (anDeLetterInHandCheck == 'Yes') {
+    res.redirect(`an-de-overview`)
+  }
+  else if (anDeLetterInHandCheck == 'No') {
+    res.redirect(`???`)
+  }
+  else if (anDeLetterInHandCheck == 'NoLetter') {
+    res.redirect(`an-de-callback`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
 
 
 // From colin about selecting more than one
