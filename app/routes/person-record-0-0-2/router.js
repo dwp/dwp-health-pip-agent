@@ -543,7 +543,7 @@ router.post(`/an-de-overview-router`, (req, res) => {
     res.redirect(`an-de-disagree-reasons`)
   }
   else if (recordEscalationCheckToContinue == 'NoPaper') {
-    res.redirect(`an-de-move-paper`)
+    res.redirect(`an-de-move-paper-next-steps`)
   }
   else if (recordEscalationCheckToContinue == 'NoTime') {
     res.redirect(`an-de-callback`)

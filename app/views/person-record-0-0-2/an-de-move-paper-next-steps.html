@@ -61,7 +61,7 @@
   <li>that we will register that they've asked us to reconsider their decision</li>
 </ul>
 
-{% elif data["an-de-move-paper"] == "ByDownload" %}
+{% elif data["an-de-overview"] == "NoPaper" %}
 
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Explain how to download the form online</h1>
 
@@ -70,6 +70,12 @@
     <li>to go to GOV.UK and use the magnifying glass in the top right corner to search for CRMR1</li>
     <li>that they can download the form and either print it or complete it on screen</li>
     <li>that we will register that they've asked us to reconsider their decision</li>
+
+    {% if data["an-de-reissue-lost-letter"] == "Yes" %}
+    <li>@rachel We will also send you a copy of your decsison letter</li>
+    {% else %}
+    {% endif %}
+
   </ul>
 
 
