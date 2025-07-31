@@ -27,7 +27,75 @@
 
         <!------------OUTCOME LEGEND------------>
 
-        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Dates mentioned in the decision letter</h3>
+        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">@rachel Understanding the registation</h3>
+
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+          {% if data["an-de-goodcause-reason"] %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Over a month / 13 months (Good cause)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["an-de-goodcause-reason"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="an-de-letter-check">Change<span class="govuk-visually-hidden">XXX</span>
+
+              </a>
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Have they received their decision letter?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["an-de-letter-check"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="an-de-letter-check">Change<span class="govuk-visually-hidden">XXX</span>
+
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they have their decision letter with them?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data["an-de-letter-inhand-check"]}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span></a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do they need us to resend their decision letter?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data["an-de-reissue-lost-letter"] %}
+              {{ data["an-de-reissue-lost-letter"]}}
+              {% else %}
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span></a>
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Length of the award period</h3>
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-4">

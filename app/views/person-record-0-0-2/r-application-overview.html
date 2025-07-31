@@ -121,7 +121,20 @@
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Today</th>
             <td class="govuk-table__cell">Mandatory reconsideration requested</td>
-            <td class="govuk-table__cell "><a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td>
+            <td class="govuk-table__cell govuk-aligned-right">
+
+              <!-- <a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td> -->
+
+              <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="r-decision-actions-mr">Actions<span class="govuk-visually-hidden"></span></a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="record-applicaion-evidence-notes">View<span class="govuk-visually-hidden"> contact details</span></a>
+                </li>
+              </ul>
+              </td>
+
           </tr>
           {% else %}
           {% endif %}
@@ -154,7 +167,6 @@
             <a class="govuk-link" href="record-applicaion-evidence-decision">View<span class="govuk-visually-hidden"> contact details</span></a>
           </li>
         </ul>
-
         </td>
 
         {% else %}

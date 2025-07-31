@@ -66,6 +66,9 @@
 
       </div>
 
+
+
+
       <!------------Dynamic CheckBox------------>
 
       {% set DynamicCheckBox %}
@@ -77,6 +80,26 @@
       {% endif %}
 
       {% endset %}
+
+
+      {% set docsHtml %}
+
+      {{ govukTextarea({
+        name: "find-document-somethingelse",
+        id: "find-document-somethingelse",
+        rows: "4",
+        label: {
+          text: "@rachel",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {% endset -%}
+
 
       <!------------Legend--------------->
 
@@ -433,7 +456,11 @@
           {
             value: "111",
             text: " Information provided by Welfare Rights Advisor",
-            checked: (data["application-evidence-used"] == "1")
+            checked: (data["application-evidence-used"] == "1"),
+            conditional: {
+              html: docsHtml
+            }
+          }
           },
           {
             divider: "or"
@@ -441,8 +468,10 @@
           {
             value: "Advanced",
             text: "Something else",
-            checked: (data["an-de-select-docs"] == "Advanced")
-
+            checked: (data["an-de-select-docs"] == "Advanced"),
+            conditional: {
+              html: docsHtml
+            }
           }
         ]
       }) }}
