@@ -1676,6 +1676,55 @@ router.post(`/mr-application-overview-router`, (req, res) => {
   }
 })
 
+router.post(`/entry-home-processing-options-router`, (req, res) => {
+  const processType = req.session.data['entry-home-processing-options']
+
+  if (processType == 'PrepForAP') {
+    res.redirect(`PrepForDecision`)
+  }
+  else if (processType == 'PrepForDecision') {
+    res.redirect(`PrepForDecision`)
+  }
+  else if (processType == 'MakeMRNil') {
+    res.redirect(`help-call-status`)
+  }
+  else if (processType == 'MakeMRChange') {
+    res.redirect(`help-call-status`)
+  }
+  else if (processType == 'MakeAW') {
+    res.redirect(`MakeAW`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/entry-home-processing-options-nohelp-router`, (req, res) => {
+  const processType = req.session.data['entry-home-processing-options']
+
+  if (processType == 'PrepForAP') {
+    res.redirect(`PrepForDecision`)
+  }
+  else if (processType == 'PrepForDecision') {
+    res.redirect(`PrepForDecision`)
+  }
+  else if (processType == 'MakeMRNil') {
+    res.redirect(`task-overview`)
+  }
+  else if (processType == 'MakeMRChange') {
+    res.redirect(`task-overview`)
+  }
+  else if (processType == 'MakeAW') {
+    res.redirect(`MakeAW`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+
 
 
 

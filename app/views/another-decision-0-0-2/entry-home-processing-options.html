@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP MyHomePage
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-home.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% if data["help-call-status"] == "No" %}
+        <form action="entry-home-processing-options-nohelp-router" method="post" class="form">
+        {% else %}
+        <form action="entry-home-processing-options-router" method="post" class="form">
+        {% endif %}
+
+        {{ govukRadios({
+          classes: "govuk-radios govuk-!-margin-bottom-2",
+          idPrefix: "entry-home-processing-options",
+          name: "entry-home-processing-options",
+          fieldset: {
+            legend: {
+              text: "Select task type",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+          {
+            value: "PrepForAP",
+            text: "Prepare application for assessment provider",
+            checked: (data["entry-home-processing-options"] == "PrepForAP")
+          },
+          {
+            value: "PrepForDecision",
+            text: "Prepare application for a decision",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "PrepForDecision")
+          },
+          {
+            value: "MakeMRNil",
+            text: "Make a decision on a manditory reconsideration (Nil)",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "MakeMRNil")
+          },
+          {
+            value: "MakeMRChange",
+            text: "Make a decision on a manditory reconsideration (Change in rate)",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "MakeMRChange")
+          },
+          {
+            value: "MakeAW",
+            text: "Make a decision on an award review",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "MakeAW")
+          },
+          {
+            value: "PrepareAppeal",
+            text: "Prepare and appeal",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "PrepareAppeal")
+          }
+          ]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+</form>
+</div>
+</div>
+
+{% endblock %}

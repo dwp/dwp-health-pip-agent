@@ -1,14 +1,17 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Process a PIP application
+  PIP claimant record
 {% endblock %}
+
+
 
 {% block header %}
- {% include "explore-header-global-nav-multi.html" %}
+  {% include "another-decision-0-0-2/call-status.html" %}
 {% endblock %}
-
 {% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
 
 <form action="application-6-about" method="post" class="form">
 
@@ -16,71 +19,59 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "another-decision-0-0-2/record-id.html" %}
 
-Test 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
+          </h1>
 
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Original decision justification</h3>
 
-            <!------------H1 LEGEND------------>
-              {% set dynamicH1 %}
-              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for preparing food?
-                  </h2>
-                  {% endset %}
-            <!------------Legend--------------->
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            I see that you do XYZ.
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            I see that you do XYZ.
+          </p>
 
 
             {{ govukRadios({
-              idPrefix: "application-about-a1-score-overwrite",
-              name: "application-about-a1-score-overwrite",
+              idPrefix: "application-1-about-a1",
+              name: "application-1-about-a1",
               fieldset: {
                 legend: {
-                  html: dynamicH1,
+                  text: "The previous decision scored 6 points for this activity. Do you agree?",
                   isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
+                  classes: "govuk-fieldset__legend--l"
                 }
               },
               hint: {
-                html: legendNumbers
+                text: ""
               },
               classes: "govuk-radios",
               items: [
               {
-                value: "a1",
-                html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
-                checked: (data["application-about-a1-score-overwrite"] == "0")
+                value: "Agree",
+                text: "Yes",
+                checked: (data["application-1-about-a1"] == "Agree")
               },
               {
-                value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
-                checked: (data["application-about-a1-score-overwrite"] == "2")
-              },
-              {
-                value: "c3",
-                html: "<strong>Descriptor C (2 points):</strong> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave",
-                checked: (data["application-about-a1-score-overwrite"] == "2")
-              },
-              {
-                value: "d4",
-                html: "<strong>Descriptor D (2 points):</strong> Needs prompting to be able to either prepare or cook a simple meal",
-                checked: (data["application-about-a1-score-overwrite"] == "2")
-              },
-              {
-                value: "e5",
-                html: "<strong>Descriptor E (4 points):</strong>Needs supervision or assistance to either prepare or cook a simple meal",
-                checked: (data["application-about-a1-score-overwrite"] == "4")
-              },
-              {
-                value: "f6",
-                html: "<strong>Descriptor F (8 points):</strong> Cannot prepare and cook food",
-                checked: (data["application-about-a1-score-overwrite"] == "8")
+                value: "Amended",
+                text: "No",
+                checked: (data["application-1-about-a1"] == "Amended"),
+                      conditional: {
+                        html: scoreOverwite
+                      }
+                        },
+                {
+                value: "Pause",
+                text: "I need to come back to this later",
+                checked: (data["application-1-about-a1"] == "Pause")
               }
               ]
             }) }}
 
 
-            <br>
 
-            {{ govukTextarea({
+            <!-- {{ govukTextarea({
               name: "application-about-a1-reason",
               id: "application-about-a1-reason",
               classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
@@ -93,7 +84,7 @@ Test
                 html: legendCanned
               },
               value: data["application-about-a1-reason"]
-            }) }}
+            }) }} -->
 
 
           {{ govukButton({

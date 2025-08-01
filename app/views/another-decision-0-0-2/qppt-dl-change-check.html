@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="an-de-tasklist" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-9/record-id-base.html" %}
+
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need to make a change to the daily living qualifying period or perspecive test?
+
+
+            </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+  {% set dynamicHint %}
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+    XXX
+  </p>
+
+
+  {% endset %}
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-change-check",
+            name: "qppt-dl-change-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-change-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-change-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+          <!-- ,
+          {
+            value: "NoRestrictions",
+            text: "No restrictions were found",
+            checked: (data["qppt-dl-change-check"] == "NoRestrictions")
+          } -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

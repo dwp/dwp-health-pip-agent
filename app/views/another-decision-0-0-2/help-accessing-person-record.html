@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+  {% include "another-decision-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="task-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Accessing a persons record</h1>
+
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">To help you reference information within person record you can use the quicklink at the top of the page</p>
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">The quick link is the persons name.</p>
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">The person record will open in a new tab.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Person record will allow you to see information such as:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>contact detials</li>
+        <li>delegated authorities</li>
+        <li>flags and markers</li>
+        <li>accesablity needs</li>
+</ul>
+
+{{ govukRadios({
+  idPrefix: "help-accessing-person-record",
+  name: "help-accessing-person-record",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      text: "Do you want to see this help page next time?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["help-accessing-person-record"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["help-accessing-person-record"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
