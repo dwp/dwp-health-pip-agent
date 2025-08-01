@@ -67,16 +67,17 @@
       <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-2"><b>Explain what will happen next<b></p>
         <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
         <li>They will get a letter to let them know that their mandatory reconsideration has been registered.</li>
+
+        {% if data["an-de-reissue-lost-letter"] == "Yes" %}
+        <li>We will also send them a copy of their decision letter.</li>
+        {% else %}
+        {% endif %}
+
         <li>Once we've received the additional supporting evidence, someone will look at all the information again and make another decision. </li>
-        <li>@rachel Its about 1 month window for evidence to come, if not we will process regardless </li>
+        <li>If we do not receive their additional evidence within one month, we'll reconsider the decision based on what we currently know and understand. </li>
         <li>If they do not send their additional supporting evidence, we will reconsider the decision based on what we currently know and understand.</li>
         <li>They will get a letter called a Mandatory Reconsideration Notice telling them whether we've changed the decision.</li>
         <li>They should receive this within 15 weeks.</li>
-
-        {% if data["an-de-reissue-lost-letter"] == "Yes" %}
-        <li>@rachel We will also send you a copy of your decsison letter</li>
-        {% else %}
-        {% endif %}
 
       </ul>
       {% else %}
@@ -85,15 +86,15 @@
       <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-2"><b>Explain what will happen next<b></p>
         <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
           <li>They will get a letter to let them know that their mandatory reconsideration has been registered.</li>
+
+          {% if data["an-de-reissue-lost-letter"] == "Yes" %}
+          <li>We will also send them a copy of their decision letter.</li>
+          {% else %}
+          {% endif %}
+
           <li>As they did not want to send any additional supporting evidence, their decision will be reconsidered based on what we currently know and understand.</li>
           <li>Someone will look at all the information again and make another decision. </li>
           <li>They will get a letter called a Mandatory Reconsideration Notice telling them whether we've changed the decision.</li>
-
-          {% if data["an-de-reissue-lost-letter"] == "Yes" %}
-          <li>@rachel We will also send you a copy of your decsison letter</li>
-          {% else %}
-          {% endif %}
-          
           <li>They should receive this within 15 weeks.</li>
         </ul>
 

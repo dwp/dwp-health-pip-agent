@@ -21,188 +21,477 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Mandatory reconsideration notes</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information captured from Manditory reconsideration call</h1>
 
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">These are all the notes that relate to this application, including notes from telephone calls.</p> -->
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You can <a href="you-added-a-note" class="govuk-link" rel="noreferrer noopener" target="">add a new note</a> to this application.</p> -->
-
-      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Something in here about MR note capture<br>XXXX</p>
 
 
-      {% if data["applicaiton-actions"] == "2" %}
+      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">@rachel Registation details</h3>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">Today</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date manditory reconsideration was registered
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Today (DD Month Year)
+          </dd>
+
         </div>
 
-        <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-20-percent"><b>Author</b></td>
-                <td class="govuk-table__cell govuk-80-percent">David Connifey</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>Origin</b></td>
-                <td class="govuk-table__cell">Telephone call requesting we reconsider their decision</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>Note</b></td>
-                <td class="govuk-table__cell">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Who
+          </dt>
+          <dd class="govuk-summary-list__value">
+            David Connifey
+          </dd>
 
-                {% if data["an-de-award-period"] %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Award period</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">{{ data["an-de-award-period"]}}</p>
-                {% else %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Award period</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
-                {% endif %}
+        </div>
+      </dl>
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">@rachel Understanding the registation</h3>
 
 
-                {% if data["an-de-preparing-food"] %}
-                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Preparing food</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">{{ data["an-de-preparing-food"]}}</p>
-                {% else %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Preparing food</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. </p>
-                {% endif %}
+              <dl class="govuk-summary-list govuk-!-margin-bottom-4">
 
+                {% if data["an-de-goodcause-reason"] %}
 
-                {% if data["an-de-taking-nutrition"] %}
-                <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Taking nutrition</p>
-                <p class="govuk-body govuk-!-margin-bottom-4">{{ data["an-de-taking-nutrition"]}}</p>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Have they received their decision letter?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["an-de-goodcause-reason"]}}
+                  </dd>
+
+                </div>
 
                 {% else %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Taking nutrition</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100</p>
                 {% endif %}
 
-                  {% if data["an-de-other-issues"] %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Reasons they disagree with Taking nutrition</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">{{ data["an-de-other-issues"]}}</p>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Over a month / 13 months (Good cause)
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["an-de-letter-check"]}}
+                  </dd>
+
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Do they have their decision letter with them?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {{ data["an-de-letter-inhand-check"]}}
+                  </dd>
+
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Do they need us to resend their decision letter?
+                  </dt>
+
+
+                </div>
+
+              </dl>
+
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Length of the award period</h3>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Start date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons-start"] %}
+                    {{ data["an-de-disagree-reasons-start"]}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Qualifying period
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons-qp"] %}
+                    {{ data["an-de-disagree-reasons-qp"]}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Prospective test
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons-qp"] %}
+                    {{ data["an-de-disagree-reasons-qp"]}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Award end date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons-end"] %}
+                    {{ data["an-de-disagree-reasons-end"]}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+              </dl>
+
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Length of the award period</h3>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Length of award details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons"] == "Award" %}
+                    {{ data["an-de-disagree-reasons"] == "Award" }}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+              </dl>
+
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Evidence used to make the decision</h3>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    @Rachel Supporting Details  Evidence used to make the decision details
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons"] == "Doc" %}
+                    {{ data["an-de-disagree-reasons"] == "Doc"}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+              </dl>
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Payment amounts including arrears</h3>
+
+
+              <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Payment detailss
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    {% if data["an-de-disagree-reasons"] == "Payments" %}
+                    {{ data["an-de-disagree-reasons"] == "Payments"}}
+                    {% else %}
+                    No disagreement
+                    {% endif %}
+                  </dd>
+
+
+                </div>
+
+              </dl>
+
+
+            {% if data["an-de-preparing-food"] %}
+            <h3 class="govuk-heading-xm govuk-!-padding-top-6">Daily living scores</h3>
+
+            <!-- 1 -->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preparing food
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-preparing-food"] or data["an-de-points-reasons"] == "1"%}
+                  {{ data["an-de-preparing-food"] or data["an-de-points-reasons"] == "1"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 2 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Taking nutrition
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-taking-nutrition"] or data["an-de-points-reasons"] == "2"%}
+                  {{ data["an-de-taking-nutrition"] or data["an-de-points-reasons"] == "2"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 3 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Managing treatments
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-managing-treatments"] or data["an-de-points-reasons"] == "3" %}
+                  {{ data["an-de-managing-treatments"] or data["an-de-points-reasons"] == "3" }}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 4 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Washing and bathing
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-Washing-and-bathing"] or data["an-de-points-reasons"] == "4" %}
+                  {{ data["an-de-Washing-and-bathing"] or data["an-de-points-reasons"] == "4" }}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+
+            <!-- 5 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Using the toilet or managing incontinence
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-toilet"] or data["an-de-points-reasons"] == "5" %}
+                  {{ data["an-de-toilet"] or data["an-de-points-reasons"] == "5"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 6 -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                  Dressing and undressing
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-dressing"] or data["an-de-points-reasons"] == "6"%}
+                  {{ data["an-de-dressing"] or data["an-de-points-reasons"] == "6"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+            <!-- 7 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Talking, listening and understanding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-talking"] or data["an-de-points-reasons"] == "7" %}
+                  {{ data["an-de-talking"] or data["an-de-points-reasons"] == "7"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+            <!-- 8 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Reading
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-reading"] or data["an-de-points-reasons"] == "8" %}
+                  {{ data["an-de-reading"] or data["an-de-points-reasons"] == "8"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 9 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Mixing with other people
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-mixing"] or data["an-de-points-reasons"] == "9"%}
+                  {{ data["an-de-mixing"]or data["an-de-points-reasons"] == "9"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+            <!-- 10 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Managing your money
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-money"] or data["an-de-points-reasons"] == "10" %}
+                  {{ data["an-de-money"] or data["an-de-points-reasons"] == "10"}}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+            </dl>
+
+
+            <h3 class="govuk-heading-xm govuk-!-padding-top-4 govuk-!-margin-bottom-6">Mobility scores</h3>
+
+            <!-- 11 -->
+            <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Planning and following journeys
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data["an-de-planning"] or data["an-de-points-reasons"] == "11" %}
+                  {{ data["an-de-planning"] or data["an-de-points-reasons"] == "11" }}
+                  {% else %}
+                  No disagreement
+                  {% endif %}
+                </dd>
+
+
+              </div>
+
+
+            <!-- 12 -->
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                   Moving around
+                 </dt>
+                 <dd class="govuk-summary-list__value">
+                   {% if data["an-de-moving-round"] or data["an-de-points-reasons"] == "12" %}
+                   {{ data["an-de-moving-round"] or data["an-de-points-reasons"] == "12" }}
+                   {% else %}
+                   No disagreement
+                   {% endif %}
+                 </dd>
+
+               </div>
+
+            </dl>
+
+            {% else %}
+            {% endif %}
+
+
+
+            <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Supporting evidence which was not available<br> to us when the decision was made</h3>
+
+            {% if data["an-de-doc-check"] == "YesBasic" %}
+
+                  <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+
+                        Expected evidence
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {% if data["an-de-select-docs"] %}
+
+                        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0 ">
+                          <li>Information provided by care home</li>
+                          <li>Care plan</li>
+                          <li>Certificate of Vision Impairment (CVI)</li>
+                          <li>Information provided by community mental health team</li>
+                          <li>Health professional consultation report</li>
+                          <li>Information provided by Customer Compliance Officer</li>
+                          <li>Letter from consultantReport from consultant</li>
+                          <li>Report from consultant</li>
+                          <li>Telephone advice from consultant</li>
+                        </ul>
+
+                        {% else %}
+                        No documents to be sent
+                        {% endif %}
+                      </dd>
+
+                    </div>
+
+                  </dl>
 
                   {% else %}
-                  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Other issues reported</p>
-                  <p class="govuk-body govuk-!-margin-bottom-4">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</p>
-                {% endif %}
+                  No documents to be sent
+                  {% endif %}
 
-                </td>
-              </tr>
-
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Additional supporting evidence expected</b></td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border">
-
-
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>GP letter</li>
-                      <li>Evidence type A</li>
-                      <li>Evidence type B</li>
-                      <li>Evidence type C</li>
-                    </ul>
-                </td>
-              </tr>
-
-
-            </tbody>
-          </table>
-
-        </div>
-      </div>
-
-      <!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> -->
-
-      {% else %}
-      {% endif %}
-
-
-<!--
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">21 Dec 2024</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-        </div>
-
-        <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-20-percent"><b>Author</b></td>
-                <td class="govuk-table__cell govuk-80-percent">David Connifey</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>Origin</b></td>
-                <td class="govuk-table__cell">Telephone note</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Note</b></td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">10 Dec 2024</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-        </div>
-
-        <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-20-percent"><b>Author</b></td>
-                <td class="govuk-table__cell govuk-80-percent">David Connifey</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>Origin</b></td>
-                <td class="govuk-table__cell">Note about the decsion</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Note</b></td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received. This is appropriate dummy text that is being employed in order to ascertain an approximate length because the copy has not yet been received. 100</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-0">
-          <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-padding-top-1">21 Dec 2024</p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-        </div>
-
-        <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-0">
-          <table class="govuk-table">
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-20-percent"><b>Author</b></td>
-                <td class="govuk-table__cell govuk-80-percent">David Connifey</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><b>Origin</b></td>
-                <td class="govuk-table__cell">Telephone note</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table--no-bottom-border"><b>Note</b></td>
-                <td class="govuk-table__cell govuk-table--no-bottom-border">This is appropriate dummy text that is being employed in order to ascertain an approximate length because the actual copy has not yet been received.</td>
-              </tr>
-            </tbody>
-          </table>
-
-        </div>
-      </div> -->
 
 
 

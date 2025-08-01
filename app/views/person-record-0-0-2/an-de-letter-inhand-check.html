@@ -35,6 +35,22 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <!------------H1 LEGEND------------>
+        {% set dynamicHint %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise the person:</p>
+        <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-6">
+
+          <li>mandatory reconsiderations must be requested within one month of the date on the decision letter</li>
+            <li>we may still be able to consider the request if they have good reason for contacting us late</li>
+        </ul>
+
+
+            {% endset %}
+      <!------------Legend--------------->
+
+
+
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
@@ -44,11 +60,11 @@
           legend: {
             html: "Do they have their decision letter with them?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
-          text: ""
+          html: dynamicHint
         },
         items: [
         {
