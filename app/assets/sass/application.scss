@@ -559,10 +559,16 @@ a.govuk-skip-link {text-decoration: underline;}
   color: #000000;
   background-color: #1d70b8;
 }
+.call-panel-prepare {
+  // text-transform: uppercase;
+  color: #000000 !important;
+  background-color: #BBD4EA;
+}
+
 .call-panel-outbound {
   // text-transform: uppercase;
   color: #000000 !important;
-  background-color: #d2e2f1;
+  background-color: #BBD4EA;
 }
 
 .call-panel-alignment {
@@ -578,6 +584,18 @@ a.govuk-skip-link {text-decoration: underline;}
   // text-transform: uppercase;
   color: #000 !important;
 }
+
+.call-panel-active {
+  // text-transform: uppercase;
+  color: #fff !important;
+  background-color: #f4ccc5;
+}
+
+.call-panel-text-active {
+  // text-transform: uppercase;
+  color: #000 !important;
+}
+
 
 .govuk-heading-xm {
   font-family: 'GDS Transport';

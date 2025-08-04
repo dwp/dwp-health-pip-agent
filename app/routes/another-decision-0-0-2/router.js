@@ -1686,10 +1686,10 @@ router.post(`/entry-home-processing-options-router`, (req, res) => {
     res.redirect(`PrepForDecision`)
   }
   else if (processType == 'MakeMRNil') {
-    res.redirect(`help-call-status`)
+    res.redirect(`help-processing-notes`)
   }
   else if (processType == 'MakeMRChange') {
-    res.redirect(`help-call-status`)
+    res.redirect(`help-processing-notes`)
   }
   else if (processType == 'MakeAW') {
     res.redirect(`MakeAW`)

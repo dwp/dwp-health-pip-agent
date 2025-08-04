@@ -1,15 +1,7 @@
-
 {% extends "layout.html" %}
-
-<!-- {% if data["qppt-dl-effective-date-check"] == "No" or data["qppt-m-effective-date-check"] == "No" %}
-{% extends "layout.html" %}
-{% else %}
-{% extends "layout-eject.html" %}
-{% endif %} -->
-
 
 {% block pageTitle %}
-  Process a PIP application
+  PIP claimant record
 {% endblock %}
 
 {% block header %}
@@ -17,14 +9,24 @@
 {% endblock %}
 {% block content %}
 
+
+  {% if data["an-de-mr-tl-a1-score-check"] == "Agree" %}
+  <form action="cya-letter-review" method="post" class="form">
+
+  {% elif data["an-de-mr-tl-a1-score-check"] == "Amended" %}
+  <form action="award-dates-review-check" method="post" class="form">
+
+  {% else %}
+  {% endif %}
+
   <div class="govuk-grid-row">
 
 
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
 
       {% include "another-decision-0-0-2/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Create justification for manditory recondixeration</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review the original decision and any new supporting evidence before making another decision</h1>
 
     </div>
   </div>
@@ -34,25 +36,13 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist.html
 
 
-          <p class="govuk-heading-m govuk-!-margin-bottom-4">Resources</p>
+<p class="govuk-heading-m govuk-!-margin-bottom-4">Resources</p>
 
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="/person-record-0-0-2/r-application-overview" class="govuk-link" rel="noreferrer noopener" target="">Decision overview</a></p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Veiw supporting documents</a></p>
-
-=======
-
-
-          <p class="govuk-heading-m govuk-!-margin-bottom-4">Resources</p>
-
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="/person-record-0-0-2/r-application-overview" class="govuk-link" rel="noreferrer noopener" target="">Decision overview</a></p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Veiw supporting documents</a></p>
-
->>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about.html
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="mr-application-overview" class="govuk-link" rel="noreferrer noopener" target="">Overview of original decision</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents service</a></p>
 
 
     <table class="govuk-table">
@@ -106,22 +96,34 @@
 {% include "another-decision-0-0-2/an-de-tasklist-status.html" %}
 
 {% include "another-decision-0-0-2/an-de-tasklist-cta.html" %}
+<!-- {% include "another-decision-0-0-2/an-de-tasklist-body.html" %} -->
 
 
 <!-- STATUS AND CTA SPACE -->
 
-<h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The outcome has changed from the orgigninal decision</h1>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This applicant has gone from a Nil award to a standard</p>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This outcome is different to the original decison and will need to move to PIPcs.</p>
+{% if data["an-de-mr-tl-a1-score-check"] == "Agree" %}
+
+<h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The outcome has remained the same from the original decision</h1>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will remain a nil</p>
+
+
+{% elif data["an-de-mr-tl-a1-score-check"] == "Amended" %}
+
+<h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The outcome has changed from the original decision</h1>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will become a standard / standard</p>
 
 
 
+{% else %}
+{% endif %}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
 
 
-<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist.html
-=======
-{% include "agent-day-0-1-9/qppt-status.html" %}
->>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about.html
+
 
 
           </div>

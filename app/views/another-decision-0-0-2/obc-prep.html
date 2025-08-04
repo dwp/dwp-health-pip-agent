@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+{% include "an-de-mr-call-bar-ready.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+  <form action="mr-application-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare to call the citizen</h1>
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Delegated authorities"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Accessablity needs"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Flags and markers"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Mobile telephone"
+            },
+            value: {
+              html: "0796 009 3500"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Landline telephone"
+            },
+            value: {
+              html: "0192 128 4726"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SMS messages"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">Check a few more things in person record before I make a call</a></p>
+
+      {{ govukCheckboxes({
+        idPrefix: "obc-prep-sms",
+        name: "obc-prep-sms",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "Let the citizen know you are going to call",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Sending SMS greatly improves probability of call being answered"
+        },
+        items: [
+          {
+            value: "obc-prep-sms",
+            text: "Confirm an SMS was sent prior to call"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "obc-prep-searchlight",
+        name: "obc-prep-searchlight",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "You will need SearchLight open with your securirty question ready",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "XX"
+        },
+        items: [
+          {
+            value: "obc-prep-searchlight",
+            text: "I have searchLight open and I'm ready to make the call"
+          }
+        ]
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

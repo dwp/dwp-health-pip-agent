@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <form action="obc-why" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Using serchlight to generate the security questions</h1>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
+
+
+
+      {{ govukRadios({
+        idPrefix: "obc-security",
+        name: "obc-security",
+        fieldset: {
+          legend: {
+            html: "Did they pass security questions?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["obc-security"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["obc-security"] == "No")
+        },
+        {
+          value: "Dont know",
+          text: "Its complicated",
+          checked: (data["obc-security"] == "Dont know")
+        }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

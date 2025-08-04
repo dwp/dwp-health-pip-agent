@@ -5,15 +5,11 @@
 {% endblock %}
 
 {% block header %}
-  {% include "another-decision-0-0-2/call-status.html" %}
+{% include "an-de-mr-call-bar-notes.html" %}
 {% endblock %}
 {% block content %}
 
-  {% if data["help-accessing-person-record"] == "No" %}
-  <form action="task-overview" method="post" class="form">
-  {% else %}
-  <form action="help-accessing-person-record" method="post" class="form">
-  {% endif %}
+<form action="help-accessing-person-record" method="post" class="form">
 
 
 
@@ -39,8 +35,8 @@
 </ul>
 
 {{ govukRadios({
-  idPrefix: "help-call-status",
-  name: "help-call-status",
+  idPrefix: "help-processing-notes",
+  name: "help-processing-notes",
   classes: "govuk-checkboxes",
   fieldset: {
     legend: {
@@ -56,12 +52,12 @@
     {
       value: "Yes",
       text: "Yes",
-      checked: (data["help-call-status"] == "Yes")
+      checked: (data["help-processing-notes"] == "Yes")
     },
     {
       value: "No",
       text: "No",
-      checked: (data["help-call-status"] == "No")
+      checked: (data["help-processing-notes"] == "No")
     }
   ]
 }) }}

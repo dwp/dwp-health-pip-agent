@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-demo.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="task-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Making outbound calls</h1>
+
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">You can start the call process using the button at the top</p>
+      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">Allow you to XXX</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">The call process will allow you to:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>Help you to call the right person</li>
+        <li>Let you understand if there is anything you need to know before you call</li>
+        <li>Guide you through security questions</li>
+        <li>Call greating and wrap up reminders</li>
+</ul>
+
+{{ govukRadios({
+  idPrefix: "help-making-calls",
+  name: "help-making-calls",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      text: "Do you want to see this help page next time?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["help-making-calls"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["help-making-calls"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

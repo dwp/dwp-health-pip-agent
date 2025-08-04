@@ -483,17 +483,17 @@ router.post(`/ecp-washup-router`, (req, res) => {
 router.post(`/record-foundation-application-overview-router`, (req, res) => {
   const recordOverviewRouter = req.session.data['applicaiton-actions']
 
-  if (recordOverviewRouter == '1') {
-    res.redirect(`XXX`)
+  if (recordOverviewRouter == 'ok') {
+    res.redirect(`an-de-letter-check`)
   }
   else if (recordOverviewRouter == '2') {
     res.redirect(`an-de-letter-check`)
   }
   else if (recordOverviewRouter == '1m') {
-    res.redirect(`an-de-goodcause-check`)
+    res.redirect(`an-de-letter-check`)
   }
   else if (recordOverviewRouter == '13m') {
-    res.redirect(`an-de-goodcause-check`)
+    res.redirect(`an-de-letter-check`)
   }
    else {
     res.redirect(`XXX`)
@@ -587,6 +587,23 @@ router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
   }
    else {
     res.redirect(`XXX`)
+  }
+})
+
+router.post(`/an-de-letter-inhand-date-check-router`, (req, res) => {
+  const anDeLetterInHandDateCheck = req.session.data['applicaiton-actions']
+
+  if (anDeLetterInHandDateCheck == 'ok') {
+    res.redirect(`an-de-overview`)
+  }
+  else if (anDeLetterInHandDateCheck == '1m') {
+    res.redirect(`an-de-goodcause-check`)
+  }
+  else if (anDeLetterInHandDateCheck == '13m') {
+    res.redirect(`an-de-goodcause-check`)
+  }
+   else {
+    res.redirect(`XXX1`)
   }
 })
 

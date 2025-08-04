@@ -50,6 +50,11 @@
   <li>we will register that they've asked us to reconsider their decision</li>
 </ul>
 
+{% if data["an-de-reissue-lost-letter"] == "Yes" %}
+<li>We will also send them a copy of their decision letter.</li>
+{% else %}
+{% endif %}
+
 {% elif data["an-de-move-paper"] == "ByEmail" %}
 
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Send the paper form by email</h1>
@@ -60,6 +65,11 @@
   <li>to confirm their email address</li>
   <li>that we will register that they've asked us to reconsider their decision</li>
 </ul>
+
+{% if data["an-de-reissue-lost-letter"] == "Yes" %}
+<li>We will also send them a copy of their decision letter.</li>
+{% else %}
+{% endif %}
 
 {% elif data["an-de-overview"] == "NoPaper" %}
 
@@ -72,7 +82,7 @@
     <li>that we will register that they've asked us to reconsider their decision</li>
 
     {% if data["an-de-reissue-lost-letter"] == "Yes" %}
-    <li>@rachel We will also send you a copy of your decsison letter</li>
+    <li>We will also send them a copy of their decision letter.</li>
     {% else %}
     {% endif %}
 

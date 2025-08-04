@@ -21,19 +21,19 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information captured from Manditory reconsideration call</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Information captured from the mandatory reconsideration call</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Something in here about MR note capture<br>XXXX</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Something in here about MR note capture<br>XXXX</p> -->
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">@rachel Registation details</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Registration details</h3>
 
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date manditory reconsideration was registered
+            Mandatory reconsideration registration date
           </dt>
           <dd class="govuk-summary-list__value">
             Today (DD Month Year)
@@ -43,7 +43,7 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Who
+            Registered by (Is this a thing?)
           </dt>
           <dd class="govuk-summary-list__value">
             David Connifey
@@ -52,7 +52,7 @@
         </div>
       </dl>
 
-              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">@rachel Understanding the registation</h3>
+              <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">About their decision letter</h3>
 
 
               <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -61,7 +61,7 @@
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Have they received their decision letter?
+                    Reason request is more than 1 month after decision
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data["an-de-goodcause-reason"]}}
@@ -74,7 +74,7 @@
 
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Over a month / 13 months (Good cause)
+                    Have they received their decision letter?
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {{ data["an-de-letter-check"]}}
@@ -200,7 +200,7 @@
               <dl class="govuk-summary-list govuk-!-margin-bottom-4">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    @Rachel Supporting Details  Evidence used to make the decision details
+                    Evidence details
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data["an-de-disagree-reasons"] == "Doc" %}
@@ -221,7 +221,7 @@
               <dl class="govuk-summary-list govuk-!-margin-bottom-4">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
-                    Payment detailss
+                    Payment details
                   </dt>
                   <dd class="govuk-summary-list__value">
                     {% if data["an-de-disagree-reasons"] == "Payments" %}
@@ -238,7 +238,7 @@
 
 
             {% if data["an-de-preparing-food"] %}
-            <h3 class="govuk-heading-xm govuk-!-padding-top-6">Daily living scores</h3>
+            <h3 class="govuk-heading-xm govuk-!-padding-top-6">Daily living scroing</h3>
 
             <!-- 1 -->
             <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -412,7 +412,7 @@
             </dl>
 
 
-            <h3 class="govuk-heading-xm govuk-!-padding-top-4 govuk-!-margin-bottom-6">Mobility scores</h3>
+            <h3 class="govuk-heading-xm govuk-!-padding-top-4 govuk-!-margin-bottom-6">Mobility scroing</h3>
 
             <!-- 11 -->
             <dl class="govuk-summary-list govuk-!-margin-bottom-4">

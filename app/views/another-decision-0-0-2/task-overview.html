@@ -5,16 +5,12 @@
 {% endblock %}
 
 {% block header %}
-  {% include "another-decision-0-0-2/call-status.html" %}
+{% include "an-de-mr-call-bar-notes.html" %}
 {% endblock %}
 {% block content %}
 
 
-{% if data["help-call-status"] == "No" %}
-<form action="mr-application-overview" method="post" class="form">
-{% else %}
-<form action="help-call-status" method="post" class="form">
-{% endif %}
+<form action="an-de-tasklist" method="post" class="form">
 
 
   <div class="govuk-grid-row">
