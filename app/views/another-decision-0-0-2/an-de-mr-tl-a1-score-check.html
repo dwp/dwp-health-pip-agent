@@ -13,7 +13,7 @@
 
 {% include "another-decision-0-0-2/record-id.html" %}
 
-<form action="application-6-about" method="post" class="form">
+<form action="an-de-mr-tl-a1-score-check-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -23,22 +23,31 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
           </h1>
 
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Original decision justification</h3>
+          {% include "another-decision-0-0-2/an-de-mr-tl-a1-extract.html" %}
 
-          <p class="govuk-body govuk-!-margin-bottom-2">
-            I see that you do XYZ.
-          </p>
-          <p class="govuk-body govuk-!-margin-bottom-8">
-            I see that you do XYZ.
-          </p>
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicCTAHeader %}
+
+            {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">The previous decision scored 6x points for this activity. Do you agree?</h2>
+            {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+            <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">The previous decision scored 0x points for this activity. Do you agree?</h2>
+            {% else %}
+            Scenario not set
+            {% endif %}
+
+
+            {% endset %}
+          <!------------Legend--------------->
 
 
             {{ govukRadios({
-              idPrefix: "application-1-about-a1",
-              name: "application-1-about-a1",
+              idPrefix: "an-de-mr-tl-a1-score-check",
+              name: "an-de-mr-tl-a1-score-check",
               fieldset: {
                 legend: {
-                  text: "The previous decision scored 6 points for this activity. Do you agree?",
+                  html: dynamicCTAHeader,
                   isPageHeading: true,
                   classes: "govuk-fieldset__legend--l"
                 }
@@ -51,12 +60,12 @@
               {
                 value: "Agree",
                 text: "Yes",
-                checked: (data["application-1-about-a1"] == "Agree")
+                checked: (data["an-de-mr-tl-a1-score-check"] == "Agree")
               },
               {
                 value: "Amended",
                 text: "No",
-                checked: (data["application-1-about-a1"] == "Amended"),
+                checked: (data["an-de-mr-tl-a1-score-check"] == "Amended"),
                       conditional: {
                         html: scoreOverwite
                       }
@@ -64,7 +73,7 @@
                 {
                 value: "Pause",
                 text: "I need to come back to this later",
-                checked: (data["application-1-about-a1"] == "Pause")
+                checked: (data["an-de-mr-tl-a1-score-check"] == "Pause")
               }
               ]
             }) }}

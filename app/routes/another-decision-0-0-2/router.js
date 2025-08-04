@@ -1722,6 +1722,22 @@ router.post(`/entry-home-processing-options-nohelp-router`, (req, res) => {
   }
 })
 
+// MR TASK LIST scores
+
+router.post(`/an-de-mr-tl-a1-score-check-router`, (req, res) => {
+  const anDeMRa1ScoreCheck = req.session.data['an-de-mr-tl-a1-score-check']
+
+  if (anDeMRa1ScoreCheck == 'Agree') {
+    res.redirect(`an-de-mr-tl-a1-justification`)
+  }
+  else if (anDeMRa1ScoreCheck == 'Amended') {
+    res.redirect(`an-de-mr-tl-a1-score-change`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
 
 
 
