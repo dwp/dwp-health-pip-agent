@@ -21,10 +21,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "explore.scss";
 @import "explore-header";
 @import "explore-govuk-overrides";
-<<<<<<< HEAD
-=======
-{%- from "moj/components/interruption-card/macro.njk" import interruptionCard -%}
->>>>>>> 134884b1c8522402ac366829271398558499f1d5
 
 // @import "dwpQuickReference";
 // @import "govukSummaryList";

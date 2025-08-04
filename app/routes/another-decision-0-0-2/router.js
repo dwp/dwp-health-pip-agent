@@ -1722,7 +1722,6 @@ router.post(`/entry-home-processing-options-nohelp-router`, (req, res) => {
   }
 })
 
-<<<<<<< HEAD
 // MR TASK LIST scores
 
 router.post(`/an-de-mr-tl-a1-score-check-router`, (req, res) => {
@@ -1739,8 +1738,6 @@ router.post(`/an-de-mr-tl-a1-score-check-router`, (req, res) => {
   }
 })
 
-=======
->>>>>>> 134884b1c8522402ac366829271398558499f1d5
 
 
 
