@@ -22,29 +22,47 @@
           <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-a1-score-check">Preparing food</a></td>
           <td class="govuk-table__cell table-spacer">
 
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
           {% if data["entry-home-processing-options"] == "MakeMRChange" %}
           1
           {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
           0x
           {% else %}
           NS
+=======
+          {% if data["entry-home-processing-options"] == "NilChange" %}
+          XXX
+          {% else %}
+          YYY
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
           {% endif %}
 
           </td>
 
           <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
             {% if data["an-de-mr-tl-a1-score-change"] %}
             {% include "another-decision-0-0-2/an-de-mr-tl-a1-score-overwrite.html" %}
             {% else %}
             0 A1
+=======
+            {% if data["application-about-a1-score-overwrite"] %}
+            {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+            {% else %}
+            0
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
             {% endif %}
           </td>
 
           <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
             {% if data["an-de-mr-tl-a1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
             {% elif data["an-de-mr-tl-a1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
             {% elif data["an-de-mr-tl-a1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+=======
+            {% if data["application-about-a1-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
             {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
             {% endif %}
 
@@ -57,6 +75,7 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="application-6-about-a2-score">Taking nutrition</a></td>
             <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             1
@@ -66,6 +85,13 @@
             00
             {% endif %}
 
+=======
+              {% if data["application-about-a1-score-overwrite"] %}
+              {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
             </td>
 
             <td class="govuk-table__cell table-spacer">              {% if data["application-about-a2-score-overwrite"] %}
@@ -86,6 +112,7 @@
           <tr class="govuk-table__row">
           <td class="govuk-table__cell table-spacer"><a href="application-6-about-a3-score">Managing therapy or monitoring<br>a health condition</a></td>
           <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
           {% if data["entry-home-processing-options"] == "MakeMRChange" %}
           1
@@ -95,6 +122,13 @@
           00
           {% endif %}
 
+=======
+            {% if data["application-about-a1-score-overwrite"] %}
+            {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+            {% else %}
+            0
+            {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
           </td>
 
           <td class="govuk-table__cell table-spacer">            {% if data["application-about-a3-score-overwrite"] %}
@@ -115,6 +149,7 @@
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell table-spacer"><a href="application-6-about-a4-score">Washing and bathing</a></td>
                 <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                 {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                 1
@@ -124,6 +159,13 @@
                 00
                 {% endif %}
 
+=======
+                  {% if data["application-about-a1-score-overwrite"] %}
+                  {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                  {% else %}
+                  0
+                  {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                 </td>
 
                 <td class="govuk-table__cell table-spacer">                  {% if data["application-about-a4-score-overwrite"] %}
@@ -145,6 +187,7 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="application-6-about-a5-score">Managing toilet needs or incontinence</a></td>
             <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             1
@@ -154,6 +197,13 @@
             00
             {% endif %}
 
+=======
+              {% if data["application-about-a1-score-overwrite"] %}
+              {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
             </td>
 
             <td class="govuk-table__cell table-spacer">              {% if data["application-about-a5-score-overwrite"] %}
@@ -174,6 +224,7 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><a href="application-6-about-a6-score">Dressing and undressing</a></td>
                     <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                     {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                     1
@@ -183,6 +234,13 @@
                     00
                     {% endif %}
 
+=======
+                      {% if data["application-about-a1-score-overwrite"] %}
+                      {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                      {% else %}
+                      0
+                      {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                     </td>
 
                     <td class="govuk-table__cell table-spacer">                      {% if data["application-about-a6-score-overwrite"] %}
@@ -203,6 +261,7 @@
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a7-score">Communicating verbally</a></td>
                       <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                       1
@@ -212,6 +271,13 @@
                       00
                       {% endif %}
 
+=======
+                        {% if data["application-about-a1-score-overwrite"] %}
+                        {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                       </td>
 
                       <td class="govuk-table__cell table-spacer">                        {% if data["application-about-a7-score-overwrite"] %}
@@ -232,6 +298,7 @@
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell table-spacer"><a href="application-6-about-a8-score">Reading and understanding signs,<br>symbols and words</a></td>
                   <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                   {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                   1
@@ -241,6 +308,13 @@
                   00
                   {% endif %}
 
+=======
+                    {% if data["application-about-a1-score-overwrite"] %}
+                    {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                    {% else %}
+                    0
+                    {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                   </td>
 
                   <td class="govuk-table__cell table-spacer">                    {% if data["application-about-a8-score-overwrite"] %}
@@ -261,6 +335,7 @@
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><a href="application-6-about-a9-score">Engaging with other people face to face</a></td>
                     <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                     {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                     1
@@ -270,6 +345,13 @@
                     00
                     {% endif %}
 
+=======
+                      {% if data["application-about-a1-score-overwrite"] %}
+                      {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                      {% else %}
+                      0
+                      {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                     </td>
 
                     <td class="govuk-table__cell table-spacer">                      {% if data["application-about-a9-score-overwrite"] %}
@@ -291,6 +373,7 @@
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a10-score">Making budgeting decisions</a></td>
                       <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                       1
@@ -300,6 +383,13 @@
                       00
                       {% endif %}
 
+=======
+                        {% if data["application-about-a1-score-overwrite"] %}
+                        {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                       </td>
 
                       <td class="govuk-table__cell table-spacer">                        {% if data["application-about-a10-score-overwrite"] %}
@@ -353,6 +443,7 @@
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="application-6-about-a11-score">Planning and following journeys</a></td>
                       <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                       1
@@ -362,6 +453,13 @@
                       00
                       {% endif %}
 
+=======
+                        {% if data["application-about-a1-score-overwrite"] %}
+                        {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
                       </td>
 
                       <td class="govuk-table__cell table-spacer">                        {% if data["application-about-a11-score-overwrite"] %}
@@ -381,6 +479,7 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="application-6-about-a12-score">Moving around</a></td>
             <td class="govuk-table__cell table-spacer">
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-tasklist-body.html
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             1
@@ -390,6 +489,13 @@
             00
             {% endif %}
 
+=======
+              {% if data["application-about-a1-score-overwrite"] %}
+              {% include "another-decision-0-0-2/application-about-a1-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/tasklist-body.html
             </td>
 
             <td class="govuk-table__cell table-spacer">              {% if data["application-about-a12-score-overwrite"] %}

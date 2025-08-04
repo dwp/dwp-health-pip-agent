@@ -13,6 +13,7 @@
 
 {% include "another-decision-0-0-2/record-id.html" %}
 
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
 
 
 <form action="an-de-mr-tl-a1-justification" method="post" class="form">
@@ -30,38 +31,62 @@
       }
     ]
   }) }}
+=======
+<form action="application-6-about" method="post" class="form">
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
 
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-two-thirds">
 
 
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
+=======
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
+          </h1>
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
 
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Original decision justification</h3>
 
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
             <!------------H1 LEGEND------------>
               {% set dynamicH1 %}
               <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor A (0 points)?
                   </h2>
                   {% endset %}
             <!------------Legend--------------->
+=======
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            I see that you do XYZ.
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-8">
+            I see that you do XYZ.
+          </p>
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
 
 
 
             {{ govukRadios({
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
               idPrefix: "an-de-mr-tl-a1-score-change",
               name: "an-de-mr-tl-a1-score-change",
+=======
+              idPrefix: "application-1-about-a1",
+              name: "application-1-about-a1",
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
               fieldset: {
                 legend: {
-                  html: dynamicH1,
+                  text: "The previous decision scored 6 points for this activity. Do you agree?",
                   isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
+                  classes: "govuk-fieldset__legend--l"
                 }
               },
               hint: {
-                html: legendNumbers
+                text: ""
               },
               classes: "govuk-radios",
               items: [
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
 
               {
                 value: "b2",
@@ -87,16 +112,54 @@
                 value: "f6",
                 html: "<strong>Descriptor F (8 points):</strong> Cannot prepare and cook food",
                 checked: (data["an-de-mr-tl-a1-score-change"] == "8")
+=======
+              {
+                value: "Agree",
+                text: "Yes",
+                checked: (data["application-1-about-a1"] == "Agree")
+              },
+              {
+                value: "Amended",
+                text: "No",
+                checked: (data["application-1-about-a1"] == "Amended"),
+                      conditional: {
+                        html: scoreOverwite
+                      }
+                        },
+                {
+                value: "Pause",
+                text: "I need to come back to this later",
+                checked: (data["application-1-about-a1"] == "Pause")
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
               }
               ]
             }) }}
 
 
+<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-a1-score-change.html
             <!-- {
               value: "a1",
               html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
               checked: (data["an-de-mr-tl-a1-score-change"] == "0")
             }, -->
+=======
+
+            <!-- {{ govukTextarea({
+              name: "application-about-a1-reason",
+              id: "application-about-a1-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: data["application-about-a1-reason"]
+            }) }} -->
+
+>>>>>>> 134884b1c8522402ac366829271398558499f1d5:app/views/another-decision-0-0-2/application-6-about-a1-score.html
 
 
 <div class="govuk-button-group">
