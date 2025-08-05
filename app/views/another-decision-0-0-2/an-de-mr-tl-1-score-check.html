@@ -13,7 +13,11 @@
 
 {% include "another-decision-0-0-2/record-id.html" %}
 
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+<form action="an-de-mr-tl-2-score-check-router" method="post" class="form">
+========
 <form action="an-de-mr-tl-1-score-check-router" method="post" class="form">
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
 
   <div class="govuk-grid-row">
 
@@ -23,7 +27,11 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
           </h1>
 
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+          {% include "another-decision-0-0-2/an-de-mr-tl-2-extract.html" %}
+========
           {% include "another-decision-0-0-2/an-de-mr-tl-1-extract.html" %}
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
 
 
           <!------------H1 LEGEND------------>
@@ -43,8 +51,13 @@
 
 
             {{ govukRadios({
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+              idPrefix: "an-de-mr-tl-2-score-check",
+              name: "an-de-mr-tl-2-score-check",
+========
               idPrefix: "an-de-mr-tl-1-score-check",
               name: "an-de-mr-tl-1-score-check",
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
               fieldset: {
                 legend: {
                   html: dynamicCTAHeader,
@@ -60,12 +73,20 @@
               {
                 value: "Agree",
                 text: "Yes",
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+                checked: (data["an-de-mr-tl-2-score-check"] == "Agree")
+========
                 checked: (data["an-de-mr-tl-1-score-check"] == "Agree")
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
               },
               {
                 value: "Amended",
                 text: "No",
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+                checked: (data["an-de-mr-tl-2-score-check"] == "Amended"),
+========
                 checked: (data["an-de-mr-tl-1-score-check"] == "Amended"),
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
                       conditional: {
                         html: scoreOverwite
                       }
@@ -73,7 +94,11 @@
                 {
                 value: "Pause",
                 text: "I need to come back to this later",
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-score-check.html
+                checked: (data["an-de-mr-tl-2-score-check"] == "Pause")
+========
                 checked: (data["an-de-mr-tl-1-score-check"] == "Pause")
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-score-check.html
               }
               ]
             }) }}

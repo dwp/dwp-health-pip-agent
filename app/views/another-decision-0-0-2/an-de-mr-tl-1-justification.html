@@ -17,8 +17,11 @@
     <form action="an-de-tasklist" method="post" class="form">
 
 
-
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+    {% if data["an-de-mr-tl-2-score-check"] == "Agree" %}
+========
     {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
 
     {{ govukBreadcrumbs({
       classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
@@ -29,7 +32,11 @@
         },
         {
           text: "Preparing food overview",
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+          href: "an-de-mr-tl-2-score-check"
+========
           href: "an-de-mr-tl-1-score-check"
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
         }
       ]
     }) }}
@@ -45,11 +52,19 @@
         },
         {
           text: "Preparing food overview",
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+          href: "an-de-mr-tl-2-score-check"
+        },
+        {
+          text: "Select descriptor",
+          href: "an-de-mr-tl-2-score-change"
+========
           href: "an-de-mr-tl-1-score-check"
         },
         {
           text: "Select descriptor",
           href: "an-de-mr-tl-1-score-change"
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
         }
       ]
     }) }}
@@ -67,6 +82,27 @@
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+            {% if data["an-de-mr-tl-2-score-check"] == "Yes" %}
+
+              Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
+
+            {% elif data["an-de-mr-tl-2-score-check"] == "No" %}
+
+              Add your reason for selecting
+
+              {% if data["an-de-mr-tl-2-score-change"] == "a1" %}
+                <strong>Descriptor A (0 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "b2" %}
+                <strong>Descriptor B (2 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "c3" %}
+                <strong>Descriptor C (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "d4" %}
+                <strong>Descriptor D (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "e5" %}
+                <strong>Descriptor E (4 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "f6" %}
+========
             {% if data["an-de-mr-tl-1-score-check"] == "Yes" %}
 
               Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
@@ -86,6 +122,7 @@
               {% elseif data["an-de-mr-tl-1-score-change"] == "e5" %}
                 <strong>Descriptor E (4 points)</strong>
               {% elseif data["an-de-mr-tl-1-score-change"] == "f6" %}
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
                 <strong>Descriptor F (8 points)</strong>
               {% endif %}
 
@@ -101,16 +138,24 @@
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
 
-
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+          {% include "another-decision-0-0-2/an-de-mr-tl-2-extract.html" %}
+========
           {% include "another-decision-0-0-2/an-de-mr-tl-1-extract.html" %}
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
 
 
 
 
 
           {{ govukTextarea({
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+            name: "an-de-mr-tl-2-score-check-reason",
+            id: "an-de-mr-tl-2-score-check-reason",
+========
             name: "an-de-mr-tl-1-score-check-reason",
             id: "an-de-mr-tl-1-score-check-reason",
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
             classes: " govukTextarea--overwrite",
             label: {
               text: "",
@@ -120,8 +165,11 @@
             hint: {
               html: legendCanned
             },
-
+<<<<<<<< HEAD:app/views/another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-X-justification.html
+            value: data["an-de-mr-tl-2-score-check-reason"]
+========
             value: data["an-de-mr-tl-1-score-check-reason"]
+>>>>>>>> 099128c5 (chore:ProcessMR further update Tuesday):app/views/another-decision-0-0-2/an-de-mr-tl-1-justification.html
           }) }}
 
           {{ govukButton({
