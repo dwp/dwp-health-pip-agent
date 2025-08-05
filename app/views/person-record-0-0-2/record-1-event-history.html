@@ -153,6 +153,28 @@
       </thead>
 
 
+      {% if data["entry-home-processing-options"] == "MakeMRNil" or data["entry-home-processing-options"] == "MakeMRChange" %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">MR done</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">Actions taken:
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>XXX.</li>
+            <li>XXX</li>
+          </ul>
+        </p>
+
+        </td>
+        </tr>
+
+        {% else %}
+        {% endif %}
+
+
       {% if data["an-de-move-paper"] == "ByPost" %}
 
       <tr class="govuk-table__row">

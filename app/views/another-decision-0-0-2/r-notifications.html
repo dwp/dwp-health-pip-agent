@@ -12,13 +12,13 @@
 
 {% set html %}
 <p class="govuk-body govuk-!-font-size-19">Manditory reconsideration submitted (Change in rate)</p>
+{% endset %}
 
 {{ govukNotificationBanner({
   html: html,
   type: 'success'
 }) }}
 
-{% endset %}
 {% else %}
 
 {% endif %}

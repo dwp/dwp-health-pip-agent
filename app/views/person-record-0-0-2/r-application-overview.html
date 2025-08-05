@@ -116,6 +116,24 @@
         </thead>
         <tbody class="govuk-table__body">
 
+          {% if data["entry-home-processing-options"] == "MakeMRNil" or data["entry-home-processing-options"] == "MakeMRChange"%}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Today</th>
+            <td class="govuk-table__cell">Mandatory reconsideration decision made</td>
+              <td class="govuk-table__cell"><a class="govuk-aligned-right" href="/another-decision-0-0-2/cya-letter-review" target="">View</a></td> <!--View HIG details -->
+          </tr>
+          {% else %}
+          {% endif %}
+
+          {% if data["entry-home-processing-options"] == "MakeMRNil" or data["entry-home-processing-options"] == "MakeMRChange"%}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">15 March</th>
+            <td class="govuk-table__cell">Mandatory reconsideration requested</td>
+                <td class="govuk-table__cell"><a class="govuk-aligned-right" href="record-applicaion-evidence-notes" target="">View</a></td> <!--View HIG details -->
+          </tr>
+          {% else %}
+          {% endif %}
+
 
           {% if data["applicaiton-actions"] == "2" %}
           <tr class="govuk-table__row">
