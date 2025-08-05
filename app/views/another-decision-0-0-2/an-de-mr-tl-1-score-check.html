@@ -13,7 +13,7 @@
 
 {% include "another-decision-0-0-2/record-id.html" %}
 
-<form action="an-de-mr-tl-a1-score-check-router" method="post" class="form">
+<form action="an-de-mr-tl-1-score-check-router" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -23,7 +23,7 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
           </h1>
 
-          {% include "another-decision-0-0-2/an-de-mr-tl-a1-extract.html" %}
+          {% include "another-decision-0-0-2/an-de-mr-tl-1-extract.html" %}
 
 
           <!------------H1 LEGEND------------>
@@ -43,8 +43,8 @@
 
 
             {{ govukRadios({
-              idPrefix: "an-de-mr-tl-a1-score-check",
-              name: "an-de-mr-tl-a1-score-check",
+              idPrefix: "an-de-mr-tl-1-score-check",
+              name: "an-de-mr-tl-1-score-check",
               fieldset: {
                 legend: {
                   html: dynamicCTAHeader,
@@ -60,12 +60,12 @@
               {
                 value: "Agree",
                 text: "Yes",
-                checked: (data["an-de-mr-tl-a1-score-check"] == "Agree")
+                checked: (data["an-de-mr-tl-1-score-check"] == "Agree")
               },
               {
                 value: "Amended",
                 text: "No",
-                checked: (data["an-de-mr-tl-a1-score-check"] == "Amended"),
+                checked: (data["an-de-mr-tl-1-score-check"] == "Amended"),
                       conditional: {
                         html: scoreOverwite
                       }
@@ -73,7 +73,7 @@
                 {
                 value: "Pause",
                 text: "I need to come back to this later",
-                checked: (data["an-de-mr-tl-a1-score-check"] == "Pause")
+                checked: (data["an-de-mr-tl-1-score-check"] == "Pause")
               }
               ]
             }) }}
