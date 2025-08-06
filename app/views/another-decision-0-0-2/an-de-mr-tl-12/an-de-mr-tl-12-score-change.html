@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "another-decision-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
+
+
+
+<form action="an-de-mr-tl-12-justification" method="post" class="form">
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Make an MR decision",
+        href: "an-de-tasklist"
+      },
+      {
+        text: "Preparing food overview",
+        href: "an-de-mr-tl-a1-score-change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for moving around?
+            </h2>
+            {% endset %}
+      <!------------Legend--------------->
+
+      <!------------Q2 LEGEND------------>
+        {% set dynamicQ6 %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+          <strong>Descriptor F (12 points): </strong> Cannot, either aided or unaided:
+
+          <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+            <li>
+              stand; or
+            </li>
+            <li>
+              move more than 1 metre
+            </li>
+          </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "an-de-mr-tl-12-score-change",
+        name: "an-de-mr-tl-12-score-change",
+        fieldset: {
+          legend: {
+            html: dynamicH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "a1",
+          html: "<strong>Descriptor A (0 points):</strong> Can stand and then move more than 200 metres, either aided or unaided",
+          checked: (data["an-de-mr-tl-12-score-change"] == "0")
+        },
+        {
+          value: "b2",
+          html: "<strong>Descriptor B (4 points):</strong> Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided",
+          checked: (data["an-de-mr-tl-12-score-change"] == "4")
+        },
+        {
+          value: "c3",
+          html: "<strong>Descriptor C (8 points): </strong> Can stand and then move unaided more than 20 metres but no more than 50 metres",
+          checked: (data["an-de-mr-tl-12-score-change"] == "3")
+        },
+        {
+          value: "d4",
+          html: "<strong>Descriptor D (10 points): </strong> Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres",
+          checked: (data["an-de-mr-tl-12-score-change"] == "10")
+        },
+        {
+          value: "e5",
+          html: "<strong>Descriptor E (12 points):</strong> Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided",
+          checked: (data["an-de-mr-tl-12-score-change"] == "12")
+        },
+        {
+          value: "f6",
+          html: dynamicQ6,
+          checked: (data["an-de-mr-tl-12-score-change"] == "12")
+        }
+        ]
+      }) }}
+
+
+      <!-- THIS IS THE SELECTED DESCRiPTOR
+      {
+        value: "a1",
+        html: "<strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided",
+        checked: (data["application-5-about-a12-score-overwrite"] == "a1")
+      },
+    -->
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="an-de-mr-tl-a1-score-check">Cancel change</a>
+</div>
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

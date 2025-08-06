@@ -837,6 +837,20 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
+              {% if data["payability-check"] == "Yes" or data["award-dates-review-exit"] == "Yes" %}
+
+              <!------------CheckBox Hint------------>
+
+              <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Going back to PIPcs bro</h3>
+
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This information will be stored as the decision.</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter you will send will need to be saved manually. </p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
+
+              <!------------Legend--------------->
+
+
+              {% else %}
 
               <!------------CheckBox Hint------------>
 
@@ -848,10 +862,6 @@
 
                 {% endset %}
               <!------------Legend--------------->
-
-
-
-
 
               {{ govukCheckboxes({
                 idPrefix: "ConfimLetter",
@@ -875,6 +885,10 @@
                   }
                 ]
               }) }}
+
+              {% endif %}
+
+
 
               {{ govukButton({
                 text: "Continue",

@@ -15,7 +15,7 @@
 
 
 
-<form action="an-de-mr-tl-1-justification" method="post" class="form">
+<form action="an-de-mr-tl-a1-justification" method="post" class="form">
 
   {{ govukBreadcrumbs({
     classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
@@ -26,7 +26,7 @@
       },
       {
         text: "Preparing food overview",
-        href: "an-de-mr-tl-1-score-change"
+        href: "an-de-mr-tl-a1-score-change"
       }
     ]
   }) }}
@@ -47,8 +47,8 @@
 
 
             {{ govukRadios({
-              idPrefix: "an-de-mr-tl-1-score-change",
-              name: "an-de-mr-tl-1-score-change",
+              idPrefix: "an-de-mr-tl-a1-score-change",
+              name: "an-de-mr-tl-a1-score-change",
               fieldset: {
                 legend: {
                   text: "The previous decision scored 6 points for this activity. Do you agree?",
@@ -65,27 +65,27 @@
               {
                 value: "b2",
                 html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
-                checked: (data["an-de-mr-tl-1-score-change"] == "2")
+                checked: (data["an-de-mr-tl-a1-score-change"] == "2")
               },
               {
                 value: "c3",
                 html: "<strong>Descriptor C (2 points):</strong> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave",
-                checked: (data["an-de-mr-tl-1-score-change"] == "2")
+                checked: (data["an-de-mr-tl-a1-score-change"] == "2")
               },
               {
                 value: "d4",
                 html: "<strong>Descriptor D (2 points):</strong> Needs prompting to be able to either prepare or cook a simple meal",
-                checked: (data["an-de-mr-tl-1-score-change"] == "2")
+                checked: (data["an-de-mr-tl-a1-score-change"] == "2")
               },
               {
                 value: "e5",
                 html: "<strong>Descriptor E (4 points):</strong>Needs supervision or assistance to either prepare or cook a simple meal",
-                checked: (data["an-de-mr-tl-1-score-change"] == "4")
+                checked: (data["an-de-mr-tl-a1-score-change"] == "4")
               },
               {
                 value: "f6",
                 html: "<strong>Descriptor F (8 points):</strong> Cannot prepare and cook food",
-                checked: (data["an-de-mr-tl-1-score-change"] == "8")
+                checked: (data["an-de-mr-tl-a1-score-change"] == "8")
               }
               ]
             }) }}
@@ -94,7 +94,7 @@
             <!--
               value: "a1",
               html: "<strong>Descriptor A (0 points):</strong> Can prepare and cook a simple meal unaided",
-              checked: (data["an-de-mr-tl-1-score-change"] == "0")
+              checked: (data["an-de-mr-tl-a1-score-change"] == "0")
              -->
 
 
@@ -103,7 +103,7 @@
     text: "Continue"
   }) }}
 
-  <a class="govuk-link" href="an-de-mr-tl-1-score-check">Cancel change</a>
+  <a class="govuk-link" href="an-de-mr-tl-a1-score-check">Cancel change</a>
 </div>
         </div>
       </div>

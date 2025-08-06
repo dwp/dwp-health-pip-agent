@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "another-decision-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
+
+
+
+<form action="an-de-mr-tl-10-justification" method="post" class="form">
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Make an MR decision",
+        href: "an-de-tasklist"
+      },
+      {
+        text: "Preparing food overview",
+        href: "an-de-mr-tl-10-score-change"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+
+
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor A (0 points)?
+            </h2>
+            {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "an-de-mr-tl-10-score-change",
+        name: "an-de-mr-tl-10-score-change",
+        fieldset: {
+          legend: {
+            html: dynamicH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "b2",
+          html: "<strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions",
+          checked: (data["an-de-mr-tl-10-score-change"] == "b2")
+        },
+        {
+          value: "c3",
+          html: "<strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions",
+          checked: (data["an-de-mr-tl-10-score-change"] == "c3")
+        },
+        {
+          value: "d4",
+          html: "<strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all",
+          checked: (data["an-de-mr-tl-10-score-change"] == "d4")
+        }
+        ]
+      }) }}
+
+
+      <!-- THIS IS THE SELECTED DESCRiPTOR
+      {
+        value: "a1",
+        html: "<strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided",
+        checked: (data["an-de-mr-tl-10-score-change"] == "a1")
+      },
+    -->
+
+
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

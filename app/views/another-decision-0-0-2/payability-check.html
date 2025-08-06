@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="payability-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Ensuring we can pay them</h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Stuff you need to think about:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>A change to some detials</li>
+        <li>Address</li>
+        <li>Date of death</li>
+        <li>Nationality</li>
+        <li>Residency and presence</li>
+        <li>Immigration status</li>
+        <li>Withdrawn</li>
+        <li>Hospital or similar institutions</li>
+        <li>Care homes</li>
+        <li>Nursing homes</li>
+        <li>Residential schools or colleges</li>
+        <li>Prison or legal custody</li>
+        <li>Something else</li>
+
+      </ul>
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "payability-check",
+        name: "payability-check",
+        fieldset: {
+          legend: {
+            text: "Did any of these things come up that would stop you from paying this person?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["payability-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["payability-check"] == "No")
+        }
+        ]
+      }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

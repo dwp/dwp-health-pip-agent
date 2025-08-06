@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "another-decision-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
+
+<form action="../an-de-mr-tl-6-score-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Dressing and undressing
+          </h1>
+
+          {% include "another-decision-0-0-2/an-de-mr-tl-6/an-de-mr-tl-6-extract.html" %}
+
+
+          <!------------H1 LEGEND------------>
+            {% set dynamicCTAHeader %}
+
+            {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor X (X points) points for this activity. Do you agree?</h2>
+            {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor X (X points) points for this activity. Do you agree?</h2>
+            {% else %}
+            Scenario not set
+            {% endif %}
+
+
+            {% endset %}
+          <!------------Legend--------------->
+
+
+            {{ govukRadios({
+              idPrefix: "an-de-mr-tl-6-score-check",
+              name: "an-de-mr-tl-6-score-check",
+              fieldset: {
+                legend: {
+                  html: dynamicCTAHeader,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Agree",
+                text: "Yes",
+                checked: (data["an-de-mr-tl-6-score-check"] == "Agree")
+              },
+              {
+                value: "Amended",
+                text: "No",
+                checked: (data["an-de-mr-tl-6-score-check"] == "Amended"),
+                      conditional: {
+                        html: scoreOverwite
+                      }
+                        },
+                {
+                value: "Pause",
+                text: "I need to come back to this later",
+                checked: (data["an-de-mr-tl-6-score-check"] == "Pause")
+              }
+              ]
+            }) }}
+
+
+
+            <!-- {{ govukTextarea({
+              name: "application-about-a1-reason",
+              id: "application-about-a1-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: data["application-about-a1-reason"]
+            }) }} -->
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

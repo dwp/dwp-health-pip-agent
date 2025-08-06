@@ -9,12 +9,12 @@
 {% endblock %}
 {% block content %}
 
-<form action="cya-letter-review" method="post" class="form">
+<form action="award-dates-review-check-router" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "agent-day-0-1-8/record-id-base.html" %}
+      {% include "another-decision-0-0-2/record-id.html" %}
 
       {% if data["award-dates-ap-period"] == "No future assessments required" %}
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation that no future assessments are needed?</h2>
@@ -23,49 +23,24 @@
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation to award until {{ data['award-dates-ap-period-other-day'] + ' ' + (data['award-dates-ap-period-other-month'] | getMonth) + ' ' + data['award-dates-ap-period-other-year']}}?</h2>
 
       {% else %}
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6"> Do you agree with the original award review period of XX MM YYYY{{data["award-dates-ap-period"]}}?</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6"> Do you need to make any changes to the award period set by the original decision? {{data["award-dates-ap-period"]}}?</h2>
       {% endif %}
 
 
       {% set legendHint %}
 
-<!--
-      <p class="govuk-body govuk-!-margin-bottom-2"><b>Assessment provider recommendation</b></p>
-      <p class="govuk-body govuk-!-margin-bottom-4">Something about this date from the AP to help context of the date selection</p>
 
-      <p class="govuk-body govuk-!-margin-bottom-2"><b>Applicant condierations</b></p>
-      <p class="govuk-body govuk-!-margin-bottom-4">The applicant is 65 and will reach State Pension age on 20 February 2028</p>
- -->
-
-      <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-
-        <p class="govuk-body govuk-!-margin-bottom-2">Something about this date from the AP to help contex of the date selection</p>
-
-        <li>
-          Something about this date from the AP to help contex of the date selection
-        </li>
-      </ul> -->
-
-        <!-- <p class="govuk-body govuk-!-margin-bottom-2">Applicant condierations:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>
-            The applicant is 65 and will reach State Pension age on 20 February 2028
-          </li>
-          <li>
-            will be awarded the standard rate for daily living
-          </li>
-          <li>
-            will not be awarded for mobility
-          </li>
-        </ul> -->
+      <p class="govuk-body govuk-!-margin-bottom-2"><b>Original review peiord</b></p>
+      <p class="govuk-body govuk-!-margin-bottom-4">DD MM YYYY</p>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-4">The applicant is 65 and will reach State Pension age on 20 February 2028</p> -->
 
         {% endset %}
       <!------------Legend--------------->
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "award-dates-AP-rec-check",
-        name: "award-dates-AP-rec-check",
+        idPrefix: "award-dates-review-check",
+        name: "award-dates-review-check",
         fieldset: {
           legend: {
             text: "",
@@ -80,12 +55,12 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["award-dates-AP-rec-check"] == "Yes")
+          checked: (data["award-dates-review-check"] == "Yes")
         },
         {
           value: "No",
           text: "No",
-          checked: (data["award-dates-AP-rec-check"] == "No")
+          checked: (data["award-dates-review-check"] == "No")
         }
         ]
       }) }}
