@@ -17,7 +17,7 @@
     <form action="../help-autofill" method="post" class="form">
 
 
-    {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
+      {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
 
     {{ govukBreadcrumbs({
       classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
@@ -66,6 +66,26 @@
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
 
+            {% if data["an-de-mr-tl-2-score-check"] == "Yes" %}
+
+              Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
+
+            {% elif data["an-de-mr-tl-2-score-check"] == "No" %}
+
+              Add your reason for selecting
+
+              {% if data["an-de-mr-tl-2-score-change"] == "a1" %}
+                <strong>Descriptor A (0 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "b2" %}
+                <strong>Descriptor B (2 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "c3" %}
+                <strong>Descriptor C (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "d4" %}
+                <strong>Descriptor D (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "e5" %}
+                <strong>Descriptor E (4 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "f6" %}
+
             {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
 
               Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
@@ -85,7 +105,7 @@
               {% elseif data["an-de-mr-tl-1-score-change"] == "e5" %}
                 <strong>Descriptor E (4 points)</strong>
               {% elseif data["an-de-mr-tl-1-score-change"] == "f6" %}
-                <strong>Descriptor F (8 points)</strong>
+              <strong>Descriptor F (8 points)</strong>
               {% endif %}
 
               for preparing food to the decision letter
@@ -101,9 +121,6 @@
 
 
           {% include "another-decision-0-0-2/an-de-mr-tl-1/an-de-mr-tl-1-extract.html" %}
-
-
-
 
 
           {{ govukTextarea({

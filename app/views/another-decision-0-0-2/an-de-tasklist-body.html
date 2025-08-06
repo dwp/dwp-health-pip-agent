@@ -19,7 +19,7 @@
         </thead>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-1-score-check">Preparing food</a></td>
+          <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-1/an-de-mr-tl-1-score-check">Preparing food</a></td>
           <td class="govuk-table__cell table-spacer">
 
           {% if data["entry-home-processing-options"] == "MakeMRChange" %}
@@ -34,7 +34,7 @@
 
           <td class="govuk-table__cell table-spacer">
             {% if data["an-de-mr-tl-1-score-change"] %}
-            {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+            {% include "another-decision-0-0-2/an-de-mr-tl-1/an-de-mr-tl-1-score-overwrite.html" %}
             {% else %}
             0
             {% endif %}
@@ -66,18 +66,18 @@
             </td>
 
             <td class="govuk-table__cell table-spacer">
-              {% if data["an-de-mr-tl-1-score-change"] %}
-              {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+              {% if data["an-de-mr-tl-2-score-change"] %}
+              {% include "another-decision-0-0-2/an-de-mr-tl-2/an-de-mr-tl-2-score-overwrite.html" %}
               {% else %}
-              0 A1
+              0
               {% endif %}
             </td>
 
             <td class="govuk-table__cell table-spacer">
 
               {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+              {% elif data["an-de-mr-tl-2-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+              {% elif data["an-de-mr-tl-2-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
               {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
               {% endif %}
 
@@ -99,18 +99,18 @@
           </td>
 
           <td class="govuk-table__cell table-spacer">
-            {% if data["an-de-mr-tl-1-score-change"] %}
-            {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+            {% if data["an-de-mr-tl-3-score-change"] %}
+            {% include "another-decision-0-0-2/an-de-mr-tl-3/an-de-mr-tl-3-score-overwrite.html" %}
             {% else %}
-            0 A1
+            0
             {% endif %}
           </td>
 
           <td class="govuk-table__cell table-spacer">
 
             {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-            {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-            {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+            {% elif data["an-de-mr-tl-3-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+            {% elif data["an-de-mr-tl-3-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
             {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
             {% endif %}
 
@@ -132,18 +132,18 @@
                 </td>
 
                 <td class="govuk-table__cell table-spacer">
-                  {% if data["an-de-mr-tl-1-score-change"] %}
-                  {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                  {% if data["an-de-mr-tl-4-score-change"] %}
+                  {% include "another-decision-0-0-2/an-de-mr-tl-4/an-de-mr-tl-4-score-overwrite.html" %}
                   {% else %}
-                  0 A1
+                  0
                   {% endif %}
                 </td>
 
                 <td class="govuk-table__cell table-spacer">
 
                   {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                  {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                  {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                  {% elif data["an-de-mr-tl-4-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                  {% elif data["an-de-mr-tl-4-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                   {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                   {% endif %}
 
@@ -165,18 +165,18 @@
             </td>
 
             <td class="govuk-table__cell table-spacer">
-              {% if data["an-de-mr-tl-1-score-change"] %}
-              {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+              {% if data["an-de-mr-tl-5-score-change"] %}
+              {% include "another-decision-0-0-2/an-de-mr-tl-5/an-de-mr-tl-5-score-overwrite.html" %}
               {% else %}
-              0 A1
+              0
               {% endif %}
             </td>
 
             <td class="govuk-table__cell table-spacer">
 
               {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+              {% elif data["an-de-mr-tl-5-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+              {% elif data["an-de-mr-tl-5-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
               {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
               {% endif %}
 
@@ -198,18 +198,20 @@
                     </td>
 
                     <td class="govuk-table__cell table-spacer">
-                      {% if data["an-de-mr-tl-1-score-change"] %}
-                      {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                      {% if data["an-de-mr-tl-6-score-change"] %}
+                      {% include "another-decision-0-0-2/an-de-mr-tl-6/an-de-mr-tl-6-score-overwrite.html" %}
                       {% else %}
-                      0 A1
+                      0
                       {% endif %}
                     </td>
 
                     <td class="govuk-table__cell table-spacer">
 
-                      {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                      {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                      {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                      {% if data["an-de-mr-tl-6-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                      {% elif data["an-de-mr-tl-6-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                      {% elif data["an-de-mr-tl-6-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                      {% elif data["an-de-mr-tl-1-score-check"] == "Agree" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+
                       {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                       {% endif %}
 
@@ -231,18 +233,18 @@
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
-                        {% if data["an-de-mr-tl-1-score-change"] %}
-                        {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                        {% if data["an-de-mr-tl-7-score-change"] %}
+                        {% include "another-decision-0-0-2/an-de-mr-tl-7/an-de-mr-tl-7-score-overwrite.html" %}
                         {% else %}
-                        0 A1
+                        0
                         {% endif %}
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
 
                         {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                        {% elif data["an-de-mr-tl-7-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                        {% elif data["an-de-mr-tl-7-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                         {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                         {% endif %}
 
@@ -264,18 +266,18 @@
                   </td>
 
                   <td class="govuk-table__cell table-spacer">
-                    {% if data["an-de-mr-tl-1-score-change"] %}
-                    {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                    {% if data["an-de-mr-tl-8-score-change"] %}
+                    {% include "another-decision-0-0-2/an-de-mr-tl-8/an-de-mr-tl-8-score-overwrite.html" %}
                     {% else %}
-                    0 A1
+                    0
                     {% endif %}
                   </td>
 
                   <td class="govuk-table__cell table-spacer">
 
                     {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                    {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                    {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                    {% elif data["an-de-mr-tl-8-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                    {% elif data["an-de-mr-tl-8-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                     {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                     {% endif %}
 
@@ -297,18 +299,18 @@
                     </td>
 
                     <td class="govuk-table__cell table-spacer">
-                      {% if data["an-de-mr-tl-1-score-change"] %}
-                      {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                      {% if data["an-de-mr-tl-9-score-change"] %}
+                      {% include "another-decision-0-0-2/an-de-mr-tl-9/an-de-mr-tl-9-score-overwrite.html" %}
                       {% else %}
-                      0 A1
+                      0
                       {% endif %}
                     </td>
 
                     <td class="govuk-table__cell table-spacer">
 
                       {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                      {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                      {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                      {% elif data["an-de-mr-tl-9-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                      {% elif data["an-de-mr-tl-9-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                       {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                       {% endif %}
 
@@ -331,18 +333,18 @@
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
-                        {% if data["an-de-mr-tl-1-score-change"] %}
-                        {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                        {% if data["an-de-mr-tl-10-score-change"] %}
+                        {% include "another-decision-0-0-2/an-de-mr-tl-10/an-de-mr-tl-10-score-overwrite.html" %}
                         {% else %}
-                        0 A1
+                        0
                         {% endif %}
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
 
-                        {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                        {% if data["an-de-mr-tl-10-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+                        {% elif data["an-de-mr-tl-10-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                        {% elif data["an-de-mr-tl-10-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                         {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                         {% endif %}
 
@@ -407,18 +409,18 @@
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
-                        {% if data["an-de-mr-tl-1-score-change"] %}
-                        {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+                        {% if data["an-de-mr-tl-11-score-change"] %}
+                        {% include "another-decision-0-0-2/an-de-mr-tl-11/an-de-mr-tl-11-score-overwrite.html" %}
                         {% else %}
-                        0 A1
+                        0
                         {% endif %}
                       </td>
 
                       <td class="govuk-table__cell table-spacer">
 
                         {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-                        {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+                        {% elif data["an-de-mr-tl-11-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+                        {% elif data["an-de-mr-tl-11-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
                         {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
                         {% endif %}
 
@@ -440,18 +442,18 @@
             </td>
 
             <td class="govuk-table__cell table-spacer">
-              {% if data["an-de-mr-tl-1-score-change"] %}
-              {% include "another-decision-0-0-2/an-de-mr-tl-1-score-overwrite.html" %}
+              {% if data["an-de-mr-tl-12-score-change"] %}
+              {% include "another-decision-0-0-2/an-de-mr-tl-12/an-de-mr-tl-12-score-overwrite.html" %}
               {% else %}
-              0 A1
+              0
               {% endif %}
             </td>
 
             <td class="govuk-table__cell table-spacer">
 
-              {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
-              {% elif data["an-de-mr-tl-1-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
+              {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}      <strong class="govuk-tag app-task-list__apl-task-done">Agree</strong>
+              {% elif data["an-de-mr-tl-12-score-check"] == "Amended" %}     <strong class="govuk-tag app-task-list__apl-task-amended">Increased</strong>
+              {% elif data["an-de-mr-tl-12-score-check"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-pause">Paused</strong>
               {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
               {% endif %}
 

@@ -1724,35 +1724,6 @@ router.post(`/entry-home-processing-options-nohelp-router`, (req, res) => {
 
 // MR TASK LIST scores
 
-
-router.post(`/qppt-dl-change-check-router`, (req, res) => {
-  const anDeDLchangeCheck = req.session.data['qppt-dl-change-check']
-
-  if (anDeDLchangeCheck == 'Yes') {
-    res.redirect(`award-dates-review-exit`)
-  }
-  else if (anDeDLchangeCheck == 'No') {
-    res.redirect(`an-de-tasklist`)
-  }
-   else {
-    res.redirect(`an-de-tasklist`)
-  }
-})
-
-router.post(`/qppt-m-change-check-router`, (req, res) => {
-  const anDeMchangeCheck = req.session.data['qppt-m-change-check']
-
-  if (anDeMchangeCheck == 'Yes') {
-    res.redirect(`award-dates-review-exit`)
-  }
-  else if (anDeMchangeCheck == 'No') {
-    res.redirect(`an-de-tasklist`)
-  }
-   else {
-    res.redirect(`an-de-tasklist`)
-  }
-})
-
 router.post(`/an-de-mr-tl-1-score-check-router`, (req, res) => {
   const anDeMR1ScoreCheck = req.session.data['an-de-mr-tl-1-score-check']
 
@@ -1761,6 +1732,80 @@ router.post(`/an-de-mr-tl-1-score-check-router`, (req, res) => {
   }
   else if (anDeMR1ScoreCheck == 'Amended') {
     res.redirect(`an-de-mr-tl-1/an-de-mr-tl-1-score-change`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+
+
+
+
+router.post(`/an-de-mr-tl-6-score-check-router`, (req, res) => {
+  const anDeMR6ScoreCheck = req.session.data['an-de-mr-tl-6-score-check']
+
+  if (anDeMR6ScoreCheck == 'Agree') {
+    res.redirect(`an-de-mr-tl-6/an-de-mr-tl-6-justification`)
+  }
+  else if (anDeMR6ScoreCheck == 'Amended') {
+    res.redirect(`an-de-mr-tl-6/an-de-mr-tl-6-score-change`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+router.post(`/an-de-mr-tl-10-score-check-router`, (req, res) => {
+  const anDeMR10ScoreCheck = req.session.data['an-de-mr-tl-10-score-check']
+
+  if (anDeMR10ScoreCheck == 'Agree') {
+    res.redirect(`an-de-mr-tl-10/an-de-mr-tl-10-justification`)
+  }
+  else if (anDeMR10ScoreCheck == 'Amended') {
+    res.redirect(`an-de-mr-tl-10/an-de-mr-tl-10-score-change`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+router.post(`/an-de-mr-tl-12-score-check-router`, (req, res) => {
+  const anDeMR12ScoreCheck = req.session.data['an-de-mr-tl-12-score-check']
+
+  if (anDeMR12ScoreCheck == 'Agree') {
+    res.redirect(`an-de-mr-tl-12/an-de-mr-tl-12-justification`)
+  }
+  else if (anDeMR12ScoreCheck == 'Amended') {
+    res.redirect(`an-de-mr-tl-12/an-de-mr-tl-12-score-change`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+router.post(`/award-dates-review-check-router`, (req, res) => {
+  const awardDateReviewCheck = req.session.data['award-dates-review-check']
+
+  if (awardDateReviewCheck == 'Yes') {
+    res.redirect(`award-dates-review-exit`)
+  }
+  else if (awardDateReviewCheck == 'No') {
+    res.redirect(`payability-check`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+router.post(`/payability-check-router`, (req, res) => {
+  const payabilityCheck = req.session.data['payability-check']
+
+  if (payabilityCheck == 'Yes') {
+    res.redirect(`payability-reasons`)
+  }
+  else if (payabilityCheck == 'No') {
+    res.redirect(`cya-letter-review`)
   }
    else {
     res.redirect(`an-de-tasklist`)

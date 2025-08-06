@@ -10,14 +10,7 @@
 {% block content %}
 
 
-  {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
-  <form action="cya-letter-review" method="post" class="form">
 
-  {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}
-  <form action="award-dates-review-check" method="post" class="form">
-
-  {% else %}
-  {% endif %}
 
   <div class="govuk-grid-row">
 
@@ -132,10 +125,6 @@
 
 <!-- STATUS AND CTA SPACE -->
 
-{% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
-
-<h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-6">The outcome has remained the same from the original decision</h1>
-<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This applicant will remain a nil</p>
 
 
 {% elif data["an-de-mr-tl-1-score-check"] == "Amended" %}
