@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -17,19 +17,17 @@
       {% include "another-decision-0-0-2/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Accessing a persons record</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Accessing a person's record</h1>
 
-      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">To help you reference information within person record you can use the quicklink at the top of the page</p>
-      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">The quick link is the persons name.</p>
-      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">The person record will open in a new tab.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">To quickly access information about a person, select their name at the top of any screen.</p>
 
-      <p class="govuk-body govuk-!-margin-bottom-2">Person record will allow you to see information such as:</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">This will open a new tab with the person's record where you'll find: :</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>contact detials</li>
-        <li>delegated authorities</li>
-        <li>flags and markers</li>
-        <li>accesablity needs</li>
-</ul>
+        <li>contact details</li>
+        <li>appointees and representatives</li>
+        <li>any flags or markers</li>
+        <li>details of any accessibility needs</li>
+        </ul>
 
 {{ govukRadios({
   idPrefix: "help-accessing-person-record",

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -21,12 +21,30 @@
       <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">End of call process</h1> -->
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p> -->
 
+      {% set otherHelpYes %}
+
+      {{ govukTextarea({
+        name: "payability-reasons-end",
+        id: "payability-reasons-end",
+        rows: "4",
+        label: {
+          text: "Record the details of what other help is needed",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {% endset -%}
+
       {{ govukRadios({
         idPrefix: "obc-other-help",
         name: "obc-other-help",
         fieldset: {
           legend: {
-            html: "Is there anything I can help you with?",
+            html: "Is there anything else they would like to tell us?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -39,7 +57,10 @@
         {
           value: "Yes",
           text: "Yes",
-          checked: (data["obc-other-help"] == "Yes")
+          checked: (data["obc-other-help"] == "Yes"),
+            conditional: {
+              html: otherHelpYes
+            }
         },
         {
           value: "No",

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -20,7 +20,7 @@
       {% include "another-decision-0-0-2/record-id-base.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Using serchlight to generate the security questions</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Use Searchlight to generate the security questions</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
 
 
@@ -30,7 +30,7 @@
         name: "obc-security",
         fieldset: {
           legend: {
-            html: "Did they pass security questions?",
+            html: "Did they correctly answer the questions to confirm their identity?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -49,11 +49,6 @@
           value: "No",
           text: "No",
           checked: (data["obc-security"] == "No")
-        },
-        {
-          value: "Dont know",
-          text: "Its complicated",
-          checked: (data["obc-security"] == "Dont know")
         }
         ]
       }) }}

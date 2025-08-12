@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "person-record-0-0-2/record-id-base.html" %}
+
+  <form action="record-foundation-application-overview-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Register a mandatory reconsideration</h1>
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

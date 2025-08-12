@@ -1,4 +1,4 @@
-{% extends "layout-reg-mr.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -13,24 +13,6 @@
 <form action="payability-exit" method="post" class="form">
 
   {% include "person-record-0-0-2/record-id-base.html" %}
-
-  {{ govukBreadcrumbs({
-    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-    items: [
-      {
-        text: "Overview",
-        href: "r-overview"
-      },
-      {
-        text: "Applications and decision",
-        href: "r-applications"
-      },
-      {
-        text: "Register a mandatory reconsideration",
-        href: ""
-      }
-    ]
-  }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -166,11 +148,190 @@
           conditional: {
             html: 4Html
           }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "XXX",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
         }
           ]
         }) }}
 
 
+        Name<br>
+        Address<br>
+        Correspondence address<br>
+        Date of death<br>
+        Nationality<br>
+        Residency and presence<br>
+        Immigration status<br>
+        Special Rules End of Life (SREL)<br>
+        Representative or appointee<br>
+        Withdrawn<br>
+        Age criteria<br>
+        Additional support<br>
+        Alternative format<br>
+        Fraud<br>
+        Keep customer interactions safe (KCIS)<br>
+        Working abroad<br>
+        Foreign benefits<br>
+        Disability Living Allowance (DLA)<br>
+        Child Disability Payment or Adult Disability Payment<br>
+        Armed Forces Independence Payment (AFIP)<br>
+        War Pensioners' Mobility Supplement (WPMS)<br>
+        Constant Attendance Allowance (CAA)<br>
+        Hospital or similar institutions<br>
+        Care homes<br>
+        Nursing homes<br>
+        Residential schools or colleges<br>
+        Prison or legal custody<br>
 
 
       {{ govukButton({

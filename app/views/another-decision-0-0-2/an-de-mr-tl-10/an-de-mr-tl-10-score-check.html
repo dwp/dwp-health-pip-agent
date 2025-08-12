@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -30,9 +30,9 @@
             {% set dynamicCTAHeader %}
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor X (X points) points for this activity. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor chosen for this activity was Descriptor X (X points). Do you agree?</h2>
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor A (0 points) points for this activity. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor chosen for this activity was Descriptor X (X points). Do you agree?</h2>
             {% else %}
             Scenario not set
             {% endif %}

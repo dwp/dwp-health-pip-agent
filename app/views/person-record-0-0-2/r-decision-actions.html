@@ -11,27 +11,9 @@
 {% block content %}
 {% include "person-record-0-0-2/record-id-base.html" %}
 
-  <form action="record-foundation-application-overview-router" method="post" class="form">
+  <form action="an-de-overview" method="post" class="form">
 
   <div class="govuk-grid-row">
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Overview",
-          href: "r-applications"
-        },
-        {
-          text: "Applications and decisions",
-          href: "record-foundation-applications"
-        },
-        {
-          text: "1 December 2023",
-          href: ""
-        }
-      ]
-    }) }}
 
     <div class="govuk-grid-column-three-quarters">
 
@@ -40,13 +22,13 @@
         name: "applicaiton-actions",
         fieldset: {
           legend: {
-            html: "What would you like to do?",
+            html: "System page: Select a Scenario?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
-          html: "XXX"
+          html: ""
         },
         classes: "govuk-radios",
         items: [

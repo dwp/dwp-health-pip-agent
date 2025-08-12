@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -11,9 +11,9 @@
 {% block content %}
 
 
-<form action="an-de-tasklist" method="post" class="form">
+<form action="qppt-dl-change-check-router" method="post" class="form">
 
-
+award-dates-review-exit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -23,9 +23,7 @@
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need to make a change to the daily living qualifying period or perspecive test?
-
-
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need to make a change to the original daily living qualifying period or perspecive test?
             </h1>
 
 
@@ -33,9 +31,13 @@
       <!------------Legend--------------->
 
   {% set dynamicHint %}
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
-    XXX
-  </p>
+
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
+    <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they had daily living restrictions for at least 3 months before their assessment on 1 March 2024.</p>
+
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
+    <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have daily living restrictions 9 months after their assessment on undefined undefined undefined.</p>
+
 
 
   {% endset %}

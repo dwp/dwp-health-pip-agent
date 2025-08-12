@@ -68,7 +68,7 @@
   <div class="govuk-grid-row">
 
       <div class="govuk-grid-column-one-half govuk-grid-column-three-quarters-from-desktop">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-0 govuk-!-margin-bottom-7 call-panel-text-active"><strong>Ending call</strong> </p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-0 govuk-!-margin-bottom-7 call-panel-text-active">Ending call </p>
 
         <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0 govuk-!-padding-bottom-0 call-panel-text"><strong>Actions:</strong> <a href="/agent-day-0-1-8/record-1-overview-callnotes" class="govuk-link govuk-link_panel">Create call notes</p> -->
 
@@ -102,12 +102,12 @@
     name: "call-notes",
     id: "call-notes",
     label: {
-      text: "Processing notes",
+      text: "My decision notes",
       classes: "govuk-label--m",
       isPageHeading: true
     },
     hint: {
-      text: "XXX"
+      text: ""
     },
     value: data["call-notes"]
   }) }}
@@ -130,7 +130,7 @@
 
 
 {{ govukDetails({
-  summaryText: "My processing notes",
+  summaryText: "My decision notes",
   classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
   html: legendNumbersDetails
 }) }}

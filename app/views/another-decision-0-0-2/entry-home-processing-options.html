@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   PIP MyHomePage
@@ -50,14 +50,14 @@
           },
           {
             value: "MakeMRNil",
-            text: "Make a decision on a manditory reconsideration (Nil)",
+            text: "Make a decision on a mandatory reconsideration  (Nil)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "MakeMRNil")
           },
           {
             value: "MakeMRChange",
-            text: "Make a decision on a manditory reconsideration (Change in rate)",
+            text: "Make a decision on a mandatory reconsideration (Change in rate)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "MakeMRChange")

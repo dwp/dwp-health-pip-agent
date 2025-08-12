@@ -540,7 +540,7 @@ router.post(`/an-de-overview-router`, (req, res) => {
   const recordEscalationCheckToContinue = req.session.data['an-de-overview']
 
   if (recordEscalationCheckToContinue == 'Yes') {
-    res.redirect(`an-de-disagree-reasons`)
+    res.redirect(`an-de-letter-check`)
   }
   else if (recordEscalationCheckToContinue == 'NoPaper') {
     res.redirect(`an-de-move-paper-next-steps`)
@@ -577,10 +577,10 @@ router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
   const anDeLetterInHandCheck = req.session.data['an-de-letter-inhand-check']
 
   if (anDeLetterInHandCheck == 'Yes') {
-    res.redirect(`an-de-overview`)
+    res.redirect(`an-de-disagree-reasons`)
   }
   else if (anDeLetterInHandCheck == 'No') {
-    res.redirect(`an-de-reissue-lost-letter`)
+    res.redirect(`an-de-letter-reissue`)
   }
   else if (anDeLetterInHandCheck == 'NoLetter') {
     res.redirect(`an-de-callback`)
@@ -602,13 +602,14 @@ router.post(`/an-de-letter-inhand-date-check-router`, (req, res) => {
   else if (anDeLetterInHandDateCheck == '13m') {
     res.redirect(`an-de-goodcause-check`)
   }
+
    else {
-    res.redirect(`XXX1`)
+    res.redirect(`an-de-letter-reissue`)
   }
 })
 
-router.post(`/an-de-reissue-lost-letter-router`, (req, res) => {
-  const anDeReissueLostLetter = req.session.data['an-de-reissue-lost-letter']
+router.post(`/an-de-letter-reissue-router`, (req, res) => {
+  const anDeReissueLostLetter = req.session.data['an-de-letter-reissue']
 
   if (anDeReissueLostLetter == 'Yes') {
     res.redirect(`an-de-overview`)
@@ -620,6 +621,8 @@ router.post(`/an-de-reissue-lost-letter-router`, (req, res) => {
     res.redirect(`XXX`)
   }
 })
+
+
 
 
 

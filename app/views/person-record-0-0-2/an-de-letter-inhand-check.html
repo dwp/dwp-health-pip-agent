@@ -11,17 +11,7 @@
 {% block content %}
 
 
-  {% if data["applicaiton-actions"] == "ok" %}
-
-  <form action="an-de-letter-inhand-check-router" method="post" class="form">
-
-  {% elif data["applicaiton-actions"] == "13m" or data["applicaiton-actions"] == "1m" %}
-  <form action="an-de-letter-inhand-date-check-router" method="post" class="form">
-
-  {% else %}
-  {% endif %}
-
-
+<form action="an-de-letter-inhand-check-router" method="post" class="form">
 
 
   {% include "person-record-0-0-2/record-id-base.html" %}

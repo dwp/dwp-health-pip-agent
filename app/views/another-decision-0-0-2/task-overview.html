@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -19,7 +19,7 @@
       {% include "another-decision-0-0-2/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review manditory reconsideration request</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review the mandatory reconsideration request</h1>
 
 
 
@@ -48,22 +48,27 @@
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Mandatory reconsideration requested</td>
+            <td class="govuk-table__header">Mandatory reconsideration<br>requested</td>
             <td class="govuk-table__cell">Today</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Mandatory reconsideration type</td>
-            <td class="govuk-table__cell">Requested on orginal application decision (Requested on award review decision)</td>
+            <td class="govuk-table__header">Decision to be reconsidered</td>
+            <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Time from decision to mandatory reconsideration requested</td>
-            <td class="govuk-table__cell">Over one month</td>
+            <td class="govuk-table__header">Time from decision to mandatory<br> reconsideration request</td>
+            <td class="govuk-table__cell">Less than one month <br>(More than one month)<br>(More than 13 months)</td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Addional documents uploaded/sent in</td>
+            <td class="govuk-table__header">Supporting documents expected</td>
+            <td class="govuk-table__cell">Yes</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Supporting documents received</td>
             <td class="govuk-table__cell">No</td>
           </tr>
 

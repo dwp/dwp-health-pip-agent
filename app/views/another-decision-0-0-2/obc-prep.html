@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -22,7 +22,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% include "another-decision-0-0-2/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare to call the citizen</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare for the call</h1>
 
 
       {{ govukSummaryList({
@@ -132,9 +132,9 @@
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">Check a few more things in person record before I make a call</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">(@jeff) Check a few more things in person record before I make a call</a></p>
 
-      {{ govukCheckboxes({
+      <!-- {{ govukCheckboxes({
         idPrefix: "obc-prep-sms",
         name: "obc-prep-sms",
         classes: "govuk-checkboxes--small",
@@ -154,9 +154,9 @@
             text: "Confirm an SMS was sent prior to call"
           }
         ]
-      }) }}
+      }) }} -->
 
-      {{ govukCheckboxes({
+      <!-- {{ govukCheckboxes({
         idPrefix: "obc-prep-searchlight",
         name: "obc-prep-searchlight",
         classes: "govuk-checkboxes--small",
@@ -176,7 +176,7 @@
             text: "I have searchLight open and I'm ready to make the call"
           }
         ]
-      }) }}
+      }) }} -->
 
         </div>
       </div>

@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="an-de-letter-check-router" method="post" class="form">
+<form action="an-de-letter-inhand-check" method="post" class="form">
 
   {% include "person-record-0-0-2/record-id-base.html" %}
 
@@ -42,7 +42,7 @@
         name: "an-de-letter-check",
         fieldset: {
           legend: {
-            html: "Have they received their decision letter?",
+            html: "How were they informed about their decision?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -52,14 +52,17 @@
         },
         items: [
         {
-          value: "Yes",
-          text: "Yes",
-          checked: (data["an-de-letter-check"] == "Yes")
-        },
+          value: "Over the phone",
+          text: "Over the phone",
+          checked: (data["an-de-letter-check"] == "Over the phone"),
+      hint: {
+        text: "They have not yet received their decision letter"
+      }
+    },
         {
-          value: "No",
-          text: "No",
-          checked: (data["an-de-letter-check"] == "No ")
+          value: "By letter",
+          text: "By letter",
+          checked: (data["an-de-letter-check"] == "By letter ")
         }
         ]
         }) }}

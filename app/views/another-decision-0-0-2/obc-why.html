@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="an-de-tasklist" method="post" class="form">
+<form action="obc-change-tasklist" method="post" class="form">
 
 {% if data["application-selector"]  == "4" %}
 
@@ -27,7 +27,10 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Call guide</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@rachel Call guide</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Use the call to gather further information from the person that might affect their award.</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Use 'My decision notes' to make any notes during the call.</p> -->
 
 
       <p class="govuk-body govuk-!-margin-bottom-2">Processing reference:</p>
@@ -38,30 +41,52 @@
 
       <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Information needed from the call</h1>
 
-      <p class="govuk-body govuk-!-margin-bottom-2">Remember to ask about:</p>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Start payability checklist</a></p> -->
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Something about checking to see whats changed</p>
+
+        {% if data["obc-change-tasklist-item-1"] == "Expected" or  data["obc-change-tasklist-item-1"] == "Unexpected" %}
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="obc-change-tasklist" target="">View completed payability checklist</a></p>
+
+        {% elif data["obc-change-tasklist-item-1"] == "Pause" %}
+
+            {{ govukButton({
+              text: "Continue payability checklist",
+              classes: "govuk-!-margin-bottom-2"
+            }) }}
+
+            {% else %}
+
+            {{ govukButton({
+              text: "Start payability checklist",
+              classes: "govuk-!-margin-bottom-2"
+            }) }}
+
+            {% endif %}
+
+
+
+
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">Remember to ask about:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>Dates that might effect award</li>
-        <li>And changes that might effect award</li>
-        <li>Stays in hospital or other</li>
-        <li>reasons that they disagree</li>
-        <li>any supporting evidence documents they refer to</li>
-      </ul>
-
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Wapping up the call</h1>
-      <!-- <p class="govuk-body govuk-!-margin-bottom-2">Remember to ask about:</p> -->
-
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>To end the call, use end call process button</li>
-        <li>Your notes will be saved and you can sort a the end</li>
-        <li>...</li>
-        <li>...</li>
-      </ul>
+        <li>reasons that they disagree with their original decision</li>
+        <li>any supporting evidence that they refer to</li>
+      </ul> -->
 
 
-      <!-- {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }} -->
+
+
+
+
+
+      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Ending the call</h1>
+      <p class="govuk-body govuk-!-margin-bottom-6">Use the 'End call' button at the top of the page to end the call.</p> -->
+
+      <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>Use the 'End call' button at the top of the page to end the call. </li>
+      </ul> -->
+
+
 
         </div>
       </div>

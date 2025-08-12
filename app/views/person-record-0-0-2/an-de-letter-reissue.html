@@ -10,7 +10,16 @@
 
 {% block content %}
 
-<form action="an-de-reissue-lost-letter-router" method="post" class="form">
+
+  {% if data["applicaiton-actions"] == "ok" %}
+  <form action="an-de-overview" method="post" class="form">
+
+  {% elif data["applicaiton-actions"] == "1m" or data["applicaiton-actions"] == "13m" %}
+  <form action="an-de-goodcause-check" method="post" class="form">
+
+  {% else %}
+  {% endif %}
+
 
   {% include "person-record-0-0-2/record-id-base.html" %}
 

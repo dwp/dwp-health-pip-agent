@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -26,11 +26,42 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Hello, I'm calling from the Department for Work and Pensions</h1> -->
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">@rachel Greeting? innit</h1>
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Hello, I'm calling from the Department for Work and Pensions</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Before we start, I need to go through some security questions with you. Just to let you know, this call will be recorded for training and monitoring purposes. Are you ok to continue?</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Advise the person that:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>that you're calling from the Department for Work and Pensions</li>
+        <li>the call will be recorded for training and monitoring puposes</li>
+      </ul>
 
-
+{{ govukRadios({
+  idPrefix: "obc-greeting",
+  name: "obc-greeting",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      text: "Are they happy to continue?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["obc-greeting"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["obc-greeting"] == "No")
+    }
+  ]
+}) }}
 
 
       {{ govukButton({

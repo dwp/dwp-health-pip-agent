@@ -1724,6 +1724,35 @@ router.post(`/entry-home-processing-options-nohelp-router`, (req, res) => {
 
 // MR TASK LIST scores
 
+
+router.post(`/qppt-dl-change-check-router`, (req, res) => {
+  const anDeDLchangeCheck = req.session.data['qppt-dl-change-check']
+
+  if (anDeDLchangeCheck == 'Yes') {
+    res.redirect(`award-dates-review-exit`)
+  }
+  else if (anDeDLchangeCheck == 'No') {
+    res.redirect(`an-de-tasklist`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
+router.post(`/qppt-m-change-check-router`, (req, res) => {
+  const anDeMchangeCheck = req.session.data['qppt-m-change-check']
+
+  if (anDeMchangeCheck == 'Yes') {
+    res.redirect(`award-dates-review-exit`)
+  }
+  else if (anDeMchangeCheck == 'No') {
+    res.redirect(`an-de-tasklist`)
+  }
+   else {
+    res.redirect(`an-de-tasklist`)
+  }
+})
+
 router.post(`/an-de-mr-tl-1-score-check-router`, (req, res) => {
   const anDeMR1ScoreCheck = req.session.data['an-de-mr-tl-1-score-check']
 
@@ -1787,10 +1816,10 @@ router.post(`/an-de-mr-tl-12-score-check-router`, (req, res) => {
 router.post(`/award-dates-review-check-router`, (req, res) => {
   const awardDateReviewCheck = req.session.data['award-dates-review-check']
 
-  if (awardDateReviewCheck == 'Yes') {
+  if (awardDateReviewCheck == 'No') {
     res.redirect(`award-dates-review-exit`)
   }
-  else if (awardDateReviewCheck == 'No') {
+  else if (awardDateReviewCheck == 'Yes') {
     res.redirect(`payability-check`)
   }
    else {
@@ -1801,14 +1830,34 @@ router.post(`/award-dates-review-check-router`, (req, res) => {
 router.post(`/payability-check-router`, (req, res) => {
   const payabilityCheck = req.session.data['payability-check']
 
-  if (payabilityCheck == 'Yes') {
+  if (payabilityCheck == 'No') {
     res.redirect(`payability-reasons`)
   }
-  else if (payabilityCheck == 'No') {
+  else if (payabilityCheck == 'Yes') {
     res.redirect(`cya-letter-review`)
   }
    else {
     res.redirect(`an-de-tasklist`)
+  }
+})
+
+
+// Change task list
+
+router.post(`/obc-change-tasklist-item-1-router`, (req, res) => {
+  const obcTL1 = req.session.data['obc-change-tasklist-item-1']
+
+  if (obcTL1 == 'Expected') {
+    res.redirect(`obc-change-tasklist`)
+  }
+  else if (obcTL1 == 'Unexpected') {
+    res.redirect(`obc-change-tasklist`)
+  }
+  else if (obcTL1 == 'Pause') {
+    res.redirect(`obc-change-tasklist`)
+  }
+  else {
+    res.redirect(`obc-change-tasklist`)
   }
 })
 

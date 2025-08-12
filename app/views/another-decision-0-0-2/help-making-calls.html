@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-process-mr.html" %}
 
 {% block pageTitle %}
   PIP claimant record
@@ -17,18 +17,16 @@
       {% include "another-decision-0-0-2/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Making outbound calls</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Making an outbound call</h1>
 
-      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-3">You can start the call process using the button at the top</p>
-      <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">Allow you to XXX</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Use the 'Prepare for a call' button at the top of the page to prepare for an outbound call. </p>
 
-      <p class="govuk-body govuk-!-margin-bottom-2">The call process will allow you to:</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">This will enable you to:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>Help you to call the right person</li>
-        <li>Let you understand if there is anything you need to know before you call</li>
-        <li>Guide you through security questions</li>
-        <li>Call greating and wrap up reminders</li>
-</ul>
+        <li>make sure you're calling the right person</li>
+        <li>follow the correct security process</li>
+        <li>gather the required information from the person</li>
+      </ul>
 
 {{ govukRadios({
   idPrefix: "help-making-calls",
