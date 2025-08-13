@@ -582,31 +582,26 @@ router.post(`/an-de-letter-inhand-check-router`, (req, res) => {
   else if (anDeLetterInHandCheck == 'No') {
     res.redirect(`an-de-letter-reissue`)
   }
-  else if (anDeLetterInHandCheck == 'NoLetter') {
-    res.redirect(`an-de-callback`)
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+router.post(`/an-de-letter-inhand-check-delay-router`, (req, res) => {
+  const anDeLetterInHandCheck = req.session.data['an-de-letter-inhand-check']
+
+  if (anDeLetterInHandCheck == 'Yes') {
+    res.redirect(`an-de-goodcause-check`)
+  }
+  else if (anDeLetterInHandCheck == 'No') {
+    res.redirect(`an-de-letter-reissue`)
   }
    else {
     res.redirect(`XXX`)
   }
 })
 
-router.post(`/an-de-letter-inhand-date-check-router`, (req, res) => {
-  const anDeLetterInHandDateCheck = req.session.data['applicaiton-actions']
-
-  if (anDeLetterInHandDateCheck == 'ok') {
-    res.redirect(`an-de-overview`)
-  }
-  else if (anDeLetterInHandDateCheck == '1m') {
-    res.redirect(`an-de-goodcause-check`)
-  }
-  else if (anDeLetterInHandDateCheck == '13m') {
-    res.redirect(`an-de-goodcause-check`)
-  }
-
-   else {
-    res.redirect(`an-de-letter-reissue`)
-  }
-})
 
 router.post(`/an-de-letter-reissue-router`, (req, res) => {
   const anDeReissueLostLetter = req.session.data['an-de-letter-reissue']

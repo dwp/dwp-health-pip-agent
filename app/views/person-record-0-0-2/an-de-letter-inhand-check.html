@@ -11,8 +11,14 @@
 {% block content %}
 
 
-<form action="an-de-letter-inhand-check-router" method="post" class="form">
+  {% if data["applicaiton-actions"] == "ok" %}
+  <form action="an-de-letter-inhand-check-router" method="post" class="form">
 
+  {% elif data["applicaiton-actions"] == "1m" or data["applicaiton-actions"] == "13m" %}
+  <form action="an-de-letter-inhand-check-delay-router" method="post" class="form">
+
+  {% else %}
+  {% endif %}
 
   {% include "person-record-0-0-2/record-id-base.html" %}
 
@@ -80,7 +86,7 @@
         {
           value: "No",
           text: "No",
-          checked: (data["an-de-letter-inhand-check"] == "No ")
+          checked: (data["an-de-letter-inhand-check"] == "No")
         }
         ]
         }) }}
