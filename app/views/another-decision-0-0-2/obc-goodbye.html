@@ -23,8 +23,15 @@
 
       {% include "another-decision-0-0-2/record-id-base.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Thank you for taking<br>my call. Goodbye.</h1>
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p> -->
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Ending the call</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Thank the person for taking the call. </p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Advise that:</p>
+        <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
+          <li>we will now look at all their information and make another decision</li>
+          <li>they will get a letter called a Mandatory Reconsideration Notice telling them whether we’ve changed the decision</li>
+          <li>they should receive this within 15 weeks</li>
+        </ul>
 
       {% if data["call-notes"]%}
       <form action="ecp-washup" method="post" class="form">

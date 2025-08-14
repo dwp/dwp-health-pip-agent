@@ -16,10 +16,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% include "agent-day-0-1-9/record-id-base.html" %}
+      {% include "another-decision-0-0-2/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information you are using for the decision letter and send the letter</br></h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information for the Mandatory Reconsideration Notice</h1>
 
       <!------------H1 LEGEND------------>
 
@@ -51,19 +51,13 @@
         {% endif %}
 
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"></p>
-  <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-
-    <li>[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</li>
-    <li>[XX] points for the daily living part - this means the applicant has not been given this part</li>
-    <li>[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</li>
-    <li>[XX] points for the mobility part - this means the applicant has not been given this part</li>
-  </ul> -->
-
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] The decision has changed</p>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] The decision remains the same</p>
-<!--
+DL
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the daily living part: this means they have been given the standard/enhanced rate</p>
   <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the daily living part - this means the applicant has been given the [standard/enhanced] rate</p>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</p> -->
+
+M
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the mobility part: this means they have been given the standard/enhanced rate</p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">[XX] points for the mobility part - this means the applicant has been given the [standard/enhanced] rate</p>
 
 
         {% set firstPaymentDetails %}
@@ -324,7 +318,7 @@
               }) }}
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Daily living scoring</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Daily living activities</h3>
 
       <!-- 1 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -757,7 +751,7 @@
       </dl>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Mobility scoring</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Mobility activities</h3>
 
       <!-- 11 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -854,7 +848,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-              {% if data["payability-check"] == "No" or data["award-dates-review-exit"] == "Yes" %}
+              {% if data["payability-check"] == "Yes" or data["award-dates-review-exit"] == "No" %}
 
               <!------------CheckBox Hint------------>
 
@@ -873,7 +867,7 @@
 
                 {% set dynamicCheckBoxHintPayment %}
 
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This information will be stored as the decision.</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Use 'My decision notes' to help you write your justification for the letter.</p>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter you will send will need to be saved manually. </p>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
 
@@ -886,7 +880,7 @@
                 fieldset: {
                   classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
                   legend: {
-                    text: "Sending a decision letter",
+                    text: "Sending the Mandatory Reconsideration Notice",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
                   }

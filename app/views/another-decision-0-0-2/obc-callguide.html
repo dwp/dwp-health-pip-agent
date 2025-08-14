@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="obc-change-tasklist" method="post" class="form">
+<form action="obc-pre-decision-changes/obc-change-tasklist" method="post" class="form">
 
 {% if data["application-selector"]  == "4" %}
 
@@ -21,7 +21,7 @@
 
 
   <input type="hidden" name="find-someone-1-gather" value="true"/>
-  {% include "another-decision-0-0-2/record-id-base.html" %}
+  {% include "another-decision-0-0-2/record-id.html" %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -32,12 +32,46 @@
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Use the call to gather further information from the person that might affect their award.</p>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Use 'My decision notes' to make any notes during the call.</p> -->
 
-
       <p class="govuk-body govuk-!-margin-bottom-2">Processing reference:</p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a class="" href="an-de-tasklist" target="">Veiw mandatory reconsderation tasklist</a></p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="mr-application-overview" class="govuk-link" rel="noreferrer noopener" target="">Overview of original decision</a></p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">View full event history</a></p>
       <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents service</a></p>
+
+
+
+      {{ govukRadios({
+        idPrefix: "an-de-mr-tl-12-score-check",
+        name: "an-de-mr-tl-12-score-check",
+        fieldset: {
+          legend: {
+            html: "Do you need to ask payability  questions?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Agree",
+          text: "Yes",
+          checked: (data["an-de-mr-tl-12-score-check"] == "Agree")
+        },
+        {
+        value: "Pause",
+        text: "No",
+        checked: (data["an-de-mr-tl-12-score-check"] == "Pause")
+      }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
 
       <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Information needed from the call</h1>
 
@@ -45,46 +79,29 @@
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Something about checking to see whats changed</p>
 
         {% if data["obc-change-tasklist-item-1"] == "Expected" or  data["obc-change-tasklist-item-1"] == "Unexpected" %}
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="obc-change-tasklist" target="">View completed payability checklist</a></p>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="/obc-pre-decision-changes/obc-change-tasklist" target="">View completed payability checklist</a></p> -->
 
         {% elif data["obc-change-tasklist-item-1"] == "Pause" %}
 
-            {{ govukButton({
+          <!-- {{ govukButton({
               text: "Continue payability checklist",
               classes: "govuk-!-margin-bottom-2"
-            }) }}
+            }) }} -->
 
             {% else %}
-
+<!--
             {{ govukButton({
               text: "Start payability checklist",
               classes: "govuk-!-margin-bottom-2"
-            }) }}
+            }) }}  -->
 
             {% endif %}
 
 
 
+            {% include "another-decision-0-0-2/obc-call-guide-tasklist.html" %}
 
 
-      <!-- <p class="govuk-body govuk-!-margin-bottom-2">Remember to ask about:</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>reasons that they disagree with their original decision</li>
-        <li>any supporting evidence that they refer to</li>
-      </ul> -->
-
-
-
-
-
-
-
-      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Ending the call</h1>
-      <p class="govuk-body govuk-!-margin-bottom-6">Use the 'End call' button at the top of the page to end the call.</p> -->
-
-      <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-        <li>Use the 'End call' button at the top of the page to end the call. </li>
-      </ul> -->
 
 
 

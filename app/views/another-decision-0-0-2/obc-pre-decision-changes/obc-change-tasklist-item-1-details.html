@@ -1,0 +1,88 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "another-decision-0-0-2/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
+
+
+{% if data["obc-change-tasklist-item-2"] %}
+<form action="obc-change-tasklist" method="post" class="form">
+{% else %}
+<form action="obc-change-tasklist" method="post" class="form">
+<!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
+{% endif %}
+
+      {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
+
+
+    {% else %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Call guide",
+          href: "obc-why"
+        },
+        {
+          text: "Change taskList",
+          href: "obc-change-tasklist"
+        },
+        {
+          text: "Name of thing",
+          href: "obc-change-tasklist-item-1"
+        }
+      ]
+    }) }}
+
+
+    {% endif %}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What has changed for 'obc-change-tasklist-item-1'</h2>
+
+          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
+
+
+          {{ govukTextarea({
+            name: "obc-change-tasklist-item-1-details",
+            id: "obc-change-tasklist-item-1-details",
+            classes: " govukTextarea--overwrite",
+            label: {
+              text: "",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              html: legendCanned
+            },
+            value: data["obc-change-tasklist-item-1-details"]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

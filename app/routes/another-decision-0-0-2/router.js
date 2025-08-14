@@ -534,100 +534,33 @@ router.post(`/application-vcc-check-router`, (req, res) => {
 
 // QPPT
 
-router.post(`/qppt-dl-3m-check-router`, (req, res) => {
-  const qpptDaily3m = req.session.data['qppt-dl-3m-check']
 
-  if (qpptDaily3m == 'Yes') {
-    res.redirect(`qppt-dl-9m-check`)
+
+router.post(`/qppt-dl-change-check-router`, (req, res) => {
+  const qpptDLchangecheck = req.session.data['qppt-dl-change-check']
+
+  if (qpptDLchangecheck == 'Yes') {
+    res.redirect(`award-dates-review-exit`)
   }
-  else if (qpptDaily3m == 'Split') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptDaily3m == 'EffectiveDate') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptDaily3m == 'SplitRate') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptDaily3m == 'NoRestrictions') {
-    res.redirect(`application-6-about`)
+  else if (qpptDLchangecheck == 'No') {
+    res.redirect(`an-de-tasklist`)
   }
    else {
-     res.redirect(`pause`)
+     res.redirect(`XXX`)
   }
 })
 
-router.post(`/qppt-dl-9m-check-router`, (req, res) => {
-  const qpptDaily9m = req.session.data['qppt-dl-9m-check']
+router.post(`/qppt-m-change-check-router`, (req, res) => {
+  const qpptMchangecheck = req.session.data['qppt-m-change-check']
 
-  if (qpptDaily9m == 'Yes') {
-    res.redirect(`application-6-about`)
+  if (qpptMchangecheck == 'Yes') {
+    res.redirect(`award-dates-review-exit`)
   }
-  else if (qpptDaily9m == 'No') {
-    res.redirect(`application-6-about`)
+  else if (qpptMchangecheck == 'No') {
+    res.redirect(`an-de-tasklist`)
   }
    else {
-     res.redirect(`application-6-about`)
-  }
-})
-
-router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
-  const qpptDailyEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
-
-  if (qpptDailyEffectiveDateCheck == 'Yes') {
-    res.redirect(`qppt-dl-3m-alt-date`)
-  }
-   else {
-     res.redirect(`qppt-dl-effective-date-multi`)
-  }
-})
-
-
-router.post(`/qppt-m-3m-check-router`, (req, res) => {
-  const qpptMobility3m = req.session.data['qppt-m-3m-check']
-
-  if (qpptMobility3m == 'Yes') {
-    res.redirect(`qppt-m-9m-check`)
-  }
-  else if (qpptMobility3m == 'Split') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptMobility3m == 'EffectiveDate') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptMobility3m == 'SplitRate') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptMobility3m == 'NoRestrictions') {
-    res.redirect(`application-6-about`)
-  }
-   else {
-     res.redirect(`pause`)
-  }
-})
-
-router.post(`/qppt-m-9m-check-router`, (req, res) => {
-  const qpptMobility9m = req.session.data['qppt-m-9m-check']
-
-  if (qpptMobility9m == 'Yes') {
-    res.redirect(`application-6-about`)
-  }
-  else if (qpptMobility9m == 'No') {
-    res.redirect(`application-6-about`)
-  }
-   else {
-     res.redirect(`application-6-about`)
-  }
-})
-
-router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
-  const qpptMobilityEffectiveDateCheck = req.session.data['qppt-m-effective-date-check']
-
-  if (qpptMobilityEffectiveDateCheck == 'Yes') {
-    res.redirect(`qppt-m-3m-alt-date`)
-  }
-   else {
-     res.redirect(`qppt-m-effective-date-multi`)
+     res.redirect(`XXX`)
   }
 })
 
@@ -1893,16 +1826,16 @@ router.post(`/obc-change-tasklist-item-1-router`, (req, res) => {
   const obcTL1 = req.session.data['obc-change-tasklist-item-1']
 
   if (obcTL1 == 'Expected') {
-    res.redirect(`obc-change-tasklist`)
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-1-details`)
   }
   else if (obcTL1 == 'Unexpected') {
-    res.redirect(`obc-change-tasklist`)
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
   }
   else if (obcTL1 == 'Pause') {
-    res.redirect(`obc-change-tasklist`)
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
   }
   else {
-    res.redirect(`obc-change-tasklist`)
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
   }
 })
 

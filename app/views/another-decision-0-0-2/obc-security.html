@@ -11,16 +11,16 @@
 {% block content %}
 
 
-  <form action="obc-why" method="post" class="form">
+  <form action="obc-callguide" method="post" class="form">
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "another-decision-0-0-2/record-id-base.html" %}
+      {% include "another-decision-0-0-2/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Use Searchlight to generate the security questions</h1>
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Use Searchlight to generate the security questions</h1> -->
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXX</p> -->
 
 
@@ -32,7 +32,7 @@
           legend: {
             html: "Did they correctly answer the questions to confirm their identity?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {

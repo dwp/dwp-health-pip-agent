@@ -15,6 +15,16 @@
 
 <form action="../an-de-mr-tl-10-score-check-router" method="post" class="form">
 
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Make an MR decision",
+        href: "an-de-tasklist"
+      }
+    ]
+  }) }}
+
   <div class="govuk-grid-row">
 
     <div class="govuk-grid-column-two-thirds">
@@ -30,9 +40,9 @@
             {% set dynamicCTAHeader %}
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor X (X points) points for this activity. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity was Descriptor [A (0 points)]. Do you agree?</h2>
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The previous decision scored Descriptor A (0 points) points for this activity. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity was Descriptor [A (0 points)]. Do you agree?</h2>
             {% else %}
             Scenario not set
             {% endif %}

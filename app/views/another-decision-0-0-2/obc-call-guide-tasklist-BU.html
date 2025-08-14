@@ -1,56 +1,4 @@
-{% extends "layout.html" %}
 
-{% block pageTitle %}
-  PIP claimant record
-{% endblock %}
-
-
-
-{% block header %}
-{% include "an-de-mr-call-bar-ready.html" %}
-{% endblock %}
-{% block content %}
-
-<form action="obc-why" method="post" class="form">
-
-  {% include "another-decision-0-0-2/record-id.html" %}
-
-  {{ govukBreadcrumbs({
-    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-    items: [
-      {
-        text: "Call guide",
-        href: "obc-why"
-      },
-      {
-        text: "Change taskList",
-        href: ""
-      }
-    ]
-  }) }}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-
-
-
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check to see if any of the following has changed since the orginal decision</h1>
-      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
-
-    </div>
-  </div>
-
-
-
-
-    <!------------ ––– ------------>
-
-
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
 
     <ol class="app-task-list">
       <li>
@@ -61,8 +9,6 @@
 
       <ul class="app-task-list__items app-task-list__items-pip">
 
-
-<h1 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-1">Check application</h1>
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="obc-change-tasklist-item-1" aria-describedby="task-X">
@@ -441,50 +387,3 @@
         </li>
 
     </ol>
-
-
-
-        <!------------ ––– ------------>
-
-    </div>
-  </div>
-
-
-  <div class="govuk-grid-row govuk-!-margin-top-0">
-  <div class="govuk-grid-column-two-thirds">
-
-
-    {% if data["obc-change-tasklist-item-1"] == "Expected"  %}
-
-<h1 class="govuk-heading-l govuk-!-margin-bottom-6">There are no changes from the orginal decision</h1>
-<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
-<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">It is ready for a decision.</p> -->
-
-
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
-
-{% elif data["obc-change-tasklist-item-1"] == "Unexpected"  %}
-
-<h1 class="govuk-heading-l govuk-!-margin-bottom-6">There are have been changes from the orginal decision</h1>
-
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
-
-    {% else %}
-
-
-    {% endif %}
-
-
-
-        </div>
-      </div>
-
-  </form>
-
-{% endblock %}

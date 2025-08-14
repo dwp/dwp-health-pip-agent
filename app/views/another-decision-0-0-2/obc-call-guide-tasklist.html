@@ -1,0 +1,108 @@
+
+
+    <ol class="app-task-list">
+      <li>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These are the remaining details for you to check. All other eligibility checks have been done already.</p> -->
+
+
+
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-1" aria-describedby="task-X">
+            <!-- [1-1]  --> Change in payment method
+          </a>
+          {% if data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-1" aria-describedby="task-X">
+            <!-- [1-1]  --> Safe to pay
+          </a>
+          {% if data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["/obc-pre-decision-changes/obc-change-tasklist-item-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-21" aria-describedby="task-X">
+            <!-- [1-21]  --> Hospital or similar institutions
+          </a>
+          {% if data["obc-change-tasklist-item-21"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["obc-change-tasklist-item-21"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["obc-change-tasklist-item-21"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["obc-change-tasklist-item-21"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-22" aria-describedby="task-X">
+            <!-- [1-22]  --> Care homes
+          </a>
+          {% if data["obc-change-tasklist-item-22"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["obc-change-tasklist-item-22"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["obc-change-tasklist-item-22"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["obc-change-tasklist-item-22"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-23" aria-describedby="task-X">
+            <!-- [1-23]  --> Nursing homes
+          </a>
+          {% if data["obc-change-tasklist-item-23"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["obc-change-tasklist-item-23"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["obc-change-tasklist-item-23"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["obc-change-tasklist-item-23"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-24" aria-describedby="task-X">
+            <!-- [1-24]  --> Residential schools or colleges
+          </a>
+          {% if data["obc-change-tasklist-item-24"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["obc-change-tasklist-item-24"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["obc-change-tasklist-item-24"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["obc-change-tasklist-item-24"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+        <li class="app-task-list__item">
+          <a class="app-task-list__task-name" href="obc-change-tasklist-item-25" aria-describedby="task-X">
+            <!-- [1-25]  --> Prison or legal custody
+          </a>
+          {% if data["obc-change-tasklist-item-25"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+          {% elif data["obc-change-tasklist-item-25"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+          {% elif data["obc-change-tasklist-item-25"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+          {% elif data["obc-change-tasklist-item-25"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+
+          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+          {% endif %}
+        </li>
+
+    </ol>

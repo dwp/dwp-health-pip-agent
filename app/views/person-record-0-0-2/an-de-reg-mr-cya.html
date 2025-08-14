@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Reconsideration request — CYA
+  an-de-reg-mr-cya
 {% endblock %}
 
 {% block header %}
@@ -100,139 +100,57 @@
         <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Part(s) of their decision they disagree with</h3>
         {% endif %} -->
 
-        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Part(s) of their decision they disagree with</h3>
+          <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Reasons for the mandatory reconsideration</h3>
 
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-          {% if data["an-de-disagree-reasons"] == "Points" %}
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Points and justification given for one or more of the activities
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data["an-de-disagree-reasons"] == "Points" %}
-              {{ data["an-de-disagree-reasons-start"]}}
-              {% else %}
-              No disagreement
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data["an-de-disagree-reasons"] %}
-                <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span>
-                {% else %}
-                <a class="govuk-link" href="an-de-disagree-dates">Add<span class="govuk-visually-hidden"> XXX justification</span>
-                {% endif %}
-              </a>
-            </dd>
-          </div>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-4">
 
-      {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
 
-      {% if data["an-de-disagree-reasons"] == "Dates" %}
-      {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Dates mentioned in the decision letter            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data["an-de-disagree-reasons-qp"] %}
-              {{ data["an-de-disagree-reasons-qp"]}}
-              {% else %}
-              No disagreement
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data["an-de-disagree-reasons"] %}
-                <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span>
-                {% else %}
-                <a class="govuk-link" href="an-de-disagree-dates">Add<span class="govuk-visually-hidden"> XXX justification</span>
-                {% endif %}
-              </a>
-            </dd>
-          </div>
+                Parts of their decision they disagree with
+              </dt>
+              <dd class="govuk-summary-list__value">
 
-          {% endif %}
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0 ">
 
-          {% if data["an-de-disagree-reasons"] == "Award" %}
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Length of the award period
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data["an-de-disagree-reasons-qp"] %}
-              {{ data["an-de-disagree-reasons-qp"]}}
-              {% else %}
-              No disagreement
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data["an-de-disagree-reasons"] %}
-                <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span>
-                {% else %}
-                <a class="govuk-link" href="an-de-disagree-dates">Add<span class="govuk-visually-hidden"> XXX justification</span>
-                {% endif %}
-              </a>
-            </dd>
-          </div>
-          {% endif %}
+                  {% if data["an-de-disagree-reasons"] == "Points" or data["an-de-points-reasons"]%}
+                  <li>Points and justification given for one or more of the activities</li>
+                  {% else %} {% endif %}
 
-          {% if data["an-de-disagree-reasons"] == "Doc" %}
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Supporting documents used to make the decision
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data["an-de-disagree-reasons-end"] %}
-              {{ data["an-de-disagree-reasons-end"]}}
-              {% else %}
-              No disagreement
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data["an-de-disagree-reasons"] %}
-                <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span>
-                {% else %}
-                <a class="govuk-link" href="an-de-disagree-dates">Add<span class="govuk-visually-hidden"> XXX justification</span>
-                {% endif %}
-              </a>
-            </dd>
-          </div>
-          {% endif %}
+                  {% if data["an-de-disagree-reasons"] == "Dates" or data["an-de-disagree-reasons-start"] or data["an-de-disagree-reasons-qp"] or data["an-de-disagree-reasons-pt"] or data["an-de-disagree-reasons-end"]%}
+                  <li>Dates mentioned in the decision letter</li>
+                  {% else %} {% endif %}
 
-          {% if data["an-de-disagree-reasons"] == "Payments" %}
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Payment amounts including arrears
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data["an-de-disagree-reasons-end"] %}
-              {{ data["an-de-disagree-reasons-end"]}}
-              {% else %}
-              No disagreement
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              {% if data["an-de-disagree-reasons"] %}
-                <a class="govuk-link" href="an-de-disagree-dates">Change<span class="govuk-visually-hidden"> XXX justification</span>
-                {% else %}
-                <a class="govuk-link" href="an-de-disagree-dates">Add<span class="govuk-visually-hidden"> XXX justification</span>
-                {% endif %}
-              </a>
-            </dd>
-          </div>
-          {% endif %}
+                  {% if data["an-de-disagree-reasons"] == "Award" or data["an-de-disagree-reasons-award"]%}
+                  <li>Length of the award period</li>
+                  {% else %} {% endif %}
+
+                  {% if data["an-de-disagree-reasons"] == "Doc" or data["an-de-disagree-reasons-doc"]%}
+                  <li>Supporting documents used to make the decision</li>
+                  {% else %} {% endif %}
+
+                  {% if data["an-de-disagree-reasons"] == "Payments" or data["an-de-disagree-reasons-payments"]%}
+                  <li>Payment amounts including arrears</li>
+                  {% else %} {% endif %}
+
+                </ul>
+
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="an-de-disagree-reasons">Change<span class="govuk-visually-hidden"> XXX justification</span>
+                </a>
+              </dd>
+            </div>
 
 
 
 
-        </dl>
+          </dl>
 
 
 
-        <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Dates in the decision letter</h3>
+          <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Dates in the decision letter</h3>
 
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-4">
