@@ -58,56 +58,23 @@
 
 
 
-      {% if data["obc-change-tasklist-item-1"] == "Yes"  %}
+      {% if data["obc-change-tasklist-item-3"] == "Yes"  %}
 
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There is a payment risk</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There has been change in their accommodation</h1>
 
 
       <p class="govuk-body govuk-!-margin-bottom-2">These were the issues:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
 
-        <li>Change in bank details</li>
-        <li>Safe to pay</li>
-        <!-- <li>Hospital or similar institutions</li>
-        <li>Care homes</li>
-        <li>Nursing homes</li>
-        <li>Residential schools or colleges</li>
-        <li>Prison or legal custody</li> -->
+      <li>Hospital or similar institutions</li>
+      <li>Care homes</li>
+      <li>Nursing homes</li>
+      <li>Residential schools or colleges</li>
+      <li>Prison or legal custody</li>
     </ul>
-
-      <!-- <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-        <li>changes of circumstances
-        <li>Name</li>
-        <li>Address</li>
-        <li>Correspondence address</li>
-        <li>Date of death</li>
-        <li>Nationality</li>
-        <li>Residency and presence</li>
-        <li>Immigration status</li>
-        <li>Special Rules End of Life (SREL)</li>
-        <li>Representative or appointee</li>
-        <li>Withdrawn</li>
-        <li>Age criteria</li>
-        <li>Additional support</li>
-        <li>Alternative format</li>
-        <li>Fraud</li>
-        <li>Keep customer interactions safe (KCIS)</li>
-        <li>Working abroad</li>
-        <li>Foreign benefits</li>
-        <li>Disability Living Allowance (DLA)</li>
-        <li>Child Disability Payment or Adult Disability Payment</li>
-        <li>Armed Forces Independence Payment (AFIP)</li>
-        <li>War Pensioners' Mobility Supplement (WPMS)</li>
-        <li>Constant Attendance Allowance (CAA)</li>
-        <li>Hospital or similar institutions</li>
-        <li>Care homes</li>
-        <li>Nursing homes</li>
-        <li>Residential schools or colleges</li>
-        <li>Prison or legal custody</li>
-      </ul> -->
 
       {% else %}
 
@@ -127,7 +94,7 @@
         name: "payability-check",
         fieldset: {
           legend: {
-            text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+            text: "Will the effect the payments?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }

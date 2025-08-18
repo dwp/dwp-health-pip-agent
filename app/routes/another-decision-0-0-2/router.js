@@ -1624,6 +1624,9 @@ router.post(`/entry-home-processing-options-router`, (req, res) => {
   else if (processType == 'MakeMRChange') {
     res.redirect(`help-processing-notes`)
   }
+  else if (processType == 'MakeMRNilPay') {
+    res.redirect(`help-processing-notes`)
+  }
   else if (processType == 'MakeAW') {
     res.redirect(`MakeAW`)
   }
@@ -1721,10 +1724,10 @@ router.post(`/award-dates-review-check-router`, (req, res) => {
   const awardDateReviewCheck = req.session.data['award-dates-review-check']
 
   if (awardDateReviewCheck == 'Yes') {
-    res.redirect(`award-dates-review-exit`)
+    res.redirect(`payability-check`)
   }
   else if (awardDateReviewCheck == 'No') {
-    res.redirect(`payability-check`)
+    res.redirect(`award-dates-review-manual`)
   }
    else {
     res.redirect(`an-de-tasklist`)
@@ -1734,10 +1737,10 @@ router.post(`/award-dates-review-check-router`, (req, res) => {
 router.post(`/payability-check-router`, (req, res) => {
   const payabilityCheck = req.session.data['payability-check']
 
-  if (payabilityCheck == 'Yes') {
+  if (payabilityCheck == 'No') {
     res.redirect(`payability-reasons`)
   }
-  else if (payabilityCheck == 'No') {
+  else if (payabilityCheck == 'Yes') {
     res.redirect(`cya-letter-review`)
   }
    else {
@@ -1820,26 +1823,92 @@ router.post(`/payability-check-router`, (req, res) => {
 })
 
 
+
+// Outbound calls
+
+router.post(`/obc-payability-check-router`, (req, res) => {
+  const obcPayabilityCheck = req.session.data['obc-payability-check']
+
+  if (obcPayabilityCheck == 'Yes') {
+    res.redirect(`obc-callguide`)
+  }
+  else if (obcPayabilityCheck == 'No') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`xxx`)
+  }
+})
+
 // Change task list
 
 router.post(`/obc-change-tasklist-item-1-router`, (req, res) => {
   const obcTL1 = req.session.data['obc-change-tasklist-item-1']
 
-  if (obcTL1 == 'Expected') {
+  if (obcTL1 == 'Yes') {
     res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-1-details`)
   }
-  else if (obcTL1 == 'Unexpected') {
-    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
+  else if (obcTL1 == 'No') {
+    res.redirect(`obc-callguide`)
   }
-  else if (obcTL1 == 'Pause') {
-    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
+  else if (obcTL1 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
   }
   else {
-    res.redirect(`obc-pre-decision-changes/obc-change-tasklist`)
+    res.redirect(`obc-callguide`)
   }
 })
 
+router.post(`/obc-change-tasklist-item-2-router`, (req, res) => {
+  const obcTL2 = req.session.data['obc-change-tasklist-item-2']
 
+  if (obcTL2 == 'Yes') {
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-2-details`)
+  }
+  else if (obcTL2 == 'No') {
+    res.redirect(`obc-callguide`)
+  }
+  else if (obcTL2 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+router.post(`/obc-change-tasklist-item-3-router`, (req, res) => {
+  const obcTL3 = req.session.data['obc-change-tasklist-item-3']
+
+  if (obcTL3 == 'Yes') {
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-3-details`)
+  }
+  else if (obcTL3 == 'No') {
+    res.redirect(`obc-callguide`)
+  }
+  else if (obcTL3 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+router.post(`/obc-change-tasklist-item-8-router`, (req, res) => {
+  const obcTL8 = req.session.data['obc-change-tasklist-item-8']
+
+  if (obcTL8 == 'Yes') {
+    res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-8-details`)
+  }
+  else if (obcTL8 == 'No') {
+    res.redirect(`obc-callguide`)
+  }
+  else if (obcTL8 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
 
 
 

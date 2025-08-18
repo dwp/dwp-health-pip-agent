@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="payability-check-location" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have entered the following details into paying safe</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p>
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">details of why it might not be safe to pay</td>
+          <td class="govuk-table__cell">obc-change-tasklist-item-2-details</td>
+        </tr>
+
+      </tbody>
+      </table>
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "payability-check-paysafe",
+      name: "payability-check-paysafe",
+      fieldset: {
+        legend: {
+          text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["payability-check-paysafe"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "No",
+        checked: (data["payability-check-paysafe"] == "No")
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

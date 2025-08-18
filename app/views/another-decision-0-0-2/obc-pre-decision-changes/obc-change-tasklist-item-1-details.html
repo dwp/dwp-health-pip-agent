@@ -1,14 +1,13 @@
-{% extends "layout-process-mr.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  PIP claimant record
+  Process a PIP application
 {% endblock %}
-
-
 
 {% block header %}
-  {% include "another-decision-0-0-2/call-status.html" %}
+ {% include "an-de-mr-call-bar-active.html" %}
 {% endblock %}
+
 {% block content %}
 
 {% include "another-decision-0-0-2/record-id.html" %}
@@ -17,35 +16,27 @@
 {% if data["obc-change-tasklist-item-2"] %}
 <form action="obc-change-tasklist" method="post" class="form">
 {% else %}
-<form action="obc-change-tasklist" method="post" class="form">
+<form action="obc-change-tasklist-item-2" method="post" class="form">
 <!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
 {% endif %}
 
-      {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
-
-
-    {% else %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Call guide",
-          href: "obc-why"
-        },
-        {
-          text: "Change taskList",
-          href: "obc-change-tasklist"
-        },
-        {
-          text: "Name of thing",
-          href: "obc-change-tasklist-item-1"
-        }
-      ]
-    }) }}
-
-
-    {% endif %}
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "obc-why"
+    },
+    {
+      text: "Change taskList",
+      href: "obc-change-tasklist"
+    },
+    {
+      text: "Name of thing",
+      href: "obc-change-tasklist-item-1"
+    }
+  ]
+}) }}
 
 
 
@@ -55,11 +46,11 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What has changed for 'obc-change-tasklist-item-1'</h2>
-
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What are their new bank detials </h2>
+<!-- ['obc-change-tasklist-item-1'] -->
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
-
+<!--
           {{ govukTextarea({
             name: "obc-change-tasklist-item-1-details",
             id: "obc-change-tasklist-item-1-details",
@@ -73,7 +64,91 @@
               html: legendCanned
             },
             value: data["obc-change-tasklist-item-1-details"]
+          }) }} -->
+
+          {{ govukInput({
+            label: {
+              text: "Name on account"
+            },
+            id: "obc-change-tasklist-item-1-name-of-bank",
+            name: "obc-change-tasklist-item-1-name-on-account",
+            classes: "govuk-input--width-20",
+            value: data["obc-change-tasklist-item-1-name-on-account"]
           }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Bank name"
+            },
+            id: "obc-change-tasklist-item-1-name-on-account",
+            name: "obc-change-tasklist-item-1-name-on-account",
+            classes: "govuk-input--width-20",
+            value: data["obc-change-tasklist-item-1-name-on-account"]
+          }) }}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-1-sort-code",
+      id: "obc-change-tasklist-item-1-sort-code",
+      classes: "govuk-input--width-10",
+      value: data["obc-change-tasklist-item-1-sort-code"],
+      label: {
+        text: "Sort code"
+      }
+    }) }}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-1-account number",
+      id: "obc-change-tasklist-item-1-account number",
+      classes: "govuk-input--width-10",
+      value: data["obc-change-tasklist-item-1-account number"],
+      label: {
+        text: "Account number"
+      }
+    }) }}
+
+    {% set buildingSociety %}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-1-roll-number",
+      id: "obc-change-tasklist-item-1-roll-number",
+      classes: "govuk-input--width-20",
+      value: data["obc-change-tasklist-item-1-roll-number"],
+      label: {
+        html: "Roll or reference number"
+      },
+      hint: {
+        text: ""
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "obc-change-tasklist-item-1-roll-number-check",
+      name: "obc-change-tasklist-item-1-roll-number-check",
+      fieldset: {
+        legend: {
+          text: "Does your account have a roll or reference number?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "Yes"),
+        conditional: {
+          html: buildingSociety
+        }
+      },
+      {
+          value: "No",
+          text: "No",
+          checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "No")
+      }
+      ]
+    }) }}
+
 
           {{ govukButton({
             text: "Continue",

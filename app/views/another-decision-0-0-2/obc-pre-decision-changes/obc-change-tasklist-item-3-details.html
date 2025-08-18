@@ -1,0 +1,268 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-2/record-id.html" %}
+
+
+{% if data["obc-change-tasklist-item-3"] %}
+<form action="../obc-callguide" method="post" class="form">
+{% else %}
+<form action="../obc-change-tasklist-item-8" method="post" class="form">
+<!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
+{% endif %}
+
+
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "obc-why"
+    },
+    {
+      text: "Change taskList",
+      href: "obc-change-tasklist"
+    },
+    {
+      text: "Name of thing",
+      href: "obc-change-tasklist-item-3"
+    }
+  ]
+}) }}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">XYZ tempory care details</h2>
+
+          {{ govukInput({
+            label: {
+              text: "Name of the place"
+            },
+            id: "obc-change-tasklist-item-3-name",
+            name: "obc-change-tasklist-item-3-name",
+            classes: "govuk-input--width-20",
+            value: data["obc-change-tasklist-item-3-name"]
+          }) }}
+
+          {{ govukTextarea({
+            name: "obc-change-tasklist-item-3-contact",
+            id: "obc-change-tasklist-item-3-contact",
+        rows: "3",
+        label: {
+          text: "",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Contact details"
+        },
+        value: data["obc-change-tasklist-item-3-contact"]
+      }) }}
+
+      {{ govukTextarea({
+        name: "obc-change-tasklist-item-3-address",
+        id: "obc-change-tasklist-item-3-address",
+    rows: "3",
+    label: {
+      text: "",
+      classes: "govuk-label--l",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Address"
+    },
+    value: data["obc-change-tasklist-item-3-address"]
+  }) }}
+
+
+<!-- ————————————————————— -->
+
+    {% set dynamicFundingType %}
+
+    {{ govukTextarea({
+      name: "obc-change-tasklist-item-3-funding-details",
+      id: "obc-change-tasklist-item-3-funding-details",
+  rows: "3",
+  label: {
+    text: "",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Funding detials"
+  },
+  value: data["obc-change-tasklist-item-3-funding-details"]
+}) }}
+
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "obc-change-tasklist-item-3-funding-type",
+      name: "obc-change-tasklist-item-3-funding-type",
+      fieldset: {
+        legend: {
+          text: "Who funds this?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+    {
+      value: "Yes",
+      text: "Myself",
+      checked: (data["obc-change-tasklist-item-3-funding-type"] == "Yes"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      },
+      {
+      value: "No",
+      text: "Local authority",
+      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "No")
+      },
+      {
+      value: "Dont Know",
+      text: "Dont Know",
+      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "Dont Know"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      }
+      ]
+    }) }}
+
+
+    <!-- ————————————————————— -->
+
+
+    <!-- ————————————————————— -->
+
+        {% set stayLength %}
+
+        {{ govukTextarea({
+          name: "obc-change-tasklist-item-3-tempory-acc-check-details",
+          id: "obc-change-tasklist-item-3-tempory-acc-check-details",
+      rows: "3",
+      label: {
+        text: "",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "About the stays in hospital detials"
+      },
+      value: data["obc-change-tasklist-item-3-tempory-acc-check-details"]
+    }) }}
+
+        {% endset -%}
+
+        {% set stayLengthSingle %}
+
+        {{ govukDateInput({
+          name: "obc-change-tasklist-item-3-tempory-acc-date-in",
+          id: "obc-change-tasklist-item-3-tempory-acc-date-in",
+          fieldset: {
+            legend: {
+              text: "When did you go in?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          value: data["obc-change-tasklist-item-3-tempory-acc-date-in"]
+        }) }}
+
+        {{ govukDateInput({
+          name: "obc-change-tasklist-item-3-tempory-acc-date-out",
+          id: "obc-change-tasklist-item-3-tempory-acc-date-out",
+          fieldset: {
+            legend: {
+              text: "When did you leave?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          value: data["obc-change-tasklist-item-3-tempory-acc-date-out"]
+        }) }}
+
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: "obc-change-tasklist-item-3-tempory-acc-check",
+          name: "obc-change-tasklist-item-3-tempory-acc-check",
+          fieldset: {
+            legend: {
+              text: "What this a single unbroken stay in X?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+        {
+          value: "Yes",
+          text: "Yes - I was only in once",
+          checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "Yes"),
+            conditional: {
+              html: stayLengthSingle
+            }
+          },
+          {
+          value: "No",
+          text: "No - I was in and out",
+          checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "No"),
+            conditional: {
+              html: stayLength
+            }
+          },
+          {
+          value: "Dont Know",
+          text: "Dont Know",
+          checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "Dont Know"),
+            conditional: {
+              html: stayLength
+            }
+          }
+          ]
+        }) }}
+
+
+        <!-- ————————————————————— -->
+
+
+
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

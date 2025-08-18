@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-2/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have entered the following details into location</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p>
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">The following things will happen:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>This decision will be checked by someone else as bank details have changed</li>
+        <li>Call recording will be listened too</li>
+    </ul> -->
+
+
+    <table class="govuk-table govuk-!-margin-bottom-8">
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Name of place </td>
+        <td class="govuk-table__cell">19 March 2024</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Contact detials</td>
+        <td class="govuk-table__cell">1 March 2024</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Address</td>
+        <td class="govuk-table__cell">Today</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Who funds this?</td>
+        <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Who funds this? / Funding detials</td>
+        <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">What this a single unbroken stay in X?</td>
+        <td class="govuk-table__cell">Less than one month <br>(More than one month)<br>(More than 13 months)</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Single</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Other</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "payability-check-paysafe",
+      name: "payability-check-paysafe",
+      fieldset: {
+        legend: {
+          text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["payability-check-paysafe"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "No",
+        checked: (data["payability-check-paysafe"] == "No")
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

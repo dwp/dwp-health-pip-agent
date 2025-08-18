@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="an-de-exit-mr-reg-early-router" method="post" class="form">
+<form action="an-de-exit-mr-process-early-router" method="post" class="form">
 
   {% include "another-decision-0-0-2/record-id-base.html" %}
 
@@ -19,11 +19,11 @@
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
-        idPrefix: "an-de-exit-mr-reg-early",
-        name: "an-de-exit-mr-reg-early",
+        idPrefix: "an-de-exit-mr-process-early",
+        name: "an-de-exit-mr-process-early",
         fieldset: {
           legend: {
-            text: "Why can you not complete the mandatory reconsideration decision?",
+            text: "Why can you not complete the mandatory reconsideration registration?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -33,25 +33,32 @@
         },
         items: [
         {
-          value: "Calldrop",
-          text: "???",
+          value: "Rad",
+          text: "Something rad happened I wasnt expecting",
           hint: {
             text: ""},
-          checked: (data["an-de-exit-mr-reg-early"] == "Calldrop")
+          checked: (data["an-de-exit-mr-process-early"] == "Rad")
+        },
+        {
+          value: "Calldrop",
+          text: "The call disconnected",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Calldrop")
         },
         {
           value: "Cantcomplete",
-          text: "XXX",
+          text: "The person wants to complete the registration at another time",
           hint: {
             text: ""},
-          checked: (data["an-de-exit-mr-reg-early"] == "Cantcomplete")
+          checked: (data["an-de-exit-mr-process-early"] == "Cantcomplete")
         },
         {
           value: "Withdraw",
-          text: "XXX",
+          text: "The person does not want to continue with the mandatory reconsideration",
           hint: {
             text: ""},
-          checked: (data["an-de-exit-mr-reg-early"] == "Withdraw")
+          checked: (data["an-de-exit-mr-process-early"] == "Withdraw")
         }
         ]
         }) }}

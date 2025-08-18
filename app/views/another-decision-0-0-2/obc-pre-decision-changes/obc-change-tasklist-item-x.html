@@ -10,6 +10,14 @@
 
 {% block content %}
 
+ {% if data["application-selector"] == "A" %} {% include "explore-header-global-nav-multi-bail.html" %}
+ {% else %}                                   {% include "explore-header-global-nav-multi.html" %}
+ {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
 {% include "another-decision-0-0-2/record-id.html" %}
 
 {{ govukBreadcrumbs({
@@ -17,7 +25,7 @@
   items: [
     {
       text: "Call guide",
-      href: "../obc-callguide"
+      href: "obc-why"
     },
     {
       text: "Change taskList",
@@ -27,7 +35,7 @@
 }) }}
 
 {% if data["obc-change-tasklist-item-2"] %}
-<form action="../obc-callguide" method="post" class="form">
+<form action="../obc-change-tasklist" method="post" class="form">
 {% else %}
 <form action="../obc-change-tasklist-item-1-router" method="post" class="form">
 {% endif %}
@@ -35,45 +43,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!------------Q2 LEGEND------------>
-        {% set dynamicHint %}
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Bank name: <b>Halifax</b>
-
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Last four digits account number: <b>4563</b>
-
-        {% endset %}
-      <!------------Legend--------------->
-
-
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
         idPrefix: "obc-change-tasklist-item-1",
         name: "obc-change-tasklist-item-1",
         fieldset: {
           legend: {
-            html: "Has their bank details changed since the original decision?",
+            html: "Has XXX changed since the orginal decision?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
         },
-        hint: {
-          html: dynamicHint
-        },
         items: [
         {
-          value: "Yes",
+          value: "Expected",
           text: "Yes",
-          checked: (data["obc-change-tasklist-item-1"] == "Yes")
+          checked: (data["obc-change-tasklist-item-1"] == "Expected")
         },
         {
-          value: "No",
+          value: "Unexpected",
           text: "No",
-          checked: (data["obc-change-tasklist-item-1"] == "No")
+          checked: (data["obc-change-tasklist-item-1"] == "Unexpected")
         },
         {
-          value: "NotRequired",
-          text: "Not required",
-          checked: (data["obc-change-tasklist-item-1"] == "NotRequired")
+          value: "XXX",
+          text: "Not going into payment",
+          checked: (data["obc-change-tasklist-item-1"] == "XXX")
+        },
+        {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["obc-change-tasklist-item-1"] == "Pause")
         }
         ]
         }) }}

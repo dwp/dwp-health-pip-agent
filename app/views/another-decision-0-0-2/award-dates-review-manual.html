@@ -9,7 +9,16 @@
 {% endblock %}
 {% block content %}
 
-<form action="payability-check" method="post" class="form">
+
+  {% if data["obc-payability-check"] == "No" %}
+  <form action="cya-letter-review" method="post" class="form">
+    No payment risk
+  {% else %}
+  <form action="payability-check-bank" method="post" class="form">
+    Payment risk
+  {% endif %}
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
