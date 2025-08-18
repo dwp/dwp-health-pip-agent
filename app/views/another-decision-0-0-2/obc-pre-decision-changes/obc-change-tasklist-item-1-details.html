@@ -14,7 +14,7 @@
 
 
 {% if data["obc-change-tasklist-item-2"] %}
-<form action="obc-change-tasklist" method="post" class="form">
+<form action="../obc-callguide" method="post" class="form">
 {% else %}
 <form action="obc-change-tasklist-item-2" method="post" class="form">
 <!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
@@ -46,7 +46,7 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What are their new bank detials </h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Enter their new payment details</h2>
 <!-- ['obc-change-tasklist-item-1'] -->
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
@@ -78,7 +78,7 @@
 
           {{ govukInput({
             label: {
-              text: "Bank name"
+              text: "Bank, building society or credit union name"
             },
             id: "obc-change-tasklist-item-1-name-on-account",
             name: "obc-change-tasklist-item-1-name-on-account",

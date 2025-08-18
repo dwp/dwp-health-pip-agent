@@ -44,7 +44,7 @@
 
 
         {% if data["system-application-selector"]  == "1" %}
-        [~The applicant will not be given PIP]
+        [The applicant will not be given PIP]
 
         {% else %}
 
@@ -316,6 +316,9 @@ M
                 }
                 ]
               }) }}
+
+
+              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
 
       <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Daily living activities</h3>
@@ -840,41 +843,383 @@ M
       </dl>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Call details</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payability details</h3>
 
-      {% set DynamicSelectedDocumentsList %}
-      {{ data["call-notes"]}}
-          {% endset %}
+      {% set paymentCheck %}
+      {% if data["obc-change-tasklist-item-2"] %}
+      {{ data["obc-change-tasklist-item-2"]}}
+      {% else %}
+      Yes/No
+      {% endif %}
+      {% endset -%}
 
-          {{ govukSummaryList({
-            classes: "govuk-summary-list--no-border",
-            rows: [
-            {
-              key: {
-                text: "Saved decision notes"
-              },
-              value: {
-                html:
-                DynamicSelectedDocumentsList
-              },
-              actions: {
-                items: [
+      {% set largePayment %}
+      {% if data["obc-change-tasklist-item-2-details"] %}
+      {{ data["obc-change-tasklist-item-2-details"]}}
+      {% else %}
+      Details
+      {% endif %}
+      {% endset -%}
+
+
+
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is there a reason why the person might struggle with a large payment?"
+            },
+            value: {
+              html: paymentCheck
+            },
+            actions: {
+              items: [
                 {
-                  href: "help-tidy-processing-notes",
-                  text: "Change",
-                  visuallyHiddenText: "name"
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Why might the person struggle with a large payment?"
+            },
+            value: {
+              html: largePayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
                 }
                 ]
-              }
+                }
+                }
+                ]
+                }) }}
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payment details</h3>
+
+
+
+      {% set changeInPayment %}
+      {% if data["obc-change-tasklist-item-1"] %}
+      {{ data["obc-change-tasklist-item-1"]}}
+      {% else %}
+      changeInPayment
+      {% endif %}
+      {% endset -%}
+
+      {% set nameOnAccount %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      nameOnAccount
+      {% endif %}
+      {% endset -%}
+
+      {% set bankName %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      bankName
+      {% endif %}
+      {% endset -%}
+
+      {% set sortCode %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      sortCode
+      {% endif %}
+      {% endset -%}
+
+      {% set accountNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      accountNumber
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      rollNumber
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Has their bank details changed since the original decision?"
+            },
+            value: {
+              html: changeInPayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
             }
-            ]
-          }) }}
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              html: nameOnAccount
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              html: nameOnAccount
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Bank, building society or credit union name"
+            },
+            value: {
+              text: bankName
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: sortCode
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: accountNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does your account have a roll or reference number?"
+            },
+            value: {
+              text: rollNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Care home details</h3>
 
-      {% set DynamicSelectedDocumentsList %}
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home name</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-name"] %}
+              {{ data["obc-change-tasklist-item-3-name"]}}
+            {% else %}
+              Name
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Contact details</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-contact"] %}
+              {{ data["obc-change-tasklist-item-3-contact"]}}
+            {% else %}
+              Details
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home address</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-address"] %}
+              {{ data["obc-change-tasklist-item-3-address"]}}
+            {% else %}
+              Address line
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">How is the person's stay in the care home funded</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-funding-type"] %}
+              {{ data["obc-change-tasklist-item-3-funding-type"]}}
+            {% else %}
+              The man
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Funding type</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-funding-details"] %}
+              {{ data["obc-change-tasklist-item-3-funding-details"]}}
+            {% else %}
+              XXX
+            {% endif %}
+
+          </td>      </tr>
+
+          <tr class="govuk-table__row">
+          <td class="govuk-table__header">Was this a single continuous stay?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-check"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-check"]}}
+            {% else %}
+              obc-change-tasklist-item-3-tempory-acc-check
+            {% endif %}
+
+          </td>      </tr>
+
+
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Care home stay details</td>
+            <td class="govuk-table__cell">
+
+              {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+                {{ data["obc-change-tasklist-item-3-tempory-acc-check-details"]}}
+              {% else %}
+                Several times over the last month
+              {% endif %}
+
+            </td>
+          </tr>
+
+              {% else %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">When did they go into the care home?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-date-in"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-date-in"]}}
+            {% else %}
+            DD Month Year
+            {% endif %}
+
+          </td>      </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">When did they leave the care home?</td>
+            <td class="govuk-table__cell">
+
+              {% if data["obc-change-tasklist-item-3-tempory-acc-date-out"] %}
+                {{ data["obc-change-tasklist-item-3-tempory-acc-date-out"]}}
+              {% else %}
+                DD Month Year
+              {% endif %}
+
+            </td>      </tr>
+
+            {% endif %}
+
+      </tbody>
+      </table>
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Processing details</h3>
+
+
+      {% set myDecisionNotes %}
       {{ data["call-notes"]}}
-          {% endset %}
+      {% endset %}
 
           {{ govukSummaryList({
             classes: "govuk-summary-list--no-border",
@@ -885,7 +1230,7 @@ M
               },
               value: {
                 html:
-                DynamicSelectedDocumentsList
+                myDecisionNotes
               },
               actions: {
                 items: [
@@ -915,13 +1260,34 @@ M
 
               <!------------CheckBox Hint------------>
 
-              <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-6">Going back to PIPcs bro</h3>
-
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This information will be stored as the decision.</p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter you will send will need to be saved manually. </p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX </p>
                 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
 
               <!------------Legend--------------->
+
+              {{ govukCheckboxes({
+                idPrefix: "ConfimLetter",
+                name: "ConfimLetter",
+                fieldset: {
+                  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
+                  legend: {
+                    text: "Moving to PIPCS",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+                  }
+                },
+                hint: {
+                  html: dynamicCheckBoxHintPayment
+                },
+                items: [
+                  {
+                    value: "ConfimLetter",
+                    text: "I confirm that I have completed the move to PIPCS.",
+                    checked: (data["application-about-a9-score-overwrite"] == "0")
+                  }
+                ]
+              }) }}
 
 
               {% else %}
@@ -930,9 +1296,8 @@ M
 
                 {% set dynamicCheckBoxHintPayment %}
 
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Use 'My decision notes' to help you write your justification for the letter.</p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter you will send will need to be saved manually. </p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will need to manually send the letter and save it [where]?</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">???</p>
 
                 {% endset %}
               <!------------Legend--------------->
@@ -954,7 +1319,7 @@ M
                 items: [
                   {
                     value: "ConfimLetter",
-                    text: "I confirm that I have fully checked the information for the decision letter.",
+                    text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
                     checked: (data["application-about-a9-score-overwrite"] == "0")
                   }
                 ]

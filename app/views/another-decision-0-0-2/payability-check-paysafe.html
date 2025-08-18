@@ -16,21 +16,23 @@
 
       {% include "another-decision-0-0-2/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have entered the following details into paying safe</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have indicated that the person might struggle with a large payment</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p> -->
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Original decision score for 'Making budgeting decisions':</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions</p>
 
 
-      <table class="govuk-table govuk-!-margin-bottom-8">
+<h3 class="govuk-heading-s govuk-!-margin-bottom-2">Details why might the person struggle with a large payment:</h3>
 
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__header">details of why it might not be safe to pay</td>
-          <td class="govuk-table__cell">obc-change-tasklist-item-2-details</td>
-        </tr>
-
-      </tbody>
-      </table>
+<p class="govuk-body govuk-!-margin-bottom-8">
+{% if data["obc-change-tasklist-item-2-details"] %}
+  {{ data["obc-change-tasklist-item-2-details"]}}
+{% else %}
+  No details added
+{% endif %}
+</p>
 
     {{ govukRadios({
       classes: "govuk-radios",
@@ -38,7 +40,7 @@
       name: "payability-check-paysafe",
       fieldset: {
         legend: {
-          text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+          text: "Will this issue  mean they will also struggle to manage their regular payments?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }

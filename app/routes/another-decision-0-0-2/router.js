@@ -1849,7 +1849,7 @@ router.post(`/obc-change-tasklist-item-1-router`, (req, res) => {
     res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-1-details`)
   }
   else if (obcTL1 == 'No') {
-    res.redirect(`obc-callguide`)
+    res.redirect(`./obc-pre-decision-changes/obc-change-tasklist-item-2`)
   }
   else if (obcTL1 == 'NotRequired') {
     res.redirect(`obc-callguide`)
@@ -1866,7 +1866,7 @@ router.post(`/obc-change-tasklist-item-2-router`, (req, res) => {
     res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-2-details`)
   }
   else if (obcTL2 == 'No') {
-    res.redirect(`obc-callguide`)
+    res.redirect(`./obc-pre-decision-changes/obc-change-tasklist-item-3`)
   }
   else if (obcTL2 == 'NotRequired') {
     res.redirect(`obc-callguide`)
@@ -1883,7 +1883,7 @@ router.post(`/obc-change-tasklist-item-3-router`, (req, res) => {
     res.redirect(`obc-pre-decision-changes/obc-change-tasklist-item-3-details`)
   }
   else if (obcTL3 == 'No') {
-    res.redirect(`obc-callguide`)
+    res.redirect(`./obc-pre-decision-changes/obc-change-tasklist-item-8`)
   }
   else if (obcTL3 == 'NotRequired') {
     res.redirect(`obc-callguide`)

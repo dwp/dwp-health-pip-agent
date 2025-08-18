@@ -12,7 +12,7 @@
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="obc-pre-decision-changes/obc-change-tasklist-item-1" aria-describedby="task-X">
-            <!-- [1-1]  --> Change in payment method
+            <!-- [1-1]  --> Change in payment details
           </a>
           {% if data["obc-change-tasklist-item-1"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Changed</strong>
           {% elif data["obc-change-tasklist-item-1"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Not changed</strong>
@@ -24,7 +24,7 @@
 
         <li class="app-task-list__item">
           <a class="app-task-list__task-name" href="obc-pre-decision-changes/obc-change-tasklist-item-2" aria-describedby="task-X">
-            <!-- [1-2]  --> Safe to pay
+            <!-- [1-2]  --> Large payments
           </a>
           {% if data["obc-change-tasklist-item-2"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Support needed</strong>
           {% elif data["obc-change-tasklist-item-2"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>

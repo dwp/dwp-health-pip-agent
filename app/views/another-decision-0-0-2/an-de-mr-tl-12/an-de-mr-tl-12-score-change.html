@@ -21,7 +21,7 @@
     classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
     items: [
       {
-        text: "Make an MR decision",
+        text: "Reconsider a decision",
         href: "an-de-tasklist"
       },
       {
@@ -39,7 +39,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for [activity name] instead of Descriptor A (0 points)?
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for moving around instead of Descriptor A (0 points)?
             </h2>
             {% endset %}
       <!------------Legend--------------->
@@ -79,11 +79,6 @@
         classes: "govuk-radios",
         items: [
         {
-          value: "a1",
-          html: "<strong>Descriptor A (0 points):</strong> Can stand and then move more than 200 metres, either aided or unaided",
-          checked: (data["an-de-mr-tl-12-score-change"] == "0")
-        },
-        {
           value: "b2",
           html: "<strong>Descriptor B (4 points):</strong> Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided",
           checked: (data["an-de-mr-tl-12-score-change"] == "4")
@@ -115,8 +110,8 @@
       <!-- THIS IS THE SELECTED DESCRiPTOR
       {
         value: "a1",
-        html: "<strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided",
-        checked: (data["application-5-about-a12-score-overwrite"] == "a1")
+        html: "<strong>Descriptor A (0 points):</strong> Can stand and then move more than 200 metres, either aided or unaided",
+        checked: (data["an-de-mr-tl-12-score-change"] == "0")
       },
     -->
 

@@ -13,10 +13,10 @@
 {% include "another-decision-0-0-2/record-id.html" %}
 
 
-{% if data["obc-change-tasklist-item-3"] %}
+{% if data["obc-change-tasklist-item-8"] %}
 <form action="../obc-callguide" method="post" class="form">
 {% else %}
-<form action="../obc-change-tasklist-item-8" method="post" class="form">
+<form action="obc-change-tasklist-item-8" method="post" class="form">
 <!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
 {% endif %}
 
@@ -27,15 +27,11 @@
   items: [
     {
       text: "Call guide",
-      href: "obc-why"
+      href: "../obc-callguide"
     },
     {
-      text: "Change taskList",
-      href: "obc-change-tasklist"
-    },
-    {
-      text: "Name of thing",
-      href: "obc-change-tasklist-item-3"
+      text: "Care home",
+      href: ""
     }
   ]
 }) }}
@@ -48,11 +44,11 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">XYZ tempory care details</h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Care home details</h2>
 
           {{ govukInput({
             label: {
-              text: "Name of the place"
+              text: "Care home name"
             },
             id: "obc-change-tasklist-item-3-name",
             name: "obc-change-tasklist-item-3-name",
@@ -85,7 +81,7 @@
       isPageHeading: true
     },
     hint: {
-      text: "Address"
+      text: "Care home address"
     },
     value: data["obc-change-tasklist-item-3-address"]
   }) }}
@@ -101,45 +97,48 @@
   rows: "3",
   label: {
     text: "",
-    classes: "govuk-label--l",
+    classes: "govuk-label--s",
     isPageHeading: true
   },
   hint: {
-    text: "Funding detials"
+    text: "Funding details"
   },
   value: data["obc-change-tasklist-item-3-funding-details"]
 }) }}
 
     {% endset -%}
 
+    <br>
+
+
     {{ govukRadios({
       idPrefix: "obc-change-tasklist-item-3-funding-type",
       name: "obc-change-tasklist-item-3-funding-type",
       fieldset: {
         legend: {
-          text: "Who funds this?",
+          text: "How is the person's stay in the care home funded?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
+          classes: "govuk-fieldset__legend--m "
         }
       },
       items: [
     {
-      value: "Yes",
-      text: "Myself",
-      checked: (data["obc-change-tasklist-item-3-funding-type"] == "Yes"),
+      value: "The person funds it themselves",
+      text: "The person funds it themselves",
+      checked: (data["obc-change-tasklist-item-3-funding-type"] == "The person funds it themselves")
+      },
+      {
+      value: "By the local authority",
+      text: "By the local authority",
+      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "By the local authority"),
         conditional: {
           html: dynamicFundingType
         }
       },
       {
-      value: "No",
-      text: "Local authority",
-      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "No")
-      },
-      {
-      value: "Dont Know",
-      text: "Dont Know",
-      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "Dont Know"),
+      value: "Not known",
+      text: "Not known",
+      checked: (data["obc-change-tasklist-item-1-roll-number-check"] == "Not known"),
         conditional: {
           html: dynamicFundingType
         }
@@ -165,7 +164,7 @@
         isPageHeading: true
       },
       hint: {
-        text: "About the stays in hospital detials"
+        text: "About the stays in a care home"
       },
       value: data["obc-change-tasklist-item-3-tempory-acc-check-details"]
     }) }}
@@ -179,7 +178,7 @@
           id: "obc-change-tasklist-item-3-tempory-acc-date-in",
           fieldset: {
             legend: {
-              text: "When did you go in?",
+              text: "When did they go into the care home?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -195,7 +194,7 @@
           id: "obc-change-tasklist-item-3-tempory-acc-date-out",
           fieldset: {
             legend: {
-              text: "When did you leave?",
+              text: "When did they leave the care home? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
@@ -208,6 +207,7 @@
 
         {% endset -%}
 
+<br>
 
 
         {{ govukRadios({
@@ -215,15 +215,15 @@
           name: "obc-change-tasklist-item-3-tempory-acc-check",
           fieldset: {
             legend: {
-              text: "What this a single unbroken stay in X?",
+              text: "Was this a single continuous stay? ",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
         {
           value: "Yes",
-          text: "Yes - I was only in once",
+          text: "Yes, the person only stayed in the care home once",
           checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "Yes"),
             conditional: {
               html: stayLengthSingle
@@ -231,16 +231,16 @@
           },
           {
           value: "No",
-          text: "No - I was in and out",
+          text: "No, the person had multiple stays",
           checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "No"),
             conditional: {
               html: stayLength
             }
           },
           {
-          value: "Dont Know",
-          text: "Dont Know",
-          checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "Dont Know"),
+          value: "Not known",
+          text: "Not known",
+          checked: (data["obc-change-tasklist-item-3-tempory-acc-check"] == "Not known"),
             conditional: {
               html: stayLength
             }

@@ -20,13 +20,13 @@
       href: "../obc-callguide"
     },
     {
-      text: "Change taskList",
-      href: "obc-change-tasklist"
+      text: "Care home",
+      href: ""
     }
   ]
 }) }}
 
-{% if data["obc-change-tasklist-item-3"] %}
+{% if data["obc-change-tasklist-item-8"] %}
 <form action="../obc-callguide" method="post" class="form">
 {% else %}
 <form action="../obc-change-tasklist-item-3-router" method="post" class="form">
@@ -51,7 +51,7 @@
         name: "obc-change-tasklist-item-3",
         fieldset: {
           legend: {
-            html: "Have they had any time in X between [Date of application] and today?",
+            html: "Has the person spent any time in a care home between 19 March 2024 (Start of application) and today? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

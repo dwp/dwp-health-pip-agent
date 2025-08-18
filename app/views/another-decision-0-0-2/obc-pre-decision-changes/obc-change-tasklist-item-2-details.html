@@ -16,7 +16,7 @@
 {% if data["obc-change-tasklist-item-3"] %}
 <form action="../obc-callguide" method="post" class="form">
 {% else %}
-<form action="../obc-change-tasklist-item-3" method="post" class="form">
+<form action="obc-change-tasklist-item-3" method="post" class="form">
 <!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
 {% endif %}
 
@@ -28,11 +28,7 @@
       href: "obc-why"
     },
     {
-      text: "Change taskList",
-      href: "obc-change-tasklist"
-    },
-    {
-      text: "Name of thing",
+      text: "Change in payment details",
       href: "obc-change-tasklist-item-2"
     }
   ]
@@ -46,16 +42,16 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What are the details? </h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person struggle with a large payment?</h2>
 
           <!------------Dynamic Title------------>
             {% set dynamicTitle %}
 
-            <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
+            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-              <li>What</li>
-              <li>When till when</li>
-              <li>Why</li>
+              <li>Record the reasons why the person might struggle with a large payment</li>
+              <li>Is there anyone else we need to contact about their payments?</li>
+              <li>For example, an appointee or family member.</li>
             </ul>
 
             {% endset %}

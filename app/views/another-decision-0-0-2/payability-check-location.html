@@ -16,9 +16,9 @@
 
       {% include "another-decision-0-0-2/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have entered the following details into location</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">The person has spent time in a care home</h1>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The decision will be referred for quality assurance.</p> -->
 
       <!-- <p class="govuk-body govuk-!-margin-bottom-2">The following things will happen:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
@@ -32,48 +32,153 @@
 
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Name of place </td>
-        <td class="govuk-table__cell">19 March 2024</td>
+        <td class="govuk-table__header">Care home name</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-name"] %}
+            {{ data["obc-change-tasklist-item-3-name"]}}
+          {% else %}
+            Name
+          {% endif %}
+
+        </td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Contact detials</td>
-        <td class="govuk-table__cell">1 March 2024</td>
+        <td class="govuk-table__header">Contact details</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-contact"] %}
+            {{ data["obc-change-tasklist-item-3-contact"]}}
+          {% else %}
+            Details
+          {% endif %}
+
+        </td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Address</td>
-        <td class="govuk-table__cell">Today</td>
+        <td class="govuk-table__header">Care home address</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-address"] %}
+            {{ data["obc-change-tasklist-item-3-address"]}}
+          {% else %}
+            Address line
+          {% endif %}
+
+        </td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Who funds this?</td>
-        <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td>
+        <td class="govuk-table__header">How is the person's stay in the care home funded</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-funding-type"] %}
+            {{ data["obc-change-tasklist-item-3-funding-type"]}}
+          {% else %}
+            The man
+          {% endif %}
+
+        </td>
       </tr>
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Who funds this? / Funding detials</td>
-        <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td>
-      </tr>
+        <td class="govuk-table__header">Funding type</td>
+        <td class="govuk-table__cell">
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__header">What this a single unbroken stay in X?</td>
-        <td class="govuk-table__cell">Less than one month <br>(More than one month)<br>(More than 13 months)</td>
-      </tr>
+          {% if data["obc-change-tasklist-item-3-funding-details"] %}
+            {{ data["obc-change-tasklist-item-3-funding-details"]}}
+          {% else %}
+            XXX
+          {% endif %}
 
-      <tr class="govuk-table__row">
-        <td class="govuk-table__header">Single</td>
-        <td class="govuk-table__cell">Yes</td>
-      </tr>
+        </td>      </tr>
 
+        <tr class="govuk-table__row">
+        <td class="govuk-table__header">Was this a single continuous stay?</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-check"] %}
+            {{ data["obc-change-tasklist-item-3-tempory-acc-check"]}}
+          {% else %}
+            obc-change-tasklist-item-3-tempory-acc-check
+          {% endif %}
+
+        </td>      </tr>
+
+
+
+        {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home stay details</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-check-details"]}}
+            {% else %}
+              Several times over the last month
+            {% endif %}
+
+          </td>
+        </tr>
+
+            {% else %}
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Other</td>
-        <td class="govuk-table__cell">No</td>
-      </tr>
+        <td class="govuk-table__header">When did they go into the care home?</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-date-in"] %}
+            {{ data["obc-change-tasklist-item-3-tempory-acc-date-in"]}}
+          {% else %}
+          DD Month Year
+          {% endif %}
+
+        </td>      </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">When did they leave the care home?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-date-out"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-date-out"]}}
+            {% else %}
+              DD Month Year
+            {% endif %}
+
+          </td>      </tr>
+
+          {% endif %}
+
+
 
     </tbody>
   </table>
 
+
+
+  <!------------H1 LEGEND------------>
+    {% set dynamicHint %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+      What you need to account for:
+
+      <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+        <li>
+          Days under X
+        </li>
+        <li>
+          Break in payment
+        </li>
+        <li>
+          Paid by LA
+        </li>
+      </ul>
+
+    {% endset %}
+  <!------------Legend--------------->
 
 
     {{ govukRadios({
@@ -82,13 +187,13 @@
       name: "payability-check-paysafe",
       fieldset: {
         legend: {
-          text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+          text: "Can we pay them without an uninterrupted payment?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
-        html: legendHint
+        html: dynamicHint
       },
       items: [
       {

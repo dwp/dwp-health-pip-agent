@@ -17,11 +17,11 @@
     classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
     items: [
       {
-        text: "Make an MR decision",
+        text: "Reconsider a decision",
         href: "an-de-tasklist"
       },
       {
-        text: "Preparing food overview",
+        text: "Making budgeting decisions",
         href: "an-de-mr-tl-10-score-change"
       }
     ]
@@ -33,7 +33,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for [activity name] instead of Descriptor A (0 points)?
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for making budgeting decisions instead of Descriptor D (6 points)?
             </h2>
             {% endset %}
       <!------------Legend--------------->
@@ -55,6 +55,11 @@
         classes: "govuk-radios",
         items: [
         {
+          value: "a1",
+          html: "<strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided",
+          checked: (data["an-de-mr-tl-10-score-change"] == "a1")
+        },
+        {
           value: "b2",
           html: "<strong>Descriptor B (2 points):</strong> Needs prompting or assistance to be able to make complex budgeting decisions",
           checked: (data["an-de-mr-tl-10-score-change"] == "b2")
@@ -63,22 +68,18 @@
           value: "c3",
           html: "<strong>Descriptor C (4 points):</strong> Needs prompting or assistance to be able to make simple budgeting decisions",
           checked: (data["an-de-mr-tl-10-score-change"] == "c3")
-        },
-        {
-          value: "d4",
-          html: "<strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all",
-          checked: (data["an-de-mr-tl-10-score-change"] == "d4")
         }
         ]
       }) }}
 
 
       <!-- THIS IS THE SELECTED DESCRiPTOR
+      ,
       {
-        value: "a1",
-        html: "<strong>Descriptor A (0 points):</strong> Can manage complex budgeting decisions unaided",
-        checked: (data["an-de-mr-tl-10-score-change"] == "a1")
-      },
+        value: "d4",
+        html: "<strong>Descriptor D (6 points):</strong> Cannot make any budgeting decisions at all",
+        checked: (data["an-de-mr-tl-10-score-change"] == "d4")
+      }
     -->
 
 

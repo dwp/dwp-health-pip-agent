@@ -19,7 +19,7 @@
     classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
     items: [
       {
-        text: "Make an MR decision",
+        text: "Reconsider a decision",
         href: "an-de-tasklist"
       }
     ]
@@ -30,7 +30,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Making budgeting decisions
           </h1>
 
           {% include "another-decision-0-0-2/an-de-mr-tl-10/an-de-mr-tl-10-extract.html" %}
@@ -40,9 +40,11 @@
             {% set dynamicCTAHeader %}
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity was Descriptor [A (0 points)]. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity Descriptor D (6 points). Do you agree?</h2>
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity was Descriptor [A (0 points)]. Do you agree?</h2>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity Descriptor D (6 points). Do you agree?</h2>
+            {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-0">The original descriptor selected for this activity Descriptor D (6 points). Do you agree?</h2>
             {% else %}
             Scenario not set
             {% endif %}
