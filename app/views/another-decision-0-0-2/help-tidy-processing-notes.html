@@ -20,7 +20,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My decision notes
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Your decision notes
           </h1>
 
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The decision is safe and sound, but there might be some noise in here you need.</p> -->
@@ -28,23 +28,24 @@
           <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These notes will be stored with the decision.</p>
 
 
-          <p class="govuk-body govuk-!-margin-bottom-2">The call process will allow you to:</p>
+          <p class="govuk-body govuk-!-margin-bottom-2">Before saving your notes: </p>
           <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-            <li>Remove any dangerous content</li>
-            <li>Remove anything that doesnt need to be in</li>
-            <li>Make sure the notes are clear for the next person</li>
+            <li>make sure they're clear and understandable for the next person</li>
+            <li>remove anything not relevant to the decision</li>
+            <li>remove any potentially harmful content</li>
+
     </ul>
 
           {{ govukTextarea({
             name: "call-notes",
             id: "call-notes",
             label: {
-              text: "Your processing notes",
+              text: "Your decision notes",
               classes: "govuk-label--s",
               isPageHeading: true
             },
             hint: {
-              text: "Remove any noise"
+              text: ""
             },
             value: data["call-notes"]
           }) }}

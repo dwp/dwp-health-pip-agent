@@ -843,69 +843,6 @@ M
       </dl>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payability details</h3>
-
-      {% set paymentCheck %}
-      {% if data["obc-change-tasklist-item-2"] %}
-      {{ data["obc-change-tasklist-item-2"]}}
-      {% else %}
-      Yes/No
-      {% endif %}
-      {% endset -%}
-
-      {% set largePayment %}
-      {% if data["obc-change-tasklist-item-2-details"] %}
-      {{ data["obc-change-tasklist-item-2-details"]}}
-      {% else %}
-      Details
-      {% endif %}
-      {% endset -%}
-
-
-
-
-
-
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Is there a reason why the person might struggle with a large payment?"
-            },
-            value: {
-              html: paymentCheck
-            },
-            actions: {
-              items: [
-                {
-                  href: "obc-change-tasklist-item-1-details",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Why might the person struggle with a large payment?"
-            },
-            value: {
-              html: largePayment
-            },
-            actions: {
-              items: [
-                {
-                  href: "obc-change-tasklist-item-1-details",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-                ]
-                }
-                }
-                ]
-                }) }}
-
-
       <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payment details</h3>
 
 
@@ -964,27 +901,10 @@ M
         rows: [
           {
             key: {
-              text: "Has their bank details changed since the original decision?"
+              text: "Have their bank details changed since the original decision?"
             },
             value: {
               html: changeInPayment
-            },
-            actions: {
-              items: [
-                {
-                  href: "obc-change-tasklist-item-1-details",
-                  text: "",
-                  visuallyHiddenText: "XXX"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Name on account"
-            },
-            value: {
-              html: nameOnAccount
             },
             actions: {
               items: [
@@ -1084,6 +1004,69 @@ M
         ]
       }) }}
 
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payability details</h3>
+
+      {% set paymentCheck %}
+      {% if data["obc-change-tasklist-item-2"] %}
+      {{ data["obc-change-tasklist-item-2"]}}
+      {% else %}
+      Yes/No
+      {% endif %}
+      {% endset -%}
+
+      {% set largePayment %}
+      {% if data["obc-change-tasklist-item-2-details"] %}
+      {{ data["obc-change-tasklist-item-2-details"]}}
+      {% else %}
+      Details
+      {% endif %}
+      {% endset -%}
+
+
+
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is there a reason why the person might struggle with a large payment?"
+            },
+            value: {
+              html: paymentCheck
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Why might the person struggle with a large payment?"
+            },
+            value: {
+              html: largePayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
+
+
       <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Care home details</h3>
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -1129,7 +1112,7 @@ M
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__header">How is the person's stay in the care home funded</td>
+          <td class="govuk-table__header">How is the person's stay in the care home funded?</td>
           <td class="govuk-table__cell">
 
             {% if data["obc-change-tasklist-item-3-funding-type"] %}
@@ -1214,7 +1197,68 @@ M
       </table>
 
 
-      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Processing details</h3>
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Other help needed from the call</h3>
+
+
+      {% set accountNumber %}
+      {% if data["obc-other-help"] %}
+      {{ data["obc-other-help"]}}
+      {% else %}
+      otherHelpYN
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-other-help-details"] %}
+      {{ data["obc-other-help-details"]}}
+      {% else %}
+      OtherHelp
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Other help?"
+            },
+            value: {
+              html: otherHelpYN
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Other help details"
+            },
+            value: {
+              html: otherHelpDetails
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Decision notes</h3>
 
 
       {% set myDecisionNotes %}
@@ -1236,7 +1280,7 @@ M
                 items: [
                 {
                   href: "help-tidy-processing-notes",
-                  text: "Change",
+                  text: "Edit",
                   visuallyHiddenText: "name"
                 }
                 ]
@@ -1296,8 +1340,8 @@ M
 
                 {% set dynamicCheckBoxHintPayment %}
 
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You will need to manually send the letter and save it [where]?</p>
-                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">???</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You will need to manually send the letter and save it in DRS</p>
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">???</p> -->
 
                 {% endset %}
               <!------------Legend--------------->

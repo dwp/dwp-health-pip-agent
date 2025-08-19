@@ -1,6 +1,6 @@
 
 {% if data["entry-home-processing-options"] == "MakeMRNil" %}
-Nil remains nil
+n
 
               {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}
               <form action="cya-letter-review" method="post" class="form">
@@ -40,7 +40,7 @@ Nil remains nil
 
 
 {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-Nil to pay
+np
 
 
               {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}
@@ -110,5 +110,5 @@ Nil to pay
 
 
 {% else %}
-BS
+0
 {% endif %}

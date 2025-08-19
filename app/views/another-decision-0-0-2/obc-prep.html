@@ -7,7 +7,7 @@
 
 
 {% block header %}
-{% include "an-de-mr-call-bar-ready.html" %}
+{% include "an-de-mr-call-bar-pause.html" %}
 {% endblock %}
 {% block content %}
 
@@ -16,7 +16,7 @@
 
 
 
-  <form action="mr-application-overview" method="post" class="form">
+  <form action="obc-greeting" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -132,51 +132,15 @@
         ]
       }) }}
 
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">(@jeff) Check a few more things in person record before I make a call</a></p>
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">(@jeff) Check a few more things in person record before I make a call</a></p> -->
 
-      <!-- {{ govukCheckboxes({
-        idPrefix: "obc-prep-sms",
-        name: "obc-prep-sms",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "Let the citizen know you are going to call",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "Sending SMS greatly improves probability of call being answered"
-        },
-        items: [
-          {
-            value: "obc-prep-sms",
-            text: "Confirm an SMS was sent prior to call"
-          }
-        ]
-      }) }} -->
+<br>
 
-      <!-- {{ govukCheckboxes({
-        idPrefix: "obc-prep-searchlight",
-        name: "obc-prep-searchlight",
-        classes: "govuk-checkboxes--small",
-        fieldset: {
-          legend: {
-            text: "You will need SearchLight open with your securirty question ready",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "XX"
-        },
-        items: [
-          {
-            value: "obc-prep-searchlight",
-            text: "I have searchLight open and I'm ready to make the call"
-          }
-        ]
-      }) }} -->
+      {{ govukButton({
+        text: "Start call",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
 
         </div>
       </div>

@@ -84,13 +84,13 @@
       </tr>
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Funding type</td>
+        <td class="govuk-table__header">Funding details</td>
         <td class="govuk-table__cell">
 
           {% if data["obc-change-tasklist-item-3-funding-details"] %}
             {{ data["obc-change-tasklist-item-3-funding-details"]}}
           {% else %}
-            XXX
+            Details
           {% endif %}
 
         </td>      </tr>
@@ -102,7 +102,7 @@
           {% if data["obc-change-tasklist-item-3-tempory-acc-check"] %}
             {{ data["obc-change-tasklist-item-3-tempory-acc-check"]}}
           {% else %}
-            obc-change-tasklist-item-3-tempory-acc-check
+            Type of stay
           {% endif %}
 
         </td>      </tr>
@@ -159,21 +159,24 @@
 
 
 
+
+
+
   <!------------H1 LEGEND------------>
     {% set dynamicHint %}
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
-      What you need to account for:
+      You should consider wheher:
 
       <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
         <li>
-          Days under X
+          they spent more than 28 days in the care home
         </li>
         <li>
-          Break in payment
+          their stay was self funded
         </li>
         <li>
-          Paid by LA
+          they have had two or moore distinct stays in the care home less than 28 days apart
         </li>
       </ul>
 
@@ -187,7 +190,7 @@
       name: "payability-check-paysafe",
       fieldset: {
         legend: {
-          text: "Can we pay them without an uninterrupted payment?",
+          text: "Will their payment be affected by their care home stay(s)?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
