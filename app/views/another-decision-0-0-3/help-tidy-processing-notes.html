@@ -1,0 +1,64 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-3/record-id.html" %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Your decision notes
+          </h1>
+
+          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The decision is safe and sound, but there might be some noise in here you need.</p> -->
+
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These notes will be stored with the decision.</p>
+
+
+          <p class="govuk-body govuk-!-margin-bottom-2">Before saving your notes: </p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+            <li>make sure they're clear and understandable for the next person</li>
+            <li>remove anything not relevant to the decision</li>
+            <li>remove any potentially harmful content</li>
+
+    </ul>
+
+          {{ govukTextarea({
+            name: "call-notes",
+            id: "call-notes",
+            label: {
+              text: "Your decision notes",
+              classes: "govuk-label--s",
+              isPageHeading: true
+            },
+            hint: {
+              text: ""
+            },
+            value: data["call-notes"]
+          }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

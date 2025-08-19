@@ -1,0 +1,84 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+{% include "an-de-mr-call-bar-active-wrapup.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="obc-goodbye" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-3/record-id-base.html" %}
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">End of call process</h1> -->
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">XXXX</p> -->
+
+      {% set otherHelpYes %}
+
+      {{ govukTextarea({
+        name: "obc-other-help-details",
+        id: "obc-other-help-details",
+        rows: "4",
+        label: {
+          text: "Record the details of what they would like to tell us",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          html: ""
+        }
+      }) }}
+
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "obc-other-help",
+        name: "obc-other-help",
+        fieldset: {
+          legend: {
+            html: "Is there anything else they would like to tell us?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["obc-other-help"] == "Yes"),
+            conditional: {
+              html: otherHelpYes
+            }
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["obc-other-help"] == "No")
+        }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

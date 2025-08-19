@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-3/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "../obc-callguide"
+    },
+    {
+      text: "Change taskList",
+      href: "obc-change-tasklist"
+    }
+  ]
+}) }}
+
+
+<form action="../obc-change-tasklist-item-8-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!------------Q2 LEGEND------------>
+        {% set dynamicHint %}
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Bank name: <b>Halifax</b>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Last four digits account number: <b>4563</b> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "obc-change-tasklist-item-8",
+        name: "obc-change-tasklist-item-8",
+        fieldset: {
+          legend: {
+            html: "Has the person spent any time outside of the UK between 19 March 2024 (Start of application) and today? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["obc-change-tasklist-item-8"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["obc-change-tasklist-item-8"] == "No")
+        },
+        {
+          value: "NotRequired",
+          text: "Not required",
+          checked: (data["obc-change-tasklist-item-8"] == "NotRequired")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

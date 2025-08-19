@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="help-making-calls" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Accessing a person's record</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">To quickly access information about a person, select their name at the top of any screen.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">This will open a new tab with the person's record where you'll find:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>contact details</li>
+        <li>appointees and representatives</li>
+        <li>any flags or markers</li>
+        <li>details of any accessibility needs</li>
+        </ul>
+
+{{ govukRadios({
+  idPrefix: "help-accessing-person-record",
+  name: "help-accessing-person-record",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      text: "Do you want to see this help page next time?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["help-accessing-person-record"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["help-accessing-person-record"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-3/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">The person has spent time in a care home</h1>
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">The decision will be referred for quality assurance.</p> -->
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">The following things will happen:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>This decision will be checked by someone else as bank details have changed</li>
+        <li>Call recording will be listened too</li>
+    </ul> -->
+
+
+    <table class="govuk-table govuk-!-margin-bottom-8">
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Care home name</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-name"] %}
+            {{ data["obc-change-tasklist-item-3-name"]}}
+          {% else %}
+            Name
+          {% endif %}
+
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Contact details</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-contact"] %}
+            {{ data["obc-change-tasklist-item-3-contact"]}}
+          {% else %}
+            Details
+          {% endif %}
+
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Care home address</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-address"] %}
+            {{ data["obc-change-tasklist-item-3-address"]}}
+          {% else %}
+            Address line
+          {% endif %}
+
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">How is the person's stay in the care home funded</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-funding-type"] %}
+            {{ data["obc-change-tasklist-item-3-funding-type"]}}
+          {% else %}
+            The man
+          {% endif %}
+
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Funding details</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-funding-details"] %}
+            {{ data["obc-change-tasklist-item-3-funding-details"]}}
+          {% else %}
+            Details
+          {% endif %}
+
+        </td>      </tr>
+
+        <tr class="govuk-table__row">
+        <td class="govuk-table__header">Was this a single continuous stay?</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-check"] %}
+            {{ data["obc-change-tasklist-item-3-tempory-acc-check"]}}
+          {% else %}
+            Type of stay
+          {% endif %}
+
+        </td>      </tr>
+
+
+
+        {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home stay details</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-check-details"]}}
+            {% else %}
+              Several times over the last month
+            {% endif %}
+
+          </td>
+        </tr>
+
+            {% else %}
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">When did they go into the care home?</td>
+        <td class="govuk-table__cell">
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-date-in"] %}
+            {{ data["obc-change-tasklist-item-3-tempory-acc-date-in"]}}
+          {% else %}
+          DD Month Year
+          {% endif %}
+
+        </td>      </tr>
+
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">When did they leave the care home?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-date-out"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-date-out"]}}
+            {% else %}
+              DD Month Year
+            {% endif %}
+
+          </td>      </tr>
+
+          {% endif %}
+
+
+
+    </tbody>
+  </table>
+
+
+
+
+
+
+  <!------------H1 LEGEND------------>
+    {% set dynamicHint %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+      You should consider wheher:
+
+      <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+        <li>
+          they spent more than 28 days in the care home
+        </li>
+        <li>
+          their stay was self funded
+        </li>
+        <li>
+          they have had two or moore distinct stays in the care home less than 28 days apart
+        </li>
+      </ul>
+
+    {% endset %}
+  <!------------Legend--------------->
+
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "payability-check-paysafe",
+      name: "payability-check-paysafe",
+      fieldset: {
+        legend: {
+          text: "Will their payment be affected by their care home stay(s)?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: dynamicHint
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["payability-check-paysafe"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "No",
+        checked: (data["payability-check-paysafe"] == "No")
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

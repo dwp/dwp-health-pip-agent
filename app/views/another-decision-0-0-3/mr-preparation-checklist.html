@@ -1,0 +1,106 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="mr-preparation-save-response" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Applications and decision",
+        href: "r-application-overview"
+      },
+      {
+        text: "Reconsideration request",
+        href: ""
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Write your response for the Mandatory Reconsideration Notice</h1>
+
+        <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-bottom-6">Make sure you address all the parts of the decision that the person disagreed with.</p>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Points and justification given:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>Preparing food</li>
+          <li>Eating and drinking</li>
+          <li>Managing treatments</li>
+          <li>Washing and bathing</li>
+          <li>Using the toilet or managing incontinence</li>
+          <li>Dressing and undressing</li>
+
+            <!-- Talking, listening and understanding
+            Reading
+            Mixing with other people
+            Managing your money
+            Planning and following journeys
+            Moving around -->
+
+          </ul>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Dates mentioned in the decision letter:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>Qualifying period</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Areas of dispute in the registration of MR:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>Length of the award period</li>
+          <li>Evidence used to make the decision</li>
+          <li>Payment amounts including arrears</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Expected evidence:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>Evedence type A</li>
+          <li>Evedence type B</li>
+          <li>Evedence type C</li>
+        </ul>
+
+
+        {{ govukTextarea({
+          name: "mr-preparation-response",
+          id: "mr-preparation-response",
+          rows: "8",
+          label: {
+            text: "Responce to the citizen given above issues reported",
+            classes: "govuk-label--m ",
+            isPageHeading: true
+          },
+          hint: {
+            html: ""
+          }
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+      <a class="govuk-link" href="an-de-reason-details">Linked add</a>
+
+
+  </form>
+
+{% endblock %}
