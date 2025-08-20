@@ -1,0 +1,17 @@
+
+
+
+
+{% if data["obc-security"] == "Yes" and data["obc-other-help"] == "No" %}
+{% include "an-de-mr-call-bar-prepare.html" %}
+
+{% elif data["obc-security"] == "Yes" %}
+{% include "an-de-mr-call-bar-active.html" %}
+
+{% elif data["qppt-dl-change-check"]%}
+{% include "an-de-mr-call-bar-prepare.html" %}
+
+{% else %}
+{% include "an-de-mr-call-bar-prepare.html" %}
+
+{% endif %}

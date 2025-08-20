@@ -1,0 +1,134 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+  {% include "another-decision-0-0-4/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+
+    <form action="an-de-tasklist" method="post" class="form">
+
+
+    {% if data["an-de-mr-tl-2-score-check"] == "Agree" %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Make an MR decision",
+          href: "an-de-tasklist"
+        },
+        {
+          text: "Taking nutrition overview",
+          href: "an-de-mr-tl-2-score-check"
+        }
+      ]
+    }) }}
+
+    {% else %}
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Make an MR decision",
+          href: "an-de-tasklist"
+        },
+        {
+          text: "Taking nutrition overview",
+          href: "an-de-mr-tl-2-score-check"
+        },
+        {
+          text: "Select descriptor",
+          href: "an-de-mr-tl-2-score-change"
+        }
+      ]
+    }) }}
+
+
+    {% endif %}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+
+            {% if data["an-de-mr-tl-2-score-check"] == "Yes" %}
+
+              Add your reason for selecting Descriptor A (0 points) for preparing food to the decision letter
+
+            {% elif data["an-de-mr-tl-2-score-check"] == "No" %}
+
+              Add your reason for selecting
+
+              {% if data["an-de-mr-tl-2-score-change"] == "a1" %}
+                <strong>Descriptor A (0 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "b2" %}
+                <strong>Descriptor B (2 points)</strong>
+              {% elif data["an-de-mr-tl-2-score-change"] == "c3" %}
+                <strong>Descriptor C (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "d4" %}
+                <strong>Descriptor D (2 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "e5" %}
+                <strong>Descriptor E (4 points)</strong>
+              {% elseif data["an-de-mr-tl-2-score-change"] == "f6" %}
+                <strong>Descriptor F (8 points)</strong>
+              {% endif %}
+
+              for preparing food to the decision letter
+
+            {% else %}
+            Nowt
+            {% endif %}
+
+
+          </h2>
+
+          <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
+
+
+          {% include "another-decision-0-0-4/an-de-mr-tl-2-extract.html" %}
+
+
+
+
+
+          {{ govukTextarea({
+            name: "an-de-mr-tl-2-score-check-reason",
+            id: "an-de-mr-tl-2-score-check-reason",
+            classes: " govukTextarea--overwrite",
+            label: {
+              text: "",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              html: legendCanned
+            },
+            value: data["an-de-mr-tl-2-score-check-reason"]
+          }) }}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

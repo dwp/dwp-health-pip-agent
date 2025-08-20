@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+      {% include "another-decision-0-0-3/record-id.html" %}
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My decision notes</h1> -->
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">These notes are attached to this person </p> -->
+
+
+      {{ govukTextarea({
+        name: "call-notes",
+        id: "call-notes",
+  rows: "10",
+  label: {
+    text: "My decision notes",
+    classes: "govuk-label--xl",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Add any notes that will help you when speaking to the person and making your decision."
+  },
+  value: data["call-notes"]
+}) }}
+
+      <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Save",
+          classes: "govuk-button--secondary"
+        }) }}
+        <p class="govuk-body govuk-!-font-size-19 ">Auto saved 1 minute ago</p>
+      </div>
+
+        </form>
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

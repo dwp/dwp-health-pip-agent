@@ -1,0 +1,129 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application mandatory reconsideration
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+
+
+<form action="an-de-mr-tl-6-justification" method="post" class="form">
+
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Reconsider a decision",
+        href: "an-de-tasklist"
+      },
+      {
+        text: "Dressing and undressing overview",
+        href: "an-de-mr-tl-6-score-check"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicH1 %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for moving around instead of Descriptor B (2 points)?
+
+            </h2>
+            {% endset %}
+      <!------------Legend--------------->
+
+      <!------------H1 LEGEND------------>
+        {% set dynamicQ3 %}
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+          <strong>Descriptor C (2 points):</strong> Needs either:
+
+          <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+            <li>
+              prompting to be able to dress, undress or determine appropriate circumstances for remaining clothed
+            </li>
+            <li>
+              prompting or assistance to be able to select appropriate clothing
+            </li>
+          </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        idPrefix: "an-de-mr-tl-6-score-change",
+        name: "an-de-mr-tl-6-score-change",
+        fieldset: {
+          legend: {
+            html: dynamicH1,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendNumbers
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "a1",
+          html: "<strong>Descriptor A (0 points):</strong> Can dress and undress unaided",
+          checked: (data["an-de-mr-tl-6-score-change"] == "a1")
+        },
+        {
+          value: "c3",
+          html: dynamicQ3,
+          checked: (data["an-de-mr-tl-6-score-change"] == "c3")
+        },
+        {
+          value: "d4",
+          html: "<strong>Descriptor D (2 points):</strong> Needs assistance to be able to dress or undress their lower body",
+          checked: (data["an-de-mr-tl-6-score-change"] == "d4")
+        },
+        {
+          value: "e5",
+          html: "<strong>Descriptor E (4 points):</strong> Needs assistance to be able to dress or undress their upper body",
+          checked: (data["an-de-mr-tl-6-score-change"] == "e5")
+        },
+        {
+          value: "f6",
+          html: "<strong>Descriptor F (8 points):</strong> Cannot dress or undress at all",
+          checked: (data["an-de-mr-tl-6-score-change"] == "f6")
+        }
+        ]
+      }) }}
+
+      <!-- THIS IS THE SELECTED DESCRiPTOR
+      {
+        value: "b2",
+        html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to dress or undress",
+        checked: (data["an-de-mr-tl-6-score-change"] == "2")
+      },
+      -->
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="an-de-mr-tl-a1-score-check">Cancel change</a>
+</div>
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

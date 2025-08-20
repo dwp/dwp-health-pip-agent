@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-exit-mr-process-early-router" method="post" class="form">
+
+  {% include "another-decision-0-0-4/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-exit-mr-process-early",
+        name: "an-de-exit-mr-process-early",
+        fieldset: {
+          legend: {
+            text: "Why can you not complete the mandatory reconsideration registration?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Rad",
+          text: "Something rad happened I wasnt expecting",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Rad")
+        },
+        {
+          value: "Calldrop",
+          text: "The call disconnected",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Calldrop")
+        },
+        {
+          value: "Cantcomplete",
+          text: "The person wants to complete the registration at another time",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Cantcomplete")
+        },
+        {
+          value: "Withdraw",
+          text: "The person does not want to continue with the mandatory reconsideration",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Withdraw")
+        }
+        ]
+        }) }}
+
+        <!-- It will arrive almost immediately
+        Visit GOV.UK and search for CRMR1 -->
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -47,7 +47,7 @@
           </tr>
         </thead>
 
-          {% if data["applicaiton-actions"] == "2" %}
+        {% if data["applicaiton-actions"] == "ok" or data["applicaiton-actions"] == "1m" or data["applicaiton-actions"] == "13m" %}
 
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Status</th>
@@ -135,7 +135,7 @@
           {% endif %}
 
 
-          {% if data["applicaiton-actions"] == "2" %}
+          {% if data["applicaiton-actions"] == "ok" or data["applicaiton-actions"] == "1m" or data["applicaiton-actions"] == "13m" %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Today</th>
             <td class="govuk-table__cell">Mandatory reconsideration requested</td>

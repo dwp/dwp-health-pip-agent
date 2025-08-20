@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+{% include "an-de-mr-call-bar-pause.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+  <form action="obc-greeting" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare for the call</h1>
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Appointees and representatives"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Accessibility needs"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Flags and markers"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Mobile telephone"
+            },
+            value: {
+              html: "0796 009 3500"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Landline telephone"
+            },
+            value: {
+              html: "0192 128 4726"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SMS messages"
+            },
+            value: {
+              html: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "r-contact-landline-telephone",
+                  text: "",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="/person-record-0-0-2/r-overview" target="Blank">(@jeff) Check a few more things in person record before I make a call</a></p> -->
+
+<br>
+
+      {{ govukButton({
+        text: "Start call",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

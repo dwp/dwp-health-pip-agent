@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+
+{% if data["obc-change-tasklist-item-3"] %}
+<form action="../obc-callguide" method="post" class="form">
+{% else %}
+<form action="obc-change-tasklist-item-3" method="post" class="form">
+<!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
+{% endif %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "../obc-callguide"
+    },
+    {
+      text: "Change in payment details",
+      href: "obc-change-tasklist-item-2"
+    }
+  ]
+}) }}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person struggle with a large payment?</h2>
+
+          <!------------Dynamic Title------------>
+            {% set dynamicTitle %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <li>Record the reasons why the person might struggle with a large payment</li>
+              <li>Is there anyone else we need to contact about their payments?</li>
+              <li>For example, an appointee or family member.</li>
+            </ul>
+
+            {% endset %}
+          <!------------Legend--------------->
+
+
+          {{ govukTextarea({
+            name: "obc-change-tasklist-item-2-details",
+            id: "obc-change-tasklist-item-2-details",
+            classes: " govukTextarea--overwrite",
+            label: {
+              html: dynamicTitle,
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              html: ""
+            },
+            value: data["obc-change-tasklist-item-2-details"]
+          }) }}
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

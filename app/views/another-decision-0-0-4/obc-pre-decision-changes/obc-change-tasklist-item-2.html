@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "../obc-callguide"
+    },
+    {
+      text: "Change in payment details",
+      href: "obc-change-tasklist-item-2"
+    }
+  ]
+}) }}
+
+{% if data["obc-change-tasklist-item-3"] %}
+<form action="../obc-callguide" method="post" class="form">
+{% else %}
+<form action="../obc-change-tasklist-item-2-router" method="post" class="form">
+{% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!------------Q2 LEGEND------------>
+        {% set dynamicHint %}
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-6">You should consider any mental health conditions, or signs of drug or gambling addiction. </p>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Original decision score for 'Making budgeting decisions'</b></p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions</p>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "obc-change-tasklist-item-2",
+        name: "obc-change-tasklist-item-2",
+        fieldset: {
+          legend: {
+            html: "Is there a reason why the person might struggle with a large payment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["obc-change-tasklist-item-2"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["obc-change-tasklist-item-2"] == "No")
+        },
+        {
+          value: "NotRequired",
+          text: "Not required",
+          checked: (data["obc-change-tasklist-item-2"] == "NotRequired")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

@@ -37,7 +37,7 @@
 
       <!------------H1 LEGEND------------>
         {% set dynamicH1 %}
-        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for [activity name] instead of Descriptor A (0 points)?
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for moving around instead of Descriptor B (2 points)?
 
             </h2>
             {% endset %}
@@ -80,27 +80,27 @@
         {
           value: "a1",
           html: "<strong>Descriptor A (0 points):</strong> Can dress and undress unaided",
-          checked: (data["an-de-mr-tl-6-score-change"] == "1")
+          checked: (data["an-de-mr-tl-6-score-change"] == "a1")
         },
         {
           value: "c3",
           html: dynamicQ3,
-          checked: (data["an-de-mr-tl-6-score-change"] == "6")
+          checked: (data["an-de-mr-tl-6-score-change"] == "c3")
         },
         {
           value: "d4",
           html: "<strong>Descriptor D (2 points):</strong> Needs assistance to be able to dress or undress their lower body",
-          checked: (data["an-de-mr-tl-6-score-change"] == "6")
+          checked: (data["an-de-mr-tl-6-score-change"] == "d4")
         },
         {
           value: "e5",
           html: "<strong>Descriptor E (4 points):</strong> Needs assistance to be able to dress or undress their upper body",
-          checked: (data["an-de-mr-tl-6-score-change"] == "6")
+          checked: (data["an-de-mr-tl-6-score-change"] == "e5")
         },
         {
           value: "f6",
           html: "<strong>Descriptor F (8 points):</strong> Cannot dress or undress at all",
-          checked: (data["an-de-mr-tl-6-score-change"] == "6")
+          checked: (data["an-de-mr-tl-6-score-change"] == "f6")
         }
         ]
       }) }}
