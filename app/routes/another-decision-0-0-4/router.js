@@ -81,6 +81,32 @@ router.post(`/system-myopentasks-selector-router`, (req, res) => {
 
 
 
+router.post(`/system-payment-selector-router`, (req, res) => {
+  const paymentTheory = req.session.data['system-payment-selector']
+
+  if (paymentTheory == 'e') {
+    res.redirect(`cya-payment-breakdown-e`)
+  }
+  else if (paymentTheory == 'm') {
+    res.redirect(`cya-payment-breakdown-m`)
+  }
+  else if (paymentTheory == 'h') {
+    res.redirect(`cya-payment-breakdown-h`)
+  }
+  else if (paymentTheory == 'n') {
+    res.redirect(`cya-payment-breakdown-n`)
+  }
+  else if (paymentTheory == 's1') {
+    res.redirect(`cya-payment-schedule-s1`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
+
+
+
+
 router.post(`/section-4-add-1-router`, (req, res) => {
   const add1 = req.session.data['section-4-add-1']
 
@@ -564,6 +590,130 @@ router.post(`/qppt-m-change-check-router`, (req, res) => {
   }
 })
 
+
+
+// QPPT Payment windows
+
+
+router.post(`/qppt-dl-3m-check-router`, (req, res) => {
+  const qpptDaily3m = req.session.data['qppt-dl-3m-check']
+
+  if (qpptDaily3m == 'Yes') {
+    res.redirect(`qppt-dl-9m-check`)
+  }
+  else if (qpptDaily3m == 'Split') {
+    res.redirect(`qppt-dl-3m-split`)
+  }
+  else if (qpptDaily3m == 'EffectiveDate') {
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+  else if (qpptDaily3m == 'SplitRate') {
+    res.redirect(`qppt-dl-effective-date-multi`)
+  }
+  else if (qpptDaily3m == 'NoRestrictions') {
+    res.redirect(`payment-window-tasklist`)
+  }
+   else {
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-dl-9m-check-router`, (req, res) => {
+  const qpptDaily9m = req.session.data['qppt-dl-9m-check']
+
+  if (qpptDaily9m == 'Yes') {
+    res.redirect(`payment-window-tasklist`)
+  }
+  else if (qpptDaily9m == 'No') {
+    res.redirect(`payment-window-tasklist`)
+  }
+   else {
+     res.redirect(`payment-window-tasklist`)
+  }
+})
+
+router.post(`/qppt-dl-effective-date-check-router`, (req, res) => {
+  const qpptDailyEffectiveDateCheck = req.session.data['qppt-dl-effective-date-check']
+
+  if (qpptDailyEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-dl-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-dl-effective-date-multi`)
+  }
+})
+
+
+router.post(`/qppt-m-3m-check-router`, (req, res) => {
+  const qpptMobility3m = req.session.data['qppt-m-3m-check']
+
+  if (qpptMobility3m == 'Yes') {
+    res.redirect(`qppt-m-9m-check`)
+  }
+  else if (qpptMobility3m == 'Split') {
+    res.redirect(`qppt-m-3m-split`)
+  }
+  else if (qpptMobility3m == 'EffectiveDate') {
+    res.redirect(`qppt-m-3m-alt-date`)
+  }
+  else if (qpptMobility3m == 'SplitRate') {
+    res.redirect(`qppt-m-effective-date-multi`)
+  }
+  else if (qpptMobility3m == 'NoRestrictions') {
+    res.redirect(`payment-window-tasklist`)
+  }
+   else {
+     res.redirect(`pause`)
+  }
+})
+
+router.post(`/qppt-m-9m-check-router`, (req, res) => {
+  const qpptMobility9m = req.session.data['qppt-m-9m-check']
+
+  if (qpptMobility9m == 'Yes') {
+    res.redirect(`payment-window-tasklist`)
+  }
+  else if (qpptMobility9m == 'No') {
+    res.redirect(`payment-window-tasklist`)
+  }
+   else {
+     res.redirect(`payment-window-tasklist`)
+  }
+})
+
+router.post(`/qppt-m-effective-date-check-router`, (req, res) => {
+  const qpptMobilityEffectiveDateCheck = req.session.data['qppt-m-effective-date-check']
+
+  if (qpptMobilityEffectiveDateCheck == 'Yes') {
+    res.redirect(`qppt-m-3m-alt-date`)
+  }
+   else {
+     res.redirect(`qppt-m-effective-date-multi`)
+  }
+})
+
+router.post(`/qppt-dl-3m-window-check-router`, (req, res) => {
+  const qpptDLWindowCheck = req.session.data['qppt-dl-3m-window-check']
+
+  if (qpptDLWindowCheck == 'Yes') {
+    res.redirect(`qppt-dl-3m-window-entry`)
+  }
+   else {
+     res.redirect(`qppt-dl-3m-window-cya`)
+  }
+})
+
+
+router.post(`/qppt-dl-3m-window-entry-router`, (req, res) => {
+  const qpptDLWindowEntry = req.session.data['qppt-dl-3m-window-entry']
+
+  if (qpptDLWindowEntry == 'Yes') {
+    res.redirect(`qppt-dl-3m-window-entry-multi`)
+  }
+   else {
+     res.redirect(`payment-window-tasklist`)
+  }
+})
 
 
 // Prepare for AP Single task list items
@@ -1909,6 +2059,25 @@ router.post(`/obc-change-tasklist-item-8-router`, (req, res) => {
     res.redirect(`obc-callguide`)
   }
 })
+
+
+// PAYMENT CHECKER
+
+router.post(`/payment-recipent-check-router`, (req, res) => {
+  const obcTL8 = req.session.data['payment-recipent-check']
+
+  if (obcTL8 == 'Yes') {
+    res.redirect(`cya-payment-schedule-s1`)
+  }
+  else if (obcTL8 == 'No') {
+    res.redirect(`payment-recipent`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+
 
 
 

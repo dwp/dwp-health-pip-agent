@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-check" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+<h2 class="govuk-heading-xl govuk-!-margin-bottom-6">For testing only</h2>
+
+<!-- Application submission date -->
+<!-- This is just for the scenario -->
+      {{ govukDateInput({
+        id: "qppt-set-data-submission-date",
+        namePrefix: "qppt-set-data-submission-date",
+        fieldset: {
+          legend: {
+            html: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["qppt-set-data-submission-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["qppt-set-data-submission-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["qppt-set-data-submission-date-year"]
+          }
+        ]
+      }) }}
+
+<!-- Assessment date
+This is just for the scenario -->
+
+          {{ govukDateInput({
+            id: "qppt-set-data-assessment-date",
+            namePrefix: "qppt-set-data-assessment-date",
+            fieldset: {
+              legend: {
+                html: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s govuk-!-margin-bottom-2"
+              }
+            },
+            hint: {
+              html: ""
+            },
+            items: [
+              {
+                name: "day",
+                classes: "govuk-input--width-2",
+                value: data["qppt-set-data-assessment-date-day"]
+              },
+              {
+                name: "month",
+                classes: "govuk-input--width-2",
+                value: data["qppt-set-data-assessment-date-month"]
+              },
+              {
+                name: "year",
+                classes: "govuk-input--width-4",
+                value: data["qppt-set-data-assessment-date-year"]
+              }
+            ]
+          }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment scheduler (Theory)</h1>
+
+      {% include "another-decision-0-0-4/cya-payment-rates.html" %}
+
+
+<br><br>
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-4">Total to be paid</h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-25-percent-percent">Type</th>
+            <th scope="col" class="govuk-table__header govuk-25-percent-percent">Amount</th>
+            <th scope="col" class="govuk-table__header govuk-25-percent-percent">Frequency</th>
+            <th scope="col" class="govuk-table__header govuk-25-percent-percent ">Date of payment</th>
+            <th scope="col" class="govuk-table__header govuk-25-percent-percent ">Recipient</th>
+
+
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Arrears</td>
+            <td class="govuk-table__cell">£ X</td>
+            <td class="govuk-table__cell">One off payment</td>
+            <td class="govuk-table__cell">2 June 2025 (Today)</td>
+
+            {% if data["payment-recipent-check"] == "No" %}
+              {% if data["payment-recipent-arrears"] == "DelAuth" %}
+              <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Delegated authority</a></td>
+                {% else %}
+              <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Applicant</a></td>
+              {% endif %}
+            {% else %}
+            <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Applicant</a></td>
+
+            {% endif %}
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">First payment</td>
+            <td class="govuk-table__cell">£ X</td>
+            <td class="govuk-table__cell">Every four weeks</td>
+            <td class="govuk-table__cell">3 June 2025</td>
+
+              {% if data["payment-recipent-check"] == "No" %}
+                {% if data["payment-recipent-regluar"] == "DelAuth" %}
+                <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Delegated authority</a></td>
+                  {% else %}
+                <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Applicant</a></td>
+                {% endif %}
+              {% else %}
+              <td class="govuk-table__cell"><a href="payment-recipent" class="govuk-link" rel="noreferrer noopener" target="">Applicant</a></td>
+
+              {% endif %}
+
+            </tr>
+
+        </tbody>
+      </table>
+
+
+<br>
+
+
+
+      <!------------CheckBox Hint------------>
+
+        {% set dynamicCheckBoxHintPayment %}
+
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">This payment will need to be reviewed by Nicola or Leah as <br> new payment details have been added</p>
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">???</p> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukCheckboxes({
+        idPrefix: "ConfimLetter",
+        name: "ConfimLetter",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
+          legend: {
+            text: "Review and confirm payment",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+          }
+        },
+        hint: {
+          html: dynamicCheckBoxHintPayment
+        },
+        items: [
+          {
+            value: "ConfimLetter",
+            html: "I confirm that all details used to make payment are what has been<br>provided by the citizen or Del auth",
+            checked: (data["application-about-a9-score-overwrite"] == "0")
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Send for review"
+      }) }}
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

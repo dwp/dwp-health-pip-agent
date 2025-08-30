@@ -194,6 +194,9 @@
 
               <!------------Legend--------------->
 
+              {% if data["entry-home-processing-options"] == "MakeMRNil" %}
+              {% else %}
+
               <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Review dates</h3>
 
 
@@ -273,6 +276,7 @@
 
                 {% endif %}
 
+              {% endif %}
 
 
 

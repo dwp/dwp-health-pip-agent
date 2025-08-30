@@ -21,9 +21,9 @@ CopyCodeButton.prototype.init = function () {
   this.$module.addEventListener('click', (event) => {
     event.preventDefault();
     let code;
-    this.$module.textContent = 'Code copied';
+    this.$module.textContent = 'Paragraph copied';
     setTimeout(() => {
-      this.$module.textContent = 'Copy code';
+      this.$module.textContent = 'Copy paragraph';
     }, 2000);
     navigator.clipboard.writeText(this.$module.dataset.copyText);
   });

@@ -1,0 +1,798 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">PIP payment summary</h1>
+
+      <!-- <table class="govuk-table govuk-!-margin-bottom-8">
+        <caption class="govuk-table__caption govuk-table__caption--m">Qualifying period</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Start</th>
+            <th scope="col" class="govuk-table__header">End</th>
+            <th scope="col" class="govuk-table__header ">Overwrite</th>
+            <th scope="col" class="govuk-table__header ">Days offset</th>
+            <th scope="col" class="govuk-table__header "></th>
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1 January 2025</td>
+            <td class="govuk-table__cell">31 March 2025</td>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell">0</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+
+        </tbody>
+      </table> -->
+
+
+      <br>
+
+
+      <!-- <table class="govuk-table govuk-!-margin-bottom-8">
+        <caption class="govuk-table__caption govuk-table__caption--m">Start of application / Effective date</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Submission date</th>
+            <th scope="col" class="govuk-table__header">Effective date</th>
+            <th scope="col" class="govuk-table__header ">Overwrite</th>
+            <th scope="col" class="govuk-table__header ">Days offset</th>
+            <th scope="col" class="govuk-table__header "></th>
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1 April 2025</td>
+            <td class="govuk-table__cell">1 April 2025</td>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell">0</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+
+        </tbody>
+      </table> -->
+
+
+
+                  <!-- <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Mobility Payment summary</h3> -->
+
+                  <table class="govuk-table ">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Arrears (Date of application: 1 March 2025 to Date of decision: 2 May 2025) </caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Start</th>
+                        <th scope="col" class="govuk-table__header ">End</th>
+                        <th scope="col" class="govuk-table__header ">Days</th>
+                        <th scope="col" class="govuk-table__header ">Rate</th>
+                        <th scope="col" class="govuk-table__header ">Amount</th>
+                        <th scope="col" class="govuk-table__header ">No payment reason</th>
+                        <th scope="col" class="govuk-table__header "></th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">1 Mar 2025</td>
+                        <td class="govuk-table__cell">1 April 2025</td>
+                        <td class="govuk-table__cell">31</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£0<br>£0</td>
+                        <td class="govuk-table__cell">Hospital</td>
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">2 April 2025</td>
+                        <td class="govuk-table__cell">10 April 2025</td>
+                        <td class="govuk-table__cell">8</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£126.20<br>£0</td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">11 April 2025</td>
+                        <td class="govuk-table__cell">17 April 2025</td>
+                        <td class="govuk-table__cell">6</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£0<br>£0</td>
+                        <td class="govuk-table__cell">Hospital</td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">18 April 2025</td>
+                        <td class="govuk-table__cell">2 May 2025</td>
+                        <td class="govuk-table__cell">14</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£220.80<br>£0</td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total owed</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>£347.00</strong></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+            <br>
+
+                        <table class="govuk-table ">
+                          <caption class="govuk-table__caption govuk-table__caption--m">Regular payment</caption>
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header">Start</th>
+                              <th scope="col" class="govuk-table__header ">End</th>
+                              <th scope="col" class="govuk-table__header ">Rate</th>
+                              <th scope="col" class="govuk-table__header ">Amount (Every four weeks)</th>
+                              <th scope="col" class="govuk-table__header ">.</th>
+                              <th scope="col" class="govuk-table__header ">.</th>
+
+
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">3 June 25</td>
+                              <td class="govuk-table__cell">1 June 2027</td>
+                              <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                              <td class="govuk-table__cell">£110.60 (£442.40) <br>£0</td>
+                              <td class="govuk-table__cell"></td>
+
+                              <td class="govuk-table__cell"></td>
+                            </tr>
+
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell"><strong>Total to be paid</strong></td>
+                              <td class="govuk-table__cell"></td>
+                              <td class="govuk-table__cell"></td>
+                              <td class="govuk-table__cell"><strong>£110.60</strong></td>
+                              <td class="govuk-table__cell"></td>
+
+                              <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!------------H1 LEGEND------------>
+
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-5-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+
+
+
+      {% if data["entry-home-processing-options"] == "MakeMRNil" %}
+      {% else %}
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payment summary</h3>
+
+
+
+      {% set changeInPayment %}
+      {% if data["obc-change-tasklist-item-1"] %}
+      {{ data["obc-change-tasklist-item-1"]}}
+      {% else %}
+      changeInPayment
+      {% endif %}
+      {% endset -%}
+
+      {% set nameOnAccount %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      nameOnAccount
+      {% endif %}
+      {% endset -%}
+
+      {% set bankName %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      bankName
+      {% endif %}
+      {% endset -%}
+
+      {% set sortCode %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      sortCode
+      {% endif %}
+      {% endset -%}
+
+      {% set accountNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      accountNumber
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      rollNumber
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Have their bank details changed since the original decision?"
+            },
+            value: {
+              html: changeInPayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              html: nameOnAccount
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Bank, building society or credit union name"
+            },
+            value: {
+              text: bankName
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: sortCode
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: accountNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does your account have a roll or reference number?"
+            },
+            value: {
+              text: rollNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Payability details</h3>
+
+      {% set paymentCheck %}
+      {% if data["obc-change-tasklist-item-2"] %}
+      {{ data["obc-change-tasklist-item-2"]}}
+      {% else %}
+      Yes/No
+      {% endif %}
+      {% endset -%}
+
+      {% set largePayment %}
+      {% if data["obc-change-tasklist-item-2-details"] %}
+      {{ data["obc-change-tasklist-item-2-details"]}}
+      {% else %}
+      Details
+      {% endif %}
+      {% endset -%}
+
+
+
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Is there a reason why the person might struggle with a large payment?"
+            },
+            value: {
+              html: paymentCheck
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Why might the person struggle with a large payment?"
+            },
+            value: {
+              html: largePayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Care home details</h3>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home name</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-name"] %}
+              {{ data["obc-change-tasklist-item-3-name"]}}
+            {% else %}
+              Name
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Contact details</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-contact"] %}
+              {{ data["obc-change-tasklist-item-3-contact"]}}
+            {% else %}
+              Details
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Care home address</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-address"] %}
+              {{ data["obc-change-tasklist-item-3-address"]}}
+            {% else %}
+              Address line
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">How is the person's stay in the care home funded?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-funding-type"] %}
+              {{ data["obc-change-tasklist-item-3-funding-type"]}}
+            {% else %}
+              The man
+            {% endif %}
+
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">Funding type</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-funding-details"] %}
+              {{ data["obc-change-tasklist-item-3-funding-details"]}}
+            {% else %}
+              XXX
+            {% endif %}
+
+          </td>      </tr>
+
+          <tr class="govuk-table__row">
+          <td class="govuk-table__header">Was this a single continuous stay?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-check"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-check"]}}
+            {% else %}
+              obc-change-tasklist-item-3-tempory-acc-check
+            {% endif %}
+
+          </td>      </tr>
+
+
+
+          {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Care home stay details</td>
+            <td class="govuk-table__cell">
+
+              {% if data["obc-change-tasklist-item-3-tempory-acc-check-details"] %}
+                {{ data["obc-change-tasklist-item-3-tempory-acc-check-details"]}}
+              {% else %}
+                Several times over the last month
+              {% endif %}
+
+            </td>
+          </tr>
+
+              {% else %}
+        <tr class="govuk-table__row">
+          <td class="govuk-table__header">When did they go into the care home?</td>
+          <td class="govuk-table__cell">
+
+            {% if data["obc-change-tasklist-item-3-tempory-acc-date-in"] %}
+              {{ data["obc-change-tasklist-item-3-tempory-acc-date-in"]}}
+            {% else %}
+            DD Month Year
+            {% endif %}
+
+          </td>      </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">When did they leave the care home?</td>
+            <td class="govuk-table__cell">
+
+              {% if data["obc-change-tasklist-item-3-tempory-acc-date-out"] %}
+                {{ data["obc-change-tasklist-item-3-tempory-acc-date-out"]}}
+              {% else %}
+                DD Month Year
+              {% endif %}
+
+            </td>      </tr>
+
+            {% endif %}
+
+      </tbody>
+      </table>
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Other help needed from the call</h3>
+
+
+      {% set accountNumber %}
+      {% if data["obc-other-help"] %}
+      {{ data["obc-other-help"]}}
+      {% else %}
+      otherHelpYN
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-other-help-details"] %}
+      {{ data["obc-other-help-details"]}}
+      {% else %}
+      OtherHelp
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Other help?"
+            },
+            value: {
+              html: otherHelpYN
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Other help details"
+            },
+            value: {
+              html: otherHelpDetails
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% endif %}
+Documents
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Decision notes</h3>
+
+
+      {% set myDecisionNotes %}
+      {{ data["call-notes"]}}
+      {% endset %}
+
+          {{ govukSummaryList({
+            classes: "govuk-summary-list--no-border",
+            rows: [
+            {
+              key: {
+                text: "Saved decision notes"
+              },
+              value: {
+                html:
+                myDecisionNotes
+              },
+              actions: {
+                items: [
+                {
+                  href: "help-tidy-processing-notes",
+                  text: "Edit",
+                  visuallyHiddenText: "name"
+                }
+                ]
+              }
+            }
+            ]
+          }) }}
+
+          <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+    </div>
+  </div>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+              {% if data["payability-check"] == "Yes" or data["award-dates-review-exit"] == "No" %}
+
+              <!------------CheckBox Hint------------>
+
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">This information will be stored as the decision.</p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">XXX </p>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">XXX</p>
+
+              <!------------Legend--------------->
+
+              {{ govukCheckboxes({
+                idPrefix: "ConfimLetter",
+                name: "ConfimLetter",
+                fieldset: {
+                  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
+                  legend: {
+                    text: "Moving to PIPCS",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+                  }
+                },
+                hint: {
+                  html: dynamicCheckBoxHintPayment
+                },
+                items: [
+                  {
+                    value: "ConfimLetter",
+                    text: "I confirm that I have completed the move to PIPCS.",
+                    checked: (data["application-about-a9-score-overwrite"] == "0")
+                  }
+                ]
+              }) }}
+
+
+              {% else %}
+
+              <!------------CheckBox Hint------------>
+
+                {% set dynamicCheckBoxHintPayment %}
+
+                <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">You will need to manually send the letter and save it in DRS</p>
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">???</p> -->
+
+                {% endset %}
+              <!------------Legend--------------->
+
+              {{ govukCheckboxes({
+                idPrefix: "ConfimLetter",
+                name: "ConfimLetter",
+                fieldset: {
+                  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
+                  legend: {
+                    text: "Sending the Mandatory Reconsideration Notice",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+                  }
+                },
+                hint: {
+                  html: dynamicCheckBoxHintPayment
+                },
+                items: [
+                  {
+                    value: "ConfimLetter",
+                    text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
+                    checked: (data["application-about-a9-score-overwrite"] == "0")
+                  }
+                ]
+              }) }}
+
+              {% endif %}
+
+
+
+              {{ govukButton({
+                text: "Finish and close",
+                classes: "govuk-!-margin-bottom-8"
+              }) }}
+
+
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

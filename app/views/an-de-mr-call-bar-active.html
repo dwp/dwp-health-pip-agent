@@ -67,22 +67,31 @@
 <div class="govuk-width-container">
   <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-one-half govuk-grid-column-three-quarters-from-desktop">
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-0 govuk-!-margin-bottom-1 call-panel-text-active">When you're ready end the call </p>
+      <div class="govuk-grid-column-one-half">
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-5 govuk-!-padding-bottom-0 govuk-!-margin-bottom-1 call-panel-text-active">Call actions space </p>
 
         <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-padding-top-0 govuk-!-padding-bottom-0 call-panel-text"><strong>Actions:</strong> <a href="/agent-day-0-1-8/record-1-overview-callnotes" class="govuk-link govuk-link_panel">Create call notes</p> -->
 
     </div>
 
-    <div class="govuk-grid-column-one-half govuk-grid-column-one-quarter-from-desktop">
+    <div class="govuk-grid-column-two-quarter-from-desktop">
 
       <div class="govuk-!-margin-top-4 call-panel-alignment">
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Decision Task list",
+          classes: "govuk-button--inverse",
+          href: "an-de-tasklist"
+        }) }}
 
       {{ govukButton({
         text: "End call",
         classes: "govuk-button--warning",
         href: "obc-other-help"
       }) }}
+      </div>
+
     </div>
 
     </div>
@@ -117,15 +126,21 @@
   }) }}
 
 
-<div class="govuk-button-group">
-{{ govukButton({
-  text: "Save",
-  classes: "govuk-button--secondary"
+  <div class="govuk-button-group">
+    <!-- {{ govukButton({
+      text: "Open in a new tab",
+      classes: "govuk-button--secondary",
+      href: "#"
+    }) }} -->
 
-}) }}
+    {{ govukButton({
+      text: "Save",
+      classes: "govuk-button--secondary"
+    }) }}
+    <p class="govuk-body govuk-!-font-size-19 ">Auto saved 1 minute ago</p>
+  </div>
+  <p class="govuk-link govuk-!-margin-bottom-6"><a href="notes-popout" class="govuk-link" rel="noreferrer noopener" target="_blank">Open notes in a new window</a></p>
 
-<p class="govuk-body govuk-!-font-size-19 ">Auto saved 1 minute ago</p>
-</div>
 
 </form>
 

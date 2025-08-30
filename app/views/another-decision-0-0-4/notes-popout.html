@@ -18,11 +18,35 @@
       {% include "another-decision-0-0-4/record-id.html" %}
 
 
-      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My decision notes</h1> -->
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My decision notes</h1>
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">These notes are attached to this person </p> -->
 
-
       {{ govukTextarea({
+        name: "call-notes",
+        id: "call-notes",
+        formGroup: {
+          attributes: {
+            "data-module": "moj-rich-text-editor",
+            "data-toolbar.bold": "true",
+            "data-toolbar.italic": "true",
+            "data-toolbar.underline": "true",
+            "data-toolbar.bullets": "true",
+            "data-toolbar.numbers": "true"
+          }
+        },
+        rows: "10",
+        label: {
+          text: "",
+          classes: "govuk-!-font-weight-bold"
+        },
+        hint: {
+          text: "Add any notes that will help you when speaking to the person and making your decision."
+        },
+        value: data["call-notes"]
+      }) }}
+
+
+      <!-- {{ govukTextarea({
         name: "call-notes",
         id: "call-notes",
   rows: "10",
@@ -35,7 +59,7 @@
     text: "Add any notes that will help you when speaking to the person and making your decision."
   },
   value: data["call-notes"]
-}) }}
+}) }} -->
 
       <div class="govuk-button-group">
 

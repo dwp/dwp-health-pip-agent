@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment windows</h1>
+
+
+
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Payment windows?
+
+            </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+  {% set dynamicHint %}
+
+
+  {% endset %}
+
+<!--
+          {{ govukRadios({
+            idPrefix: "qppt-dl-change-check",
+            name: "qppt-dl-change-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-change-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-change-check"] == "No")
+            }
+            ]
+          }) }} -->
+
+
+          <!-- ,
+          {
+            value: "NoRestrictions",
+            text: "No restrictions were found",
+            checked: (data["qppt-dl-change-check"] == "NoRestrictions")
+          } -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

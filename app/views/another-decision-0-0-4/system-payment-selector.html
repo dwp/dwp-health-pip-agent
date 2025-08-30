@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="system-payment-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-payment-selector",
+  name: "system-payment-selector",
+  fieldset: {
+    legend: {
+      text: "Payment theory: select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "e",
+    text: "Normal payment (Easy)",
+    checked: (data["system-payment-selector"] == "e")
+  },
+  {
+    value: "m",
+    text: "Hospital stays under 28 days (Medium)",
+    checked: (data["system-payment-selector"] == "m")
+  },
+  {
+    value: "h",
+    text: "Hospital stays over 28 days (Hard)",
+    checked: (data["system-payment-selector"] == "h")
+  },
+  {
+    value: "n",
+    text: "Hospital linking temp stays (Nightmare)",
+    checked: (data["system-payment-selector"] == "n")
+  },
+  {
+    value: "s1",
+    text: "Payment schedule",
+    checked: (data["system-payment-selector"] == "s1")
+  }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

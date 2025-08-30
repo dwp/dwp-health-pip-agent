@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <form action="cya-payment-schedule-s1" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Method of payment</h1>
+
+      <!-- {% include "another-decision-0-0-4/cya-payment-rates.html" %} -->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "payment-recipent-arrears",
+        name: "payment-recipent-arrears",
+        fieldset: {
+          legend: {
+            text: "Who will get the arrears payment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Applicant",
+          text: "Applicant",
+          checked: (data["payment-recipent-arrears"] == "Applicant")
+        },
+        {
+          value: "DelAuth",
+          text: "Name (Del Auth A)",
+          checked: (data["payment-recipent-arrears"] == "DelAuth")
+        }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "payment-recipent-regluar",
+        name: "payment-recipent-regluar",
+        fieldset: {
+          legend: {
+            text: "Who will get the regluar payment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "Applicant",
+          text: "Applicant",
+          checked: (data["payment-recipent-regluar"] == "Applicant")
+        },
+        {
+          value: "DelAuth",
+          text: "Name (Del Auth A)",
+          checked: (data["payment-recipent-regluar"] == "DelAuth")
+        }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

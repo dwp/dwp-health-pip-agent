@@ -9,10 +9,10 @@
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
-          <td class="govuk-table__cell govuk-16-percent">Original score</td>
-          <td class="govuk-table__cell govuk-16-percent">Revised score</td>
-
+          <td class="govuk-table__cell govuk-40-percent">&nbsp</td>
+          <td class="govuk-table__cell govuk-15-percent">AP score</td>
+          <td class="govuk-table__cell govuk-15-percent">Disputed score</td>
+          <td class="govuk-table__cell govuk-15-percent">Revised score</td>
           <td class="govuk-table__cell govuk-16-percent">Status</td>
 
         </tr>
@@ -20,14 +20,27 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-1/an-de-mr-tl-1-score-check">Preparing food</a></td>
+
+          <td class="govuk-table__cell table-spacer">
+            {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+            4
+            {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+            0 A
+            {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+            0 A
+            {% else %}
+            AP NS
+            {% endif %}
+          </td>
+
           <td class="govuk-table__cell table-spacer">
 
           {% if data["entry-home-processing-options"] == "MakeMRChange" %}
           4
           {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-          0
+          0 A
           {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-          0
+          0 A
           {% else %}
           NS
           {% endif %}
@@ -38,7 +51,7 @@
             {% if data["an-de-mr-tl-1-score-change"] %}
             {% include "another-decision-0-0-4/an-de-mr-tl-1/an-de-mr-tl-1-score-overwrite.html" %}
             {% else %}
-            0
+            0 A
             {% endif %}
           </td>
 
@@ -55,14 +68,28 @@
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-2/an-de-mr-tl-2-score-check">Taking nutrition</a></td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+              4 E
+              {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+              0 A
+              {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+              0 A
+              {% else %}
+              AP NS
+              {% endif %}
+            </td>
+
+
             <td class="govuk-table__cell table-spacer">
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             4
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            0
+            0 A
             {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-            0
+            0 A
             {% else %}
             NS
             {% endif %}
@@ -73,7 +100,7 @@
               {% if data["an-de-mr-tl-2-score-change"] %}
               {% include "another-decision-0-0-4/an-de-mr-tl-2/an-de-mr-tl-2-score-overwrite.html" %}
               {% else %}
-              0
+              0 A
               {% endif %}
             </td>
 
@@ -90,14 +117,27 @@
 
           <tr class="govuk-table__row">
           <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-3/an-de-mr-tl-3-score-check">Managing therapy or monitoring<br>a health condition</a></td>
+
+          <td class="govuk-table__cell table-spacer">
+            {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+            4
+            {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+            0 A
+            {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+            0 A
+            {% else %}
+            AP NS
+            {% endif %}
+          </td>
+
           <td class="govuk-table__cell table-spacer">
 
           {% if data["entry-home-processing-options"] == "MakeMRChange" %}
           6
           {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-          0
+          0 A
           {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-          0
+          0 A
           {% else %}
           NS
           {% endif %}
@@ -108,7 +148,7 @@
             {% if data["an-de-mr-tl-3-score-change"] %}
             {% include "another-decision-0-0-4/an-de-mr-tl-3/an-de-mr-tl-3-score-overwrite.html" %}
             {% else %}
-            0
+            0 A
             {% endif %}
           </td>
 
@@ -125,14 +165,27 @@
 
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-4/an-de-mr-tl-4-score-check">Washing and bathing</a></td>
+
+                <td class="govuk-table__cell table-spacer">
+                  {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                  4
+                  {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                  0 A
+                  {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                  0 A
+                  {% else %}
+                  AP NS
+                  {% endif %}
+                </td>
+
                 <td class="govuk-table__cell table-spacer">
 
                 {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                 4
                 {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                0
+                0 A
                 {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                0
+                0 A
                 {% else %}
                 NS
                 {% endif %}
@@ -143,7 +196,7 @@
                   {% if data["an-de-mr-tl-4-score-change"] %}
                   {% include "another-decision-0-0-4/an-de-mr-tl-4/an-de-mr-tl-4-score-overwrite.html" %}
                   {% else %}
-                  0
+                  0 A
                   {% endif %}
                 </td>
 
@@ -160,14 +213,27 @@
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-5/an-de-mr-tl-5-score-check">Managing toilet needs or incontinence</a></td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+              4
+              {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+              0 A
+              {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+              0 A
+              {% else %}
+              AP NS
+              {% endif %}
+            </td>
+
             <td class="govuk-table__cell table-spacer">
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             6
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            0
+            0 A
             {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-            0
+            0 A
             {% else %}
             NS
             {% endif %}
@@ -178,7 +244,7 @@
               {% if data["an-de-mr-tl-5-score-change"] %}
               {% include "another-decision-0-0-4/an-de-mr-tl-5/an-de-mr-tl-5-score-overwrite.html" %}
               {% else %}
-              0
+              0 A
               {% endif %}
             </td>
 
@@ -195,14 +261,27 @@
 
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-6/an-de-mr-tl-6-score-check">Dressing and undressing</a></td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                      4
+                      {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                      0 A
+                      {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                      0 A
+                      {% else %}
+                      AP NS
+                      {% endif %}
+                    </td>
+
                     <td class="govuk-table__cell table-spacer">
 
                     {% if data["entry-home-processing-options"] == "MakeMRChange" %}
-                    8
+                    8 F
                     {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                    2
+                    2 B
                     {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                    0
+                    0 A
                     {% else %}
                     NS
                     {% endif %}
@@ -214,7 +293,7 @@
                       {% if data["an-de-mr-tl-6-score-change"] %}
                       {% include "another-decision-0-0-4/an-de-mr-tl-6/an-de-mr-tl-6-score-overwrite.html" %}
                       {% else %}
-                      0
+                      0 A
                       {% endif %}
 
                     </td>
@@ -239,14 +318,27 @@
 
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-7/an-de-mr-tl-7-score-check">Communicating verbally</a></td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                        4
+                        {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                        0 A
+                        {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                        0 A
+                        {% else %}
+                        AP NS
+                        {% endif %}
+                      </td>
+
                       <td class="govuk-table__cell table-spacer">
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                       6
                       {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                      0
+                      0 A
                       {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                      0
+                      0 A
                       {% else %}
                       NS
                       {% endif %}
@@ -257,7 +349,7 @@
                         {% if data["an-de-mr-tl-7-score-change"] %}
                         {% include "another-decision-0-0-4/an-de-mr-tl-7/an-de-mr-tl-7-score-overwrite.html" %}
                         {% else %}
-                        0
+                        0 A
                         {% endif %}
                       </td>
 
@@ -274,14 +366,27 @@
 
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-8/an-de-mr-tl-8-score-check">Reading and understanding signs,<br>symbols and words</a></td>
+
+                  <td class="govuk-table__cell table-spacer">
+                    {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                    4 C
+                    {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                    0 A
+                    {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                    0 A
+                    {% else %}
+                    AP NS
+                    {% endif %}
+                  </td>
+
                   <td class="govuk-table__cell table-spacer">
 
                   {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                   4
                   {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                  0
+                  0 A
                   {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                  0
+                  0 A
                   {% else %}
                   NS
                   {% endif %}
@@ -292,7 +397,7 @@
                     {% if data["an-de-mr-tl-8-score-change"] %}
                     {% include "another-decision-0-0-4/an-de-mr-tl-8/an-de-mr-tl-8-score-overwrite.html" %}
                     {% else %}
-                    0
+                    0 A
                     {% endif %}
                   </td>
 
@@ -309,14 +414,27 @@
 
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-9/an-de-mr-tl-9-score-check">Engaging with other people face to face</a></td>
+
+                    <td class="govuk-table__cell table-spacer">
+                      {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                      4
+                      {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                      0 A
+                      {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                      0 A
+                      {% else %}
+                      AP NS
+                      {% endif %}
+                    </td>
+
                     <td class="govuk-table__cell table-spacer">
 
                     {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                     6
                     {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                    0
+                    0 A
                     {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                    0
+                    0 A
                     {% else %}
                     NS
                     {% endif %}
@@ -327,7 +445,7 @@
                       {% if data["an-de-mr-tl-9-score-change"] %}
                       {% include "another-decision-0-0-4/an-de-mr-tl-9/an-de-mr-tl-9-score-overwrite.html" %}
                       {% else %}
-                      0
+                      0 A
                       {% endif %}
                     </td>
 
@@ -345,14 +463,27 @@
 
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-10/an-de-mr-tl-10-score-check">Making budgeting decisions</a></td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                        4
+                        {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                        2 B
+                        {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                        0 A
+                        {% else %}
+                        AP NS
+                        {% endif %}
+                      </td>
+
                       <td class="govuk-table__cell table-spacer">
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
-                      6
+                      6 D
                       {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                      6
+                      6 D
                       {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                      6
+                      6 D
                       {% else %}
                       NS
                       {% endif %}
@@ -363,7 +494,7 @@
                         {% if data["an-de-mr-tl-10-score-change"] %}
                         {% include "another-decision-0-0-4/an-de-mr-tl-10/an-de-mr-tl-10-score-overwrite.html" %}
                         {% else %}
-                        6
+                        0
                         {% endif %}
                       </td>
 
@@ -380,6 +511,19 @@
 
                   <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+
+                    <td class="govuk-table__cell table-spacer"><strong>
+                      {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                      4
+                      {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                      0
+                      {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                      0
+                      {% else %}
+                      AP NS
+                      {% endif %}</strong>
+                    </td>
+
                     <td class="govuk-table__cell table-spacer"><strong>
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
@@ -425,9 +569,10 @@
 
                       <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                          <td class="govuk-table__cell govuk-66-percent">&nbsp</td>
-                          <td class="govuk-table__cell govuk-16-percent">Original score	</td>
-                          <td class="govuk-table__cell govuk-16-percent">Revised score</td>
+                          <td class="govuk-table__cell govuk-40-percent">&nbsp</td>
+                          <td class="govuk-table__cell govuk-15-percent">AP score</td>
+                          <td class="govuk-table__cell govuk-15-percent">Disputed score</td>
+                          <td class="govuk-table__cell govuk-15-percent">Revised score</td>
                           <td class="govuk-table__cell govuk-16-percent">Status</td>
 
                         </tr>
@@ -435,14 +580,27 @@
 
                     <tr class="govuk-table__row">
                       <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-11/an-de-mr-tl-11-score-check">Planning and following journeys</a></td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                        4
+                        {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                        0 A
+                        {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                        0 A
+                        {% else %}
+                        AP NS
+                        {% endif %}
+                      </td>
+
                       <td class="govuk-table__cell table-spacer">
 
                       {% if data["entry-home-processing-options"] == "MakeMRChange" %}
                       6
                       {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-                      0
+                      0 A
                       {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-                      0
+                      0 A
                       {% else %}
                       NS
                       {% endif %}
@@ -453,7 +611,7 @@
                         {% if data["an-de-mr-tl-11-score-change"] %}
                         {% include "another-decision-0-0-4/an-de-mr-tl-11/an-de-mr-tl-11-score-overwrite.html" %}
                         {% else %}
-                        0
+                        0 A
                         {% endif %}
                       </td>
 
@@ -470,14 +628,27 @@
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell table-spacer"><a href="an-de-mr-tl-12/an-de-mr-tl-12-score-check">Moving around</a></td>
+
+            <td class="govuk-table__cell table-spacer">
+              {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+              4
+              {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+              0 A
+              {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+              0 A
+              {% else %}
+              AP NS
+              {% endif %}
+            </td>
+
             <td class="govuk-table__cell table-spacer">
 
             {% if data["entry-home-processing-options"] == "MakeMRChange" %}
             4
             {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
-            0
+            0 A
             {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
-            0
+            0 A
             {% else %}
             NS
             {% endif %}
@@ -488,7 +659,7 @@
               {% if data["an-de-mr-tl-12-score-change"] %}
               {% include "./an-de-mr-tl-12/an-de-mr-tl-12-score-overwrite.html" %}
               {% else %}
-              0
+              0 A
               {% endif %}
             </td>
 
@@ -505,6 +676,20 @@
 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell table-spacer"><strong>Score total</strong></td>
+
+              <td class="govuk-table__cell table-spacer"><strong>
+                {% if data["entry-home-processing-options"] == "MakeMRChange" %}
+                4
+                {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+                0
+                {% elif data["entry-home-processing-options"] == "MakeMRNilPay" %}
+                0
+                {% else %}
+                AP NS
+                {% endif %}</strong>
+              </td>
+
+
               <td class="govuk-table__cell table-spacer"><strong>
 
                 {% if data["entry-home-processing-options"] == "MakeMRChange" %}
