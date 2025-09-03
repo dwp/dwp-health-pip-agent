@@ -48,7 +48,7 @@
         classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
         value: data["nino"]
       }) }}
-
+<!-- 
       {{ govukInput({
         label: {
           html: legendName
@@ -60,14 +60,14 @@
         name: "search",
         classes: "govuk-input--width-10 govuk-!-margin-bottom-0",
         value: data["search"]
-      }) }}
+      }) }} -->
 
       <!------------H1 LEGEND------------>
         {% set legendDOB %}
         <h1 class="govuk-heading-s govuk-!-margin-bottom-0">Date of birth</h1>
         {% endset %}
       <!------------Legend--------------->
-
+<!--
       {{ govukDateInput({
         id: "claim-date-of-claim",
         namePrefix: "claim-date-of-claim",
@@ -98,7 +98,7 @@
             value: data["claim-date-of-claim-year"]
           }
         ]
-      }) }}
+      }) }} -->
 
 
       {{ govukButton({

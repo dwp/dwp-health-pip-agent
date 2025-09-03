@@ -11,7 +11,9 @@
 {% block content %}
 
 
-<form action="qppt-dl-change-check-router" method="post" class="form">
+<form action="qppt-m-9m-change-check" method="post" class="form">
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -21,29 +23,33 @@
       <!------------H1 HEADER------------>
         {% set dynamicH1 %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need to make a change to the original daily living qualifying period or prospective test?
-            </h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the person still meet the 3 month qualifying period for mobility?</h1>
+              </h1>
 
 
         {% endset %}
       <!------------Legend--------------->
 
+<!------------H1 LEGEND------------>
   {% set dynamicHint %}
+  <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
+  <p class="govuk-body govuk-!-margin-bottom-4">The person met the 3 month qualifying period for mobility when they submitted their application on 1 March 2024. </p>
 
-    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
-    <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they had daily living restrictions for at least 3 months before their assessment on 1 March 2024.</p>
-
-    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
-    <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have daily living restrictions 9 months after their assessment on undefined undefined undefined.</p>
-
+  <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
+  <!-- <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have mobility restrictions 9 months after their assessment on undefined undefined undefined.</p> -->
 
 
   {% endset %}
+<!------------Legend--------------->
 
 
           {{ govukRadios({
-            idPrefix: "qppt-dl-change-check",
-            name: "qppt-dl-change-check",
+            idPrefix: "qppt-m-3m-change-check",
+            name: "qppt-m-3m-change-check",
             fieldset: {
               legend: {
                 html: dynamicH1,
@@ -59,12 +65,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["qppt-dl-change-check"] == "Yes")
+              checked: (data["qppt-m-3m-change-check"] == "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: (data["qppt-dl-change-check"] == "No")
+              checked: (data["qppt-m-3m-change-check"] == "No")
             }
             ]
           }) }}
@@ -74,7 +80,7 @@
           {
             value: "NoRestrictions",
             text: "No restrictions were found",
-            checked: (data["qppt-dl-change-check"] == "NoRestrictions")
+            checked: (data["qppt-m-3m-change-check"] == "NoRestrictions")
           } -->
 
 

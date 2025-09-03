@@ -1,0 +1,337 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+<form action="payment-recipent-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment breakdown (Theory): Worst</h1>
+
+      <!-- <p class="govuk-body">Scenario:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Daily living and mobility, with offset effecive dates for each component</li>
+        <li>Stays in hospital in QP and links</li>
+        <li>Stays in hospital in arrears period (Linking periods)</li>
+        <li>Funded by NHS / Local authority</li>
+        <li>Says that add up to over 28 days</li>
+      </ul> -->
+
+      {% include "another-decision-0-0-4/cya-payment-rates.html" %}
+
+
+<br><br>
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-4">Daily living effective date</h1>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Submission</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Effective</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days offset</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+
+
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1 Apr 25</td>
+            <td class="govuk-table__cell">1 Apr 25</td>
+            <td class="govuk-table__cell">0</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+
+            <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Mobility effective date</h1>
+
+            <table class="govuk-table govuk-!-margin-bottom-8">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Submission</th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Effective</th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days offset</th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+                  <th scope="col" class="govuk-table__header govuk-12-5-percent-percent "></th>
+
+
+
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">1 Apr 25</td>
+                  <td class="govuk-table__cell">11 Apr 25</td>
+                  <td class="govuk-table__cell">10</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"></td>
+
+                  <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Temporary accommodation within the 3 month qualifying period</h1>
+      <p class="govuk-body govuk-!-margin-bottom-6">Qualifying period: 1 January 2025 to 31 March 2025</p>
+
+      <table class="govuk-table ">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Type</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Funding</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+
+
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">20 Feb 25</td>
+            <td class="govuk-table__cell">20 Mar 25</td>
+            <td class="govuk-table__cell">29</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Hospital</td>
+            <td class="govuk-table__cell">NHS / LA</td>
+            <td class="govuk-table__cell"><a href="obc-pre-decision-changes/obc-change-tasklist-item-3-dates" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <br><br>
+
+
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Arrears</h1>
+                  <p class="govuk-body govuk-!-margin-bottom-6">Date application was submitted: 1 April 25 to Date of decision: 2 June 25</p>
+
+                  <table class="govuk-table ">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Type</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Funding</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">4 Apr 25</td>
+                        <td class="govuk-table__cell">6 Apr 25</td>
+                        <td class="govuk-table__cell">3</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£47.40<br>£0</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">7 Apr 25</td>
+                        <td class="govuk-table__cell">10 Apr 25</td>
+                        <td class="govuk-table__cell">4</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£0<br>£0</td>
+                        <td class="govuk-table__cell">Hospital</td>
+                        <td class="govuk-table__cell">NHS / LA</td>
+                        <td class="govuk-table__cell"><a href="/obc-pre-decision-changes/obc-change-tasklist-item-3-dates" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">11 Apr 25</td>
+                        <td class="govuk-table__cell">24 Apr 25</td>
+                        <td class="govuk-table__cell">14</td>
+                        <td class="govuk-table__cell">Enhanced<br>Standard</td>
+                        <td class="govuk-table__cell">£221.20<br>£58.40</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">25 Apr 25</td>
+                        <td class="govuk-table__cell">27 Apr 25</td>
+                        <td class="govuk-table__cell">3</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£0<br>£0</td>
+                        <td class="govuk-table__cell">Hospital</td>
+                        <td class="govuk-table__cell">NHS / LA</td>
+                        <td class="govuk-table__cell"><a href="/obc-pre-decision-changes/obc-change-tasklist-item-3-dates" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">28 Apr 25</td>
+                        <td class="govuk-table__cell">5 May 25</td>
+                        <td class="govuk-table__cell">8</td>
+                        <td class="govuk-table__cell">Enhanced<br>Standard</td>
+                        <td class="govuk-table__cell">£126.40<br>£33.40</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total owed</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>25</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>£439.40</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+<br><br>
+
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Regular payment</h1>
+<p class="govuk-body govuk-!-margin-bottom-2">Every four weeks</p>
+
+
+                  <table class="govuk-table ">
+                    <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-50-percent-percent">Amount</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">3 June 25</td>
+                        <td class="govuk-table__cell">1 June 2027</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell">Enhanced<br>Standard</td>
+
+                        <td class="govuk-table__cell">£442.40<br>£91.80</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>£534.20</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  <br><br>
+
+
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-4">Total paid at decison</h1>
+
+                        <table class="govuk-table govuk-!-margin-bottom-8">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header govuk-25-percent-percent">Type</th>
+                              <th scope="col" class="govuk-table__header govuk-25-percent-percent">Amount</th>
+                              <th scope="col" class="govuk-table__header govuk-25-percent-percent">Frequency</th>
+                              <th scope="col" class="govuk-table__header govuk-25-percent-percent ">Date of payment</th>
+                              <th scope="col" class="govuk-table__header govuk-25-percent-percent ">Recipient</th>
+
+
+
+
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">Arrears</td>
+                              <td class="govuk-table__cell">£439.40</td>
+                              <td class="govuk-table__cell">One off payment</td>
+                              <td class="govuk-table__cell">2 June 2025</td>
+                                <td class="govuk-table__cell"><a href="payment-recipent-del-auth" class="govuk-link" rel="noreferrer noopener" target="">Delegated authority</a></td>
+
+
+                            </tr>
+
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">First payment</td>
+                              <td class="govuk-table__cell">£534.20</td>
+                              <td class="govuk-table__cell">Every four weeks</td>
+                              <td class="govuk-table__cell">3 June 2025</td>
+                              <td class="govuk-table__cell"><a href="payment-recipent-applicant" class="govuk-link" rel="noreferrer noopener" target="">Applicant</a></td>
+
+
+                              </tr>
+
+                          </tbody>
+                        </table>
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

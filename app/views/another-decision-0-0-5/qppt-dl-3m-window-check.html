@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-window-check-router" method="post" class="form">
+
+qppt-dl-9m-check
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+
+
+        {% set dynamicH1 %}
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+            Does the rate within the qualifying period fluctuate?
+          </h1>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 HINT------------>
+  {% set dynamicHint %}
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You can come back to this later if you need to make a change</p>
+  {% endset %}
+<!------------Legend--------------->
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-3m-window-check",
+            name: "qppt-dl-3m-window-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-3m-window-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-3m-window-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+          <!-- ,
+          {
+            divider: "or"
+          },
+          {
+            value: "SplitRate",
+            text: "I need to make a split rate decision",
+            checked: (data["qppt-dl-3m-window-check"] == "SplitRate")
+          } -->
+
+          <!-- ,
+          {
+            value: "ComeBackLater",
+            text: "I dont know yet",
+            checked: (data["qppt-dl-3m-window-check"] == "ComeBackLater")
+          } -->
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

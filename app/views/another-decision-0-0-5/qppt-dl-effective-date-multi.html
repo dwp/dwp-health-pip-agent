@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="application-6-about" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">This application needs to be moved to PIPCS</h2>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">We are not currently able to process split rate awards in this service.</p>
+
+
+
+<!--
+When will the first effective date start?
+<br><br>
+What was the outcome for this period?
+<br>
+— Nil<br>
+— Standard<br>
+— Enhanced<br>
+<br><br>
+When will the second effective date start for the onward payment?
+<br><br>
+These scores will be taken from the process
+<br><br> -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

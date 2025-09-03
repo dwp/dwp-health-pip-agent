@@ -1,0 +1,196 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+  <form action="cya-payment-schedule-s1" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Applicant payment details</h1>
+
+
+      {% set changeInPayment %}
+      {% if data["obc-change-tasklist-item-1"] %}
+      {{ data["obc-change-tasklist-item-1"]}}
+      {% else %}
+      changeInPayment
+      {% endif %}
+      {% endset -%}
+
+      {% set nameOnAccount %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      nameOnAccount
+      {% endif %}
+      {% endset -%}
+
+      {% set bankName %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      bankName
+      {% endif %}
+      {% endset -%}
+
+      {% set sortCode %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      sortCode
+      {% endif %}
+      {% endset -%}
+
+      {% set accountNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      accountNumber
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-change-tasklist-item-1-name-on-account"] %}
+      {{ data["obc-change-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      rollNumber
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Have their bank details changed since the original decision?"
+            },
+            value: {
+              html: changeInPayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              html: nameOnAccount
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Bank, building society or credit union name"
+            },
+            value: {
+              text: bankName
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: sortCode
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: accountNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does your account have a roll or reference number?"
+            },
+            value: {
+              text: rollNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

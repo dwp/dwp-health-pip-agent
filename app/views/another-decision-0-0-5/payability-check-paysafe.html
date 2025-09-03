@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="payability-check-location" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have indicated that the person might struggle with a large payment</h1>
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This decision will be flagged for quality checking</p> -->
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Original decision score for 'Making budgeting decisions'</b></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions</p>
+
+
+<h3 class="govuk-heading-s govuk-!-margin-bottom-2">Details why might the person struggle with a large payment</h3>
+
+<p class="govuk-body govuk-!-margin-bottom-8">
+{% if data["obc-change-tasklist-item-2-details"] %}
+  {{ data["obc-change-tasklist-item-2-details"]}}
+{% else %}
+  No details added
+{% endif %}
+</p>
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "payability-check-paysafe",
+      name: "payability-check-paysafe",
+      fieldset: {
+        legend: {
+          text: "Will this issue  mean they will also struggle to manage their regular payments?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      items: [
+      {
+        value: "Yes",
+        text: "Yes",
+        checked: (data["payability-check-paysafe"] == "Yes")
+      },
+      {
+        value: "No",
+        text: "No",
+        checked: (data["payability-check-paysafe"] == "No")
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

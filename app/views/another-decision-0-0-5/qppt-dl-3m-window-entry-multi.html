@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-3m-window-cya" method="post" class="form">
+  <!-- text: data['doc-absence-date-left-day'] + ' ' + (data['doc-absence-date-left-month'] | getMonth) + ' ' + data['doc-absence-date-left-year'] -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Daily living payment periods
+      </h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">Date of application: <b>1 January 2025</b> </p>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">The effeive date: <b>1 February 2025</b> <a href="qppt-dl-3m-alt-date" target="_blank">Change</a></p>
+
+
+<!------------H1 HINT------------>
+  {% set dynamicHint %}
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"><b>Assessment provider recomendaions:</b></p> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">
+
+<!-- Rates do not very in this period -->
+
+  {% endset %}
+<!------------Legend--------------->
+
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "qppt-dl-3m-window-entry-w1-rate",
+  name: "qppt-dl-3m-window-entry-w1-rate",
+  fieldset: {
+    legend: {
+      text: "What rate for the first period?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+  {
+    value: "Nil",
+    text: "Nil",
+    checked: (data["qppt-dl-3m-window-entry-w1-rate"] == "Nil")
+  },
+  {
+    value: "Standard",
+    text: "Standard",
+    checked: (data["qppt-dl-3m-window-entry-w1-rate"] == "Standard")
+  },
+  {
+    value: "Enhanced",
+    text: "Enhanced",
+    checked: (data["qppt-dl-3m-window-entry-w1-rate"] == "Enhanced")
+  }
+  ]
+}) }}
+
+{{ govukDateInput({
+  id: "qppt-dl-3m-window-entry-w1-end-date",
+  namePrefix: "qppt-dl-3m-window-entry-w1-end-date",
+  fieldset: {
+    legend: {
+      html: "When will the first period end?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["qppt-dl-3m-window-entry-w1-end-date-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["qppt-dl-3m-window-entry-w1-end-date-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["qppt-dl-3m-window-entry-w1-end-date-year"]
+    }
+  ]
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "qppt-dl-3m-window-entry-w2-rate",
+  name: "qppt-dl-3m-window-entry-w2-rate",
+  fieldset: {
+    legend: {
+      text: "What rate for the second period?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+  {
+    value: "Nil",
+    text: "Nil",
+    checked: (data["qppt-dl-3m-window-entry-w2-rate"] == "Nil")
+  },
+  {
+    value: "Standard",
+    text: "Standard",
+    checked: (data["qppt-dl-3m-window-entry-w2-rate"] == "Standard")
+  },
+  {
+    value: "Enhanced",
+    text: "Enhanced",
+    checked: (data["qppt-dl-3m-window-entry-w2-rate"] == "Enhanced")
+  }
+  ]
+}) }}
+
+{{ govukDateInput({
+  id: "qppt-dl-3m-window-entry-w2-end-date",
+  namePrefix: "qppt-dl-3m-window-entry-w2-end-date",
+  fieldset: {
+    legend: {
+      html: "When will the second period end?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      value: data["qppt-dl-3m-window-entry-w2-end-date-day"]
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      value: data["qppt-dl-3m-window-entry-w2-end-date-month"]
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      value: data["qppt-dl-3m-window-entry-w2-end-date-year"]
+    }
+  ]
+}) }}
+
+
+
+
+<!------------Legend--------------->
+
+{% set dynamicH1 %} <h1 class="govuk-heading-xl govuk-!-margin-bottom-2"></h1>
+
+{% endset %}
+<!------------Legend--------------->
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2">A new payment window will start the day after the second period ends</p>
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">The rate for the new period will be based on your decision outcome of: <b>Enhanced</b></p>
+
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-3m-window-check",
+            name: "qppt-dl-3m-window-check",
+            fieldset: {
+              legend: {
+                html: "Do you need to add another payment window?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              html: ""
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-3m-window-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-3m-window-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+          {% if data["search"] %}
+          {% else %}
+          {% endif %}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

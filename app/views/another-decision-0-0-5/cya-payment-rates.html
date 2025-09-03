@@ -1,0 +1,150 @@
+{% set legendNumbersDetails %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Rates 2025 - 2026</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">Effective from: 4 April 2025</p>
+
+    <table class="govuk-table govuk-!-margin-bottom-0">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Component</th>
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Rate</th>
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Amount</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Daily living</td>
+          <td class="govuk-table__cell">Nil</td>
+          <td class="govuk-table__cell">£0</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Standard</td>
+          <td class="govuk-table__cell">£73.90</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Enhanced</td>
+          <td class="govuk-table__cell">£110.40</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Mobility</td>
+          <td class="govuk-table__cell">Nil</td>
+          <td class="govuk-table__cell">£0</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Standard</td>
+          <td class="govuk-table__cell">£29.20</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Enhanced</td>
+          <td class="govuk-table__cell">£77.05</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Rates 2026 - 2027</h1>
+    <p class="govuk-body govuk-!-margin-bottom-2">Effective from: 4 April 2026</p>
+
+    <table class="govuk-table govuk-!-margin-bottom-8">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Component</th>
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Rate</th>
+          <th scope="col" class="govuk-table__header govuk-33-percent-percent">Amount</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Daily living</td>
+          <td class="govuk-table__cell">Nil</td>
+          <td class="govuk-table__cell">£0</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Standard</td>
+          <td class="govuk-table__cell">£73.90</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Enhanced</td>
+          <td class="govuk-table__cell">£110.40</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Mobility</td>
+          <td class="govuk-table__cell">Nil</td>
+          <td class="govuk-table__cell">£0</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Standard</td>
+          <td class="govuk-table__cell">£29.20</td>
+        </tr>
+      </tbody>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell">Enhanced</td>
+          <td class="govuk-table__cell">£77.05</td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "Payment rates breakdown",
+  classes: "govuk-!-margin-bottom-4 govuk-!-padding-top-4",
+  html: legendNumbersDetails
+}) }}

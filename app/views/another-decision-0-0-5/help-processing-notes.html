@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="help-accessing-person-record" method="post" class="form">
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id-base.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Recording decision notes</h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">'My decision notes' will be at the top of all screens moving forward. This is for you to record your notes as you look at the decision again. You'll be able to  cut and paste content within the service into the notes.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">The notes will:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
+        <li>follow you throughout the whole decision reconsideration process</li>
+        <li>help you when making a call to the person</li>
+        <li>automatically save once a minute, or sooner if you need to</li>
+</ul>
+<p class="govuk-body govuk-!-margin-bottom-6">There will be an opportunity to tidy your notes at the end.</p>
+
+
+{{ govukRadios({
+  idPrefix: "help-processing-notes",
+  name: "help-processing-notes",
+  classes: "govuk-checkboxes",
+  fieldset: {
+    legend: {
+      text: "Do you want to see this help page next time?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: ""
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["help-processing-notes"] == "Yes")
+    },
+    {
+      value: "No",
+      text: "No",
+      checked: (data["help-processing-notes"] == "No")
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

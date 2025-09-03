@@ -1,0 +1,82 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "another-decision-0-0-4/call-status.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="award-dates-review-check-router" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      {% if data["award-dates-ap-period"] == "No future assessments required" %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation that no future assessments are needed?</h2>
+
+      {% elif data["award-dates-ap-period"] == "Other" %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the assessment provider's recommendation to award until {{ data['award-dates-ap-period-other-day'] + ' ' + (data['award-dates-ap-period-other-month'] | getMonth) + ' ' + data['award-dates-ap-period-other-year']}}?</h2>
+
+      {% else %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Do you agree with the previous decision's award review period of XXX? {{data["award-dates-ap-period"]}}?</h2>
+      {% endif %}
+
+
+      {% set legendHint %}
+
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Original review peiord</b></p>
+      <p class="govuk-body govuk-!-margin-bottom-4">DD MM YYYY</p> -->
+      <!-- <p class="govuk-body govuk-!-margin-bottom-4">The applicant is 65 and will reach State Pension age on 20 February 2028</p> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "award-dates-review-check",
+        name: "award-dates-review-check",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["award-dates-review-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["award-dates-review-check"] == "No")
+        }
+        ]
+      }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

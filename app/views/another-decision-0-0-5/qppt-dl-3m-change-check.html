@@ -1,0 +1,91 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-dl-9m-change-check" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the person still meet the 3 month qualifying period for daily living?
+            </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+  {% set dynamicHint %}
+
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
+    <p class="govuk-body govuk-!-margin-bottom-4">The person met the 3 month qualifying period for daily living when they submitted their application on 1 March 2024.</p>
+
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
+    <!-- <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have daily living restrictions 9 months after their assessment on undefined undefined undefined.</p> -->
+
+
+
+  {% endset %}
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-dl-3m-change-check",
+            name: "qppt-dl-3m-change-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-dl-3m-change-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-dl-3m-change-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+          <!-- ,
+          {
+            value: "NoRestrictions",
+            text: "No restrictions were found",
+            checked: (data["qppt-dl-3m-change-check"] == "NoRestrictions")
+          } -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

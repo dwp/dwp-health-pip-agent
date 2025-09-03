@@ -1,0 +1,126 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="entry-home" method="post" class="form">
+
+  {% include "person-record-0-0-2/record-id-base.html" %}
+
+  <!-- {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Applications and decision",
+        href: "r-application-overview"
+      },
+      {
+        text: "Reconsideration request",
+        href: ""
+      }
+    ]
+  }) }} -->
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Create and send Mandatory response letter</h1>
+
+        <!-- <p class="govuk-body govuk-!-margin-bottom-2">XXX</p> -->
+
+
+
+
+<!------------H1 LEGEND------------>
+
+  {% set dynamicResponse %}
+    {{ data["mr-preparation-response"]}}
+  {% endset %}
+<!------------Legend--------------->
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Application date"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-9m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "MR submission date"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-3m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                html: "Response to citizen"
+              },
+              value: {
+                html: dynamicResponse
+              },
+              actions: {
+                items: [
+                  {
+                    href: "mr-preparation-response",
+                    text: "Change",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+        <h3 class="govuk-heading-xm govuk-!-padding-top-2 govuk-!-margin-bottom-4">What you need to do now</h3>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Select the appropriate letter template and copy the information on this page to the relevant sections.</p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You will then need to add the payment details once they are available in the applicant's record. The letter will be ready to send once you've added the payment details. The applicant’s address is in their registration (PIP1).</p>
+
+
+
+      {{ govukButton({
+        text: "Save and close",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+
+
+  </form>
+
+{% endblock %}

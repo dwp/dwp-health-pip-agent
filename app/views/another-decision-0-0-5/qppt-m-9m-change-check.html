@@ -1,0 +1,97 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form action="qppt-m-9m-change-check-router" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <!------------H1 HEADER------------>
+        {% set dynamicH1 %}
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+
+
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Is the person still likely to have mobility restrictions 9 months after 2 February 2024?</h1>
+              </h1>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+<!------------H1 LEGEND------------>
+  {% set dynamicHint %}
+  <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
+  <p class="govuk-body govuk-!-margin-bottom-4">The assessment provider indicated that they are likely to have mobility restrictions 9 months after their assessment on 2 February 2024.</p>
+
+  <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
+  <!-- <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have mobility restrictions 9 months after their assessment on undefined undefined undefined.</p> -->
+
+
+  {% endset %}
+<!------------Legend--------------->
+
+
+          {{ govukRadios({
+            idPrefix: "qppt-m-9m-change-check",
+            name: "qppt-m-9m-change-check",
+            fieldset: {
+              legend: {
+                html: dynamicH1,
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            classes: "govuk-radios",
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["qppt-m-9m-change-check"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["qppt-m-9m-change-check"] == "No")
+            }
+            ]
+          }) }}
+
+
+          <!-- ,
+          {
+            value: "NoRestrictions",
+            text: "No restrictions were found",
+            checked: (data["qppt-m-9m-change-check"] == "NoRestrictions")
+          } -->
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

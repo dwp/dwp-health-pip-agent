@@ -11,7 +11,7 @@
 {% block content %}
 
 
-<form action="qppt-m-change-check-router" method="post" class="form">
+<form action="qppt-m-9m-change-check" method="post" class="form">
 
 
 
@@ -27,7 +27,7 @@
 
 
 
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Do you need to make a change to the mobility qualifying period or prospective test?</h1>
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Does the person still meet the 3 month qualifying period for mobility?</h1>
               </h1>
 
 
@@ -37,10 +37,10 @@
 <!------------H1 LEGEND------------>
   {% set dynamicHint %}
   <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>In the original decision The qualifying period was met</b></p> -->
-  <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they had mobility restrictions for at least 3 months before their assessment on 1 March 2024.</p>
+  <p class="govuk-body govuk-!-margin-bottom-4">The person met the 3 month qualifying period for mobility when they submitted their application on 1 March 2024. </p>
 
   <!-- <p class="govuk-body govuk-!-margin-bottom-2"><b>Perspecive test</b></p> -->
-  <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have mobility restrictions 9 months after their assessment on undefined undefined undefined.</p>
+  <!-- <p class="govuk-body govuk-!-margin-bottom-4">The original decision indicated they are likely to have mobility restrictions 9 months after their assessment on undefined undefined undefined.</p> -->
 
 
   {% endset %}
@@ -48,8 +48,8 @@
 
 
           {{ govukRadios({
-            idPrefix: "qppt-m-change-check",
-            name: "qppt-m-change-check",
+            idPrefix: "qppt-m-3m-change-check",
+            name: "qppt-m-3m-change-check",
             fieldset: {
               legend: {
                 html: dynamicH1,
@@ -65,12 +65,12 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["qppt-m-change-check"] == "Yes")
+              checked: (data["qppt-m-3m-change-check"] == "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: (data["qppt-m-change-check"] == "No")
+              checked: (data["qppt-m-3m-change-check"] == "No")
             }
             ]
           }) }}
@@ -80,7 +80,7 @@
           {
             value: "NoRestrictions",
             text: "No restrictions were found",
-            checked: (data["qppt-m-change-check"] == "NoRestrictions")
+            checked: (data["qppt-m-3m-change-check"] == "NoRestrictions")
           } -->
 
 

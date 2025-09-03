@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+
+{% if data["obc-change-tasklist-item-3"] %}
+<form action="../obc-callguide" method="post" class="form">
+{% else %}
+<form action="obc-change-tasklist-item-3" method="post" class="form">
+<!-- <form action="../obc-change-tasklist-item-2" method="post" class="form"> -->
+{% endif %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "../obc-callguide"
+    },
+    {
+      text: "Change taskList",
+      href: "obc-change-tasklist"
+    },
+    {
+      text: "Name of thing",
+      href: "obc-change-tasklist-item-2-del-auth"
+    }
+  ]
+}) }}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Enter their new payment details</h2>
+
+          {{ govukRadios({
+            classes: "govuk-radios govuk-!-margin-bottom-4",
+            idPrefix: "obc-change-tasklist-item-2-relationship",
+            name: "obc-change-tasklist-item-2-relationship",
+            fieldset: {
+              legend: {
+                html: "What is their relationship?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: dynamicHintHelper
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Power of attorney",
+              checked: (data["obc-change-tasklist-item-2-relationship"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "DWP appointee",
+              checked: (data["obc-change-tasklist-item-2-relationship"] == "No")
+            }
+            ]
+            }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Name on account"
+            },
+            id: "obc-change-tasklist-item-2-del-auth-name-of-bank",
+            name: "obc-change-tasklist-item-2-del-auth-name-on-account",
+            classes: "govuk-input--width-20",
+            value: data["obc-change-tasklist-item-2-del-auth-name-on-account"]
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Bank, building society or credit union name"
+            },
+            id: "obc-change-tasklist-item-2-del-auth-name-on-account",
+            name: "obc-change-tasklist-item-2-del-auth-name-on-account",
+            classes: "govuk-input--width-20",
+            value: data["obc-change-tasklist-item-2-del-auth-name-on-account"]
+          }) }}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-2-del-auth-sort-code",
+      id: "obc-change-tasklist-item-2-del-auth-sort-code",
+      classes: "govuk-input--width-10",
+      value: data["obc-change-tasklist-item-2-del-auth-sort-code"],
+      label: {
+        text: "Sort code"
+      }
+    }) }}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-2-del-auth-account number",
+      id: "obc-change-tasklist-item-2-del-auth-account number",
+      classes: "govuk-input--width-10",
+      value: data["obc-change-tasklist-item-2-del-auth-account number"],
+      label: {
+        text: "Account number"
+      }
+    }) }}
+
+    {% set buildingSociety %}
+
+    {{ govukInput({
+      name: "obc-change-tasklist-item-2-del-auth-roll-number",
+      id: "obc-change-tasklist-item-2-del-auth-roll-number",
+      classes: "govuk-input--width-20",
+      value: data["obc-change-tasklist-item-2-del-auth-roll-number"],
+      label: {
+        html: "Roll or reference number"
+      },
+      hint: {
+        text: ""
+      }
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "obc-change-tasklist-item-2-del-auth-roll-number-check",
+      name: "obc-change-tasklist-item-2-del-auth-roll-number-check",
+      fieldset: {
+        legend: {
+          text: "Does your account have a roll or reference number?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      checked: (data["obc-change-tasklist-item-2-del-auth-roll-number-check"] == "Yes"),
+        conditional: {
+          html: buildingSociety
+        }
+      },
+      {
+          value: "No",
+          text: "No",
+          checked: (data["obc-change-tasklist-item-2-del-auth-roll-number-check"] == "No")
+      }
+      ]
+    }) }}
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

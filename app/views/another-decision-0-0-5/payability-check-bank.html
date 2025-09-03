@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+<form action="payability-check-paysafe" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "another-decision-0-0-4/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There has been a change to the person's payment details</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">The decision will be referred for quality assurance before payments are sent.</p>
+
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">This means:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+
+        <li>the decision will be checked by someone else</li>
+        <li>the call recording will be listened to </li>
+    </ul>
+ -->
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
