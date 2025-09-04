@@ -43,7 +43,7 @@
 
 <table class="govuk-table">
 
-  <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents used to make the decision</h1>
+  <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents used to make the revised decision</h1>
 
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -94,7 +94,7 @@
         <td class="govuk-table__cell table-spacer"></td>
         <td class="govuk-table__cell table-spacer">
 
-          {% if data["qppt-dl-change-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+          {% if data["qppt-dl-3m-change-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
           {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
           {% endif %}
 
@@ -111,7 +111,7 @@
             <td class="govuk-table__cell table-spacer"></td>
             <td class="govuk-table__cell table-spacer">
 
-              {% if data["qppt-m-change-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+              {% if data["qppt-m-3m-change-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
               {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
               {% endif %}
 
@@ -134,7 +134,6 @@
 
 
 
-        {% include "agent-day-0-1-9/qppt-status.html" %}
 
 
 
