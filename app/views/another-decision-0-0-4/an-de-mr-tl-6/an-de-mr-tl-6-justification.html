@@ -15,44 +15,19 @@
     <form action="../an-de-tasklist" method="post" class="form">
 
 
-    {% if data["an-de-mr-tl-6-score-check"] == "Agree" %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Reconsider a decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Dressing and undressing overview",
-          href: "an-de-mr-tl-6-score-check"
-        }
-      ]
-    }) }}
-
-    {% else %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Make an MR decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Dressing and undressing",
-          href: "an-de-mr-tl-6-score-check"
-        },
-        {
-          text: "Select descriptor",
-          href: "an-de-mr-tl-6-score-change"
-        }
-      ]
-    }) }}
-
-
-    {% endif %}
+      {{ govukBreadcrumbs({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+        items: [
+          {
+            text: "Reconsider a decision",
+            href: "../an-de-tasklist"
+          },
+          {
+            text: "Dressing and undressing",
+            href: "an-de-mr-tl-6-score-check"
+          }
+        ]
+      }) }}
 
 
 
@@ -170,7 +145,7 @@
               isPageHeading: true
             },
             hint: {
-              html: legendCanned
+              html: ""
             },
             value: data["an-de-mr-tl-6-score-check-reason"]
           }) }}

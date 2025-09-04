@@ -9,53 +9,24 @@
 {% endblock %}
 {% block content %}
 
-{% include "another-decision-0-0-4/record-id.html" %}
+{% include "another-decision-0-0-5/record-id.html" %}
 
 
 <form action="../an-de-tasklist" method="post" class="form">
 
-
-    {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Reconsider a decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Moving around scores",
-          href: "an-de-mr-tl-12-score-check"
-        }
-      ]
-    }) }}
-
-    {% else %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Make an MR decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Preparing food overview",
-          href: "an-de-mr-tl-12-score-check"
-        },
-        {
-          text: "Select descriptor",
-          href: "an-de-mr-tl-12-score-change"
-        }
-      ]
-    }) }}
-
-
-    {% endif %}
-
-
-
+  {{ govukBreadcrumbs({
+    classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+    items: [
+      {
+        text: "Reconsider a decision",
+        href: "../an-de-tasklist"
+      },
+      {
+        text: "Moving around",
+        href: "an-de-mr-tl-12-score-check"
+      }
+    ]
+  }) }}
 
       <div class="govuk-grid-row">
 
@@ -86,7 +57,7 @@
                 <strong>Descriptor F (8 points)</strong>
               {% endif %}
 
-              for preparing food
+              for moving around
 
             {% else %}
             Nowt
@@ -100,7 +71,7 @@
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
 
-          {% include "another-decision-0-0-4/an-de-mr-tl-12/an-de-mr-tl-12-extract.html" %}
+          {% include "another-decision-0-0-5/an-de-mr-tl-12/an-de-mr-tl-12-extract.html" %}
 
 
 

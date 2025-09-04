@@ -9,50 +9,25 @@
 {% endblock %}
 {% block content %}
 
-{% include "another-decision-0-0-4/record-id.html" %}
+{% include "another-decision-0-0-5/record-id.html" %}
 
 
     <form action="../an-de-tasklist" method="post" class="form">
 
 
-    {% if data["an-de-mr-tl-1-score-check"] == "Agree" %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Reconsider a decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Making budgeting decisions",
-          href: "an-de-mr-tl-1-score-check"
-        }
-      ]
-    }) }}
-
-    {% else %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Reconsider a decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Making budgeting decisions",
-          href: "an-de-mr-tl-1-score-check"
-        },
-        {
-          text: "Select descriptor",
-          href: "an-de-mr-tl-1-score-change"
-        }
-      ]
-    }) }}
-
-
-    {% endif %}
+      {{ govukBreadcrumbs({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+        items: [
+          {
+            text: "Reconsider a decision",
+            href: "../an-de-tasklist"
+          },
+          {
+            text: "Making budgeting decisions",
+            href: "an-de-mr-tl-10-score-check"
+          }
+        ]
+      }) }}
 
 
 
@@ -94,26 +69,82 @@
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
 
-          {% include "another-decision-0-0-4/an-de-mr-tl-10/an-de-mr-tl-10-extract.html" %}
+          {% include "another-decision-0-0-5/an-de-mr-tl-10/an-de-mr-tl-10-extract.html" %}
+
+
+                    <!------------CANNED PHRASES LEGEND------------>
+                      {% set legendCannedDetails %}
+
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-quarter">
+                          <p class="govuk-body govuk-!-margin-bottom-2">No disagreement</p>
+
+
+                        </div>
+                        <div class="govuk-grid-column-three-quarters">
+
+                          <p class="govuk-list_prase"><span id="prase1">You did not dispute the points given for this activity.</span></p>
+
+
+                          <div class="app-example__code">
+                              <button class="app-example__copy-code-button" data-copy-text="You did not dispute the points given for this activity." aria-live="assertive" data-module="html">Copy paragraph</button>
+                            </div>
+
+                        </div>
+                      </div>
+
+                      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-one-quarter">
+                          <p class="govuk-body govuk-!-margin-bottom-2">No evidence of change</p>
+
+
+                        </div>
+                        <div class="govuk-grid-column-three-quarters">
+
+                          <p class="govuk-list_prase"><span id="prase2">There was no new evidence available to support changing the points and justification given for this activity.</span></p>
+
+
+                          <div class="app-example__code">
+                              <button class="app-example__copy-code-button" data-copy-text="There was no new evidence available to support changing the points given for this activity." aria-live="assertive" data-module="html">Copy paragraph</button>
+                            </div>
+
+                        </div>
+                      </div>
+
+
+                      {% endset %}
+
+                      {% set legendCanned %}
+
+                      {{ govukDetails({
+                        summaryText: "Standard wording examples",
+                        classes: "govuk-!-margin-bottom-0",
+                        html: legendCannedDetails
+                      }) }}
+
+                      {% endset %}
+                    <!------------Legend--------------->
 
 
 
 
-
-          {{ govukTextarea({
-            name: "an-de-mr-tl-10-score-check-reason",
-            id: "an-de-mr-tl-10-score-check-reason",
-            classes: " govukTextarea--overwrite",
-            label: {
-              text: "",
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            hint: {
-              html: legendCanned
-            },
-            value: data["an-de-mr-tl-10-score-check-reason"]
-          }) }}
+                    {{ govukTextarea({
+                      name: "an-de-mr-tl-10-score-check-reason",
+                      id: "an-de-mr-tl-10-score-check-reason",
+                      classes: " govukTextarea--overwrite",
+                      label: {
+                        text: "",
+                        classes: "govuk-label--m",
+                        isPageHeading: true
+                      },
+                      hint: {
+                        html: legendCanned
+                      },
+                      value: data["an-de-mr-tl-10-score-check-reason"]
+                    }) }}
 
           {{ govukButton({
             text: "Continue",

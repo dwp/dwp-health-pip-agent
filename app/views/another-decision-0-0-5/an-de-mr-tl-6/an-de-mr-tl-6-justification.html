@@ -9,50 +9,25 @@
 {% endblock %}
 {% block content %}
 
-{% include "another-decision-0-0-4/record-id.html" %}
+{% include "another-decision-0-0-5/record-id.html" %}
 
 
     <form action="../an-de-tasklist" method="post" class="form">
 
 
-    {% if data["an-de-mr-tl-6-score-check"] == "Agree" %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Reconsider a decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Dressing and undressing overview",
-          href: "an-de-mr-tl-6-score-check"
-        }
-      ]
-    }) }}
-
-    {% else %}
-
-    {{ govukBreadcrumbs({
-      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-      items: [
-        {
-          text: "Make an MR decision",
-          href: "an-de-tasklist"
-        },
-        {
-          text: "Dressing and undressing",
-          href: "an-de-mr-tl-6-score-check"
-        },
-        {
-          text: "Select descriptor",
-          href: "an-de-mr-tl-6-score-change"
-        }
-      ]
-    }) }}
-
-
-    {% endif %}
+      {{ govukBreadcrumbs({
+        classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+        items: [
+          {
+            text: "Reconsider a decision",
+            href: "../an-de-tasklist"
+          },
+          {
+            text: "Dressing and undressing",
+            href: "an-de-mr-tl-6-score-check"
+          }
+        ]
+      }) }}
 
 
 
@@ -66,7 +41,7 @@
 
             {% if data["an-de-mr-tl-6-score-check"] == "Agree" %}
 
-              Add your justification for selecting descriptor B (2 points) for preparing food
+              Add your justification for selecting descriptor B (2 points) for dressing and undressing
 
             {% elif data["an-de-mr-tl-6-score-check"] == "Amended" %}
 
@@ -86,7 +61,7 @@
                 <strong>Descriptor F (8 points)</strong>
               {% endif %}
 
-              for preparing food
+              for dressing and undressing
 
             {% else %}
             Nowt
@@ -98,7 +73,7 @@
           <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Add your reason for selecting this descriptor to the decision letter</p> -->
 
 
-          {% include "another-decision-0-0-4/an-de-mr-tl-6/an-de-mr-tl-6-extract.html" %}
+          {% include "another-decision-0-0-5/an-de-mr-tl-6/an-de-mr-tl-6-extract.html" %}
 
 
           <!------------CANNED PHRASES LEGEND------------>
@@ -170,7 +145,7 @@
               isPageHeading: true
             },
             hint: {
-              html: legendCanned
+              html: ""
             },
             value: data["an-de-mr-tl-6-score-check-reason"]
           }) }}
