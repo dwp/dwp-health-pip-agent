@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+{% include "an-de-mr-call-bar-notes.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-4/record-id.html" %}
+
+  <form action="an-de-tasklist" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-three-quarters">
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Are any of this things showing within SearchLight for this person</h1> -->
+
+      {% set dynamicBenefitsHint %}
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Armed Forces Independence Payment (AFIP)</li>
+        <li>War Pension Constant Attendance Allowance (WPCAA)</li>
+        <li>Industrial Injury Disablement Benefit Constant Attendance Allowance (IIDBCAA)</li>
+        <li>War Pension Mobility Supplement (WPMS)</li>
+        <li>Constant Attendance Allowance (CAA)</li>
+      </ul>
+
+      {% endset -%}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "mr-retain-questions",
+        name: "mr-retain-questions",
+        fieldset: {
+          legend: {
+            text: "Is there evidence of debt, fraud or overlapping benefits?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Check Searchlight and event history. Select all that apply."
+        },
+        items: [
+        {
+          value: "3",
+          text: "Debt",
+          checked: (data["mr-retain-questions"] == "3")
+        },
+          {
+            value: "1",
+            text: "Fraud",
+            checked: (data["mr-retain-questions"] == "1")
+          },
+          {
+            value: "2",
+            text: "Armed Forces Independence Payment (AFIP)",
+            checked: (data["mr-retain-questions"] == "2")
+          },
+          {
+            value: "2",
+            text: "War Pensioners’ Mobility Supplement (WPMS)",
+            checked: (data["mr-retain-questions"] == "2")
+          },
+          {
+            value: "2",
+            text: "War Pension Constant Attendance Allowance (WPCAA)",
+            checked: (data["mr-retain-questions"] == "2")
+          },
+          {
+            value: "2",
+            text: "Constant Attendance Allowance (CAA)",
+            checked: (data["mr-retain-questions"] == "2")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "none",
+            text: "No, there's no evidence of any of these",
+            checked: (data["mr-retain-questions"] == "none"),
+            behaviour: "exclusive"
+          }
+          ]
+        }) }}
+
+
+
+ {{ govukButton({
+   text: "Continue",
+   classes: "govuk-!-margin-bottom-8"
+ }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
