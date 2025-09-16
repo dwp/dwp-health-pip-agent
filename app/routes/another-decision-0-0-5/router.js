@@ -1780,6 +1780,9 @@ router.post(`/entry-home-processing-options-router`, (req, res) => {
   else if (processType == 'MakeMRNil') {
     res.redirect(`task-overview`)
   }
+  else if (processType == 'PayRemainsPay') {
+    res.redirect(`task-overview`)
+  }
   else if (processType == 'MakeMRChange') {
     res.redirect(`task-overview`)
   }
@@ -1897,15 +1900,19 @@ router.post(`/payability-check-router`, (req, res) => {
   const payabilityCheck = req.session.data['payability-check']
 
   if (payabilityCheck == 'No') {
-    res.redirect(`payability-reasons`)
+    res.redirect(`cya-letter-review`)
   }
   else if (payabilityCheck == 'Yes') {
     res.redirect(`cya-letter-review`)
+  }
+  else if (payabilityCheck == 'YesR3') {
+    res.redirect(`payability-tasklist`)
   }
    else {
     res.redirect(`an-de-tasklist`)
   }
 })
+
 
 
 
@@ -1967,19 +1974,6 @@ router.post(`/award-dates-review-check-router`, (req, res) => {
   }
 })
 
-router.post(`/payability-check-router`, (req, res) => {
-  const payabilityCheck = req.session.data['payability-check']
-
-  if (payabilityCheck == 'No') {
-    res.redirect(`payability-reasons`)
-  }
-  else if (payabilityCheck == 'Yes') {
-    res.redirect(`cya-letter-review`)
-  }
-   else {
-    res.redirect(`an-de-tasklist`)
-  }
-})
 
 
 
@@ -2070,6 +2064,111 @@ router.post(`/obc-change-tasklist-item-8-router`, (req, res) => {
 })
 
 
+// PAYABILITY TASK LIST
+
+router.post(`/payability-tasklist-item-1-router`, (req, res) => {
+  const payTL1 = req.session.data['payability-tasklist-item-1']
+
+  if (payTL1 == 'Yes') {
+    res.redirect(`payability-tasklist-item-1-details`)
+  }
+  else if (payTL1 == 'No') {
+    res.redirect(`payability-tasklist-item-2`)
+  }
+  else {
+    res.redirect(`XXX`)
+  }
+})
+
+router.post(`/payability-tasklist-item-2-router`, (req, res) => {
+  const payTL2 = req.session.data['payability-tasklist-item-2']
+
+  if (payTL2 == 'Yes') {
+    res.redirect(`payability-tasklist-item-2-details`)
+  }
+  else if (payTL2 == 'No') {
+    res.redirect(`payability-tasklist-item-3`)
+  }
+  else if (payTL2 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+router.post(`/payability-tasklist-item-3-router`, (req, res) => {
+  const payTL3 = req.session.data['payability-tasklist-item-3']
+
+  if (payTL3 == 'Yes') {
+    res.redirect(`payability-tasklist-item-3-details`)
+  }
+  else if (payTL3 == 'No') {
+    res.redirect(`payability-tasklist-item-4`)
+  }
+  else if (payTL3 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`payability-tasklist-item-3-details`)
+  }
+})
+
+router.post(`/payability-tasklist-item-3b-router`, (req, res) => {
+  const payTL3b = req.session.data['payability-tasklist-item-3b']
+
+  if (payTL3b == 'Yes') {
+    res.redirect(`payability-tasklist-item-3b-details`)
+  }
+  else if (payTL3b == 'No') {
+    res.redirect(`payability-tasklist-item-4`)
+  }
+  else if (payTL3b == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`payability-tasklist-item-3b-details`)
+  }
+})
+
+
+
+router.post(`/payability-tasklist-item-4-router`, (req, res) => {
+  const payTL4 = req.session.data['payability-tasklist-item-3']
+
+  if (payTL4 == 'Yes') {
+    res.redirect(`payability-tasklist-item-4-details`)
+  }
+  else if (payTL4 == 'No') {
+    res.redirect(`payability-tasklist-item-5`)
+  }
+  else if (payTL4 == 'NotRequired') {
+    res.redirect(`obc-callguide`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+router.post(`/payability-tasklist-item-8-router`, (req, res) => {
+  const payTL8 = req.session.data['payability-tasklist-item-8']
+
+  if (payTL8 == 'Yes') {
+    res.redirect(`payability-tasklist-item-8-details`)
+  }
+  else if (payTL8 == 'No') {
+    res.redirect(`payability-tasklist`)
+  }
+  else if (payTL8 == 'NotRequired') {
+    res.redirect(`payability-tasklist`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
+
+
+
 // PAYMENT CHECKER
 
 router.post(`/payment-recipent-check-router`, (req, res) => {
@@ -2085,6 +2184,7 @@ router.post(`/payment-recipent-check-router`, (req, res) => {
     res.redirect(`obc-callguide`)
   }
 })
+
 
 
 

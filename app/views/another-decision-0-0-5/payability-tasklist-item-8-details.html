@@ -1,0 +1,80 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-5/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+<form action="payability-tasklist-item-2-router" method="post" class="form">
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">What are the details? </h2>
+
+
+
+    <!------------Dynamic Title------------>
+      {% set dynamicTitle %}
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>What</li>
+        <li>When till when</li>
+        <li>Why</li>
+      </ul>
+
+      {% endset %}
+    <!------------Legend--------------->
+
+
+          {{ govukTextarea({
+            name: "payability-tasklist-item-2-details",
+            id: "payability-tasklist-item-2-details",
+            classes: " govukTextarea--overwrite",
+            label: {
+              html: dynamicTitle,
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              html: ""
+            },
+            value: data["payability-tasklist-item-2-details"]
+          }) }}
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

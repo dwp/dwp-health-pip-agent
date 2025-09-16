@@ -1,0 +1,402 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-5/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+<form action="payability-tasklist-item-3-cya" method="post" class="form">
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          {% if data["payability-tasklist-item-3b"] == "Care home" %}
+          Care home name headline
+          {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
+          Hospital name headline
+          {% elif data["payability-tasklist-item-3b"] == "Prison" %}
+          Prison name headline
+          {% elif data["payability-tasklist-item-3b"] == "Residential school or college" %}
+          Residential school or college name headline
+          {% else %}
+          XXX
+          {% endif %}
+          </h2>
+
+          {% set dynamicName %}
+                  {% if data["payability-tasklist-item-3b"] == "Care home" %}
+                  Care home name
+                  {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
+                  Hospital name
+                  {% elif data["payability-tasklist-item-3b"] == "Prison" %}
+                  Prison name
+                  {% elif data["payability-tasklist-item-3b"] == "Residential school or college" %}
+                  Residential school or college name
+                  {% else %}
+                  XXX
+                  {% endif %}
+          {% endset -%}
+
+          {{ govukInput({
+            label: {
+              html: dynamicName
+            },
+            id: "payability-tasklist-item-3b-name",
+            name: "payability-tasklist-item-3b-name",
+            classes: "govuk-input--width-20",
+            value: data["payability-tasklist-item-3b-name"]
+          }) }}
+
+          {% if data["payability-tasklist-item-3b"] == "Hospital" %}
+          {% set stayTownCity %}
+
+          {{ govukInput({
+            label: {
+              text: "Name of town or city"
+            },
+            classes: "govuk-input--width-10",
+            id: "payability-tasklist-item-3b-towncity-name",
+            name: "payability-tasklist-item-3b-towncity-name",
+            classes: "govuk-input--width-20",
+            autocomplete: "address-towncity"
+          }) }}
+
+          {% endset -%}
+
+          {{ govukRadios({
+            classes: "govuk-radios govuk-!-margin-bottom-4",
+            idPrefix: "payability-tasklist-item-3b-towncity-uk",
+            name: "payability-tasklist-item-3b-towncity-uk",
+            fieldset: {
+              legend: {
+                html: "Is this hospital in the UK",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: dynamicHint
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["payability-tasklist-item-3b-towncity-uk"] == "Yes"),
+                conditional: {
+                  html: stayTownCity
+                }
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["payability-tasklist-item-3b-towncity-uk"] == "No"),
+                conditional: {
+                  html: stayTownCity
+                }
+            }
+            ]
+            }) }}
+
+            {% else %}
+            {% endif %}
+
+
+          {{ govukTextarea({
+            name: "payability-tasklist-item-3b-contact",
+            id: "payability-tasklist-item-3b-contact",
+        rows: "3",
+        label: {
+          text: "What details are we asking here?",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Other details including contact"
+        },
+        value: data["payability-tasklist-item-3b-contact"]
+      }) }}
+
+
+<!-- ————————————————————— -->
+
+    {% set dynamicFundingType %}
+
+    {{ govukTextarea({
+      name: "payability-tasklist-item-3b-funding-details",
+      id: "payability-tasklist-item-3b-funding-details",
+  rows: "3",
+  label: {
+    text: "",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Funding details"
+  },
+  value: data["payability-tasklist-item-3b-funding-details"]
+}) }}
+
+    {% endset -%}
+
+    <br>
+
+
+
+
+
+
+    {% if data["payability-tasklist-item-3b"] == "Care home" %}
+
+    {{ govukRadios({
+      idPrefix: "payability-tasklist-item-3b-funding-type",
+      name: "payability-tasklist-item-3b-funding-type",
+      fieldset: {
+        legend: {
+          text: "How is the person's stay in the carehome funded?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m "
+        }
+      },
+      items: [
+    {
+      value: "The person funds it themselves",
+      text: "The person funds it themselves",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "The person funds it themselves")
+      },
+      {
+      value: "By the NHS",
+      text: "By the NHS",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "By the NHS"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      },
+      {
+      value: "Not known",
+      text: "Not known",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "Not known"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      }
+      ]
+    }) }}
+
+    {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
+
+    {{ govukRadios({
+      idPrefix: "payability-tasklist-item-3b-funding-type",
+      name: "payability-tasklist-item-3b-funding-type",
+      fieldset: {
+        legend: {
+          text: "How is the person's stay in the hospital funded?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m "
+        }
+      },
+      items: [
+    {
+      value: "The person funds it themselves",
+      text: "The person funds it themselves",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "The person funds it themselves")
+      },
+      {
+      value: "By the local authority",
+      text: "By the local authority",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "By the local authority"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      },
+      {
+      value: "Not known",
+      text: "Not known",
+      checked: (data["payability-tasklist-item-3b-funding-type"] == "Not known"),
+        conditional: {
+          html: dynamicFundingType
+        }
+      }
+      ]
+    }) }}
+
+
+
+    {% else %}
+    XXX
+    {% endif %}
+
+
+    <!-- ————————————————————— -->
+
+
+    <!-- ————————————————————— -->
+
+        {% set stayLength %}
+
+        {{ govukTextarea({
+          name: "payability-tasklist-item-3b-tempory-acc-check-details",
+          id: "payability-tasklist-item-3b-tempory-acc-check-details",
+      rows: "3",
+      label: {
+        text: "",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "About the stays in Hospital"
+      },
+      value: data["payability-tasklist-item-3b-tempory-acc-check-details"]
+    }) }}
+
+        {% endset -%}
+
+        {% set stayLengthSingle %}
+
+        {{ govukDateInput({
+          name: "payability-tasklist-item-3b-tempory-acc-date-in",
+          id: "payability-tasklist-item-3b-tempory-acc-date-in",
+          fieldset: {
+            legend: {
+              text: "When did they go into the hospital?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          value: data["payability-tasklist-item-3b-tempory-acc-date-in"]
+        }) }}
+
+        {{ govukDateInput({
+          name: "payability-tasklist-item-3b-tempory-acc-date-out",
+          id: "payability-tasklist-item-3b-tempory-acc-date-out",
+          fieldset: {
+            legend: {
+              text: "When did they leave hospital? ",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          value: data["payability-tasklist-item-3b-tempory-acc-date-out"]
+        }) }}
+
+        {% endset -%}
+
+
+
+        {{ govukDateInput({
+          id: "payability-tasklist-item-3b-date-in",
+          namePrefix: "payability-tasklist-item-3b-date-in",
+          fieldset: {
+            legend: {
+              html: "Date in [X](A)",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+            }
+          },
+          hint: {
+            html: ""
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-3b-date-in-day"]
+            },
+
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-3b-date-in-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["payability-tasklist-item-3b-date-in-year"]
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "payability-tasklist-item-3b-date-a-out",
+          namePrefix: "payability-tasklist-item-3b-date-out",
+          fieldset: {
+            legend: {
+              html: "Date out [X](A)",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+            }
+          },
+          hint: {
+            html: ""
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-3b-date-out-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-3b-date-out-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["payability-tasklist-item-3b-date-out-year"]
+            }
+          ]
+        }) }}
+
+
+        <!-- ————————————————————— -->
+
+
+
+<br><br>
+
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

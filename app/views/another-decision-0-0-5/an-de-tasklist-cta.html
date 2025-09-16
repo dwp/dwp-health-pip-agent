@@ -46,7 +46,7 @@ np
               {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}
               <form action="award-dates-review-manual" method="post" class="form">
 
-              <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-4">The outcome of the decision has remained the same</h1>
+              <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-4">The outcome of the decision has remained the same</h1>
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The new outcome is:</p>
               <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
@@ -63,7 +63,7 @@ np
               <!-- <form action="award-dates-review-check" method="post" class="form"> -->
                 <form action="award-dates-review-manual" method="post" class="form">
 
-              <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-4">The outcome of the decision has changed</h1>
+              <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-4">The outcome of the decision has changed</h1>
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The new outcome is:</p>
               <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
@@ -91,7 +91,7 @@ np
               <!-- <form action="award-dates-review-check" method="post" class="form"> -->
                 <form action="award-dates-review-check" method="post" class="form">
 
-              <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-4">The outcome of the decision has changed</h1>
+              <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-4">The outcome of the decision has changed</h1>
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The new outcome is:</p>
               <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
@@ -107,6 +107,44 @@ np
               {% else %}
               {% endif %}
 
+          {% elif data["entry-home-processing-options"] == "PayRemainsPay" %}
+
+
+              {% if data["an-de-mr-tl-12-score-check"] == "Agree" %}
+              <form action="award-dates-review-check" method="post" class="form">
+
+              <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-4">The outcome of the decision has remained the same, the payment rate will be unchanged</h1>
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The new outcome is:</p>
+              <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
+                <li>Daily living: Standard</li>
+                <li>Mobility: Standard</li>
+              </ul>
+
+              {{ govukButton({
+                text: "Continue (P)",
+                classes: "govuk-!-margin-bottom-8"
+              }) }}
+
+              {% elif data["an-de-mr-tl-12-score-check"] == "Amended" %}
+
+              <form action="award-dates-review-check" method="post" class="form">
+
+                <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-4">The outcome of the decision has remained the same, the payment rate will be unchanged</h1>
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The new outcome is:</p>
+              <ul class="govuk-list govuk-!-font-size-19 govuk-list--bullet govuk-!-margin-bottom-8">
+                <li>Daily living: Standard</li>
+                <li>Mobility: Standard</li>
+              </ul>
+
+              {{ govukButton({
+                text: "Continue (P)",
+                classes: "govuk-!-margin-bottom-8"
+              }) }}
+
+              {% else %}
+              {% endif %}
 
 
 {% else %}

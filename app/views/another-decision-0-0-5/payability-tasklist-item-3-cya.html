@@ -1,0 +1,235 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-5/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+<form action="payability-tasklist-item-3-summary" method="post" class="form">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          {% if data["payability-tasklist-item-3"] == "Care home" %}
+          Care home name headline
+          {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+          Hospital name headline
+          {% elif data["payability-tasklist-item-3"] == "Prison" %}
+          Prison name headline
+          {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+          Residential school or college name headline
+          {% else %}
+          XXX
+          {% endif %}
+          </h2>
+
+
+{% set payabilityType %}     {{data["payability-tasklist-item-3"]}}    {% endset %}
+{% set payabilityName %}     {{data["payability-tasklist-item-3-name"]}}   {% endset %}
+{% set payabilityHospitalUK %}     {{data["payability-tasklist-item-3-towncity-uk"]}}    {% endset %}
+{% set payabilityTownCity %}     {{data["payability-tasklist-item-3-towncity-name"]}}    {% endset %}
+{% set payabilityContact %}     {{data["payability-tasklist-item-3-contact"]}}    {% endset %}
+
+{% set payabilityFunding %}     {{data["payability-tasklist-item-3-funding-type"]}}   {% endset %}
+{% set payabilityFundingDetails %}     {{data["payability-tasklist-item-3-funding-details"]}}    {% endset %}
+
+{% set XXX %}     {{data["payability-tasklist-item-3-date-a-in"]}}    {% endset %}
+{% set XXX %}     {{data["payability-tasklist-item-3-date-a-in-day"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-month"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-year"]}}   {% endset %}
+
+{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-3-date-a-in-day'] + ' ' + (data['payability-tasklist-item-3-date-a-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-a-in-year']}}     {% endset %}
+{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-3-date-a-out-day'] + ' ' + (data['payability-tasklist-item-3-date-a-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-a-out-year']}}     {% endset %}
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: "Type"
+                },
+                value: {
+                  html: payabilityType
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  html: payabilityName
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "In UK"
+                },
+                value: {
+                  html: payabilityHospitalUK
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "City Town"
+                },
+                value: {
+                  html: payabilityTownCity
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Contact / Other details"
+                },
+                value: {
+                  html: payabilityContact
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Funding"
+                },
+                value: {
+                  html: payabilityFunding
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Funding details"
+                },
+                value: {
+                  html: payabilityFundingDetails
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Dates in"
+                },
+                value: {
+                  html: payabilityDatesIn
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Dates out"
+                },
+                value: {
+                  html: payabilityDatesOut
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+
+
+    {% endblock %}

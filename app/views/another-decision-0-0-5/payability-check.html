@@ -111,15 +111,32 @@
 
       {% else %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Nothing has changed since the original decision, payments should be fine</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Information from the call and how it effects the payments</h1>
 
-      {{ govukDetails({
+      <!-- {{ govukDetails({
         summaryText: "Show what was checked on the call",
         classes: "govuk-!-margin-bottom-6 govuk-!-padding-top-4",
         html: legendChangeList
-      }) }}
+      }) }} -->
 
       {% endif %}
+
+      {% set legendHint %}
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4 govuk-!-margin-bottom-2">
+        <li>Changes of bank details</li>
+        <li>Save to pay (large payment)</li>
+      <li>Hospital or similar institutions</li>
+      <li>Care homes</li>
+      <li>Nursing homes</li>
+      <li>Residential schools or colleges</li>
+      <li>Prison or legal custody</li>
+      <li>Something else</li>
+      <li>Outside of the UK</li>
+
+    </ul>
+
+      {% endset %}
 
       {{ govukRadios({
         classes: "govuk-radios",
@@ -127,9 +144,9 @@
         name: "payability-check",
         fieldset: {
           legend: {
-            text: "Do these effect the effect a standard payment method, eg no split payments with someone else or issues with Lump sums??",
+            text: "Will any of the following effect the award amounts or recipent remaining the same as the orginal decision?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
         hint: {
@@ -138,8 +155,13 @@
         items: [
         {
           value: "Yes",
-          text: "Yes",
+          text: "Yes (R2)",
           checked: (data["payability-check"] == "Yes")
+        },
+        {
+          value: "YesR3",
+          text: "Yes (R3)",
+          checked: (data["payability-check"] == "YesR3")
         },
         {
           value: "No",

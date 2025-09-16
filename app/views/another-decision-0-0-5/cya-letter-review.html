@@ -11,7 +11,16 @@
 
 
 
-  <form action="entry-home" method="post" class="form">
+
+
+
+
+{% if data["payability-check"] == "Yes" or data["payability-check"] == "YesR3" %}
+  <form action="system-payment-selector" method="post" class="form">
+
+{% else %}
+<form action="entry-home" method="post" class="form">
+{% endif %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -19,7 +28,11 @@
       {% include "another-decision-0-0-5/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information for the Mandatory Reconsideration Notice</h1>
+        {% if data["payability-check"] == "Yes" %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information and move to PIPcs</h1>
+        {% else %}
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information for the Mandatory Reconsideration Notice</h1>
+        {% endif %}
 
       <!------------H1 LEGEND------------>
 
@@ -1297,11 +1310,13 @@
   </div>
 
 
+<br>
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-              {% if data["payability-check"] == "Yes" or data["award-dates-review-exit"] == "No" %}
+              {% if data["payability-check"] == "Yes"%}
 
               <!------------CheckBox Hint------------>
 
@@ -1334,8 +1349,34 @@
                 ]
               }) }}
 
+              {% elif data["payability-check"] == "YesR3"%}
 
-              {% else %}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-6">Information entered has effected the default amounts</h1>
+
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4 govuk-!-margin-bottom-6">
+  <li>Changes of bank details</li>
+  <li>Save to pay (large payment)</li>
+<li>Hospital or similar institutions</li>
+<li>Care homes</li>
+<li>Nursing homes</li>
+<li>Residential schools or colleges</li>
+<li>Prison or legal custody</li>
+<li>Something else</li>
+<li>Outside of the UK</li>
+
+</ul>
+
+
+{{ govukButton({
+  text: "Review payment schedule",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+            {% else %}
+
+
 
               <!------------CheckBox Hint------------>
 
@@ -1372,14 +1413,16 @@
                 ]
               }) }}
 
-              {% endif %}
-
-
-
               {{ govukButton({
                 text: "Finish and close",
                 classes: "govuk-!-margin-bottom-8"
               }) }}
+
+              {% endif %}
+
+
+
+
 
 
 

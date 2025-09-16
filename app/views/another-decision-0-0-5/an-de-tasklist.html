@@ -41,36 +41,6 @@
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">Full event history</a></p>
 <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://has-supporting-docs-82bfe12ac9a5.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents service</a></p>
 
-<table class="govuk-table">
-
-  <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents used to make the revised decision</h1>
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell govuk-60-percent"></td>
-      <td class="govuk-table__cell govuk-25-percent"></td>
-      <td class="govuk-table__cell govuk-15-percent"></td>
-    </tr>
-    </thead>
-
-<tr class="govuk-table__row">
-    <td class="govuk-table__cell table-spacer">
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="an-de-select-evidence">Select documents used</a></p>
-
-    </td>
-
-    <td class="govuk-table__cell table-spacer"></td>
-    <td class="govuk-table__cell table-spacer">
-
-      {% if data["application-evidence-used"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-      {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-      {% endif %}
-
-    </td>
-    </tr>
-
-</table>
 
     <table class="govuk-table">
 
@@ -121,6 +91,8 @@
 </table>
 
 {% include "another-decision-0-0-5/an-de-tasklist-status.html" %}
+
+
 
 {% include "another-decision-0-0-5/an-de-tasklist-cta.html" %}
 <!-- {% include "another-decision-0-0-5/an-de-tasklist-body.html" %} -->
