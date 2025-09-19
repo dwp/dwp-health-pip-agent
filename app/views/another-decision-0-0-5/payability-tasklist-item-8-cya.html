@@ -1,0 +1,157 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-5/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Prepare for payment",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+<form action="payability-tasklist-item-8-summary" method="post" class="form">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            Stays outside of the UK summary
+          </h2>
+
+
+{% set payabilityType %}     {{data["payability-tasklist-item-8"]}}    {% endset %}
+{% set payabilityName %}     {{data["payability-tasklist-item-8-name"]}}   {% endset %}
+{% set payabilityHospitalUK %}     {{data["payability-tasklist-item-8-towncity-uk"]}}    {% endset %}
+{% set payabilityTownCity %}     {{data["payability-tasklist-item-8-towncity-name"]}}    {% endset %}
+{% set payabilityContact %}     {{data["payability-tasklist-item-8-contact"]}}    {% endset %}
+
+{% set payabilityFunding %}     {{data["payability-tasklist-item-8-funding-type"]}}   {% endset %}
+{% set payabilityFundingDetails %}     {{data["payability-tasklist-item-8-funding-details"]}}    {% endset %}
+
+{% set XXX %}     {{data["payability-tasklist-item-8-date-a-in"]}}    {% endset %}
+{% set XXX %}     {{data["payability-tasklist-item-8-date-a-in-day"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-8-date-a-in-month"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-8-date-a-in-year"]}}   {% endset %}
+
+{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-8-date-a-in-day'] + ' ' + (data['payability-tasklist-item-8-date-a-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-a-in-year']}}     {% endset %}
+{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-8-date-a-out-day'] + ' ' + (data['payability-tasklist-item-8-date-a-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-a-out-year']}}     {% endset %}
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Type of stay"
+                },
+                value: {
+                  html: payabilityName
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Town or city"
+                },
+                value: {
+                  html: payabilityTownCity
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Contact details"
+                },
+                value: {
+                  html: payabilityContact
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Date left the UK"
+                },
+                value: {
+                  html: payabilityDatesIn
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Date returned to the UK"
+                },
+                value: {
+                  html: payabilityDatesOut
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+
+
+    {% endblock %}

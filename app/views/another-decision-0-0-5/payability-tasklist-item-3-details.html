@@ -16,7 +16,7 @@
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Call guide",
+      text: "Prepare for payment",
       href: "payability-tasklist"
     },
     {
@@ -38,13 +38,13 @@
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
           {% if data["payability-tasklist-item-3"] == "Care home" %}
-          Care home name headline
+          Care home details
           {% elif data["payability-tasklist-item-3"] == "Hospital" %}
-          Hospital name headline
+          Hospital details
           {% elif data["payability-tasklist-item-3"] == "Prison" %}
-          Prison name headline
+          Prison details
           {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
-          Residential school or college name headline
+          Residential school or college details
           {% else %}
           XXX
           {% endif %}
@@ -96,7 +96,7 @@
             name: "payability-tasklist-item-3-towncity-uk",
             fieldset: {
               legend: {
-                html: "Is this hospital in the UK",
+                html: "Is this [X] stay in the UK?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
@@ -125,20 +125,26 @@
             }) }}
 
             {% else %}
+
+            {{ govukInput({
+              label: {
+                text: "Name of town or city"
+              },
+              classes: "govuk-input--width-10",
+              id: "payability-tasklist-item-3-towncity-name",
+              name: "payability-tasklist-item-3-towncity-name",
+              classes: "govuk-input--width-20",
+              autocomplete: "address-towncity"
+            }) }}
+
             {% endif %}
 
 
-          {{ govukTextarea({
-            name: "payability-tasklist-item-3-contact",
-            id: "payability-tasklist-item-3-contact",
-        rows: "3",
+      {{ govukTextarea({
+        name: "payability-tasklist-item-3-contact",
+        id: "payability-tasklist-item-3-contact",
         label: {
-          text: "What details are we asking here?",
-          classes: "govuk-label--m",
-          isPageHeading: true
-        },
-        hint: {
-          text: "Other details including contact"
+          text: "Can you provide more detail?"
         },
         value: data["payability-tasklist-item-3-contact"]
       }) }}
@@ -174,7 +180,7 @@
       name: "payability-tasklist-item-3-funding-type",
       fieldset: {
         legend: {
-          text: "How is the person's stay in the carehome funded?",
+          text: "How was the person's stay in [X] funded?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m "
         }
@@ -259,7 +265,7 @@
           namePrefix: "payability-tasklist-item-3-date-in",
           fieldset: {
             legend: {
-              html: "Date in [X](A)",
+              html: "Date they entered the [X]",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
             }
@@ -287,12 +293,14 @@
           ]
         }) }}
 
+        {% set stayEnd %}
+
         {{ govukDateInput({
-          id: "payability-tasklist-item-3-date-out",
+          id: "payability-tasklist-item-3-date-a-out",
           namePrefix: "payability-tasklist-item-3-date-out",
           fieldset: {
             legend: {
-              html: "Date out [X](A)",
+              html: "Date they left the [X]",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
             }
@@ -319,14 +327,59 @@
           ]
         }) }}
 
+        {% endset -%}
+
+        {% set OutCheckHeader %}
+
+        Are they currently in a
+
+        {% if data["payability-tasklist-item-3"] == "Care home" %}
+        care home?
+        {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+        hospital?
+        {% elif data["payability-tasklist-item-3"] == "Prison" %}
+        prison?
+        {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+        residential school or college?
+        {% else %}
+        XXX
+        {% endif %}
+
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios govuk-!-margin-bottom-4",
+          idPrefix: "payability-tasklist-item-3-date-out-check",
+          name: "payability-tasklist-item-3-date-out-check",
+          fieldset: {
+            legend: {
+              html: OutCheckHeader,
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: dynamicHint
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["payability-tasklist-item-3-date-out-check"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["payability-tasklist-item-3-date-out-check"] == "No"),
+              conditional: {
+                html: stayEnd
+              }
+          }
+          ]
+          }) }}
+
 
         <!-- ————————————————————— -->
-
-
-
-<br><br>
-
-
 
           {{ govukButton({
             text: "Continue",

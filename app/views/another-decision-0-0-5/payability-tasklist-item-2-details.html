@@ -16,7 +16,7 @@
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Call guide",
+      text: "Prepare for payment",
       href: "payability-tasklist"
     },
     {
@@ -27,7 +27,7 @@
 }) }}
 
 
-<form action="payability-tasklist-item-2-del-auth-details" method="post" class="form">
+<form action="payability-tasklist-item-3" method="post" class="form">
 
 
 
@@ -40,12 +40,12 @@
         <div class="govuk-grid-column-three-quarters">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person struggle with a large payment?</h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person might find it challenging to  manage a large payment?</h2>
 
           <!------------Dynamic Title------------>
             {% set dynamicTitle %}
 
-            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
+            <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
               <li>Record the reasons why the person might struggle with a large payment</li>
             </ul>
@@ -57,22 +57,19 @@
           {{ govukTextarea({
             name: "payability-tasklist-item-2-details",
             id: "payability-tasklist-item-2-details",
-            classes: " govukTextarea--overwrite",
             label: {
-              html: dynamicTitle,
-              classes: "govuk-label--m",
-              isPageHeading: true
-            },
-            hint: {
-              html: ""
+              text: "Can you provide more detail?"
             },
             value: data["payability-tasklist-item-2-details"]
           }) }}
 
+
+
+
           <!------------Dynamic Title------------>
             {% set dynamicHintHelper %}
 
-            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
+            <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
               <!-- <li>Record the reasons why the person might struggle with a large payment</li> -->
               <li>Is there anyone else we need to contact about their payments?</li>
@@ -82,33 +79,7 @@
             {% endset %}
           <!------------Legend--------------->
 
-          {{ govukRadios({
-            classes: "govuk-radios govuk-!-margin-bottom-4",
-            idPrefix: "payability-tasklist-item-2",
-            name: "payability-tasklist-item-2",
-            fieldset: {
-              legend: {
-                html: "Do you have the payment details for the person that will receive this money on their behalf?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            hint: {
-              html: dynamicHintHelper
-            },
-            items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: (data["payability-tasklist-item-2"] == "Yes")
-            },
-            {
-              value: "No",
-              text: "No",
-              checked: (data["payability-tasklist-item-2"] == "No")
-            }
-            ]
-            }) }}
+
 
 
           {{ govukButton({

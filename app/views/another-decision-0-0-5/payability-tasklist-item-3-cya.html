@@ -16,7 +16,7 @@
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Call guide",
+      text: "Prepare for payment",
       href: "payability-tasklist"
     },
     {
@@ -34,13 +34,13 @@
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
           {% if data["payability-tasklist-item-3"] == "Care home" %}
-          Care home name headline
+          Care home summary
           {% elif data["payability-tasklist-item-3"] == "Hospital" %}
-          Hospital name headline
+          Hospital summary
           {% elif data["payability-tasklist-item-3"] == "Prison" %}
-          Prison name headline
+          Prison summary
           {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
-          Residential school or college name headline
+          Residential school or college summary
           {% else %}
           XXX
           {% endif %}
@@ -69,7 +69,7 @@
             rows: [
               {
                 key: {
-                  html: "Type"
+                  html: "Type of stay"
                 },
                 value: {
                   html: payabilityType
@@ -103,7 +103,7 @@
               },
               {
                 key: {
-                  text: "In UK"
+                  text: "Is the hospital stay in the UK"
                 },
                 value: {
                   html: payabilityHospitalUK
@@ -120,7 +120,7 @@
               },
               {
                 key: {
-                  text: "City Town"
+                  text: "Town or city"
                 },
                 value: {
                   html: payabilityTownCity
@@ -137,7 +137,7 @@
               },
               {
                 key: {
-                  text: "Contact / Other details"
+                  text: "Contact details"
                 },
                 value: {
                   html: payabilityContact
@@ -154,7 +154,7 @@
               },
               {
                 key: {
-                  text: "Funding"
+                  text: "Funded by"
                 },
                 value: {
                   html: payabilityFunding
@@ -188,7 +188,7 @@
               },
               {
                 key: {
-                  text: "Dates in"
+                  text: "Date entered"
                 },
                 value: {
                   html: payabilityDatesIn
@@ -205,7 +205,7 @@
               },
               {
                 key: {
-                  text: "Dates out"
+                  text: "Date left"
                 },
                 value: {
                   html: payabilityDatesOut

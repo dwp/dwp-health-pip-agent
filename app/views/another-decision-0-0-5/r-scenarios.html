@@ -1,0 +1,11 @@
+{% set detailsBlock %}
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="r-applications-post-mr-nil" target="">Post MR Nil</p>
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4"><a class="" href="r-applications-post-mr-pay" target="">Post MR Pay</p>
+
+  {% endset -%}
+
+      {{ govukDetails({
+        summaryText: "...",
+        html: detailsBlock
+      }) }}

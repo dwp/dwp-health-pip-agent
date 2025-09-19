@@ -22,3 +22,60 @@
 {% else %}
 
 {% endif %}
+
+
+<!-- ProcessMR OUTCOME -->
+
+
+{% if data["payability-check"] == "Yes" %}
+
+{% set html %}
+<p class="govuk-body govuk-!-font-size-19">@rachel Moved to PIPcs</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{% elif data["payability-check"] == "No" %}
+
+              {% set html %}
+              <p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration completed. The decision has changed/remains the same. An entry has been added to the event history and the decision overview. </p>
+              {% endset %}
+
+              {{ govukNotificationBanner({
+                html: html,
+                type: 'success'
+              }) }}
+
+
+{% elif data["payability-check"] == "YesR3" %}
+
+
+        {% if data["payability-tasklist-item-8"] == "Yes" %}
+
+                      {% set html %}
+                      <p class="govuk-body govuk-!-font-size-19">Moved to PIPcs as cant process in service</p>
+                      {% endset %}
+
+                      {{ govukNotificationBanner({
+                        html: html,
+                        type: 'success'
+                      }) }}
+        {% else %}
+                      {% set html %}
+                      <p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration completed. The decision has changed/remains the same. An entry has been added to the event history and the decision overview. </p>
+                      {% endset %}
+
+                      {{ govukNotificationBanner({
+                        html: html,
+                        type: 'success'
+                      }) }}
+        {% endif %}
+
+
+
+{% else %}
+
+{% endif %}

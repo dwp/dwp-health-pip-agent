@@ -12,19 +12,6 @@
 
 {% include "another-decision-0-0-5/record-id.html" %}
 
-{{ govukBreadcrumbs({
-  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
-  items: [
-    {
-      text: "Call guide",
-      href: "payability-tasklist"
-    },
-    {
-      text: "XXX",
-      href: "payability-tasklist-item-X"
-    }
-  ]
-}) }}
 <form action="payability-tasklist-item-3b-router" method="post" class="form">
 
 
@@ -32,17 +19,17 @@
         <div class="govuk-grid-column-full">
 
 
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Stays in away from home summary</h2>
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Temporary stays away from home</h2>
 
 
 
           <table class="govuk-table ">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type of stay</th>
                 <th scope="col" class="govuk-table__header govuk-20-percent-percent">Name</th>
-                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Start</th>
-                <th scope="col" class="govuk-table__header govuk-20-percent-percent">End</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date entered</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date Left</th>
                 <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days</th>
                 <!-- <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days that can be paid</th> -->
 
@@ -59,8 +46,19 @@
                 <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
                 <!-- <td class="govuk-table__cell">4</td> -->
                 <td class="govuk-table__cell">4</td>
-                <td class="govuk-table__cell"><a href="payability-tasklist-item-3-details" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+
+                <td class="govuk-table__cell govuk-aligned-right">
+                  <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="payability-tasklist-item-3-details">Change<span class="govuk-visually-hidden"></span></a>
+                    </li>
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="payability-tasklist-item-3-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                  </ul>
+                  </td>
               </tr>
+
 
                 {% if data["payability-tasklist-item-3b"] %}
 
@@ -71,7 +69,16 @@
                   <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-out-day'] + ' ' + (data['payability-tasklist-item-3b-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-out-year']}}</td>
                   <!-- <td class="govuk-table__cell">4</td> -->
                   <td class="govuk-table__cell">4</td>
-                  <td class="govuk-table__cell"><a href="payability-tasklist-item-3b-details" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                  <td class="govuk-table__cell govuk-aligned-right">
+                    <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="payability-tasklist-item-3b-details">Change<span class="govuk-visually-hidden"></span></a>
+                      </li>
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="payability-tasklist-item-3-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                      </li>
+                    </ul>
+                    </td>
                 </tr>
 
                 {% else %}
@@ -80,14 +87,14 @@
             </tbody>
           </table>
 
-<br><br>
+<br>
 {{ govukRadios({
   classes: "govuk-radios govuk-!-margin-bottom-4",
   idPrefix: "payability-tasklist-item-3b",
   name: "payability-tasklist-item-3b",
   fieldset: {
     legend: {
-      html: "(Any other) Has the person spent any time in any of these between<br>1 January 2024 (QP start date) and today? ",
+      html: "Do you want to add another temporary stay between <br>[X MONTH YEAR] (minus 1 month of DOA QP start date) and today? ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -98,12 +105,12 @@
   items: [
   {
     value: "Care home",
-    text: "Care home",
+    text: "Care or nursing home",
     checked: (data["payability-tasklist-item-3b"] == "Care home")
   },
   {
     value: "Hospital",
-    text: "Hospital",
+    text: "Hospital or similar institution",
     checked: (data["payability-tasklist-item-3b"] == "Hospital")
   },
   {

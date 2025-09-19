@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+
+{% include "explore-header-global-nav-multi.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<form action="r-overview" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <!-- <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">One record found</h1> -->
+
+      <!------------H1 LEGEND------------>
+        {% set legendNINO %}
+          {% if data["search"] %} {{ data ["search"]}}{% else %}Jeff Bridges{% endif %}
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukTable({
+        caption: "One record found",
+        captionClasses: "govuk-table__caption--xl govuk-!-margin-bottom-8",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "National Insurance number"
+            },
+            {
+              text: "NA 11 22 33 C"
+            }
+          ],
+          [
+            {
+              text: "Name"
+            },
+            {
+              html: legendNINO
+            }
+          ],
+          [
+            {
+              text: "Date of birth"
+            },
+            {
+              text: "4 December 1949"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+            {{ govukRadios({
+              idPrefix: "find-someone-1-offline-return",
+              name: "find-someone-1-offline-return",
+              fieldset: {
+                legend: {
+                  html: "Is this the correct record?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+                }
+              },
+              hint: {
+                text: ""
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Yes",
+                text: "Yes (Local)",
+                checked: (data["find-someone-1-offline-return"] == "Yes")
+              },
+              {
+                value: "YesLinked",
+                text: "Yes (Linked CMR)",
+                checked: (data["find-someone-1-offline-return"] == "YesLinked")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: (data["find-someone-1-offline-return"] == "No")
+              }
+              ]
+            }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+  <p class="govuk-!-font-size-19 govuk-!-margin-bottom-bottom-2"><a class="" href="find-someone-1-offline-return-multi">Show multi entry return</a></p>
+
+
+{% endblock %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block header %}
-{% include "an-de-mr-call-bar-notes.html" %}
+{% include "explore-header-global-nav-multi.html" %}
 {% endblock %}
 {% block content %}
 
@@ -111,7 +111,7 @@
 
       {% else %}
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Information from the call and how it effects the payments</h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-8">Information from the call and how it effects the payments</h1>
 
       <!-- {{ govukDetails({
         summaryText: "Show what was checked on the call",
@@ -122,18 +122,16 @@
       {% endif %}
 
       {% set legendHint %}
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider:</p>
 
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-top-4 govuk-!-margin-bottom-2">
-        <li>Changes of bank details</li>
-        <li>Save to pay (large payment)</li>
-      <li>Hospital or similar institutions</li>
-      <li>Care homes</li>
-      <li>Nursing homes</li>
-      <li>Residential schools or colleges</li>
-      <li>Prison or legal custody</li>
-      <li>Something else</li>
-      <li>Outside of the UK</li>
-
+      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-2">
+      <li>changes to account details</li>
+      <li>whether they might find it challenging to receive and manage a large payment</li>
+      <li>stays in hospital or similar institutions</li>
+      <li>stays in care or nursing homes</li>
+      <li>stays in residential schools or colleges</li>
+      <li>time spent in prison or legal custody</li>
+      <li>time spent outside of the UK</li>
     </ul>
 
       {% endset %}
@@ -144,7 +142,7 @@
         name: "payability-check",
         fieldset: {
           legend: {
-            text: "Will any of the following effect the award amounts or recipent remaining the same as the orginal decision?",
+            text: "Has anything changed that might affect the person's payments?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

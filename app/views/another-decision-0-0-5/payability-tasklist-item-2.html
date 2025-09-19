@@ -16,7 +16,7 @@
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Call guide",
+      text: "Prepare for payment",
       href: "payability-tasklist"
     },
     {
@@ -34,11 +34,21 @@
 
       <!------------Q2 LEGEND------------>
         {% set dynamicHint %}
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-6">You should consider any mental health conditions, or signs of drug or gambling addiction. </p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"> Consider whether the person:</p>
 
-        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><b>Original decision score for 'Making budgeting decisions'</b></p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions</p> -->
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
+          <li>changes of circumstances
+        <li>has a mental health condition</li>
+        <li>shows signs of drug or gambling addition</li>
+        <li>could be influenced or open to abuse by others</li>
+        <li>has limited capacity to understand, process or manage financial matters</li>
+        </ul>
 
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-6 govuk-!-margin-bottom-0"><strong>The descriptor selected for 'Making <br>budgeting decisions' is:</strong></p>
+
+        {{ govukInsetText({
+          html: "Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions"
+        }) }}
 
         {% endset %}
       <!------------Legend--------------->
@@ -50,7 +60,7 @@
         name: "payability-tasklist-item-2",
         fieldset: {
           legend: {
-            html: "Is there a reason why the person might struggle with a large payment?",
+            html: "Is there a reason why the person might find it challenging to manage a large payment?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }

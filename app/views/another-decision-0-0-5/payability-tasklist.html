@@ -11,7 +11,9 @@
 {% block content %}
 
 
+
 <form action="cya-letter-review" method="post" class="form">
+
 
   {% include "another-decision-0-0-5/record-id.html" %}
 
@@ -40,7 +42,7 @@
                   <!-- [1-1]  --> Bank, building society or credit union acount details
                 </a>
                 {% if data["payability-tasklist-item-1"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Changed</strong>
-                {% elif data["payability-tasklist-item-1"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["payability-tasklist-item-1"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">No change</strong>
                 {% elif data["payability-tasklist-item-1"] == "NotRequired" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Not required</strong>
 
                 {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -52,7 +54,7 @@
                   <!-- [1-2]  --> Large payments
                 </a>
                 {% if data["payability-tasklist-item-2"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Support needed</strong>
-                {% elif data["payability-tasklist-item-2"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["payability-tasklist-item-2"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">No support needed</strong>
                 {% elif data["payability-tasklist-item-2"] == "NotRequired" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Not required</strong>
 
                 {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -60,13 +62,12 @@
               </li>
 
 
-
               <li class="app-task-list__item">
                 <a class="app-task-list__task-name" href="payability-tasklist-item-3" aria-describedby="task-X">
                   <!-- [1-7]  --> Temporary stays
                 </a>
-                {% if data["payability-tasklist-item-3"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Changed</strong>
-                {% elif data["payability-tasklist-item-3"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% if data["payability-tasklist-item-3"] == "Care home" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Changed</strong>
+                {% elif data["payability-tasklist-item-3"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">No change</strong>
                 {% elif data["payability-tasklist-item-3"] == "NotRequired" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Not required</strong>
 
                 {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
@@ -78,7 +79,7 @@
                   <!-- [1-8]  --> Time spent out of the UK
                 </a>
                 {% if data["payability-tasklist-item-8"] == "Yes" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Changed</strong>
-                {% elif data["payability-tasklist-item-8"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["payability-tasklist-item-8"] == "No" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">No change</strong>
                 {% elif data["payability-tasklist-item-8"] == "NotRequired" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Not required</strong>
 
                 {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>

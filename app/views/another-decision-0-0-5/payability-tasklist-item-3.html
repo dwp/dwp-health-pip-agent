@@ -16,7 +16,7 @@
   classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
   items: [
     {
-      text: "Call guide",
+      text: "Prepare for payment",
       href: "payability-tasklist"
     },
     {
@@ -47,7 +47,7 @@
         name: "payability-tasklist-item-3",
         fieldset: {
           legend: {
-            html: "Has the person spent any time in any of these between 1 January 2024 (QP start date) and today? ",
+            html: "Has the person had any temporary stays away from home [X MONTH YEAR] (Minus on month ago or Start of the QP) and today? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -58,12 +58,12 @@
         items: [
         {
           value: "Care home",
-          text: "Care home",
+          text: "Care or nursing home",
           checked: (data["payability-tasklist-item-3"] == "Care home")
         },
         {
           value: "Hospital",
-          text: "Hospital",
+          text: "Hospital or similar institution",
           checked: (data["payability-tasklist-item-3"] == "Hospital")
         },
         {

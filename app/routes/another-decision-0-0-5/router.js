@@ -2104,7 +2104,7 @@ router.post(`/payability-tasklist-item-3-router`, (req, res) => {
     res.redirect(`payability-tasklist-item-3-details`)
   }
   else if (payTL3 == 'No') {
-    res.redirect(`payability-tasklist-item-4`)
+    res.redirect(`payability-tasklist-item-8`)
   }
   else if (payTL3 == 'NotRequired') {
     res.redirect(`obc-callguide`)
@@ -2121,7 +2121,7 @@ router.post(`/payability-tasklist-item-3b-router`, (req, res) => {
     res.redirect(`payability-tasklist-item-3b-details`)
   }
   else if (payTL3b == 'No') {
-    res.redirect(`payability-tasklist-item-4`)
+    res.redirect(`payability-tasklist-item-8`)
   }
   else if (payTL3b == 'NotRequired') {
     res.redirect(`obc-callguide`)
