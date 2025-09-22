@@ -37,7 +37,6 @@
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"> Consider whether the person:</p>
 
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
-          <li>changes of circumstances
         <li>has a mental health condition</li>
         <li>shows signs of drug or gambling addition</li>
         <li>could be influenced or open to abuse by others</li>
@@ -47,7 +46,7 @@
         <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-6 govuk-!-margin-bottom-0"><strong>The descriptor selected for 'Making <br>budgeting decisions' is:</strong></p>
 
         {{ govukInsetText({
-          html: "Descriptor C (4 points): Needs prompting or assistance to be able to make simple budgeting decisions"
+          html: "Descriptor A (0 points):Can manage complex budgeting decisions unaided"
         }) }}
 
         {% endset %}
@@ -78,11 +77,6 @@
           value: "No",
           text: "No",
           checked: (data["payability-tasklist-item-2"] == "No")
-        },
-        {
-          value: "NotRequired",
-          text: "Not required",
-          checked: (data["payability-tasklist-item-2"] == "NotRequired")
         }
         ]
         }) }}

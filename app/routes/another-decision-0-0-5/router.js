@@ -1792,6 +1792,9 @@ router.post(`/entry-home-processing-options-router`, (req, res) => {
   else if (processType == 'MakeAW') {
     res.redirect(`MakeAW`)
   }
+  else if (processType == 'PreparePayRemainsPay') {
+    res.redirect(`an-de-tasklist-ur`)
+  }
    else {
     res.redirect(`XXX`)
   }
@@ -2101,7 +2104,7 @@ router.post(`/payability-tasklist-item-3-router`, (req, res) => {
   const payTL3 = req.session.data['payability-tasklist-item-3']
 
   if (payTL3 == 'Yes') {
-    res.redirect(`payability-tasklist-item-3-details`)
+    res.redirect(`payability-tasklist-item-3-where`)
   }
   else if (payTL3 == 'No') {
     res.redirect(`payability-tasklist-item-8`)
@@ -2113,6 +2116,7 @@ router.post(`/payability-tasklist-item-3-router`, (req, res) => {
     res.redirect(`payability-tasklist-item-3-details`)
   }
 })
+
 
 router.post(`/payability-tasklist-item-3b-router`, (req, res) => {
   const payTL3b = req.session.data['payability-tasklist-item-3b']

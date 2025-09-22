@@ -93,6 +93,44 @@
             <td class="govuk-table__cell">1 December 2028</td>
           </tr>
 
+          {% elif data["entry-home-processing-options"]  == "PayRemainsPay" or data["entry-home-processing-options"]  == "PreparePayRemainsPay" %}
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Status</th>
+            <td class="govuk-table__cell">
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Decision made: In payment</p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mandatory reconsideration requested</p>
+
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Outcome</th>
+            <td class="govuk-table__cell">
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Daily living: Standard (8 points)</p>
+            <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0">Mobility: Standard (8 points)</p>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Start of application</th>
+            <td class="govuk-table__cell">1 December 2023</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award start date</th>
+            <td class="govuk-table__cell">1 December 2023</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award review date</th>
+            <td class="govuk-table__cell">1 December 2027</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Award end date</th>
+            <td class="govuk-table__cell">1 December 2028</td>
+          </tr>
+
           {% elif data["entry-home-processing-options"]  == "MakeMRNilPay" %}
 
           <tr class="govuk-table__row">

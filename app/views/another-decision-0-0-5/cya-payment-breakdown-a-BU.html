@@ -21,15 +21,56 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment summary and schedule</h1>
 
-      {% include "another-decision-0-0-5/cya-payment-rates.html" %}
+      <!-- {% include "another-decision-0-0-5/cya-payment-rates.html" %} -->
 
 
 <br><br>
 
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Temporary accommodation within the 3 month qualifying period</h1>
+      <p class="govuk-body govuk-!-margin-bottom-6">Qualifying period: 1 January 2025 to 31 March 2025</p>
+
+      <table class="govuk-table ">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Type</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Funding</th>
+            <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+
+
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+          {% if data["payability-tasklist-item-3"] %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
+            <td class="govuk-table__cell">[X]</td>
+            <td class="govuk-table__cell">—</td>
+            <td class="govuk-table__cell">—</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3']}}</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-funding-type']}}</td>
+            <td class="govuk-table__cell"><a href="payability-tasklist-item-3" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+          {% else %}
+          {% endif %}
+
+
+        </tbody>
+      </table>
+
+
+      <br><br>
 
 
                   <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Arrears</h1>
-                  <p class="govuk-body govuk-!-margin-bottom-6">Date application was submitted: 1 Feb 2025 to Date of decision: 1 June 2025</p>
+                  <p class="govuk-body govuk-!-margin-bottom-6">Date application was submitted: 1 April 25 to Date of decision: 2 June 25</p>
 
                   <table class="govuk-table ">
                     <thead class="govuk-table__head">
@@ -37,87 +78,63 @@
                         <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
                         <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
                         <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days</th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days paid</th>
                         <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
                         <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Type of stay</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Type</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Funding</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
 
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">2 Feb 2025</td>
-                        <td class="govuk-table__cell">28 Feb 2025</td>
-                        <td class="govuk-table__cell">26</td>
-                        <td class="govuk-table__cell">26</td>
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
-                        <td class="govuk-table__cell">£1,921.40<br>£759.20</td>
+                        <td class="govuk-table__cell">X Apr XX</td>
+                        <td class="govuk-table__cell">6 Apr 25</td>
+                        <td class="govuk-table__cell">[X]</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£47.40<br>£0</td>
                         <td class="govuk-table__cell"></td>
-                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
-                      </tr>
-
-                      {% if data["payability-tasklist-item-3"] %}
-                      <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}</td>
-                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
-                        <td class="govuk-table__cell">22</td>
-                        <td class="govuk-table__cell">22</td>
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
-                        <td class="govuk-table__cell">£1,625.80<br>£642.40</td>
-                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3']}} funded by {{ data['payability-tasklist-item-3-funding-type']}}</td>
-                        <!-- <td class="govuk-table__cell"><a href="payability-tasklist-item-3" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td> -->
-                      </tr>
-                      {% else %}
-                      {% endif %}
-
-                      <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">23 March 2025</td>
-                        <td class="govuk-table__cell">9 April 2025</td>
-                        <td class="govuk-table__cell">18</td>
-                        <td class="govuk-table__cell">18</td>
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
-                        <td class="govuk-table__cell">£1,330.20<br>£525.60</td>
                         <td class="govuk-table__cell"></td>
-                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
                       </tr>
 
                       {% if data["payability-tasklist-item-3b"] %}
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-in-day'] + ' ' + (data['payability-tasklist-item-3b-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-in-year']}}</td>
                         <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-out-day'] + ' ' + (data['payability-tasklist-item-3b-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-out-year']}}</td>
-                        <td class="govuk-table__cell">10</td>
-                        <td class="govuk-table__cell">2</td>
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
-                        <td class="govuk-table__cell">£0<br>£58.40</td>
-                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b']}} {{ data['payability-tasklist-item-3b-funding-type']}}</td>
-                        <!-- <td class="govuk-table__cell"><a href="payability-tasklist-item-3b-details" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td> -->
+                        <td class="govuk-table__cell">[X]</td>
+                        <td class="govuk-table__cell">Enhanced<br>Nil</td>
+                        <td class="govuk-table__cell">£0<br>£0</td>
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b']}}</td>
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-funding-type']}}</td>
+                        <td class="govuk-table__cell"><a href="payability-tasklist-item-3b-details" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
                       </tr>
                       {% else %}
                       {% endif %}
 
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">21 Apr 25</td>
-                        <td class="govuk-table__cell">1 June 25</td>
-                        <td class="govuk-table__cell">42</td>
-                        <td class="govuk-table__cell">42</td>
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
-                        <td class="govuk-table__cell">£3,103.80<br>£1,226.40</td>
+                        <td class="govuk-table__cell">11 Apr 25</td>
+                        <td class="govuk-table__cell">24 Apr 25</td>
+                        <td class="govuk-table__cell">[X]</td>
+                        <td class="govuk-table__cell">Enhanced<br>Standard</td>
+                        <td class="govuk-table__cell">£221.20<br>£58.40</td>
+                        <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"></td>
 
-                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
                       </tr>
 
                       <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><strong>Total owed</strong></td>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell"><strong>118</strong></td>
-                        <td class="govuk-table__cell"><strong>110</strong></td>
+                        <td class="govuk-table__cell"><strong>25</strong></td>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell"><strong>£11,193.20</strong></td>
+                        <td class="govuk-table__cell"><strong>£439.40</strong></td>
+                        <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"></td>
 
-                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
                       </tr>
 
                     </tbody>
@@ -134,26 +151,23 @@
                     <caption class="govuk-table__caption govuk-table__caption--m"></caption>
                     <thead class="govuk-table__head">
                       <tr class="govuk-table__row">
-                        <th scope="col" class="govuk-table__header govuk-10-percent-percent">Start</th>
-                        <th scope="col" class="govuk-table__header govuk-10-percent-percent">End</th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"> </th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"> </th>
-
-                        <th scope="col" class="govuk-table__header govuk-10-percent-percent">Rate</th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
-                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"> </th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-50-percent-percent">Amount</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"></th>
 
 
                       </tr>
                     </thead>
                     <tbody class="govuk-table__body">
                       <tr class="govuk-table__row">
-                        <td class="govuk-table__cell">2 June 25</td>
+                        <td class="govuk-table__cell">3 June 25</td>
                         <td class="govuk-table__cell">1 June 2027</td>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell"></td>
-
-                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">Enhanced<br>Standard</td>
 
                         <td class="govuk-table__cell">£442.40<br>£91.80</td>
                         <td class="govuk-table__cell"></td>
@@ -166,8 +180,9 @@
                         <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"></td>
-                        <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"><strong>£534.20</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"></td>
                         <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
                       </tr>

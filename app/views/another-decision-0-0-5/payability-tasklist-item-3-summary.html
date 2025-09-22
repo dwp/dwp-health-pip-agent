@@ -45,7 +45,7 @@
                 <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}</td>
                 <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
                 <!-- <td class="govuk-table__cell">4</td> -->
-                <td class="govuk-table__cell">4</td>
+                <td class="govuk-table__cell">22</td>
 
                 <td class="govuk-table__cell govuk-aligned-right">
                   <ul class="govuk-aligned-right govuk-summary-list__actions-list">
@@ -68,7 +68,7 @@
                   <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-in-day'] + ' ' + (data['payability-tasklist-item-3b-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-in-year']}}</td>
                   <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-out-day'] + ' ' + (data['payability-tasklist-item-3b-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-out-year']}}</td>
                   <!-- <td class="govuk-table__cell">4</td> -->
-                  <td class="govuk-table__cell">4</td>
+                  <td class="govuk-table__cell">10</td>
                   <td class="govuk-table__cell govuk-aligned-right">
                     <ul class="govuk-aligned-right govuk-summary-list__actions-list">
                       <li class="govuk-summary-list__actions-list-item">
@@ -94,7 +94,7 @@
   name: "payability-tasklist-item-3b",
   fieldset: {
     legend: {
-      html: "Do you want to add another temporary stay between <br>[X MONTH YEAR] (minus 1 month of DOA QP start date) and today? ",
+      html: "Do you want to add another temporary stay between <br>1 February 2025 and today? ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -104,23 +104,23 @@
   },
   items: [
   {
-    value: "Care home",
+    value: "Yes, care home",
     text: "Care or nursing home",
     checked: (data["payability-tasklist-item-3b"] == "Care home")
   },
   {
     value: "Hospital",
-    text: "Hospital or similar institution",
+    text: "Yes, hospital or similar institution",
     checked: (data["payability-tasklist-item-3b"] == "Hospital")
   },
   {
     value: "Prison",
-    text: "Prison",
+    text: "Yes, prison",
     checked: (data["payability-tasklist-item-3b"] == "Prison")
   },
   {
     value: "Residential school or college",
-    text: "Residential school or college",
+    text: "Yes, residential school or college",
     checked: (data["payability-tasklist-item-3b"] == "Residential school or college")
   },
   {

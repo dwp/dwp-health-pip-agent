@@ -76,7 +76,7 @@
               },
               {
                 key: {
-                  text: "Town or city"
+                  text: "Country"
                 },
                 value: {
                   html: payabilityTownCity
@@ -93,7 +93,7 @@
               },
               {
                 key: {
-                  text: "Contact details"
+                  text: "Details for this stay"
                 },
                 value: {
                   html: payabilityContact
@@ -114,6 +114,23 @@
                 },
                 value: {
                   html: payabilityDatesIn
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "award-dates-playback",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Are they currently outside of the UK?"
+                },
+                value: {
+                  html: "Yes/No"
                 },
                 actions: {
                   items: [

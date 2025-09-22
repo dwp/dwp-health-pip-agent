@@ -89,11 +89,17 @@
           </ol>
 
 
+          {% if data["payability-tasklist-item-8"] %}
 
-      {{ govukButton({
-        text: "Continue",
-        classes: "govuk-!-margin-bottom-8"
-      }) }}
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+          
+          {% else %}
+          {% endif %}
+
+
 
 
 

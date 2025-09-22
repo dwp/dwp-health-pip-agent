@@ -27,9 +27,9 @@
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type of stay</th>
-                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Name</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Country</th>
                 <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date they left the UK</th>
-                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date they re-entered the UK</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date they returned the UK</th>
                 <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days</th>
                 <!-- <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days that can be paid</th> -->
 
@@ -40,20 +40,20 @@
             <tbody class="govuk-table__body">
 
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell">{{ data['payability-tasklist-item-3']}}</td>
-                <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-name']}}</td>
-                <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}</td>
-                <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-name']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-in-day'] + ' ' + (data['payability-tasklist-item-8-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-in-year']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-out-day'] + ' ' + (data['payability-tasklist-item-8-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-out-year']}}</td>
                 <!-- <td class="govuk-table__cell">4</td> -->
-                <td class="govuk-table__cell">4</td>
+                <td class="govuk-table__cell">10</td>
 
                 <td class="govuk-table__cell govuk-aligned-right">
                   <ul class="govuk-aligned-right govuk-summary-list__actions-list">
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="payability-tasklist-item-3-details">Change<span class="govuk-visually-hidden"></span></a>
+                      <a class="govuk-link" href="payability-tasklist-item-8-details">Change<span class="govuk-visually-hidden"></span></a>
                     </li>
                     <li class="govuk-summary-list__actions-list-item">
-                      <a class="govuk-link" href="payability-tasklist-item-3-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                      <a class="govuk-link" href="payability-tasklist-item-8-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
                     </li>
                   </ul>
                   </td>
@@ -94,7 +94,7 @@
   name: "payability-tasklist-item-8-summary",
   fieldset: {
     legend: {
-      html: "Do you want to add another stay outside of the UK between <br>[X MONTH YEAR] (minus 1 month of DOA QP start date) and today? ",
+      html: "Do you want to add another stay outside of the <br>UK between 1 February and today? ",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
