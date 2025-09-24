@@ -211,7 +211,7 @@
                           fieldset: {
                             classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-6",
                             legend: {
-                              text: "Review and confirm payment",
+                              html: "Review and confirm payment<br>as bank detials have changed",
                               isPageHeading: true,
                               classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
                             }
@@ -223,6 +223,11 @@
                               {
                                 value: "ConfimLetter",
                                 text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
+                                checked: (data["application-about-a9-score-overwrite"] == "0")
+                              },
+                              {
+                                value: "ConfimLetter",
+                                text: "Nicola or Leah have checked this via teams.",
                                 checked: (data["application-about-a9-score-overwrite"] == "0")
                               }
                             ]

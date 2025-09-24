@@ -119,6 +119,7 @@ $govuk-assets-path: '/govuk/assets/';
    border-bottom: none;
 }
 
+
 .govuk-inset-text-light {
   border-left: 1px solid #b1b4b6;
   padding-left: 15px;
@@ -790,4 +791,9 @@ text-align: right!important;
 
 .govuk-extra-padding-right {
   padding-left: 40px !important;
+}
+
+
+.noborder {
+  border-bottom: 0px !important;
 }
