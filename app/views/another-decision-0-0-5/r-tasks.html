@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-flags-task" method="post" class="form">
+
+
+
+      {% include "another-decision-0-0-5/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+
+    {% include "another-decision-0-0-5/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Tasks</h3>
+    <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Try to complete all 2 outstanding tasks for this person.</p> -->
+      <div class="govuk-inset-text govuk-inset-text--action-notifications">
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><b>Review request for additional support<b></p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Task created: 1 June 2025 (X days ago)</p>
+          <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Review request addional support</p> -->
+
+        {{ govukButton({
+          text: "Start task",
+          classes: "govuk-!-margin-bottom-2"
+        }) }}
+
+      </div>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="r-tasks-none" class="govuk-link" rel="noreferrer noopener" target="">0</a></p>
+
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong> Application submitted:</strong> 1 August 2023 -->
+
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4"><strong>Assessment provider report received:</strong> 2 October 2023 -->
+
+  <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">View <a class="govuk-body govuk-!-font-size-24" href="record-1-applications">more details about application.</a> -->
+
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><strong>Application date:</strong> 01 August 2023 -->
+
+
+
+
+  </div>
+
+
+    </form>
+{% endblock %}

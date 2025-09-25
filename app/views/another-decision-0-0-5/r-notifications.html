@@ -79,3 +79,26 @@
 {% else %}
 
 {% endif %}
+
+
+
+{% set flagContext %}
+<p class="govuk-body govuk-!-font-size-19">
+
+
+  {% if data["r-flags-task-add-as"] == "Yes" or data["r-flags-task-add-as"] == "Flag3" %}
+  The additional support 
+  {% else %}
+  {% endif %}
+  marker has been added to the person's record. </p>
+
+{% endset %}
+
+{{ govukNotificationBanner({
+  classes: "prototype-banner-hidden",
+attributes: {
+  id: "r-flags-task-add-as-marker"
+},
+  html: flagContext,
+  type: 'success'
+}) }}

@@ -9,7 +9,7 @@
 {% endblock %}
 {% block content %}
 
-{% include "person-record-0-0-2/r-notifications.html" %}
+{% include "another-decision-0-0-5/r-notifications.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
@@ -17,7 +17,7 @@
 
 
 
-      {% include "person-record-0-0-2/record-id-base.html" %}
+      {% include "another-decision-0-0-5/record-id-base.html" %}
 
 
     </div>
@@ -106,9 +106,7 @@
     {% endif %}
 
 
-    {% if data["r-flags-add"] %}
-
-
+    {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes" %}
 
     <table class="govuk-table">
       <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-top-6">Flags and markers</caption>
@@ -121,34 +119,10 @@
 
       <tbody class="govuk-table__body">
 
-        {% if data["r-flags-add"] == "Flag1" or "Flag1" in data["r-flags-add"] %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">KCIS</th>
-          <td class="govuk-table__cell">Previous threatening behaviour towards a DWP agent.</td>
-        </tr>
-        {% else %}
-        {% endif %}
-
-        {% if data["r-flags-add"] == "Flag2" or "Flag2" in data["r-flags-add"] %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Financially vulnerable</th>
-          <td class="govuk-table__cell">May be unable to manage large payments, either due to their personal circumstances or their limited capacity to understand financial matters.</td>
-        </tr>
-        {% else %}
-        {% endif %}
-
-        {% if data["r-flags-add"] == "Flag3" or "Flag3" in data["r-flags-add"] %}
+        {% if data["r-flags-add"] == "Flag3" or data["r-flags-task-add-as"] == "Yes" %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Additional support</th>
           <td class="govuk-table__cell">Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems.</td>
-        </tr>
-        {% else %}
-        {% endif %}
-
-        {% if data["r-flags-add"] == "Flag4" or "Flag4" in data["r-flags-add"] %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Something else</th>
-          <td class="govuk-table__cell">Detials</td>
         </tr>
         {% else %}
         {% endif %}

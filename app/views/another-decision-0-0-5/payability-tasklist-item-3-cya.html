@@ -61,8 +61,10 @@
 {% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-month"]}}    {% endset %}
 {% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-year"]}}   {% endset %}
 
-{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-3-date-a-in-day'] + ' ' + (data['payability-tasklist-item-3-date-a-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-a-in-year']}}     {% endset %}
-{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-3-date-a-out-day'] + ' ' + (data['payability-tasklist-item-3-date-a-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-a-out-year']}}     {% endset %}
+{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}     {% endset %}
+{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}     {% endset %}
+
+
 
 
           {{ govukSummaryList({

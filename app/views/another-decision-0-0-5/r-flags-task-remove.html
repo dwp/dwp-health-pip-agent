@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "another-decision-0-0-5/record-id-base.html" %}
+
+<form action="r-flags#r-flags-task-remove-marker" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukRadios({
+        idPrefix: "r-flags-task-add-as",
+        name: "r-flags-task-add-as",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Are you sure you want to remove the additional support marker from this person's record?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            value: "Removed",
+            text: "Yes",
+            checked: (data["r-flags-task-add-as"] == "Removed")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-flags-task-add-as"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
