@@ -23,6 +23,18 @@
 
 
 
+{% set dynamicHint %}
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Consider whether they have:</p>
+
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+  <li>a severe mental health or behavioural condition</li>
+  <li>learning difficulties</li>
+  <li>a developmental disorder</li>
+  <li>memory problems</li>
+  </ul>
+
+{% endset %}
+
 
       {{ govukRadios({
         idPrefix: "r-flags-task-add-as",
@@ -30,13 +42,13 @@
         classes: "govuk-checkboxes",
         fieldset: {
           legend: {
-            text: "Do you need to add an additional support?",
+            html: "Is there evidence that the person needs additional support?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
           }
         },
         hint: {
-          html: "Use this if there is evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems."
+          html: dynamicHint
         },
         items: [
           {
