@@ -33,25 +33,32 @@
     <div class="govuk-grid-column-two-thirds">
 
       <!------------Q2 LEGEND------------>
-        {% set dynamicHint %}
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"> Consider whether the person:</p>
+        <!-- {% set dynamicHint %} -->
 
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
-        <li>has a mental health condition</li>
-        <li>shows signs of drug or gambling addition</li>
-        <li>could be influenced or open to abuse by others</li>
-        <li>has limited capacity to understand, process or manage financial matters</li>
-        </ul>
 
-        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-top-6 govuk-!-margin-bottom-0"><strong>The descriptor selected for 'Making <br>budgeting decisions' is:</strong></p>
-
-        {{ govukInsetText({
-          html: "Descriptor A (0 points):Can manage complex budgeting decisions unaided"
-        }) }}
-
-        {% endset %}
+        <!-- {% endset %} -->
       <!------------Legend--------------->
 
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Receiving and managing large payments</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-4 govuk-!-margin-bottom-2"> Consider whether the person:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-2">
+      <li>has a mental health condition</li>
+      <li>shows signs of drug or gambling addition</li>
+      <li>could be influenced or open to abuse by others</li>
+      <li>has limited capacity to understand, process or manage financial matters</li>
+      </ul>
+
+
+      {% set dynamicHint %}
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><strong>The descriptor selected for 'Making budgeting decisions' is:</strong></p>
+      <p class="govuk-body govuk-!-font-size-19">Descriptor A (0 points): Can manage complex budgeting decisions unaided</p>
+
+      {% endset %}
+
+      {{ govukInsetText({
+        html: dynamicHint
+      }) }}
 
       {{ govukRadios({
         classes: "govuk-radios govuk-!-margin-bottom-4",
@@ -59,13 +66,13 @@
         name: "payability-tasklist-item-2",
         fieldset: {
           legend: {
-            html: "Is there a reason why the person might find it challenging to manage a large payment?",
+            html: "Is there a reason why the person might find it challenging to receive and manage a large payment?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          html: dynamicHint
+          html: ""
         },
         items: [
         {

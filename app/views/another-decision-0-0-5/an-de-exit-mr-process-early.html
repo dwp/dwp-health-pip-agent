@@ -23,7 +23,7 @@
         name: "an-de-exit-mr-process-early",
         fieldset: {
           legend: {
-            text: "Why can you not complete the mandatory reconsideration registration?",
+            text: "Why can you not complete this mandatory reconsideration decision?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--xl"
           }
@@ -32,6 +32,13 @@
           text: ""
         },
         items: [
+        {
+          value: "PreDecisionChecks",
+          text: "Something from the call has effected the pre decision checks",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "PreDecisionChecks")
+        },
         {
           value: "Rad",
           text: "Something rad happened I wasnt expecting",

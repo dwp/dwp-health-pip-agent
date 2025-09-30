@@ -10,7 +10,7 @@
 {% block content %}
 
 
-{% if data["payability-tasklist-item-3"] == "No" %}
+{% if data["payability-tasklist-item-3"] == "No" or data["an-de-exit-mr-process-early"] %}
 <form action="entry-home" method="post" class="form">
 {% else %}
 <form action="cya-payment-breakdown-a" method="post" class="form">
@@ -21,7 +21,7 @@
 
       {% include "another-decision-0-0-5/record-id.html" %}
 
-        {% if data["payability-check"] == "Yes" %} <br>
+        {% if data["payability-check"] == "Yes" or data["an-de-exit-mr-process-early"] %} <br>
        R2
        Outcome R2 = With issue move to PIPcs<br><br>
        <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the mandatory reconsideration details and move to PIPCS</h1>
@@ -374,7 +374,7 @@ R3
 
 
 Outcome checker
-    {% if data["payability-check"] == "Yes" %} <br>
+    {% if data["payability-check"] == "Yes" or data["an-de-exit-mr-process-early"] %}<br>
     Outcome R2 = With issue move to PIPcs<br><br>
 
     <!------------CheckBox Hint------------>
@@ -550,6 +550,7 @@ Outcome R3 = No issues
 
 
     {% endif %}
+
 
 
 {% else %}

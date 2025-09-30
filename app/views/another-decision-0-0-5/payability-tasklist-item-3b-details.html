@@ -37,17 +37,19 @@
 
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          {% if data["payability-tasklist-item-3b"] == "Care home" %}
-          Care home detials
-          {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
-          Hospital detials
-          {% elif data["payability-tasklist-item-3b"] == "Prison" %}
-          Prison detials
-          {% elif data["payability-tasklist-item-3b"] == "Residential school or college" %}
-          Residential school or college detials
-          {% else %}
-          XXX
-          {% endif %}
+            {% if data["payability-tasklist-item-3"] == "Care home" %}
+            Care home details
+            {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+            Hospital details
+            {% elif data["payability-tasklist-item-3"] == "Prison" %}
+            Prison details
+            {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+            Residential school or college details
+            {% elif data["payability-tasklist-item-3"] == "Shelterd housing" %}
+            Shelterd housing
+            {% else %}
+            XXX
+            {% endif %}
           </h2>
 
           {% set dynamicName %}
@@ -59,6 +61,8 @@
                   Prison name
                   {% elif data["payability-tasklist-item-3b"] == "Residential school or college" %}
                   Residential school or college name
+                  {% elif data["payability-tasklist-item-3"] == "Shelterd housing" %}
+                  Shelterd housing name
                   {% else %}
                   XXX
                   {% endif %}
@@ -178,7 +182,7 @@
 
 
 
-    {% if data["payability-tasklist-item-3b"] == "Care home" %}
+    {% if data["payability-tasklist-item-3b"] == "Care home" or data["payability-tasklist-item-3b"] == "Shelterd housing" %}
 
     {{ govukRadios({
       idPrefix: "payability-tasklist-item-3b-funding-type",

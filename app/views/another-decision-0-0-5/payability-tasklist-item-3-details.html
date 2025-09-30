@@ -45,6 +45,8 @@
           Prison details
           {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
           Residential school or college details
+          {% elif data["payability-tasklist-item-3"] == "Shelterd housing" %}
+          Shelterd housing
           {% else %}
           XXX
           {% endif %}
@@ -59,6 +61,8 @@
                   Prison name
                   {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
                   Residential school or college name
+                  {% elif data["payability-tasklist-item-3"] == "Shelterd housing" %}
+                  Shelterd housing name
                   {% else %}
                   XXX
                   {% endif %}
@@ -173,7 +177,7 @@
 
     <br>
 
-    {% if data["payability-tasklist-item-3"] == "Care home" %}
+    {% if data["payability-tasklist-item-3"] == "Care home" or data["payability-tasklist-item-3"] == "Shelterd housing" %}
 
     {{ govukRadios({
       idPrefix: "payability-tasklist-item-3-funding-type",
