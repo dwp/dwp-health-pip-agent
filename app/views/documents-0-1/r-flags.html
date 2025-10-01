@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "documents-0-1/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="r-overview" method="post" class="form">
+
+      {% include "documents-0-1/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "documents-0-1/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Flags and markers</h3>
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-flags-add" target="">Add a flag or marker</a> to the person's record to make sure they get the right support they need. </p>
+
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-flags-single" target="">Single</a> </p>
+
+
+
+    {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes" %}
+
+
+    {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes"%}
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-0",
+      rows: [
+      {
+          key: {
+            text: "Additional support"
+          },
+          value: {
+            html: "Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems.<br><br>Added: 1 month ago"
+          },
+          actions: {
+            items: [
+              {
+                href: "r-flags-task-remove",
+                text: "Remove",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {% else %}
+    {% endif %}
+
+
+
+    {% else %}
+    {% endif %}
+
+
+
+  </div>
+  </div>
+
+
+    </form>
+{% endblock %}

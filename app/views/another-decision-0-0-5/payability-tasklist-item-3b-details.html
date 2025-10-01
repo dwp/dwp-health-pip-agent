@@ -37,15 +37,15 @@
 
 
           <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
-            {% if data["payability-tasklist-item-3"] == "Care home" %}
+            {% if data["payability-tasklist-item-3b"] == "Care home" %}
             Care home details
-            {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+            {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
             Hospital details
-            {% elif data["payability-tasklist-item-3"] == "Prison" %}
+            {% elif data["payability-tasklist-item-3b"] == "Prison" %}
             Prison details
-            {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+            {% elif data["payability-tasklist-item-3b"] == "Residential school or college" %}
             Residential school or college details
-            {% elif data["payability-tasklist-item-3"] == "Shelterd housing" %}
+            {% elif data["payability-tasklist-item-3b"] == "Shelterd housing" %}
             Shelterd housing
             {% else %}
             XXX
@@ -144,16 +144,6 @@
             {% endif %}
 
 
-            {{ govukTextarea({
-              name: "payability-tasklist-item-3b-contact",
-              id: "payability-tasklist-item-3b-contact",
-              label: {
-                text: "Can you provide more detail?"
-              },
-              value: data["payability-tasklist-item-3b-contact"]
-            }) }}
-
-
 <!-- ————————————————————— -->
 
     {% set dynamicFundingType %}
@@ -176,13 +166,6 @@
     {% endset -%}
 
     <br>
-
-
-
-
-
-
-    {% if data["payability-tasklist-item-3b"] == "Care home" or data["payability-tasklist-item-3b"] == "Shelterd housing" %}
 
     {{ govukRadios({
       idPrefix: "payability-tasklist-item-3b-funding-type",
@@ -226,51 +209,6 @@
       }
       ]
     }) }}
-
-    {% elif data["payability-tasklist-item-3b"] == "Hospital" %}
-
-    {{ govukRadios({
-      idPrefix: "payability-tasklist-item-3b-funding-type",
-      name: "payability-tasklist-item-3b-funding-type",
-      fieldset: {
-        legend: {
-          text: "How is the person's stay in the hospital funded?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m "
-        }
-      },
-      items: [
-    {
-      value: "The person funds it themselves",
-      text: "The person funds it themselves",
-      checked: (data["payability-tasklist-item-3b-funding-type"] == "The person funds it themselves")
-      },
-      {
-      value: "By the local authority",
-      text: "By the local authority",
-      checked: (data["payability-tasklist-item-3b-funding-type"] == "By the local authority"),
-        conditional: {
-          html: dynamicFundingType
-        }
-      },
-      {
-      value: "Not known",
-      text: "Not known",
-      checked: (data["payability-tasklist-item-3b-funding-type"] == "Not known"),
-        conditional: {
-          html: dynamicFundingType
-        }
-      }
-      ]
-    }) }}
-
-
-
-    {% else %}
-    XXX
-    {% endif %}
-
-
     <!-- ————————————————————— -->
 
 
@@ -372,7 +310,7 @@
         {% set stayEnd %}
 
         {{ govukDateInput({
-          id: "payability-tasklist-item-3b-date-a-out",
+          id: "payability-tasklist-item-3b-date-out",
           namePrefix: "payability-tasklist-item-3b-date-out",
           fieldset: {
             legend: {
@@ -453,6 +391,15 @@
               }
           }
           ]
+          }) }}
+
+          {{ govukTextarea({
+            name: "payability-tasklist-item-3b-contact",
+            id: "payability-tasklist-item-3b-contact",
+            label: {
+              text: "Can you provide more detail?"
+            },
+            value: data["payability-tasklist-item-3b-contact"]
           }) }}
 
 

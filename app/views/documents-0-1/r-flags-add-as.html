@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "documents-0-1/record-id-base.html" %}
+
+<form action="r-flags#r-flags-task-add-as-marker" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+{% set dynamicHint %}
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Consider whether they have:</p>
+
+<ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+  <li>a severe mental health or behavioural condition</li>
+  <li>learning difficulties</li>
+  <li>a developmental disorder</li>
+  <li>memory problems</li>
+  </ul>
+
+{% endset %}
+
+
+      {{ govukRadios({
+        idPrefix: "r-flags-task-add-as",
+        name: "r-flags-task-add-as",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            html: "Is there evidence that the person needs additional support?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["r-flags-task-add-as"] == "Yes")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-flags-task-add-as"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
