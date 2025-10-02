@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="system-doc-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-doc-selector",
+  name: "system-doc-selector",
+  fieldset: {
+    legend: {
+      text: "Select a document scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "APOD",
+    text: "Assessment provider to Original decision ",
+    checked: (data["system-doc-selector"] == "APOD")
+  },
+  {
+    value: "ODMR",
+    text: "Original decision to Mandatory Reconsideration",
+    checked: (data["system-doc-selector"] == "ODMR")
+  },
+  {
+    value: "ODAR",
+    text: "Orginal decision to Award review",
+    checked: (data["system-doc-selector"] == "ODAR")
+  },
+  {
+    value: "ARMR",
+    text: "Award review to Mandatory Reconsideration",
+    checked: (data["system-doc-selector"] == "ARMR")
+  }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

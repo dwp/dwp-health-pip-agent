@@ -1,0 +1,293 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% if data["application-5-about-a12"] == "Amended" and data["doc-3-grade"] %}
+<form action="application-5-about" method="post" class="form">
+
+{% elif data["application-5-about-a1"] == "Agree" and data["doc-3-grade"] %}
+<form action="application-5-about" method="post" class="form">
+
+{% else %}
+<form action="application-5-about-clear" method="post" class="form">
+{% endif %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "documents-0-1/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 4<br>supporting documents</h2>
+
+
+
+<div><!-- Still to assess start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Still to assess</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Seen when MR decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Used when MR decision was made</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% if data["doc-5-grade"] == "Good" %}
+      {% elif data["doc-5-grade"] == "Bad" %}
+      {% elif data["doc-5-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-5-status.html" %}
+      {% endif %}
+
+            <!-- {% if data["doc-6-grade"] == "Good" %}
+            {% elif data["doc-6-grade"] == "Bad" %}
+            {% elif data["doc-6-grade"] == "Remove" %}
+            {% else %}
+                {% include "documents-0-1/doc-6-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-1-grade"] == "Good" %}
+            {% elif data["doc-1-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-1-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-2-grade"] == "Good" %}
+            {% elif data["doc-2-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-2-status.html" %}
+            {% endif %} -->
+
+        {% if data["doc-3-grade"] == "Good" %}
+        {% elif data["doc-3-grade"] == "Bad" %}
+        {% else %}
+            {% include "documents-0-1/doc-3-status.html" %}
+        {% endif %}
+
+            <!-- {% if data["doc-4-grade"] == "Good" %}
+            {% elif data["doc-4-grade"] == "Bad" %}
+            {% elif data["doc-4-grade"] == "Remove" %}
+
+            {% else %}
+                {% include "documents-0-1/doc-4-status.html" %}
+            {% endif %} -->
+
+      </table>
+
+
+</div><!-- Still to assess end -->
+
+<div><!-- Supports the application start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Supports the application</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% if data["doc-5-grade"] == "Good" %}
+      {% elif data["doc-5-grade"] == "Bad" %}
+      {% elif data["doc-5-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-5-status.html" %}
+      {% endif %}
+
+            <!-- {% if data["doc-6-grade"] == "Good" %}
+            {% elif data["doc-6-grade"] == "Bad" %}
+            {% elif data["doc-6-grade"] == "Remove" %}
+            {% else %}
+                {% include "documents-0-1/doc-6-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-1-grade"] == "Good" %}
+            {% elif data["doc-1-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-1-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-2-grade"] == "Good" %}
+            {% elif data["doc-2-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-2-status.html" %}
+            {% endif %} -->
+
+        {% if data["doc-3-grade"] == "Good" %}
+        {% elif data["doc-3-grade"] == "Bad" %}
+        {% else %}
+            {% include "documents-0-1/doc-3-status.html" %}
+        {% endif %}
+
+            <!-- {% if data["doc-4-grade"] == "Good" %}
+            {% elif data["doc-4-grade"] == "Bad" %}
+            {% elif data["doc-4-grade"] == "Remove" %}
+
+            {% else %}
+                {% include "documents-0-1/doc-4-status.html" %}
+            {% endif %} -->
+
+      </table>
+
+
+</div><!-- Supports the application end -->
+
+<div><!-- Does not support the application start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Does not support the application</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% if data["doc-5-grade"] == "Good" %}
+      {% elif data["doc-5-grade"] == "Bad" %}
+      {% elif data["doc-5-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-5-status.html" %}
+      {% endif %}
+
+            <!-- {% if data["doc-6-grade"] == "Good" %}
+            {% elif data["doc-6-grade"] == "Bad" %}
+            {% elif data["doc-6-grade"] == "Remove" %}
+            {% else %}
+                {% include "documents-0-1/doc-6-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-1-grade"] == "Good" %}
+            {% elif data["doc-1-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-1-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-2-grade"] == "Good" %}
+            {% elif data["doc-2-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-2-status.html" %}
+            {% endif %} -->
+
+        {% if data["doc-3-grade"] == "Good" %}
+        {% elif data["doc-3-grade"] == "Bad" %}
+        {% else %}
+            {% include "documents-0-1/doc-3-status.html" %}
+        {% endif %}
+
+            <!-- {% if data["doc-4-grade"] == "Good" %}
+            {% elif data["doc-4-grade"] == "Bad" %}
+            {% elif data["doc-4-grade"] == "Remove" %}
+
+            {% else %}
+                {% include "documents-0-1/doc-4-status.html" %}
+            {% endif %} -->
+
+      </table>
+
+
+</div><!-- Does not support the application end -->
+
+<div><!-- Documents to be removed start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Documents to be removed</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
+        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% if data["doc-5-grade"] == "Good" %}
+      {% elif data["doc-5-grade"] == "Bad" %}
+      {% elif data["doc-5-grade"] == "Remove" %}
+      {% else %}
+          {% include "documents-0-1/doc-5-status.html" %}
+      {% endif %}
+
+            <!-- {% if data["doc-6-grade"] == "Good" %}
+            {% elif data["doc-6-grade"] == "Bad" %}
+            {% elif data["doc-6-grade"] == "Remove" %}
+            {% else %}
+                {% include "documents-0-1/doc-6-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-1-grade"] == "Good" %}
+            {% elif data["doc-1-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-1-status.html" %}
+            {% endif %} -->
+
+            <!-- {% if data["doc-2-grade"] == "Good" %}
+            {% elif data["doc-2-grade"] == "Bad" %}
+            {% else %}
+                {% include "documents-0-1/doc-2-status.html" %}
+            {% endif %} -->
+
+        {% if data["doc-3-grade"] == "Good" %}
+        {% elif data["doc-3-grade"] == "Bad" %}
+        {% else %}
+            {% include "documents-0-1/doc-3-status.html" %}
+        {% endif %}
+
+            <!-- {% if data["doc-4-grade"] == "Good" %}
+            {% elif data["doc-4-grade"] == "Bad" %}
+            {% elif data["doc-4-grade"] == "Remove" %}
+
+            {% else %}
+                {% include "documents-0-1/doc-4-status.html" %}
+            {% endif %} -->
+
+      </table>
+
+
+</div><!-- Documents to be removed end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+  </form>
+
+{% endblock %}

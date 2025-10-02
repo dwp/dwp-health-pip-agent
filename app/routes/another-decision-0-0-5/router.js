@@ -2122,7 +2122,7 @@ router.post(`/payability-tasklist-item-3b-router`, (req, res) => {
   const payTL3b = req.session.data['payability-tasklist-item-3b']
 
   if (payTL3b == 'Yes') {
-    res.redirect(`payability-tasklist-item-3b-details`)
+    res.redirect(`payability-tasklist-item-3b-where`)
   }
   else if (payTL3b == 'No') {
     res.redirect(`payability-tasklist-item-8`)

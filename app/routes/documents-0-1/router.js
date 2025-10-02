@@ -63,7 +63,6 @@ router.post(`/system-application-selector-router`, (req, res) => {
 })
 
 
-
 router.post(`/system-myopentasks-selector-router`, (req, res) => {
   const openTaskSelector = req.session.data['system-myopentasks-selector']
 
@@ -2190,7 +2189,28 @@ router.post(`/payment-recipent-check-router`, (req, res) => {
 })
 
 
+// Document
 
+
+router.post(`/system-doc-selector-router`, (req, res) => {
+  const documentSelector = req.session.data['system-doc-selector']
+
+  if (documentSelector == 'APOD') {
+    res.redirect(`doc-grading`)
+  }
+  else if (documentSelector == 'ODMR') {
+    res.redirect(`doc-grading`)
+  }
+  else if (documentSelector == 'ODAR') {
+    res.redirect(`doc-grading`)
+  }
+  else if (documentSelector == 'ARMR') {
+    res.redirect(`doc-grading`)
+  }
+   else {
+    res.redirect(`XXX`)
+  }
+})
 
 
 
