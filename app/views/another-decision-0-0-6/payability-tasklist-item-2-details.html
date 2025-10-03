@@ -1,0 +1,95 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Prepare for payment",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+
+<form action="payability-tasklist-item-3" method="post" class="form">
+
+
+
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person might find it challenging to  manage a large payment?</h2>
+
+          <!------------Dynamic Title------------>
+            {% set dynamicTitle %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <li>Record the reasons why the person might struggle to receive and manage a large payment</li>
+            </ul>
+
+            {% endset %}
+          <!------------Legend--------------->
+
+
+          {{ govukTextarea({
+            name: "payability-tasklist-item-2-details",
+            id: "payability-tasklist-item-2-details",
+            label: {
+              text: "Record the reasons the person might find this challenging"
+            },
+            value: data["payability-tasklist-item-2-details"]
+          }) }}
+
+
+
+
+          <!------------Dynamic Title------------>
+            {% set dynamicHintHelper %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">Ask about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <!-- <li>Record the reasons why the person might struggle with a large payment</li> -->
+              <li>Is there anyone else we need to contact about their payments?</li>
+              <li>For example, an appointee or family member.</li>
+            </ul>
+
+            {% endset %}
+          <!------------Legend--------------->
+
+
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

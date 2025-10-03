@@ -1,0 +1,25 @@
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell table-spacer"><a href="doc-3-library">
+
+    {% if data["doc-3-name"] == "Yes" %}     {{ data["doc-3-name-overwrite"]}}
+    {% else %} Document 3
+    {% endif %}
+  </a></td>
+
+<td class="govuk-table__cell table-spacer">19 March 2024<br>(2 weeks ago)</td>
+<td class="govuk-table__cell table-spacer">PDF</td>
+
+<td class="govuk-table__cell table-spacer">
+
+  {% if data["doc-3-harmful"] == "Yes" %}        <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Harmful</strong>
+  {% else %}
+  {% endif %}
+
+  {% if data["doc-3-next-action"] == "Duplicate" %}     <strong class="govuk-tag app-task-list__apl-task-pause" id="eligibility-completed">Duplicate</strong>
+  {% elif data["doc-3-next-action"] == "Remove" %}     <strong class="govuk-tag app-task-list__apl-task-bad" id="eligibility-completed">Remove</strong>
+
+  {% else %}
+  {% endif %}
+
+</td>
+</tr>

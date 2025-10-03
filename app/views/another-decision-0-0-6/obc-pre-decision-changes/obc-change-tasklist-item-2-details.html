@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "an-de-mr-call-bar-active.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+
+<form action="obc-change-tasklist-item-2-del-auth-details" method="post" class="form">
+
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Call guide",
+      href: "../obc-callguide"
+    },
+    {
+      text: "Change in payment details",
+      href: "obc-change-tasklist-item-2"
+    }
+  ]
+}) }}
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Why might the person struggle with a large payment?</h2>
+
+          <!------------Dynamic Title------------>
+            {% set dynamicTitle %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <li>Record the reasons why the person might struggle with a large payment</li>
+            </ul>
+
+            {% endset %}
+          <!------------Legend--------------->
+
+
+          {{ govukTextarea({
+            name: "obc-change-tasklist-item-2-details",
+            id: "obc-change-tasklist-item-2-details",
+            classes: " govukTextarea--overwrite",
+            label: {
+              html: dynamicTitle,
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              html: ""
+            },
+            value: data["obc-change-tasklist-item-2-details"]
+          }) }}
+
+          <!------------Dynamic Title------------>
+            {% set dynamicHintHelper %}
+
+            <p class="govuk-body govuk-!-margin-bottom-2">@rachel Ask about:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+              <!-- <li>Record the reasons why the person might struggle with a large payment</li> -->
+              <li>Is there anyone else we need to contact about their payments?</li>
+              <li>For example, an appointee or family member.</li>
+            </ul>
+
+            {% endset %}
+          <!------------Legend--------------->
+
+          {{ govukRadios({
+            classes: "govuk-radios govuk-!-margin-bottom-4",
+            idPrefix: "obc-change-tasklist-item-2",
+            name: "obc-change-tasklist-item-2",
+            fieldset: {
+              legend: {
+                html: "Do you have the payment details for the person that will receive this money on their behalf?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              html: dynamicHintHelper
+            },
+            items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              checked: (data["obc-change-tasklist-item-2"] == "Yes")
+            },
+            {
+              value: "No",
+              text: "No",
+              checked: (data["obc-change-tasklist-item-2"] == "No")
+            }
+            ]
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

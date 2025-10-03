@@ -1,0 +1,204 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="payability-exit" method="post" class="form">
+
+  {% include "another-decision-0-0-6/record-id.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Information from the call and how it effects the payments</h1> -->
+
+
+        <!---------- 1 ---------->
+
+                {% set 1Html %}
+
+                {{ govukTextarea({
+                  name: "payability-reasons-reason-1",
+                  id: "payability-reasons-reason-1",
+                  rows: "4",
+                  label: {
+                    text: "Record the details of XXX",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    html: ""
+                  }
+                }) }}
+
+                {% endset -%}
+
+        <!---------- 2 ---------->
+
+                {% set 2Html %}
+
+                {{ govukTextarea({
+                  name: "payability-reasons-reason-2",
+                  id: "payability-reasons-reason-2",
+                  rows: "4",
+                  label: {
+                    text: "Record the details of XXX",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    html: ""
+                  }
+                }) }}
+
+                {% endset -%}
+
+        <!---------- 3 ---------->
+
+                {% set 3Html %}
+
+                {{ govukTextarea({
+                  name: "payability-reasons-reason-3",
+                  id: "payability-reasons-reason-3",
+                  rows: "4",
+                  label: {
+                    text: "Record the details of XXX",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                  },
+                  hint: {
+                    html: ""
+                  }
+                }) }}
+
+                {% endset -%}
+
+        <!----------  ---------->
+
+        {% set 4Html %}
+
+        {{ govukTextarea({
+          name: "payability-reasons-end",
+          id: "payability-reasons-end",
+          rows: "4",
+          label: {
+            text: "Record the details of XXX",
+            classes: "govuk-label--s",
+            isPageHeading: true
+          },
+          hint: {
+            html: ""
+          }
+        }) }}
+
+        {% endset -%}
+
+<!----------  ---------->
+
+        {{ govukCheckboxes({
+          idPrefix: "payability-reasons",
+          name: "payability-reasons",
+          classes: "govuk-checkboxes",
+          fieldset: {
+            legend: {
+              text: "Which will effect award amounts or recipent remaining the same as the orginal decision?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Select all that apply."
+          },
+
+        items: [
+
+
+        {
+          value: "reason-4",
+          text: "Changes of bank details",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "Save to pay (large payment)",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-1",
+          text: "Hospital or similar institutions",
+          checked: (data["payability-reasons"] == "reason-1"),
+          conditional: {
+            html: 1Html
+          }
+        },
+        {
+          value: "reason-2",
+          text: "Care homes",
+          checked: (data["payability-reasons"] == "reason-2"),
+          conditional: {
+            html: 2Html
+          }
+        },
+        {
+          value: "reason-3",
+          text: "Nursing homes",
+          checked: (data["payability-reasons"] == "reason-3"),
+          conditional: {
+            html: 3Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "Residential schools or colleges",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "Prison or legal custody",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        },
+        {
+          value: "reason-4",
+          text: "Outside of the UK",
+          checked: (data["payability-reasons"] == "reason-4"),
+          conditional: {
+            html: 4Html
+          }
+        }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="system-myopentasks-selector-router" method="post" class="form">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "system-myopentasks-selector",
+  name: "system-myopentasks-selector",
+  fieldset: {
+    legend: {
+      text: "Select a scenario",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+  {
+    value: "1",
+    text: "No open task",
+    checked: (data["system-myopentasks-selector"] == "1")
+  },
+  {
+    value: "2",
+    text: "Open tasks",
+    checked: (data["system-myopentasks-selector"] == "2")
+  }
+  ]
+}) }}
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-2">
+  <div class="govuk-grid-column-two-thirds">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "govuk-!-margin-bottom-8"
+            }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

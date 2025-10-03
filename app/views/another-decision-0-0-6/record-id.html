@@ -1,0 +1,22 @@
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+        <section class="dwp-quick-reference govuk-!-margin-bottom-8" aria-label="Case information">
+        <dl class="dwp-quick-reference__block">
+        <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+      {% if data["search"] %}
+        <dd class="dwp-quick-reference__primary">{{ data ["search"]}}</dd>
+      {% elif data["entry-home-processing-options"] == "MakeMRChange" %}
+      <dd class="dwp-quick-reference__primary"><a href="/person-record-0-0-2/r-overview" target="_blank" class="govuk-link">Sam Elliot</a></dd>
+      {% else %}
+        <dd class="dwp-quick-reference__primary"><a href="/person-record-0-0-2/r-overview" target="_blank" class="govuk-link">Jeff Bridges</a></dd>
+      {% endif %}
+
+        <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary govuk-visually-hidden">National Insurance number:</dt>
+        <dd class="dwp-quick-reference__secondary">NA 11 22 33 C</dd>
+        </dl>
+        </section>
+
+      </div>
+    </div>

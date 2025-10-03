@@ -1,0 +1,246 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="doc-library" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "documents-0-1/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess this document</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: <strong>19 March 2024</strong></p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Document supplied: <strong>19 March 2024</strong> (2 weeks ago)</p>
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">History of use</h3>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header govuk-30-percent">Decision / Recommendation</td>
+        <td class="govuk-table__header govuk-20-percent">Date</td>
+        <td class="govuk-table__header govuk-20-percent">Seen</td>
+        <td class="govuk-table__header govuk-20-percent">Used</td>
+      </tr>
+      </thead>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Appeal</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Award review</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mandatory reconsideration</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Original</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Assessment provider report</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+
+
+      </table>
+
+
+      <iframe src="pip-doc3.pdf" width="100%" height="1350px" style="border:0;"></iframe>
+      <br><br>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc3.pdf" target="_blank">You can also view this document in a new tab or window</a></p>
+
+{% set scoreOverwite %}
+    {{ govukInput({
+      id: "doc-uwm-name-overwrite",
+      label: {
+          text: "What do you want to name this document?",
+          classes: "govuk-fieldset__legend--m"
+      },
+      hint: {
+        text: ""
+      },
+          name: "doc-uwm-name-overwrite",
+          classes: "govuk-input--width-20",
+          value: data["doc-uwm-name-overwrite"]
+      }) }}
+
+{% endset -%}
+
+
+
+{{ govukRadios({
+  idPrefix: "doc-uwm-name",
+  name: "doc-uwm-name",
+  fieldset: {
+    legend: {
+      text: "Do you want to rename 'Document 3'? " ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["doc-uwm-name"] == "Yes"),
+          conditional: {
+            html: scoreOverwite
+          }
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["doc-uwm-name"] == "No")
+  }
+  ]
+}) }}
+
+
+{% set nextAction%}
+
+{{ govukRadios({
+  idPrefix: "doc-uwm-next-action",
+  name: "doc-uwm-next-action",
+  fieldset: {
+    legend: {
+      text: "What is the issue?" ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "It's a duplicate of another document",
+    checked: (data["doc-uwm-next-action"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "It needs to be removed",
+    checked: (data["doc-uwm-next-action"] == "No")
+  }
+  ]
+}) }}
+
+
+
+
+{% endset -%}
+
+
+{{ govukRadios({
+  idPrefix: "doc-uwm-harmful",
+  name: "doc-uwm-harmful",
+  fieldset: {
+    legend: {
+      text: "Does this document contain harmful information?" ,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "This information will not be shared with the applicant."
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["doc-uwm-harmful"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["doc-uwm-harmful"] == "No")
+  }
+  ]
+}) }}
+
+
+{{ govukRadios({
+  idPrefix: "doc-uwm-grade",
+  name: "doc-uwm-grade",
+  fieldset: {
+    legend: {
+      text: "Does this document support the decision?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  classes: "govuk-radios",
+  items: [
+  {
+    value: "Good",
+    text: "Yes",
+    checked: (data["doc-uwm-grade"] == "Good")
+  },
+  {
+    value: "Bad",
+    text: "No",
+    checked: (data["doc-uwm-grade"] == "Bad")
+  },
+  {
+    divider: "or"
+  },
+  {
+    value: "Remove",
+    text: "There is an issue with this document",
+    checked: (data["doc-uwm-grade"] == "Remove"),
+          conditional: {
+            html: nextAction
+          }
+      }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

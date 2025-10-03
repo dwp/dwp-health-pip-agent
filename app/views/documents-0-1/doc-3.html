@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-5-view-evidence" method="post" class="form">
+<form action="doc-grading" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -18,13 +18,61 @@
       {% include "documents-0-1/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">View and assess this document</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess this document</h1>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: <strong>19 March 2024</strong></p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Document supplied: <strong>19 March 2024</strong> (2 weeks ago)</p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Seen by assessment provider: <strong>Yes</strong></p>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Used by assessment provider: <strong>Yes</strong></p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Document supplied: <strong>19 March 2024</strong> (2 weeks ago)</p>
 
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Age: <strong>2 weeks ago</strong></p> -->
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">History of use</h3>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header govuk-30-percent">Decision / Recommendation</td>
+        <td class="govuk-table__header govuk-20-percent">Date</td>
+        <td class="govuk-table__header govuk-20-percent">Seen</td>
+        <td class="govuk-table__header govuk-20-percent">Used</td>
+      </tr>
+      </thead>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Appeal</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Award review</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Mandatory reconsideration</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">Yes</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Original</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Assessment provider report</td>
+        <td class="govuk-table__cell">DD Month Year</td>
+        <td class="govuk-table__cell">No</td>
+        <td class="govuk-table__cell">No</td>
+      </tr>
+
+
+      </table>
+
 
       <iframe src="pip-doc3.pdf" width="100%" height="1350px" style="border:0;"></iframe>
       <br><br>
@@ -32,7 +80,7 @@
 
 {% set scoreOverwite %}
     {{ govukInput({
-      id: "evidence-3-name-overwrite",
+      id: "doc-3-name-overwrite",
       label: {
           text: "What do you want to name this document?",
           classes: "govuk-fieldset__legend--m"
@@ -40,9 +88,9 @@
       hint: {
         text: ""
       },
-          name: "evidence-3-name-overwrite",
+          name: "doc-3-name-overwrite",
           classes: "govuk-input--width-20",
-          value: data["evidence-3-name-overwrite"]
+          value: data["doc-3-name-overwrite"]
       }) }}
 
 {% endset -%}
@@ -50,8 +98,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "evidence-3-name",
-  name: "evidence-3-name",
+  idPrefix: "doc-3-name",
+  name: "doc-3-name",
   fieldset: {
     legend: {
       text: "Do you want to rename 'Document 3'? " ,
@@ -67,7 +115,7 @@
   {
     value: "Yes",
     text: "Yes",
-    checked: (data["evidence-3-name"] == "Yes"),
+    checked: (data["doc-3-name"] == "Yes"),
           conditional: {
             html: scoreOverwite
           }
@@ -75,7 +123,7 @@
   {
     value: "No",
     text: "No",
-    checked: (data["evidence-3-name"] == "No")
+    checked: (data["doc-3-name"] == "No")
   }
   ]
 }) }}
@@ -84,8 +132,8 @@
 {% set nextAction%}
 
 {{ govukRadios({
-  idPrefix: "evidence-3-next-action",
-  name: "evidence-3-next-action",
+  idPrefix: "doc-3-next-action",
+  name: "doc-3-next-action",
   fieldset: {
     legend: {
       text: "What is the issue?" ,
@@ -101,12 +149,12 @@
   {
     value: "Yes",
     text: "It's a duplicate of another document",
-    checked: (data["evidence-3-next-action"] == "Yes")
+    checked: (data["doc-3-next-action"] == "Yes")
   },
   {
     value: "No",
     text: "It needs to be removed",
-    checked: (data["evidence-3-next-action"] == "No")
+    checked: (data["doc-3-next-action"] == "No")
   }
   ]
 }) }}
@@ -118,8 +166,8 @@
 
 
 {{ govukRadios({
-  idPrefix: "evidence-3-harmful",
-  name: "evidence-3-harmful",
+  idPrefix: "doc-3-harmful",
+  name: "doc-3-harmful",
   fieldset: {
     legend: {
       text: "Does this document contain harmful information?" ,
@@ -135,22 +183,22 @@
   {
     value: "Yes",
     text: "Yes",
-    checked: (data["evidence-3-harmful"] == "Yes")
+    checked: (data["doc-3-harmful"] == "Yes")
   },
   {
     value: "No",
     text: "No",
-    checked: (data["evidence-3-harmful"] == "No")
+    checked: (data["doc-3-harmful"] == "No")
   }
   ]
 }) }}
 
 {{ govukRadios({
-  idPrefix: "evidence-3-grade",
-  name: "evidence-3-grade",
+  idPrefix: "doc-3-grade",
+  name: "doc-3-grade",
   fieldset: {
     legend: {
-      text: "Does this document support the application?",
+      text: "Does this document support the decision?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -163,12 +211,12 @@
   {
     value: "Good",
     text: "Yes",
-    checked: (data["evidence-3-grade"] == "Good")
+    checked: (data["doc-3-grade"] == "Good")
   },
   {
     value: "Bad",
     text: "No",
-    checked: (data["evidence-3-grade"] == "Bad")
+    checked: (data["doc-3-grade"] == "Bad")
     },
     {
       divider: "or"
@@ -176,7 +224,7 @@
     {
       value: "Remove",
       text: "There is an issue with this document",
-      checked: (data["evidence-3-grade"] == "Remove"),
+      checked: (data["doc-3-grade"] == "Remove"),
             conditional: {
               html: nextAction
             }

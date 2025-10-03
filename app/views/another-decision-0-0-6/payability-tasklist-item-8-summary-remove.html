@@ -1,0 +1,87 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Prepare for payment",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+<form action="payability-tasklist-item-8-summary" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!------------Q2 LEGEND------------>
+        {% set dynamicHint %}
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">Bank name: <b>Halifax</b>
+
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Last four digits account number: <b>4563</b> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "payability-tasklist-item-3-summary-remove",
+        name: "payability-tasklist-item-3-summary-remove",
+        fieldset: {
+          legend: {
+            html: "Are you sure you want to remove [Name]? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["payability-tasklist-item-3-summary-remove"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["payability-tasklist-item-3-summary-remove"] == "No")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

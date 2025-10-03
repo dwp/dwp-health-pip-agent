@@ -1,0 +1,27 @@
+<tr class="govuk-table__row">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell table-spacer"><a href="doc-uwm-library">
+
+      {% if data["doc-uwm-name"] == "Yes" %}     {{ data["doc-uwm-name-overwrite"]}}
+      {% else %} Unstructured white mail 🕺🏼
+      {% endif %}
+    </a></td>
+
+<td class="govuk-table__cell table-spacer">2 October 2025 <br>(3 hours ago)</td>
+<td class="govuk-table__cell table-spacer">JPG</td>
+
+<td class="govuk-table__cell table-spacer">
+
+  {% if data["doc-uwm-harmful"] == "Yes" %}        <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Harmful</strong>
+  {% else %}
+  {% endif %}
+
+  {% if data["doc-uwm-next-action"] == "Duplicate" %}     <strong class="govuk-tag app-task-list__apl-task-pause" id="eligibility-completed">Duplicate</strong>
+  {% elif data["doc-uwm-next-action"] == "Remove" %}     <strong class="govuk-tag app-task-list__apl-task-bad" id="eligibility-completed">Remove</strong>
+
+  {% else %}
+  {% endif %}
+
+</td>
+
+</tr>

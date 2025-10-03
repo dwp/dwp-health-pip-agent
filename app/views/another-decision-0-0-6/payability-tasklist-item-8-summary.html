@@ -1,0 +1,143 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+<form action="payability-tasklist" method="post" class="form">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Temporary absences abroad</h2>
+
+
+
+          <table class="govuk-table ">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type of stay</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Country</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date left the UK</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date returned to the UK</th>
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days</th>
+                <!-- <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days that can be paid</th> -->
+
+                <th scope="col" class="govuk-table__header govuk-20-percent-percent"></th>
+
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-name']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-in-day'] + ' ' + (data['payability-tasklist-item-8-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-in-year']}}</td>
+                <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-out-day'] + ' ' + (data['payability-tasklist-item-8-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-out-year']}}</td>
+                <!-- <td class="govuk-table__cell">4</td> -->
+                <td class="govuk-table__cell">10</td>
+
+                <td class="govuk-table__cell govuk-aligned-right">
+                  <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="payability-tasklist-item-8-details">Change<span class="govuk-visually-hidden"></span></a>
+                    </li>
+                    <li class="govuk-summary-list__actions-list-item">
+                      <a class="govuk-link" href="payability-tasklist-item-8-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                    </li>
+                  </ul>
+                  </td>
+              </tr>
+
+
+                {% if data["payability-tasklist-item-8-summary"] %}
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-summary']}}</td>
+                  <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-summary-name']}}</td>
+                  <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-summary-date-in-day'] + ' ' + (data['payability-tasklist-item-8-summary-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-summary-date-in-year']}}</td>
+                  <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-summary-date-out-day'] + ' ' + (data['payability-tasklist-item-8-summary-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-summary-date-out-year']}}</td>
+                  <!-- <td class="govuk-table__cell">4</td> -->
+                  <td class="govuk-table__cell">4</td>
+                  <td class="govuk-table__cell govuk-aligned-right">
+                    <ul class="govuk-aligned-right govuk-summary-list__actions-list">
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="payability-tasklist-item-8-summary-details">Change<span class="govuk-visually-hidden"></span></a>
+                      </li>
+                      <li class="govuk-summary-list__actions-list-item">
+                        <a class="govuk-link" href="payability-tasklist-item-8-summary-remove">Remove<span class="govuk-visually-hidden"> contact details</span></a>
+                      </li>
+                    </ul>
+                    </td>
+                </tr>
+
+                {% else %}
+                {% endif %}
+
+            </tbody>
+          </table>
+
+<br>
+{{ govukRadios({
+  classes: "govuk-radios govuk-!-margin-bottom-4",
+  idPrefix: "payability-tasklist-item-8-summary",
+  name: "payability-tasklist-item-8-summary",
+  fieldset: {
+    legend: {
+      html: "Do you want to add another temporary stay abroad 1 February and today? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: dynamicHint
+  },
+  items: [
+  {
+    value: "Yes",
+    text: "Yes",
+    checked: (data["payability-tasklist-item-8-summary"] == "Yes")
+  },
+  {
+    value: "No",
+    text: "No",
+    checked: (data["payability-tasklist-item-8-summary"] == "No")
+  }
+  ]
+  }) }}
+
+
+  <!-- <div class="govuk-button-group">
+
+  {{ govukButton({
+    text: "Add period"
+  }) }}
+
+  {{ govukButton({
+    text: "No more to add",
+    classes: "govuk-button--secondary",
+    href: "payability-tasklist-item-4"
+  }) }}
+
+</div> -->
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+
+
+    {% endblock %}

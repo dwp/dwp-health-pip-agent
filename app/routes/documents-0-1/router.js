@@ -2204,7 +2204,13 @@ router.post(`/system-doc-selector-router`, (req, res) => {
   else if (documentSelector == 'ODAR') {
     res.redirect(`doc-grading`)
   }
+  else if (documentSelector == 'MRAR') {
+    res.redirect(`doc-grading`)
+  }
   else if (documentSelector == 'ARMR') {
+    res.redirect(`doc-grading`)
+  }
+  else if (documentSelector == 'AAMR') {
     res.redirect(`doc-grading`)
   }
    else {

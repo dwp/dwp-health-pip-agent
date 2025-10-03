@@ -31,23 +31,33 @@
   items: [
   {
     value: "APOD",
-    text: "Assessment provider to Original decision ",
+    text: "I am making the original decision",
     checked: (data["system-doc-selector"] == "APOD")
   },
   {
     value: "ODMR",
-    text: "Original decision to Mandatory Reconsideration",
+    text: "I am making making an mandatory reconsideration against the original decision ",
     checked: (data["system-doc-selector"] == "ODMR")
   },
   {
+    value: "MRAR",
+    text: "I am making making an mandatory reconsideration against an award review ",
+    checked: (data["system-doc-selector"] == "MRAR")
+  },
+  {
     value: "ODAR",
-    text: "Orginal decision to Award review",
+    text: "I am making an award review decision against the original decision",
     checked: (data["system-doc-selector"] == "ODAR")
   },
   {
     value: "ARMR",
-    text: "Award review to Mandatory Reconsideration",
+    text: "I am making an award review decision against a mandatory reconsideration decision",
     checked: (data["system-doc-selector"] == "ARMR")
+  },
+  {
+    value: "AAMR",
+    text: "I am writing an appeal response against a mandatory reconsideration decision",
+    checked: (data["system-doc-selector"] == "AAMR")
   }
   ]
 }) }}

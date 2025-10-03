@@ -28,10 +28,11 @@
       {% include "documents-0-1/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 4<br>supporting documents</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 2<br>supporting documents</h2>
 
 
-
+{% if data["doc-1-grade"] or data["doc-2-grade"] or data["doc-3-grade"] or data["doc-4-grade"] or data["doc-5-grade"] or data["doc-6-grade"] %}
+{% else %}
 <div><!-- Still to assess start -->
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -40,12 +41,13 @@
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-30-percent">Document name</td>
-        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
-        <td class="govuk-table__cell govuk-20-percent">Seen when MR decision was made</td>
-        <td class="govuk-table__cell govuk-20-percent">Used when MR decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
+
 
       {% if data["doc-5-grade"] == "Good" %}
       {% elif data["doc-5-grade"] == "Bad" %}
@@ -54,24 +56,6 @@
           {% include "documents-0-1/doc-5-status.html" %}
       {% endif %}
 
-            <!-- {% if data["doc-6-grade"] == "Good" %}
-            {% elif data["doc-6-grade"] == "Bad" %}
-            {% elif data["doc-6-grade"] == "Remove" %}
-            {% else %}
-                {% include "documents-0-1/doc-6-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-1-grade"] == "Good" %}
-            {% elif data["doc-1-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-1-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-2-grade"] == "Good" %}
-            {% elif data["doc-2-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-2-status.html" %}
-            {% endif %} -->
 
         {% if data["doc-3-grade"] == "Good" %}
         {% elif data["doc-3-grade"] == "Bad" %}
@@ -79,79 +63,53 @@
             {% include "documents-0-1/doc-3-status.html" %}
         {% endif %}
 
-            <!-- {% if data["doc-4-grade"] == "Good" %}
-            {% elif data["doc-4-grade"] == "Bad" %}
-            {% elif data["doc-4-grade"] == "Remove" %}
-
-            {% else %}
-                {% include "documents-0-1/doc-4-status.html" %}
-            {% endif %} -->
 
       </table>
 
 
 </div><!-- Still to assess end -->
+{% endif %}
 
-<div><!-- Supports the application start -->
+
+{% if data["doc-1-grade"] == "Good" or data["doc-2-grade"] == "Good" or data["doc-3-grade"] == "Good" or data["doc-4-grade"] == "Good" or data["doc-5-grade"] == "Good" or data["doc-6-grade"] == "Good" %}
+<div><!-- Supports the decision start -->
 
       <table class="govuk-table govuk-!-margin-bottom-8">
-        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Supports the application</h3>
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Supports the decision</h3>
 
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-30-percent">Document name</td>
-        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
-        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
-        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
 
-      {% if data["doc-5-grade"] == "Good" %}
-      {% elif data["doc-5-grade"] == "Bad" %}
-      {% elif data["doc-5-grade"] == "Remove" %}
-      {% else %}
-          {% include "documents-0-1/doc-5-status.html" %}
-      {% endif %}
-
-            <!-- {% if data["doc-6-grade"] == "Good" %}
-            {% elif data["doc-6-grade"] == "Bad" %}
-            {% elif data["doc-6-grade"] == "Remove" %}
+            {% if data["doc-5-grade"] == "Good" %}
+              {% include "documents-0-1/doc-5-status.html" %}
+            {% elif data["doc-5-grade"] == "Bad" %}
+            {% elif data["doc-5-grade"] == "Remove" %}
             {% else %}
-                {% include "documents-0-1/doc-6-status.html" %}
-            {% endif %} -->
+            {% endif %}
 
-            <!-- {% if data["doc-1-grade"] == "Good" %}
-            {% elif data["doc-1-grade"] == "Bad" %}
+            {% if data["doc-3-grade"] == "Good" %}
+              {% include "documents-0-1/doc-3-status.html" %}
+            {% elif data["doc-3-grade"] == "Bad" %}
+            {% elif data["doc-3-grade"] == "Remove" %}
             {% else %}
-                {% include "documents-0-1/doc-1-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-2-grade"] == "Good" %}
-            {% elif data["doc-2-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-2-status.html" %}
-            {% endif %} -->
-
-        {% if data["doc-3-grade"] == "Good" %}
-        {% elif data["doc-3-grade"] == "Bad" %}
-        {% else %}
-            {% include "documents-0-1/doc-3-status.html" %}
-        {% endif %}
-
-            <!-- {% if data["doc-4-grade"] == "Good" %}
-            {% elif data["doc-4-grade"] == "Bad" %}
-            {% elif data["doc-4-grade"] == "Remove" %}
-
-            {% else %}
-                {% include "documents-0-1/doc-4-status.html" %}
-            {% endif %} -->
+            {% endif %}
 
       </table>
 
 
-</div><!-- Supports the application end -->
+</div><!-- Supports the decision end -->
+{% else %}
+{% endif %}
 
+
+{% if data["doc-1-grade"] == "Bad" or data["doc-2-grade"] == "Bad" or data["doc-3-grade"] == "Bad" or data["doc-4-grade"] == "Bad" or data["doc-5-grade"] == "Bad" or data["doc-6-grade"] == "Bad" %}
 <div><!-- Does not support the application start -->
 
       <table class="govuk-table govuk-!-margin-bottom-8">
@@ -160,59 +118,38 @@
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-30-percent">Document name</td>
-        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
-        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
-        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
 
       {% if data["doc-5-grade"] == "Good" %}
       {% elif data["doc-5-grade"] == "Bad" %}
+        {% include "documents-0-1/doc-5-status.html" %}
       {% elif data["doc-5-grade"] == "Remove" %}
       {% else %}
-          {% include "documents-0-1/doc-5-status.html" %}
       {% endif %}
 
-            <!-- {% if data["doc-6-grade"] == "Good" %}
-            {% elif data["doc-6-grade"] == "Bad" %}
-            {% elif data["doc-6-grade"] == "Remove" %}
-            {% else %}
-                {% include "documents-0-1/doc-6-status.html" %}
-            {% endif %} -->
+      {% if data["doc-3-grade"] == "Good" %}
+      {% elif data["doc-3-grade"] == "Bad" %}
+        {% include "documents-0-1/doc-3-status.html" %}
+      {% elif data["doc-3-grade"] == "Remove" %}
+      {% else %}
+      {% endif %}
 
-            <!-- {% if data["doc-1-grade"] == "Good" %}
-            {% elif data["doc-1-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-1-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-2-grade"] == "Good" %}
-            {% elif data["doc-2-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-2-status.html" %}
-            {% endif %} -->
-
-        {% if data["doc-3-grade"] == "Good" %}
-        {% elif data["doc-3-grade"] == "Bad" %}
-        {% else %}
-            {% include "documents-0-1/doc-3-status.html" %}
-        {% endif %}
-
-            <!-- {% if data["doc-4-grade"] == "Good" %}
-            {% elif data["doc-4-grade"] == "Bad" %}
-            {% elif data["doc-4-grade"] == "Remove" %}
-
-            {% else %}
-                {% include "documents-0-1/doc-4-status.html" %}
-            {% endif %} -->
-
-      </table>
+    </table>
 
 
 </div><!-- Does not support the application end -->
+{% else %}
+{% endif %}
 
+{% if data["doc-1-grade"] == "Remove" or data["doc-2-grade"] == "Remove" or data["doc-3-grade"] == "Remove" or data["doc-4-grade"] == "Remove" or data["doc-5-grade"] == "Remove" or data["doc-6-grade"] == "Remove" %}
 <div><!-- Documents to be removed start -->
+
+
 
       <table class="govuk-table govuk-!-margin-bottom-8">
         <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Documents to be removed</h3>
@@ -220,9 +157,9 @@
       <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <td class="govuk-table__cell govuk-30-percent">Document name</td>
-        <td class="govuk-table__cell govuk-20-percent">Date received<br>(age)</td>
-        <td class="govuk-table__cell govuk-20-percent">Seen when Mandatory reconsideration decision was made</td>
-        <td class="govuk-table__cell govuk-20-percent">Used when Mandatory reconsideration decision was made</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
         <td class="govuk-table__cell govuk-10-percent">Status</td>
       </tr>
       </thead>
@@ -230,48 +167,23 @@
       {% if data["doc-5-grade"] == "Good" %}
       {% elif data["doc-5-grade"] == "Bad" %}
       {% elif data["doc-5-grade"] == "Remove" %}
+        {% include "documents-0-1/doc-5-status.html" %}
       {% else %}
-          {% include "documents-0-1/doc-5-status.html" %}
       {% endif %}
 
-            <!-- {% if data["doc-6-grade"] == "Good" %}
-            {% elif data["doc-6-grade"] == "Bad" %}
-            {% elif data["doc-6-grade"] == "Remove" %}
+            {% if data["doc-3-grade"] == "Good" %}
+            {% elif data["doc-3-grade"] == "Bad" %}
+            {% elif data["doc-3-grade"] == "Remove" %}
+              {% include "documents-0-1/doc-3-status.html" %}
             {% else %}
-                {% include "documents-0-1/doc-6-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-1-grade"] == "Good" %}
-            {% elif data["doc-1-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-1-status.html" %}
-            {% endif %} -->
-
-            <!-- {% if data["doc-2-grade"] == "Good" %}
-            {% elif data["doc-2-grade"] == "Bad" %}
-            {% else %}
-                {% include "documents-0-1/doc-2-status.html" %}
-            {% endif %} -->
-
-        {% if data["doc-3-grade"] == "Good" %}
-        {% elif data["doc-3-grade"] == "Bad" %}
-        {% else %}
-            {% include "documents-0-1/doc-3-status.html" %}
-        {% endif %}
-
-            <!-- {% if data["doc-4-grade"] == "Good" %}
-            {% elif data["doc-4-grade"] == "Bad" %}
-            {% elif data["doc-4-grade"] == "Remove" %}
-
-            {% else %}
-                {% include "documents-0-1/doc-4-status.html" %}
-            {% endif %} -->
+            {% endif %}
 
       </table>
 
 
 </div><!-- Documents to be removed end -->
-
+{% else %}
+{% endif %}
 
 
 

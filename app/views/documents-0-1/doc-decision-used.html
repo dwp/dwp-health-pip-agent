@@ -1,0 +1,24 @@
+{% if data["system-doc-selector"] == "APOD" %}
+Used by assessment provider
+
+{% elif data["system-doc-selector"] == "ODMR" %}
+Used when original decision was made
+
+{% elif data["system-doc-selector"] == "ODAR" %}
+Used when original decision was made
+
+{% elif data["system-doc-selector"] == "MRAR" %}
+Used when award review decision was made
+
+{% elif data["system-doc-selector"] == "ARMR" %}
+Used when MR decision was made
+
+{% elif data["system-doc-selector"] == "AAMR" %}
+Used when MR decision was made
+
+{% elif data["doc-5-grade"] == "Remove" %}
+{% else %}
+
+No scenario
+
+{% endif %}

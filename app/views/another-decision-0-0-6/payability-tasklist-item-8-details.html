@@ -1,0 +1,197 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Prepare for payment",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+<form action="payability-tasklist-item-8-cya" method="post" class="form">
+
+
+
+
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-three-quarters">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            Details of the temporary absence abroad
+          </h2>
+
+
+          {{ govukInput({
+            label: {
+              html: "Type of stay"
+            },
+            id: "payability-tasklist-item-8-name",
+            name: "payability-tasklist-item-8-name",
+            classes: "govuk-input--width-20",
+            value: data["payability-tasklist-item-8-name"]
+          }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Country"
+              },
+              classes: "govuk-input--width-10",
+              id: "payability-tasklist-item-8-towncity-name",
+              name: "payability-tasklist-item-8-towncity-name",
+              classes: "govuk-input--width-20",
+              autocomplete: "address-towncity"
+            }) }}
+
+
+
+      {{ govukTextarea({
+        name: "payability-tasklist-item-8-contact",
+        id: "payability-tasklist-item-8-contact",
+        label: {
+          text: "Details for this stay"
+        },
+        value: data["payability-tasklist-item-8-contact"]
+      }) }}
+
+
+
+
+    <!-- ————————————————————— -->
+
+
+        {{ govukDateInput({
+          id: "payability-tasklist-item-8-date-in",
+          namePrefix: "payability-tasklist-item-8-date-in",
+          fieldset: {
+            legend: {
+              html: "Date they left the UK",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+            }
+          },
+          hint: {
+            html: ""
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-8-date-in-day"]
+            },
+
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-8-date-in-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["payability-tasklist-item-8-date-in-year"]
+            }
+          ]
+        }) }}
+
+        {% set stayEnd %}
+
+        {{ govukDateInput({
+          id: "payability-tasklist-item-8-date-a-out",
+          namePrefix: "payability-tasklist-item-8-date-out",
+          fieldset: {
+            legend: {
+              html: "Date they returned to the UK",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+            }
+          },
+          hint: {
+            html: ""
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-8-date-out-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["payability-tasklist-item-8-date-out-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["payability-tasklist-item-8-date-out-year"]
+            }
+          ]
+        }) }}
+
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          classes: "govuk-radios govuk-!-margin-bottom-4",
+          idPrefix: "payability-tasklist-item-8-date-out-check",
+          name: "payability-tasklist-item-8-date-out-check",
+          fieldset: {
+            legend: {
+              html: "Are they currently outside of the UK?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            html: dynamicHint
+          },
+          items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["payability-tasklist-item-8-date-out-check"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["payability-tasklist-item-8-date-out-check"] == "No"),
+              conditional: {
+                html: stayEnd
+              }
+          }
+          ]
+          }) }}
+
+
+        <!-- ————————————————————— -->
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "govuk-!-margin-bottom-8"
+          }) }}
+
+            </div>
+          </div>
+
+      </form>
+
+    {% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="cya-letter-review" method="post" class="form">
+
+  {% include "another-decision-0-0-6/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-exit-mr-process-early",
+        name: "an-de-exit-mr-process-early",
+        fieldset: {
+          legend: {
+            text: "Why can you not complete this mandatory reconsideration decision?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "PreDecisionChecks",
+          text: "Something from the call has effected the pre decision checks",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "PreDecisionChecks")
+        },
+        {
+          value: "Rad",
+          text: "Something rad happened I wasnt expecting",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "Rad")
+        },
+        {
+          value: "XXX",
+          text: "Issues with XYZ",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "XXX")
+        }
+        ]
+        }) }}
+
+        <!-- It will arrive almost immediately
+        Visit GOV.UK and search for CRMR1 -->
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
