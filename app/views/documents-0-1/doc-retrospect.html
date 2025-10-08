@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-5-about" method="post" class="form">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "documents-0-1/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting documents</h2>
+
+
+
+<div><!-- Supports the decision start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Supports the decision</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% include "documents-0-1/doc-3-library-status.html" %}
+
+      </table>
+
+
+</div><!-- Supports the decision end -->
+
+
+
+<div><!-- Does not support the application start -->
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Does not support the application</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% include "documents-0-1/doc-uwm-library-status.html" %}
+
+    </table>
+
+
+</div><!-- Does not support the application end -->
+
+
+<div><!-- Documents to be removed start -->
+
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Documents to be removed</h3>
+
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell govuk-30-percent">Document name</td>
+        <td class="govuk-table__cell govuk-20-percent">Date received<br>(Age)</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-seen.html" %}</td>
+        <td class="govuk-table__cell govuk-20-percent">{% include "documents-0-1/doc-decision-used.html" %}</td>
+        <td class="govuk-table__cell govuk-10-percent">Status</td>
+      </tr>
+      </thead>
+
+      {% include "documents-0-1/doc-5-library-status.html" %}
+
+
+      </table>
+
+
+</div><!-- Documents to be removed end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+  </form>
+
+{% endblock %}

@@ -49,32 +49,52 @@
             checked: (data["entry-home-processing-options"] == "PrepForDecision")
           },
           {
+            divider: "–"
+          },
+          {
             value: "MakeMRNil",
-            text: "Make a decision on a mandatory reconsideration  (Nil)",
+            text: "Make a decision on a M.R.  (Nil)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "MakeMRNil")
           },
           {
             value: "PayRemainsPay",
-            text: "Make a decision on a mandatory reconsideration (Pay remains pay)",
+            text: "Make a decision on a M.R. (Pay remains pay)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "PayRemainsPay")
           },
           {
             value: "MakeMRChange",
-            text: "Make a decision on a mandatory reconsideration (Change in rate)",
+            text: "Make a decision on a M.R. (Change in rate)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "MakeMRChange")
           },
           {
             value: "MakeMRNilPay",
-            text: "Make a decision on a mandatory reconsideration (Nil/Pay)",
+            text: "Make a decision on a M.R. (Nil/Pay)",
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "MakeMRNilPay")
+          },
+          {
+            value: "PreparePayRemainsPay",
+            text: "Make a decision on a M.R. (Prepare to pay)",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "PreparePayRemainsPay")
+          },
+          {
+            value: "PaymentDecrease",
+            text: "Make a decision on a M.R. (Payment Decrease)",
+            hint: {
+              text: ""},
+            checked: (data["entry-home-processing-options"] == "PaymentDecrease")
+          },
+          {
+            divider: "–"
           },
           {
             value: "MakeAW",
@@ -89,13 +109,6 @@
             hint: {
               text: ""},
             checked: (data["entry-home-processing-options"] == "PrepareAppeal")
-          },
-          {
-            value: "PreparePayRemainsPay",
-            text: "Make a decision on a mandatory reconsideration (Prepare to pay)",
-            hint: {
-              text: ""},
-            checked: (data["entry-home-processing-options"] == "PreparePayRemainsPay")
           }
           ]
           }) }}

@@ -94,6 +94,10 @@
 
           {% endset -%}
 
+
+ADD RESS MANUAL
+
+
           {{ govukRadios({
             classes: "govuk-radios govuk-!-margin-bottom-4",
             idPrefix: "payability-tasklist-item-3-towncity-uk",
@@ -172,17 +176,12 @@
       name: "payability-tasklist-item-3-funding-type",
       fieldset: {
         legend: {
-          text: "How was the person's stay funded?",
+          text: "How was the stay in [X] funded?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m "
         }
       },
       items: [
-    {
-      value: "The person funds it themselves",
-      text: "The person funds it themselves",
-      checked: (data["payability-tasklist-item-3-funding-type"] == "The person funds it themselves")
-      },
       {
       value: "By the NHS",
       text: "By the NHS",
@@ -195,6 +194,11 @@
         conditional: {
           html: dynamicFundingType
         }
+      },
+      {
+      value: "The person funds it themselves",
+      text: "The person funds it themselves",
+      checked: (data["payability-tasklist-item-3-funding-type"] == "The person funds it themselves")
       },
       {
       value: "Not known",
@@ -336,7 +340,7 @@
             name: "payability-tasklist-item-3-contact",
             id: "payability-tasklist-item-3-contact",
             label: {
-              text: "Can you provide more detail?"
+              text: "Addional details"
             },
             value: data["payability-tasklist-item-3-contact"]
           }) }}

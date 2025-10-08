@@ -10,16 +10,7 @@
 
 {% block content %}
 
-{% if data["application-5-about-a12"] == "Amended" and data["doc-3-grade"] %}
 <form action="application-5-about" method="post" class="form">
-
-{% elif data["application-5-about-a1"] == "Agree" and data["doc-3-grade"] %}
-<form action="application-5-about" method="post" class="form">
-
-{% else %}
-<form action="application-5-about-clear" method="post" class="form">
-{% endif %}
-
 
 
   <div class="govuk-grid-row">
@@ -27,11 +18,17 @@
 
       {% include "documents-0-1/record-id.html" %}
 
-
+      {% if data["doc-3-grade"] and data["doc-5-grade"] %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Supporting documents</h2>
+      {% elif data["doc-3-grade"] or data["doc-5-grade"] %}
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 1<br>supporting document</h2>
+      {% else %}
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">View and assess 2<br>supporting documents</h2>
+      {% endif %}
 
 
-{% if data["doc-1-grade"] or data["doc-2-grade"] or data["doc-3-grade"] or data["doc-4-grade"] or data["doc-5-grade"] or data["doc-6-grade"] %}
+
+{% if data["doc-3-grade"] and data["doc-5-grade"] %}
 {% else %}
 <div><!-- Still to assess start -->
 

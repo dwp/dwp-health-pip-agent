@@ -82,41 +82,22 @@
 
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-one-quarter">
-                <p class="govuk-body govuk-!-margin-bottom-2">No disagreement</p>
+                <p class="govuk-body govuk-!-margin-bottom-2">No change to the descriptor </p>
 
 
               </div>
               <div class="govuk-grid-column-three-quarters">
 
-                <p class="govuk-list_prase"><span id="prase1">You did not dispute the points given for this activity.</span></p>
+                <p class="govuk-list_prase"><span id="prase1">We have considered this activity again and found no new evidence to support changing this decision.</span></p>
 
 
                 <div class="app-example__code">
-                    <button class="app-example__copy-code-button" data-copy-text="You did not dispute the points given for this activity." aria-live="assertive" data-module="html">Copy paragraph</button>
+                    <button class="app-example__copy-code-button" data-copy-text="We have considered this activity again and found no new evidence to support changing this decision." aria-live="assertive" data-module="html">Copy paragraph</button>
                   </div>
 
               </div>
             </div>
 
-            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-quarter">
-                <p class="govuk-body govuk-!-margin-bottom-2">No evidence of change</p>
-
-
-              </div>
-              <div class="govuk-grid-column-three-quarters">
-
-                <p class="govuk-list_prase"><span id="prase2">There was no new evidence available to support changing the points and justification given for this activity.</span></p>
-
-
-                <div class="app-example__code">
-                    <button class="app-example__copy-code-button" data-copy-text="There was no new evidence available to support changing the points given for this activity." aria-live="assertive" data-module="html">Copy paragraph</button>
-                  </div>
-
-              </div>
-            </div>
 
 
             {% endset %}
@@ -145,7 +126,7 @@
               isPageHeading: true
             },
             hint: {
-              html: ""
+              html: legendCanned
             },
             value: data["an-de-mr-tl-6-score-check-reason"]
           }) }}
