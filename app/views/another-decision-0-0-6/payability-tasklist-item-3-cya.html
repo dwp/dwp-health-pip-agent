@@ -49,8 +49,7 @@
 
 {% set payabilityType %}     {{data["payability-tasklist-item-3"]}}    {% endset %}
 {% set payabilityName %}     {{data["payability-tasklist-item-3-name"]}}   {% endset %}
-{% set payabilityHospitalUK %}     {{data["payability-tasklist-item-3-towncity-uk"]}}    {% endset %}
-{% set payabilityTownCity %}     {{data["payability-tasklist-item-3-towncity-name"]}}    {% endset %}
+{% set payabilityAddress %}     {{data["payability-tasklist-item-3-address-1"]}}    {% endset %}
 {% set payabilityContact %}     {{data["payability-tasklist-item-3-contact"]}}    {% endset %}
 
 {% set payabilityFunding %}     {{data["payability-tasklist-item-3-funding-type"]}}   {% endset %}
@@ -105,27 +104,10 @@
               },
               {
                 key: {
-                  text: "Is the hospital stay in the UK"
+                  text: "Address"
                 },
                 value: {
-                  html: payabilityHospitalUK
-                },
-                actions: {
-                  items: [
-                    {
-                      href: "award-dates-playback",
-                      text: "Change",
-                      visuallyHiddenText: "XXX"
-                    }
-                  ]
-                }
-              },
-              {
-                key: {
-                  text: "Town or city"
-                },
-                value: {
-                  html: payabilityTownCity
+                  html: payabilityAddress
                 },
                 actions: {
                   items: [

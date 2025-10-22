@@ -10,7 +10,9 @@
 
 {% block content %}
 
-<form action="cya-letter-review" method="post" class="form">
+<form action="an-de-exit-mr-process-early-router" method="post" class="form">
+
+cya-letter-review
 
   {% include "another-decision-0-0-6/record-id-base.html" %}
 
@@ -33,31 +35,22 @@
         },
         items: [
         {
-          value: "PreDecisionChecks",
-          text: "Something from the call has effected the pre decision checks",
+          value: "MyOpenTasks",
+          text: "I need to pause processing",
           hint: {
             text: ""},
-          checked: (data["an-de-exit-mr-process-early"] == "PreDecisionChecks")
+          checked: (data["an-de-exit-mr-process-early"] == "MyOpenTasks")
         },
         {
-          value: "Rad",
-          text: "Something rad happened I wasnt expecting",
+          value: "PIPCS",
+          text: "I need to move to PIPCS",
           hint: {
             text: ""},
-          checked: (data["an-de-exit-mr-process-early"] == "Rad")
-        },
-        {
-          value: "XXX",
-          text: "Issues with XYZ",
-          hint: {
-            text: ""},
-          checked: (data["an-de-exit-mr-process-early"] == "XXX")
+          checked: (data["an-de-exit-mr-process-early"] == "PIPCS")
         }
         ]
         }) }}
 
-        <!-- It will arrive almost immediately
-        Visit GOV.UK and search for CRMR1 -->
 
       {{ govukButton({
         text: "Continue",

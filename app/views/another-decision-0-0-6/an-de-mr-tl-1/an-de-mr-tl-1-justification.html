@@ -75,6 +75,28 @@
 
           {% include "another-decision-0-0-6/an-de-mr-tl-1/an-de-mr-tl-1-extract.html" %}
 
+          <!------------CANNED PHRASES LEGEND------------>
+            {% set legendCannedDetails %}
+
+
+            {% include "another-decision-0-0-6/./standard-phrase-selector.html" %}
+
+
+
+
+
+            {% endset %}
+
+            {% set legendCanned %}
+
+            {{ govukDetails({
+              summaryText: "Standard wording examples",
+              classes: "govuk-!-margin-bottom-0",
+              html: legendCannedDetails
+            }) }}
+
+            {% endset %}
+          <!------------Legend--------------->
 
           {{ govukTextarea({
             name: "an-de-mr-tl-1-score-check-reason",

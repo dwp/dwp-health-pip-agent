@@ -87,7 +87,7 @@
 
 
   {% if data["r-flags-task-add-as"] == "Yes" or data["r-flags-task-add-as"] == "Flag3" %}
-  The additional support 
+  The additional support
   {% else %}
   {% endif %}
   marker has been added to the person's record. </p>
@@ -102,3 +102,19 @@ attributes: {
   html: flagContext,
   type: 'success'
 }) }}
+
+
+
+{% if data["an-de-exit-mr-process-early"] == "MyOpenTasks" %}
+
+              {% set html %}
+              <p class="govuk-body govuk-!-font-size-19">Paused, now in My open tasks</p>
+              {% endset %}
+
+              {{ govukNotificationBanner({
+                html: html,
+                type: 'success'
+              }) }}
+{% else %}
+
+{% endif %}

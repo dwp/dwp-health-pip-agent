@@ -39,8 +39,7 @@
 
 {% set payabilityType %}     {{data["payability-tasklist-item-8"]}}    {% endset %}
 {% set payabilityName %}     {{data["payability-tasklist-item-8-name"]}}   {% endset %}
-{% set payabilityHospitalUK %}     {{data["payability-tasklist-item-8-towncity-uk"]}}    {% endset %}
-{% set payabilityTownCity %}     {{data["payability-tasklist-item-8-towncity-name"]}}    {% endset %}
+{% set payabilityCountry %}     {{data["payability-tasklist-item-8-country-name"]}}    {% endset %}
 {% set payabilityContact %}     {{data["payability-tasklist-item-8-contact"]}}    {% endset %}
 
 {% set payabilityFunding %}     {{data["payability-tasklist-item-8-funding-type"]}}   {% endset %}
@@ -74,7 +73,7 @@
                   text: "Country"
                 },
                 value: {
-                  html: payabilityTownCity
+                  html: payabilityCountry
                 },
                 actions: {
                   items: [

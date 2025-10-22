@@ -26,7 +26,7 @@
   ]
 }) }}
 
-<form action="payability-tasklist-item-3-cya" method="post" class="form">
+<form action="payability-tasklist-item-3b-cya" method="post" class="form">
 
 
 
@@ -70,81 +70,59 @@
 
           {{ govukInput({
             label: {
-              html: dynamicName
+              text: "Name"
             },
             id: "payability-tasklist-item-3b-name",
             name: "payability-tasklist-item-3b-name",
-            classes: "govuk-input--width-20",
-            value: data["payability-tasklist-item-3b-name"]
+            autocomplete: ""
           }) }}
-
-          {% if data["payability-tasklist-item-3b"] == "Hospital" %}
-          {% set stayTownCity %}
 
           {{ govukInput({
             label: {
-              text: "Name of town or city"
+              text: "Address line 1"
             },
-            classes: "govuk-input--width-10",
-            id: "payability-tasklist-item-3b-towncity-name",
-            name: "payability-tasklist-item-3b-towncity-name",
-            classes: "govuk-input--width-20",
-            autocomplete: "address-towncity"
+            id: "payability-tasklist-item-3b-address-1",
+            name: "payability-tasklist-item-3b-address-1",
+            autocomplete: "address-line1"
           }) }}
 
-          {% endset -%}
-
-          ADD RESS MANUAL
-
-
-          {{ govukRadios({
-            classes: "govuk-radios govuk-!-margin-bottom-4",
-            idPrefix: "payability-tasklist-item-3b-towncity-uk",
-            name: "payability-tasklist-item-3b-towncity-uk",
-            fieldset: {
-              legend: {
-                html: "Is this stay in the UK?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
+          {{ govukInput({
+            label: {
+              text: "Address line 2 (optional)"
             },
-            hint: {
-              html: dynamicHint
+            id: "payability-tasklist-item-3b-address-2",
+            name: "payability-tasklist-item-3b-address-2",
+            autocomplete: "address-line2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Town or city"
             },
-            items: [
-            {
-              value: "Yes",
-              text: "Yes",
-              checked: (data["payability-tasklist-item-3b-towncity-uk"] == "Yes"),
-                conditional: {
-                  html: stayTownCity
-                }
+            classes: "govuk-!-width-two-thirds",
+            id: "payability-tasklist-item-3b-address-3",
+            name: "payability-tasklist-item-3b-address-3",
+            autocomplete: "address-level2"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "County"
             },
-            {
-              value: "No",
-              text: "No",
-              checked: (data["payability-tasklist-item-3b-towncity-uk"] == "No"),
-                conditional: {
-                  html: stayTownCity
-                }
-            }
-            ]
-            }) }}
+            classes: "govuk-!-width-two-thirds",
+            id: "payability-tasklist-item-3b-address-4",
+            name: "payability-tasklist-item-3b-address-4"
+          }) }}
 
-            {% else %}
-
-            {{ govukInput({
-              label: {
-                text: "Name of town or city"
-              },
-              classes: "govuk-input--width-10",
-              id: "payability-tasklist-item-3b-towncity-name",
-              name: "payability-tasklist-item-3b-towncity-name",
-              classes: "govuk-input--width-20",
-              autocomplete: "address-towncity"
-            }) }}
-
-            {% endif %}
+          {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "payability-tasklist-item-3b-address-5",
+            name: "payability-tasklist-item-3b-address-5",
+            autocomplete: "postal-code"
+          }) }}
 
 
 <!-- ————————————————————— -->

@@ -2204,8 +2204,24 @@ router.post(`/payment-recipent-check-router`, (req, res) => {
 })
 
 
+// EXIT BAIL
 
 
+
+
+router.post(`/an-de-exit-mr-process-early-router`, (req, res) => {
+  const obcTL8 = req.session.data['an-de-exit-mr-process-early']
+
+  if (obcTL8 == 'PIPCS') {
+    res.redirect(`cya-letter-review`)
+  }
+  else if (obcTL8 == 'MyOpenTasks') {
+    res.redirect(`entry-home`)
+  }
+  else {
+    res.redirect(`obc-callguide`)
+  }
+})
 
 
 
