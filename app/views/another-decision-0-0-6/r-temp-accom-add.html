@@ -1,0 +1,109 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Temporary accommodation",
+      href: "payability-tasklist"
+    },
+    {
+      text: "XXX",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+<form action="payability-tasklist-item-3-details" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!------------Q2 LEGEND------------>
+        {% set dynamicHint %}
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-top-2 govuk-!-margin-bottom-2">You can add another temporary stay later if you need to. </p>
+
+        <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Last four digits account number: <b>4563</b> -->
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!-- (Start of application) -->
+
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "payability-tasklist-item-3",
+        name: "payability-tasklist-item-3",
+        fieldset: {
+          legend: {
+            html: "Where did the stay in temporary accommodation take place?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+        {
+          value: "Care home",
+          text: "Care or nursing home",
+          checked: (data["payability-tasklist-item-3"] == "Care home")
+        },
+        {
+          value: "Hospital",
+          text: "Hospital or similar institution",
+          checked: (data["payability-tasklist-item-3"] == "Hospital")
+        },
+        {
+          value: "Prison",
+          text: "Prison",
+          checked: (data["payability-tasklist-item-3"] == "Prison")
+        },
+        {
+          value: "Residential school or college",
+          text: "Residential school or college",
+          checked: (data["payability-tasklist-item-3"] == "Residential school or college")
+        },
+        {
+          value: "Supported accommodation",
+          text: "Supported accommodation",
+          checked: (data["payability-tasklist-item-3"] == "Supported accommodation")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: (data["payability-tasklist-item-3"] == "Other")
+        }
+        ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+  </form>
+
+{% endblock %}

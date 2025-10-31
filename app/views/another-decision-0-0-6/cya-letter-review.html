@@ -12,6 +12,8 @@
 
 {% if data["payability-tasklist-item-3"] == "No" or data["an-de-exit-mr-process-early"] %}
 <form action="entry-home" method="post" class="form">
+  {% elif data["entry-home-processing-options"] == "MakeMRNil" %}
+  <form action="entry-home" method="post" class="form">
 {% else %}
 <form action="cya-payment-breakdown-a" method="post" class="form">
 {% endif %}
@@ -223,6 +225,10 @@
 
               <!------------Legend--------------->
 
+              {% if data["entry-home-processing-options"] == "MakeMRNil" %}
+
+              {% else %}
+
               <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Review dates</h3>
 
 
@@ -299,6 +305,7 @@
                   ]
                 }) }}
 
+              {% endif %}
 
                 {% endif %}
 
@@ -556,6 +563,52 @@ Outcome R3 = No issues
 {% else %}
 {% endif %}
 
+
+{% set dynamicCheckBoxHintPayment %}
+
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">Select the appropriate template and use the information on this page to write your justification for the letter.</p>
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-4">You will need to manually send the letter and save it to ECMS. The person's address is in their <a href="/r-overview" class="govuk-link">registration (PIP1).</a></p>
+
+{% endset %}
+<!------------Legend--------------->
+
+
+
+
+{% if data["entry-home-processing-options"] == "MakeMRNil" %}
+
+
+{{ govukCheckboxes({
+idPrefix: "ConfimLetter",
+name: "ConfimLetter",
+classes: "govuk-checkboxes--small",
+fieldset: {
+  classes: "govuk-!-margin-top-6 govuk-!-padding-bottom-4",
+  legend: {
+    text: "Sending the Mandatory Reconsideration Notice",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-3"
+  }
+},
+hint: {
+  html: dynamicCheckBoxHintPayment
+},
+items: [
+  {
+    value: "ConfimLetter",
+    text: "I confirm that I have fully checked the information for the Mandatory Reconsideration Notice.",
+    checked: (data["application-about-a9-score-overwrite"] == "0")
+  }
+]
+}) }}
+
+{{ govukButton({
+text: "Continue",
+classes: "govuk-!-margin-bottom-8"
+}) }}
+
+{% else %}
+{% endif %}
 
 
       </div>

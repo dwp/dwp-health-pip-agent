@@ -29,19 +29,14 @@
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-flags-add" target="">Add a flag or marker</a> to the person's record to make sure they get the right support they need. </p>
 
-
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-flags-single" target="">Single</a> </p>
-
-
-
     {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes" %}
 
 
     {% if data["r-flags-add"] or data["r-flags-task-add-as"] == "Yes"%}
 
-    <hr class="govuk-section-break govuk-section-break--visible">
+    <!-- <hr class="govuk-section-break govuk-section-break--visible"> -->
 
-    {{ govukSummaryList({
+    <!-- {{ govukSummaryList({
       classes: "govuk-!-margin-bottom-0",
       rows: [
       {
@@ -62,8 +57,163 @@
           }
         }
       ]
+    }) }} -->
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-bottom-6">Current flags and markes</h3>
+
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: "Additional support"
+        },
+        actions: {
+          items: [
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Change",
+              visuallyHiddenText: "of University of Gloucestershire"
+            },
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Remove",
+              visuallyHiddenText: "from University of Gloucestershire"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Date added"
+          },
+          value: {
+            html: "1 July 2025 (1 month ago)"
+          }
+        },
+        {
+          key: {
+            text: "Date entered"
+          },
+          value: {
+            html: "Evidence that the person has a severe mental health or behavioural condition, learning difficulty, developmental disorder or memory problems."
+          }
+        },
+        {
+          key: {
+            text: "Support needed"
+          },
+          value: {
+            html: "Allow for extra time to submit application"
+          }
+        }
+      ]
     }) }}
 
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">Flags and marker history </h3>
+
+
+              <table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></th>
+                    </tr>
+
+                  </thead>
+
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row border-bottom-end-clear">
+                        <td class="govuk-table__header border-bottom-end-clear">Additional support</td>
+                        <td class="govuk-table__cell">Support needed</td>
+                        <td class="govuk-table__cell">Called to say they needed longer to send in letters</td>
+                      </tr>
+
+                      <tr class="govuk-table__row border-bottom-end-clear">
+                        <td class="govuk-table__cell border-bottom-end-clear"></td>
+                        <td class="govuk-table__cell">Added</td>
+                        <td class="govuk-table__cell">10 November 2024</td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell border-bottom-end-clear"></td>
+                        <td class="govuk-table__cell">Removed</td>
+                        <td class="govuk-table__cell">20 November 2024</td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell govuk-!-padding-bottom-6">
+                          <a class="" href="who-added-this-and-why" target="">View details</a>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                      </tr>
+
+                    </tbody>
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row border-bottom-end-clear">
+                      <td class="govuk-table__header border-bottom-end-clear">Vulnerable Claimant Champion (VCC)</td>
+                      <td class="govuk-table__cell">Support needed</td>
+                      <td class="govuk-table__cell">Money split with Del Auth, cant deal with large payments</td>
+                    </tr>
+
+                    <tr class="govuk-table__row border-bottom-end-clear">
+                      <td class="govuk-table__cell border-bottom-end-clear"></td>
+                      <td class="govuk-table__cell">Added</td>
+                      <td class="govuk-table__cell">10 November 2024</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell border-bottom-end-clear"></td>
+                      <td class="govuk-table__cell">Removed</td>
+                      <td class="govuk-table__cell">20 November 2024</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"></td>
+                      <td class="govuk-table__cell govuk-!-padding-bottom-6">
+                        <a class="" href="who-added-this-and-why" target="">View details</a>
+                      </td>
+
+                      <td class="govuk-table__cell">
+                    </tr>
+
+                  </tbody>
+
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row border-bottom-end-clear">
+                      <td class="govuk-table__header border-bottom-end-clear">Financially vulnerable</td>
+                      <td class="govuk-table__cell">Support needed</td>
+                      <td class="govuk-table__cell">Longer for letters</td>
+                    </tr>
+
+                    <tr class="govuk-table__row border-bottom-end-clear">
+                      <td class="govuk-table__cell border-bottom-end-clear"></td>
+                      <td class="govuk-table__cell">Added</td>
+                      <td class="govuk-table__cell">10 November 2024</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell border-bottom-end-clear"></td>
+                      <td class="govuk-table__cell">Removed</td>
+                      <td class="govuk-table__cell">20 November 2024</td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"></td>
+                      <td class="govuk-table__cell govuk-!-padding-bottom-6">
+                        <a class="" href="who-added-this-and-why" target="">View details</a>
+                      </td>
+
+                      <td class="govuk-table__cell">
+                    </tr>
+
+                  </tbody>
+                </table>
+
     {% else %}
     {% endif %}
 
@@ -72,6 +222,7 @@
     {% else %}
     {% endif %}
 
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-flags-single" target="">Single</a> </p>
 
 
   </div>

@@ -2175,10 +2175,10 @@ router.post(`/payability-tasklist-item-8-router`, (req, res) => {
 router.post(`/mr-retain-questions-router`, (req, res) => {
   const mrRetainCheck = req.session.data['mr-retain-questions']
 
-  if (mrRetainCheck == 'Yes') {
+  if (mrRetainCheck == 'No') {
     res.redirect(`an-de-tasklist`)
   }
-  else if (mrRetainCheck == 'No') {
+  else if (mrRetainCheck == 'Yes') {
     res.redirect(`an-de-exit-mr-next-steps`)
   }
   else {
