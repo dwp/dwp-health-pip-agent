@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-3/r-notifications.html" %}
+
+
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "person-record-0-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Regular payments summary and schedule</h1>
+
+
+                  <h1 class="govuk-heading-xm govuk-!-margin-bottom-2">Arrears</h1>
+                  <p class="govuk-body govuk-!-margin-bottom-0">Date application was submitted: 1 Feb 2025 to Date of decision: 1 June 2025</p>
+
+                  {% include "person-record-0-0-3/cya-payment-rates.html" %}
+
+                  <br>
+
+                  <table class="govuk-table govuk-!-margin-bottom-0">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-10-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-10-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Accommodation</th>
+                        <th scope="col" class="govuk-table__header govuk-10-percent">Days</th>
+                        <th scope="col" class="govuk-table__header govuk-20-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-10-percent">Days<br>paid</th>
+                        <th scope="col" class="govuk-table__header govuk-10-percent">Amount</th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body noborder">
+
+                      <tr class="govuk-table__row govuk-table__cell-noborder">
+                        <td class="govuk-table__cell govuk-table__cell-noborder">1 Feb 2025 </td>
+                        <td class="govuk-table__cell">1 Mar 2025 </td>
+                        <td class="govuk-table__cell">Home</td>
+                        <td class="govuk-table__cell">29</td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">29<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">29</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">£306.24<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">£120.93</p>
+                        </td>
+                      </tr>
+
+
+                      {% if data["payability-tasklist-item-3"] %}
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">2 Mar 2025 </td>
+                        <td class="govuk-table__cell">21 Mar 2025 </td>
+                        <td class="govuk-table__cell">Hospital: <br> funded by Local authority</td>
+                        <td class="govuk-table__cell">20</td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">20<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">20</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">£211.20<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">£83.40</p>
+                        </td>
+
+                      </tr>
+                      {% else %}
+                      {% endif %}
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">22 Mar 2025 </td>
+                        <td class="govuk-table__cell">31 Mar 2025 </td>
+                        <td class="govuk-table__cell">Home</td>
+                        <td class="govuk-table__cell">10</td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">10<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">10</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">£105.60<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">£41.70</p>
+                        </td>
+
+                        </tr>
+
+                      {% if data["payability-tasklist-item-3b"] %}
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">1 Apr 2025 </td>
+                        <td class="govuk-table__cell">20 Apr 2025 </td>
+                        <td class="govuk-table__cell">Care home:<br> funded by NHS</td>
+                        <td class="govuk-table__cell">20</td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2"><a href="cya-payment-breakdown-days" class="govuk-link" rel="noreferrer noopener" target="">8</a> <br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">20</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">£84.48<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">£83.40</p>
+                        </td>
+
+                      </tr>
+                      {% else %}
+                      {% endif %}
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">21 Apr 2025 </td>
+                        <td class="govuk-table__cell">1 Jun 2025 </td>
+                        <td class="govuk-table__cell">Home</td>
+                        <td class="govuk-table__cell">42</td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">42<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">42</p>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <p class="govuk-body govuk-!-margin-bottom-2">£348.48<br><br></p>
+                          <p class="govuk-body govuk-!-margin-bottom-1">£137.61</p>
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+
+                  <hr class="govuk-section-break govuk-section-break--visible-seperator">
+
+
+                  <table class="govuk-table govuk-!-padding-top-0">
+
+                    <tbody class="govuk-table__body">
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">Total days</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>121</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell govuk-22-percent">Total days in temporary accomod</td>
+                        <td class="govuk-table__cell govuk-10-percent">ation</td>
+                        <td class="govuk-table__cell govuk-10-percent"><strong>40</strong></td>
+                        <td class="govuk-table__cell govuk-10-percent"></td>
+                        <td class="govuk-table__cell govuk-10-percent"></td>
+                        <td class="govuk-table__cell govuk-10-percent"></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="cya-payment-breakdown-days" class="govuk-link" rel="noreferrer noopener" target="">Total days with reduced payment</a> </td>
+                        <td class="govuk-table__cell">s</td>
+                        <td class="govuk-table__cell"><strong>12</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total paid</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+                          <td class="govuk-table__cell"><strong>£1,523.04</strong></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

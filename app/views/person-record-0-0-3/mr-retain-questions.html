@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-3/record-id.html" %}
+
+  <form action="mr-retain-questions-router" method="post" class="form">
+    <!-- <form action="mr-application-overview" method="post" class="form"> -->
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-top-2 govuk-!-margin-bottom-8">Check whether the application or claim can remain in PIP Service</h1>
+
+
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Review the original decision and supporting documents</h1>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="mr-application-overview" class="govuk-link" rel="noreferrer noopener" target="">Decision overview</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="https://pip-end-to-end-84bc0caed567.herokuapp.com/agent/case-manager-review/event-history" class="govuk-link" rel="noreferrer noopener" target="">Event history</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a href="https://has-supporting-docs-82bfe12ac9a5.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents service</a></p>
+
+      {% set dynamicHint %}
+
+      {% set dynamicList %}
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Identity verification</li>
+        <li>Name</li>
+        <li>Address</li>
+        <li>Correspondence address</li>
+        <li>Date of death</li>
+        <li>Nationality</li>
+        <li>Residency and presence</li>
+        <li>Immigration status</li>
+        <li>Special Rules End of Life (SREL)</li>
+        <li>Representative or appointee</li>
+        <li>Withdrawn</li>
+        <li>Age criteria</li>
+        <li>Additional support</li>
+        <li>Alternative format</li>
+        <li>Fraud</li>
+        <li>Keep customer interactions safe (KCIS)</li>
+        <li>Working abroad</li>
+        <li>Foreign benefits</li>
+        <li>Disability Living Allowance (DLA)</li>
+        <li>Child Disability Payment or Adult Disability Payment</li>
+        <li>Armed Forces Independence Payment (AFIP)</li>
+        <li>War Pensioners' Mobility Supplement (WPMS)</li>
+        <li>Constant Attendance Allowance (CAA)</li>
+        <li>Hospital or similar institutions</li>
+        <li>Care homes</li>
+        <li>Nursing homes</li>
+        <li>Residential schools or colleges</li>
+        <li>Prison or legal custody</li>
+
+      </ul>
+
+      {% endset -%}
+
+      {{ govukDetails({
+        summaryText: "List of pre-decision checks",
+        html: dynamicList
+      }) }}
+
+      {% endset -%}
+
+
+      {{ govukRadios({
+        idPrefix: "mr-retain-questions",
+        name: "mr-retain-questions",
+        fieldset: {
+          legend: {
+            text: "Were there any issues in the pre-decision checks?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: dynamicHint
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["mr-retain-questions"] == "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: (data["mr-retain-questions"] == "No"),
+            behaviour: "exclusive"
+          }
+          ]
+        }) }}
+
+
+
+ {{ govukButton({
+   text: "Continue",
+   classes: "govuk-!-margin-bottom-8"
+ }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

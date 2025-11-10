@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+
+<form action="entry-home" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "person-record-0-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review payment summary and schedule</h1>
+
+      {% include "person-record-0-0-3/cya-payment-rates.html" %}
+
+
+<br><br>
+
+
+
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Arrears</h1>
+                  <p class="govuk-body govuk-!-margin-bottom-2">Date application was submitted: 1 Feb 2025 to Date of decision: 1 June 2025</p>
+                  <p class="govuk-body govuk-!-margin-bottom-6">Wake up at home: 🩰</p>
+
+
+                  <table class="govuk-table ">
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days<br>home</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days<br>away</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Days<br>paid</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Away from home reason</th>
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">1 Feb 2025 <br>🩰</td>
+                        <td class="govuk-table__cell">28 Feb 2025 <br>🩰</td>
+                        <td class="govuk-table__cell">28</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell">28<br>28</td>
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">£296.80<br>£117.60</td>
+                        <td class="govuk-table__cell"></td>
+                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                      </tr>
+
+                      {% if data["payability-tasklist-item-3"] %}
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}} 🩰</td>
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
+                        <td class="govuk-table__cell">2</td>
+                        <td class="govuk-table__cell">20</td>
+                        <td class="govuk-table__cell">22<br>22</td>
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">£233.2<br>£92.40</td>
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3']}} funded {{ data['payability-tasklist-item-3-funding-type']}}</td>
+                        <!-- <td class="govuk-table__cell"><a href="payability-tasklist-item-3" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td> -->
+                      </tr>
+                      {% else %}
+                      {% endif %}
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">23 March 2025 <br>🩰</td>
+                        <td class="govuk-table__cell">9 April 2025 <br>🩰</td>
+                        <td class="govuk-table__cell">18</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell">18<br>18</td>
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">£190.80<br>£75.60</td>
+                        <td class="govuk-table__cell"></td>
+                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                      </tr>
+
+                      {% if data["payability-tasklist-item-3b"] %}
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-in-day'] + ' ' + (data['payability-tasklist-item-3b-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-in-year']}} <br>🩰</td>
+                        <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-out-day'] + ' ' + (data['payability-tasklist-item-3b-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-out-year']}}</td>
+                        <td class="govuk-table__cell">2</td>
+                        <td class="govuk-table__cell">19</td>
+                        <td class="govuk-table__cell">6<br>19</td>
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">£63.60<br>£79.80</td>
+                        <td class="govuk-table__cell">Care home <!-- {{ data['payability-tasklist-item-3b']}} --> {{ data['payability-tasklist-item-3b-funding-type']}}</td>
+                        <!-- <td class="govuk-table__cell"><a href="payability-tasklist-item-3b-details" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td> -->
+                      </tr>
+                      {% else %}
+                      {% endif %}
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">31 Apr 25 <br>🩰</td>
+                        <td class="govuk-table__cell">1 June 25 <br>🩰</td>
+                        <td class="govuk-table__cell">33</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell">33<br>33</td>
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+                        <td class="govuk-table__cell">£349.80<br>£138.60</td>
+                        <td class="govuk-table__cell"></td>
+
+                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total owed</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>83</strong></td>
+                        <td class="govuk-table__cell"><strong>39</strong></td>
+                        <td class="govuk-table__cell"><strong></strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><strong>£1,638.20</strong></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <!-- <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td> -->
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+<br><br>
+
+
+<h1 class="govuk-heading-m govuk-!-margin-bottom-2">Regular payment</h1>
+<p class="govuk-body govuk-!-margin-bottom-2">Every four weeks</p>
+
+
+                  <table class="govuk-table ">
+                    <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Start</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">End</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"><br></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"><br></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"><br></th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Rate</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent">Amount</th>
+                        <th scope="col" class="govuk-table__header govuk-12-5-percent-percent"><br></th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">2 June 25</td>
+                        <td class="govuk-table__cell">1 June 2027</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell">Standard<br>Standard</td>
+
+                        <td class="govuk-table__cell">£295.60<br>£116.80</td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                      </tr>
+
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><strong>Total</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"></td>
+
+                        <td class="govuk-table__cell"><strong>£412.40</strong></td>
+                        <td class="govuk-table__cell"></td>
+                        <td class="govuk-table__cell"><a href="#" class="govuk-link" rel="noreferrer noopener" target=""></a></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                  <br>
+
+                  <h1 class="govuk-heading-m govuk-!-margin-bottom-6">Payment detials have been changed, this will need to<br> go for review before payments can be issued</h1>
+
+
+
+
+                  {{ govukButton({
+                    text: "Send for review"
+                  }) }}
+
+      </div>
+    </div>
+
+  </form>
+
+{% endblock %}

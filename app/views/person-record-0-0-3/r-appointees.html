@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "person-record-0-0-3/r-notifications.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="#" method="post" class="form">
+
+      {% include "person-record-0-0-3/record-id-base.html" %}
+
+
+    </div>
+  </div>
+
+
+    {% include "person-record-0-0-3/r-navigation.html" %}
+
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+
+
+    {% if data["r-appointees-add"] %}
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Appointees or representatives</h3>
+
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="r-appointees-add" target="">Add another appointee or representative</a></p>
+
+    <!-- {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
+          },
+          value: {
+            html: "Sam Elliott"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Relationship to the applicant"
+          },
+          value: {
+            html: "Power of attorney"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            html: "0796 009 4452"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Home address"
+          },
+          value: {
+            html: 'PO BOX <br>Newcastle upon Tyne <br>NE1 4ST'
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+              }
+            ]
+          }
+        }
+      ]
+    }) }} -->
+
+    {{ govukSummaryList({
+      card: {
+        title: {
+          html: "Sam Elliott"
+        },
+        actions: {
+          items: [
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Change",
+              visuallyHiddenText: "of University of Gloucestershire"
+            },
+            {
+              href: "payability-tasklist-item-3-cya",
+              text: "Remove",
+              visuallyHiddenText: "from University of Gloucestershire"
+            }
+          ]
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Relationship to the applicant"
+          },
+          value: {
+            html: "Power of attorney"
+          }
+        },
+        {
+          key: {
+            text: "Telephone"
+          },
+          value: {
+            html: "0796 009 4452"
+          }
+        },
+        {
+          key: {
+            text: "Home address"
+          },
+          value: {
+            html: 'PO BOX <br>Newcastle upon Tyne <br>NE1 4ST'
+          }
+        }
+      ]
+    }) }}
+
+
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-27 govuk-!-margin-top-8 govuk-!-margin-bottom-4">History of appointees and representatives</h3>
+
+    {% set tempstay1 %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">DWP appointee</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+      Started: 2 February 2025
+      <br>
+      Ended: 24 December 2025</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"></p>
+    {% endset %}
+
+    {% set tempstay2 %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Charity helper</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+      Started: 18 February 2024
+      <br>
+      Left: 18 February 2024</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"></p>
+    {% endset %}
+
+    {% set tempstay3 %}
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Daughter</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+      Started: 19 February 2024
+      <br>
+      Left: 19 February 2024</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"></p>
+    {% endset %}
+
+
+
+              {{ govukSummaryList({
+                rows: [
+                  {
+                    key: {
+                      text: "John Turturro"
+                    },
+                    value: {
+                      html: tempstay1
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "payability-tasklist-item-3-cya",
+                          text: "View details",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Steve Buscemi"
+                    },
+                    value: {
+                      html: tempstay2
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "payability-tasklist-item-3-cya",
+                          text: "View details",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    key: {
+                      text: "Tara Reid"
+                    },
+                    value: {
+                      html: tempstay3
+                    },
+                    actions: {
+                      items: [
+                        {
+                          href: "payability-tasklist-item-3-cya",
+                          text: "View details",
+                          visuallyHiddenText: "XXX"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }) }}
+
+
+    {% else %}
+    <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">There are no appointees or representatives for this person</h3>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a class="" href="r-appointees-add" target="">Add an appointee or representative</a></p>
+
+
+
+
+    {% endif %}
+
+
+
+
+  </div>
+
+
+    </form>
+{% endblock %}

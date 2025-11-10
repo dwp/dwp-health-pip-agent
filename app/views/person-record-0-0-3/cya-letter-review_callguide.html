@@ -1,0 +1,71 @@
+
+
+
+      <!-- <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Other help needed from the call</h3> -->
+
+
+      <!-- {% set accountNumber %}
+      {% if data["obc-other-help"] %}
+      {{ data["obc-other-help"]}}
+      {% else %}
+      otherHelpYN
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["obc-other-help-details"] %}
+      {{ data["obc-other-help-details"]}}
+      {% else %}
+      OtherHelp
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Other help?"
+            },
+            value: {
+              html: otherHelpYN
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Other help details"
+            },
+            value: {
+              html: otherHelpDetails
+            },
+            actions: {
+              items: [
+                {
+                  href: "obc-change-tasklist-item-1-details",
+                  text: "",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {% endif %} -->
+
+
+      <!-- <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Decision notes</h3> -->
+
+      {% set myDecisionNotes %}
+      {{ data["call-notes"]}}
+      {% endset %}

@@ -1,0 +1,244 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% include "person-record-0-0-3/record-id.html" %}
+
+{{ govukBreadcrumbs({
+  classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+  items: [
+    {
+      text: "Area / Person Record",
+      href: "payability-tasklist"
+    },
+    {
+      text: "Theme",
+      href: "payability-tasklist-item-X"
+    }
+  ]
+}) }}
+
+  {% if data["find-someone-1-offline-return"] == "Yes" %}
+  data["find-someone-1-offline-return"] == "Yes"
+
+  <form action="r-temp-accom-summary" method="post" class="form">
+  {% else %}
+  <form action="payability-tasklist-item-3-summary" method="post" class="form">
+  {% endif %}
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+
+          <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          {% if data["payability-tasklist-item-3"] == "Care home" %}
+          Care home summary
+          {% elif data["payability-tasklist-item-3"] == "Hospital" %}
+          Hospital summary
+          {% elif data["payability-tasklist-item-3"] == "Prison" %}
+          Prison summary
+          {% elif data["payability-tasklist-item-3"] == "Residential school or college" %}
+          Residential school or college summary
+          {% else %}
+          XXX
+          {% endif %}
+          </h2>
+
+
+{% set payabilityType %}     {{data["payability-tasklist-item-3"]}}    {% endset %}
+{% set payabilityName %}     {{data["payability-tasklist-item-3-name"]}}   {% endset %}
+{% set payabilityAddress %}     {{data["payability-tasklist-item-3-address-1"]}}    {% endset %}
+{% set payabilityContact %}     {{data["payability-tasklist-item-3-contact"]}}    {% endset %}
+
+{% set payabilityFunding %}     {{data["payability-tasklist-item-3-funding-type"]}}   {% endset %}
+{% set payabilityFundingDetails %}     {{data["payability-tasklist-item-3-funding-details"]}}    {% endset %}
+
+{% set XXX %}     {{data["payability-tasklist-item-3-date-a-in"]}}    {% endset %}
+{% set XXX %}     {{data["payability-tasklist-item-3-date-a-in-day"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-month"]}}    {% endset %}
+{% set XXX %}     {{data["Payability-tasklist-item-3-date-a-in-year"]}}   {% endset %}
+
+{% set payabilityDatesIn %}     {{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}     {% endset %}
+{% set payabilityDatesOut %}     {{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}     {% endset %}
+
+
+
+
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  html: "Type of stay"
+                },
+                value: {
+                  html: payabilityType
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  html: payabilityName
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Address"
+                },
+                value: {
+                  html: payabilityAddress
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Funded by"
+                },
+                value: {
+                  html: payabilityFunding
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Funding details"
+                },
+                value: {
+                  html: payabilityFundingDetails
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Date entered"
+                },
+                value: {
+                  html: payabilityDatesIn
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Date left"
+                },
+                value: {
+                  html: payabilityDatesOut
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Days"
+                },
+                value: {
+                  html: "22"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Addional details"
+                },
+                value: {
+                  html: payabilityContact
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "payability-tasklist-item-3-details",
+                      text: "Change",
+                      visuallyHiddenText: "XXX"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+</form>
+
+
+
+    {% endblock %}

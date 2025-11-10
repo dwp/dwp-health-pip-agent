@@ -1,0 +1,524 @@
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Daily living scoring</h3>
+
+      <!-- 1 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Preparing food
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-1-score-check"] %}
+              {% include "./an-de-mr-tl-1/an-de-mr-tl-1-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-1/an-de-mr-tl-1-descriptor-overwrite.html" %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a1-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-1-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a1-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 2 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Taking nutrition
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-2-score-check"] %}
+              {% include "./an-de-mr-tl-2/an-de-mr-tl-2-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 10
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-2/an-de-mr-tl-2-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a2-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-2-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a2-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 3 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing therapy or monitoring a health condition
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-3-score-check"] %}
+              {% include "./an-de-mr-tl-3/an-de-mr-tl-3-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-3/an-de-mr-tl-3-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a3-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-3-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a3-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 4 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Washing and bathing
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-4-score-check"] %}
+              {% include "./an-de-mr-tl-4/an-de-mr-tl-4-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-4/an-de-mr-tl-4-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a4-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-4-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a4-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 5 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Managing toilet needs or incontinence
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-5-score-check"] %}
+              {% include "./an-de-mr-tl-5/an-de-mr-tl-5-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-5/an-de-mr-tl-5-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a5-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-5-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a5-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 6 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-6-score-check"] %}
+              {% include "./an-de-mr-tl-6/an-de-mr-tl-6-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-6/an-de-mr-tl-6-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a6-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-6-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a6-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <!-- 7 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Communicating verbally
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-7-score-check"] %}
+              {% include "./an-de-mr-tl-7/an-de-mr-tl-7-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-7/an-de-mr-tl-7-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a7-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-7-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a7-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 8 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reading and understanding signs, symbols and words
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-8-score-check"] %}
+              {% include "./an-de-mr-tl-8/an-de-mr-tl-8-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-8/an-de-mr-tl-8-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a8-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-8-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a8-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 9 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Engaging with other people face to face
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-9-score-check"] %}
+              {% include "./an-de-mr-tl-9/an-de-mr-tl-9-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-9/an-de-mr-tl-9-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a9-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-9-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a9-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 10 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Making budgeting decisions
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-10-score-check"] %}
+              {% include "./an-de-mr-tl-10/an-de-mr-tl-10-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 6
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-10/an-de-mr-tl-10-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a10-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-10-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a10-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Mobility scoring</h3>
+
+      <!-- 11 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Planning and following journeys
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-11-score-check"] %}
+              {% include "./an-de-mr-tl-11/an-de-mr-tl-11-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-11/an-de-mr-tl-11-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a11-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-11-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a11-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 12 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Moving around
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["an-de-mr-tl-12-score-check"] %}
+              {% include "./an-de-mr-tl-12/an-de-mr-tl-12-score-overwrite.html" %}
+              {% else %}
+              [X]
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "./an-de-mr-tl-12/an-de-mr-tl-12-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a12-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["an-de-mr-tl-12-score-check-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a12-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>

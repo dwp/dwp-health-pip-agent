@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="an-de-exit-mr-process-early-router" method="post" class="form">
+
+cya-letter-review
+
+  {% include "person-record-0-0-3/record-id-base.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukRadios({
+        classes: "govuk-radios govuk-!-margin-bottom-4",
+        idPrefix: "an-de-exit-mr-process-early",
+        name: "an-de-exit-mr-process-early",
+        fieldset: {
+          legend: {
+            text: "Why can you not complete this mandatory reconsideration decision?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+        {
+          value: "MyOpenTasks",
+          text: "I need to pause processing",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "MyOpenTasks")
+        },
+        {
+          value: "PIPCS",
+          text: "I need to move to PIPCS",
+          hint: {
+            text: ""},
+          checked: (data["an-de-exit-mr-process-early"] == "PIPCS")
+        }
+        ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

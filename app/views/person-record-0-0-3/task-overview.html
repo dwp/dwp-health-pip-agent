@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+<form action="mr-retain-questions" method="post" class="form">
+  <!-- <form action="mr-retain-questions" method="post" class="form"> -->
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "person-record-0-0-3/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Review the mandatory reconsideration request</h1>
+
+
+
+        {% if data["system-application-selector"] == "11" %}
+        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">This application is now ready for a decision.</p>
+        {% else %}
+        {% endif %}
+
+
+
+        <!-- <tr class="govuk-table__row">
+          <td class="govuk-table__header">Online identity verification</td>
+          <td class="govuk-table__cell">Incomplete (Means we have to call them to assure and means BAU, so why are we seeing this task?)<br> Completed (Telephone but wouldnt be here as sent to BAU, so why are we seeing this task?)  <br> Completed (Apply)</td>
+        </tr> -->
+        <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Start of application</td>
+            <td class="govuk-table__cell">1 March 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Date of decision</td>
+            <td class="govuk-table__cell">2 April 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Mandatory reconsideration<br>registered</td>
+            <td class="govuk-table__cell">4 September 2025</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Decision to be reconsidered</td>
+            <!-- <td class="govuk-table__cell">Orginal decision<br>(Award review decision)</td> -->
+            <td class="govuk-table__cell">Original decision</td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Time from decision to mandatory<br> reconsideration request</td>
+            <td class="govuk-table__cell">More than one month</td>
+            <!-- <td class="govuk-table__cell">Less than one month <br>(More than one month)<br>(More than 13 months)</td> -->
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Do they want to send additional supporting documents?</td>
+            <!-- (Do they want to send supporting documents which was not available to us when the decision was made) -->
+            <td class="govuk-table__cell">No</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Additional supporting documents received</td>
+            <td class="govuk-table__cell">No</td>
+          </tr>
+
+          <!-- <tr class="govuk-table__row">
+            <td class="govuk-table__header">Appointees or representatives</td>
+            <td class="govuk-table__cell">None declared at the time of application</td>
+          </tr> -->
+
+        </tbody>
+      </table>
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+  {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+
+{% include "person-record-0-0-3/record-id-base.html" %}
+
+<form action="r-flags#r-flags-task-add-as-marker" method="post" class="form">
+  <!-- <input type="hidden" name="appointees-telephone" value="new"/> -->
+
+  <div class="govuk-grid-row">
+
+
+    {{ govukBreadcrumbs({
+      classes: "govuk-!-padding-top-0 govuk-!-margin-bottom-6",
+      items: [
+        {
+          text: "Overview",
+          href: "r-overview"
+        },
+        {
+          text: "Tasks",
+          href: ""
+        }
+      ]
+    }) }}
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Review request for additional support</h1>
+
+
+      <p class="govuk-heading-s govuk-!-margin-bottom-2">Check the <a href="mr-application-overview" class="govuk-link" rel="noreferrer noopener" target="">application overview</a> for evidence of:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-4">
+        <li>a severe mental health or behavioural condition</li>
+        <li>learning difficulties</li>
+        <li>a developmental disorder</li>
+        <li>memory problems</li>
+        </ul>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"></p>
+
+
+      {{ govukRadios({
+        idPrefix: "r-flags-task-add-as",
+        name: "r-flags-task-add-as",
+        classes: "govuk-checkboxes",
+        fieldset: {
+          legend: {
+            text: "Is there evidence the person needs additional support?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: (data["r-flags-task-add-as"] == "Yes")
+          },
+
+          {
+            value: "No",
+            text: "No",
+            checked: (data["r-flags-task-add-as"] == "No")
+          }
+        ]
+      }) }}
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

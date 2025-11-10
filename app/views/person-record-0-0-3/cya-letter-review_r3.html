@@ -1,0 +1,359 @@
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-6 govuk-!-margin-bottom-6">Payment account details</h3>
+
+
+
+      {% set changeInPayment %}
+      {% if data["payability-tasklist-item-1"] %}
+      {{ data["payability-tasklist-item-1"]}}
+      {% else %}
+      changeInPayment
+      {% endif %}
+      {% endset -%}
+
+      {% set nameOnAccount %}
+      {% if data["payability-tasklist-item-1-name-on-account"] %}
+      {{ data["payability-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      nameOnAccount
+      {% endif %}
+      {% endset -%}
+
+      {% set bankName %}
+      {% if data["payability-tasklist-item-1-name-on-account"] %}
+      {{ data["payability-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      bankName
+      {% endif %}
+      {% endset -%}
+
+      {% set sortCode %}
+      {% if data["payability-tasklist-item-1-name-on-account"] %}
+      {{ data["payability-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      sortCode
+      {% endif %}
+      {% endset -%}
+
+      {% set accountNumber %}
+      {% if data["payability-tasklist-item-1-name-on-account"] %}
+      {{ data["payability-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      accountNumber
+      {% endif %}
+      {% endset -%}
+
+      {% set rollNumber %}
+      {% if data["payability-tasklist-item-1-name-on-account"] %}
+      {{ data["payability-tasklist-item-1-name-on-account"]}}
+      {% else %}
+      rollNumber
+      {% endif %}
+      {% endset -%}
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Have the payment account details changed since the original decision?"
+            },
+            value: {
+              html: changeInPayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name on account"
+            },
+            value: {
+              html: nameOnAccount
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Bank, building society or credit union name"
+            },
+            value: {
+              text: bankName
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sort code"
+            },
+            value: {
+              text: sortCode
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Account number"
+            },
+            value: {
+              text: accountNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Does your account have a roll or reference number?"
+            },
+            value: {
+              text: rollNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-1-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Receiving and managing large payments</h3>
+
+      {% set paymentCheck %}
+      {% if data["payability-tasklist-item-2"] %}
+      {{ data["payability-tasklist-item-2"]}}
+      {% else %}
+      Yes/No
+      {% endif %}
+      {% endset -%}
+
+      {% set largePayment %}
+      {% if data["payability-tasklist-item-2-details"] %}
+      {{ data["payability-tasklist-item-2-details"]}}
+      {% else %}
+      Details
+      {% endif %}
+      {% endset -%}
+
+
+
+
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Will the person find it challenging to receive and manage a large payment?"
+            },
+            value: {
+              html: paymentCheck
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-2",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Reasons the person might find this challenging"
+            },
+            value: {
+              html: largePayment
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-2-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Stays in temporary accommodation</h3>
+
+
+      <table class="govuk-table ">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type</th>
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent">Name</th>
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date entered</th>
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date left</th>
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days</th>
+            <!-- <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days that can be paid</th> -->
+
+            <th scope="col" class="govuk-table__header govuk-20-percent-percent"></th>
+
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3']}}</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-name']}}</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-in-day'] + ' ' + (data['payability-tasklist-item-3-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-in-year']}}</td>
+            <td class="govuk-table__cell">{{ data['payability-tasklist-item-3-date-out-day'] + ' ' + (data['payability-tasklist-item-3-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3-date-out-year']}}</td>
+            <!-- <td class="govuk-table__cell">4</td> -->
+            <td class="govuk-table__cell">22</td>
+            <td class="govuk-table__cell"><a href="payability-tasklist-item-3-cya" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+          </tr>
+
+            {% if data["payability-tasklist-item-3b"] %}
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Care home <!--{{ data['payability-tasklist-item-3b']}}--></td>
+              <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-name']}}</td>
+              <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-in-day'] + ' ' + (data['payability-tasklist-item-3b-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-in-year']}}</td>
+              <td class="govuk-table__cell">{{ data['payability-tasklist-item-3b-date-out-day'] + ' ' + (data['payability-tasklist-item-3b-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-3b-date-out-year']}}</td>
+              <!-- <td class="govuk-table__cell">4</td> -->
+              <td class="govuk-table__cell">10</td>
+              <td class="govuk-table__cell"><a href="payability-tasklist-item-3b-cya" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+            </tr>
+
+            {% else %}
+            {% endif %}
+
+        </tbody>
+      </table>
+
+
+      <h3 class="govuk-heading-xm govuk-!-padding-top-8 govuk-!-margin-bottom-6">Temporary absences abroad</h3>
+
+      {% set payabilityTasklistItem8 %}
+      {% if data["payability-tasklist-item-8"] %}
+      {{ data["payability-tasklist-item-8"]}}
+      {% else %}
+      Yes/No
+      {% endif %}
+      {% endset -%}
+
+      {% set payabilityTasklistItem8Details %}
+      {% if data["payability-tasklist-item-8-details"] %}
+      {{ data["payability-tasklist-item-8-details"]}}
+      {% else %}
+      Details
+      {% endif %}
+      {% endset -%}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Temporary stays outside of the UK"
+            },
+            value: {
+              html: payabilityTasklistItem8
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-8",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Details?"
+            },
+            value: {
+              html: payabilityTasklistItem8Details
+            },
+            actions: {
+              items: [
+                {
+                  href: "payability-tasklist-item-8-details",
+                  text: "Change",
+                  visuallyHiddenText: "XXX"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
+
+
+                <table class="govuk-table ">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent">Type of stay</th>
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent">Country</th>
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date they went abroad</th>
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent">Date they returned</th>
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days</th>
+                      <!-- <th scope="col" class="govuk-table__header govuk-20-percent-percent">Days that can be paid</th> -->
+
+                      <th scope="col" class="govuk-table__header govuk-20-percent-percent"></th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">{{ data['payability-tasklist-item-8']}}</td>
+                      <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-name']}}</td>
+                      <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-in-day'] + ' ' + (data['payability-tasklist-item-8-date-in-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-in-year']}}</td>
+                      <td class="govuk-table__cell">{{ data['payability-tasklist-item-8-date-out-day'] + ' ' + (data['payability-tasklist-item-8-date-out-month'] | getMonth) + ' ' + data['payability-tasklist-item-8-date-out-year']}}</td>
+                      <!-- <td class="govuk-table__cell">4</td> -->
+                      <td class="govuk-table__cell">10</td>
+                      <td class="govuk-table__cell"><a href="payability-tasklist-item-3-cya" class="govuk-link" rel="noreferrer noopener" target="">Change</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
