@@ -1,0 +1,82 @@
+{% extends "layout-process-mr.html" %}
+
+{% block pageTitle %}
+  PIP claimant record
+{% endblock %}
+
+{% block header %}
+{% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "another-decision-0-0-6/record-id.html" %}
+
+  {% if data["obc-payability-check"] == "No" %}
+  <form action="cya-letter-review" method="post" class="form">
+    No payment risk
+  {% else %}
+  <form action="payability-check" method="post" class="form">
+    Payment risk
+  {% endif %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Add your justification for setting a X years/month review period</h1>
+
+
+      {% set legendHint %}
+
+      <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">Consider whether the person:</p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-2">
+      <li>is waiting for treatment and how long that treatment will take</li>
+      <li>is close to State Pension age</li>
+      <li>has high level needs which will either stay the same or get worse</li>
+      <li>has a health condition or disability that is likely to improve</li>
+      <li>has limited leave to remain in the UK</li>
+    </ul>
+
+      <!------------CANNED PHRASES LEGEND------------>
+        {% set legendCannedDetails %}
+        {% include "another-decision-0-0-6/standard-award-phrase-selector.html" %}
+        {% endset %}
+
+        {{ govukDetails({
+          summaryText: "Standard wording examples",
+          classes: "govuk-!-margin-bottom-0",
+          html: legendCannedDetails
+        }) }}
+
+      <!------------Legend--------------->
+
+            {% endset %}
+
+    {{ govukTextarea({
+      name: "award-dates-review-justification",
+      id: "award-dates-review-justification",
+      classes: " govukTextarea--overwrite",
+      label: {
+        text: "",
+        classes: "govuk-label--m",
+        isPageHeading: true
+      },
+      hint: {
+        html: legendHint
+      },
+      value: data["award-dates-review-justification"]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

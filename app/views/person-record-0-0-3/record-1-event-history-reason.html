@@ -1,21 +1,22 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Process a PIP application
+  PIP claimant record
 {% endblock %}
 
 {% block header %}
- {% include "explore-header-global-nav-multi.html" %}
+  {% include "explore-header-global-nav-multi.html" %}
 {% endblock %}
-
 {% block content %}
+
+{% include "person-record-0-0-3/r-notifications.html" %}
 
 <form action="record-1-event-history-reason-justification" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% include "person-record-0-0-2/record-id.html" %}
+      {% include "person-record-0-0-3/record-id.html" %}
 
 Pelican
       {{ govukRadios({

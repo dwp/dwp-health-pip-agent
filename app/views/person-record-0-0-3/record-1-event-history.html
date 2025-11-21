@@ -5,18 +5,17 @@
 {% endblock %}
 
 {% block header %}
-  {% include "person-record-0-0-2/call-status.html" %}
+  {% include "explore-header-global-nav-multi.html" %}
 {% endblock %}
 {% block content %}
 
-
-{% include "person-record-0-0-2/r-notifications.html" %}
+{% include "person-record-0-0-3/r-notifications.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
     <form action="record-1-event-history-filter-router" method="post" class="form">
 
-      {% include "person-record-0-0-2/record-id-base.html" %}
+      {% include "person-record-0-0-3/record-id-base.html" %}
 
       <style>
       #accordion-default > div.govuk-accordion__controls > button {display: none}
@@ -29,7 +28,7 @@
   </div>
 
 
-  {% include "person-record-0-0-2/r-navigation.html" %}
+  {% include "person-record-0-0-3/r-navigation.html" %}
 
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
     <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-36 govuk-!-margin-bottom-6">Event history</h3>
@@ -86,6 +85,11 @@
           {
           value: "4",
           text: "Flags and markers",
+          checked: (data["record-1-event-history-filter"] == "4")
+          },
+          {
+          value: "5",
+          text: "Changes of circumstances",
           checked: (data["record-1-event-history-filter"] == "4")
           }
           ]
@@ -151,6 +155,25 @@
         <!-- <td class="govuk-table__cell govuk-20-percent">Actions</td> -->
       </tr>
       </thead>
+
+      {% if data["r-appointees-add"] %}
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell table-spacer">Today</td>
+
+        <td class="govuk-table__cell table-spacer">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">A new DelAuth was added</p>
+
+          <p class="govuk-body govuk-!-margin-bottom-2">Sam Elliot was added and will take over XYZ</p>
+
+          <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-3"><a class="" href="r-appointees" target="">View details</a></p>
+
+
+        </td>
+        </tr>
+
+        {% else %}
+        {% endif %}
 
 
       {% if data["entry-home-processing-options"] == "MakeMRNil" or data["entry-home-processing-options"] == "MakeMRChange" %}
