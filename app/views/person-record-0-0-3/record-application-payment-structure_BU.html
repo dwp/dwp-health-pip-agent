@@ -1,0 +1,324 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+{% if data["application-about-a12-score-overwrite"]  == "a1" %}
+
+  <form action="entry-home" method="post" class="form">
+
+  {% else %}
+  <form action="/move-to-pipcs-1/eject-timeline" method="post" class="form">
+
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+      {% include "includes/js-back-link.html" %}
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Award breakdown</h1>
+
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Arrears</h1>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Start date"
+              },
+              value: {
+                text: "1 January 2026"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-3m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "End date"
+              },
+              value: {
+                text: "1 January 2026"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-3m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Days"
+              },
+              value: {
+                text: "245"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-9m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Total calculated"
+              },
+              value: {
+                text: "£[Value]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-3m-check",
+                    text: "",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+
+<h1 class="govuk-heading-l govuk-!-padding-top-6 govuk-!-margin-bottom-6">Scheduled</h1>
+
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Regular payment"
+              },
+              value: {
+                text: "£[Value]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-3m-check",
+                    text: "-.",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Schedule"
+              },
+              value: {
+                text: "Every 4 weeks on a [Day of the week]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-dl-9m-check",
+                    text: "-.",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "First payment"
+              },
+              value: {
+                text: "£[Value]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-3m-check",
+                    text: "-.",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "First payment time period"
+              },
+              value: {
+                text: "From [start date] until [end date]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qppt-m-9m-check",
+                    text: "-.",
+                    visuallyHiddenText: "XXX"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+    </div>
+  </div>
+
+
+
+
+                      <h1 class="govuk-heading-xm govuk-!-margin-bottom-2">Arrears</h1>
+
+
+                      <br>
+
+                      <table class="govuk-table govuk-!-margin-bottom-0">
+                        <thead class="govuk-table__head">
+                          <!-- <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-10-percent">Start</th>
+                            <th scope="col" class="govuk-table__header govuk-10-percent">End</th>
+                            <th scope="col" class="govuk-table__header govuk-10-percent">Days</th>
+                            <th scope="col" class="govuk-table__header govuk-20-percent">Rate</th>
+                            <th scope="col" class="govuk-table__header govuk-10-percent">Amount</th>
+
+                          </tr> -->
+
+                        </thead>
+                        <tbody class="govuk-table__body noborder">
+
+                          <tr class="govuk-table__row govuk-table__cell-noborder">
+                            <td class="govuk-table__cell govuk-table__cell-noborder">1 Feb 2025 </td>
+                            <td class="govuk-table__cell">1 Mar 2025 </td>
+                            <td class="govuk-table__cell">29</td>
+
+                            <td class="govuk-table__cell">
+                              <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                              <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                            </td>
+
+
+
+                            <td class="govuk-table__cell">
+                              <p class="govuk-body govuk-!-margin-bottom-2">£306.24<br><br></p>
+                              <p class="govuk-body govuk-!-margin-bottom-1">£120.93</p>
+                            </td>
+                          </tr>
+
+
+                        </tbody>
+                      </table>
+
+
+                      <hr class="govuk-section-break govuk-section-break--visible-seperator">
+
+
+                      <table class="govuk-table govuk-!-padding-top-0">
+
+                        <tbody class="govuk-table__body">
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-10-percent">Total days</td>
+                            <td class="govuk-table__cell govuk-10-percent"></td>
+                            <td class="govuk-table__cell govuk-20-percent"><strong>29</strong></td>
+                            <td class="govuk-table__cell govuk-10-percent"></td>
+                            <td class="govuk-table__cell govuk-10-percent"></td>
+                          </tr>
+
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"><strong>Total owed</strong></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell"></td>
+                            <td class="govuk-table__cell"></td>
+
+                              <td class="govuk-table__cell"><strong>£1,523.04</strong></td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+
+    <br><br>
+
+
+    <h1 class="govuk-heading-xm govuk-!-margin-bottom-2">Regular payment</h1>
+    <!-- <p class="govuk-body govuk-!-margin-bottom-2">Every four weeks</p> -->
+
+
+                      <table class="govuk-table govuk-!-margin-bottom-0">
+                        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-20-percent">Award start date</th>
+                            <th scope="col" class="govuk-table__header govuk-30-percent">Award end date</th>
+                            <th scope="col" class="govuk-table__header govuk-30-percent">Rate</th>
+                            <th scope="col" class="govuk-table__header govuk-10-percent">Amount</th>
+
+
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">2 June 2025</td>
+                            <td class="govuk-table__cell">1 June 2027</td>
+
+                            <td class="govuk-table__cell">
+                              <p class="govuk-body govuk-!-margin-bottom-2">Daily living:<br>standard</p>
+                              <p class="govuk-body govuk-!-margin-bottom-1">Mobility: <br>standard</p>
+                            </td>
+
+                            <td class="govuk-table__cell">
+                              <p class="govuk-body govuk-!-margin-bottom-2">£295.60<br><br></p>
+                              <p class="govuk-body govuk-!-margin-bottom-1">£116.80</p>
+                            </td>
+
+                          </tr>
+
+                        </tbody>
+                      </table>
+
+                      <table class="govuk-table ">
+                        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+                        <tbody class="govuk-table__body">
+
+                          <hr class="govuk-section-break govuk-section-break--visible-seperator">
+
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-30-percent"><strong>Total paid every 4 weeks</strong></td>
+                            <td class="govuk-table__cell govuk-20-percent"></td>
+                            <td class="govuk-table__cell govuk-30-percent"></td>
+                            <td class="govuk-table__cell govuk-10-percent"><strong>£412.40</strong></td>
+                            </tr>
+
+                        </tbody>
+                      </table>
+
+
+
+
+  </form>
+
+{% endblock %}
