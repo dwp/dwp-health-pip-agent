@@ -3,21 +3,20 @@ stages:
   - heroku-publish
 
 include:
-  - local: "/gitlab-ci/includes.yml"
-
-fragment-version-check:
-  extends: .fragment-version-check-template
-
-gitleaks:
-  extends: .gitleaks-template
-
-shell-check:
-  extends: .shell-check-template
-
-todo-check:
-  extends: .todo-check-template
-
-heroku-site-publish:
-  extends: .heroku-site-publish-template
-  variables:
-    HEROKU_APP_NAME: dwp-health-pip-agent
+   #.pre
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/fragment-version-check'
+    ref: 2.4.3
+    file: 'ci-include-fragment-version-check.yml'
+  #code-quality
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/gitleaks'
+    ref: 3.1.5
+    file: 'ci-include-gitleaks.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/shell-check'
+    ref: 4.0.3
+    file: 'ci-include-shell-check.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/todo-checker'
+    ref: 2.1.5
+    file: 'ci-include-todo-checker.yml'
+  - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/heroku-site-publish'
+    ref: 1.2.2
+    file: 'ci-include-heroku-site-publish-base.yml'
