@@ -48,5 +48,10 @@
     "sync-request": "6.1.0",
     "universal-analytics": "0.5.3",
     "uuid": "13.0.0"
+  },
+  "overrides": {
+    "nunjucks": {
+      "chokidar": "4.0.3"
+    }
   }
 }
