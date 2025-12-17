@@ -2,7 +2,7 @@
 // @import "sass-mq";
 // @import "colour";
 @import "xpl-link-styles";
-@import "node_modules/govuk-frontend/govuk/base";
+@import "node_modules/govuk-frontend/dist/govuk/base";
 
 $govuk-link-colour: govuk-colour("blue") !default;
 $govuk-border-colour: govuk-colour("mid-grey");
