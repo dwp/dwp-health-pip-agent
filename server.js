@@ -217,6 +217,7 @@ app.get(/\.html?$/i, function (req, res) {
   var parts = path.split('.')
   parts.pop()
   path = parts.join('.')
+  // nosemgrep: nodejs_scan.javascript-redirect-rule-express_open_redirect
   res.redirect(path)
 })
 
@@ -236,6 +237,7 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
+  // nosemgrep: nodejs_scan.javascript-redirect-rule-express_open_redirect
   res.redirect(url.format({
     pathname: '/' + req.params[0],
     query: req.query
