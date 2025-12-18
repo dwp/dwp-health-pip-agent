@@ -27,16 +27,16 @@
       {% include "includes/js-back-link.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment amounts and dates</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment schedule</h1>
 
         {{ govukSummaryList({
           rows: [
             {
               key: {
-                text: "Regular daily living amount"
+                text: "Regular payment"
               },
               value: {
-                text: "£[rate]"
+                text: "£[Value]"
               },
               actions: {
                 items: [
@@ -50,44 +50,10 @@
             },
             {
               key: {
-                text: "Regular mobility amount"
+                text: "Schedule"
               },
               value: {
-                text: "£[rate]"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "qppt-dl-3m-check",
-                    text: "-.",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Regular total amount"
-              },
-              value: {
-                text: "£[rate]"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "qppt-dl-3m-check",
-                    text: "-.",
-                    visuallyHiddenText: "XXX"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Payment schedule"
-              },
-              value: {
-                text: "Every 4 weeks on a [day of the week]"
+                text: "Every 4 weeks on a [Day of the week]"
               },
               actions: {
                 items: [
@@ -101,10 +67,10 @@
             },
             {
               key: {
-                text: "First payment amount"
+                text: "First payment"
               },
               value: {
-                text: "£[total amount including arrears?]"
+                text: "£[Value]"
               },
               actions: {
                 items: [
@@ -118,10 +84,10 @@
             },
             {
               key: {
-                text: "First payment period"
+                text: "First payment time period"
               },
               value: {
-                text: "From [start date] until [date of first payment?]"
+                text: "From [start date] until [end date]"
               },
               actions: {
                 items: [
