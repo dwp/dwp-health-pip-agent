@@ -41,6 +41,7 @@
     "notifications-node-client": "8.2.1",
     "nunjucks": "3.2.4",
     "portscanner": "2.2.0",
+    "qs": "^6.14.1",
     "regexp": "1.0.0",
     "require-dir": "1.2.0",
     "sass": "1.94.2",
