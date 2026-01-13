@@ -1,6 +1,6 @@
 {% if data["entry-home-processing-options"] == "MakeMRNil" %}
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Manditory reconsideration submitted (nil remains nil)</p>
+<p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration submitted (nil remains nil)</p>
 {% endset %}
 
 {{ govukNotificationBanner({
@@ -11,7 +11,7 @@
 {% elif data["entry-home-processing-options"] == "MakeMRChange" %}
 
 {% set html %}
-<p class="govuk-body govuk-!-font-size-19">Manditory reconsideration submitted (Change in rate)</p>
+<p class="govuk-body govuk-!-font-size-19">Mandatory reconsideration submitted (Change in rate)</p>
 {% endset %}
 
 {{ govukNotificationBanner({
