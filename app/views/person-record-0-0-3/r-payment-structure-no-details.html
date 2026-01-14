@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+{% if data["application-about-a12-score-overwrite"]  == "a1" %}
+
+  <form action="entry-home" method="post" class="form">
+
+  {% else %}
+  <form action="/move-to-pipcs-1/eject-timeline" method="post" class="form">
+
+  {% endif %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "person-record-0-0-2/record-id-base.html" %}
+      {% include "includes/js-back-link.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Payment amounts and dates</h1>
+<p class="govuk-body govuk-!-margin-bottom-2">
+  There are no payment details available for this person. 
+</p>
+        
+    </div>
+  </div>
+
+
+  </form>
+
+{% endblock %}
