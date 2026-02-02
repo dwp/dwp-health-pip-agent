@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="award-dates-review-justification-router" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-8/record-id-base.html" %}
+
+
+      {% set legendHint %}
+
+  <p class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-2">You should select a standard 3 year award review period unless an exception applies.</p>
+
+    
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {% set dateOverwite %}
+
+
+  {{ govukDateInput({
+    id: "award-dates-review-justification-router",
+    namePrefix: "award-dates-review-justification-router",
+    fieldset: {
+      legend: {
+        html: "Enter the review date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+      }
+    },
+    hint: {
+      html: ""
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-review-justification-router"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-review-justification-router"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["award-dates-review-justification-router"]
+      }
+    ]
+  }) }}
+
+
+    {% endset -%}
+
+
+
+    {{ govukRadios({
+      idPrefix: "award-dates-review-justification-router",
+      name: "award-dates-review-justification-router",
+      fieldset: {
+        legend: {
+          html: "Select the award review period you want to set",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "1y",
+        text: "1 year",
+        checked: (data["award-dates-review-justification-router"] == "1y")
+      },
+      {
+        value: "18m",
+        text: "18 months",
+        checked: (data["award-dates-review-justification-router"] == "18m")
+      },
+      {
+        value: "2y",
+        text: "2 years",
+        checked: (data["award-dates-review-justification-router"] == "2y")
+      },
+      {
+        value: "3y",
+        text: "3 years",
+        checked: (data["award-dates-review-justification-router"] == "3y")
+      },
+      {
+        value: "4y",
+        text: "4 years",
+        checked: (data["award-dates-review-justification-router"] == "4y")
+      },
+      {
+        value: "5y",
+        text: "5 years",
+        checked: (data["award-dates-review-justification-router"] == "5y")
+      },
+      {
+        value: "10y",
+        text: "10 years",
+        checked: (data["award-dates-review-justification-router"] == "10y")
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "Indefinite",
+        text: "Indefinite (no end date - light touch review in 10 years)",
+        checked: (data["award-dates-review-justification-router"] == "Indefinite")
+      },
+      {
+        value: "None",
+        text: "No review period needed",
+        checked: (data["award-dates-review-justification-router"] == "None")
+      },
+      {
+        value: "Other",
+        text: "Other",
+        checked: (data["award-dates-review-justification-router"] == "Other"),
+              conditional: {
+                html: dateOverwite
+              }
+          }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

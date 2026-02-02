@@ -18,7 +18,7 @@
 
       {% include "agent-day-0-1-8/record-id-base.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check dates and review period</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Check dates and award review period</h1>
 
       <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">@dave, what are we asking here? </p> -->
 
@@ -38,7 +38,7 @@
 
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <td class="govuk-table__header">Start date</td>
+    <td class="govuk-table__header">Award start date</td>
     <td class="govuk-table__cell">{{ data['award-dates-applicaiton-start-date-day'] + ' ' + (data['award-dates-applicaiton-start-date-month'] | getMonth) + ' ' + data['award-dates-applicaiton-start-date-year']}}</td>
     <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
 
@@ -56,7 +56,7 @@
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__header">Review period</td>
+      <td class="govuk-table__header">Award review period</td>
       <td class="govuk-table__cell">3 years</td>
       <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-review-manual">Change</a></td>
     </tr>
@@ -65,7 +65,7 @@
 
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Review period</td>
+        <td class="govuk-table__header">Award review period</td>
         <td class="govuk-table__cell">3 years</td>
         <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-data-input">Change</a></td>
       </tr>
@@ -73,10 +73,26 @@
 
     {% else %}
 
+<tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Agree with assessment provider's recommendation</td>
+        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-AP-rec-check">Change</a></td>
+
+      </tr>
+
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
-        <td class="govuk-table__header">Review period</td>
+        <td class="govuk-table__header">Award review period</td>
         <td class="govuk-table__cell">{{ data['award-dates-ap-period']}} </td>
+        <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-AP-rec-check">Change</a></td>
+
+      </tr>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__header">Award review period justification</td>
+        <td class="govuk-table__cell">Standard 3 year award period</td> </td>
         <td class="govuk-table__cell"><p class="govuk-!-margin-bottom-0"><a class="" href="award-dates-AP-rec-check">Change</a></td>
 
       </tr>
@@ -87,7 +103,7 @@
 
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <td class="govuk-table__header">End date</td>
+    <td class="govuk-table__header">Award end date</td>
 
     {% if data["award-dates-AP-rec-check"] == "Yes" and data["award-dates-ap-period"] == "No future assessments required" %}
     <td class="govuk-table__cell">No end date</td>

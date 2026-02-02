@@ -385,6 +385,28 @@ router.post(`/award-dates-AP-rec-check-router`, (req, res) => {
   }
 })
 
+router.post(`/award-dates-AP-rec-check-router2`, (req, res) => {
+  const agreeAPCheck = req.session.data['award-dates-AP-rec-check2']
+
+  if (agreeAPCheck == 'Yes') {
+    res.redirect(`award-dates-review-justification1`)
+  }
+   else {
+    res.redirect(`award-dates-review-manual-2`)
+  }
+})
+
+router.post(`/award-dates-review-justification-router`, (req, res) => {
+  const reviewDatesManual = req.session.data['award-dates-review-manual2']
+
+  if (reviewDatesManual == 'None') {
+    res.redirect(`award-dates-review-justification1`)
+  }
+   else {
+    res.redirect(`award-dates-review-justification1`)
+  }
+})
+
 router.post(`/award-dates-review-manual-router`, (req, res) => {
   const reviewDatesManual = req.session.data['award-dates-review-manual']
 
@@ -396,6 +418,18 @@ router.post(`/award-dates-review-manual-router`, (req, res) => {
   }
 })
 
+
+
+router.post(`/award-dates-playback-router`, (req, res) => {
+  const reviewDatesManual = req.session.data['award-dates-review-justification1']
+
+  if (reviewDatesManual == 'None') {
+    res.redirect(`award-dates-playback`)
+  }
+   else {
+    res.redirect(`award-dates-playback`)
+  }
+})
 
 
 
