@@ -29,6 +29,13 @@
 
       {% set dateOverwite %}
 
+{% set Other %} 
+  {{ govukInput({
+    id: "other-review-period",
+    name: "other-review-period",
+    label: { text: "Specify other period" }
+  }) }}
+{% endset -%}
 
   {{ govukDateInput({
     id: "award-dates-review-justification-router",
@@ -67,7 +74,7 @@
 
 
 
-    {{ govukRadios({
+ {{ govukRadios({
       idPrefix: "award-dates-review-justification-router",
       name: "award-dates-review-justification-router",
       fieldset: {
@@ -129,18 +136,9 @@
         value: "None",
         text: "No review period needed",
         checked: (data["award-dates-review-justification-router"] == "None")
-      },
-      {
-        value: "Other",
-        text: "Other",
-        checked: (data["award-dates-review-justification-router"] == "Other"),
-              conditional: {
-                html: dateOverwite
-              }
-          }
+      }
       ]
     }) }}
-
 
       {{ govukButton({
         text: "Continue",
