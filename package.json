@@ -41,7 +41,6 @@
     "notifications-node-client": "8.2.1",
     "nunjucks": "3.2.4",
     "portscanner": "2.2.0",
-    "qs": "6.13.3",
     "regexp": "1.0.0",
     "require-dir": "1.2.0",
     "sass": "1.97.3",
@@ -51,7 +50,8 @@
     "uuid": "13.0.0"
   },
   "overrides": {
-    "qs": "6.13.3",
+    "qs": "6.15.0",
+    "immutable": "4.3.8",
     "nunjucks": {
       "chokidar": "4.0.3"
     }
