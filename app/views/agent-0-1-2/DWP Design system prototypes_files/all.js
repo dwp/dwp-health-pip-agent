@@ -1757,14 +1757,7 @@
             // for ex.) all use of eval or Function costructor throws an exception.
             // However in all of these environments Function.prototype.bind exists
             // and so this code will never be executed.
-            bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this, arguments); }')(binder);
-
-            if (target.prototype) {
-                Empty.prototype = target.prototype;
-                bound.prototype = new Empty();
-                // Clean up dangling references.
-                Empty.prototype = null;
-            }
+            
 
             // TODO
             // 18. Set the [[Extensible]] internal property of F to true.
